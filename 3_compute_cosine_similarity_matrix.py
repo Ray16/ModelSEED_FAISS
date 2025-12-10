@@ -30,24 +30,8 @@ all_idx_i = []
 all_idx_j = []
 cos_sim = []
 fp = np.load('rxn_fingerprints.npy')
-'''
-for idx_i in range(len(rxn_data)):
-    fp_i = fp[idx_i].astype(np.float32).reshape(1, -1)
-    for idx_j in range(idx_i + 1, len(rxn_data)):
-        fp_j = fp[idx_j].astype(np.float32).reshape(1, -1)
-        all_idx_i.append(idx_i)
-        all_idx_j.append(idx_j)
-        cos_sim.append()
-'''
 fp = l2_normalize_vectors(fp) 
+
+print(f'Computing cosine similarity matrix...')
 cos_matrix = fp @ fp.T
-N = cos_matrix.shape[0]
-idx_i, idx_j = np.triu_indices(N, k=1)
-pair_cos_sim = cos_matrix[idx_i, idx_j]
-pairs_df = pd.DataFrame({
-    "idx_i": idx_i,
-    "idx_j": idx_j,
-    "cosine_similarity": pair_cos_sim
-})
-print(f'cosine similarity matrix computed: {cos_matrix}')
-pairs_df.to_csv('cos_sim_matrix.csv',index=False)
+np.save('pair_cos_sim.npy', cos_matrix)
