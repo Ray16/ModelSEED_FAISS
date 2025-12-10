@@ -7,9 +7,6 @@ def l2_normalize_vectors(vectors: np.ndarray) -> np.ndarray:
     faiss.normalize_L2(vectors)
     return vectors
 
-all_idx_i = []
-all_idx_j = []
-cos_sim = []
 fp = np.load('rxn_fingerprints.npy')
 fp = l2_normalize_vectors(fp) 
 
