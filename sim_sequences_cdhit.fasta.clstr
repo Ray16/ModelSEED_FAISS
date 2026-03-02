@@ -1,0 +1,164 @@
+>Cluster 0
+0	2225aa, >P27708__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 1
+0	1338aa, >O15067__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 2
+0	1293aa, >P11454__EC_6.3.2.14__Escherichia_coli_(strain_K12)... *
+1	1293aa, >Q8XBV9__EC_6.3.2.14__Escherichia_coli_O157:H7... at 97.83%
+2	1281aa, >P29698__EC_6.3.2.14__Shigella_flexneri... at 97.74%
+>Cluster 3
+0	1010aa, >P22102__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 4
+0	930aa, >D3KCC4__EC_6.3.2.11__Gallus_gallus... *
+>Cluster 5
+0	827aa, >A5YM72__EC_6.3.2.11__Homo_sapiens... *
+1	827aa, >A5YM72__EC_6.3.2.-__Homo_sapiens... at 100.00%
+>Cluster 6
+0	827aa, >Q6ZPS2__EC_6.3.2.11__Mus_musculus... *
+>Cluster 7
+0	726aa, >P50747__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 8
+0	717aa, >Q9W3K5__EC_6.3.2.2__Drosophila_melanogaster... *
+>Cluster 9
+0	662aa, >Q9UJ14__EC_2.3.2.2__Homo_sapiens... *
+>Cluster 10
+0	654aa, >Q20117__EC_6.3.2.2__Caenorhabditis_elegans... *
+>Cluster 11
+0	637aa, >P48506__EC_6.3.2.2__Homo_sapiens... *
+1	637aa, >P19468__EC_6.3.2.2__Rattus_norvegicus... at 94.19%
+2	637aa, >P97494__EC_6.3.2.2__Mus_musculus... at 94.51%
+3	637aa, >P48506__EC_6.3.2.-__Homo_sapiens... at 100.00%
+>Cluster 12
+0	637aa, >Q9M0G0__EC_2.3.2.2__Arabidopsis_thaliana... *
+>Cluster 13
+0	630aa, >Q14258__EC_6.3.2.-__Homo_sapiens... *
+>Cluster 14
+0	626aa, >Q54PC2__EC_6.3.2.2__Dictyostelium_discoideum... *
+>Cluster 15
+0	598aa, >Q76BS7__EC_6.3.2.38__Vibrio_mimicus... *
+>Cluster 16
+0	591aa, >P17812__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 17
+0	587aa, >Q05932__EC_6.3.2.-__Homo_sapiens... *
+>Cluster 18
+0	586aa, >P36269__EC_2.3.2.2__Homo_sapiens... *
+>Cluster 19
+0	575aa, >Q47316__EC_6.3.2.38__Escherichia_coli... *
+>Cluster 20
+0	572aa, >Q9QWE9__EC_2.3.2.2__Rattus_norvegicus... *
+>Cluster 21
+0	569aa, >P19440__EC_2.3.2.2__Homo_sapiens... *
+1	568aa, >A6NGU5__EC_2.3.2.2__Homo_sapiens... at 96.48%
+>Cluster 22
+0	568aa, >P07314__EC_2.3.2.2__Rattus_norvegicus... *
+>Cluster 23
+0	536aa, >P10378__EC_6.3.2.14__Escherichia_coli_(strain_K12)... *
+1	536aa, >Q8XBV3__EC_6.3.2.14__Escherichia_coli_O157:H7... at 98.88%
+>Cluster 24
+0	534aa, >Q3MEJ8__EC_6.3.2.1__Trichormus_variabilis_(strain_ATCC_29413... *
+>Cluster 25
+0	530aa, >F4JYE9__EC_6.3.2.12__Arabidopsis_thaliana... *
+>Cluster 26
+0	527aa, >Q31P38__EC_6.3.2.1__Synechococcus_elongatus_(strain_ATCC_339... *
+1	527aa, >Q5N530__EC_6.3.2.1__Synechococcus_sp._(strain_ATCC_27144_/_P... at 100.00%
+>Cluster 27
+0	522aa, >P46309__EC_6.3.2.2__Arabidopsis_thaliana... *
+1	514aa, >O23736__EC_6.3.2.2__Brassica_juncea... at 93.58%
+>Cluster 28
+0	493aa, >Q6P531__EC_2.3.2.2__Homo_sapiens... *
+>Cluster 29
+0	490aa, >Q9WY79__EC_6.3.2.37__Thermotoga_maritima_(strain_ATCC_43589_/... *
+>Cluster 30
+0	487aa, >I6Y0R5__EC_6.3.2.12__Mycobacterium_tuberculosis_(strain_ATCC_... *
+>Cluster 31
+0	483aa, >Q3AUV1__EC_6.3.2.1__Synechococcus_sp._(strain_CC9902)... *
+>Cluster 32
+0	474aa, >P48637__EC_6.3.2.-__Homo_sapiens... *
+>Cluster 33
+0	472aa, >P39641__EC_6.3.2.49__Bacillus_subtilis_(strain_168)... *
+1	472aa, >Q8KWT3__EC_6.3.2.49__Bacillus_subtilis... at 91.53%
+>Cluster 34
+0	472aa, >Q8KWS8__EC_6.3.2.49__Bacillus_amyloliquefaciens... *
+>Cluster 35
+0	472aa, >P78061__EC_6.3.1.11__Escherichia_coli_(strain_K12)... *
+>Cluster 36
+0	446aa, >I3R584__EC_6.3.1.11__Haloferax_mediterranei_(strain_ATCC_3350... *
+>Cluster 37
+0	444aa, >A9ZPH9__EC_6.3.1.6__Methylovorus_mays... *
+>Cluster 38
+0	437aa, >P43775__EC_6.3.2.12__Haemophilus_influenzae_(strain_ATCC_5190... *
+>Cluster 39
+0	430aa, >Q05865__EC_6.3.2.12__Bacillus_subtilis_(strain_168)... *
+>Cluster 40
+0	427aa, >Q12676__EC_6.3.2.12__Saccharomyces_cerevisiae_(strain_ATCC_20... *
+>Cluster 41
+0	426aa, >Q89AT2__EC_6.3.2.12__Buchnera_aphidicola_subsp._Baizongia_pis... *
+>Cluster 42
+0	425aa, >P22234__EC_6.3.2.-__Homo_sapiens... *
+>Cluster 43
+0	422aa, >P08192__EC_6.3.2.12__Escherichia_coli_(strain_K12)... *
+>Cluster 44
+0	418aa, >P9WNZ1__EC_6.3.2.5__Mycobacterium_tuberculosis_(strain_ATCC_... *
+1	418aa, >P67734__EC_6.3.2.5__Mycobacterium_bovis_(strain_ATCC_BAA-935... at 100.00%
+>Cluster 45
+0	414aa, >A0QWT2__EC_6.3.2.5__Mycolicibacterium_smegmatis_(strain_ATCC... *
+>Cluster 46
+0	411aa, >P57265__EC_6.3.2.12__Buchnera_aphidicola_subsp._Acyrthosiphon... *
+>Cluster 47
+0	406aa, >P0ABQ0__EC_6.3.2.5__Escherichia_coli_(strain_K12)... *
+1	406aa, >P0ABQ1__EC_6.3.2.5__Escherichia_coli_O6:H1_(strain_CFT073_/_... at 100.00%
+>Cluster 48
+0	406aa, >O35033__EC_6.3.2.5__Bacillus_subtilis_(strain_168)... *
+>Cluster 49
+0	403aa, >Q58323__EC_6.3.2.5__Methanocaldococcus_jannaschii_(strain_AT... *
+>Cluster 50
+0	396aa, >E2JA32__EC_6.3.2.46__Enterobacter_agglomerans... *
+>Cluster 51
+0	395aa, >P18204__EC_6.3.2.20__Pseudomonas_savastanoi... *
+>Cluster 52
+0	391aa, >Q8IXN7__EC_6.3.-.-__Homo_sapiens... *
+1	391aa, >Q8IXN7__EC_6.3.2.-__Homo_sapiens... at 100.00%
+>Cluster 53
+0	386aa, >Q9ULI2__EC_6.3.-.-__Homo_sapiens... *
+1	386aa, >Q9ULI2__EC_6.3.2.-__Homo_sapiens... at 100.00%
+>Cluster 54
+0	373aa, >P15104__EC_6.3.-.-__Homo_sapiens... *
+>Cluster 55
+0	365aa, >P40506__EC_6.3.2.5__Saccharomyces_cerevisiae_(strain_ATCC_20... *
+>Cluster 56
+0	350aa, >Q47720__EC_6.3.2.35__Enterococcus_casseliflavus... *
+>Cluster 57
+0	343aa, >P29753__EC_6.3.2.35__Enterococcus_gallinarum... *
+>Cluster 58
+0	324aa, >Q8Q0M5__EC_6.3.2.33__Methanosarcina_mazei_(strain_ATCC_BAA-15... *
+>Cluster 59
+0	324aa, >Q8TKX5__EC_6.3.2.33__Methanosarcina_acetivorans_(strain_ATCC_... *
+>Cluster 60
+0	310aa, >Q9FKB3__EC_6.3.2.1__Arabidopsis_thaliana... *
+>Cluster 61
+0	309aa, >P9WIL5__EC_6.3.2.1__Mycobacterium_tuberculosis_(strain_ATCC_... *
+>Cluster 62
+0	309aa, >P40459__EC_6.3.2.1__Saccharomyces_cerevisiae_(strain_ATCC_20... *
+>Cluster 63
+0	308aa, >Q58225__EC_6.3.4.24__Methanocaldococcus_jannaschii_(strain_AT... *
+>Cluster 64
+0	292aa, >Q6LZC7__EC_6.3.2.33__Methanococcus_maripaludis_(strain_DSM_14... *
+>Cluster 65
+0	291aa, >C7P8V7__EC_6.3.4.24__Methanocaldococcus_fervens_(strain_DSM_4... *
+>Cluster 66
+0	291aa, >Q58037__EC_6.3.2.33__Methanocaldococcus_jannaschii_(strain_AT... *
+>Cluster 67
+0	285aa, >P0ADI4__EC_6.3.2.14__Escherichia_coli_(strain_K12)... *
+1	285aa, >P0ADI5__EC_6.3.2.14__Escherichia_coli_O157:H7... at 100.00%
+2	285aa, >P0ADI6__EC_6.3.2.14__Shigella_flexneri... at 100.00%
+>Cluster 68
+0	283aa, >P31663__EC_6.3.2.1__Escherichia_coli_(strain_K12)... *
+>Cluster 69
+0	266aa, >Q57662__EC_6.3.2.36__Methanocaldococcus_jannaschii_(strain_AT... *
+>Cluster 70
+0	261aa, >Q5JIZ8__EC_6.3.2.36__Thermococcus_kodakarensis_(strain_ATCC_B... *
+1	261aa, >B6YXQ1__EC_6.3.2.36__Thermococcus_onnurineus_(strain_NA1)... at 90.80%
+>Cluster 71
+0	253aa, >Q8PUQ1__EC_6.3.2.36__Methanosarcina_mazei_(strain_ATCC_BAA-15... *
+>Cluster 72
+0	243aa, >Q2FUA9__EC_6.3.2.36__Methanospirillum_hungatei_JF-1_(strain_A... *

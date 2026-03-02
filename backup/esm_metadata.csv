@@ -1,0 +1,99 @@
+header,accession,ec,ec_class,organism,group,seq_len
+P48506__EC_6.3.2.2__Homo_sapiens,P48506,6.3.2.2,6,Homo sapiens,similar,637
+P19468__EC_6.3.2.2__Rattus_norvegicus,P19468,6.3.2.2,6,Rattus norvegicus,similar,637
+P97494__EC_6.3.2.2__Mus_musculus,P97494,6.3.2.2,6,Mus musculus,similar,637
+C7P8V7__EC_6.3.4.24__Methanocaldococcus_fervens_(strain_DSM_4,C7P8V7,6.3.4.24,6,Methanocaldococcus fervens (strain DSM 4,similar,291
+Q58225__EC_6.3.4.24__Methanocaldococcus_jannaschii_(strain_AT,Q58225,6.3.4.24,6,Methanocaldococcus jannaschii (strain AT,similar,308
+A5YM72__EC_6.3.2.11__Homo_sapiens,A5YM72,6.3.2.11,6,Homo sapiens,similar,827
+Q6ZPS2__EC_6.3.2.11__Mus_musculus,Q6ZPS2,6.3.2.11,6,Mus musculus,similar,827
+D3KCC4__EC_6.3.2.11__Gallus_gallus,D3KCC4,6.3.2.11,6,Gallus gallus,similar,930
+P11766__EC_1.1.1.1__Homo_sapiens,P11766,1.1.1.1,1,Homo sapiens,control,374
+P07327__EC_1.1.1.1__Homo_sapiens,P07327,1.1.1.1,1,Homo sapiens,control,375
+P00326__EC_1.1.1.1__Homo_sapiens,P00326,1.1.1.1,1,Homo sapiens,control,375
+P04406__EC_1.2.1.12__Homo_sapiens,P04406,1.2.1.12,1,Homo sapiens,control,335
+O14556__EC_1.2.1.12__Homo_sapiens,O14556,1.2.1.12,1,Homo sapiens,control,408
+P00358__EC_1.2.1.12__Saccharomyces_cerevisiae_(strain_ATCC_20,P00358,1.2.1.12,1,Saccharomyces cerevisiae (strain ATCC 20,control,332
+P27338__EC_1.4.3.4__Homo_sapiens,P27338,1.4.3.4,1,Homo sapiens,control,520
+P21397__EC_1.4.3.4__Homo_sapiens,P21397,1.4.3.4,1,Homo sapiens,control,527
+P19643__EC_1.4.3.4__Rattus_norvegicus,P19643,1.4.3.4,1,Rattus norvegicus,control,520
+P04040__EC_1.11.1.6__Homo_sapiens,P04040,1.11.1.6,1,Homo sapiens,control,527
+P26901__EC_1.11.1.6__Bacillus_subtilis_(strain_168),P26901,1.11.1.6,1,Bacillus subtilis (strain 168),control,483
+Q0E4K1__EC_1.11.1.6__Oryza_sativa_subsp._japonica,Q0E4K1,1.11.1.6,1,Oryza sativa subsp. japonica,control,492
+P29475__EC_1.14.13.39__Homo_sapiens,P29475,1.14.13.39,1,Homo sapiens,control,1022
+P29474__EC_1.14.13.39__Homo_sapiens,P29474,1.14.13.39,1,Homo sapiens,control,1022
+P35228__EC_1.14.13.39__Homo_sapiens,P35228,1.14.13.39,1,Homo sapiens,control,1022
+P04179__EC_1.15.1.1__Homo_sapiens,P04179,1.15.1.1,1,Homo sapiens,control,222
+P08294__EC_1.15.1.1__Homo_sapiens,P08294,1.15.1.1,1,Homo sapiens,control,240
+P00441__EC_1.15.1.1__Homo_sapiens,P00441,1.15.1.1,1,Homo sapiens,control,154
+P26358__EC_2.1.1.37__Homo_sapiens,P26358,2.1.1.37,2,Homo sapiens,control,1022
+Q9UBC3__EC_2.1.1.37__Homo_sapiens,Q9UBC3,2.1.1.37,2,Homo sapiens,control,853
+Q9Y6K1__EC_2.1.1.37__Homo_sapiens,Q9Y6K1,2.1.1.37,2,Homo sapiens,control,912
+P09110__EC_2.3.1.9__Homo_sapiens,P09110,2.3.1.9,2,Homo sapiens,control,424
+Q9BWD1__EC_2.3.1.9__Homo_sapiens,Q9BWD1,2.3.1.9,2,Homo sapiens,control,397
+P24752__EC_2.3.1.9__Homo_sapiens,P24752,2.3.1.9,2,Homo sapiens,control,427
+P00491__EC_2.4.2.1__Homo_sapiens,P00491,2.4.2.1,2,Homo sapiens,control,289
+Q8IV20__EC_2.4.2.1__Homo_sapiens,Q8IV20,2.4.2.1,2,Homo sapiens,control,430
+P0ABP8__EC_2.4.2.1__Escherichia_coli_(strain_K12),P0ABP8,2.4.2.1,2,Escherichia coli (strain K12),control,239
+P17174__EC_2.6.1.1__Homo_sapiens,P17174,2.6.1.1,2,Homo sapiens,control,413
+P00505__EC_2.6.1.1__Homo_sapiens,P00505,2.6.1.1,2,Homo sapiens,control,430
+P00507__EC_2.6.1.1__Rattus_norvegicus,P00507,2.6.1.1,2,Rattus norvegicus,control,430
+P19367__EC_2.7.1.1__Homo_sapiens,P19367,2.7.1.1,2,Homo sapiens,control,917
+P35557__EC_2.7.1.1__Homo_sapiens,P35557,2.7.1.1,2,Homo sapiens,control,465
+P52789__EC_2.7.1.1__Homo_sapiens,P52789,2.7.1.1,2,Homo sapiens,control,917
+O00411__EC_2.7.7.6__Homo_sapiens,O00411,2.7.7.6,2,Homo sapiens,control,1022
+P30876__EC_2.7.7.6__Homo_sapiens,P30876,2.7.7.6,2,Homo sapiens,control,1022
+Q9H9Y6__EC_2.7.7.6__Homo_sapiens,Q9H9Y6,2.7.7.6,2,Homo sapiens,control,1022
+P07098__EC_3.1.1.3__Homo_sapiens,P07098,3.1.1.3,3,Homo sapiens,control,398
+P41247__EC_3.1.1.3__Homo_sapiens,P41247,3.1.1.3,3,Homo sapiens,control,253
+Q6P1J6__EC_3.1.1.3__Homo_sapiens,Q6P1J6,3.1.1.3,3,Homo sapiens,control,1022
+P05186__EC_3.1.3.1__Homo_sapiens,P05186,3.1.3.1,3,Homo sapiens,control,524
+P10696__EC_3.1.3.1__Homo_sapiens,P10696,3.1.3.1,3,Homo sapiens,control,532
+P05187__EC_3.1.3.1__Homo_sapiens,P05187,3.1.3.1,3,Homo sapiens,control,535
+P0DTE8__EC_3.2.1.1__Homo_sapiens,P0DTE8,3.2.1.1,3,Homo sapiens,control,511
+P0DUB6__EC_3.2.1.1__Homo_sapiens,P0DUB6,3.2.1.1,3,Homo sapiens,control,511
+P04746__EC_3.2.1.1__Homo_sapiens,P04746,3.2.1.1,3,Homo sapiens,control,511
+P07478__EC_3.4.21.4__Homo_sapiens,P07478,3.4.21.4,3,Homo sapiens,control,247
+P07477__EC_3.4.21.4__Homo_sapiens,P07477,3.4.21.4,3,Homo sapiens,control,247
+P35030__EC_3.4.21.4__Homo_sapiens,P35030,3.4.21.4,3,Homo sapiens,control,304
+Q9SR52__EC_3.5.1.5__Arabidopsis_thaliana,Q9SR52,3.5.1.5,3,Arabidopsis thaliana,control,838
+E6Y5X0__EC_3.5.1.5__Canavalia_ensiformis,E6Y5X0,3.5.1.5,3,Canavalia ensiformis,control,840
+P9WFF1__EC_3.5.1.5__Mycobacterium_tuberculosis_(strain_ATCC_,P9WFF1,3.5.1.5,3,Mycobacterium tuberculosis (strain ATCC ,control,577
+P00813__EC_3.5.4.4__Homo_sapiens,P00813,3.5.4.4,3,Homo sapiens,control,363
+Q9NZK5__EC_3.5.4.4__Homo_sapiens,Q9NZK5,3.5.4.4,3,Homo sapiens,control,511
+Q8IV20__EC_3.5.4.4__Homo_sapiens,Q8IV20,3.5.4.4,3,Homo sapiens,control,430
+O82647__EC_4.1.1.1__Arabidopsis_thaliana,O82647,4.1.1.1,4,Arabidopsis thaliana,control,607
+P33287__EC_4.1.1.1__Neurospora_crassa_(strain_ATCC_24698_/_7,P33287,4.1.1.1,4,Neurospora crassa (strain ATCC 24698 / 7,control,570
+Q9FFT4__EC_4.1.1.1__Arabidopsis_thaliana,Q9FFT4,4.1.1.1,4,Arabidopsis thaliana,control,607
+Q9ULX7__EC_4.2.1.1__Homo_sapiens,Q9ULX7,4.2.1.1,4,Homo sapiens,control,337
+P35218__EC_4.2.1.1__Homo_sapiens,P35218,4.2.1.1,4,Homo sapiens,control,305
+P43166__EC_4.2.1.1__Homo_sapiens,P43166,4.2.1.1,4,Homo sapiens,control,264
+P06733__EC_4.2.1.11__Homo_sapiens,P06733,4.2.1.11,4,Homo sapiens,control,434
+P09104__EC_4.2.1.11__Homo_sapiens,P09104,4.2.1.11,4,Homo sapiens,control,434
+P13929__EC_4.2.1.11__Homo_sapiens,P13929,4.2.1.11,4,Homo sapiens,control,434
+O60266__EC_4.6.1.1__Homo_sapiens,O60266,4.6.1.1,4,Homo sapiens,control,1022
+O95622__EC_4.6.1.1__Homo_sapiens,O95622,4.6.1.1,4,Homo sapiens,control,1022
+P40145__EC_4.6.1.1__Homo_sapiens,P40145,4.6.1.1,4,Homo sapiens,control,1022
+Q96AT9__EC_5.1.3.1__Homo_sapiens,Q96AT9,5.1.3.1,5,Homo sapiens,control,228
+P0AG07__EC_5.1.3.1__Escherichia_coli_(strain_K12),P0AG07,5.1.3.1,5,Escherichia coli (strain K12),control,225
+Q8VEE0__EC_5.1.3.1__Mus_musculus,Q8VEE0,5.1.3.1,5,Mus musculus,control,228
+Q5YXQ1__EC_5.2.1.1__Nocardia_farcinica_(strain_IFM_10152),Q5YXQ1,5.2.1.1,5,Nocardia farcinica (strain IFM 10152),control,251
+O24766__EC_5.2.1.1__Alcaligenes_faecalis,O24766,5.2.1.1,5,Alcaligenes faecalis,control,253
+Q88FY4__EC_5.2.1.1__Pseudomonas_putida_(strain_ATCC_47054_/_,Q88FY4,5.2.1.1,5,Pseudomonas putida (strain ATCC 47054 / ,control,250
+P60174__EC_5.3.1.1__Homo_sapiens,P60174,5.3.1.1,5,Homo sapiens,control,249
+P48500__EC_5.3.1.1__Rattus_norvegicus,P48500,5.3.1.1,5,Rattus norvegicus,control,249
+P29613__EC_5.3.1.1__Drosophila_melanogaster,P29613,5.3.1.1,5,Drosophila melanogaster,control,247
+Q96G03__EC_5.4.2.2__Homo_sapiens,Q96G03,5.4.2.2,5,Homo sapiens,control,612
+P36871__EC_5.4.2.2__Homo_sapiens,P36871,5.4.2.2,5,Homo sapiens,control,562
+P38652__EC_5.4.2.2__Rattus_norvegicus,P38652,5.4.2.2,5,Rattus norvegicus,control,562
+P54577__EC_6.1.1.1__Homo_sapiens,P54577,6.1.1.1,6,Homo sapiens,control,528
+Q9Y2Z4__EC_6.1.1.1__Homo_sapiens,Q9Y2Z4,6.1.1.1,6,Homo sapiens,control,477
+P0AGJ9__EC_6.1.1.1__Escherichia_coli_(strain_K12),P0AGJ9,6.1.1.1,6,Escherichia coli (strain K12),control,424
+Q13085__EC_6.4.1.2__Homo_sapiens,Q13085,6.4.1.2,6,Homo sapiens,control,1022
+O00763__EC_6.4.1.2__Homo_sapiens,O00763,6.4.1.2,6,Homo sapiens,control,1022
+E9Q4Z2__EC_6.4.1.2__Mus_musculus,E9Q4Z2,6.4.1.2,6,Mus musculus,control,1022
+Q13423__EC_7.1.1.1__Homo_sapiens,Q13423,7.1.1.1,7,Homo sapiens,control,1022
+P11024__EC_7.1.1.1__Bos_taurus,P11024,7.1.1.1,7,Bos taurus,control,1022
+Q61941__EC_7.1.1.1__Mus_musculus,Q61941,7.1.1.1,7,Mus musculus,control,1022
+Q12691__EC_7.2.2.3__Saccharomyces_cerevisiae_(strain_ATCC_20,Q12691,7.2.2.3,7,Saccharomyces cerevisiae (strain ATCC 20,control,1022
+P13587__EC_7.2.2.3__Saccharomyces_cerevisiae_(strain_ATCC_20,P13587,7.2.2.3,7,Saccharomyces cerevisiae (strain ATCC 20,control,1022
+Q01896__EC_7.2.2.3__Saccharomyces_cerevisiae_(strain_ATCC_20,Q01896,7.2.2.3,7,Saccharomyces cerevisiae (strain ATCC 20,control,1022

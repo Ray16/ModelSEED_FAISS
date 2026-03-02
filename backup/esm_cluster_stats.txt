@@ -1,0 +1,21 @@
+ESM-2 Embedding Cluster Statistics
+==================================================
+Total sequences:          98
+  Similar:                8
+  Control:                90
+
+Cosine Distance Summary (lower = more similar):
+  Intra-similar (mean):   0.0327 ± 0.0214
+  Intra-control (mean):   0.0484 ± 0.0313
+  Inter-group (mean):     0.0484 ± 0.0281
+
+Intra-EC distances (similar group):
+  EC 6.3.2.11      :  0.0021
+  EC 6.3.2.2       :  0.0001
+  EC 6.3.4.24      :  0.0012
+
+Silhouette Score (similar vs control): -0.0084
+  (1.0 = perfect separation, 0.0 = overlapping, <0 = wrong clustering)
+
+Separation ratio (intra-sim / inter): 0.6759
+  (<1.0 means similar-group is tighter than inter-group → good)

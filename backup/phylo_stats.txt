@@ -1,0 +1,25 @@
+Phylogenetic Tree Statistics
+==================================================
+
+Branch support (SH-like aLRT):
+  Total internal nodes:   151
+  Nodes with support:     147
+  Mean support:           0.835
+  Median support:         0.958
+  Nodes ≥ 0.90:           87
+  Nodes ≥ 0.70:           119
+
+Pairwise Tree Distances:
+  Similar group (10 leaves):
+    Intra-similar:  3.8342 ± 1.8952
+  Control group (143 leaves):
+    Intra-control:  4.5755 ± 0.8345
+  Inter-group:      4.7729 ± 0.4115
+
+  Separation ratio (intra-sim / inter): 0.8033
+    (<1.0 = similar group is tighter → good)
+
+  Intra-EC distances (similar group):
+    EC 6.3.2.11      : 0.5175 ± 0.2301 (n=3)
+    EC 6.3.2.2       : 2.1722 ± 2.2128 (n=5)
+    EC 6.3.4.24      : 0.2166 ± 0.0000 (n=2)
