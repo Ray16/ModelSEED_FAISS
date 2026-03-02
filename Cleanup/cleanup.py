@@ -3,6 +3,7 @@ import sys
 from collections import Counter, defaultdict
 from multiprocessing import Pool, cpu_count
 from rdkit import Chem
+from rdkit.Chem import AllChem
 from rdkit.Chem.inchi import MolFromInchi, MolToInchi, InchiToInchiKey
 
 
@@ -94,7 +95,27 @@ def process_compound(args):
             final_inchi = inchi_str
             final_inchikey = inchi_computed_inchikey
             try:
-                final_smiles = Chem.MolToSmiles(inchi_mol)
+                # Assign stereo from InChI mol before converting to SMILES
+                Chem.AssignStereochemistry(inchi_mol, cleanIt=True, force=True)
+                candidate = Chem.MolToSmiles(inchi_mol, isomericSmiles=True)
+                # Verify round-trip: SMILES -> InChIKey should match InChI-derived key
+                check_mol = Chem.MolFromSmiles(candidate)
+                if check_mol:
+                    check_inchi = MolToInchi(check_mol)
+                    check_key = InchiToInchiKey(check_inchi) if check_inchi else None
+                    if check_key == inchi_computed_inchikey:
+                        final_smiles = candidate
+                    else:
+                        # Round-trip failed — same connectivity check
+                        if (check_key and
+                                check_key.split('-')[0] == inchi_computed_inchikey.split('-')[0]):
+                            # Stereo-only loss, keep best-effort SMILES
+                            final_smiles = candidate
+                        else:
+                            # Can't produce matching SMILES, drop it
+                            final_smiles = None
+                else:
+                    final_smiles = None
             except Exception:
                 final_smiles = None
     elif inchi_computed_inchikey:
