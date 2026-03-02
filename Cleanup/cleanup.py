@@ -212,7 +212,7 @@ def cleanup():
         out.write('ID\tType\tAliases\tFormula\tCharge\tStructure\n')
         for cpd_id in sorted(results.keys()):
             r = results[cpd_id]
-            for typ in ('SMILE', 'InChI', 'InChIKey'):
+            for typ in ('SMILE', 'InChIKey', 'InChI'):
                 struct = r.get(typ)
                 if struct and struct != 'null':
                     out.write(f"{cpd_id}\t{typ}\t{r['aliases']}\t{r['formula']}\t{r['charge']}\t{struct}\n")
