@@ -1,0 +1,380 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage{multirow}
+
+\definecolor{acceptgreen}{RGB}{34,139,34}
+\definecolor{rejectred}{RGB}{178,34,34}
+\definecolor{warnblue}{RGB}{0,90,156}
+\definecolor{codebg}{RGB}{245,245,245}
+
+\lstset{
+  basicstyle=\ttfamily\scriptsize,
+  backgroundcolor=\color{codebg},
+  frame=single,
+  breaklines=true,
+  columns=fullflexible,
+  keepspaces=true,
+}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamerfont{frametitle}{size=\normalsize}
+\setbeamerfont{title}{size=\large}
+
+\title{PubChem Cross-Validation for ModelSEED Compounds}
+\subtitle{Improved Correction Logic with Quality Gates}
+\author{ModelSEED Database Cleanup}
+\date{\today}
+
+\begin{document}
+
+% =====================================================================
+\begin{frame}
+\titlepage
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Dataset Overview}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Count} \\
+\midrule
+Total compounds with structures        & 37,004 \\
+Total compounds with names             & 45,170 \\
+Compounds with both name + InChIKey    & 30,333 \\
+\midrule
+Unique SMILES entries                  & 36,978 \\
+Unique InChIKey entries                & 30,443 \\
+Unique InChI entries                   & 30,443 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+Cross-validation performed against PubChem using three lookup strategies:
+\begin{enumerate}
+  \item ChEBI xref lookup (highest confidence)
+  \item KEGG xref lookup
+  \item Compound name lookup (lowest confidence)
+\end{enumerate}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Validation Results (First 1,000 Compounds)}
+
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Category} & \textbf{Count} \\
+\midrule
+MATCH              & 828 \\
+PROTONATION\_DIFF  & 109 \\
+MISMATCH           &  35 \\
+STEREO\_DIFF       &  26 \\
+NOT\_FOUND         &   2 \\
+\midrule
+\textbf{Total}     & \textbf{1,000} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{column}
+
+\begin{column}{0.50\textwidth}
+\textbf{Category definitions:}
+\begin{description}\footnotesize
+  \item[MATCH] InChIKey identical
+  \item[PROTONATION\_DIFF] Same connectivity and stereo, different protonation
+        (3rd block of InChIKey)
+  \item[STEREO\_DIFF] Same connectivity, different stereochemistry
+        (2nd block)
+  \item[MISMATCH] Different connectivity (1st block)
+  \item[NOT\_FOUND] Not in PubChem
+\end{description}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Correction Statistics}
+
+\textbf{61 compounds} flagged for correction (35 MISMATCH + 26 STEREO\_DIFF).
+
+\bigskip
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+& \textbf{Total} & \textbf{Accepted} & \textbf{Rejected} \\
+\midrule
+MISMATCH (formula verified)   & 35 & 19 & 16 \\
+STEREO\_DIFF (stereo checked) & 26 &  5 & 21 \\
+\midrule
+\textbf{Total}                & \textbf{61} & \textbf{24} & \textbf{37} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\begin{itemize}
+  \item \textbf{21 STEREO\_DIFF rejected}: PubChem had fewer defined
+        stereocenters (would lose stereochemistry)
+  \item \textbf{16 MISMATCH rejected}: PubChem formula did not match stored
+        formula (likely wrong compound mapping)
+  \item \textbf{24 accepted}: Validated corrections that improve the data
+\end{itemize}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Corrections Applied (24 Compounds)}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Field Updated} & \textbf{Count} \\
+\midrule
+SMILES         & 24 \\
+InChIKey       & 24 \\
+InChI          & 24 \\
+Formula/Charge & 24$^*$ \\
+\midrule
+\textbf{Total field changes} & \textbf{96} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\begin{itemize}
+  \item 19 MISMATCH corrections (formula verified against stored formula)
+  \item 5 STEREO\_DIFF corrections (PubChem added missing stereochemistry)
+\end{itemize}
+
+\bigskip
+\footnotesize
+$^*$Formula and Charge columns are recomputed from the corrected InChI
+to maintain internal consistency across all six columns.
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Validation Gate: Decision Logic}
+
+\begin{center}
+\begin{tikzpicture}[
+  every node/.style={font=\footnotesize},
+  box/.style={rectangle, draw, rounded corners, minimum width=2cm,
+              minimum height=0.6cm, align=center},
+  decision/.style={diamond, draw, aspect=2.5, inner sep=2pt,
+                   align=center, font=\footnotesize},
+  accept/.style={box, fill=green!20},
+  reject/.style={box, fill=red!15},
+]
+  \node[box] (input) at (0,0) {Correction\\candidate};
+  \node[decision] (type) at (3.5,0) {Result\\type?};
+
+  \node[reject] (prot) at (7.5,2.2) {Skip\\(pH-dependent)};
+  \node[decision] (stereo) at (7.5,0) {PubChem\\stereo $\geq$\\stored?};
+  \node[decision] (formula) at (7.5,-2.2) {Formula\\matches?};
+
+  \node[accept] (s_ok) at (11.5,0.6) {Accept};
+  \node[reject] (s_no) at (11.5,-0.6) {Reject};
+
+  \node[accept] (f_ok) at (11.5,-1.6) {Accept};
+  \node[reject] (f_no) at (11.5,-2.8) {Reject};
+
+  \draw[->,thick] (input) -- (type);
+  \draw[->,thick] (type) -- node[left,font=\scriptsize]{PROT\_DIFF} (prot);
+  \draw[->,thick] (type) -- node[above,font=\scriptsize]{STEREO\_DIFF} (stereo);
+  \draw[->,thick] (type) -- node[left,font=\scriptsize]{MISMATCH} (formula);
+  \draw[->,thick] (stereo) -- node[above,font=\scriptsize]{Yes} (s_ok);
+  \draw[->,thick] (stereo) -- node[below,font=\scriptsize]{No} (s_no);
+  \draw[->,thick] (formula) -- node[above,font=\scriptsize]{Yes} (f_ok);
+  \draw[->,thick] (formula) -- node[below,font=\scriptsize]{No} (f_no);
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Stereochemistry Gate: Examples}
+
+Corrections are only accepted when PubChem has $\geq$ defined stereocenters.
+
+\bigskip
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{llccl}
+\toprule
+\textbf{Compound} & \textbf{Name}
+  & \textbf{Stored Stereo} & \textbf{PubChem Stereo} & \textbf{Decision} \\
+\midrule
+cpd00121 & Inositol   & 6 / 6 & 0 / 6 & \textcolor{rejectred}{Rejected} \\
+cpd00306 & Xylitol    & 3 / 3 & 2 / 3 & \textcolor{rejectred}{Rejected} \\
+cpd00366 & Arabitol   & 3 / 3 & 2 / 3 & \textcolor{rejectred}{Rejected} \\
+cpd00361 & Acetoin    & 0 / 1 & 1 / 1 & \textcolor{acceptgreen}{Accepted} \\
+cpd01049 & Atropine   & 3 / 4 & 2 / 4 & \textcolor{rejectred}{Rejected} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\footnotesize
+\textit{Format: defined / potential stereocenters.
+PubChem often stores the parent compound without resolved stereochemistry,
+while ModelSEED stores the specific biological stereoisomer.}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}[fragile]{Formula Gate: Examples}
+
+Corrections are only accepted when the molecular formula matches.
+
+\bigskip
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{lp{2cm}lll}
+\toprule
+\textbf{Compound} & \textbf{Name}
+  & \textbf{Stored} & \textbf{PubChem} & \textbf{Decision} \\
+\midrule
+cpd00151 & Thymine
+  & C$_5$H$_6$N$_2$O$_2$ & C$_5$H$_6$N$_2$O$_2$ & \textcolor{acceptgreen}{Accepted} \\
+cpd00204 & Carbon monoxide
+  & CHO & CO & \textcolor{rejectred}{Rejected} \\
+cpd00250 & Creatine
+  & C$_4$H$_9$N$_3$O$_2$ & C$_4$H$_9$N$_3$O$_2$ & \textcolor{acceptgreen}{Accepted} \\
+cpd00271 & Ferricyanide
+  & C$_6$FeN$_6$ & C$_6$FeN$_6$ & \textcolor{acceptgreen}{Accepted} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\footnotesize
+\textit{cpd00204: ChEBI:17245 maps to neutral CO in PubChem (CID~281), but
+the stored structure is a protonated form (CHO$^+$). The formula mismatch
+reveals an incorrect xref mapping.}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Cross-Validation: xref and Name Lookups}
+
+\textbf{xref cross-validation}: Compounds with both ChEBI and KEGG
+identifiers are queried against both databases. Conflicting CIDs are flagged
+as \texttt{XREF\_CONFLICT} and excluded from auto-correction.
+
+\bigskip
+\textbf{Multi-name cross-validation}: Up to 3 compound names are queried.
+If different names return different PubChem CIDs, the compound is marked
+\texttt{AMBIGUOUS} and excluded.
+
+\bigskip
+\begin{table}[h]
+\centering
+\begin{tabular}{lp{7cm}}
+\toprule
+\textbf{New Status} & \textbf{Meaning} \\
+\midrule
+XREF\_CONFLICT & ChEBI and KEGG xrefs point to different PubChem compounds \\
+AMBIGUOUS      & Multiple compound names resolve to different PubChem CIDs \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\bigskip
+\footnotesize
+\textit{Both categories require manual review before any correction is applied.}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Safety Features}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{Data Preservation}
+\begin{itemize}
+  \item Timestamped backup before every write
+  \item Corrections log appended, not overwritten
+  \item ISO~8601 timestamps on every entry
+  \item Backup auto-removed if no changes
+\end{itemize}
+
+\bigskip
+\textbf{Formula/Charge Consistency}
+\begin{itemize}
+  \item Recomputed from corrected InChI
+  \item Uses BiochemPy InChI parser
+  \item All rows for a compound updated
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{Cache Management}
+\begin{itemize}
+  \item SQLite cache for resumability
+  \item \texttt{-{}-clear-cache} for fresh runs
+  \item Rate-limited PubChem API access
+\end{itemize}
+
+\bigskip
+\textbf{Output Reports}
+\begin{itemize}\footnotesize
+  \item \texttt{pubchem\_validation\_report.tsv}
+  \item \texttt{pubchem\_mismatches.tsv}
+  \item \texttt{pubchem\_protonation\_diffs.tsv}
+  \item \texttt{pubchem\_corrections\_log.tsv}
+\end{itemize}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+% =====================================================================
+\begin{frame}{Summary of Improvements}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{>{\raggedright}p{4.5cm}p{9cm}}
+\toprule
+\textbf{Feature} & \textbf{Description} \\
+\midrule
+Stereo-aware gate & Count stereocenters via RDKit; reject if PubChem has fewer \\
+Formula cross-check & Parse InChI formula; reject if different molecule \\
+Formula/Charge sync & Recompute from corrected InChI; keep all columns consistent \\
+ChEBI/KEGG cross-check & Query both sources; flag conflicts \\
+Multi-name validation & Try 3 names; flag ambiguous mappings \\
+Name dedup fix & Handle multiple compounds sharing the same name \\
+Timestamped backup & Full copy before any modification \\
+Append-mode log & Preserve audit history across runs \\
+Protonation report & Separate file for pH-dependent differences \\
+Cache clearing & \texttt{-{}-clear-cache} for fresh re-validation \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{frame}
+
+\end{document}
