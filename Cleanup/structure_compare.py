@@ -10,7 +10,7 @@ import re
 import sys
 
 from rdkit import Chem, DataStructs
-from rdkit.Chem import FindPotentialStereo, StereoSpecified, rdMolDescriptors
+from rdkit.Chem import FindPotentialStereo, StereoSpecified
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.MolStandardize.rdMolStandardize import TautomerEnumerator
 

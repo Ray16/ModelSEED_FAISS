@@ -131,7 +131,7 @@ def fetch_corrections(conn, db_lock, candidates, structures, workers=5,
         }
 
     # Validate each correction: only accept those that improve the data
-    # Use multiprocessing for the expensive _classify_mismatch calls
+    # Use multiprocessing for the expensive validate_correction calls
     work_items = [(cpd_id, structures.get(cpd_id, {}), corr,
                    corr["result_type"])
                   for cpd_id, corr in raw_result.items()]
