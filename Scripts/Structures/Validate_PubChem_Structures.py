@@ -100,6 +100,39 @@ _taut_enum = rdMolStandardize.TautomerEnumerator()
 _uncharger = rdMolStandardize.Uncharger(canonicalOrder=False)
 _morgan_gen = rdFingerprintGenerator.GetMorganGenerator(radius=2)
 
+_METAL_ATOMIC_NUMS = frozenset({
+    3, 4, 11, 12, 13, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+    31, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 55, 56,
+    57, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83})
+
+
+def _has_metal(mol):
+    return any(a.GetAtomicNum() in _METAL_ATOMIC_NUMS
+               for a in mol.GetAtoms())
+
+
+def _inchi_connectivity_match(mol1, mol2):
+    """True if both molecules share the same InChI connection layer and
+    the same non-hydrogen formula — i.e. identical heavy-atom scaffold,
+    differing only in H positions / bond orders (tautomers)."""
+    try:
+        inchi1 = MolToInchi(mol1)
+        inchi2 = MolToInchi(mol2)
+        if not inchi1 or not inchi2:
+            return False
+        f1, l1 = InChIs.parse(inchi1)
+        f2, l2 = InChIs.parse(inchi2)
+        c1, c2 = l1.get('c', ''), l2.get('c', '')
+        if not c1 or c1 != c2:
+            return False
+        a1 = _parse_formula(f1)
+        a2 = _parse_formula(f2)
+        a1.pop("H", None)
+        a2.pop("H", None)
+        return a1 == a2
+    except Exception:
+        return False
+
 
 def _parse_formula(f):
     return Counter({m[0]: int(m[1]) if m[1] else 1
@@ -172,11 +205,38 @@ class RateLimiter:
             time.sleep(wait)
 
 
-_rate_limiter = RateLimiter(rate=5.0)
+class _ServerHealth:
+    """Coordinate backpressure across threads when PubChem returns 503/429."""
+
+    def __init__(self, pause_seconds=30.0):
+        self._lock = threading.Lock()
+        self._paused_until = 0.0
+        self._pause_seconds = pause_seconds
+
+    def report_error(self):
+        with self._lock:
+            now = time.monotonic()
+            self._paused_until = max(self._paused_until,
+                                     now + self._pause_seconds)
+
+    def wait_if_paused(self):
+        with self._lock:
+            target = self._paused_until
+        now = time.monotonic()
+        if now < target:
+            time.sleep(target - now)
+
+
+_rate_limiter = RateLimiter(rate=3.0)
+_server_health = _ServerHealth()
+
+PUBCHEM_SERVER_ERROR = "PUBCHEM_SERVER_ERROR"
 
 
 def pubchem_request(method, url, **kwargs):
+    saw_server_error = False
     for attempt in range(MAX_RETRIES):
+        _server_health.wait_if_paused()
         _rate_limiter.acquire()
         try:
             resp = (requests.get(url, timeout=30, **kwargs) if method == "GET"
@@ -186,15 +246,19 @@ def pubchem_request(method, url, **kwargs):
             if resp.status_code == 404:
                 return None
             if resp.status_code in (429, 500, 502, 503, 504):
+                saw_server_error = True
                 wait = 2 ** (attempt + 1)
                 logger.warning("PubChem %d, retrying in %ds...",
                                resp.status_code, wait)
+                if resp.status_code in (429, 503):
+                    _server_health.report_error()
                 time.sleep(wait)
                 continue
             return None
         except (requests.RequestException, ValueError):
+            saw_server_error = True
             time.sleep(2 ** (attempt + 1))
-    return None
+    return PUBCHEM_SERVER_ERROR if saw_server_error else None
 
 
 def _pubchem_props(method, url, **kwargs):
@@ -227,14 +291,21 @@ def query_inchi(inchi_str):
         data={"inchi": inchi_str})
 
 
-def _query_names_batch_recursive(name_list):
+_MAX_NAME_SPLIT_DEPTH = 7
+_MAX_BATCH_RETRIES = 2
+
+
+def _query_names_batch_recursive(name_list, _depth=0):
     if not name_list:
         return {}
     url = (f"{PUBCHEM_BASE}/compound/name"
            f"/property/InChIKey,IsomericSMILES/JSON")
+
     if len(name_list) == 1:
         name = name_list[0]
         data = pubchem_request("POST", url, data={"name": name})
+        if data is PUBCHEM_SERVER_ERROR:
+            return {}
         if data and "PropertyTable" in data:
             props = data["PropertyTable"]["Properties"]
             if not props:
@@ -243,11 +314,44 @@ def _query_names_batch_recursive(name_list):
             return {name: (str(p.get("CID", "")),
                            p.get("InChIKey", ""), _extract_smiles(p))}
         return {}
-    results = {}
-    for name in name_list:
-        r = _query_names_batch_recursive([name])
-        results.update(r)
-    return results
+
+    joined = "\n".join(name_list)
+    data = pubchem_request("POST", url, data={"name": joined})
+
+    if data is PUBCHEM_SERVER_ERROR:
+        for _ in range(_MAX_BATCH_RETRIES):
+            _server_health.wait_if_paused()
+            data = pubchem_request("POST", url, data={"name": joined})
+            if data is not PUBCHEM_SERVER_ERROR:
+                break
+        if data is PUBCHEM_SERVER_ERROR:
+            logger.warning("Persistent server error, skipping %d names",
+                           len(name_list))
+            return {}
+
+    if data and "PropertyTable" in data:
+        props_list = data["PropertyTable"]["Properties"]
+        results = {}
+        for i, props in enumerate(props_list):
+            if i < len(name_list):
+                results[name_list[i]] = (
+                    str(props.get("CID", "")),
+                    props.get("InChIKey", ""),
+                    _extract_smiles(props),
+                )
+        return results
+
+    if _depth >= _MAX_NAME_SPLIT_DEPTH:
+        results = {}
+        for name in name_list:
+            results.update(_query_names_batch_recursive([name]))
+        return results
+
+    mid = len(name_list) // 2
+    left = _query_names_batch_recursive(name_list[:mid], _depth + 1)
+    right = _query_names_batch_recursive(name_list[mid:], _depth + 1)
+    left.update(right)
+    return left
 
 
 def query_cid_properties_batch(cid_list):
@@ -561,9 +665,24 @@ def _classify_mismatch(stored_struct, pubchem_struct):
             pf_no_h = {k: v for k, v in pf_atoms.items() if k != "H"}
             if sf_no_h == pf_no_h:
                 h_diff = pf_atoms.get("H", 0) - sf_atoms.get("H", 0)
+                if abs(h_diff) > 10:
+                    return (f"IGNORE:protonation_formula_diff_large "
+                            f"(formula: stored={sf}, pubchem={pf}, "
+                            f"H_diff={h_diff:+d}, likely metal cluster "
+                            f"or coordination representation diff)",
+                            "PROTONATION_DIFF")
                 return (f"IGNORE:protonation_formula_diff (formula: "
                         f"stored={sf}, pubchem={pf}, H_diff={h_diff:+d})",
                         "PROTONATION_DIFF")
+            _COUNTERIONS = {"Na", "K", "Cl", "Br", "Ca", "Li", "Cs",
+                            "Mg", "I", "F"}
+            diff_atoms = (set(sf_no_h.keys()) ^ set(pf_no_h.keys()))
+            changed_atoms = {k for k in (set(sf_no_h) & set(pf_no_h))
+                             if sf_no_h[k] != pf_no_h[k]}
+            all_differing = diff_atoms | changed_atoms
+            if all_differing and all_differing <= _COUNTERIONS:
+                return (f"IGNORE:salt_form_difference (formula: "
+                        f"stored={sf}, pubchem={pf})", None)
             return (f"IGNORE:wrong_mapping (formula: stored={sf}, "
                     f"pubchem={pf})", None)
 
@@ -601,9 +720,36 @@ def _classify_mismatch(stored_struct, pubchem_struct):
     except Exception:
         pass
 
+    if _has_metal(s_mol) or _has_metal(p_mol):
+        return ("IGNORE:metal_representation_diff (metal coordination "
+                "or charge representation differs)"), None
+
+    conn_match = _inchi_connectivity_match(s_mol, p_mol)
+    if conn_match:
+        return ("IGNORE:tautomer_connectivity (same heavy-atom "
+                "connectivity, different H positions — tautomer "
+                "not recognized by RDKit enumerator)"), None
+
+    stored_ik = stored_struct.get("inchikey", "")
+    pub_ik = pubchem_struct.get("inchikey", "")
+    s_ik_parts = stored_ik.split("-") if stored_ik else []
+    p_ik_parts = pub_ik.split("-") if pub_ik else []
+    ik_valid = len(s_ik_parts) == 3 and len(p_ik_parts) == 3
+
+    if (ik_valid and s_ik_parts[1] == p_ik_parts[1]
+            and s_ik_parts[2] == p_ik_parts[2]):
+        return ("IGNORE:tautomer_inchikey (same stereo+protonation "
+                "layers, different connectivity — likely tautomer "
+                "not recognized by RDKit enumerator)"), None
+
     sim = DataStructs.TanimotoSimilarity(
         _morgan_gen.GetFingerprint(s_mol), _morgan_gen.GetFingerprint(p_mol))
     if sim >= TANIMOTO_CUTOFF:
+        if (ik_valid and s_ik_parts[0] != p_ik_parts[0]
+                and s_ik_parts[1] != p_ik_parts[1]):
+            return (f"REVIEW:likely_positional_isomer (tanimoto="
+                    f"{sim:.2f}, different connectivity+stereo "
+                    f"layers)"), None
         return (f"IGNORE:likely_tautomer (tanimoto={sim:.2f})"), None
     return (f"REVIEW:different_compound (tanimoto={sim:.2f}, likely "
             f"wrong xref mapping)"), None
@@ -1862,6 +2008,7 @@ def apply_corrections_dual_format(corrections, consistency_fixes, structures,
     with open(corrections_log_path, "w", newline="") as log_fh:
         log_writer = csv.writer(log_fh, delimiter="\t")
         log_writer.writerow(log_header)
+        logged_fields = set()
 
         for (cpd_id, typ), indices in charged_indices.items():
             if cpd_id not in all_corrections:
@@ -1880,10 +2027,14 @@ def apply_corrections_dual_format(corrections, consistency_fixes, structures,
                     row[7] = new_val
                     if cpd_id in formula_updates:
                         row[5], row[6] = formula_updates[cpd_id]
-                    log_writer.writerow([
-                        ts, cpd_id, corr.get("result_type", ""), typ,
-                        old_val, new_val, corr.get("pubchem_cid", ""),
-                        corr.get("strategy", ""), corr.get("query", "")])
+                    if (cpd_id, typ) not in logged_fields:
+                        log_writer.writerow([
+                            ts, cpd_id, corr.get("result_type", ""),
+                            typ, old_val, new_val,
+                            corr.get("pubchem_cid", ""),
+                            corr.get("strategy", ""),
+                            corr.get("query", "")])
+                        logged_fields.add((cpd_id, typ))
                     total_changes += 1
                     corrected_cpds.add(cpd_id)
 
