@@ -63,23 +63,31 @@ ALIASES_DIR = os.path.join(DB_ROOT, 'Aliases')
 
 ALL_STRUCTURES_FILE = os.path.join(STRUCTURES_DIR, 'All_ModelSEED_Structures.txt')
 UNIQUE_STRUCTURES_FILE = os.path.join(STRUCTURES_DIR, 'Unique_ModelSEED_Structures.txt')
+ALL_STRUCTURES_OUTPUT = os.path.join(STRUCTURES_DIR, 'All_ModelSEED_Structures_updated.txt')
+UNIQUE_STRUCTURES_OUTPUT = os.path.join(STRUCTURES_DIR, 'Unique_ModelSEED_Structures_updated.txt')
 NAMES_FILE = os.path.join(ALIASES_DIR, 'Unique_ModelSEED_Compound_Names.txt')
 ALIASES_FILE = os.path.join(ALIASES_DIR, 'Unique_ModelSEED_Compound_Aliases.txt')
 
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, 'structure_review_output')
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 CACHE_DB = os.path.join(SCRIPT_DIR, 'pubchem_cache.sqlite')
-LOG_FILE = os.path.join(SCRIPT_DIR, 'pubchem_validate.log')
-REPORT_FILE = os.path.join(SCRIPT_DIR, 'pubchem_validation_report.tsv')
-MISMATCH_FILE = os.path.join(SCRIPT_DIR, 'pubchem_mismatches.tsv')
-CORRECTIONS_LOG = os.path.join(SCRIPT_DIR, 'pubchem_corrections_log.tsv')
-PROTONATION_FILE = os.path.join(SCRIPT_DIR, 'pubchem_protonation_diffs.tsv')
-STEREO_FILE = os.path.join(SCRIPT_DIR, 'pubchem_stereo_diffs.tsv')
-REJECTED_FILE = os.path.join(SCRIPT_DIR, 'pubchem_rejected_corrections.tsv')
-PROTONATION_CORRECTIONS_FILE = os.path.join(SCRIPT_DIR,
+LOG_FILE = os.path.join(OUTPUT_DIR, 'pubchem_validate.log')
+REPORT_FILE = os.path.join(OUTPUT_DIR, 'pubchem_validation_report.tsv')
+MISMATCH_FILE = os.path.join(OUTPUT_DIR, 'pubchem_mismatches.tsv')
+CORRECTIONS_LOG = os.path.join(OUTPUT_DIR, 'pubchem_corrections_log.tsv')
+PROTONATION_FILE = os.path.join(OUTPUT_DIR, 'pubchem_protonation_diffs.tsv')
+STEREO_FILE = os.path.join(OUTPUT_DIR, 'pubchem_stereo_diffs.tsv')
+REJECTED_FILE = os.path.join(OUTPUT_DIR, 'pubchem_rejected_corrections.tsv')
+PROTONATION_CORRECTIONS_FILE = os.path.join(OUTPUT_DIR,
                                              'pubchem_protonation_corrections.tsv')
-REVIEW_FILE = os.path.join(SCRIPT_DIR, 'pubchem_review_different_compounds.tsv')
-CONSISTENCY_FILE = os.path.join(SCRIPT_DIR, 'consistency_report.tsv')
-TAUTOMER_FILE = os.path.join(SCRIPT_DIR, 'pubchem_tautomer_diffs.tsv')
-IMAGES_DIR = os.path.join(SCRIPT_DIR, 'struct_imgs')
+REVIEW_FILE = os.path.join(OUTPUT_DIR, 'pubchem_review_different_compounds.tsv')
+CONSISTENCY_FILE = os.path.join(OUTPUT_DIR, 'consistency_report.tsv')
+TAUTOMER_FILE = os.path.join(OUTPUT_DIR, 'pubchem_tautomer_diffs.tsv')
+IMAGES_DIR = os.path.join(OUTPUT_DIR, 'struct_imgs')
+STEREO_REVIEW_FILE = os.path.join(OUTPUT_DIR, 'pubchem_stereo_review.tsv')
+SMILES_FAILURES_FILE = os.path.join(OUTPUT_DIR, 'pubchem_smiles_failures.tsv')
+XREF_CONFLICTS_FILE = os.path.join(OUTPUT_DIR, 'pubchem_xref_conflicts.tsv')
 
 logger = logging.getLogger("pubchem_validate")
 logger.setLevel(logging.DEBUG)
@@ -933,11 +941,35 @@ def _mol_to_result(mol):
     return {'smiles': smiles, 'inchi': inchi, 'inchikey': inchikey}
 
 
+_STRONG_ACID_PROTONATED_SMARTS = [
+    (Chem.MolFromSmarts('[CX3](=O)[OX2H1]'), 'carboxylic_acid'),
+    (Chem.MolFromSmarts('[SX4](=O)(=O)[OX2H1]'), 'sulfonic_acid'),
+    (Chem.MolFromSmarts('[SX3](=O)[OX2H1]'), 'sulfinic_acid'),
+]
+
+
+def _correction_protonates_strong_acid(stored_smiles, result_smiles):
+    """Reject if the correction introduced protonated strong-acid groups
+    (pKa << 7) that were deprotonated in the stored structure."""
+    stored_mol = Chem.MolFromSmiles(stored_smiles)
+    result_mol = Chem.MolFromSmiles(result_smiles)
+    if stored_mol is None or result_mol is None:
+        return False, None
+    for pattern, name in _STRONG_ACID_PROTONATED_SMARTS:
+        stored_count = len(stored_mol.GetSubstructMatches(pattern))
+        result_count = len(result_mol.GetSubstructMatches(pattern))
+        if result_count > stored_count:
+            return True, (f"correction protonates {name} "
+                          f"(count {stored_count} -> {result_count}, "
+                          f"pKa << 7, should remain deprotonated at pH 7)")
+    return False, None
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # Section 7: Pipeline Phases 0–5
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def run_phase0_consistency(structures, report_file=None):
+def run_phase0_consistency(structures, names=None, report_file=None):
     if report_file is None:
         report_file = CONSISTENCY_FILE
     logger.info("Phase 0: Self-consistency validation")
@@ -1080,6 +1112,28 @@ def run_phase0_consistency(structures, report_file=None):
         if stats[key]:
             logger.info("  %s: %d", key.replace('_', ' '), stats[key])
     logger.info("  Consistency fixes to persist: %d", len(consistency_fixes))
+
+    smiles_failures = [r for r in report_rows
+                       if r['issue'] == 'smiles_parse_fail']
+    if smiles_failures and names:
+        with open(SMILES_FAILURES_FILE, 'w', newline='') as fh:
+            writer = csv.writer(fh, delimiter='\t')
+            writer.writerow(['cpd_id', 'compound_name', 'smiles',
+                             'inchi', 'inchikey', 'formula'])
+            for row in sorted(smiles_failures, key=lambda r: r['cpd_id']):
+                cpd_id = row['cpd_id']
+                s = structures.get(cpd_id, {})
+                cpd_names = names.get(cpd_id, [])
+                name = (cpd_names[0] if isinstance(cpd_names, list)
+                        and cpd_names else str(cpd_names)
+                        if cpd_names else '')
+                writer.writerow([cpd_id, name, s.get('smiles', ''),
+                                 s.get('inchi', ''),
+                                 s.get('inchikey', ''),
+                                 s.get('formula', '')])
+        logger.info("  SMILES parse failures: %s (%d compounds)",
+                    SMILES_FAILURES_FILE, len(smiles_failures))
+
     return consistency_fixes
 
 
@@ -1738,6 +1792,20 @@ def run_phase5_corrections(conn, db_lock, candidates, structures, pka_data,
                     "pubchem_smiles", "stored_inchikey", "pubchem_inchikey"],
                    rows)
 
+        stereo_review = [
+            r for r in rows
+            if "stereo_inversion: 1 of" in r[3]
+            and int(r[3].split("1 of ")[1].split()[0]) >= 3]
+        if stereo_review:
+            _write_tsv(STEREO_REVIEW_FILE,
+                       ["cpd_id", "compound_name", "result_type", "reason",
+                        "pubchem_cid", "strategy", "query", "stored_smiles",
+                        "pubchem_smiles", "stored_inchikey",
+                        "pubchem_inchikey"],
+                       stereo_review)
+            logger.info("  Single-inversion stereo review: %s (%d compounds)",
+                        STEREO_REVIEW_FILE, len(stereo_review))
+
     # Normalize STEREO_DIFF corrections to pH 7
     if validated and not skip_ph7:
         normalized = 0
@@ -1781,7 +1849,8 @@ def run_phase5_corrections(conn, db_lock, candidates, structures, pka_data,
             target_charge = pka_info.get('db_charge')
             if target_charge is None or stored_charge == target_charge:
                 continue
-            if any(6.0 <= v <= 8.0 for _, _, v in pka_info['pka']):
+            if (any(6.0 <= v <= 8.0 for _, _, v in pka_info['pka'])
+                    or any(6.0 <= v <= 8.0 for _, _, v in pka_info['pkb'])):
                 continue
             skip, _ = _should_skip_correction(
                 mol, pka_info, stored_charge, target_charge)
@@ -1794,6 +1863,11 @@ def run_phase5_corrections(conn, db_lock, candidates, structures, pka_data,
             if compare_inchikeys(stored.get("inchikey", ""),
                                  result['inchikey']) not in (
                     "PROTONATION_DIFF", "MATCH"):
+                continue
+            bad, reason = _correction_protonates_strong_acid(
+                stored_smiles, result['smiles'])
+            if bad:
+                logger.debug("  %s skipped: %s", cpd_id, reason)
                 continue
             validated[cpd_id] = {
                 'smiles': result['smiles'], 'inchi': result['inchi'],
@@ -1852,8 +1926,10 @@ def _run_pka_validation(candidates, structures, pka_data, names):
             stats['parse_failed'] += 1
             continue
 
-        borderline = [(a, v) for _, a, v in pka_info['pka']
-                      if 6.0 <= v <= 8.0]
+        borderline = ([(a, v) for _, a, v in pka_info['pka']
+                       if 6.0 <= v <= 8.0]
+                      + [(a, v) for _, a, v in pka_info['pkb']
+                         if 6.0 <= v <= 8.0])
         if borderline:
             if stored_charge != target_charge:
                 stats['borderline_skipped'] += 1
@@ -1890,6 +1966,11 @@ def _run_pka_validation(candidates, structures, pka_data, names):
         stored_ik = stored.get("inchikey", "")
         if compare_inchikeys(stored_ik, result['inchikey']) not in (
                 "PROTONATION_DIFF", "MATCH"):
+            stats['adjustment_failed'] += 1
+            continue
+        bad, reason = _correction_protonates_strong_acid(
+            stored_smiles, result['smiles'])
+        if bad:
             stats['adjustment_failed'] += 1
             continue
         formula, _ = compute_formula_charge_from_inchi(result['inchi'])
@@ -1942,17 +2023,23 @@ def _run_pka_validation(candidates, structures, pka_data, names):
 
 def apply_corrections_dual_format(corrections, consistency_fixes, structures,
                                   all_file_path=None, unique_file_path=None,
+                                  all_output_path=None, unique_output_path=None,
                                   corrections_log_path=None):
     if all_file_path is None:
         all_file_path = ALL_STRUCTURES_FILE
     if unique_file_path is None:
         unique_file_path = UNIQUE_STRUCTURES_FILE
+    if all_output_path is None:
+        all_output_path = ALL_STRUCTURES_OUTPUT
+    if unique_output_path is None:
+        unique_output_path = UNIQUE_STRUCTURES_OUTPUT
     if corrections_log_path is None:
         corrections_log_path = CORRECTIONS_LOG
 
     logger.info("Phase 6: Apply corrections & write output")
-    logger.info("  All file: %s", all_file_path)
-    logger.info("  Unique file: %s", unique_file_path)
+    logger.info("  Reading from: %s", all_file_path)
+    logger.info("  Writing All to: %s", all_output_path)
+    logger.info("  Writing Unique to: %s", unique_output_path)
 
     # Merge consistency fixes into corrections
     all_corrections = dict(corrections)
@@ -2082,12 +2169,12 @@ def apply_corrections_dual_format(corrections, consistency_fixes, structures,
     logger.info("  SMILES canonicalized: %d", smiles_canonicalized)
 
     # Write All file (atomic)
-    tmp_all = all_file_path + ".tmp"
+    tmp_all = all_output_path + ".tmp"
     with open(tmp_all, 'w') as fh:
         for row in all_rows:
             fh.write('\t'.join(row) + '\n')
-    os.replace(tmp_all, all_file_path)
-    logger.info("  All file written: %s", all_file_path)
+    os.replace(tmp_all, all_output_path)
+    logger.info("  All file written: %s", all_output_path)
 
     # Build and write Unique file
     unique = {}
@@ -2128,7 +2215,7 @@ def apply_corrections_dual_format(corrections, consistency_fixes, structures,
                 unique[key]["formula"] = best_formula
                 unique[key]["charge"] = best_charge
 
-    tmp_unique = unique_file_path + ".tmp"
+    tmp_unique = unique_output_path + ".tmp"
     with open(tmp_unique, "w", newline="") as fh:
         writer = csv.writer(fh, delimiter="\t")
         writer.writerow(["ID", "Type", "Aliases", "Formula", "Charge",
@@ -2142,8 +2229,8 @@ def apply_corrections_dual_format(corrections, consistency_fixes, structures,
                 writer.writerow([
                     cpd_id, typ, ";".join(sorted(entry["aliases"])),
                     entry["formula"], entry["charge"], entry["structure"]])
-    os.replace(tmp_unique, unique_file_path)
-    logger.info("  Unique file written: %s", unique_file_path)
+    os.replace(tmp_unique, unique_output_path)
+    logger.info("  Unique file written: %s", unique_output_path)
     logger.info("  Compounds corrected: %d, fields changed: %d",
                 len(corrected_cpds), total_changes)
     logger.info("  Corrections log: %s", corrections_log_path)
@@ -2351,6 +2438,45 @@ def generate_report(conn, db_lock, candidates, structures, names,
                                   key=lambda x: -x[1]):
             logger.info("    %-40s: %4d", subcat, cnt)
     return reclassifications
+
+
+def generate_xref_conflict_report(conn, candidates, structures, names):
+    cur = conn.execute(
+        "SELECT cpd_id, query FROM cache WHERE strategy = 'xref_conflict' "
+        "AND cpd_id IN ({})".format(",".join("?" * len(candidates))),
+        candidates)
+    conflicts = cur.fetchall()
+    if not conflicts:
+        return
+    rows = []
+    for cpd_id, query_str in conflicts:
+        stored_ik = structures.get(cpd_id, {}).get("inchikey", "")
+        cpd_names = names.get(cpd_id, []) if names else []
+        name = cpd_names[0] if isinstance(cpd_names, list) and cpd_names \
+            else str(cpd_names) if cpd_names else ''
+        cids = re.findall(r'CID(\d+)', query_str or '')
+        parts = (query_str or '').split(';')
+        chebi_cid, kegg_cid = '', ''
+        for part in parts:
+            if 'chebi' in part.lower():
+                m = re.search(r'CID(\d+)', part)
+                if m:
+                    chebi_cid = m.group(1)
+            elif 'kegg' in part.lower():
+                m = re.search(r'CID(\d+)', part)
+                if m:
+                    kegg_cid = m.group(1)
+        if not chebi_cid and not kegg_cid and len(cids) >= 2:
+            chebi_cid, kegg_cid = cids[0], cids[1]
+        rows.append([cpd_id, name, stored_ik, chebi_cid, kegg_cid,
+                      query_str or ''])
+    if rows:
+        _write_tsv(XREF_CONFLICTS_FILE,
+                   ["cpd_id", "compound_name", "stored_inchikey",
+                    "chebi_cid", "kegg_cid", "raw_query"],
+                   sorted(rows, key=lambda r: r[0]))
+        logger.info("XREF conflict report: %s (%d compounds)",
+                    XREF_CONFLICTS_FILE, len(rows))
 
 
 def generate_comparison_images(conn, candidates, structures, images_dir,
@@ -2671,7 +2797,7 @@ def main():
                 cpds_with_names, total_cpds - cpds_with_names)
 
     consistency_fixes = run_phase0_consistency(
-        structures, report_file=CONSISTENCY_FILE)
+        structures, names=names, report_file=CONSISTENCY_FILE)
 
     pka_data = load_pka_from_db()
     logger.info("ChemAxon pKa data loaded: %d compounds", len(pka_data))
@@ -2710,6 +2836,8 @@ def main():
             protonation_file=PROTONATION_FILE, stereo_file=STEREO_FILE,
             tautomer_file=TAUTOMER_FILE)
 
+        generate_xref_conflict_report(conn, candidates, structures, names)
+
         corrections = {}
         if args.apply or args.images:
             corrections = run_phase5_corrections(
@@ -2722,6 +2850,8 @@ def main():
                 corrections, consistency_fixes, structures,
                 all_file_path=ALL_STRUCTURES_FILE,
                 unique_file_path=UNIQUE_STRUCTURES_FILE,
+                all_output_path=ALL_STRUCTURES_OUTPUT,
+                unique_output_path=UNIQUE_STRUCTURES_OUTPUT,
                 corrections_log_path=CORRECTIONS_LOG)
 
         if args.images:
