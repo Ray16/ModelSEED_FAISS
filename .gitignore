@@ -8,4 +8,9 @@ __pycache__/
 *.toc
 *.vrb
 .claude/
+.DS_Store
 Cleanup/backup/
+Cleanup/struct_imgs/
+Cleanup/.nfs*
+before_refactor/
+data/

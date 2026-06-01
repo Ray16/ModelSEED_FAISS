@@ -27,7 +27,8 @@ logger = logging.getLogger("pubchem_validate")
 
 
 def generate_report(conn, candidates, structures, names,
-                    report_file, mismatch_file, protonation_file, stereo_file):
+                    report_file, mismatch_file, protonation_file, stereo_file,
+                    tautomer_file=None):
     """Generate TSV reports from cache with enriched columns."""
     logger.info("Generating report...")
     cur = conn.execute("SELECT * FROM cache WHERE cpd_id IN ({})".format(
@@ -161,6 +162,17 @@ def generate_report(conn, candidates, structures, names,
         for subcat, cnt in sorted(mismatch_substats.items(),
                                   key=lambda x: -x[1]):
             logger.info("    %-40s: %4d", subcat, cnt)
+    # Extract tautomer-flagged compounds from mismatches
+    if tautomer_file and mismatch_rows:
+        tautomer_rows = [r for r in mismatch_rows if 'tautomer' in r[-1].lower()]
+        if tautomer_rows:
+            with open(tautomer_file, "w", newline="") as fh:
+                writer = csv.writer(fh, delimiter="\t")
+                writer.writerow(mismatch_header)
+                writer.writerows(tautomer_rows)
+            logger.info("Tautomer diffs:    %s (%d compounds)",
+                        tautomer_file, len(tautomer_rows))
+
     logger.info("Full report:       %s", report_file)
     logger.info("Mismatches only:   %s", mismatch_file)
     if protonation_rows:
@@ -338,3 +350,199 @@ def generate_comparison_images(conn, candidates, structures, images_dir,
 
     logger.info("  Structure images written: %d (in %s/)", total_images,
                 images_dir)
+
+
+def generate_different_compound_review(conn, candidates, structures, names,
+                                       mismatch_file, review_file,
+                                       workers=5):
+    """Generate actionable review report for REVIEW:different_compound mismatches.
+
+    Reads the mismatch TSV, filters to REVIEW:different_compound rows, tries
+    alternative lookups (InChIKey, InChI) to find the correct PubChem CID,
+    classifies likely cause, and writes a prioritized review TSV.
+    """
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    from pubchem_api import query_inchikey, query_inchi
+
+    # Read REVIEW:different_compound rows from mismatch file
+    review_cpds = {}
+    if not os.path.exists(mismatch_file):
+        logger.warning("Mismatch file not found: %s", mismatch_file)
+        return
+
+    with open(mismatch_file, 'r') as fh:
+        reader = csv.DictReader(fh, delimiter='\t')
+        for row in reader:
+            detail = row.get('mismatch_detail', '')
+            if 'REVIEW:different_compound' in detail:
+                review_cpds[row['cpd_id']] = row
+
+    if not review_cpds:
+        logger.info("No REVIEW:different_compound mismatches found.")
+        return
+
+    logger.info("Generating review report for %d different-compound mismatches",
+                len(review_cpds))
+
+    # For each compound, try to find the correct CID via stored InChIKey
+    cpd_list = list(review_cpds.keys())
+    correct_cids = {}  # cpd_id -> (cid, inchikey, smiles, method)
+    to_lookup_ik = []  # (cpd_id, stored_inchikey) for InChIKey lookup
+    to_lookup_inchi = []  # (cpd_id, stored_inchi) for InChI lookup
+
+    for cpd_id in cpd_list:
+        stored = structures.get(cpd_id, {})
+        stored_ik = stored.get('inchikey', '')
+        stored_inchi = stored.get('inchi', '')
+        if stored_ik:
+            to_lookup_ik.append((cpd_id, stored_ik))
+        elif stored_inchi:
+            to_lookup_inchi.append((cpd_id, stored_inchi))
+
+    # Deduplicate InChIKey lookups
+    ik_to_cpds = defaultdict(list)
+    for cpd_id, ik in to_lookup_ik:
+        ik_to_cpds[ik].append(cpd_id)
+    unique_iks = list(ik_to_cpds.keys())
+
+    if unique_iks:
+        logger.info("  Looking up %d unique InChIKeys...", len(unique_iks))
+
+        def do_ik(ik):
+            return (ik, query_inchikey(ik))
+
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(do_ik, ik): ik for ik in unique_iks}
+            for future in as_completed(futures):
+                ik, result = future.result()
+                if result is not None:
+                    cid, pub_ik, smiles = result
+                    for cpd_id in ik_to_cpds[ik]:
+                        correct_cids[cpd_id] = (cid, pub_ik, smiles,
+                                                'inchikey_lookup')
+
+    # InChI lookup for those without InChIKey results
+    inchi_to_cpds = defaultdict(list)
+    for cpd_id, inchi in to_lookup_inchi:
+        if cpd_id not in correct_cids:
+            inchi_to_cpds[inchi].append(cpd_id)
+    unique_inchis = list(inchi_to_cpds.keys())
+
+    if unique_inchis:
+        logger.info("  Looking up %d unique InChIs...", len(unique_inchis))
+
+        def do_inchi(inchi_str):
+            return (inchi_str, query_inchi(inchi_str))
+
+        with ThreadPoolExecutor(max_workers=workers) as executor:
+            futures = {executor.submit(do_inchi, inchi): inchi
+                       for inchi in unique_inchis}
+            for future in as_completed(futures):
+                inchi_str, result = future.result()
+                if result is not None:
+                    cid, pub_ik, smiles = result
+                    for cpd_id in inchi_to_cpds[inchi_str]:
+                        if cpd_id not in correct_cids:
+                            correct_cids[cpd_id] = (cid, pub_ik, smiles,
+                                                    'inchi_lookup')
+
+    # Build review rows
+    review_rows = []
+    for cpd_id, mismatch_row in review_cpds.items():
+        stored = structures.get(cpd_id, {})
+        strategy = mismatch_row.get('strategy', '')
+        query = mismatch_row.get('name_queried', '')
+        bad_cid = mismatch_row.get('pubchem_cid', '')
+        bad_ik = mismatch_row.get('pubchem_inchikey', '')
+        bad_smi = mismatch_row.get('pubchem_smiles', '')
+        detail = mismatch_row.get('mismatch_detail', '')
+
+        # Classify likely cause
+        if 'kegg_xref' in strategy:
+            likely_cause = 'wrong_kegg_mapping'
+        elif 'chebi_xref' in strategy:
+            likely_cause = 'wrong_chebi_mapping'
+        elif 'name_lookup' in strategy:
+            likely_cause = 'ambiguous_name'
+        else:
+            likely_cause = 'unknown'
+
+        # Determine suggested action
+        correct = correct_cids.get(cpd_id)
+        if correct:
+            correct_cid, correct_ik, correct_smi, method = correct
+            if correct_cid == bad_cid:
+                suggested_action = (
+                    f"Stored structure not in PubChem as separate entry; "
+                    f"same CID {bad_cid} returned by {method}")
+            else:
+                suggested_action = (
+                    f"Correct CID is {correct_cid} (found via {method}); "
+                    f"{strategy} xref points to wrong CID {bad_cid}")
+        else:
+            correct_cid, correct_ik = '', ''
+            suggested_action = (
+                f"Compound not found in PubChem via InChIKey/InChI; "
+                f"{strategy} xref {query} maps to wrong compound")
+
+        # Extract Tanimoto from detail
+        tanimoto = ''
+        if 'tanimoto=' in detail:
+            try:
+                tanimoto = detail.split('tanimoto=')[1].split(',')[0].split(')')[0]
+            except (IndexError, ValueError):
+                pass
+
+        cpd_names = names.get(cpd_id, []) if names else []
+        name_str = cpd_names[0] if cpd_names else ""
+
+        review_rows.append({
+            'cpd_id': cpd_id,
+            'compound_name': name_str,
+            'strategy': strategy,
+            'query': query,
+            'likely_cause': likely_cause,
+            'suggested_action': suggested_action,
+            'stored_inchikey': stored.get('inchikey', ''),
+            'stored_smiles': stored.get('smiles', ''),
+            'stored_formula': stored.get('formula', ''),
+            'pubchem_cid_bad': bad_cid,
+            'pubchem_inchikey_bad': bad_ik,
+            'pubchem_smiles_bad': bad_smi,
+            'correct_pubchem_cid': correct_cid,
+            'correct_pubchem_inchikey': correct_ik if correct else '',
+            'tanimoto_similarity': tanimoto,
+        })
+
+    # Sort by actionability: compounds with correct CID first, then by cpd_id
+    review_rows.sort(key=lambda r: (
+        0 if r['correct_pubchem_cid'] else 1,
+        r['cpd_id']
+    ))
+
+    # Write review TSV
+    fieldnames = [
+        'cpd_id', 'compound_name', 'strategy', 'query',
+        'likely_cause', 'suggested_action',
+        'stored_inchikey', 'stored_smiles', 'stored_formula',
+        'pubchem_cid_bad', 'pubchem_inchikey_bad', 'pubchem_smiles_bad',
+        'correct_pubchem_cid', 'correct_pubchem_inchikey',
+        'tanimoto_similarity',
+    ]
+    with open(review_file, 'w', newline='') as fh:
+        writer = csv.DictWriter(fh, fieldnames=fieldnames, delimiter='\t')
+        writer.writeheader()
+        for row in review_rows:
+            writer.writerow(row)
+
+    found_correct = sum(1 for r in review_rows if r['correct_pubchem_cid'])
+    cause_counts = defaultdict(int)
+    for r in review_rows:
+        cause_counts[r['likely_cause']] += 1
+
+    logger.info("  Review report: %s", review_file)
+    logger.info("  Total different-compound mismatches: %d", len(review_rows))
+    logger.info("  Correct CID found: %d", found_correct)
+    logger.info("  Still unresolved: %d", len(review_rows) - found_correct)
+    for cause, cnt in sorted(cause_counts.items(), key=lambda x: -x[1]):
+        logger.info("    %s: %d", cause, cnt)

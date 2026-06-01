@@ -45,12 +45,19 @@ except ImportError:
     tqdm = None
 
 from pubchem_api import (query_xref, query_inchikey, query_inchi,
+                         query_cid_properties, query_cid_properties_batch,
+                         CID_BATCH_SIZE,
                          _query_names_batch_recursive, NAME_BATCH_SIZE)
 from data_io import (load_structures, load_names, load_external_ids,
                      init_cache, get_cached, save_batch_to_cache)
 from structure_compare import compare_inchikeys, pick_best_names
-from corrections import fetch_corrections, apply_corrections
-from reporting import generate_report, generate_comparison_images
+from corrections import (fetch_corrections, apply_corrections,
+                        normalize_corrections_ph7)
+from reporting import (generate_report, generate_comparison_images,
+                       generate_different_compound_review)
+from protonation import run_phase4_pka_validation
+from pka_comparison import load_pka_from_db
+from consistency import run_phase0_consistency
 
 # ---------------------------------------------------------------------------
 # File path constants
@@ -74,6 +81,12 @@ CORRECTIONS_LOG = os.path.join(SCRIPT_DIR, "pubchem_corrections_log.tsv")
 PROTONATION_FILE = os.path.join(SCRIPT_DIR, "pubchem_protonation_diffs.tsv")
 STEREO_FILE = os.path.join(SCRIPT_DIR, "pubchem_stereo_diffs.tsv")
 REJECTED_FILE = os.path.join(SCRIPT_DIR, "pubchem_rejected_corrections.tsv")
+PROTONATION_CORRECTIONS_FILE = os.path.join(
+    SCRIPT_DIR, "pubchem_protonation_corrections.tsv")
+REVIEW_FILE = os.path.join(
+    SCRIPT_DIR, "pubchem_review_different_compounds.tsv")
+CONSISTENCY_FILE = os.path.join(SCRIPT_DIR, "consistency_report.tsv")
+TAUTOMER_FILE = os.path.join(SCRIPT_DIR, "pubchem_tautomer_diffs.tsv")
 
 LOG_FILE = os.path.join(SCRIPT_DIR, "pubchem_validate_run.log")
 IMAGES_DIR = os.path.join(SCRIPT_DIR, "struct_imgs")
@@ -94,27 +107,129 @@ logger.addHandler(_file_handler)
 
 
 # ---------------------------------------------------------------------------
-# Cached xref conflict notice
+# Phase 1.7: Resolve cached xref conflicts by fetching CID properties
 # ---------------------------------------------------------------------------
 
-def _resolve_cached_xref_conflicts(conn, db_lock, candidates, structures):
-    """Check for unresolved xref conflicts in the cache.
+def run_phase17_resolve_cached_conflicts(conn, db_lock, candidates,
+                                         structures, workers=5):
+    """Phase 1.7: Resolve xref conflicts from cache by fetching CID properties.
 
-    XREF_CONFLICT resolution requires the original xref query data (both
-    CIDs' InChIKeys), which is only available during a fresh Phase 1 run.
-    This function logs a notice if conflicts exist and recommends
-    --clear-cache for a fresh run with the improved resolution logic.
+    For each xref_conflict row:
+    1. Parse CIDs from query string (format: chebi_xref->CID{X};kegg_xref={Y}->CID{Z})
+    2. Fetch InChIKey/SMILES for each CID via query_cid_properties()
+    3. Compare each to stored InChIKey using compare_inchikeys()
+    4. Pick best match, update cache row
+
+    Returns (resolved_count, still_conflicting_count).
     """
+    import re
+
     cur = conn.execute(
-        "SELECT COUNT(*) FROM cache WHERE status='xref_conflict' "
+        "SELECT cpd_id, query FROM cache WHERE status='xref_conflict' "
         "AND cpd_id IN ({})".format(",".join("?" * len(candidates))),
         candidates,
     )
-    count = cur.fetchone()[0]
-    if count > 0:
-        logger.info("Note: %d xref conflicts in cache. Run with "
-                    "--clear-cache to resolve using improved Phase 1.5 "
-                    "logic.", count)
+    conflicts = cur.fetchall()
+    if not conflicts:
+        return 0, 0
+
+    logger.info("Phase 1.7: Resolving %d cached xref conflicts", len(conflicts))
+
+    # Parse CIDs from query strings and deduplicate
+    cpd_cids = {}  # cpd_id -> [(cid, source_hint), ...]
+    all_cids = set()
+    for cpd_id, query_str in conflicts:
+        cids_found = re.findall(r'CID(\d+)', query_str)
+        pairs = []
+        for cid_str in cids_found:
+            all_cids.add(cid_str)
+            # Determine source hint from position in query string
+            idx = query_str.index(f'CID{cid_str}')
+            prefix = query_str[:idx]
+            source = 'chebi' if 'chebi' in prefix.split(';')[-1] else 'kegg'
+            pairs.append((cid_str, source))
+        cpd_cids[cpd_id] = pairs
+
+    logger.info("  Unique CIDs to fetch: %d", len(all_cids))
+
+    # Fetch properties for all unique CIDs in batches
+    cid_props = {}  # cid -> {smiles, inchi, inchikey} or None
+    cid_list = sorted(all_cids)
+    batches = [cid_list[i:i + CID_BATCH_SIZE]
+               for i in range(0, len(cid_list), CID_BATCH_SIZE)]
+
+    logger.info("  Batches: %d (batch size %d)", len(batches), CID_BATCH_SIZE)
+
+    if tqdm:
+        pbar = tqdm(total=len(batches), desc="Phase 1.7: CID batches")
+
+    batch_done = 0
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = {executor.submit(query_cid_properties_batch, batch): batch
+                   for batch in batches}
+        for future in as_completed(futures):
+            batch_result = future.result()
+            cid_props.update(batch_result)
+            batch_done += 1
+            if tqdm:
+                pbar.update(1)
+            elif batch_done % 10 == 0:
+                logger.info("  Phase 1.7 progress: %d/%d batches done",
+                            batch_done, len(batches))
+
+    if tqdm:
+        pbar.close()
+
+    logger.info("  CIDs fetched: %d", len(cid_props))
+
+    # Resolve each conflict
+    _result_priority = {
+        "MATCH": 0, "PROTONATION_DIFF": 1, "STEREO_DIFF": 2,
+        "MISMATCH": 3, "NO_KEY": 4,
+    }
+    resolution_rows = []
+    resolved_count = 0
+    still_conflicting = 0
+
+    for cpd_id, query_str in conflicts:
+        stored_ik = structures.get(cpd_id, {}).get("inchikey", "")
+        if not stored_ik:
+            still_conflicting += 1
+            continue
+
+        scored = []
+        for cid_str, source in cpd_cids[cpd_id]:
+            props = cid_props.get(cid_str)
+            if props is None or not props.get("inchikey"):
+                continue
+            result_type = compare_inchikeys(stored_ik, props["inchikey"])
+            priority = _result_priority.get(result_type, 99)
+            source_pref = 0 if source == 'chebi' else 1
+            scored.append((priority, source_pref, cid_str, props, result_type))
+
+        if not scored:
+            still_conflicting += 1
+            continue
+
+        scored.sort()
+        best_priority, _, best_cid, best_props, best_rt = scored[0]
+
+        if best_priority <= 2:  # MATCH, PROTONATION_DIFF, or STEREO_DIFF
+            query_resolved = (f"xref_resolved:CID{best_cid}({best_rt})")
+            resolution_rows.append((
+                cpd_id, "xref_resolved", query_resolved, "found",
+                best_cid, best_props["inchikey"], best_props.get("smiles", ""),
+                time.time()))
+            resolved_count += 1
+        else:
+            still_conflicting += 1
+
+    if resolution_rows:
+        save_batch_to_cache(conn, db_lock, resolution_rows)
+
+    logger.info("  Resolved: %d", resolved_count)
+    logger.info("  Still conflicting: %d", still_conflicting)
+    return resolved_count, still_conflicting
 
 
 # ---------------------------------------------------------------------------
@@ -752,6 +867,12 @@ def main():
     parser.add_argument("--clear-cache", action="store_true",
                         help="Clear the SQLite cache before running "
                              "(for a fresh re-validation)")
+    parser.add_argument("--skip-ph7", action="store_true",
+                        help="Skip pH 7 protonation normalization "
+                             "when --apply is used")
+    parser.add_argument("--review-report", action="store_true",
+                        help="Generate detailed review report for "
+                             "REVIEW:different_compound mismatches")
     args = parser.parse_args()
 
     # Handle cache clearing
@@ -763,6 +884,14 @@ def main():
     structures = load_structures(STRUCTURES_FILE)
     names = load_names(NAMES_FILE)
     external_ids = load_external_ids(ALIASES_FILE)
+
+    # Phase 0: Self-consistency validation (fixes formula/charge, computes
+    # missing InChI/InChIKey — modifies structures dict in-place)
+    run_phase0_consistency(structures, report_file=CONSISTENCY_FILE)
+
+    # Load ChemAxon pKa data for protonation validation
+    pka_data = load_pka_from_db()
+    logger.info("ChemAxon pKa data loaded: %d compounds", len(pka_data))
 
     # Build validation set: compounds with at least one name AND a stored InChIKey
     candidates = []
@@ -787,19 +916,42 @@ def main():
     logger.info("To process: %d", len(to_process))
 
     if not to_process:
-        _resolve_cached_xref_conflicts(conn, db_lock, candidates, structures)
+        run_phase17_resolve_cached_conflicts(
+            conn, db_lock, candidates, structures, workers=args.workers)
         generate_report(conn, candidates, structures, names=names,
                         report_file=REPORT_FILE, mismatch_file=MISMATCH_FILE,
                         protonation_file=PROTONATION_FILE,
-                        stereo_file=STEREO_FILE)
+                        stereo_file=STEREO_FILE,
+                        tautomer_file=TAUTOMER_FILE)
         corrections = {}
         if args.apply or args.images:
             corrections = fetch_corrections(
                 conn, db_lock, candidates, structures, workers=args.workers,
                 names=names, rejected_file=REJECTED_FILE)
+        # Normalize STEREO_DIFF corrections to ChemAxon pKa charge
+        if corrections and not args.skip_ph7:
+            n = normalize_corrections_ph7(corrections, pka_data)
+            if n:
+                logger.info("  STEREO_DIFF corrections normalized to "
+                            "ChemAxon pKa charge: %d", n)
+        # Phase 4: ChemAxon pKa protonation validation
+        if args.apply and not args.skip_ph7:
+            pka_corrections = run_phase4_pka_validation(
+                candidates, structures, pka_data, names=names,
+                corrections_file=PROTONATION_CORRECTIONS_FILE)
+            # Only add pKa corrections for compounds not already corrected
+            # (STEREO_DIFF corrections already have pKa normalization applied)
+            for cpd_id, pka_corr in pka_corrections.items():
+                if cpd_id not in corrections:
+                    corrections[cpd_id] = pka_corr
         if args.apply:
+            output_path = args.output
+            if output_path is None:
+                output_path = os.path.join(
+                    SCRIPT_DIR,
+                    "Unique_ModelSEED_Structures_modified.txt")
             apply_corrections(corrections, structures,
-                              output_path=args.output,
+                              output_path=output_path,
                               structures_file=STRUCTURES_FILE,
                               corrections_log=CORRECTIONS_LOG)
         if args.images:
@@ -807,6 +959,11 @@ def main():
                                        images_dir=IMAGES_DIR,
                                        max_per_type=args.max_images,
                                        accepted_cpds=set(corrections.keys()))
+        if args.review_report:
+            generate_different_compound_review(
+                conn, candidates, structures, names,
+                mismatch_file=MISMATCH_FILE, review_file=REVIEW_FILE,
+                workers=args.workers)
         conn.close()
         return
 
@@ -815,11 +972,15 @@ def main():
      needs_name_lookup) = run_phase1_xref(
         to_process, external_ids, structures, conn, db_lock, args.workers)
 
-    # Phase 1.5: resolve xref conflicts
+    # Phase 1.5: resolve xref conflicts (in-memory data from Phase 1)
     resolved_cpds, _ = run_phase15_resolve_conflicts(
         xref_conflict_pairs, structures, conn, db_lock)
     xref_resolved_cpds.update(resolved_cpds)
     xref_conflicts -= resolved_cpds
+
+    # Phase 1.7: resolve remaining xref conflicts from cache (fetches CID props)
+    run_phase17_resolve_cached_conflicts(
+        conn, db_lock, candidates, structures, workers=args.workers)
 
     # Compounds still needing name lookup
     chebi_to_cpds = defaultdict(list)
@@ -856,7 +1017,8 @@ def main():
     generate_report(conn, candidates, structures, names=names,
                     report_file=REPORT_FILE, mismatch_file=MISMATCH_FILE,
                     protonation_file=PROTONATION_FILE,
-                    stereo_file=STEREO_FILE)
+                    stereo_file=STEREO_FILE,
+                    tautomer_file=TAUTOMER_FILE)
 
     # Phase 3: Fetch + apply corrections (only with --apply)
     corrections = {}
@@ -864,8 +1026,32 @@ def main():
         corrections = fetch_corrections(
             conn, db_lock, candidates, structures, workers=args.workers,
             names=names, rejected_file=REJECTED_FILE)
+
+    # Normalize STEREO_DIFF corrections to ChemAxon pKa charge
+    if corrections and not args.skip_ph7:
+        n = normalize_corrections_ph7(corrections, pka_data)
+        if n:
+            logger.info("  STEREO_DIFF corrections normalized to "
+                        "ChemAxon pKa charge: %d", n)
+
+    # Phase 4: ChemAxon pKa protonation validation
+    if args.apply and not args.skip_ph7:
+        pka_corrections = run_phase4_pka_validation(
+            candidates, structures, pka_data, names=names,
+            corrections_file=PROTONATION_CORRECTIONS_FILE)
+        # Only add pKa corrections for compounds not already corrected
+        # (STEREO_DIFF corrections already have pKa normalization applied)
+        for cpd_id, pka_corr in pka_corrections.items():
+            if cpd_id not in corrections:
+                corrections[cpd_id] = pka_corr
+
     if args.apply:
-        apply_corrections(corrections, structures, output_path=args.output,
+        output_path = args.output
+        if output_path is None:
+            output_path = os.path.join(
+                SCRIPT_DIR,
+                "Unique_ModelSEED_Structures_modified_v3.txt")
+        apply_corrections(corrections, structures, output_path=output_path,
                           structures_file=STRUCTURES_FILE,
                           corrections_log=CORRECTIONS_LOG)
 
@@ -874,6 +1060,12 @@ def main():
                                    images_dir=IMAGES_DIR,
                                    max_per_type=args.max_images,
                                    accepted_cpds=set(corrections.keys()))
+
+    if args.review_report:
+        generate_different_compound_review(
+            conn, candidates, structures, names, external_ids,
+            mismatch_file=MISMATCH_FILE, review_file=REVIEW_FILE,
+            workers=args.workers)
 
     conn.close()
 

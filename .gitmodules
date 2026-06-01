@@ -1,0 +1,3 @@
+[submodule "ModelSEEDDatabase"]
+	path = ModelSEEDDatabase
+	url = https://github.com/Ray16/ModelSEEDDatabase.git

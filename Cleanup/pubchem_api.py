@@ -204,3 +204,31 @@ def query_cid_properties(cid):
             "inchikey": props.get("InChIKey", ""),
         }
     return None
+
+
+CID_BATCH_SIZE = 100
+
+
+def query_cid_properties_batch(cid_list):
+    """Fetch properties for multiple CIDs in a single request.
+
+    PubChem supports comma-separated CIDs in the URL. Returns dict:
+        {cid_str: {smiles, inchi, inchikey}} for each found CID.
+    """
+    if not cid_list:
+        return {}
+    cid_str = ",".join(str(c) for c in cid_list)
+    url = (f"{PUBCHEM_BASE}/compound/cid/{cid_str}"
+           f"/property/InChIKey,IsomericSMILES,InChI/JSON")
+    data = pubchem_request("GET", url)
+    results = {}
+    if data and "PropertyTable" in data:
+        for props in data["PropertyTable"]["Properties"]:
+            cid = str(props.get("CID", ""))
+            if cid:
+                results[cid] = {
+                    "smiles": _extract_smiles(props),
+                    "inchi": props.get("InChI", ""),
+                    "inchikey": props.get("InChIKey", ""),
+                }
+    return results

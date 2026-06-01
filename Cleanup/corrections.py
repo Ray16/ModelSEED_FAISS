@@ -186,6 +186,71 @@ def fetch_corrections(conn, db_lock, candidates, structures, workers=5,
     return validated
 
 
+def normalize_corrections_ph7(corrections, pka_data=None):
+    """Normalize STEREO_DIFF corrections to pH 7 protonation.
+
+    When a STEREO_DIFF correction replaces the stored InChI with PubChem's
+    version, the protonation state changes from the curated ionized form
+    (appropriate for cellular pH ~7) to PubChem's neutral form.  This function
+    fixes that by using ChemAxon pKa values to determine the correct charge
+    and adjusting the PubChem SMILES accordingly.
+
+    Args:
+        corrections: dict of corrections (modified in-place)
+        pka_data: dict from load_pka_from_db() with ChemAxon pKa/pKb values
+
+    Returns the number of corrections that were pH 7-normalized.
+    """
+    from protonation import normalize_smiles_to_pka_charge
+
+    stereo_cpds = [(cpd_id, corr) for cpd_id, corr in corrections.items()
+                   if corr.get("result_type") == "STEREO_DIFF"]
+
+    if not stereo_cpds:
+        return 0
+
+    normalized = 0
+    for cpd_id, corr in stereo_cpds:
+        pub_smiles = corr.get("smiles", "")
+        if not pub_smiles:
+            continue
+
+        # Look up ChemAxon pKa data
+        pka_info = pka_data.get(cpd_id) if pka_data else None
+        if pka_info is None:
+            logger.debug("  %s: no pKa data, keeping PubChem protonation",
+                         cpd_id)
+            continue
+
+        ph7 = normalize_smiles_to_pka_charge(pub_smiles, pka_info)
+        if ph7 is None:
+            continue
+
+        # Compare PubChem InChIKey to pKa-adjusted InChIKey
+        pub_ik = corr.get("inchikey", "")
+        ph7_ik = ph7["inchikey"]
+        result = compare_inchikeys(pub_ik, ph7_ik)
+
+        if result == "MATCH":
+            # Already at correct protonation, no change needed
+            continue
+
+        if result == "PROTONATION_DIFF":
+            # pKa adjustment changes only protonation — update in-place
+            corr["smiles"] = ph7["smiles"]
+            corr["inchi"] = ph7["inchi"]
+            corr["inchikey"] = ph7["inchikey"]
+            normalized += 1
+            logger.info("  %s: STEREO_DIFF correction normalized to "
+                        "ChemAxon pKa charge (InChIKey %s -> %s)", cpd_id,
+                        pub_ik[-1], ph7_ik[-1])
+
+        # If STEREO_DIFF or MISMATCH: adjustment changed connectivity/stereo
+        # — keep PubChem's version as-is (adjustment artifact)
+
+    return normalized
+
+
 def apply_corrections(corrections, structures, output_path=None,
                       structures_file=None, corrections_log=None):
     """Apply corrections and write to a NEW output file in Unique format.
@@ -273,12 +338,11 @@ def apply_corrections(corrections, structures, output_path=None,
         "old_value", "new_value",
         "pubchem_cid", "strategy", "query",
     ]
-    log_exists = (os.path.exists(corrections_log)
-                  and os.path.getsize(corrections_log) > 0)
-    log_fh = open(corrections_log, "a", newline="")
+    # Overwrite (not append) so the log matches the output file, which is
+    # also regenerated from scratch each run.
+    log_fh = open(corrections_log, "w", newline="")
     log_writer = csv.writer(log_fh, delimiter="\t")
-    if not log_exists:
-        log_writer.writerow(log_header)
+    log_writer.writerow(log_header)
 
     # Apply corrections to the unique representation, logging each change
     total_changes = 0
