@@ -1,0 +1,67 @@
+===== PROTON/WATER BALANCE — CORRECTION REPORT =====
+(reads ModelSEEDDatabase read-only; writes proposals into mass_charge_balance/)
+
+  already_balanced                     25296
+  defer_needs_structure                18772
+  defer_charge_only_protonation_defect    1844
+  defer_skeleton_error:C                 802
+  defer_oxygen_only_missing_species      318
+  CORRECTED                              309
+  defer_H_O_charge_inconsistent          242
+  defer_skeleton_error:C,N               189
+  defer_skeleton_error:C,N,P             136
+  defer_skeleton_error:P                 109
+  defer_skeleton_error:C,N,S              76
+  defer_needs_charge                      61
+  defer_skeleton_error:N                  53
+  defer_skeleton_error:C,N,P,S            42
+  defer_skeleton_error:C,P                42
+  defer_skeleton_error:Cl                 36
+  defer_skeleton_error:S                  23
+  defer_skeleton_error:C,Cl               12
+  defer_skeleton_error:C,S                11
+  defer_skeleton_error:Fe                 10
+  defer_skeleton_error:N,P                 2
+  defer_skeleton_error:C,I                 2
+  defer_skeleton_error:C,N,Se              2
+  defer_non_integer_residual               2
+  defer_skeleton_error:N,P,S               1
+  defer_skeleton_error:B                   1
+  defer_skeleton_error:Br                  1
+  defer_skeleton_error:C,F                 1
+  defer_skeleton_error:S,Se                1
+  defer_skeleton_error:C,I,N,P             1
+  defer_degenerate_result                  1
+  defer_skeleton_error:C,Fe,N              1
+  defer_skeleton_error:F                   1
+  defer_skeleton_error:Mg                  1
+  defer_skeleton_error:C,Co,N              1
+  defer_skeleton_error:C,Mg,N              1
+
+  Reactions CORRECTED (patch applied): 309
+  Verified balanced after patch:       309
+  Verification FAILURES:               0
+
+  Patch-type distribution:
+    1 H2O -> reactants; 1 H+ -> products 78
+    1 H2O -> products; 1 H+ -> reactants 78
+    1 H2O -> reactants; 2 H+ -> products 35
+    2 H2O -> products; 1 H+ -> reactants 15
+    2 H2O -> products                  12
+    1 H2O -> products; 2 H+ -> reactants 12
+    1 H2O -> products; 1 H+ -> products 11
+    1 H2O -> reactants; 1 H+ -> reactants 10
+    2 H2O -> products; 1 H+ -> products 7
+    2 H2O -> reactants; 1 H+ -> products 6
+    1 H2O -> reactants; 2 H+ -> reactants 6
+    1 H2O -> products; 3 H+ -> reactants 5
+
+  Worked examples:
+    rxn01766  status=MI:H:-4/O:-2  residual[H:-4;O:-2]  ->  2 H2O -> products  [OK]
+    rxn02240  status=MI:H:-4/O:-2  residual[H:-4;O:-2]  ->  2 H2O -> products  [OK]
+    rxn02553  status=MI:O:-1|CI:2  residual[O:-1;charge:2]  ->  1 H2O -> products; 2 H+ -> reactants  [OK]
+    rxn02799  status=MI:H:-3/O:-1|CI:-1  residual[H:-3;O:-1;charge:-1]  ->  1 H2O -> products; 1 H+ -> products  [OK]
+    rxn03965  status=MI:H:-3/O:1|CI:-5  residual[H:-3;O:1;charge:-5]  ->  1 H2O -> reactants; 5 H+ -> products  [OK]
+    rxn03967  status=MI:H:-3/O:1|CI:-5  residual[H:-3;O:1;charge:-5]  ->  1 H2O -> reactants; 5 H+ -> products  [OK]
+    rxn04055  status=MI:H:-2/O:2|CI:-6  residual[H:-2;O:2;charge:-6]  ->  2 H2O -> reactants; 6 H+ -> products  [OK]
+    rxn04256  status=MI:H:1/O:1|CI:-1  residual[H:1;O:1;charge:-1]  ->  1 H2O -> reactants; 1 H+ -> products  [OK]

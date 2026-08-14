@@ -1,0 +1,13 @@
+cpd	name	stored_charge	structure_charge	smiles	n_charge_only_rxns
+cpd00532	O2-	0	-1	[O][O-]	9
+cpd08629	13(1)-Hydroxy-Mg-protoporphyrin IX 13-monomethyl ester	0	-1	C=CC1=C(C)C2=N/C1=C\c1c(C)c(C(O)CC(=O)OC)c3n1[Mg]n1/c(c(C)c(C=C)/c1=C/2)=C\C1=N/C(=C\3)C(CCC(=O)[O-])=C1C	4
+cpd25549	2-desacetyl-2-hydroxyethyl bacteriochlorophyllide a,	0	-1	CC[C@H]1C2=Cc3c(C)c4c5n3[Mg]36n7c(c(C)c(C(C)O)c7C=C([C@@H]1C)N2~3)C=C1[C@@H](C)[C@H](CCC(=O)[O-])C(=C5C(C(=O)OC)C4=O)N1~6	4
+cpd27457	monovinyl protochlorophyllide a	0	-1	C=Cc1c(C)c2n3c1C=c1c(C)c(CC)c4[nH]1~[Mg]31n3c(c(C)c5c3C(=c3c(CCC(=O)[O-])c(C)c([nH]3~1)=C2)C(C(=O)OC)C5=O)C=4	3
+cpd02762	Mg-Protoporphyrin IX 13-monomethyl ester	0	-1	C=CC1=C(C)C2=N/C1=C\c1c(C)c(CCC(=O)OC)c3n1[Mg]n1/c(c(C)c(C=C)/c1=C/2)=C\C1=N/C(=C\3)C(CCC(=O)[O-])=C1C	2
+cpd15607	Heme D	2	0	C=Cc1c(C)c2n3c1C=c1c(C)c(C=C)c4n1[Fe]31n3c(c(C)c(CCC(=O)[O-])c3C=C3[N+]1=C([CH+]2)[C@](C)(O)[C@@]3(O)CCC(=O)[O-])C=4	2
+cpd08648	Divinylchlorophyll a	1	0	C=CC1=C(C)C2=N/C1=C\c1c(C)c3c4n1[Mg]n1/c(c(C)c(C=C)/c1=C/2)=C\C1=N/C(=C\4[C@@H](C(=O)OC)C3=O)[C@@H](CCC(=O)OC/C=C(\C)CCC[C@H](C)CCC[C@H](C)CCCC(C)C)[C@@H]1C	1
+cpd03148	Chlorophyll a	1	0	C=Cc1c(C)/c2n3/c1=C\C1=N/C(=C\c4c(C)c5c(n4[Mg]3)/C(=C3\N=C(/C=2)[C@@H](C)[C@@H]3CCC(=O)OC/C=C(\C)CCC[C@H](C)CCC[C@H](C)CCCC(C)C)[C@@H](C(=O)OC)C5=O)C(CC)=C1C	1
+cpd01054	Chlorite	0	-1	[O-][Cl+][O-]	1
+cpd18070	2',4'-Dihydroxycinnamic acid	-1	0	*/C=C/c1ccc(O)cc1O	1
+cpd40089	Mg-protoporphyrin IX 13-monomethyl ester	1	-1	C=Cc1c(C)c2n3c1C=c1c(C)c(C=C)c4n1[Mg-2]31n3c(c(C)c(CCC(=O)OC)c3C=C3C(CCC(=O)[O-])=C(C)C(=[N+]31)[CH+]2)C=4	1
+cpd35760	hydroxyferroheme i	1	-2	C=Cc1c(C)c2n3c1=Cc1c(C)c(CCC(=O)[O-])c4n1[Fe-2]31n3c(c(C)c([C@@H](O)CC/C=C(\C)CC/C=C(\C)CCC=C(C)C)c3C=2)C=C2C(C(O)O)=C(CCC(=O)[O-])C(=[N+]21)[CH+]4	1

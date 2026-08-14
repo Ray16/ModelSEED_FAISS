@@ -1,0 +1,543 @@
+reaction_id	category	confidence	verdict	added	detail
+rxn01766	proton_water	deterministic	no_kegg_xref		
+rxn02240	proton_water	deterministic	no_kegg_xref		
+rxn02553	proton_water	deterministic	no_kegg_xref		
+rxn02799	proton_water	deterministic	no_kegg_xref		
+rxn03965	proton_water	deterministic	no_kegg_xref		
+rxn03967	proton_water	deterministic	no_kegg_xref		
+rxn04055	proton_water	deterministic	no_kegg_xref		
+rxn04256	proton_water	deterministic	no_heavy_added		
+rxn04257	proton_water	deterministic	no_heavy_added		
+rxn04258	proton_water	deterministic	no_kegg_xref		
+rxn04259	proton_water	deterministic	no_heavy_added		
+rxn04412	proton_water	deterministic	no_kegg_xref		
+rxn04414	proton_water	deterministic	no_kegg_xref		
+rxn05260	proton_water	deterministic	no_kegg_xref		
+rxn05262	proton_water	deterministic	no_kegg_xref		
+rxn05263	proton_water	deterministic	no_kegg_xref		
+rxn05320	proton_water	deterministic	no_kegg_xref		
+rxn05822	proton_water	deterministic	no_heavy_added		
+rxn05823	proton_water	deterministic	no_kegg_xref		
+rxn05886	proton_water	deterministic	no_kegg_xref		
+rxn06512	proton_water	deterministic	no_kegg_xref		
+rxn06767	proton_water	deterministic	no_kegg_xref		
+rxn06844	proton_water	deterministic	no_kegg_xref		
+rxn06918	proton_water	deterministic	no_kegg_xref		
+rxn06930	proton_water	deterministic	no_heavy_added		
+rxn06949	proton_water	deterministic	no_heavy_added		
+rxn06962	proton_water	deterministic	no_kegg_xref		
+rxn07171	proton_water	deterministic	no_heavy_added		
+rxn07772	proton_water	deterministic	no_kegg_xref		
+rxn10639	proton_water	deterministic	no_kegg_xref		
+rxn11026	proton_water	deterministic	no_kegg_xref		
+rxn11161	proton_water	deterministic	no_kegg_xref		
+rxn11175	proton_water	deterministic	no_kegg_xref		
+rxn11214	proton_water	deterministic	no_kegg_xref		
+rxn11220	proton_water	deterministic	no_kegg_xref		
+rxn11226	proton_water	deterministic	no_kegg_xref		
+rxn11232	proton_water	deterministic	no_kegg_xref		
+rxn11251	proton_water	deterministic	no_kegg_xref		
+rxn11252	proton_water	deterministic	no_kegg_xref		
+rxn11253	proton_water	deterministic	no_kegg_xref		
+rxn11254	proton_water	deterministic	no_kegg_xref		
+rxn11283	proton_water	deterministic	no_kegg_xref		
+rxn11356	proton_water	deterministic	no_kegg_xref		
+rxn11359	proton_water	deterministic	no_kegg_xref		
+rxn11360	proton_water	deterministic	no_kegg_xref		
+rxn11369	proton_water	deterministic	no_kegg_xref		
+rxn11370	proton_water	deterministic	no_kegg_xref		
+rxn11685	proton_water	deterministic	no_kegg_xref		
+rxn11839	proton_water	deterministic	no_kegg_xref		
+rxn11989	proton_water	deterministic	no_heavy_added		
+rxn12079	proton_water	deterministic	no_heavy_added		
+rxn12122	proton_water	deterministic	no_heavy_added		
+rxn12184	proton_water	deterministic	no_kegg_xref		
+rxn12988	proton_water	deterministic	no_kegg_xref		
+rxn13142	proton_water	deterministic	no_kegg_xref		
+rxn13772	proton_water	deterministic	no_kegg_xref		
+rxn15955	proton_water	deterministic	no_heavy_added		
+rxn17463	proton_water	deterministic	no_kegg_xref		
+rxn19172	proton_water	deterministic	no_kegg_xref		
+rxn19173	proton_water	deterministic	no_kegg_xref		
+rxn21580	proton_water	deterministic	no_kegg_xref		
+rxn22025	proton_water	deterministic	no_kegg_xref		
+rxn22050	proton_water	deterministic	no_kegg_xref		
+rxn24310	proton_water	deterministic	no_kegg_xref		
+rxn24312	proton_water	deterministic	no_kegg_xref		
+rxn25263	proton_water	deterministic	no_kegg_xref		
+rxn25676	proton_water	deterministic	no_kegg_xref		
+rxn25966	proton_water	deterministic	no_kegg_xref		
+rxn28343	proton_water	deterministic	no_kegg_xref		
+rxn28837	proton_water	deterministic	no_kegg_xref		
+rxn30557	proton_water	deterministic	no_kegg_xref		
+rxn30558	proton_water	deterministic	no_kegg_xref		
+rxn30559	proton_water	deterministic	no_kegg_xref		
+rxn30560	proton_water	deterministic	no_kegg_xref		
+rxn30561	proton_water	deterministic	no_kegg_xref		
+rxn30563	proton_water	deterministic	no_kegg_xref		
+rxn30564	proton_water	deterministic	no_kegg_xref		
+rxn30566	proton_water	deterministic	no_kegg_xref		
+rxn30567	proton_water	deterministic	no_kegg_xref		
+rxn30568	proton_water	deterministic	no_kegg_xref		
+rxn30571	proton_water	deterministic	no_kegg_xref		
+rxn30581	proton_water	deterministic	no_kegg_xref		
+rxn30586	proton_water	deterministic	no_kegg_xref		
+rxn30587	proton_water	deterministic	no_kegg_xref		
+rxn30588	proton_water	deterministic	no_kegg_xref		
+rxn30593	proton_water	deterministic	no_kegg_xref		
+rxn30597	proton_water	deterministic	no_kegg_xref		
+rxn30598	proton_water	deterministic	no_kegg_xref		
+rxn30605	proton_water	deterministic	no_kegg_xref		
+rxn30608	proton_water	deterministic	no_kegg_xref		
+rxn30610	proton_water	deterministic	no_kegg_xref		
+rxn30614	proton_water	deterministic	no_kegg_xref		
+rxn30622	proton_water	deterministic	no_kegg_xref		
+rxn30624	proton_water	deterministic	no_kegg_xref		
+rxn30625	proton_water	deterministic	no_kegg_xref		
+rxn30626	proton_water	deterministic	no_kegg_xref		
+rxn30630	proton_water	deterministic	no_kegg_xref		
+rxn30631	proton_water	deterministic	no_kegg_xref		
+rxn30636	proton_water	deterministic	no_kegg_xref		
+rxn30637	proton_water	deterministic	no_kegg_xref		
+rxn30650	proton_water	deterministic	no_kegg_xref		
+rxn30651	proton_water	deterministic	no_kegg_xref		
+rxn30653	proton_water	deterministic	no_kegg_xref		
+rxn30655	proton_water	deterministic	no_kegg_xref		
+rxn30656	proton_water	deterministic	no_kegg_xref		
+rxn30663	proton_water	deterministic	no_kegg_xref		
+rxn30664	proton_water	deterministic	no_kegg_xref		
+rxn30668	proton_water	deterministic	no_kegg_xref		
+rxn30670	proton_water	deterministic	no_kegg_xref		
+rxn30672	proton_water	deterministic	no_kegg_xref		
+rxn30678	proton_water	deterministic	no_kegg_xref		
+rxn30679	proton_water	deterministic	no_heavy_added		
+rxn30681	proton_water	deterministic	no_kegg_xref		
+rxn30685	proton_water	deterministic	no_kegg_xref		
+rxn30687	proton_water	deterministic	no_kegg_xref		
+rxn30688	proton_water	deterministic	no_kegg_xref		
+rxn30690	proton_water	deterministic	no_kegg_xref		
+rxn30691	proton_water	deterministic	no_kegg_xref		
+rxn30692	proton_water	deterministic	no_kegg_xref		
+rxn30693	proton_water	deterministic	no_kegg_xref		
+rxn30694	proton_water	deterministic	no_kegg_xref		
+rxn30695	proton_water	deterministic	no_kegg_xref		
+rxn30696	proton_water	deterministic	no_kegg_xref		
+rxn30699	proton_water	deterministic	no_kegg_xref		
+rxn30701	proton_water	deterministic	no_kegg_xref		
+rxn30703	proton_water	deterministic	no_kegg_xref		
+rxn30704	proton_water	deterministic	no_kegg_xref		
+rxn30705	proton_water	deterministic	no_kegg_xref		
+rxn30707	proton_water	deterministic	no_kegg_xref		
+rxn30709	proton_water	deterministic	no_kegg_xref		
+rxn30714	proton_water	deterministic	no_kegg_xref		
+rxn30715	proton_water	deterministic	no_kegg_xref		
+rxn30720	proton_water	deterministic	no_kegg_xref		
+rxn30721	proton_water	deterministic	no_kegg_xref		
+rxn30724	proton_water	deterministic	no_kegg_xref		
+rxn30725	proton_water	deterministic	no_kegg_xref		
+rxn30726	proton_water	deterministic	no_kegg_xref		
+rxn30728	proton_water	deterministic	no_kegg_xref		
+rxn30730	proton_water	deterministic	no_kegg_xref		
+rxn30735	proton_water	deterministic	no_kegg_xref		
+rxn30736	proton_water	deterministic	no_kegg_xref		
+rxn30739	proton_water	deterministic	no_kegg_xref		
+rxn30740	proton_water	deterministic	no_kegg_xref		
+rxn30745	proton_water	deterministic	no_kegg_xref		
+rxn30749	proton_water	deterministic	no_kegg_xref		
+rxn30751	proton_water	deterministic	no_kegg_xref		
+rxn30754	proton_water	deterministic	no_kegg_xref		
+rxn30755	proton_water	deterministic	no_kegg_xref		
+rxn30756	proton_water	deterministic	no_kegg_xref		
+rxn30757	proton_water	deterministic	no_kegg_xref		
+rxn30758	proton_water	deterministic	no_kegg_xref		
+rxn30764	proton_water	deterministic	no_kegg_xref		
+rxn30767	proton_water	deterministic	no_kegg_xref		
+rxn30769	proton_water	deterministic	no_kegg_xref		
+rxn30770	proton_water	deterministic	no_kegg_xref		
+rxn30772	proton_water	deterministic	no_kegg_xref		
+rxn30774	proton_water	deterministic	no_kegg_xref		
+rxn30775	proton_water	deterministic	no_kegg_xref		
+rxn30776	proton_water	deterministic	no_kegg_xref		
+rxn30777	proton_water	deterministic	no_kegg_xref		
+rxn30779	proton_water	deterministic	no_kegg_xref		
+rxn30781	proton_water	deterministic	no_kegg_xref		
+rxn30782	proton_water	deterministic	no_kegg_xref		
+rxn30788	proton_water	deterministic	no_kegg_xref		
+rxn30791	proton_water	deterministic	no_kegg_xref		
+rxn30793	proton_water	deterministic	no_kegg_xref		
+rxn30794	proton_water	deterministic	no_kegg_xref		
+rxn30796	proton_water	deterministic	no_kegg_xref		
+rxn30798	proton_water	deterministic	no_kegg_xref		
+rxn30800	proton_water	deterministic	no_kegg_xref		
+rxn30801	proton_water	deterministic	no_kegg_xref		
+rxn30803	proton_water	deterministic	no_kegg_xref		
+rxn30804	proton_water	deterministic	no_kegg_xref		
+rxn30806	proton_water	deterministic	no_kegg_xref		
+rxn30808	proton_water	deterministic	no_kegg_xref		
+rxn30809	proton_water	deterministic	no_kegg_xref		
+rxn30810	proton_water	deterministic	no_kegg_xref		
+rxn30816	proton_water	deterministic	no_kegg_xref		
+rxn30817	proton_water	deterministic	no_kegg_xref		
+rxn30818	proton_water	deterministic	no_kegg_xref		
+rxn30819	proton_water	deterministic	no_kegg_xref		
+rxn30823	proton_water	deterministic	no_kegg_xref		
+rxn30824	proton_water	deterministic	no_kegg_xref		
+rxn30825	proton_water	deterministic	no_kegg_xref		
+rxn30831	proton_water	deterministic	no_kegg_xref		
+rxn30832	proton_water	deterministic	no_kegg_xref		
+rxn30833	proton_water	deterministic	no_kegg_xref		
+rxn30834	proton_water	deterministic	no_kegg_xref		
+rxn30850	proton_water	deterministic	no_kegg_xref		
+rxn30851	proton_water	deterministic	no_kegg_xref		
+rxn30853	proton_water	deterministic	no_kegg_xref		
+rxn30854	proton_water	deterministic	no_kegg_xref		
+rxn30855	proton_water	deterministic	no_kegg_xref		
+rxn30858	proton_water	deterministic	no_kegg_xref		
+rxn30861	proton_water	deterministic	no_kegg_xref		
+rxn30862	proton_water	deterministic	no_kegg_xref		
+rxn30864	proton_water	deterministic	no_kegg_xref		
+rxn30866	proton_water	deterministic	no_kegg_xref		
+rxn30868	proton_water	deterministic	no_kegg_xref		
+rxn30869	proton_water	deterministic	no_kegg_xref		
+rxn30871	proton_water	deterministic	no_kegg_xref		
+rxn30876	proton_water	deterministic	no_kegg_xref		
+rxn30885	proton_water	deterministic	no_kegg_xref		
+rxn30886	proton_water	deterministic	no_kegg_xref		
+rxn30905	proton_water	deterministic	no_kegg_xref		
+rxn30911	proton_water	deterministic	no_kegg_xref		
+rxn30912	proton_water	deterministic	no_kegg_xref		
+rxn30913	proton_water	deterministic	no_kegg_xref		
+rxn30914	proton_water	deterministic	no_kegg_xref		
+rxn30915	proton_water	deterministic	no_kegg_xref		
+rxn30916	proton_water	deterministic	no_kegg_xref		
+rxn30917	proton_water	deterministic	no_kegg_xref		
+rxn30919	proton_water	deterministic	no_kegg_xref		
+rxn30923	proton_water	deterministic	no_kegg_xref		
+rxn30924	proton_water	deterministic	no_kegg_xref		
+rxn30925	proton_water	deterministic	no_kegg_xref		
+rxn30931	proton_water	deterministic	no_kegg_xref		
+rxn30932	proton_water	deterministic	no_kegg_xref		
+rxn30933	proton_water	deterministic	no_kegg_xref		
+rxn30934	proton_water	deterministic	no_kegg_xref		
+rxn30935	proton_water	deterministic	no_kegg_xref		
+rxn30936	proton_water	deterministic	no_kegg_xref		
+rxn30939	proton_water	deterministic	no_kegg_xref		
+rxn30941	proton_water	deterministic	no_kegg_xref		
+rxn30942	proton_water	deterministic	no_kegg_xref		
+rxn30943	proton_water	deterministic	no_kegg_xref		
+rxn30944	proton_water	deterministic	no_kegg_xref		
+rxn30946	proton_water	deterministic	no_kegg_xref		
+rxn30947	proton_water	deterministic	no_kegg_xref		
+rxn30952	proton_water	deterministic	no_kegg_xref		
+rxn30954	proton_water	deterministic	no_kegg_xref		
+rxn30957	proton_water	deterministic	no_kegg_xref		
+rxn30960	proton_water	deterministic	no_kegg_xref		
+rxn30962	proton_water	deterministic	no_kegg_xref		
+rxn30963	proton_water	deterministic	no_kegg_xref		
+rxn30964	proton_water	deterministic	no_kegg_xref		
+rxn30965	proton_water	deterministic	no_kegg_xref		
+rxn30975	proton_water	deterministic	no_kegg_xref		
+rxn30976	proton_water	deterministic	no_kegg_xref		
+rxn30977	proton_water	deterministic	no_kegg_xref		
+rxn30980	proton_water	deterministic	no_kegg_xref		
+rxn30993	proton_water	deterministic	no_kegg_xref		
+rxn30994	proton_water	deterministic	no_kegg_xref		
+rxn30995	proton_water	deterministic	no_kegg_xref		
+rxn30999	proton_water	deterministic	no_kegg_xref		
+rxn31001	proton_water	deterministic	no_kegg_xref		
+rxn31003	proton_water	deterministic	no_kegg_xref		
+rxn31013	proton_water	deterministic	no_kegg_xref		
+rxn31014	proton_water	deterministic	no_kegg_xref		
+rxn31015	proton_water	deterministic	no_kegg_xref		
+rxn31016	proton_water	deterministic	no_kegg_xref		
+rxn31017	proton_water	deterministic	no_kegg_xref		
+rxn31018	proton_water	deterministic	no_kegg_xref		
+rxn31019	proton_water	deterministic	no_kegg_xref		
+rxn31020	proton_water	deterministic	no_kegg_xref		
+rxn31023	proton_water	deterministic	no_kegg_xref		
+rxn31024	proton_water	deterministic	no_kegg_xref		
+rxn31025	proton_water	deterministic	no_kegg_xref		
+rxn31026	proton_water	deterministic	no_kegg_xref		
+rxn31029	proton_water	deterministic	no_kegg_xref		
+rxn31030	proton_water	deterministic	no_kegg_xref		
+rxn31031	proton_water	deterministic	no_kegg_xref		
+rxn31032	proton_water	deterministic	no_kegg_xref		
+rxn31034	proton_water	deterministic	no_kegg_xref		
+rxn31035	proton_water	deterministic	no_kegg_xref		
+rxn31036	proton_water	deterministic	no_kegg_xref		
+rxn31037	proton_water	deterministic	no_kegg_xref		
+rxn31040	proton_water	deterministic	no_kegg_xref		
+rxn31041	proton_water	deterministic	no_kegg_xref		
+rxn31042	proton_water	deterministic	no_kegg_xref		
+rxn31043	proton_water	deterministic	no_kegg_xref		
+rxn31047	proton_water	deterministic	no_kegg_xref		
+rxn31048	proton_water	deterministic	no_kegg_xref		
+rxn31050	proton_water	deterministic	no_kegg_xref		
+rxn31051	proton_water	deterministic	no_kegg_xref		
+rxn31052	proton_water	deterministic	no_kegg_xref		
+rxn31068	proton_water	deterministic	no_kegg_xref		
+rxn31069	proton_water	deterministic	no_kegg_xref		
+rxn31070	proton_water	deterministic	no_kegg_xref		
+rxn31071	proton_water	deterministic	no_kegg_xref		
+rxn31072	proton_water	deterministic	no_kegg_xref		
+rxn31073	proton_water	deterministic	no_kegg_xref		
+rxn31074	proton_water	deterministic	no_kegg_xref		
+rxn31077	proton_water	deterministic	no_kegg_xref		
+rxn31080	proton_water	deterministic	no_kegg_xref		
+rxn31081	proton_water	deterministic	no_kegg_xref		
+rxn31082	proton_water	deterministic	no_kegg_xref		
+rxn31092	proton_water	deterministic	no_kegg_xref		
+rxn31093	proton_water	deterministic	no_kegg_xref		
+rxn31099	proton_water	deterministic	no_kegg_xref		
+rxn31101	proton_water	deterministic	no_kegg_xref		
+rxn31102	proton_water	deterministic	no_kegg_xref		
+rxn31399	proton_water	deterministic	no_kegg_xref		
+rxn31448	proton_water	deterministic	no_kegg_xref		
+rxn31456	proton_water	deterministic	no_kegg_xref		
+rxn31465	proton_water	deterministic	no_kegg_xref		
+rxn33898	proton_water	deterministic	no_kegg_xref		
+rxn33951	proton_water	deterministic	no_kegg_xref		
+rxn34008	proton_water	deterministic	no_kegg_xref		
+rxn39482	proton_water	deterministic	no_heavy_added		
+rxn39496	proton_water	deterministic	no_heavy_added		
+rxn39691	proton_water	deterministic	no_heavy_added		
+rxn39728	proton_water	deterministic	no_heavy_added		
+rxn39769	proton_water	deterministic	no_heavy_added		
+rxn39852	proton_water	deterministic	no_heavy_added		
+rxn43695	proton_water	deterministic	no_kegg_xref		
+rxn46275	proton_water	deterministic	no_kegg_xref		
+rxn48479	proton_water	deterministic	no_kegg_xref		
+rxn58464	proton_water	deterministic	no_kegg_xref		
+rxn03028	cosubstrate:PPi	high	no_kegg_xref		
+rxn04562	cosubstrate:PPi	high	not_in_kegg	cpd00012	HO7P2:absent
+rxn05757	cosubstrate:PPi	high	no_kegg_xref		
+rxn15388	cosubstrate:PPi	high	not_in_kegg	cpd00012	HO7P2:absent
+rxn33892	cosubstrate:PPi	high	no_kegg_xref		
+rxn15000	cosubstrate:Pi	high	not_in_kegg	cpd00009	HO4P:absent
+rxn06411	cosubstrate:Sulfate	high	not_in_kegg	cpd00048	O4S:absent
+rxn16043	cosubstrate:Sulfate	high	not_in_kegg	cpd00048	O4S:absent
+rxn07588	cosubstrate:CO2	low	validated	cpd00011	CO2:present
+rxn07589	cosubstrate:CO2	low	no_heavy_added		
+rxn25131	cosubstrate:CO2	low	no_kegg_xref		
+rxn04186	cosubstrate:PPi	low	validated	cpd00012	HO7P2:present
+rxn04283	cosubstrate:PPi	low	validated	cpd00012	HO7P2:present
+rxn11881	cosubstrate:PPi	low	no_kegg_xref		
+rxn22536	cosubstrate:PPi	low	no_kegg_xref		
+rxn33969	cosubstrate:PPi	low	no_kegg_xref		
+rxn01915	cosubstrate:Pi	low	no_kegg_xref		
+rxn33850	cosubstrate:Pi	low	no_kegg_xref		
+rxn33854	cosubstrate:Pi	low	no_kegg_xref		
+rxn33855	cosubstrate:Pi	low	no_kegg_xref		
+rxn33871	cosubstrate:Pi	low	no_kegg_xref		
+rxn04553	cosubstrate:CO2	review	kegg_no_equation	cpd00011	R06721
+rxn06830	cosubstrate:CO2	review	no_kegg_xref		
+rxn07121	cosubstrate:CO2	review	no_kegg_xref		
+rxn07145	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn07146	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn07147	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn07175	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn07597	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn11223	cosubstrate:CO2	review	no_kegg_xref		
+rxn11294	cosubstrate:CO2	review	no_kegg_xref		
+rxn12062	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn12123	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn12262	cosubstrate:CO2	review	no_kegg_xref		
+rxn15921	cosubstrate:CO2	review	not_in_kegg	cpd00011	CO2:absent
+rxn28399	cosubstrate:CO2	review	no_kegg_xref		
+rxn30910	cosubstrate:CO2	review	no_kegg_xref		
+rxn00666	cosubstrate:NH4	review	no_kegg_xref		
+rxn03803	cosubstrate:NH4	review	no_kegg_xref		
+rxn05850	cosubstrate:NH4	review	not_in_kegg	cpd00013	H4N:absent
+rxn07830	cosubstrate:NH4	review	not_in_kegg	cpd00013	H4N:absent
+rxn12152	cosubstrate:NH4	review	not_in_kegg	cpd00013	H4N:absent
+rxn24125	cosubstrate:NH4	review	no_kegg_xref		
+rxn26781	cosubstrate:NH4	review	no_kegg_xref		
+rxn31388	cosubstrate:NH4	review	no_kegg_xref		
+rxn39766	cosubstrate:NH4	review	not_in_kegg	cpd00013	H4N:absent
+rxn46608	cosubstrate:NH4	review	no_kegg_xref		
+rxn46717	cosubstrate:NH4	review	no_kegg_xref		
+rxn48531	cosubstrate:NH4	review	no_kegg_xref		
+rxn04187	cosubstrate:PPi	review	not_in_kegg	cpd00012	HO7P2:absent
+rxn04188	cosubstrate:PPi	review	not_in_kegg	cpd00012	HO7P2:absent
+rxn04194	cosubstrate:PPi	review	not_in_kegg	cpd00012	HO7P2:absent
+rxn06073	cosubstrate:PPi	review	no_kegg_xref		
+rxn06150	cosubstrate:PPi	review	no_kegg_xref		
+rxn11884	cosubstrate:PPi	review	no_kegg_xref		
+rxn11903	cosubstrate:PPi	review	not_in_kegg	cpd00012	HO7P2:absent
+rxn11905	cosubstrate:PPi	review	no_kegg_xref		
+rxn11906	cosubstrate:PPi	review	no_kegg_xref		
+rxn11909	cosubstrate:PPi	review	not_in_kegg	cpd00012	HO7P2:absent
+rxn28850	cosubstrate:PPi	review	no_kegg_xref		
+rxn28866	cosubstrate:PPi	review	no_kegg_xref		
+rxn31537	cosubstrate:PPi	review	no_kegg_xref		
+rxn11371	cosubstrate:Pi	review	no_kegg_xref		
+rxn11372	cosubstrate:Pi	review	no_kegg_xref		
+rxn11373	cosubstrate:Pi	review	no_kegg_xref		
+rxn34104	cosubstrate:Pi	review	no_kegg_xref		
+rxn34105	cosubstrate:Pi	review	no_kegg_xref		
+rxn34107	cosubstrate:Pi	review	no_kegg_xref		
+rxn34108	cosubstrate:Pi	review	no_kegg_xref		
+rxn34109	cosubstrate:Pi	review	no_kegg_xref		
+rxn34112	cosubstrate:Pi	review	no_kegg_xref		
+rxn34113	cosubstrate:Pi	review	no_kegg_xref		
+rxn34114	cosubstrate:Pi	review	no_kegg_xref		
+rxn34115	cosubstrate:Pi	review	no_kegg_xref		
+rxn34119	cosubstrate:Pi	review	no_kegg_xref		
+rxn34120	cosubstrate:Pi	review	no_kegg_xref		
+rxn34121	cosubstrate:Pi	review	no_kegg_xref		
+rxn34122	cosubstrate:Pi	review	no_kegg_xref		
+rxn34123	cosubstrate:Pi	review	no_kegg_xref		
+rxn34124	cosubstrate:Pi	review	no_kegg_xref		
+rxn34125	cosubstrate:Pi	review	no_kegg_xref		
+rxn34126	cosubstrate:Pi	review	no_kegg_xref		
+rxn34128	cosubstrate:Pi	review	no_kegg_xref		
+rxn34129	cosubstrate:Pi	review	no_kegg_xref		
+rxn34130	cosubstrate:Pi	review	no_kegg_xref		
+rxn34131	cosubstrate:Pi	review	no_kegg_xref		
+rxn34132	cosubstrate:Pi	review	no_kegg_xref		
+rxn34133	cosubstrate:Pi	review	no_kegg_xref		
+rxn34134	cosubstrate:Pi	review	no_kegg_xref		
+rxn34135	cosubstrate:Pi	review	no_kegg_xref		
+rxn34136	cosubstrate:Pi	review	no_kegg_xref		
+rxn34137	cosubstrate:Pi	review	no_kegg_xref		
+rxn49477	cosubstrate:Pi	review	no_kegg_xref		
+rxn53888	cosubstrate:Pi	review	no_kegg_xref		
+rxn53889	cosubstrate:Pi	review	no_kegg_xref		
+rxn53890	cosubstrate:Pi	review	no_kegg_xref		
+rxn54354	cosubstrate:Pi	review	no_kegg_xref		
+rxn11180	cosubstrate:Sulfate	review	no_kegg_xref		
+rxn02781	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn04519	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn04525	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn04535	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn04566	couple:acetyl	high	no_kegg_xref		
+rxn04567	couple:acetyl	high	no_kegg_xref		
+rxn04805	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn07364	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn07691	couple:methyl	high	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07695	couple:methyl	high	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07696	couple:methyl	high	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07794	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn12084	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn23093	couple:acetyl	high	no_kegg_xref		
+rxn02757	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
+rxn04364	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
+rxn04656	couple_agent:acetyl	agent	kegg_no_equation	cpd00022,cpd00010	R06841
+rxn04804	couple_agent:acetyl	agent	validated	cpd00022,cpd00010	C23H34N7O17P3S:present,C21H32N7O16P3S:present
+rxn07818	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
+rxn12099	couple_agent:acetyl	agent	validated	cpd00022,cpd00010	C23H34N7O17P3S:present,C21H32N7O16P3S:present
+rxn12176	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
+rxn24702	couple_agent:acetyl	agent	no_kegg_xref		
+rxn24704	couple_agent:acetyl	agent	no_kegg_xref		
+rxn30178	couple_agent:acetyl	agent	no_kegg_xref		
+rxn43786	couple_agent:acetyl	agent	no_kegg_xref		
+rxn44761	couple_agent:acetyl	agent	no_kegg_xref		
+rxn45136	couple_agent:acetyl	agent	no_kegg_xref		
+rxn47934	couple_agent:acetyl	agent	no_kegg_xref		
+rxn04401	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn04402	couple_agent:glucosyl	agent	validated	cpd00026,cpd00014	C15H22N2O17P2:present,C9H12N2O12P2:present
+rxn04637	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn04640	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn05740	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn05807	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn05973	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
+rxn06049	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn06050	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn06165	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn06272	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn06273	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07031	couple_agent:mannosyl	agent	no_kegg_xref		
+rxn07375	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07377	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07470	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07547	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07570	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07634	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07698	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07699	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn07796	couple_agent:glucosyl	agent	validated	cpd00026,cpd00014	C15H22N2O17P2:present,C9H12N2O12P2:present
+rxn07797	couple_agent:glucosyl	agent	validated	cpd00026,cpd00014	C15H22N2O17P2:present,C9H12N2O12P2:present
+rxn08605	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn08615	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn09398	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn10533	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn11515	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn14221	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
+rxn14329	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn15251	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
+rxn17379	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn17557	couple_agent:mannosyl	agent	no_kegg_xref		
+rxn17917	couple_agent:mannosyl	agent	no_kegg_xref		
+rxn17942	couple_agent:mannosyl	agent	no_kegg_xref		
+rxn17989	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn18001	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn22517	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn23846	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn35562	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
+rxn35563	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
+rxn40911	couple_agent:mannosyl	agent	no_kegg_xref		
+rxn42841	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn45109	couple_agent:glucosyl	agent	no_kegg_xref		
+rxn02626	couple_agent:methyl	agent	no_kegg_xref		
+rxn02627	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn02964	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn03370	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn03475	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn03476	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn03480	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04117	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04119	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04403	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04404	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04486	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04489	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04533	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04538	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04541	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04569	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn04799	couple_agent:methyl	agent	no_kegg_xref		
+rxn04801	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn05134	couple_agent:methyl	agent	kegg_no_equation	cpd00017,cpd00019	R07425
+rxn07327	couple_agent:methyl	agent	kegg_no_equation	cpd00017,cpd00019	R07496
+rxn07339	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07508	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07531	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07536	couple_agent:methyl	agent	no_kegg_xref		
+rxn07564	couple_agent:methyl	agent	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn07733	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07802	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07819	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn07821	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11533	couple_agent:methyl	agent	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
+rxn11792	couple_agent:methyl	agent	no_kegg_xref		
+rxn11793	couple_agent:methyl	agent	no_kegg_xref		
+rxn11796	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11797	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11800	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11868	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11869	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11870	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn11872	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn12098	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn12907	couple_agent:methyl	agent	no_kegg_xref		
+rxn15637	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn16693	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
+rxn21582	couple_agent:methyl	agent	no_kegg_xref		
+rxn23776	couple_agent:methyl	agent	no_kegg_xref		
+rxn24701	couple_agent:methyl	agent	no_kegg_xref		
+rxn24703	couple_agent:methyl	agent	no_kegg_xref		
+rxn26823	couple_agent:methyl	agent	no_kegg_xref		
+rxn28426	couple_agent:methyl	agent	no_kegg_xref		
+rxn28427	couple_agent:methyl	agent	no_kegg_xref		
+rxn28429	couple_agent:methyl	agent	no_kegg_xref		
+rxn28430	couple_agent:methyl	agent	no_kegg_xref		
+rxn28431	couple_agent:methyl	agent	no_kegg_xref		
+rxn28432	couple_agent:methyl	agent	no_kegg_xref		
+rxn28434	couple_agent:methyl	agent	no_kegg_xref		
+rxn28436	couple_agent:methyl	agent	no_kegg_xref		
+rxn28441	couple_agent:methyl	agent	no_kegg_xref		
+rxn28444	couple_agent:methyl	agent	no_kegg_xref		
+rxn28839	couple_agent:methyl	agent	no_kegg_xref		
+rxn41898	couple_agent:methyl	agent	no_kegg_xref		
+rxn47533	couple_agent:methyl	agent	no_kegg_xref		
+rxn59459	couple_agent:methyl	agent	no_kegg_xref		

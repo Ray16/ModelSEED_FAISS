@@ -1,0 +1,106 @@
+id	decision	reason
+rxn02626	methyl (SAM/SAH)	codeine = 3-O-methylmorphine
+rxn02627	methyl (SAM/SAH)	explicit 6-O-demethylating enzyme, formula matches CH2
+rxn02964	methyl (SAM/SAH)	N-demethylation, methylaminoethylphosphonate -> ciliatine
+rxn03081	SKIP	quinone/lumazine redox tautomer chem, not a clean methyl pair
+rxn03280	SKIP	chlorophyll phytylation/Mg chemistry, not methylation
+rxn03370	methyl (SAM/SAH)	explicit methylamino -> dimethylamino
+rxn03475	methyl (SAM/SAH)	known thebaine 6-O-demethylase step to neopinone
+rxn03476	methyl (SAM/SAH)	known thebaine 3-O-demethylase step to oripavine
+rxn03480	methyl (SAM/SAH)	N-methylpelletierine -> pelletierine, N-demethylation
+rxn04116	SKIP	deacetyl/demethyl compound-family mismatch, unclear
+rxn04117	methyl (SAM/SAH)	explicit demethylalangiside <- alangiside
+rxn04118	SKIP	deacetyl/demethyl compound-family mismatch, unclear
+rxn04119	methyl (SAM/SAH)	explicit demethylisoalangiside <- isoalangiside
+rxn04403	methyl (SAM/SAH)	peonidin = methylcyanidin, anthocyanin O-methylation
+rxn04404	methyl (SAM/SAH)	petunidin = methyldelphinidin glycoside
+rxn04486	methyl (SAM/SAH)	explicit 8-O-methyltetrangulol -> tetrangulol
+rxn04489	methyl (SAM/SAH)	explicit O-methyl variant pair
+rxn04506	SKIP	angucycline oxidative cyclization, not a methyl pair
+rxn04517	SKIP	product name uninformative, can't confirm methyl relation
+rxn04533	methyl (SAM/SAH)	tetracenomycin B3->D3, known TcmO O-methylation step
+rxn04534	SKIP	tetracenomycin B3/E relation unclear, no explicit methyl signal
+rxn04538	methyl (SAM/SAH)	explicit methylester of tetracenomycin F1
+rxn04541	methyl (SAM/SAH)	explicit methylester of tetracenomycin D3
+rxn04545	SKIP	tetracenomycin B3/B2 relation unclear, no explicit methyl signal
+rxn04552	SKIP	glycosyltransferase (dTDP-olivose transfer), not methylation
+rxn04569	methyl (SAM/SAH)	nicotine -> nornicotine, known N-demethylation
+rxn04799	methyl (SAM/SAH)	explicit methane loss = demethylation of rifamycin W
+rxn04801	methyl (SAM/SAH)	explicit demethyl-desacetyl-rifamycin S
+rxn05134	methyl (SAM/SAH)	DIMBOA/TRIBOA benzoxazinoid demethylation
+rxn06878	SKIP	decarboxylating acyl-CoA condensation, not methylation
+rxn07089	SKIP	pectin methylesterase hydrolase, incomplete/generic reaction
+rxn07313	SKIP	sterol ring cyclization step, not a clear methyl-transfer pair
+rxn07316	SKIP	sterol pathway isomerization, not a clear methyl-transfer pair
+rxn07321	SKIP	sterol pathway isomerization, not a clear methyl-transfer pair
+rxn07327	methyl (SAM/SAH)	explicit 4-methylzymosterol -> zymosterol
+rxn07339	methyl (SAM/SAH)	tocopherol O-methylation (beta- vs alpha-/Vitamin E)
+rxn07508	methyl (SAM/SAH)	explicit methoxy- vs hydroxy-anthracenediol
+rxn07531	methyl (SAM/SAH)	glycitein = methoxyisoflavone, known GMT chemistry
+rxn07536	methyl (SAM/SAH)	explicit methoxy- vs trihydroxyisoflavanone
+rxn07564	methyl (SAM/SAH)	pisatin synthase methylates hydroxymaackiain, known
+rxn07733	methyl (SAM/SAH)	explicit paraxanthine -> 1-methylxanthine
+rxn07802	methyl (SAM/SAH)	homoeriodictyol = methylether of eriodictyol
+rxn07819	methyl (SAM/SAH)	pinostrobin = methylether of pinocembrin
+rxn07821	methyl (SAM/SAH)	chalcone-stage analog of eriodictyol/homoeriodictyol pair
+rxn10680	SKIP	trehalose acyl-sulfonation chemistry, not methylation
+rxn10712	SKIP	fatty-acid-synthase chain elongation (methylmalonyl-CoA extender)
+rxn10739	SKIP	fatty-acid-synthase chain elongation (methylmalonyl-CoA extender)
+rxn11089	SKIP	nucleoside phosphorylase reaction, thymine/uracil mismatch coincidental
+rxn11533	methyl (SAM/SAH)	methyl farnesoate = methylester of farnesoic acid, known JHAMT
+rxn11792	methyl (SAM/SAH)	explicit codeine -> norcodeine N-demethylation
+rxn11793	methyl (SAM/SAH)	explicit morphine -> normorphine N-demethylation
+rxn11796	methyl (SAM/SAH)	explicit tamoxifen -> N-desmethyltamoxifen
+rxn11797	methyl (SAM/SAH)	endoxifen = N-desmethyl-hydroxytamoxifen, known metabolite
+rxn11800	methyl (SAM/SAH)	explicit desmethyl -> didesmethyltamoxifen
+rxn11868	methyl (SAM/SAH)	LAAM -> nor-LAAM, known N-demethylation
+rxn11869	methyl (SAM/SAH)	nor-LAAM -> dinor-LAAM, further N-demethylation
+rxn11870	methyl (SAM/SAH)	explicit citalopram -> demethylcitalopram
+rxn11872	methyl (SAM/SAH)	explicit demethyl -> didemethylcitalopram
+rxn12098	methyl (SAM/SAH)	colcemid (N-methyl) -> deacetylcolchicine (N-H), N-demethylation
+rxn12131	SKIP	strictosidine/strictosamide lactamization, not simple methyl loss
+rxn12143	SKIP	secologanin/gentiopicrin iridoid glycoside chem, not methyl loss
+rxn12240	SKIP	CoA lyase/retro-aldol cleavage, not methylation
+rxn12242	SKIP	aldehyde dehydrogenase redox, not methylation
+rxn12907	methyl (SAM/SAH)	CYP51 lanosterol 14-demethylase, well-characterized demethylation
+rxn13146	SKIP	polyamine oxidase redox chemistry, not methylation
+rxn14188	SKIP	explicit side-chain elongation, not methylation
+rxn15530	SKIP	decarboxylating acyl-CoA condensation, not methylation
+rxn15637	methyl (SAM/SAH)	nicotine -> (+)-nornicotine, known N-demethylation
+rxn15828	SKIP	phosphonate chain-shortening (C2->C1 backbone), not methyl transfer
+rxn15836	SKIP	phosphonobutanoate/pyruvate chain-shortening, not methyl transfer
+rxn16693	methyl (SAM/SAH)	explicit 20-O-methyl variant pair
+rxn21084	SKIP	glycosylation forming aloenin, not methylation
+rxn21582	methyl (SAM/SAH)	explicit methoxy- vs hydroxy-phenalenone
+rxn22529	SKIP	oxidative side-chain shortening of IAA, not O/N-methylation
+rxn23776	methyl (SAM/SAH)	explicit methoxy- vs hydroxyglucobrassicin, known IGMT pathway
+rxn23917	SKIP	sterol isomerase (EC 5.3.3.-), formula shouldn't change
+rxn24701	methyl (SAM/SAH)	norajmaline/ajmaline N-methyl pair (acetylated form)
+rxn24703	methyl (SAM/SAH)	norajmaline -> ajmaline, known N-methylajmaline synthase
+rxn25414	SKIP	cyclopropane/diene isomerization, not a methyl pair
+rxn25437	SKIP	acyl-CoA thioesterase release, methyl group unrelated to change
+rxn26823	methyl (SAM/SAH)	explicit N-methylcotininium ion vs cotinine
+rxn28416	SKIP	PEP vs erythrose-4-phosphate, unrelated metabolites, mismatched pairing
+rxn28426	methyl (SAM/SAH)	explicit 7-methoxy vs 7-hydroxy anthraquinone
+rxn28427	methyl (SAM/SAH)	net loss of one OMe among anthraquinone substituents
+rxn28429	methyl (SAM/SAH)	net loss of one OMe among anthraquinone substituents
+rxn28430	methyl (SAM/SAH)	net loss of one OMe among anthraquinone substituents
+rxn28431	methyl (SAM/SAH)	net loss of one OMe among anthraquinone substituents
+rxn28432	methyl (SAM/SAH)	explicit 6-methoxy vs 6-hydroxy anthraquinone
+rxn28434	methyl (SAM/SAH)	explicit 8-methoxy vs 8-hydroxy anthraquinone
+rxn28436	methyl (SAM/SAH)	net loss of one OMe among anthraquinone substituents
+rxn28441	methyl (SAM/SAH)	net loss of ring 2-methyl, anthraquinone tailoring series
+rxn28444	methyl (SAM/SAH)	net loss of ring 2-methyl, anthraquinone tailoring series
+rxn28839	methyl (SAM/SAH)	explicit 14-demethyllanosterol -> 4-methylzymosterol
+rxn30877	SKIP	2-oxoglutarate dioxygenase hydroxylation, cofactor couple already present
+rxn31002	SKIP	2-oxoglutarate dioxygenase hydroxylation, cofactor couple already present
+rxn39491	SKIP	decarboxylating acyl-CoA condensation, not methylation
+rxn39893	SKIP	methadone->EDDP demethylation+cyclization, residual includes extra O
+rxn39894	SKIP	duplicate/ambiguous EDDP naming, can't confirm methyl relation
+rxn41898	methyl (SAM/SAH)	explicit methyl fusarate = methylester of fusaric acid
+rxn42088	SKIP	cocaine+ethanol->cocaethylene is transesterification, not SAM methylation
+rxn44814	SKIP	glycosylation forming aloenin, not methylation
+rxn45120	SKIP	sterol skeleton rearrangement, both names already dimethyl, unclear
+rxn47533	methyl (SAM/SAH)	laudanosine = N-methyltetrahydropapaverine
+rxn47547	SKIP	sterol skeleton rearrangement, both names already (di)methyl, unclear
+rxn59459	methyl (SAM/SAH)	explicit 6-methoxy-6-oxo ester vs maleylacetate diacid

@@ -1,0 +1,72 @@
+NON-DETERMINISTIC IMBALANCED REACTIONS: 3964
+
+=== by defect class ===
+  charge_only            1844
+  skeleton:C             802
+  oxygen_only            318
+  H_O_charge             244
+  skeleton:C,N           189
+  skeleton:C,N,P         136
+  skeleton:P             109
+  skeleton:C,N,S         76
+  skeleton:N             53
+  skeleton:C,N,P,S       42
+  skeleton:C,P           42
+  skeleton:Cl            36
+  skeleton:S             23
+  skeleton:C,Cl          12
+  skeleton:C,S           11
+  skeleton:Fe            10
+  skeleton:C,N,Se        2
+  skeleton:N,P           2
+  skeleton:C,I           2
+  skeleton:N,P,S         1
+  skeleton:B             1
+  skeleton:Br            1
+  skeleton:S,Se          1
+  skeleton:C,F           1
+  skeleton:C,I,N,P       1
+  skeleton:C,Fe,N        1
+  skeleton:F             1
+  skeleton:Mg            1
+  skeleton:C,Co,N        1
+  skeleton:C,Mg,N        1
+
+=== largest (class, signature, redox) pattern groups — top 25 ===
+    423  charge_only      [charge:+2     ] redox=-
+    241  oxygen_only      [O:+1          ] redox=-
+    230  charge_only      [charge:-2     ] redox=-
+    123  charge_only      [charge:-2     ] redox=NADP+NADPH
+    118  charge_only      [charge:-2     ] redox=NAD+NADH
+     72  charge_only      [charge:-4     ] redox=NADP+NADPH
+     69  charge_only      [charge:+2     ] redox=NADP+NADPH
+     67  charge_only      [charge:-4     ] redox=NAD+NADH
+     65  charge_only      [charge:+2     ] redox=NAD+NADH
+     62  charge_only      [charge:-2     ] redox=O2
+     51  skeleton:C       [C:+1,H:+2     ] redox=-
+     45  charge_only      [charge:+4     ] redox=-
+     41  oxygen_only      [O:-1          ] redox=-
+     38  charge_only      [charge:-6     ] redox=NADP+NADPH
+     37  H_O_charge       [H:-2,O:+1     ] redox=-
+     37  H_O_charge       [H:-1,O:+1,charge:-1] redox=-
+     37  charge_only      [charge:-6     ] redox=NAD+NADH
+     36  charge_only      [charge:+4     ] redox=NADP+NADPH
+     35  charge_only      [charge:+1     ] redox=-
+     35  charge_only      [charge:-4     ] redox=-
+     34  skeleton:P       [O:-3,P:-1,charge:+1] redox=-
+     32  skeleton:C       [C:+6,H:+10,O:+5] redox=-
+     30  charge_only      [charge:+2     ] redox=NADP+NADPH+O2
+     27  skeleton:C       [C:-1,H:-2     ] redox=-
+     26  skeleton:C,N,S   [C:-20,H:-28,N:-6,O:-12,S:-2,charge:+4] redox=-
+
+=== redox involvement ===
+  reactions with a known redox carrier: 1258 (31.7%)
+
+=== by EC top-level class (1=oxidoreductase) ===
+  EC (none): 2149
+  EC 1: 1290
+  EC 2: 296
+  EC 3: 129
+  EC 4: 59
+  EC 6: 31
+  EC 5: 10

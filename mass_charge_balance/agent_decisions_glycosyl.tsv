@@ -1,0 +1,67 @@
+id	decision	reason
+rxn04401	glucosyl (UDPglc/UDP)	Substrate "Cyanidin 3-O-glucoside" names glucose donor
+rxn04402	glucosyl (UDPglc/UDP)	Substrate name contains "glucoside"
+rxn04637	glucosyl (UDPglc/UDP)	Vitexin is the known apigenin 8-C-glucoside
+rxn04640	glucosyl (UDPglc/UDP)	Isovitexin is the known apigenin 6-C-glucoside
+rxn05740	glucosyl (UDPglc/UDP)	Product is Glucose-1-phosphate
+rxn05800	glucosyl (UDPglc/UDP)	Definition explicitly names UDP-glucose
+rxn05807	glucosyl (UDPglc/UDP)	"Glucan glucanohydrolase" releasing D-Glucose
+rxn05852	SKIP	UDP-galactose:galactan galactosyltransferase; sugar is galactose, not glucose/mannose
+rxn05906	SKIP	beta-D-Fructan fructohydrolase; sugar is fructose
+rxn05907	mannosyl (GDPman/GDP)	GDPmannose:mannan mannosyltransferase; GDP-mannose explicit
+rxn05929	SKIP	Galactan galactohydrolase; product is Galactose
+rxn05973	mannosyl (GDPman/GDP)	Mannan mannohydrolase; product is D-Mannose
+rxn06049	glucosyl (UDPglc/UDP)	alpha-D-glucosyltransferase producing Glucose-1-phosphate
+rxn06050	glucosyl (UDPglc/UDP)	Name explicitly "4-alpha-D-glucosyltransferase"
+rxn06165	glucosyl (UDPglc/UDP)	ADP-glucose:glucan glucosyltransferase; glucose explicit
+rxn06272	glucosyl (UDPglc/UDP)	Glucan glucohydrolase; product beta-D-Glucose
+rxn06273	glucosyl (UDPglc/UDP)	GDPglucose glucosyltransferase; transferred sugar is glucose
+rxn06618	SKIP	Sucrose:fructan fructosyltransferase (EC 2.4.1.9); sugar transferred is fructose
+rxn07000	SKIP	Galactan galactohydrolase; product alpha-D-Galactose
+rxn07011	SKIP	Product is Galactose
+rxn07031	mannosyl (GDPman/GDP)	Definition names beta-D-Mannosylphosphodecaprenol
+rxn07043	SKIP	Galactan galactohydrolase; product beta-D-Galactose
+rxn07375	glucosyl (UDPglc/UDP)	Product "Hydroxychlorobactene glucoside"
+rxn07377	glucosyl (UDPglc/UDP)	Product name contains "glucoside"
+rxn07470	glucosyl (UDPglc/UDP)	Name explicitly "glucosyltransferase"
+rxn07547	glucosyl (UDPglc/UDP)	Ononin is the known formononetin 7-O-glucoside
+rxn07557	SKIP	Medicocarpin/Medicarpin pair has no explicit glucoside/mannoside textual signal; sugar identity uncertain
+rxn07570	glucosyl (UDPglc/UDP)	Trifolirhizin is the known maackiain 3-O-beta-D-glucoside
+rxn07634	glucosyl (UDPglc/UDP)	Product "Rhodopinal glucoside"
+rxn07698	glucosyl (UDPglc/UDP)	Product "Cyanidin 5-O-glucoside"
+rxn07699	glucosyl (UDPglc/UDP)	Substrate "Cyanidin 5-O-glucoside"
+rxn07796	glucosyl (UDPglc/UDP)	Product "THC 4'-glucoside"
+rxn07797	glucosyl (UDPglc/UDP)	Product "PHC 4'-O-glucoside"
+rxn08605	glucosyl (UDPglc/UDP)	1,4-alpha-glucan branching enzyme; glycogen/glucan substrate
+rxn08615	glucosyl (UDPglc/UDP)	Glycogen synthase (ADPGlc); ADPglucose explicit
+rxn09398	glucosyl (UDPglc/UDP)	Glycogen synthase (UDPGlc); UDP-glucose explicit
+rxn10533	glucosyl (UDPglc/UDP)	Glucan 1,4-alpha-glucosidase; product D-Glucose
+rxn11515	glucosyl (UDPglc/UDP)	Product "8-C-Glucosylnaringenin"
+rxn14221	mannosyl (GDPman/GDP)	4-beta-D-mannan mannanohydrolase; product Mannooligosaccharide
+rxn14329	glucosyl (UDPglc/UDP)	Isomaltose 6-alpha-D-glucanohydrolase; product D-Glucose
+rxn15251	glucosyl (UDPglc/UDP)	1,4-alpha-D-Glucan glucohydrolase; product alpha-D-Glucose
+rxn15452	SKIP	Sucrose:fructan fructosyltransferase (EC 2.4.1.9); sugar transferred is fructose
+rxn15453	SKIP	Sucrose:fructan fructosyltransferase (EC 2.4.1.9); sugar transferred is fructose
+rxn17379	glucosyl (UDPglc/UDP)	UDP-glycogen synthase; UDP-GLUCOSE explicit
+rxn17557	mannosyl (GDPman/GDP)	beta-D-mannosylphosphodecaprenol mannosyltransferase; explicit
+rxn17917	mannosyl (GDPman/GDP)	exo-mannosidase; product MANNOSE
+rxn17932	SKIP	1-FEH fructan exohydrolase; product D-Fructose
+rxn17942	mannosyl (GDPman/GDP)	alpha-mannosyl mannohydrolase; product MANNOSE
+rxn17989	glucosyl (UDPglc/UDP)	exo-beta-1,4-glucosidase; product beta-D-Glucose
+rxn17996	SKIP	exo-beta-fructosidase; product beta-D-Fructose
+rxn18001	glucosyl (UDPglc/UDP)	exo-1,3-alpha-glucanase; product alpha-D-Glucose
+rxn22517	glucosyl (UDPglc/UDP)	Name explicitly "4-alpha-glucosyltransferase"
+rxn23846	glucosyl (UDPglc/UDP)	Product name contains "O-beta-glucosyl"
+rxn23847	SKIP	Product named generically "HEXOSE"; sugar not specified
+rxn25960	SKIP	beta-h-fructosidase; product beta-D-Fructose
+rxn32348	SKIP	Sulfotransferase on a glucosinolate (not a glycosyl-transfer event); no clear sugar signal
+rxn35562	mannosyl (GDPman/GDP)	Mannan mannohydrolase; product alpha-D-Mannose
+rxn35563	mannosyl (GDPman/GDP)	Mannan mannohydrolase; product beta-D-Mannose
+rxn40911	mannosyl (GDPman/GDP)	Product "D-Mannose1-phosphate"
+rxn41230	SKIP	Aldose 1-epimerase on beta-D-Galactose; sugar is galactose
+rxn41800	SKIP	L-Fuconate; sugar is deoxyhexose fucose, not glucose/mannose
+rxn41916	SKIP	EC 2.4.1.9 fructosyltransferase; sugar transferred is fructose
+rxn42474	SKIP	UDP-D-galactopyranose; sugar is galactose
+rxn42841	glucosyl (UDPglc/UDP)	D-Glucose => Maltose; glucose-glucose disaccharide formation
+rxn44967	SKIP	L-Rhamnonate; sugar is deoxyhexose rhamnose, not glucose/mannose
+rxn45109	glucosyl (UDPglc/UDP)	Product "beta-D-Glucose 1-phosphate"

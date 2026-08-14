@@ -1,0 +1,29 @@
+id	decision	reason
+rxn02757	acetyl (AcCoA/CoA)	Indoxyl -> Acetylindoxyl is a direct acetylation of the substrate
+rxn03262	SKIP	Salutaridinol acetate -> Thebaine is elimination of acetic acid (thebaine synthase), not a CoA-thioester exchange
+rxn03348	SKIP	PACT + NADH -> 6-Hydroxyhexanoate + NAD is a redox reduction, not acyl transfer
+rxn03349	SKIP	PACT + NADP -> Adipate + NADPH is a redox oxidation, not acyl transfer
+rxn04364	acetyl (AcCoA/CoA)	Megalomicin A -> B is a macrolide tailoring step consistent with O-acetylation; residual matches exactly one acetyl unit
+rxn04656	acetyl (AcCoA/CoA)	L-2-Aminoadipate -> N2-Acetyl-L-aminoadipate is explicit N-acetylation
+rxn04804	acetyl (AcCoA/CoA)	Demethyl-desacetyl-rifamycin SV -> 27-O-Demethyl-rifamycin SV: substrate loses "desacetyl" designation, i.e. acetyl group restored (rifamycin acetyltransferase step)
+rxn06997	SKIP	H2O -> Acetate is a hydrolase reaction (deacetylase releasing free acetate), not a CoA-thioester acetyl transfer
+rxn07818	acetyl (AcCoA/CoA)	Pinobanksin -> Pinobanksin 3-O-acetate is explicit O-acetylation (acetate ester named in product)
+rxn12099	acetyl (AcCoA/CoA)	Deacetylcolchicine -> Colchicine is explicit N-acetylation restoring colchicine's acetamide group
+rxn12103	SKIP	Papaverine -> N-Norreticuline is reduction/N-demethylation of an isoquinoline alkaloid, not acetylation
+rxn12105	SKIP	2 (S)-N-Methylcoclaurine -> Tetrandrine is oxidative dimerization of two monomers, not acetylation
+rxn12118	SKIP	Anthranilate <= 4-Hydroxy-2-quinolone is quinolone ring degradation/contraction, not acetylation
+rxn12121	SKIP	Dictamnine -> Skimmianine is furoquinoline methoxylation, not acetylation
+rxn12176	acetyl (AcCoA/CoA)	Supraene -> Hopane-29-acetate: product explicitly named as an acetate ester
+rxn15896	SKIP	4-Androsten-11beta-ol-3,17-dione -> Cortisol requires steroid side-chain/ring elaboration, not simple acetylation
+rxn20996	SKIP	Presilphiperfolan-8beta-ol + O2 -> Botrydial is P450 oxidative sesquiterpene tailoring, not acetylation
+rxn23807	SKIP	Glyceraldehyde 3-phosphate -> D-Ribulose 5-phosphate is a pentose-phosphate pathway interconversion, not acetylation
+rxn24702	acetyl (AcCoA/CoA)	17-O-Acetylnorajmaline <=> Norajmaline is loss/gain of an O-acetyl group (ajmaline pathway acetyltransferase)
+rxn24704	acetyl (AcCoA/CoA)	Acetylajmaline <=> Ajmaline is loss/gain of an acetyl group (ajmaline pathway acetyltransferase)
+rxn25771	SKIP	Angelicin -> Pimpinellin is furanocoumarin methoxylation, not acetylation
+rxn28420	SKIP	Protocatechuate -> 3,4,6-trihydroxy-cis-cinnamate is a two-carbon ring-extension/condensation, not a simple acetyl transfer to a hydroxyl/amine
+rxn30178	acetyl (AcCoA/CoA)	D-Glucosamine phosphate -> N-Acetyl-D-glucosamine1-phosphate is N-acetylation (GlmU-type) despite the "mutase" label
+rxn43786	acetyl (AcCoA/CoA)	Substrate/product names contain "2-O-acetyl" on the polysaccharide repeat unit, consistent with O-(de)acetylation
+rxn44761	acetyl (AcCoA/CoA)	15-ADON (15-acetyl-deoxynivalenol) <=> DON is deacetylation, well-known mycotoxin chemistry
+rxn45136	acetyl (AcCoA/CoA)	4-acetylnivalenol <=> Nivalenol is deacetylation
+rxn47934	acetyl (AcCoA/CoA)	3-ADON (3-acetyl-deoxynivalenol) <=> DON is deacetylation
+rxn60265	SKIP	Prostaglandin D2 -> 2,3-dinor-11-epi-PGF2alpha is beta-oxidative chain shortening, not acetyl-CoA transfer to the substrate

@@ -1,0 +1,76 @@
+id	decision	reason
+rxn01915	keep Pi	Nucleoside phosphorylase (EC 2.4.2.16), name explicitly "orthophosphate ribosyltransferase"; Pi is genuine substrate
+rxn04272	RETRACT	Acyl-CoA ligase (EC 6.2.1.-), AMP already in equation => true donor is ATP+CoA releasing AMP+PPi, not Pi
+rxn04273	RETRACT	Same enzyme class as rxn04272 (EC 6.2.1.-, AMP-forming acid-thiol ligase); needs PPi not Pi
+rxn06117	RETRACT	ATP:polyphosphate phosphotransferase (polyphosphate kinase); missing phosphate goes to untracked polyP chain, not free Pi
+rxn06118	RETRACT	Name "Polyphosphate:D-glucose 6-phosphotransferase" - polyphosphate is the phosphoryl donor, not ATP/Pi
+rxn06120	RETRACT	Same polyphosphate glucokinase as rxn06118
+rxn06121	RETRACT	Name "...:polyphosphate phosphotransferase" (EC 2.7.4.17); polyphosphate is the acceptor/donor, not free Pi
+rxn11769	RETRACT	Generic NMP kinase EC 2.7.4.-, no nucleotide named; donor unclear
+rxn11770	RETRACT	Generic NDP kinase EC 2.7.4.-, no nucleotide named; donor unclear
+rxn15314	RETRACT	Name "Polyphosphate:D-glucose 6-phosphotransferase" (EC 2.7.1.63); polyphosphate donor, not Pi
+rxn17702	RETRACT	Name "dolichylpyrophosphate:polyphosphate phosphotransferase"; polyphosphate acceptor, not free Pi
+rxn31774	RETRACT	Terpene lyase (EC 4.2.3.-); "geranyl phosphate"/PPi pattern reflects a mislabeled diphosphate substrate, not a Pi/PPi/NTP donor issue
+rxn32442	RETRACT	Geranyltranstransferase (EC 2.5.1.10); same geranyl-phosphate mislabeling as terpene synthases, not a true donor swap
+rxn33850	keep Pi	Pyruvate carboxylase EC 6.4.1.1; canonical ATP->ADP+Pi biotin-carboxylation, ATP/ADP already correctly present
+rxn33855	keep Pi	Succinate-CoA ligase GDP-forming EC 6.2.1.4; genuine Pi-releasing substrate-level phosphorylation, GTP/GDP already correct
+rxn33854	keep Pi	Succinate-CoA ligase ADP-forming EC 6.2.1.5; genuine Pi-releasing mechanism (distinct from AMP/PPi-forming ligases), ATP/ADP already correct
+rxn33871	keep Pi	Name explicitly "Pyruvate Phosphate dikinase" (EC 2.7.9.1); free phosphate is a named substrate
+rxn34005	RETRACT	Phosphoadenosine phosphosulfate reductase (EC 1.8.4.9), an oxidoreductase not a phosphotransferase; no valid Pi/PPi/NTP donor applies
+rxn35574	RETRACT	Dimethylallyltransferase EC 2.5.1.1; geranyl-phosphate mislabeling pattern (same as terpene synthases)
+rxn38690	RETRACT	Complex multi-substrate PLP-biosynthesis reaction (EC 2.4.2.-); not a simple phosphoryl-transfer, donor undeterminable
+rxn38700	RETRACT	Thiamin pyrophosphokinase EC 2.7.6.2; canonical mechanism transfers an intact pyrophosphoryl group (NTP->NMP), inconsistent with simple NDP+Pi fix; donor uncertain within given menu
+rxn39093	RETRACT	Terpene synthase (EC 4.2.3.16-); geranyl-phosphate/PPi mislabeling pattern
+rxn03945	RETRACT	Uninformative ID name, EC null; kinase donor completely unclear
+rxn04441	RETRACT	Kanosamine kinase, ID-only name, EC null; nucleotide donor not named
+rxn04652	RETRACT	"Ribose 1-phosphokinase", EC null, no ATP/GTP/UTP present or named; donor unclear
+rxn04929	RETRACT	Uninformative ID name, EC null; mechanism combines oxidation+phosphorylation, donor undeterminable
+rxn08953	RETRACT	KDO transferase; true donor is CMP-KDO (glycosyl transfer), not Pi/PPi/ATP/GTP/UTP
+rxn11092	RETRACT	PRPP-synthase-like reaction; canonical mechanism transfers intact pyrophosphoryl from ATP releasing AMP (not ADP+Pi); equation already fixed with ADP, inconsistent with named PRPP product
+rxn11371	keep Pi	Name explicitly "trehalose-monomycolate-phosphatase"; free phosphate is the named hydrolysis product
+rxn11372	keep Pi	Same phosphatase enzyme as rxn11371
+rxn11373	keep Pi	Same phosphatase enzyme as rxn11371
+rxn12125	RETRACT	Uninformative ID name, EC null (psilocybin biosynthesis); kinase donor not named
+rxn15678	RETRACT	Complex multi-substrate PLP-biosynthesis reaction, EC null; not a simple phosphoryl transfer
+rxn30849	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn34104	keep Pi	ATP-driven amino-acid transport/isomerization (Valine compartment swap); ATP/ADP already present, Pi is the genuine hydrolysis byproduct
+rxn34105	keep Pi	Same ATP-driven transport pattern as rxn34104 (Valine)
+rxn34107	keep Pi	Same ATP-driven transport pattern (Alanine)
+rxn34108	keep Pi	Same ATP-driven transport pattern (Glycine)
+rxn34109	keep Pi	Same ATP-driven transport pattern (Glycine)
+rxn34112	keep Pi	Same ATP-driven transport pattern (Aspartate)
+rxn34113	keep Pi	Same ATP-driven transport pattern (Aspartate)
+rxn34114	keep Pi	Same ATP-driven transport pattern (Glutamine)
+rxn34115	keep Pi	Same ATP-driven transport pattern (Glutamine)
+rxn34119	keep Pi	Same ATP-driven transport pattern (Tryptophan)
+rxn34120	keep Pi	Same ATP-driven transport pattern (Leucine)
+rxn34121	keep Pi	Same ATP-driven transport pattern (Leucine)
+rxn34122	keep Pi	Same ATP-driven transport pattern (Threonine)
+rxn34123	keep Pi	Same ATP-driven transport pattern (Isoleucine)
+rxn34124	keep Pi	Same ATP-driven transport pattern (Isoleucine)
+rxn34125	keep Pi	Same ATP-driven transport pattern (Proline)
+rxn34126	keep Pi	Same ATP-driven transport pattern (Proline)
+rxn34128	keep Pi	Same ATP-driven transport pattern (Phenylalanine)
+rxn34129	keep Pi	Same ATP-driven transport pattern (Phenylalanine)
+rxn34130	keep Pi	Same ATP-driven transport pattern (Tyrosine)
+rxn34131	keep Pi	Same ATP-driven transport pattern (Tyrosine)
+rxn34132	keep Pi	Same ATP-driven transport pattern (Lysine)
+rxn34133	keep Pi	Same ATP-driven transport pattern (Lysine)
+rxn34134	keep Pi	Same ATP-driven transport pattern (Histidine)
+rxn34135	keep Pi	Same ATP-driven transport pattern (Histidine)
+rxn34136	keep Pi	Same ATP-driven transport pattern (Arginine)
+rxn34137	keep Pi	Same ATP-driven transport pattern (Arginine)
+rxn35568	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn35569	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn35570	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39098	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39099	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39100	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39101	RETRACT	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn49477	keep Pi	Exopolyphosphatase-type hydrolysis: (Phosphate)n + H2O => 2 Phosphate + H+; free Pi genuinely released
+rxn53888	keep Pi	Simple NTP hydrolysis UTP<=>UDP; missing species is Pi (NTPase-type reaction)
+rxn53889	keep Pi	Simple NTP hydrolysis CTP<=>CDP; missing species is Pi (NTPase-type reaction)
+rxn53890	keep Pi	Simple NTP hydrolysis GTP<=>GDP; missing species is Pi (NTPase-type reaction)
+rxn54354	keep Pi	Simple NDP hydrolysis ADP<=>AMP; missing species is Pi
+rxn57261	RETRACT	NAD->NADP conversion (NAD kinase-type); name and EC blank, donor (ATP vs polyphosphate) cannot be determined
+rxn58969	RETRACT	NADH->NADPH conversion (NAD kinase-type); name and EC blank, donor cannot be determined

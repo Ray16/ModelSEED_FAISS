@@ -1,0 +1,36 @@
+id	action	reason
+rxn04272	retracted	Acyl-CoA ligase (EC 6.2.1.-), AMP already in equation => true donor is ATP+CoA releasing AMP+PPi, not Pi
+rxn04273	retracted	Same enzyme class as rxn04272 (EC 6.2.1.-, AMP-forming acid-thiol ligase); needs PPi not Pi
+rxn06117	retracted	ATP:polyphosphate phosphotransferase (polyphosphate kinase); missing phosphate goes to untracked polyP chain, not free Pi
+rxn06118	retracted	"Name ""Polyphosphate:D-glucose 6-phosphotransferase"" - polyphosphate is the phosphoryl donor, not ATP/Pi"
+rxn06120	retracted	Same polyphosphate glucokinase as rxn06118
+rxn06121	retracted	"Name ""...:polyphosphate phosphotransferase"" (EC 2.7.4.17); polyphosphate is the acceptor/donor, not free Pi"
+rxn11769	retracted	Generic NMP kinase EC 2.7.4.-, no nucleotide named; donor unclear
+rxn11770	retracted	Generic NDP kinase EC 2.7.4.-, no nucleotide named; donor unclear
+rxn15314	retracted	"Name ""Polyphosphate:D-glucose 6-phosphotransferase"" (EC 2.7.1.63); polyphosphate donor, not Pi"
+rxn17702	retracted	"Name ""dolichylpyrophosphate:polyphosphate phosphotransferase""; polyphosphate acceptor, not free Pi"
+rxn31774	retracted	"Terpene lyase (EC 4.2.3.-); ""geranyl phosphate""/PPi pattern reflects a mislabeled diphosphate substrate, not a Pi/PPi/NTP donor issue"
+rxn32442	retracted	Geranyltranstransferase (EC 2.5.1.10); same geranyl-phosphate mislabeling as terpene synthases, not a true donor swap
+rxn34005	retracted	Phosphoadenosine phosphosulfate reductase (EC 1.8.4.9), an oxidoreductase not a phosphotransferase; no valid Pi/PPi/NTP donor applies
+rxn35574	retracted	Dimethylallyltransferase EC 2.5.1.1; geranyl-phosphate mislabeling pattern (same as terpene synthases)
+rxn38690	retracted	Complex multi-substrate PLP-biosynthesis reaction (EC 2.4.2.-); not a simple phosphoryl-transfer, donor undeterminable
+rxn38700	retracted	Thiamin pyrophosphokinase EC 2.7.6.2; canonical mechanism transfers an intact pyrophosphoryl group (NTP->NMP), inconsistent with simple NDP+Pi fix; donor uncertain within given menu
+rxn39093	retracted	Terpene synthase (EC 4.2.3.16-); geranyl-phosphate/PPi mislabeling pattern
+rxn03945	retracted	Uninformative ID name, EC null; kinase donor completely unclear
+rxn04441	retracted	Kanosamine kinase, ID-only name, EC null; nucleotide donor not named
+rxn04652	retracted	Ribose 1-phosphokinase, EC null, no ATP/GTP/UTP present or named; donor unclear
+rxn04929	retracted	Uninformative ID name, EC null; mechanism combines oxidation+phosphorylation, donor undeterminable
+rxn08953	retracted	KDO transferase; true donor is CMP-KDO (glycosyl transfer), not Pi/PPi/ATP/GTP/UTP
+rxn11092	retracted	PRPP-synthase-like reaction; canonical mechanism transfers intact pyrophosphoryl from ATP releasing AMP (not ADP+Pi); equation already fixed with ADP, inconsistent with named PRPP product
+rxn12125	retracted	Uninformative ID name, EC null (psilocybin biosynthesis); kinase donor not named
+rxn15678	retracted	Complex multi-substrate PLP-biosynthesis reaction, EC null; not a simple phosphoryl transfer
+rxn30849	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn35568	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn35569	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn35570	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39098	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39099	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39100	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn39101	retracted	Terpene synthase-type reaction; geranyl-phosphate/PPi mislabeling pattern
+rxn57261	retracted	NAD->NADP conversion (NAD kinase-type); name and EC blank, donor (ATP vs polyphosphate) cannot be determined
+rxn58969	retracted	NADH->NADPH conversion (NAD kinase-type); name and EC blank, donor cannot be determined
