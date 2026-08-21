@@ -32,12 +32,15 @@ if shards:
 else:
     df = pd.read_csv(os.path.join(RESULTS, "results.csv"))
 
+# Ordered so every family is one contiguous colour block (biochem is a learned
+# reaction transformer -> sits with the other learned models, not orphaned at the
+# end; the novel single-member axes erg/gin/unimol trail as the "new axes" group).
 EMB_ORDER = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp",
              "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
-             "maccs_diff", "secfp_diff", "cgr_linear", "cgr_morgan", "descriptors_diff",
+             "maccs_diff", "secfp_diff", "descriptors_diff", "cgr_linear", "cgr_morgan",
              "rxnfp", "rxnfp_pretrained", "rxnfp_moldiff", "rxnfp_sidediff",
-             "chemberta_diff", "molformer_diff",
-             "erg_diff", "gin_diff", "unimol_diff", "biochem"]
+             "chemberta_diff", "molformer_diff", "biochem",
+             "erg_diff", "gin_diff", "unimol_diff"]
 FAMILY = {**{e: "structural" for e in ["ecfp4_diff","ecfp2_diff","ecfp6_diff","ecfp4_concat",
              "drfp","atompair_diff","rdk_diff","torsion_diff","avalon_diff","maccs_diff","secfp_diff"]},
           "ecfp4_drfp": "structural", "descriptors_diff": "physchem",

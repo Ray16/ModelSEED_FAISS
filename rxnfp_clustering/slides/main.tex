@@ -1,49 +1,114 @@
 \documentclass[aspectratio=169,10pt]{beamer}
-% Clean default theme (metropolis not installed)
 \usetheme{default}
-\usecolortheme{seahorse}
 \usefonttheme{professionalfonts}
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}[frame number]
-\setbeamercolor{frametitle}{fg=white,bg=structure!80!black}
-\setbeamertemplate{frametitle}{\vskip4pt\usebeamerfont{frametitle}\insertframetitle\par}
-\setbeamercolor{block title}{bg=structure!20!white,fg=black}
-\setbeamerfont{frametitle}{size=\large,series=\bfseries}
 
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{xcolor}
 \usepackage[skins]{tcolorbox}
+\usepackage{tikz}
 \graphicspath{{../figures/}}
-\newcommand{\best}[1]{{\color{green!45!black}\textbf{#1}}}
-\newcommand{\bad}[1]{{\color{red!60!black}#1}}
+
+% ----------------------------------------------------------------------
+% Family palette -- identical to the figures' FAM_COLOR (Okabe-Ito).
+% Every family gets ONE colour, used for legend chips and inline highlights.
+% ----------------------------------------------------------------------
+\definecolor{cStruct}{HTML}{0072B2}   % structural fingerprints
+\definecolor{cPhys}{HTML}{009E73}     % physchem descriptors
+\definecolor{cCGR}{HTML}{CC79A7}      % atom-mapped bond-change
+\definecolor{cLearn}{HTML}{D55E00}    % learned reaction models
+\definecolor{cReduced}{HTML}{2E86C1}  % reduced-graph (ErG)  (darkened #56B4E9 for text)
+\definecolor{cGNN}{HTML}{B7950B}      % graph GNN (GIN)      (darkened yellow for text)
+\definecolor{c3D}{HTML}{222222}       % 3D geometry (Uni-Mol)
+% exact figure-legend fills (used for the chip squares; text uses the darker variants above)
+\definecolor{cReducedFill}{HTML}{56B4E9}
+\definecolor{cGNNFill}{HTML}{F0E442}
+% Structural chrome
+\definecolor{cInk}{HTML}{0B3D5C}      % deep slate -- titles / structure
+\definecolor{cAccent}{HTML}{0072B2}
+\definecolor{cGood}{HTML}{1E8449}
+\definecolor{cBad}{HTML}{B03A2E}
+
+\setbeamercolor{structure}{fg=cInk}
+\setbeamercolor{frametitle}{fg=white,bg=cInk}
+\setbeamertemplate{frametitle}{\vskip5pt\usebeamerfont{frametitle}\insertframetitle\par}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamercolor{block title}{bg=cInk!15!white,fg=cInk}
+\setbeamercolor{block body}{bg=cInk!5!white}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{footline}{fg=cInk!60}
+
+\newcommand{\best}[1]{{\color{cGood}\textbf{#1}}}
+\newcommand{\bad}[1]{{\color{cBad}#1}}
+% coloured family chip: \chip{color}{label}
+\newcommand{\chip}[2]{\tikz[baseline=-0.5ex]\draw[fill=#1,#1,line width=0.3pt] (0,0) rectangle (0.28,0.28);\,{#2}}
+% inline family-coloured token
+\newcommand{\fStruct}[1]{{\color{cStruct}\textbf{#1}}}
+\newcommand{\fPhys}[1]{{\color{cPhys}\textbf{#1}}}
+\newcommand{\fCGR}[1]{{\color{cCGR}\textbf{#1}}}
+\newcommand{\fLearn}[1]{{\color{cLearn}\textbf{#1}}}
+\newcommand{\fReduced}[1]{{\color{cReduced}\textbf{#1}}}
+\newcommand{\fGNN}[1]{{\color{cGNN}\textbf{#1}}}
+\newcommand{\fThreeD}[1]{{\color{c3D}\textbf{#1}}}
 % key-message strip at the bottom of a frame, kept clear of figures
-\newcommand{\takeaway}[1]{\vfill\begin{tcolorbox}[colback=structure!12!white,colframe=structure!60!black,
-  boxrule=0.4pt,left=4pt,right=4pt,top=2pt,bottom=2pt]\small #1\end{tcolorbox}}
+\newcommand{\takeaway}[1]{\vfill\begin{tcolorbox}[colback=cInk!10!white,colframe=cInk!70!black,
+  boxrule=0.5pt,left=5pt,right=5pt,top=3pt,bottom=3pt]\small #1\end{tcolorbox}}
+
+% ----------------------------------------------------------------------
+% Section-divider frames
+% ----------------------------------------------------------------------
+\newcommand{\partdivider}[3]{% number, title, subtitle
+  {\setbeamertemplate{footline}{}
+  \begin{frame}[plain]
+    \begin{tikzpicture}[remember picture,overlay]
+      \fill[cInk] (current page.south west) rectangle (current page.north east);
+      \fill[cAccent] (current page.west) ++(0,-0.9) rectangle ++(\paperwidth,1.8);
+    \end{tikzpicture}
+    \vfill
+    \begin{center}
+      {\color{white!75!cAccent}\Large\textbf{#1}}\\[10pt]
+      {\color{white}\Huge\textbf{#2}}\\[12pt]
+      {\color{white!85!cInk}\large #3}
+    \end{center}
+    \vfill
+  \end{frame}}}
 
 \title{\bfseries Grouping Enzymatic Reactions by EC Number}
-\subtitle{Benchmarking reaction embeddings \& clustering, and a fusion method that beats them}
+\subtitle{Benchmarking reaction embeddings \& clustering --- and a fusion method that beats them}
 \author{ModelSEED reaction--representation study}
 \date{\today}
 
 \begin{document}
 
+% ===================== TITLE =====================
 {\setbeamertemplate{footline}{}
 \begin{frame}[plain]
-  \titlepage
-  \begin{center}\small 13{,}721 reactions $\cdot$ 21 embeddings $\times$ 12 clustering algorithms $\cdot$ EC-purity + retrieval\end{center}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[cInk] (current page.north west) rectangle ([yshift=-1.9cm]current page.north east);
+  \end{tikzpicture}
+  \vspace{1.1cm}
+  {\color{white}\usebeamerfont{title}\inserttitle\par}
+  \vspace{0.2cm}
+  {\color{cInk}\usebeamerfont{subtitle}\insertsubtitle\par}
+  \vfill
+  \begin{center}\small
+    13{,}721 reactions $\;\cdot\;$ \textbf{25} embeddings $\times$ 12 clustering algorithms
+    $\;\cdot\;$ EC-purity \& retrieval\end{center}
+  \vspace{0.3cm}
+  {\footnotesize\color{cInk!70} \insertauthor \hfill \insertdate}
 \end{frame}}
 
-% ---------------------------------------------------------------
+% ===================== SETUP =====================
 \begin{frame}{The question}
   \begin{columns}[T]
     \begin{column}{0.58\textwidth}
       \textbf{Goal.} Given ModelSEED reactions, find the (reaction embedding,
-      clustering algorithm) combination that groups reactions so each cluster is
-      \emph{clean} with respect to its \textbf{EC number} --- reactions of the same
-      enzyme class together, different classes apart.
+      clustering algorithm) pair that groups reactions so each cluster is
+      \emph{clean} with respect to its \textbf{EC number} --- same enzyme class
+      together, different classes apart.
 
-      \vspace{6pt}
+      \vspace{8pt}
       \textbf{Why it matters}
       \begin{itemize}\small
         \item EC \textbf{annotation transfer} to unlabelled reactions
@@ -67,39 +132,45 @@
   \end{columns}
 \end{frame}
 
-% ---------------------------------------------------------------
-\begin{frame}{What we surveyed}
+\begin{frame}{What we surveyed --- 25 embeddings $\times$ 12 algorithms}
   \begin{columns}[T]
-    \begin{column}{0.33\textwidth}
-      \begin{block}{Embeddings (21)}\footnotesize
-        \textbf{Structural (diff):} ECFP2/4/6, AtomPair, RDKit, MACCS, MHFP, DRFP, Avalon, torsion\\[2pt]
-        \textbf{PhysChem:} 217 physicochemical descriptors\\[2pt]
-        \textbf{Learned:} RXNFP, ChemBERTa, MolFormer\\[2pt]
-        \textbf{Atom-mapped:} CGR (linear/morgan)
+    \begin{column}{0.42\textwidth}
+      \begin{block}{Embeddings (25), by representational family}\footnotesize
+        \chip{cStruct}{\fStruct{Structural} (diff): ECFP2/4/6, AtomPair, RDKit, MACCS, MHFP, DRFP, Avalon, torsion}\\[3pt]
+        \chip{cPhys}{\fPhys{PhysChem}: 217 physicochemical descriptors}\\[3pt]
+        \chip{cCGR}{\fCGR{Atom-mapped}: CGR (linear / morgan)}\\[3pt]
+        \chip{cLearn}{\fLearn{Learned}: RXNFP, ChemBERTa, MolFormer, \textbf{REXzyme}}\\[3pt]
+        \chip{cReducedFill}{\fReduced{Reduced-graph}: ErG (pharmacophore)}\quad
+        \chip{cGNNFill}{\fGNN{Graph-GNN}: GIN}\\[3pt]
+        \chip{c3D}{\fThreeD{3D geometry}: Uni-Mol}
       \end{block}
+      {\scriptsize The last four (\fLearn{REXzyme}, \fReduced{ErG}, \fGNN{GIN},
+      \fThreeD{Uni-Mol}) are genuinely \emph{new axes} --- Part III.}
     \end{column}
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.29\textwidth}
       \begin{block}{Clustering (12)}\footnotesize
-        K-means, Agglomerative (avg/complete/single/Ward), Birch,
+        K-means, Agglomerative (avg / complete / single / Ward), Birch,
         \textbf{Leiden}, \textbf{Louvain}, Spectral, DBSCAN, HDBSCAN, Butina
       \end{block}
     \end{column}
-    \begin{column}{0.33\textwidth}
+    \begin{column}{0.29\textwidth}
       \begin{block}{Evaluation}\footnotesize
-        Common 256-d SVD / cosine space.\\[2pt]
-        \textbf{Clustering:} AMI, homogeneity, V-measure, purity at EC1/2/3/full.\\[2pt]
+        Common 256-d SVD / cosine space.\\[3pt]
+        \textbf{Clustering:} AMI, homogeneity, V-measure, purity at EC1/2/3/full.\\[3pt]
         \textbf{Retrieval:} leave-one-out kNN EC accuracy.
       \end{block}
     \end{column}
   \end{columns}
-  \takeaway{One harness, every embedding $\times$ every algorithm, scored identically --- 550+ configurations.}
+  \takeaway{One harness, every embedding $\times$ every algorithm, scored identically --- 800+ configurations.}
 \end{frame}
 
-% ---------------------------------------------------------------
+% ===================== PART I =====================
+\partdivider{Part I}{The benchmark}{25 embeddings $\times$ 12 algorithms, one scoring harness}
+
 \begin{frame}{Result 1 --- the benchmark grid}
   \centering
   \includegraphics[height=0.80\textheight]{fig_heatmap_embed_algo.png}\\[-1pt]
-  {\scriptsize CGR rows are full-set (coverage-limited to 75\%); the fair CGR comparison is on a later slide.}
+  {\scriptsize \fCGR{CGR} rows are full-set (coverage-limited to 75\%); the fair CGR comparison is on a later slide.}
 \end{frame}
 
 \begin{frame}{Result 1 --- what wins}
@@ -109,16 +180,15 @@
     \end{column}
     \begin{column}{0.5\textwidth}\small
       \begin{itemize}
-        \item Structural \emph{difference} fingerprints form a \best{plateau} at EC3 AMI $\approx$0.62--0.63 --- radius/type barely matter.
-        \item \best{PhysChem} (217 physicochemical descriptors) are a surprise: highest homogeneity/purity.
+        \item \fStruct{Structural difference} fingerprints form a \best{plateau} at EC3 AMI $\approx$0.62--0.63 --- radius/type barely matter.
+        \item \fPhys{PhysChem} (217 descriptors) match them: highest homogeneity/purity.
         \item \best{Agglomerative average/complete} + Birch win; \bad{single-linkage collapses}; density (DBSCAN/HDBSCAN) weakest.
-        \item \bad{Learned embeddings underperform} (RXNFP worst).
+        \item \bad{Learned embeddings underperform} (RXNFP worst) --- and, spoiler, so do the four \emph{new} axes on the right (Part III).
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
-% ---------------------------------------------------------------
 \begin{frame}{Result 2 --- retrieval $\gg$ clustering}
   \begin{columns}[T]
     \begin{column}{0.56\textwidth}
@@ -137,36 +207,37 @@
   \takeaway{For annotation, don't cluster --- \textbf{retrieve}. Full 4-level EC stays hard everywhere ($\sim$0.3--0.5).}
 \end{frame}
 
-% ---------------------------------------------------------------
 \begin{frame}{The reaction map}
   \centering
   \includegraphics[height=0.80\textheight]{fig_tsne_ec_comparison.png}
 \end{frame}
 
-% ---------------------------------------------------------------
 \begin{frame}{Why does RXNFP underperform?}
   \begin{columns}[T]
     \begin{column}{0.54\textwidth}
       \centering\includegraphics[width=\linewidth]{fig_compare_ecfp4drfp_vs_rxnfp.png}
     \end{column}
     \begin{column}{0.46\textwidth}\small
-      RXNFP (pretrained rxn-BERT) trails a cheap fingerprint on every EC metric.
+      \fLearn{RXNFP} (pretrained rxn-BERT) trails a cheap fingerprint on every EC metric.
       \begin{itemize}
         \item \textbf{Distribution:} trained on USPTO \emph{organic synthesis}, not enzymatic biochemistry.
         \item \textbf{Taxonomy:} fine-tuned for organic reaction-type classes, not EC.
         \item \textbf{No difference operation:} a holistic latent; cofactors dominate.
       \end{itemize}
-      We tested adding a difference (\texttt{rxnfp\_moldiff}): only a hair better ---
-      confirming the ceiling is \emph{training}, not the difference construction.
+      Adding a difference (\texttt{rxnfp\_moldiff}) helps only a hair ---
+      the ceiling is \emph{training}, not the difference construction.
+      \emph{(Part III revisits this with a biochemistry-native model.)}
     \end{column}
   \end{columns}
 \end{frame}
 
-% ---------------------------------------------------------------
+% ===================== PART II =====================
+\partdivider{Part II}{Bond-changes \& fusion}{the method that beats every single view}
+
 \begin{frame}{Attacking full-EC: Condensed Graph of Reaction (CGR)}
   \begin{columns}[T]
     \begin{column}{0.52\textwidth}\small
-      \textbf{Idea.} Merge reactant + product graphs into one, using \textbf{atom
+      \textbf{Idea.} Merge reactant + product graphs into one via \textbf{atom
       mapping}; bonds carry a \emph{dynamic} label (formed / broken / order-changed).
       It encodes the \textbf{actual bond transformation} --- exactly what EC classifies.
 
@@ -176,7 +247,7 @@
 
       \vspace{4pt}
       Prior art (Varnek/Nugmanov; Heid \& Green 2022); the \emph{new} part is applying
-      it to \textbf{EC clustering on ModelSEED} and comparing head-to-head.
+      it to \textbf{EC clustering on ModelSEED} head-to-head.
     \end{column}
     \begin{column}{0.48\textwidth}
       \begin{block}{Fair subset (n=10{,}260)}\footnotesize
@@ -184,9 +255,9 @@
           \toprule
           & EC3 AMI & \textbf{full-EC 1-NN}\\
           \midrule
-          ECFP4-diff & 0.628 & 0.490\\
-          PhysChem & \best{0.667} & 0.484\\
-          \textbf{CGR} & 0.613 & \best{0.543}\\
+          \fStruct{ECFP4-diff} & 0.628 & 0.490\\
+          \fPhys{PhysChem} & \best{0.667} & 0.484\\
+          \fCGR{\textbf{CGR}} & 0.613 & \best{0.543}\\
           \bottomrule
         \end{tabular}
       \end{block}
@@ -197,48 +268,97 @@
   \takeaway{No single representation is best at everything --- each view has \textbf{complementary} strengths.}
 \end{frame}
 
-% ---------------------------------------------------------------
 \begin{frame}{Our method --- multi-view fusion}
   \begin{columns}[T]
-    \begin{column}{0.58\textwidth}
-      \centering\includegraphics[width=\linewidth]{fig_fusion.png}
+    \begin{column}{0.60\textwidth}
+      \centering\includegraphics[width=\linewidth]{fig_triple_combos.png}
     \end{column}
-    \begin{column}{0.42\textwidth}\small
-      Fuse the complementary views (ECFP $\oplus$ PhysChem $\oplus$ CGR):
-      \begin{itemize}
-        \item EC3 AMI \best{0.696} --- beats every single view and the best incumbent (0.637).
-        \item full-EC 1-NN \best{0.569} --- beats even CGR alone (0.543).
-      \end{itemize}
-      \textbf{Unsupervised}, no fitting. Each view supplies what the others lack.
+    \begin{column}{0.40\textwidth}\small
+      \textbf{Recipe} (unsupervised, no fitting): per-view normalize $\rightarrow$
+      concat $\rightarrow$ SVD-256 $\rightarrow$ agglomerative-average.
+
       \vspace{4pt}
-      \footnotesize Greedy view-selection pushes EC3 AMI to \best{0.718}
-      (PhysChem+DRFP core, then diminishing returns) --- gains saturate after $\sim$2 views.
+      All 35 triples from \{\fPhys{PhysChem}, \fStruct{ECFP4/DRFP/MHFP/AtomPair},
+      \fCGR{CGR}, \fLearn{ChemBERTa}\} scored (top 12 shown; bars = EC3 AMI /
+      retrieval accuracy).
+      \begin{itemize}
+        \item Best EC3 AMI \best{PhysChem+CGR+ChemBERTa = 0.71} --- beats every single view (0.667).
+        \item \fCGR{CGR}-containing triples win \textbf{full-EC retrieval} (0.57--0.58).
+        \item \best{PhysChem is the anchor} (in every top triple); even ``weak'' \fLearn{ChemBERTa} earns its place.
+      \end{itemize}
+      Tight band (0.68--0.71): the \emph{recipe}, not the exact triple, is what matters.
     \end{column}
   \end{columns}
   \takeaway{Fusion of complementary views is a genuine SOTA-beater --- \emph{before} any supervision.}
 \end{frame}
 
-% ---------------------------------------------------------------
-\begin{frame}{Which combo? --- all 3-view fusions}
-  \centering
-  \includegraphics[width=0.96\linewidth]{fig_triple_combos.png}
-  \takeaway{All 35 triples from \{\,PhysChem, ECFP4, DRFP, MHFP, CGR, AtomPair,
-    ChemBERTa\,\} were scored; the top 12 are shown. \best{PhysChem is the anchor}
-    (in every top triple); best EC3 AMI \best{PhysChem+CGR+ChemBERTa (0.71)};
-    \best{CGR}-containing triples win \textbf{full-EC retrieval} (0.57--0.58). Tight
-    band (0.68--0.71) --- the recipe, not the exact triple, is what matters; even
-    ``weak'' ChemBERTa earns its place.}
+% ===================== PART III =====================
+\partdivider{Part III}{Do novel representations help?}{pharmacophore, learned-graph, 3D shape, biochemistry-native --- and why none moves the needle}
+
+\begin{frame}{Four genuinely-orthogonal axes}
+  \small We asked: does a representation that ``sees'' the reaction \emph{differently}
+  carry EC signal the 2D fingerprints miss? Four new axes, each a different view:
+  \vspace{4pt}
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      \begin{block}{\chip{cReducedFill}{\fReduced{ErG}} pharmacophore reduced-graph}\footnotesize
+        RDKit ErG --- atoms abstracted to pharmacophore \emph{types} on a reduced
+        topological graph. ``Same arrangement of features?''
+      \end{block}
+      \begin{block}{\chip{cGNNFill}{\fGNN{GIN}} pretrained 2D-graph GNN}\footnotesize
+        snap-stanford context-prediction GIN --- learns on the molecular
+        \emph{graph}, not a SMILES string.
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{\chip{c3D}{\fThreeD{Uni-Mol}} 3D molecular geometry}\footnotesize
+        SE(3) transformer on generated \emph{conformers} --- the only view of true
+        molecular \emph{shape} in the pool.
+      \end{block}
+      \begin{block}{\chip{cLearn}{\fLearn{REXzyme}} biochemistry-native reaction}\footnotesize
+        335M T5 encoder trained on \textbf{32M RHEA reaction$\rightarrow$enzyme
+        pairs} --- the exact biochemical domain, not USPTO synthesis.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \takeaway{These are real, distinct \emph{representations} --- shape, pharmacophore, learned graph, enzyme-supervised language.}
 \end{frame}
 
-% ---------------------------------------------------------------
+\begin{frame}{Result --- none beats the 2D plateau, and fusing them \emph{hurts}}
+  \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
+      \centering\includegraphics[width=\linewidth]{fig_crossaxis_fusion.png}
+    \end{column}
+    \begin{column}{0.45\textwidth}\small
+      Each new axis \bad{underperforms} the 2D plateau (single-view EC3 AMI, fair
+      subset): \fThreeD{Uni-Mol} 0.62 $>$ \fCGR{CGR} 0.61 $>$ \fReduced{ErG} 0.57
+      $>$ \fGNN{GIN} 0.53; retrieval tops at \fReduced{ErG} 0.82 vs \fStruct{0.87}.
+      \begin{itemize}
+        \item \fLearn{REXzyme} is the headline negative: biochem-native pretraining
+          annotates \bad{worse than USPTO rxnfp} (0.78 vs 0.83).
+        \item Fusing all four novel axes \bad{loses} to the Part II incumbent
+          (0.698 vs \best{0.710}).
+        \item \textbf{Adding the best novel axis on top of the incumbent \bad{hurts}}
+          ($-0.004$; all four $-0.010$).
+      \end{itemize}
+      \textbf{Representational diversity $\neq$ task-relevant diversity.}
+    \end{column}
+  \end{columns}
+  \takeaway{EC is a \textbf{bond-change} label; once descriptors+CGR+ChemBERTa capture that,
+    shape / pharmacophore / graph / catalysis views are redundant. The plateau is the
+    \emph{taxonomy}, not any encoder's ceiling.}
+\end{frame}
+
+% ===================== SYNTHESIS =====================
 \begin{frame}{Where this goes --- the ablation ladder}
   \small
   \begin{tabular}{@{}cll@{}}
     \toprule
     Rung & Method & Status / expected\\
     \midrule
-    0 & Best incumbent (ECFP/CGR/PhysChem) + agglo & EC3 AMI 0.63--0.67\\
-    1 & \textbf{Multi-view fusion} (unsupervised) & \best{0.696 --- done, beats all singles}\\
+    0 & Best incumbent (\fStruct{ECFP}/\fCGR{CGR}/\fPhys{PhysChem}) + agglo & EC3 AMI 0.63--0.67\\
+    1 & \textbf{Multi-view fusion} (unsupervised) & \best{0.71 --- done, beats all singles}\\
+    -- & \emph{novel orthogonal axes} (\fThreeD{3D}/\fReduced{ErG}/\fGNN{GIN}/\fLearn{REXzyme}) & \bad{no gain --- ruled out (Part III)}\\
     2 & + cofactor normalization & de-confound ATP/NAD currency\\
     3 & + self-supervised contrastive & label-free ceiling\\
     4 & + \textbf{hierarchical-EC metric learning} & the label lift (biggest lever)\\
@@ -249,13 +369,13 @@
   \takeaway{Each rung is one controlled change on the same harness --- so ``beats SOTA'' is decomposable and defensible.}
 \end{frame}
 
-% ---------------------------------------------------------------
 \begin{frame}{Takeaways}
   \begin{enumerate}\small
-    \item \textbf{Structural difference fingerprints + agglomerative-average} are the strong, cheap baseline (EC3 AMI $\approx$0.63); learned reaction embeddings (RXNFP/ChemBERTa/MolFormer) \emph{underperform} them.
+    \item \fStruct{Structural difference fingerprints} + \textbf{agglomerative-average} are the strong, cheap baseline (EC3 AMI $\approx$0.63); \fLearn{learned reaction embeddings} \emph{underperform} them.
     \item \textbf{Retrieval beats clustering} for annotation: confidence-gated 15-NN gives EC3 at 0.90 accuracy over 76\% of reactions.
-    \item \textbf{CGR} (atom-mapped bond changes) wins the full-EC retrieval it was designed for, but is coverage-limited and not dominant alone.
-    \item \textbf{Multi-view fusion} of complementary views (ECFP $\oplus$ PhysChem $\oplus$ CGR) \best{beats every individual method} --- EC3 AMI 0.70 --- with no supervision.
+    \item \fCGR{CGR} (atom-mapped bond changes) wins the full-EC retrieval it was designed for, but is coverage-limited and not dominant alone.
+    \item \textbf{Multi-view fusion} of complementary views (\fPhys{PhysChem}$\oplus$\fCGR{CGR}$\oplus$\fLearn{ChemBERTa}) \best{beats every individual method} --- EC3 AMI 0.71 --- unsupervised.
+    \item \textbf{More exotic $\neq$ better}: 3D shape, pharmacophore, learned-graph, and a 335M biochemistry-native model add \bad{no EC signal} the 2D views lack (Part III).
     \item Next: \textbf{hierarchical-EC metric learning}, evaluated zero-shot on held-out EC subclasses.
   \end{enumerate}
 \end{frame}
