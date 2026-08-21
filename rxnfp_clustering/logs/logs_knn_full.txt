@@ -1,0 +1,20 @@
+[01:33:30] ecfp4_diff: 1-NN EC3 acc=0.8729  15-NN EC3 acc=0.7816
+[01:33:35] ecfp2_diff: 1-NN EC3 acc=0.8569  15-NN EC3 acc=0.7701
+[01:33:41] ecfp6_diff: 1-NN EC3 acc=0.8744  15-NN EC3 acc=0.7841
+[01:33:47] ecfp4_concat: 1-NN EC3 acc=0.8321  15-NN EC3 acc=0.7284
+[01:33:53] ecfp4_drfp: 1-NN EC3 acc=0.8741  15-NN EC3 acc=0.7853
+[01:33:58] drfp: 1-NN EC3 acc=0.8271  15-NN EC3 acc=0.728
+[01:34:04] atompair_diff: 1-NN EC3 acc=0.8549  15-NN EC3 acc=0.7608
+[01:34:09] rdk_diff: 1-NN EC3 acc=0.8604  15-NN EC3 acc=0.7497
+[01:34:14] torsion_diff: 1-NN EC3 acc=0.8159  15-NN EC3 acc=0.7179
+[01:34:19] avalon_diff: 1-NN EC3 acc=0.8566  15-NN EC3 acc=0.7416
+[01:34:22] maccs_diff: 1-NN EC3 acc=0.8577  15-NN EC3 acc=0.7636
+[01:34:27] secfp_diff: 1-NN EC3 acc=0.8619  15-NN EC3 acc=0.7553
+[01:34:31] descriptors_diff: 1-NN EC3 acc=0.8623  15-NN EC3 acc=0.7649
+[01:34:35] rxnfp: 1-NN EC3 acc=0.834  15-NN EC3 acc=0.7185
+[01:34:39] rxnfp_pretrained: 1-NN EC3 acc=0.8335  15-NN EC3 acc=0.7177
+[01:34:43] chemberta_diff: 1-NN EC3 acc=0.8517  15-NN EC3 acc=0.7464
+[01:34:47] molformer_diff: 1-NN EC3 acc=0.8492  15-NN EC3 acc=0.7414
+[01:34:51] rxnfp_moldiff: 1-NN EC3 acc=0.839  15-NN EC3 acc=0.7249
+[01:34:55] rxnfp_sidediff: 1-NN EC3 acc=0.7763  15-NN EC3 acc=0.6315
+[01:34:55] wrote knn_results.csv (57 rows)

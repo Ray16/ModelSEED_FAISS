@@ -1,0 +1,162 @@
+# Results — reaction embeddings × similarity/clustering for clean EC splits
+
+**Scope (expanded run).** 13,721 ModelSEED reactions · **17 embeddings × 12 clustering
+algorithms = 550 configs** · plus a **kNN EC-annotation-transfer** evaluation and
+**t-SNE maps**. Primary metric: **EC3 (subclass) AMI** — mutual information vs. the
+261 EC3 subclasses, corrected for chance and cluster count. Also scored at EC1/EC2/full.
+
+## Bottom line
+
+> **Best clustering:** a **structure-based difference fingerprint + agglomerative
+> average/complete-linkage (cosine) at k≈400–800** → EC3 AMI ≈ 0.63.
+> The top embeddings are a tight pack — the choice of *fingerprint within the
+> structural family barely matters*; the *clustering algorithm and the difference
+> construction matter more*.
+>
+> **Best for annotation:** don't cluster — **retrieve**. 15-NN majority vote assigns
+> EC3 at **0.90 accuracy over ~76% of reactions** (confidence-gated). This is the
+> operating mode a reaction FAISS index would use.
+
+## Embedding ranking (best config each, by EC3 AMI)
+
+| # | embedding | family | EC3 AMI | EC3 homog | EC3 purity | full-EC AMI |
+|--:|-----------|--------|--------:|----------:|-----------:|------------:|
+| 1 | **ecfp4_drfp** (ECFP4+DRFP) | structural | 0.630 | 0.747 | 0.680 | 0.369 |
+| 2 | **secfp_diff** (MHFP) | structural | 0.629 | 0.729 | 0.659 | 0.368 |
+| 3 | ecfp6_diff | structural | 0.628 | 0.670 | 0.612 | 0.333 |
+| 4 | **descriptors_diff** | physicochem | 0.624 | 0.787 | 0.717 | 0.401 |
+| 5 | ecfp4_diff | structural | 0.623 | 0.736 | 0.673 | 0.354 |
+| 6 | ecfp2_diff | structural | 0.620 | 0.815 | 0.744 | 0.401 |
+| 7 | atompair_diff | structural | 0.618 | 0.727 | 0.665 | 0.379 |
+| 8 | maccs_diff | structural | 0.609 | 0.711 | 0.640 | 0.387 |
+| 9 | drfp | structural | 0.588 | 0.686 | 0.605 | 0.353 |
+| 10 | rdk_diff | structural | 0.588 | 0.697 | 0.621 | 0.358 |
+| 11 | **chemberta_diff** | learned | 0.580 | 0.767 | 0.691 | 0.387 |
+| 12 | torsion_diff | structural | 0.579 | 0.624 | 0.555 | 0.334 |
+| 13 | avalon_diff | structural | 0.575 | 0.682 | 0.610 | 0.363 |
+| 14 | **molformer_diff** | learned | 0.569 | 0.755 | 0.681 | 0.387 |
+| 15 | ecfp4_concat | structural | 0.567 | 0.669 | 0.594 | 0.373 |
+| 16 | **rxnfp** | learned | 0.542 | 0.802 | 0.714 | 0.424 |
+| 17 | **rxnfp_pretrained** | learned | 0.490 | 0.685 | 0.567 | 0.395 |
+
+## Algorithm ranking (best EC3 AMI over all embeddings)
+
+| algorithm | best EC3 AMI | paradigm | note |
+|-----------|-------------:|----------|------|
+| **agglo average (cosine)** | 0.630 | hierarchical | best overall |
+| **agglo complete (cosine)** | 0.623 | hierarchical | ~tied, higher homogeneity |
+| **Birch** | 0.619 | tree/centroid | fast, nearly as good |
+| agglo Ward | 0.603 | hierarchical | |
+| **Leiden** | 0.602 | graph community | coarser (≈45–90 clusters); good but not at matched k |
+| MiniBatch KMeans | 0.598 | centroid | cheap; peaks k≈100–200 |
+| Butina | 0.591 | Tanimoto threshold | classic; binary FPs only |
+| Louvain | 0.577 | graph community | coarser still |
+| Spectral | 0.574 | graph/eigen | mid, and slow |
+| DBSCAN | 0.472 | density | high noise |
+| HDBSCAN | 0.468 | density | high noise |
+| agglo **single** (cosine) | 0.257 | hierarchical | **chaining collapse — avoid** |
+
+## Findings
+
+1. **The structural family is a plateau, not a peak.** ECFP (r=2/4/6), MHFP/SECFP,
+   AtomPair, MACCS, and even a plain **physicochemical descriptor difference** all
+   land at EC3 AMI 0.61–0.63. Radius and exact fingerprint hardly move the needle —
+   what matters is (a) taking the *product−reactant difference* and (b) the
+   clustering algorithm. `descriptors_diff` is the surprise: 217 RDKit 2D descriptors
+   match the circular fingerprints, with the **highest homogeneity/purity** of the pack.
+
+2. **Learned embeddings underperform structural ones — consistently.** ChemBERTa (0.58)
+   and MolFormer (0.57), pooled per-molecule into reaction differences, sit below the
+   cheap structural fingerprints. Reaction-level **RXNFP (0.54)** and especially
+   **RXNFP-pretrained (0.49, worst of all 17)** trail further — the USPTO-organic
+   pretraining transfers poorly to enzymatic biochemistry. Note RXNFP posts high
+   *homogeneity/purity* at large k but low *AMI*: it makes pure-but-fragmented clusters.
+
+3. **Average/complete-linkage agglomerative wins; single-linkage fails.** Hierarchical
+   average/complete, Birch, and KMeans form the strong tier. **Single-linkage chains
+   into one giant cluster (AMI 0.26).** Graph-community methods (**Leiden/Louvain**) are
+   respectable but settle on far fewer, coarser clusters, so they lose at EC3 granularity.
+   Density methods (DBSCAN/HDBSCAN) are the weakest — reaction density is too uneven,
+   30–50% of points become noise.
+
+4. **Retrieval ≫ clustering for annotation.** 15-NN majority vote (best embeddings):
+   **EC1 0.91 · EC2 0.83 · EC3 0.78**; with a confidence gate (≥60% of neighbours agree)
+   **EC3 0.90 accuracy at 76% coverage**. 1-NN alone gets EC3 0.87. Full 4-level EC stays
+   hard everywhere (≈0.32–0.51) — the structure-blind leaf distinctions (stereo, chain
+   length, substrate identity) that difference fingerprints can't see.
+
+5. **The t-SNE maps make it visible** (`fig_tsne_ec_comparison.png`): every embedding
+   separates the seven EC top-classes into recognizable territories; tight EC2 islands
+   (2.1 methyltransferases, 2.4 glycosyltransferases, 1.14 oxygenases) vs. diffuse ones
+   (1.1, 1.2) explain exactly where clustering purity comes from and where it breaks.
+
+## Recommendation
+
+- **Clustering:** `ecfp4_diff` (robust default; or `descriptors_diff` for max purity)
+  → L2-normalize → **agglomerative average or complete linkage (cosine)**, k≈400–800.
+  Cheap, no GPU. Birch if you need speed at scale.
+- **Annotation transfer / FAISS index:** index `ecfp4_diff` (256-d SVD, cosine) and use
+  **confidence-gated 15-NN**. Trust EC1–EC3 calls; treat full-EC as a suggestion.
+- **Skip** for this goal: single-linkage, density clustering, and the learned/transformer
+  embeddings (RXNFP/ChemBERTa/MolFormer) — they cost more and score less.
+
+## Figures (`figures/`)
+- `fig_heatmap_embed_algo.png` — EC3 AMI, embedding × algorithm (the master comparison)
+- `fig_tsne_ec_comparison.png` — t-SNE maps, dots coloured by EC class, 6 embeddings
+- `fig_tsne_ec2_labeled.png` — t-SNE coloured/labelled by top EC2 subclasses
+- `fig_knn_transfer.png` — kNN EC1/EC2/EC3 annotation-transfer accuracy per embedding
+- `fig_best_per_embedding.png`, `fig_best_per_algo.png`, `fig_kmeans_ami_vs_k.png`,
+  `fig_homogeneity_completeness.png`
+
+Data: `results.csv` (550 configs), `knn_results.csv`, `summary_*.csv`.
+
+---
+
+# Part II — CGR, RXNFP-difference, and the fusion method
+
+Expansion (21 embeddings total): added atom-mapped **CGR** fingerprints
+(RXNMapper → chython), two **RXNFP-difference** variants, and a **multi-view fusion**.
+
+## Does giving RXNFP a difference operation help?
+- `rxnfp_moldiff` (per-molecule difference, the ChemBERTa recipe): EC3 AMI 0.556 vs
+  plain rxnfp 0.542, 1-NN EC3 0.839 vs 0.834 — a **hair better**.
+- `rxnfp_sidediff` (encode each side, subtract): **worse** (1-NN EC3 0.776) — one-sided
+  strings are off-distribution for a reaction transformer.
+- **Verdict:** the missing difference is *not* what holds RXNFP back — its ceiling is
+  the training distribution/taxonomy (USPTO organic synthesis), not the encoding.
+
+## CGR (atom-mapped bond changes) — fair subset comparison
+CGR only composes for **74.8%** of reactions (RXNMapper confidence 0.43 mean; large
+cofactor-heavy reactions exceed the 512-token limit). Scored on the CGR-defined
+subset (n=10,260) against incumbents on the *same* subset:
+
+| embedding | EC3 AMI | **full-EC 1-NN** |
+|-----------|--------:|-----------------:|
+| ECFP4-diff | 0.628 | 0.490 |
+| Descriptors | **0.667** | 0.484 |
+| **CGR (morgan)** | 0.613 | **0.543** |
+
+**CGR wins the full-EC retrieval it was designed for (+5 pts)** but does *not* dominate
+EC3, and is coverage-limited. Hypothesis: *partially* confirmed — the mechanism is real
+but CGR alone is not the SOTA-beater.
+
+## The fusion method (rung 1 — unsupervised, no fitting)
+Different views win different metrics ⇒ fuse them (per-view normalize → concat → SVD-256
+→ agglo-average). On the fair subset:
+
+| config | EC3 AMI | EC3 15-NN | full-EC 1-NN |
+|--------|--------:|----------:|-------------:|
+| best single view | 0.667 | 0.798 | 0.543 |
+| **FUSE ECFP+Desc+CGR** | **0.696** | **0.827** | **0.569** |
+| **greedy-optimal (6 views)** | **0.718** | 0.834 | 0.542 |
+
+Greedy forward-selection: `descriptors → +drfp → +chemberta → +rxnfp → +secfp → +cgr_morgan`.
+**Descriptors are the anchor** (0.667 alone); +DRFP → 0.698; the rest add <0.007 each
+(saturating, need held-out confirmation). Notably the ensemble *recruits* the "weak"
+learned embeddings (chemberta, rxnfp) for complementary signal.
+
+**Bottom line:** unsupervised multi-view fusion **beats every individual method** (EC3 AMI
+0.70–0.72 vs best single 0.667), before any supervision. Next lever = hierarchical-EC
+metric learning (rungs 4–5), evaluated zero-shot on held-out EC subclasses.
+
+Figures: `fig_fusion.png`, `fig_compare_ecfp4drfp_vs_rxnfp.png`. Slide deck: `slides/main.pdf`.

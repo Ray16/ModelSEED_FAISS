@@ -1,0 +1,39 @@
+Desc+ECFP4+DRFP              EC3_AMI=0.6934 fullEC_1NN=0.4963
+Desc+ECFP4+MHFP              EC3_AMI=0.6721 fullEC_1NN=0.5097
+Desc+ECFP4+CGR               EC3_AMI=0.6968 fullEC_1NN=0.5692
+Desc+ECFP4+AtomPair          EC3_AMI=0.6794 fullEC_1NN=0.5162
+Desc+ECFP4+ChemBERTa         EC3_AMI=0.6904 fullEC_1NN=0.5054
+Desc+DRFP+MHFP               EC3_AMI=0.6670 fullEC_1NN=0.4984
+Desc+DRFP+CGR                EC3_AMI=0.6970 fullEC_1NN=0.5446
+Desc+DRFP+AtomPair           EC3_AMI=0.6792 fullEC_1NN=0.5198
+Desc+DRFP+ChemBERTa          EC3_AMI=0.7027 fullEC_1NN=0.4989
+Desc+MHFP+CGR                EC3_AMI=0.6923 fullEC_1NN=0.5406
+Desc+MHFP+AtomPair           EC3_AMI=0.6769 fullEC_1NN=0.5263
+Desc+MHFP+ChemBERTa          EC3_AMI=0.7053 fullEC_1NN=0.5123
+Desc+CGR+AtomPair            EC3_AMI=0.6883 fullEC_1NN=0.5740
+Desc+CGR+ChemBERTa           EC3_AMI=0.7098 fullEC_1NN=0.5636
+Desc+AtomPair+ChemBERTa      EC3_AMI=0.6949 fullEC_1NN=0.5231
+ECFP4+DRFP+MHFP              EC3_AMI=0.6583 fullEC_1NN=0.5104
+ECFP4+DRFP+CGR               EC3_AMI=0.6683 fullEC_1NN=0.5463
+ECFP4+DRFP+AtomPair          EC3_AMI=0.6605 fullEC_1NN=0.5187
+ECFP4+DRFP+ChemBERTa         EC3_AMI=0.6746 fullEC_1NN=0.5087
+ECFP4+MHFP+CGR               EC3_AMI=0.6647 fullEC_1NN=0.5426
+ECFP4+MHFP+AtomPair          EC3_AMI=0.6597 fullEC_1NN=0.5249
+ECFP4+MHFP+ChemBERTa         EC3_AMI=0.6682 fullEC_1NN=0.5255
+ECFP4+CGR+AtomPair           EC3_AMI=0.6643 fullEC_1NN=0.5772
+ECFP4+CGR+ChemBERTa          EC3_AMI=0.6822 fullEC_1NN=0.5750
+ECFP4+AtomPair+ChemBERTa     EC3_AMI=0.6770 fullEC_1NN=0.5220
+DRFP+MHFP+CGR                EC3_AMI=0.6432 fullEC_1NN=0.5386
+DRFP+MHFP+AtomPair           EC3_AMI=0.6580 fullEC_1NN=0.5209
+DRFP+MHFP+ChemBERTa          EC3_AMI=0.6544 fullEC_1NN=0.5116
+DRFP+CGR+AtomPair            EC3_AMI=0.6554 fullEC_1NN=0.5574
+DRFP+CGR+ChemBERTa           EC3_AMI=0.6615 fullEC_1NN=0.5486
+DRFP+AtomPair+ChemBERTa      EC3_AMI=0.6757 fullEC_1NN=0.5201
+MHFP+CGR+AtomPair            EC3_AMI=0.6614 fullEC_1NN=0.5504
+MHFP+CGR+ChemBERTa           EC3_AMI=0.6738 fullEC_1NN=0.5458
+MHFP+AtomPair+ChemBERTa      EC3_AMI=0.6695 fullEC_1NN=0.5330
+CGR+AtomPair+ChemBERTa       EC3_AMI=0.6814 fullEC_1NN=0.5782
+
+wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/figures/fig_triple_combos.png
+
+BEST triple: {'combo': 'Desc+CGR+ChemBERTa', 'ec3_ami': 0.7098, 'full_ec_1nn': 0.5636}

@@ -1,0 +1,15 @@
+# Large regenerable artifacts — regenerate via scripts/02*.py
+embeddings/
+# t-SNE coords + misc caches (derived)
+cache/
+__pycache__/
+*.pyc
+
+# LaTeX build intermediates (keep main.tex + main.pdf)
+slides/*.aux
+slides/*.log
+slides/*.nav
+slides/*.out
+slides/*.snm
+slides/*.toc
+slides/preview/

@@ -1,0 +1,15 @@
+[01:32:22] rxnfp_moldiff: raw=(13721, 256) -> Z=(13721, 255)
+[01:33:22]   kmeans done
+[01:34:43]   agglo sweep (81s)
+[01:35:10]   leiden/louvain (21s)
+[01:35:35]   spectral (25s)
+[01:35:40]   dbscan done
+[01:37:48]   hdbscan done
+[01:37:49] rxnfp_sidediff: raw=(13721, 256) -> Z=(13721, 255)
+[01:38:49]   kmeans done
+[01:40:01]   agglo sweep (72s)
+[01:40:45]   leiden/louvain (25s)
+[01:45:24]   spectral (279s)
+[01:45:28]   dbscan done
+[01:48:49]   hdbscan done
+[01:48:49] wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/results_rxdiff.csv (64 rows)

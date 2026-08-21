@@ -1,0 +1,3 @@
+[01:32:25] rxnfp_moldiff: 1-NN EC3 acc=0.839  15-NN EC3 acc=0.7249
+[01:32:29] rxnfp_sidediff: 1-NN EC3 acc=0.7763  15-NN EC3 acc=0.6315
+[01:32:29] wrote knn_results.csv (6 rows)

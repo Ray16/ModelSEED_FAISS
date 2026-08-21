@@ -1,0 +1,36 @@
+[00:47:35] descriptors_diff: raw=(13721, 217) -> Z=(13721, 216)
+[00:48:32]   kmeans done
+[00:49:43]   agglo sweep (71s)
+[00:50:12]   leiden/louvain (22s)
+[00:50:53]   spectral (41s)
+[00:50:59]   dbscan done
+[00:53:27]   hdbscan done
+[00:53:28] rxnfp: raw=(13721, 256) -> Z=(13721, 255)
+[00:54:31]   kmeans done
+[00:56:03]   agglo sweep (92s)
+[00:57:11]   leiden/louvain (56s)
+[00:58:27]   spectral (76s)
+[00:58:33]   dbscan done
+[01:01:38]   hdbscan done
+[01:01:39] rxnfp_pretrained: raw=(13721, 256) -> Z=(13721, 255)
+[01:02:40]   kmeans done
+[01:03:56]   agglo sweep (76s)
+[01:04:34]   leiden/louvain (24s)
+[01:05:48]   spectral (74s)
+[01:05:53]   dbscan done
+[01:09:12]   hdbscan done
+[01:09:13] chemberta_diff: raw=(13721, 384) -> Z=(13721, 256)
+[01:10:12]   kmeans done
+[01:11:28]   agglo sweep (75s)
+[01:11:58]   leiden/louvain (25s)
+[01:12:27]   spectral (29s)
+[01:12:33]   dbscan done
+[01:15:01]   hdbscan done
+[01:15:02] molformer_diff: raw=(13721, 768) -> Z=(13721, 256)
+[01:16:01]   kmeans done
+[01:17:11]   agglo sweep (70s)
+[01:17:41]   leiden/louvain (24s)
+[01:18:05]   spectral (24s)
+[01:18:11]   dbscan done
+[01:20:22]   hdbscan done
+[01:20:22] wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/results_s4.csv (160 rows)

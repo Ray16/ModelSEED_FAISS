@@ -1,0 +1,7 @@
+ECFP4-diff               EC3_AMI=0.6275 EC3_15NN=0.7981 fullEC_1NN=0.4901
+PhysChem                 EC3_AMI=0.6665 EC3_15NN=0.7930 fullEC_1NN=0.4838
+CGR                      EC3_AMI=0.6126 EC3_15NN=0.7750 fullEC_1NN=0.5430
+ECFP4+DRFP               EC3_AMI=0.6593 EC3_15NN=0.8083 fullEC_1NN=0.5098
+Fuse: ECFP+PhysChem      EC3_AMI=0.6733 EC3_15NN=0.8097 fullEC_1NN=0.5092
+Fuse: ECFP+PhysChem+CGR  EC3_AMI=0.6955 EC3_15NN=0.8271 fullEC_1NN=0.5691
+wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/figures/fig_fusion.png

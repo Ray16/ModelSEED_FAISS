@@ -1,0 +1,30 @@
+[00:47:37] drfp: raw=(13721, 2048) -> Z=(13721, 256)
+[00:48:39]   kmeans done
+[00:49:51]   agglo sweep (72s)
+[00:50:28]   leiden/louvain (25s)
+[00:51:09]   spectral (41s)
+[00:51:15]   dbscan done
+[00:53:58]   hdbscan done
+[00:57:01]   butina done
+[00:57:18] ecfp4_concat: raw=(13721, 4096) -> Z=(13721, 256)
+[00:58:20]   kmeans done
+[00:59:35]   agglo sweep (75s)
+[01:00:06]   leiden/louvain (25s)
+[01:00:32]   spectral (26s)
+[01:00:38]   dbscan done
+[01:03:29]   hdbscan done
+[01:03:34] ecfp4_drfp: raw=(13721, 4096) -> Z=(13721, 256)
+[01:04:39]   kmeans done
+[01:06:03]   agglo sweep (83s)
+[01:06:34]   leiden/louvain (21s)
+[01:07:15]   spectral (41s)
+[01:07:21]   dbscan done
+[01:10:12]   hdbscan done
+[01:10:15] avalon_diff: raw=(13721, 2048) -> Z=(13721, 256)
+[01:11:21]   kmeans done
+[01:12:47]   agglo sweep (86s)
+[01:13:16]   leiden/louvain (23s)
+[01:13:48]   spectral (33s)
+[01:13:55]   dbscan done
+[01:16:25]   hdbscan done
+[01:16:25] wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/results_s2.csv (130 rows)
