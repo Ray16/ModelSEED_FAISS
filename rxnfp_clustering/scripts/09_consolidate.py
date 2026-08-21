@@ -36,15 +36,19 @@ EMB_ORDER = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_dr
              "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
              "maccs_diff", "secfp_diff", "cgr_linear", "cgr_morgan", "descriptors_diff",
              "rxnfp", "rxnfp_pretrained", "rxnfp_moldiff", "rxnfp_sidediff",
-             "chemberta_diff", "molformer_diff"]
+             "chemberta_diff", "molformer_diff",
+             "erg_diff", "gin_diff", "unimol_diff", "biochem"]
 FAMILY = {**{e: "structural" for e in ["ecfp4_diff","ecfp2_diff","ecfp6_diff","ecfp4_concat",
              "drfp","atompair_diff","rdk_diff","torsion_diff","avalon_diff","maccs_diff","secfp_diff"]},
           "ecfp4_drfp": "structural", "descriptors_diff": "physchem",
           "cgr_linear": "cgr", "cgr_morgan": "cgr",
           "rxnfp": "learned", "rxnfp_pretrained": "learned",
           "rxnfp_moldiff": "learned", "rxnfp_sidediff": "learned",
-          "chemberta_diff": "learned", "molformer_diff": "learned"}
-FAM_COLOR = {"structural": "#0072B2", "physchem": "#009E73", "cgr": "#CC79A7", "learned": "#D55E00"}
+          "chemberta_diff": "learned", "molformer_diff": "learned",
+          "erg_diff": "reduced-graph", "gin_diff": "gnn",
+          "unimol_diff": "3d", "biochem": "learned"}
+FAM_COLOR = {"structural": "#0072B2", "physchem": "#009E73", "cgr": "#CC79A7", "learned": "#D55E00",
+             "reduced-graph": "#56B4E9", "gnn": "#F0E442", "3d": "#000000"}
 present = [e for e in EMB_ORDER if e in df.embedding.unique()]
 
 def clean(ax):

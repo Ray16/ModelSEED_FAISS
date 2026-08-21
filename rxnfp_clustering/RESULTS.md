@@ -160,3 +160,93 @@ learned embeddings (chemberta, rxnfp) for complementary signal.
 metric learning (rungs 4–5), evaluated zero-shot on held-out EC subclasses.
 
 Figures: `fig_fusion.png`, `fig_compare_ecfp4drfp_vs_rxnfp.png`. Slide deck: `slides/main.pdf`.
+
+# Part III — Four novel representational axes, and why they don't help
+
+The Part I/II pool was 2D substructure fingerprints, physicochemical
+descriptors, atom-mapped bond-change (CGR), and SMILES-string language models.
+To test whether *genuinely orthogonal* representations carry EC signal the
+incumbents miss, we added four axes that each view the reaction differently:
+
+| axis | embedding | model | dim | coverage |
+|------|-----------|-------|----:|---------:|
+| pharmacophore reduced-graph | `erg_diff` | RDKit ErG (Stiefl 2006) | 315 | 100% |
+| pretrained 2D-graph GNN | `gin_diff` | snap-stanford `supervised_contextpred` (5-layer GIN, ZINC15+PPI) | 300 | 76.2% |
+| 3D molecular geometry | `unimol_diff` | Uni-Mol `unimolv1` 84M (SE(3), ~209M conformers) | 512 | 98.9% |
+| biochemistry-native reaction | `biochem` | REXzyme T5 encoder 335M (32M RHEA reaction→enzyme pairs) | 1024 | 100% |
+
+`erg`/`unimol`/`biochem` are reaction differences (Σproducts − Σreactants) of a
+per-molecule representation; `biochem` reads the whole reaction string (like
+rxnfp). GIN featurizes only 76% of molecules (its graph featurizer rejects the
+rest); Uni-Mol zero-fills ~700 molecules whose ETKDG conformer failed.
+
+## Each novel axis individually underperforms the 2D-structural plateau
+Full-set numbers (best config each; retrieval is leave-one-out 1-NN EC3):
+
+| embedding | EC3 AMI (cluster) | 1-NN EC3 (retrieval) |
+|-----------|------------------:|---------------------:|
+| *plateau top (ecfp6 / ecfp4-drfp)* | *0.628–0.630* | *0.874* |
+| **unimol_diff** | **0.593** | 0.752 |
+| **erg_diff** | 0.563 | **0.822** |
+| **biochem (REXzyme)** | 0.468 | 0.783 |
+| **gin_diff** | 0.443 | 0.656 |
+
+- **Uni-Mol** is the strongest novel axis on *clustering* (0.593, 9th of 25,
+  above rdk/drfp/chemberta/molformer) — its 3D-shape clusters are unusually
+  *homogeneous* (homogeneity 0.785) — but it is mediocre on retrieval (0.752).
+- **ErG** is the strongest novel axis on *retrieval* (0.822) — pharmacophore
+  topology transfers EC surprisingly well — but mid-pack on clustering.
+- **REXzyme is the headline negative.** A 335M encoder pretrained on 32M curated
+  RHEA reaction→enzyme pairs — the *exact* biochemical domain ModelSEED lives
+  in — annotates **worse than USPTO-trained rxnfp** (0.783 vs 0.834) and far
+  below a plain circular fingerprint (0.874). Biochemistry-native pretraining
+  did not buy EC-discriminative structure; its objective (predict a catalysing
+  enzyme sequence) is not the objective that separates EC subclasses.
+- **GIN** is the weakest, and coverage-limited (76%).
+
+## Cross-axis fusion does not beat same-family fusion — and adding novel axes *hurts*
+Re-scored on the fair common subset (intersection of all masks, n=10,240 = 74.6%):
+
+| fusion | EC3 AMI | EC3 15-NN | full-EC 1-NN |
+|--------|--------:|----------:|-------------:|
+| **Same-family: PhysChem+CGR+ChemBERTa** (incumbent) | **0.710** | **0.825** | **0.565** |
+| Cross-axis: PhysChem+CGR+GIN+UniMol+ErG | 0.698 | 0.822 | 0.559 |
+| Incumbent **+ Uni-Mol** (best novel axis) | 0.705 | 0.824 | 0.545 |
+| Incumbent **+ all 4 novel** | 0.700 | 0.824 | 0.559 |
+
+Fair-subset single views: PhysChem 0.666 > **Uni-Mol 0.624** > CGR 0.614 >
+ErG 0.571 > GIN 0.529.
+
+- The all-novel cross-axis fusion **loses** to the same-family incumbent
+  (−0.012).
+- Crucially, **augmenting the incumbent winner with the best novel axis hurts
+  (−0.004), and with all four hurts more (−0.010).** Unlike Part II — where the
+  fusion *recruited* the "weak" ChemBERTa/rxnfp for complementary signal — these
+  orthogonal axes add no EC signal the descriptor+CGR+ChemBERTa trio lacks; they
+  only add variance that TruncatedSVD then spends dimensions on.
+
+## Verdict: representational diversity ≠ task-relevant diversity
+The four axes are genuinely different *representations* (pharmacophore topology,
+learned graph, 3D shape, enzyme-supervised reaction language) yet none carries
+EC-discriminative information the 2D structural/bond-change views miss. EC
+subclass is, operationally, a **substructure/bond-change** label; once the
+descriptor + CGR + SMILES-transformer trio captures that, orthogonal views of
+shape, pharmacophore, or catalysis are redundant-at-best. The ~0.63 clustering /
+~0.87 retrieval plateau is therefore a property of the **EC taxonomy vs. the
+reaction set**, not a ceiling of any one encoder family — a broader and more
+exotic representation pool does not move it.
+
+**Deployment implication:** the FAISS EC-annotation index should stay on the
+cheap 2D structural/physchem fusion; the 3D-conformer (Uni-Mol) and 335M-encoder
+(REXzyme) costs buy nothing here. The lever remains the *annotation rule*
+(threshold+abstain, Part on annotation), not a richer embedding.
+
+Figures: `fig_crossaxis_fusion.png` (9-bar single/fusion comparison),
+`fig_best_per_embedding.png` + `fig_knn_transfer.png` (now include all 25
+embeddings). Scripts: `19_embed_erg.py`, `20_embed_gin.py`, `21_embed_unimol.py`,
+`22_embed_biochem.py`, `23_fusion_crossaxis.py`.
+
+*Method note:* the new embeddings' clustering rows were computed in the
+`modelseed` env (which has `leidenalg`/`hdbscan`); the full algorithm sweep
+(incl. leiden/louvain/hdbscan) is present for all four. `butina` is intentionally
+absent (it runs only on the three raw-bit fingerprints, by design).

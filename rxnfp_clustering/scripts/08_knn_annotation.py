@@ -29,7 +29,8 @@ LEVELS = ("ec", "ec3", "ec2", "ec1")
 LAB = {lvl: df[lvl].to_numpy() for lvl in LEVELS}
 N = len(df)
 CONTINUOUS = {"rxnfp", "rxnfp_pretrained", "chemberta_diff", "descriptors_diff",
-              "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff"}
+              "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff",
+              "gin_diff", "unimol_diff", "biochem"}
 
 def make_space(name, Xraw):
     X = StandardScaler().fit_transform(Xraw) if name in CONTINUOUS else Xraw.astype(np.float32)
@@ -74,7 +75,8 @@ def evaluate(name):
 ALL_EMB = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp",
            "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
            "maccs_diff", "secfp_diff", "descriptors_diff",
-           "rxnfp", "rxnfp_pretrained", "chemberta_diff", "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff", "cgr_linear", "cgr_morgan"]
+           "rxnfp", "rxnfp_pretrained", "chemberta_diff", "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff", "cgr_linear", "cgr_morgan",
+           "erg_diff", "gin_diff", "unimol_diff", "biochem"]
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--only", nargs="*", default=None)
