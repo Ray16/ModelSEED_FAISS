@@ -1,0 +1,7 @@
+embedding,method,level,acc_full,acc_at75,cov_at90,coverage,auroc_dist,auroc_lof
+ecfp4_diff,M1 baseline equal-weight,EC3,0.7616618075801749,0.8867832847424684,0.7102769679300291,1.0,,
+ecfp4_diff,M2 similarity-weighted,EC3,0.7682215743440233,0.8960155490767736,0.7299562682215743,1.0,,
+ecfp4_diff,M3 threshold+abstain (tau=0.9),EC3,,0.9026,,0.8079,,
+ecfp4_diff,M4 hierarchical back-off (theta=0.5),finest,0.8225218658892128,0.8604651162790697,,0.9559037900874635,,
+ecfp4_diff,M5 conformal set (alpha=0.1),EC3-set,0.8983236151603499,,,1.0,,
+ecfp4_diff,M6 OOD-abstain (top-1 dist),EC3,0.7682215743440233,0.8599,,0.7,0.7151,0.6812

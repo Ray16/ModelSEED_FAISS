@@ -220,22 +220,14 @@
 
 % ---------------------------------------------------------------
 \begin{frame}{Which combo? --- all 3-view fusions}
-  \begin{columns}[T]
-    \begin{column}{0.62\textwidth}
-      \centering\includegraphics[width=\linewidth]{fig_triple_combos.png}
-    \end{column}
-    \begin{column}{0.38\textwidth}\small
-      All 35 triples from \{\,PhysChem, ECFP4, DRFP, MHFP, CGR, AtomPair, ChemBERTa\,\}
-      (PhysChem = 217 physicochemical descriptors).
-      \begin{itemize}
-        \item \best{PhysChem is the anchor} --- present in every top triple.
-        \item Best EC3 AMI: \best{PhysChem+CGR+ChemBERTa (0.71)}.
-        \item \best{CGR}-containing triples win \textbf{full-EC retrieval} (0.57--0.58).
-        \item Tight band (0.68--0.71): the recipe, not the exact triple, is what matters.
-      \end{itemize}
-      Even ``weak'' ChemBERTa earns its place in the ensemble.
-    \end{column}
-  \end{columns}
+  \centering
+  \includegraphics[width=0.96\linewidth]{fig_triple_combos.png}
+  \takeaway{All 35 triples from \{\,PhysChem, ECFP4, DRFP, MHFP, CGR, AtomPair,
+    ChemBERTa\,\} were scored; the top 12 are shown. \best{PhysChem is the anchor}
+    (in every top triple); best EC3 AMI \best{PhysChem+CGR+ChemBERTa (0.71)};
+    \best{CGR}-containing triples win \textbf{full-EC retrieval} (0.57--0.58). Tight
+    band (0.68--0.71) --- the recipe, not the exact triple, is what matters; even
+    ``weak'' ChemBERTa earns its place.}
 \end{frame}
 
 % ---------------------------------------------------------------
