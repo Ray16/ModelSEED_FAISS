@@ -11,3 +11,12 @@
 - No text overlap: enlarge the figure and move dense legends outside the axes
   rather than shrinking text below 18. No gray explanatory footnote captions
   baked into the figure — context belongs in the slide/prose.
+
+## Beamer deck (ALWAYS)
+- The `rxnfp_clustering/slides` deck MUST use the **seahorse** beamer colortheme
+  (`\usetheme{default}` + `\usecolortheme{seahorse}`) — the soft, light look the
+  user prefers. Do NOT replace it with a dark/navy custom scheme. Chrome
+  (frametitle bars, block titles, Part dividers, takeaway boxes) is tinted from
+  seahorse's `structure` colour, kept light. The family-colour palette
+  (`cStruct`/`cPhys`/… = figures' Okabe-Ito `FAM_COLOR`) is content colour and
+  stays as-is; only the *chrome* follows seahorse.

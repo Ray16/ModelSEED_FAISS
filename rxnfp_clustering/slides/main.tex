@@ -1,5 +1,6 @@
 \documentclass[aspectratio=169,10pt]{beamer}
 \usetheme{default}
+\usecolortheme{seahorse}   % soft light theme (restored -- preferred look)
 \usefonttheme{professionalfonts}
 \setbeamertemplate{navigation symbols}{}
 
@@ -30,14 +31,14 @@
 \definecolor{cGood}{HTML}{1E8449}
 \definecolor{cBad}{HTML}{B03A2E}
 
-\setbeamercolor{structure}{fg=cInk}
-\setbeamercolor{frametitle}{fg=white,bg=cInk}
-\setbeamertemplate{frametitle}{\vskip5pt\usebeamerfont{frametitle}\insertframetitle\par}
+% Seahorse controls `structure`; chrome uses its soft palette (restored look).
+\setbeamercolor{frametitle}{fg=white,bg=structure!80!black}
+\setbeamertemplate{frametitle}{\vskip4pt\usebeamerfont{frametitle}\insertframetitle\par}
 \setbeamerfont{frametitle}{size=\large,series=\bfseries}
-\setbeamercolor{block title}{bg=cInk!15!white,fg=cInk}
-\setbeamercolor{block body}{bg=cInk!5!white}
+\setbeamercolor{block title}{bg=structure!20!white,fg=black}
+\setbeamercolor{block body}{bg=structure!8!white}
 \setbeamertemplate{footline}[frame number]
-\setbeamercolor{footline}{fg=cInk!60}
+\setbeamercolor{footline}{fg=structure!50!black}
 
 \newcommand{\best}[1]{{\color{cGood}\textbf{#1}}}
 \newcommand{\bad}[1]{{\color{cBad}#1}}
@@ -52,8 +53,8 @@
 \newcommand{\fGNN}[1]{{\color{cGNN}\textbf{#1}}}
 \newcommand{\fThreeD}[1]{{\color{c3D}\textbf{#1}}}
 % key-message strip at the bottom of a frame, kept clear of figures
-\newcommand{\takeaway}[1]{\vfill\begin{tcolorbox}[colback=cInk!10!white,colframe=cInk!70!black,
-  boxrule=0.5pt,left=5pt,right=5pt,top=3pt,bottom=3pt]\small #1\end{tcolorbox}}
+\newcommand{\takeaway}[1]{\vfill\begin{tcolorbox}[colback=structure!12!white,colframe=structure!60!black,
+  boxrule=0.4pt,left=5pt,right=5pt,top=3pt,bottom=3pt]\small #1\end{tcolorbox}}
 
 % ----------------------------------------------------------------------
 % Section-divider frames
@@ -62,14 +63,14 @@
   {\setbeamertemplate{footline}{}
   \begin{frame}[plain]
     \begin{tikzpicture}[remember picture,overlay]
-      \fill[cInk] (current page.south west) rectangle (current page.north east);
-      \fill[cAccent] (current page.west) ++(0,-0.9) rectangle ++(\paperwidth,1.8);
+      \fill[structure!15!white] (current page.south west) rectangle (current page.north east);
     \end{tikzpicture}
     \vfill
     \begin{center}
-      {\color{white!75!cAccent}\Large\textbf{#1}}\\[10pt]
-      {\color{white}\Huge\textbf{#2}}\\[12pt]
-      {\color{white!85!cInk}\large #3}
+      {\color{structure!55!black}\Large\textbf{#1}}\\[6pt]
+      {\rule{0.5\paperwidth}{0.6pt}}\\[12pt]
+      {\color{structure!80!black}\Huge\textbf{#2}}\\[14pt]
+      {\color{structure!50!black}\large #3}
     \end{center}
     \vfill
   \end{frame}}}
@@ -85,18 +86,18 @@
 {\setbeamertemplate{footline}{}
 \begin{frame}[plain]
   \begin{tikzpicture}[remember picture,overlay]
-    \fill[cInk] (current page.north west) rectangle ([yshift=-1.9cm]current page.north east);
+    \fill[structure!80!black] (current page.north west) rectangle ([yshift=-1.9cm]current page.north east);
   \end{tikzpicture}
   \vspace{1.1cm}
   {\color{white}\usebeamerfont{title}\inserttitle\par}
   \vspace{0.2cm}
-  {\color{cInk}\usebeamerfont{subtitle}\insertsubtitle\par}
+  {\color{structure!60!black}\usebeamerfont{subtitle}\insertsubtitle\par}
   \vfill
   \begin{center}\small
     13{,}721 reactions $\;\cdot\;$ \textbf{22} embeddings $\times$ 9 clustering algorithms
     $\;\cdot\;$ EC-purity \& retrieval\end{center}
   \vspace{0.3cm}
-  {\footnotesize\color{cInk!70} \insertauthor \hfill \insertdate}
+  {\footnotesize\color{structure!55!black} \insertauthor \hfill \insertdate}
 \end{frame}}
 
 % ===================== SETUP =====================
