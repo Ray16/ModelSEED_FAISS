@@ -32,6 +32,20 @@ if shards:
 else:
     df = pd.read_csv(os.path.join(RESULTS, "results.csv"))
 
+# ---- curate the REPORTED analysis (the full results.csv written above is kept
+# intact on disk; these rows are dropped only from figures & ranked tables). ----
+# Especially-weak / redundant candidates that answer no question another kept
+# candidate already answers:
+#   rxnfp_sidediff (0.41, worst) / rxnfp_moldiff (0.56) -- failed rxnfp-diff variants
+#   ecfp4_concat (0.57) -- diff-vs-concat control        molformer_diff (0.57) -- dup of chemberta
+#   cgr_morgan (0.48) -- near-duplicate of cgr_linear
+# Algorithms: agglo_single (0.26, chaining) / dbscan (dup of hdbscan) / spectral (no unique win).
+EXCLUDE_EMB = {"rxnfp_sidediff", "rxnfp_moldiff", "ecfp4_concat", "cgr_morgan", "molformer_diff"}
+EXCLUDE_ALGO = {"agglo_single_cos", "dbscan", "spectral"}
+df = df[~df.embedding.isin(EXCLUDE_EMB) & ~df.algo.isin(EXCLUDE_ALGO)].reset_index(drop=True)
+print(f"curated analysis: {df.embedding.nunique()} embeddings x {df.algo.nunique()} algorithms "
+      f"(dropped {len(EXCLUDE_EMB)} emb + {len(EXCLUDE_ALGO)} algo; raw kept in results.csv)")
+
 # Ordered so every family is one contiguous colour block (biochem is a learned
 # reaction transformer -> sits with the other learned models, not orphaned at the
 # end; the novel single-member axes erg/gin/unimol trail as the "new axes" group).

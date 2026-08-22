@@ -1,9 +1,19 @@
 # Results — reaction embeddings × similarity/clustering for clean EC splits
 
-**Scope (expanded run).** 13,721 ModelSEED reactions · **17 embeddings × 12 clustering
-algorithms = 550 configs** · plus a **kNN EC-annotation-transfer** evaluation and
-**t-SNE maps**. Primary metric: **EC3 (subclass) AMI** — mutual information vs. the
-261 EC3 subclasses, corrected for chance and cluster count. Also scored at EC1/EC2/full.
+**Scope (expanded run).** 13,721 ModelSEED reactions · the full sweep is **27
+embeddings × 12 clustering algorithms** · plus a **kNN EC-annotation-transfer**
+evaluation and **t-SNE maps**. Primary metric: **EC3 (subclass) AMI** — mutual
+information vs. the 261 EC3 subclasses, corrected for chance and cluster count.
+Also scored at EC1/EC2/full.
+
+**Reported set (curated to 22 × 9).** The figures and ranked tables below report a
+curated **22 embeddings × 9 algorithms**; the five weakest/redundant embeddings
+(`rxnfp_sidediff`, `rxnfp_moldiff`, `ecfp4_concat`, `cgr_morgan`, `molformer_diff`)
+and three algorithms (`agglo_single_cos` — chaining; `dbscan` — duplicate of
+`hdbscan`; `spectral` — no unique win) are dropped from the analysis because each
+answers no question a kept candidate already answers. Their rows remain in
+`results.csv` / `knn_results.csv` for the record; the curation is applied only in
+`09_consolidate.py` (`EXCLUDE_EMB` / `EXCLUDE_ALGO`).
 
 ## Bottom line
 
