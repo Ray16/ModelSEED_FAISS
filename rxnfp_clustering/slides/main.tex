@@ -93,7 +93,7 @@
   {\color{cInk}\usebeamerfont{subtitle}\insertsubtitle\par}
   \vfill
   \begin{center}\small
-    13{,}721 reactions $\;\cdot\;$ \textbf{25} embeddings $\times$ 12 clustering algorithms
+    13{,}721 reactions $\;\cdot\;$ \textbf{27} embeddings $\times$ 12 clustering algorithms
     $\;\cdot\;$ EC-purity \& retrieval\end{center}
   \vspace{0.3cm}
   {\footnotesize\color{cInk!70} \insertauthor \hfill \insertdate}
@@ -132,12 +132,12 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{What we surveyed --- 25 embeddings $\times$ 12 algorithms}
+\begin{frame}{What we surveyed --- 27 embeddings $\times$ 12 algorithms}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
-      \begin{block}{Embeddings (25), by representational family}\footnotesize
-        \chip{cStruct}{\fStruct{Structural} (diff): ECFP2/4/6, AtomPair, RDKit, MACCS, MHFP, DRFP, Avalon, torsion}\\[3pt]
-        \chip{cPhys}{\fPhys{PhysChem}: 217 physicochemical descriptors}\\[3pt]
+      \begin{block}{Embeddings (27), by representational family}\footnotesize
+        \chip{cStruct}{\fStruct{Structural} (diff): ECFP2/4/6, FCFP4, AtomPair, RDKit, MACCS, MHFP, DRFP, Avalon, torsion}\\[3pt]
+        \chip{cPhys}{\fPhys{PhysChem}: RDKit-217 + Mordred-1613 desc.}\\[3pt]
         \chip{cCGR}{\fCGR{Atom-mapped}: CGR (linear / morgan)}\\[3pt]
         \chip{cLearn}{\fLearn{Learned}: RXNFP, ChemBERTa, MolFormer, \textbf{REXzyme}}\\[3pt]
         \chip{cReducedFill}{\fReduced{Reduced-graph}: ErG (pharmacophore)}\quad
@@ -165,7 +165,7 @@
 \end{frame}
 
 % ===================== PART I =====================
-\partdivider{Part I}{The benchmark}{25 embeddings $\times$ 12 algorithms, one scoring harness}
+\partdivider{Part I}{The benchmark}{27 embeddings $\times$ 12 algorithms, one scoring harness}
 
 \begin{frame}{Result 1 --- the benchmark grid}
   \centering
@@ -330,16 +330,17 @@
       \centering\includegraphics[width=\linewidth]{fig_crossaxis_fusion.png}
     \end{column}
     \begin{column}{0.45\textwidth}\small
-      Each new axis \bad{underperforms} the 2D plateau (single-view EC3 AMI, fair
-      subset): \fThreeD{Uni-Mol} 0.62 $>$ \fCGR{CGR} 0.61 $>$ \fReduced{ErG} 0.57
-      $>$ \fGNN{GIN} 0.53; retrieval tops at \fReduced{ErG} 0.82 vs \fStruct{0.87}.
+      Single-view EC3 AMI (fair subset), all \bad{under} the plateau:
+      \fThreeD{Uni-Mol} 0.62 $>$ \fCGR{CGR} 0.61 $>$ \fReduced{ErG} 0.57 $>$
+      \fGNN{GIN} 0.53.
       \begin{itemize}
-        \item \fLearn{REXzyme} is the headline negative: biochem-native pretraining
+        \item \fLearn{REXzyme} headline negative: biochem-native pretraining
           annotates \bad{worse than USPTO rxnfp} (0.78 vs 0.83).
-        \item Fusing all four novel axes \bad{loses} to the Part II incumbent
-          (0.698 vs \best{0.710}).
-        \item \textbf{Adding the best novel axis on top of the incumbent \bad{hurts}}
-          ($-0.004$; all four $-0.010$).
+        \item Fusing all four \bad{loses} to the Part II incumbent (0.698 vs
+          \best{0.710}); adding the best one on top \bad{hurts} ($-0.004$).
+        \item The two most label-aligned \emph{off-the-shelf} FPs also miss:
+          \fStruct{FCFP4} 0.62 ties ECFP; \fPhys{Mordred} (1613 desc.) 0.59
+          \bad{$<$} RDKit-217 --- more features hurt.
       \end{itemize}
       \textbf{Representational diversity $\neq$ task-relevant diversity.}
     \end{column}
