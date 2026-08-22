@@ -36,14 +36,14 @@ else:
 # reaction transformer -> sits with the other learned models, not orphaned at the
 # end; the novel single-member axes erg/gin/unimol trail as the "new axes" group).
 EMB_ORDER = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp",
-             "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
-             "maccs_diff", "secfp_diff", "descriptors_diff", "cgr_linear", "cgr_morgan",
+             "fcfp4_diff", "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
+             "maccs_diff", "secfp_diff", "descriptors_diff", "mordred_diff", "cgr_linear", "cgr_morgan",
              "rxnfp", "rxnfp_pretrained", "rxnfp_moldiff", "rxnfp_sidediff",
              "chemberta_diff", "molformer_diff", "biochem",
              "erg_diff", "gin_diff", "unimol_diff"]
 FAMILY = {**{e: "structural" for e in ["ecfp4_diff","ecfp2_diff","ecfp6_diff","ecfp4_concat",
-             "drfp","atompair_diff","rdk_diff","torsion_diff","avalon_diff","maccs_diff","secfp_diff"]},
-          "ecfp4_drfp": "structural", "descriptors_diff": "physchem",
+             "fcfp4_diff","drfp","atompair_diff","rdk_diff","torsion_diff","avalon_diff","maccs_diff","secfp_diff"]},
+          "ecfp4_drfp": "structural", "descriptors_diff": "physchem", "mordred_diff": "physchem",
           "cgr_linear": "cgr", "cgr_morgan": "cgr",
           "rxnfp": "learned", "rxnfp_pretrained": "learned",
           "rxnfp_moldiff": "learned", "rxnfp_sidediff": "learned",

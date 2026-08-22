@@ -30,7 +30,7 @@ LAB = {lvl: df[lvl].to_numpy() for lvl in LEVELS}
 N = len(df)
 CONTINUOUS = {"rxnfp", "rxnfp_pretrained", "chemberta_diff", "descriptors_diff",
               "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff",
-              "gin_diff", "unimol_diff", "biochem"}
+              "gin_diff", "unimol_diff", "biochem", "mordred_diff"}
 
 def make_space(name, Xraw):
     X = StandardScaler().fit_transform(Xraw) if name in CONTINUOUS else Xraw.astype(np.float32)
@@ -72,9 +72,9 @@ def evaluate(name):
     log(f"{name}: 1-NN EC3 acc={rows[0]['ec3_acc']}  15-NN EC3 acc={rows[-1]['ec3_acc']}")
     return rows
 
-ALL_EMB = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp",
+ALL_EMB = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp", "fcfp4_diff",
            "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
-           "maccs_diff", "secfp_diff", "descriptors_diff",
+           "maccs_diff", "secfp_diff", "descriptors_diff", "mordred_diff",
            "rxnfp", "rxnfp_pretrained", "chemberta_diff", "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff", "cgr_linear", "cgr_morgan",
            "erg_diff", "gin_diff", "unimol_diff", "biochem"]
 

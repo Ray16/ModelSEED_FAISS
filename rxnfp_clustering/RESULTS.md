@@ -250,3 +250,36 @@ embeddings). Scripts: `19_embed_erg.py`, `20_embed_gin.py`, `21_embed_unimol.py`
 `modelseed` env (which has `leidenalg`/`hdbscan`); the full algorithm sweep
 (incl. leiden/louvain/hdbscan) is present for all four. `butina` is intentionally
 absent (it runs only on the three raw-bit fingerprints, by design).
+
+## Part IV — two last off-the-shelf shots at the plateau (both miss)
+After the four novel *axes* failed (Part III), we tested the two remaining
+off-the-shelf candidates with the strongest *a-priori* reason to separate EC
+better than the incumbents. Neither does; both land in or below the plateau,
+so the sweep now covers **27 embeddings**.
+
+| new embedding | motivation | EC3 AMI | rank | kNN gated EC3 |
+|---------------|------------|--------:|-----:|--------------:|
+| **FCFP4** (functional-class Morgan, `useFeatures`) | atoms → pharmacophore roles; EC subclasses *are* functional-transformation labels, so a functional-class circular FP is the untried substructure axis best aligned with the label | 0.618 | 8 / 27 | 0.899 @ 76% |
+| **Mordred** (1613 2D descriptors) | 7× the RDKit-217 `descriptors_diff` that already ties for best (0.624) — more descriptors in the winning family | 0.585 | 13 / 27 | 0.885 @ 72% |
+
+- **FCFP4 ties exact-atom ECFP, no gain.** Abstracting atoms to pharmacophore
+  roles does not separate EC any better than exact atom+degree — it is another
+  point in the 0.61–0.63 band, and its gated kNN (0.899 @ 76%) is
+  indistinguishable from the incumbent (0.90 @ 76%). The last untried
+  *substructure* stone confirms the plateau even for the label-aligned axis.
+- **Mordred lands *below* RDKit-217 descriptors (0.585 < 0.624).** 7× more
+  descriptors *hurt* — the same failure mode as Part III's cross-axis fusion:
+  the extra ~1400 features add variance, not EC signal, and TruncatedSVD then
+  spends dimensions on the noise. Feature count is not the lever.
+
+**Reinforced verdict.** The plateau is not "we haven't found the right
+off-the-shelf embedding yet." A functional-class abstraction and a 7×-richer
+descriptor basis — the two most label-aligned untried candidates — both fail to
+move ~0.63. The remaining unexplored lever is *supervision* (a hierarchical-EC
+metric learned with held-out EC eval), which is the only thing that can
+distinguish a representation ceiling from an information ceiling; every
+*unsupervised, off-the-shelf* stone now points to the latter.
+
+Scripts: `24_embed_classical.py` (FCFP4 — plus torsion/rdk/avalon, which turned
+out already benchmarked as `torsion_diff`/`rdk_diff`/`avalon_diff`),
+`25_embed_mordred.py` (needs `mordredcommunity`, pip-installed into `palm`).

@@ -37,7 +37,7 @@ N = len(df)
 SVD_DIM = 256
 CONTINUOUS = {"rxnfp", "rxnfp_pretrained", "chemberta_diff", "descriptors_diff",
               "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff",
-              "gin_diff", "unimol_diff", "biochem"}
+              "gin_diff", "unimol_diff", "biochem", "mordred_diff"}
 
 def purity(pred, lt):
     mask = pred >= 0
@@ -178,9 +178,9 @@ def run_embedding(name):
             log(f"  butina failed: {ex}")
     return rows
 
-ALL_EMB = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp",
+ALL_EMB = ["ecfp4_diff", "ecfp2_diff", "ecfp6_diff", "ecfp4_concat", "ecfp4_drfp", "fcfp4_diff",
            "drfp", "atompair_diff", "rdk_diff", "torsion_diff", "avalon_diff",
-           "maccs_diff", "secfp_diff", "descriptors_diff",
+           "maccs_diff", "secfp_diff", "descriptors_diff", "mordred_diff",
            "rxnfp", "rxnfp_pretrained", "chemberta_diff", "molformer_diff", "rxnfp_moldiff", "rxnfp_sidediff", "cgr_linear", "cgr_morgan",
            "erg_diff", "gin_diff", "unimol_diff", "biochem"]
 
