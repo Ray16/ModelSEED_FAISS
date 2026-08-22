@@ -120,15 +120,30 @@ ax.set_ylabel("best EC3 AMI (any embedding)", fontsize=FS); clean(ax)
 ax.set_title("Best EC3 AMI per clustering algorithm", fontsize=FS)
 fig.tight_layout(); fig.savefig(os.path.join(FIG,"fig_best_per_algo.png"), dpi=300, bbox_inches="tight"); plt.close(fig)
 
-# ---- Fig: KMeans AMI vs k ----
-fig, ax = plt.subplots(figsize=(14,8))
+# ---- Fig: KMeans AMI vs k, aggregated by representational family ----
+# 27 individual lines are an unreadable hairball; the meaningful grouping is the
+# family. Each family = mean EC3 AMI vs k with a min-max band. Message: every
+# family peaks near the true #EC3 classes (261) then declines (over-fragments),
+# and the structural/physchem families lead at every granularity.
+fig, ax = plt.subplots(figsize=(11.5,7.5))
 sub = df[df.algo=="minibatch_kmeans"]
-cmap = plt.get_cmap("tab20")
-for i,e in enumerate(present):
-    s = sub[sub.embedding==e].sort_values("n_clusters")
-    if len(s): ax.plot(s.n_clusters, s.ec3_ami, marker="o", ms=7, lw=2.2, color=cmap(i%20), label=e)
-ax.set_xscale("log"); ax.set_xlabel("# clusters (KMeans)", fontsize=FS); ax.set_ylabel("EC3 AMI", fontsize=FS); clean(ax)
-ax.set_title("KMeans: EC3 AMI vs #clusters, per embedding", fontsize=FS)
+FAM_ORDER = ["structural","physchem","cgr","reduced-graph","gnn","3d","learned"]
+for f in [f for f in FAM_ORDER if any(FAMILY.get(e)==f for e in present)]:
+    embs = [e for e in present if FAMILY.get(e)==f]
+    g = sub[sub.embedding.isin(embs)]
+    if not len(g): continue
+    grp = g.groupby("n_clusters").ec3_ami
+    ks = grp.mean().index.values
+    ax.plot(ks, grp.mean().values, marker="o", ms=7, lw=2.6, color=FAM_COLOR[f],
+            label=f"{f} (n={len(embs)})")
+    if len(embs) > 1:
+        ax.fill_between(ks, grp.min().values, grp.max().values, color=FAM_COLOR[f], alpha=0.13)
+ax.axvline(261, ls="--", color="0.4", lw=1.6)
+ax.text(261, ax.get_ylim()[0]+0.01, "261 EC3\nclasses", fontsize=FS, color="0.35",
+        ha="center", va="bottom")
+ax.set_xscale("log"); ax.set_xlabel("# clusters (KMeans)", fontsize=FS)
+ax.set_ylabel("EC3 AMI", fontsize=FS); clean(ax)
+ax.set_title("AMI peaks near the true class count, then over-fragments", fontsize=FS)
 ax.legend(fontsize=FS, ncol=1, frameon=False, loc="center left", bbox_to_anchor=(1.01, 0.5))
 fig.tight_layout(); fig.savefig(os.path.join(FIG,"fig_kmeans_ami_vs_k.png"), dpi=300, bbox_inches="tight"); plt.close(fig)
 
@@ -146,16 +161,26 @@ if os.path.exists(kp):
     ax.legend(frameon=False, fontsize=FS, ncol=3)
     fig.tight_layout(); fig.savefig(os.path.join(FIG,"fig_knn_transfer.png"), dpi=300, bbox_inches="tight"); plt.close(fig)
 
-# ---- Fig: homogeneity vs completeness ----
-fig, ax = plt.subplots(figsize=(12,8))
-for i,e in enumerate(present):
-    s = df[df.embedding==e]
-    ax.scatter(s.ec3_completeness, s.ec3_homogeneity, s=60, color=cmap(i%20), alpha=0.6, label=e)
+# ---- Fig: homogeneity vs completeness, coloured by cluster granularity ----
+# The homogeneity<->completeness trade-off is driven by cluster GRANULARITY,
+# not by which embedding: many small clusters -> pure (high homogeneity) but
+# fragment each EC (low completeness); few clusters -> the reverse. Encoding the
+# 800 configs by log(#clusters) makes that the message; the star marks the
+# single max-AMI config (the balanced sweet spot).
+d = df[df.n_clusters >= 2]
+fig, ax = plt.subplots(figsize=(11.5,8))
+sc = ax.scatter(d.ec3_completeness, d.ec3_homogeneity, c=np.log10(d.n_clusters),
+                cmap="viridis", s=46, alpha=0.65, edgecolor="none")
+cb = fig.colorbar(sc, ax=ax, pad=0.02)
+cb.set_label("# clusters (log$_{10}$)", fontsize=FS); cb.ax.tick_params(labelsize=FS)
+b = df.loc[df[PRIMARY].idxmax()]
+ax.scatter([b.ec3_completeness],[b.ec3_homogeneity], s=430, marker="*",
+           color="#D55E00", edgecolor="black", linewidth=1.2, zorder=6,
+           label=f"max EC3 AMI = {b[PRIMARY]:.2f}\n{b.embedding} · {b.algo}")
+ax.legend(fontsize=FS, loc="lower left", frameon=True)
 ax.set_xlabel("EC3 completeness", fontsize=FS); ax.set_ylabel("EC3 homogeneity", fontsize=FS)
-for sp in ("top","right"): ax.spines[sp].set_visible(False)
-ax.grid(alpha=0.25); ax.set_axisbelow(True)
-ax.set_title("Homogeneity vs completeness (all configs)", fontsize=FS)
-ax.legend(fontsize=FS, ncol=1, frameon=False, loc="center left", bbox_to_anchor=(1.01, 0.5), markerscale=1.6)
+clean(ax); ax.grid(alpha=0.25)
+ax.set_title("Cluster granularity trades completeness for homogeneity", fontsize=FS)
 fig.tight_layout(); fig.savefig(os.path.join(FIG,"fig_homogeneity_completeness.png"), dpi=300, bbox_inches="tight"); plt.close(fig)
 
 print("\nwrote figures to", FIG)
