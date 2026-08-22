@@ -152,10 +152,12 @@ for f in [f for f in FAM_ORDER if any(FAMILY.get(e)==f for e in present)]:
             label=f"{f} (n={len(embs)})")
     if len(embs) > 1:
         ax.fill_between(ks, grp.min().values, grp.max().values, color=FAM_COLOR[f], alpha=0.13)
+ax.set_xscale("log")
 ax.axvline(261, ls="--", color="0.4", lw=1.6)
-ax.text(261, ax.get_ylim()[0]+0.01, "261 EC3\nclasses", fontsize=FS, color="0.35",
-        ha="center", va="bottom")
-ax.set_xscale("log"); ax.set_xlabel("# clusters (KMeans)", fontsize=FS)
+_ymin, _ymax = ax.get_ylim()
+ax.text(272, _ymax - 0.004, "261 EC3 classes", fontsize=FS, color="0.4",
+        ha="left", va="top")
+ax.set_xlabel("# clusters (KMeans)", fontsize=FS)
 ax.set_ylabel("EC3 AMI", fontsize=FS); clean(ax)
 ax.set_title("AMI peaks near the true class count, then over-fragments", fontsize=FS)
 ax.legend(fontsize=FS, ncol=1, frameon=False, loc="center left", bbox_to_anchor=(1.01, 0.5))
