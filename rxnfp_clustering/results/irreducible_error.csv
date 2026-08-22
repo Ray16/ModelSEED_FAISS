@@ -1,0 +1,13 @@
+probe,level,metric,value,n_conflicted,n_with_twin,floor_acc,near_conflict_at_sim99,n_at_sim99
+exact_smiles,ec1,conflict_frac,0.0008,11.0,904.0,0.9992,,
+exact_smiles,ec2,conflict_frac,0.0012,17.0,904.0,0.9988,,
+exact_smiles,ec3,conflict_frac,0.0043,59.0,904.0,0.9957,,
+exact_smiles,ec,conflict_frac,0.0246,337.0,904.0,0.9754,,
+near_ecfp4_diff,ec1,1nn_conflict_frac,0.0466,,,0.9534,0.0114,8947.0
+near_ecfp4_diff,ec2,1nn_conflict_frac,0.0926,,,0.9074,0.0207,8947.0
+near_ecfp4_diff,ec3,1nn_conflict_frac,0.1254,,,0.8746,0.0358,8947.0
+near_ecfp4_diff,ec,1nn_conflict_frac,0.5116,,,0.4884,0.3527,8947.0
+near_descriptors_diff,ec1,1nn_conflict_frac,0.0496,,,0.9504,0.0097,8046.0
+near_descriptors_diff,ec2,1nn_conflict_frac,0.0988,,,0.9012,0.021,8046.0
+near_descriptors_diff,ec3,1nn_conflict_frac,0.1378,,,0.8622,0.0409,8046.0
+near_descriptors_diff,ec,1nn_conflict_frac,0.5355,,,0.4645,0.3812,8046.0

@@ -293,3 +293,51 @@ distinguish a representation ceiling from an information ceiling; every
 Scripts: `24_embed_classical.py` (FCFP4 — plus torsion/rdk/avalon, which turned
 out already benchmarked as `torsion_diff`/`rdk_diff`/`avalon_diff`),
 `25_embed_mordred.py` (needs `mordredcommunity`, pip-installed into `palm`).
+
+## Part V — Irreducible-error probe: the EC3 plateau is *sparsity*, not an information ceiling
+`scripts/26_irreducible_error.py` measures the Bayes floor — where two reactions
+share a structure but carry different EC, no structural model can be right on both.
+
+**(A) Exact-structure collisions (representation-free).** Of 13,721 reactions, 904
+share their exact `rxn_smiles` with another. Among those, label conflicts are
+**rare at EC3 and coarser**:
+
+| level | reactions with an exact twin of *different* label | floor accuracy |
+|-------|--------------------------------------------------:|---------------:|
+| EC1   | 11 (0.08%) | 0.9992 |
+| EC2   | 17 (0.12%) | 0.9988 |
+| EC3   | 59 (0.43%) | 0.9957 |
+| full EC | 337 (2.46%) | 0.9754 |
+
+Literally-identical reactions almost always share EC3 (99.6%). So exact-collision
+label noise does **not** explain the 0.87 retrieval / 0.63 clustering plateau.
+
+**(B) Conflict vs structural similarity.** For every reaction we take its 1-NN in
+the `ecfp4_diff` geometry and record (cosine similarity, EC match). The conflict
+probability is a **steep function of similarity** (`fig_irreducible_error.png`):
+
+| 1-NN cosine | EC3 conflict | EC2 | EC1 |
+|-------------|-------------:|----:|----:|
+| ≥ 0.99 (near-identical, 65% of reactions) | **0.036** | 0.021 | 0.011 |
+| ~0.6 (mid) | ~0.65 | ~0.56 | ~0.37 |
+| ~0.4 (far / sparse) | ~0.86 | ~0.82 | ~0.50 |
+
+**Interpretation — this reverses the "information ceiling" reading.** Where a close
+structural neighbour exists, structure determines EC3 with **96–99.6%** fidelity.
+The 0.87 EC3 retrieval ceiling is therefore driven by reactions in **sparse
+regions** — those whose nearest structural analogue is far — not by irreducible
+label noise. **There is headroom:** the lever is either (i) *densifying* the space
+so more reactions have a close same-EC neighbour — exactly what **supervised
+hierarchical-EC metric learning** does — or (ii) more reference data. No off-the-
+shelf embedding moved the plateau (Parts I–IV) because they all inherit the same
+sparsity; a supervised metric attacks the sparsity directly.
+
+**The one genuine information ceiling is full 4-level EC.** Even among near-identical
+structures (cos ≥ 0.99) the full-EC conflict is **35%** (2.5% at exact identity):
+the 4th digit (substrate/serial specificity) is often simply **not encoded in the
+reaction structure** — which is why full-EC accuracy caps at ~0.49 everywhere and
+no method fixes it. Report EC3 as the structural-prediction target; treat the 4th
+digit as enzyme-side information.
+
+Outputs: `results/irreducible_error.csv`, `figures/fig_irreducible_error.png`,
+`scripts/26_irreducible_error.py`.
