@@ -1,3 +1,0 @@
-[11:25:21] wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/figures/fig_tsne_ec_comparison.png
-[11:25:22] wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/figures/fig_tsne_ec2_labeled.png
-[11:25:22] visualizations done

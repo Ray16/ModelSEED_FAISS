@@ -1,3 +1,0 @@
-[02:08:52] cgr_linear: 1-NN EC3 acc=0.6466  15-NN EC3 acc=0.5759
-[02:08:59] cgr_morgan: 1-NN EC3 acc=0.6394  15-NN EC3 acc=0.6016
-[02:08:59] wrote knn_results.csv (6 rows)

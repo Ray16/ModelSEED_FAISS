@@ -1,7 +1,0 @@
-[00:38:26] loading ibm/MoLFormer-XL-both-10pct@7b12d946c181
-[00:38:30]   mols 0/8707
-[00:38:36]   mols 2560/8707
-[00:38:41]   mols 5120/8707
-[00:38:45]   mols 7680/8707
-[00:38:47] saved molformer_diff (dim 768)
-[00:38:47] learned embeddings done

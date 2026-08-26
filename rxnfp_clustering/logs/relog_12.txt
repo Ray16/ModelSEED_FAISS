@@ -1,1 +1,0 @@
-wrote /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/figures/fig_compare_ecfp4drfp_vs_rxnfp.png

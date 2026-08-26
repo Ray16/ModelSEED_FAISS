@@ -13,7 +13,7 @@ and three algorithms (`agglo_single_cos` — chaining; `dbscan` — duplicate of
 `hdbscan`; `spectral` — no unique win) are dropped from the analysis because each
 answers no question a kept candidate already answers. Their rows remain in
 `results.csv` / `knn_results.csv` for the record; the curation is applied only in
-`09_consolidate.py` (`EXCLUDE_EMB` / `EXCLUDE_ALGO`).
+`pipeline/02_cluster/consolidate.py` (`EXCLUDE_EMB` / `EXCLUDE_ALGO`).
 
 ## Bottom line
 
@@ -253,8 +253,8 @@ cheap 2D structural/physchem fusion; the 3D-conformer (Uni-Mol) and 335M-encoder
 
 Figures: `fig_crossaxis_fusion.png` (9-bar single/fusion comparison),
 `fig_best_per_embedding.png` + `fig_knn_transfer.png` (now include all 25
-embeddings). Scripts: `19_embed_erg.py`, `20_embed_gin.py`, `21_embed_unimol.py`,
-`22_embed_biochem.py`, `23_fusion_crossaxis.py`.
+embeddings). Scripts: `pipeline/01_embed/embed_erg.py`, `pipeline/01_embed/embed_gin.py`, `pipeline/01_embed/embed_unimol.py`,
+`pipeline/01_embed/embed_biochem.py`, `pipeline/04_fusion/fusion_crossaxis.py`.
 
 *Method note:* the new embeddings' clustering rows were computed in the
 `modelseed` env (which has `leidenalg`/`hdbscan`); the full algorithm sweep
@@ -290,12 +290,12 @@ metric learned with held-out EC eval), which is the only thing that can
 distinguish a representation ceiling from an information ceiling; every
 *unsupervised, off-the-shelf* stone now points to the latter.
 
-Scripts: `24_embed_classical.py` (FCFP4 — plus torsion/rdk/avalon, which turned
+Scripts: `pipeline/01_embed/embed_classical.py` (FCFP4 — plus torsion/rdk/avalon, which turned
 out already benchmarked as `torsion_diff`/`rdk_diff`/`avalon_diff`),
-`25_embed_mordred.py` (needs `mordredcommunity`, pip-installed into `palm`).
+`pipeline/01_embed/embed_mordred.py` (needs `mordredcommunity`, pip-installed into `palm`).
 
 ## Part V — Irreducible-error probe: the EC3 plateau is *sparsity*, not an information ceiling
-`scripts/26_irreducible_error.py` measures the Bayes floor — where two reactions
+`pipeline/05_analysis/irreducible_error.py` measures the Bayes floor — where two reactions
 share a structure but carry different EC, no structural model can be right on both.
 
 **(A) Exact-structure collisions (representation-free).** Of 13,721 reactions, 904
@@ -340,4 +340,4 @@ no method fixes it. Report EC3 as the structural-prediction target; treat the 4t
 digit as enzyme-side information.
 
 Outputs: `results/irreducible_error.csv`, `figures/fig_irreducible_error.png`,
-`scripts/26_irreducible_error.py`.
+`pipeline/05_analysis/irreducible_error.py`.

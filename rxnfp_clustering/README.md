@@ -5,7 +5,11 @@ combination that groups reactions so that each cluster is as clean as possible w
 respect to **EC number** — i.e. reactions catalyzed by the same enzyme class fall in
 the same cluster and different classes fall in different clusters.
 
-## Dataset (`01_build_dataset.py` → `dataset.parquet`)
+> **Repo layout.** Scripts are organised by stage under `pipeline/` (see
+> `pipeline/README.md` for the stage→results map); shared code is in `_lib/`.
+> Below, script names refer to their new locations.
+
+## Dataset (`pipeline/00_data/build_dataset.py` → `dataset.parquet`)
 
 From `ModelSEEDDatabase/Biochemistry`:
 - start from all reactions, drop obsolete ones
@@ -22,7 +26,7 @@ The label used for scoring is the first full EC per reaction; EC1/EC2/EC3 are it
 > ill-posed. We therefore report the primary ranking at **EC3 (subclass)** granularity
 > (261 well-populated classes) and also report full-EC and EC2.
 
-## Embeddings (`02_embed.py`, `02b_embed_rxnfp.py`, `02c_embed_rdkit.py` → `embeddings/*.npy`)
+## Embeddings (`pipeline/01_embed/*.py` → `embeddings/*.npy`)
 
 | method          | dim   | description |
 |-----------------|-------|-------------|
@@ -38,7 +42,7 @@ The label used for scoring is the first full EC per reaction; EC1/EC2/EC3 are it
 Difference fingerprints naturally cancel cofactors that appear identically on both
 sides. RXNFP CLS-embeddings were verified to match the official `convert()` to 1e-6.
 
-## Clustering (`03_cluster_eval.py` → `results.csv`)
+## Clustering (`pipeline/02_cluster/cluster_eval.py` → `results.csv`)
 
 Every embedding is L2-normalized (cosine geometry); RXNFP is standardized first.
 
@@ -65,12 +69,15 @@ Scored at EC granularity {full, EC3, EC2}. Primary = **EC3 AMI**.
 
 ```bash
 PY=/homes/rzhu/miniforge3/envs/palm/bin/python
-$PY 01_build_dataset.py
-$PY 02_embed.py          # DRFP + ECFP + combos (CPU)
-$PY 02b_embed_rxnfp.py   # RXNFP (GPU)
-$PY 02c_embed_rdkit.py   # RDKit fps in parallel to DRFP (optional speedup)
-$PY 03_cluster_eval.py   # -> results.csv
-$PY 04_report.py         # -> summary_*.csv, figures/
+$PY pipeline/00_data/build_dataset.py
+$PY pipeline/01_embed/embed_fingerprints.py  # DRFP + ECFP + combos (CPU)
+$PY pipeline/01_embed/embed_rxnfp.py         # RXNFP (GPU)
+$PY pipeline/01_embed/embed_rdkit.py         # RDKit fps in parallel to DRFP (optional speedup)
+$PY pipeline/02_cluster/cluster_eval.py      # -> results.csv
+$PY pipeline/02_cluster/consolidate.py       # -> summary_*.csv, figures/
 ```
+
+See `pipeline/README.md` for the full stage list (embeddings, fusion, analysis,
+deployment) and `RESULTS.md` for findings.
 
 Results and findings: see `RESULTS.md` (written after the benchmark completes).

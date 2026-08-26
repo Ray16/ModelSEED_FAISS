@@ -1,9 +1,13 @@
-# Large regenerable artifacts — regenerate via scripts/02*.py
+# Large regenerable artifacts — regenerate via pipeline/01_embed/*.py
 embeddings/
 # t-SNE coords + misc caches (derived)
 cache/
 __pycache__/
 *.pyc
+
+# Run logs (transient); keep the directory itself
+logs/*
+!logs/.gitkeep
 
 # LaTeX build intermediates (keep main.tex + main.pdf)
 slides/*.aux

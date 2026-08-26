@@ -2,7 +2,7 @@
 
 Branch: **`rxnfp-clustering-benchmark`** (off main). Benchmark env: **palm**
 (`/homes/rzhu/miniforge3/envs/palm/bin/python`). New-embedding env: **modelseed**.
-Figure rule (enforced everywhere): **all text ≥ 18pt** via `scripts/_style.py`
+Figure rule (enforced everywhere): **all text ≥ 18pt** via `_style.py`
 (`import _style`); also in repo-root `CLAUDE.md`.
 
 ## What this project is
@@ -13,7 +13,7 @@ results in `RESULTS.md` (21 embeddings, best single ≈ EC3 AMI 0.63; multi-view
 fusion ≈ 0.70–0.72; retrieval ≫ clustering for annotation).
 
 ## Done this session (committed)
-- `e739c7d` **All 11 figures → 18pt** (shared `scripts/_style.py`, overlaps fixed).
+- `e739c7d` **All 11 figures → 18pt** (shared `_style.py`, overlaps fixed).
   Repo-root `CLAUDE.md` records the 18pt rule.
 - `7b02ae8` **Deck recompiled** with 18pt figures (`slides/main.pdf`, 13 frames).
 - `5224535` **EC-annotation module** (`annotation/`) — 6 rules vs fixed-k under a
@@ -57,25 +57,25 @@ toward "report only slide 11"); not yet edited.
 ## In progress — 4 novel embeddings (background agent, INCOMPLETE)
 Goal: add GIN (learned-graph), ErG (pharmacophore-topology), Uni-Mol (3D),
 biochem-native reaction model — genuinely novel axes — then a cross-axis fusion
-{descriptors, CGR, GIN, Uni-Mol, ErG}. Scripts `19_embed_erg.py`,
-`20_embed_gin.py`, `21_embed_unimol.py`, `22_embed_biochem.py`,
-`23_fusion_crossaxis.py`; `09_consolidate.py` already extended with the new
+{descriptors, CGR, GIN, Uni-Mol, ErG}. Scripts `pipeline/01_embed/embed_erg.py`,
+`pipeline/01_embed/embed_gin.py`, `pipeline/01_embed/embed_unimol.py`, `pipeline/01_embed/embed_biochem.py`,
+`pipeline/04_fusion/fusion_crossaxis.py`; `pipeline/02_cluster/consolidate.py` already extended with the new
 embeddings/families. Status:
 - **Done (embeddings produced):** `erg_diff.npy`, `gin_diff.npy`, `biochem.npy`
   (+ masks). **NOT yet committed.**
-- **Running:** `scripts/21_embed_unimol.py` in `modelseed` (conformer gen, slow).
+- **Running:** `pipeline/01_embed/embed_unimol.py` in `modelseed` (conformer gen, slow).
   `unimol_diff.npy` not written yet.
 - **NOT done:** clustering + kNN integration into `results.csv`/`knn_results.csv`
-  for the new embeddings; running `23_fusion_crossaxis.py`; verifying the biochem
-  model is a real fine-tune (check `22_embed_biochem.py` — may be placeholder);
+  for the new embeddings; running `pipeline/04_fusion/fusion_crossaxis.py`; verifying the biochem
+  model is a real fine-tune (check `pipeline/01_embed/embed_biochem.py` — may be placeholder);
   regenerating `09` figures; committing; updating `RESULTS.md` Part III.
 
 ## Next steps for the new session
 1. Wait for `unimol_diff.npy`, then run clustering/kNN for the 4 new embeddings and
-   `09_consolidate.py`; check each novel axis vs the 0.61–0.63 structural plateau.
-2. Run `23_fusion_crossaxis.py`; then run `annotation/annotate_fusion.py`-style test
+   `pipeline/02_cluster/consolidate.py`; check each novel axis vs the 0.61–0.63 structural plateau.
+2. Run `pipeline/04_fusion/fusion_crossaxis.py`; then run `annotation/annotate_fusion.py`-style test
    on the cross-axis fusion to see if it annotates better than the CGR fusion.
-3. Verify `22_embed_biochem.py` isn't an un-fine-tuned placeholder.
-4. Commit new embeddings' scripts/results/figures (NOT the `.npy` — gitignored) and
+3. Verify `pipeline/01_embed/embed_biochem.py` isn't an un-fine-tuned placeholder.
+4. Commit new embeddings' results/figures (NOT the `.npy` — gitignored) and
    add `RESULTS.md` Part III. Reconcile slides 10/11.
 5. `git` index lock is shared with background agents — retry commits.
