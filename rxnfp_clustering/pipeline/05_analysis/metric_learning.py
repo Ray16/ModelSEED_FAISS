@@ -22,7 +22,14 @@ Two splits, both leakage-safe (SVD + projection fit on TRAIN only):
       clustering AMONG the held-out classes (leave-one-out). Tests whether the metric
       learned a transferable notion of EC-similarity vs. memorised the training classes.
 
-Outputs: results/metric_learning.csv, figures/fig_metric_learning.png.
+Run over N_SEEDS seeds (new split + init each) and report mean +/- std, because a
+single run is noisy. Read the result TRANSFER-FIRST: the honest question is (C), and
+the metric gives NO reliable gain on held-out CLASSES (Δ within noise). The large (R)
+gain is in-distribution densification of classes the metric was trained on -- expected
+by construction, not evidence of transfer.
+
+Outputs: results/metric_learning.csv (mean/std per split x space),
+         figures/fig_metric_learning.png (bars with std error bars).
 """
 import os, sys, time, warnings
 warnings.filterwarnings("ignore")
@@ -146,81 +153,103 @@ def train_proj(Ztr, ytr_ec3, epochs=80, P=48, K=8, lr=1e-3):
 def embed(m, Z):
     return m(torch.tensor(Z, device=DEV)).cpu().numpy()
 
-# ---------------------------------------------------------------- (R) held-out reactions
-log("=== (R) held-out reactions (80/20 stratified by EC3) ===")
+# ---------------------------------------------------------------- multi-seed runs
+N_SEEDS = 5
 ec3 = EC["ec3"]
 labs, cnt = np.unique(ec3, return_counts=True)
-test_idx = []
-for lab in labs[cnt >= 5]:                            # stratify only classes with >=5
-    ix = np.where(ec3 == lab)[0]
-    n_te = max(1, int(round(0.2 * len(ix))))
-    test_idx.extend(rng.choice(ix, size=n_te, replace=False))
-test_idx = np.array(sorted(test_idx))
-train_idx = np.setdiff1d(np.arange(N), test_idx)
-log(f"  train {len(train_idx)}  test {len(test_idx)}")
+METRICS = [("ec3_ami_test", "EC3 AMI\n(clustering)"), ("ec3_15nn", "EC3 15-NN\nacc"),
+           ("ec3_1nn", "EC3 1-NN\nacc")]
+SPACES = ["baseline (SVD-256)", "metric-learned (128)"]
 
-Zbase = svd_space(Xraw[train_idx], Xraw)              # baseline geometry (fit on train)
-m = train_proj(Zbase[train_idx], ec3[train_idx])
-Zlearn = embed(m, Zbase)
+def run_R(rloc):
+    """(R) held-out reactions: 80/20 stratified by EC3, reference = train."""
+    test_idx = []
+    for lab in labs[cnt >= 5]:
+        ix = np.where(ec3 == lab)[0]
+        test_idx.extend(rloc.choice(ix, size=max(1, int(round(0.2 * len(ix)))), replace=False))
+    test_idx = np.array(sorted(test_idx)); train_idx = np.setdiff1d(np.arange(N), test_idx)
+    Zbase = svd_space(Xraw[train_idx], Xraw)
+    Zlearn = embed(train_proj(Zbase[train_idx], ec3[train_idx]), Zbase)
+    out = {}
+    for tag, Z in [(SPACES[0], Zbase), (SPACES[1], Zlearn)]:
+        ret = retrieval(Z[train_idx], train_idx, Z[test_idx], test_idx)
+        out[tag] = dict(ec3_ami_test=cluster_ami(Z[test_idx], ec3[test_idx]), **ret)
+    return out
 
-rowsR = []
-for tag, Z in [("baseline (SVD-256)", Zbase), ("metric-learned (128)", Zlearn)]:
-    ret = retrieval(Z[train_idx], train_idx, Z[test_idx], test_idx)
-    ami = cluster_ami(Z[test_idx], ec3[test_idx])     # cluster held-out reactions
-    rowsR.append(dict(split="held-out reactions", space=tag, ec3_ami_test=ami, **ret))
-    log(f"  {tag:22s} EC3 15-NN={ret['ec3_15nn']}  EC3 1-NN={ret['ec3_1nn']}  "
-        f"clust EC3 AMI(test)={ami}")
+def run_C(rloc):
+    """(C) held-out EC3 classes: metric never sees them; LOO among held-out."""
+    eligible = labs[cnt >= 10]
+    hold = set(rloc.choice(eligible, size=max(5, int(round(0.2 * len(eligible)))), replace=False))
+    held = np.array([i for i in range(N) if ec3[i] in hold])
+    seen = np.array([i for i in range(N) if ec3[i] not in hold])
+    Zb = svd_space(Xraw[seen], Xraw)
+    Zl = embed(train_proj(Zb[seen], ec3[seen]), Zb)
+    out = {}
+    for tag, Z in [(SPACES[0], Zb), (SPACES[1], Zl)]:
+        ret = retrieval(Z[held], held, Z[held], held)
+        out[tag] = dict(ec3_ami_test=cluster_ami(Z[held], ec3[held]), **ret)
+    return out
 
-# ---------------------------------------------------------------- (C) held-out classes
-log("=== (C) held-out EC3 classes (metric never sees them) ===")
-eligible = labs[cnt >= 10]
-n_hold = max(5, int(round(0.2 * len(eligible))))
-hold_cls = set(rng.choice(eligible, size=n_hold, replace=False))
-held_idx = np.array([i for i in range(N) if ec3[i] in hold_cls])
-seen_idx = np.array([i for i in range(N) if ec3[i] not in hold_cls])
-log(f"  held-out {len(hold_cls)} classes, {len(held_idx)} reactions; train on {len(seen_idx)}")
+# acc[split][space][metric] = list over seeds
+acc = {"held-out reactions": {s: {k: [] for k, _ in METRICS} for s in SPACES},
+       "held-out classes":   {s: {k: [] for k, _ in METRICS} for s in SPACES}}
+for seed in range(N_SEEDS):
+    rng = np.random.default_rng(seed); torch.manual_seed(seed)   # reseed (train_proj uses global rng)
+    log(f"=== seed {seed} ===")
+    for split, fn in [("held-out reactions", run_R), ("held-out classes", run_C)]:
+        res = fn(rng)
+        for s in SPACES:
+            for k, _ in METRICS:
+                acc[split][s][k].append(res[s][k])
+        log(f"  {split:20s} metric EC3 AMI={res[SPACES[1]]['ec3_ami_test']:.3f}  "
+            f"15-NN={res[SPACES[1]]['ec3_15nn']:.3f}")
 
-ZbaseC = svd_space(Xraw[seen_idx], Xraw)
-mC = train_proj(ZbaseC[seen_idx], ec3[seen_idx])
-ZlearnC = embed(mC, ZbaseC)
-
-rowsC = []
-for tag, Z in [("baseline (SVD-256)", ZbaseC), ("metric-learned (128)", ZlearnC)]:
-    # retrieval among held-out reactions only (their classes aren't in train ref) -> LOO
-    ret = retrieval(Z[held_idx], held_idx, Z[held_idx], held_idx)
-    ami = cluster_ami(Z[held_idx], ec3[held_idx])
-    rowsC.append(dict(split="held-out classes", space=tag, ec3_ami_test=ami, **ret))
-    log(f"  {tag:22s} EC3 15-NN={ret['ec3_15nn']}  EC3 1-NN={ret['ec3_1nn']}  "
-        f"clust EC3 AMI(held)={ami}")
-
-allrows = rowsR + rowsC
-pd.DataFrame(allrows).to_csv(os.path.join(RESULTS, "metric_learning.csv"), index=False)
+# ---- aggregate mean/std, write CSV ----
+rows = []
+for split in acc:
+    for s in SPACES:
+        row = dict(split=split, space=s, n_seeds=N_SEEDS)
+        for k, _ in METRICS:
+            a = np.array(acc[split][s][k])
+            row[f"{k}_mean"] = round(a.mean(), 4); row[f"{k}_std"] = round(a.std(), 4)
+        rows.append(row)
+pd.DataFrame(rows).to_csv(os.path.join(RESULTS, "metric_learning.csv"), index=False)
 log("wrote results/metric_learning.csv")
 
-# ---------------------------------------------------------------- FIGURE
+# ---- conclusion (transfer-first framing) ----
+def delta(split, k):
+    d = np.array(acc[split][SPACES[1]][k]) - np.array(acc[split][SPACES[0]][k])
+    return d.mean(), d.std()
+for split in acc:
+    dm, ds = delta(split, "ec3_ami_test")
+    verdict = "REAL gain" if dm - 2 * ds > 0 else ("REAL loss" if dm + 2 * ds < 0 else "within noise")
+    log(f"CONCLUSION {split:20s}: metric-vs-baseline EC3 AMI Δ = {dm:+.3f} ± {ds:.3f}  -> {verdict}")
+
+# ---------------------------------------------------------------- FIGURE (with error bars)
 fig, axes = plt.subplots(1, 2, figsize=(16, 8))
-metrics = [("ec3_ami_test", "EC3 AMI\n(clustering)"), ("ec3_15nn", "EC3 15-NN\nacc"),
-           ("ec3_1nn", "EC3 1-NN\nacc")]
 handles = None
-for ax, rows, title in [(axes[0], rowsR, "Held-out reactions"),
-                        (axes[1], rowsC, "Held-out EC3 classes")]:
-    base = rows[0]; learn = rows[1]
-    x = np.arange(len(metrics)); w = 0.36
-    b1 = ax.bar(x - w/2, [base[k] for k, _ in metrics], w, color="#8593A3", label="baseline SVD-256")
-    b2 = ax.bar(x + w/2, [learn[k] for k, _ in metrics], w, color="#0072B2", label="metric-learned")
+for ax, split, title in [(axes[0], "held-out reactions", "Held-out reactions"),
+                         (axes[1], "held-out classes", "Held-out EC3 classes")]:
+    x = np.arange(len(METRICS)); w = 0.36
+    means = {s: [np.mean(acc[split][s][k]) for k, _ in METRICS] for s in SPACES}
+    stds = {s: [np.std(acc[split][s][k]) for k, _ in METRICS] for s in SPACES}
+    b1 = ax.bar(x - w/2, means[SPACES[0]], w, yerr=stds[SPACES[0]], capsize=6,
+                color="#8593A3", error_kw=dict(lw=2))
+    b2 = ax.bar(x + w/2, means[SPACES[1]], w, yerr=stds[SPACES[1]], capsize=6,
+                color="#0072B2", error_kw=dict(lw=2))
     handles = [b1, b2]
-    for xi, (k, _) in enumerate(metrics):
-        for off, r in [(-w/2, base), (w/2, learn)]:
-            ax.text(xi + off, r[k] + 0.02, f"{r[k]:.2f}", ha="center", va="bottom", fontsize=FS)
-    ax.set_xticks(x); ax.set_xticklabels([lab for _, lab in metrics], fontsize=FS)
+    for xi, (k, _) in enumerate(METRICS):
+        for off, s in [(-w/2, SPACES[0]), (w/2, SPACES[1])]:
+            ax.text(xi + off, means[s][xi] + stds[s][xi] + 0.02, f"{means[s][xi]:.2f}",
+                    ha="center", va="bottom", fontsize=FS)
+    ax.set_xticks(x); ax.set_xticklabels([lab for _, lab in METRICS], fontsize=FS)
     ax.set_ylim(0, 1.22); ax.set_title(title, fontsize=FS, pad=12)
     for sp in ("top", "right"): ax.spines[sp].set_visible(False)
     ax.grid(axis="y", alpha=0.25); ax.set_axisbelow(True)
 axes[0].set_ylabel("score", fontsize=FS)
-# shared legend below the panels — never overlaps bars/labels/titles
 fig.legend(handles, ["baseline SVD-256", "metric-learned"], fontsize=FS, frameon=False,
            loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.04))
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fig_metric_learning.png"), dpi=300, bbox_inches="tight")
 plt.close(fig)
-log("wrote figures/fig_metric_learning.png")
+log(f"wrote figures/fig_metric_learning.png (mean±std over {N_SEEDS} seeds)")

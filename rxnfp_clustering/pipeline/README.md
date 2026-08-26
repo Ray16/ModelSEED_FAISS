@@ -14,10 +14,10 @@ New-embedding scripts may need the **modelseed** env (leidenalg/hdbscan/etc.).
 | `00_data/` | `build_dataset.py` | `data/dataset.parquet` (13,721 EC-labelled reactions) | intro |
 | `01_embed/` | `embed_fingerprints.py`, `embed_rdkit.py`, `embed_rxnfp.py`, `embed_extra.py`, `embed_learned.py`, `embed_rxnfp_diff.py`, `embed_cgr.py`, `embed_erg.py`, `embed_gin.py`, `embed_unimol.py`, `embed_biochem.py`, `embed_classical.py`, `embed_mordred.py` | `embeddings/*.npy` (27 embeddings; gitignored, regenerable) | Parts I–IV |
 | `02_cluster/` | `cluster_eval.py`, `consolidate.py` | `results.csv`, `summary_*.csv`, cluster figures | Part I |
-| `03_retrieval/` | `knn_annotation.py` | `knn_results.csv` (kNN EC-transfer) | Part I |
+| `03_retrieval/` | `knn_annotation.py`, `multilabel_eval.py` | `knn_results.csv`, any-match EC scoring | Parts I, VII |
 | `04_fusion/` | `fusion_eval.py`, `fusion_search.py`, `cgr_subset_eval.py`, `fusion_figure.py`, `triple_combos.py`, `triple_figure.py`, `fusion_crossaxis.py` | fusion figures/tables | Parts II–III |
-| `05_analysis/` | `visualize_tsne.py`, `compare_two.py`, `irreducible_error.py`, `metric_learning.py` | t-SNE maps, Bayes-floor probe, supervised metric | Part V |
-| `06_deploy/` | `annotate_missing.py`, `viz_predictions.py` | `predicted_missing_ec.tsv`, prediction figures | Part VI (deployment) |
+| `05_analysis/` | `visualize_tsne.py`, `compare_two.py`, `irreducible_error.py`, `metric_learning.py`, `variance_analysis.py` | t-SNE maps, Bayes-floor probe, supervised metric, bootstrap CIs | Parts V, VII |
+| `06_deploy/` | `annotate_missing.py`, `viz_predictions.py`, `validate_predictions.py` | `predicted_missing_ec.tsv`, prediction figures, accuracy validation | Parts VI, VII |
 
 (An early `cluster_eval` and `report` were superseded by `02_cluster/cluster_eval.py`
 and `consolidate.py` and removed; recover them from git history if ever needed.)

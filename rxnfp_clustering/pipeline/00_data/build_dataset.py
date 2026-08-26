@@ -42,7 +42,7 @@ def load_smiles():
 
 def first_full_ec(e):
     if not e or e == 'null':
-        return None, 0
+        return None, 0, ""
     ecs = []
     for tok in e.replace('|', ';').split(';'):
         tok = tok.strip()
@@ -50,8 +50,9 @@ def first_full_ec(e):
         if len(p) == 4 and all(x.isdigit() for x in p):
             ecs.append(tok)
     if not ecs:
-        return None, 0
-    return ecs[0], len(set(ecs))
+        return None, 0, ""
+    uniq = list(dict.fromkeys(ecs))          # unique, order-preserving
+    return ecs[0], len(uniq), ";".join(uniq)
 
 def parse_stoich(s):
     """Return list of (coef:int, cpd_id) with coef sign; skip malformed."""
@@ -87,7 +88,7 @@ def main():
         for row in csv.DictReader(open(f), delimiter='\t'):
             if row.get('is_obsolete') == '1':
                 continue
-            ec, n_ec = first_full_ec(row.get('ec_numbers', ''))
+            ec, n_ec, ec_all = first_full_ec(row.get('ec_numbers', ''))
             if not ec:
                 continue
             stoich = parse_stoich(row.get('stoichiometry', ''))
@@ -100,7 +101,7 @@ def main():
             rows.append(dict(
                 rxn_id=row['id'], ec=ec,
                 ec1=p[0], ec2='.'.join(p[:2]), ec3='.'.join(p[:3]),
-                n_ec=n_ec, n_cpd=len(stoich), rxn_smiles=rs))
+                n_ec=n_ec, ec_all=ec_all, n_cpd=len(stoich), rxn_smiles=rs))
     df = pd.DataFrame(rows).drop_duplicates('rxn_id').reset_index(drop=True)
     out = os.path.join(DATA, "dataset.parquet")
     df.to_parquet(out, index=False)

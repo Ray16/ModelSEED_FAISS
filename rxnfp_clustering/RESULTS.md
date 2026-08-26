@@ -341,3 +341,78 @@ digit as enzyme-side information.
 
 Outputs: `results/irreducible_error.csv`, `figures/fig_irreducible_error.png`,
 `pipeline/05_analysis/irreducible_error.py`.
+
+---
+
+# Part VI — Deployment: predicting EC for the reactions ModelSEED is missing one
+
+Parts I–V benchmark the method by *hiding* known labels. Part VI runs the real
+inference: the validated best retriever (`ecfp4_drfp`, cosine, confidence-gated
+15-NN) applied to the **22,871 non-obsolete ModelSEED reactions that carry no full
+EC**, using the 13,721 EC-labelled reactions as the reference index.
+
+| bucket | count | share |
+|--------|------:|------:|
+| **confident EC3 call** (agreement ≥ 0.6, in-domain) | 11,513 | 50.3% |
+| in-domain but low-agreement | 4,891 | 21.4% |
+| **OOD / abstained** (far from any labelled reaction) | 6,467 | 28.3% |
+
+The 28% OOD + 21% low-agreement split is the real finding: much of unannotated
+ModelSEED sits *outside* the enzyme-labelled manifold (transport, spontaneous,
+unusual chemistry), and the tool correctly refuses those rather than forcing a guess.
+Confident calls span 85 EC3 subclasses (transferases 34%, oxidoreductases 32%,
+hydrolases 25% lead). Scripts `pipeline/06_deploy/annotate_missing.py` (compute) +
+`viz_predictions.py` (figures). Outputs `results/predicted_missing_ec.tsv`,
+`figures/fig_missing_landscape.png`, `fig_pred_map.png`, `fig_pred_distributions.png`.
+
+## Validating the predictions (don't just assume the benchmark number)
+`pipeline/06_deploy/validate_predictions.py` checks the confident calls two ways
+instead of assuming the 0.90 held-out accuracy carries over:
+
+- **Exact-twins vs genuine.** 1,843 of the 11,513 confident calls (16%) have an
+  *identical* labelled reaction (cosine = 1.0) — trivial label propagation, not
+  prediction. The remaining **9,670 (84%) are genuine novel predictions.**
+- **Distribution-matched accuracy.** Reweighting labelled-set gated accuracy by the
+  *missing set's own* neighbour-similarity distribution gives an expected EC3
+  accuracy of **0.78 (all confident) / 0.74 (genuine non-twin)** — **not** the 0.90
+  benchmark average. The missing predictions skew toward lower-similarity
+  neighbourhoods, so their true accuracy is meaningfully lower. Report ~0.74–0.78,
+  not 0.90, as the honest expected accuracy on this population.
+
+Output `results/prediction_validation.csv`, `figures/fig_prediction_validation.png`.
+
+---
+
+# Part VII — How robust are these numbers? (variance, multi-label, seeds)
+
+Parts I–VI report point estimates; Part VII puts error bars on them.
+`pipeline/05_analysis/variance_analysis.py`, `pipeline/03_retrieval/multilabel_eval.py`.
+
+**Retrieval CIs (bootstrap of per-reaction LOO correctness, B=1000).** The top
+structural pack is a *statistical tie*: `ecfp6_diff` 0.876 [0.871–0.881],
+`ecfp4_drfp` 0.874 [0.869–0.880], `ecfp4_diff` 0.874 [0.869–0.880] — CIs fully
+overlap. `rxnfp` 0.834 [0.828–0.840] and `chemberta_diff` 0.853 are clearly
+*below* (non-overlapping). Gated EC3 accuracy 0.905 [0.899–0.911] — the 0.90
+headline is real and tight.
+
+**Clustering CIs (subsample n=6000, B=30).** The plateau has *real structure*, not
+uniform noise: `ecfp4_drfp` 0.613 [0.600–0.621] ≈ `ecfp6_diff` 0.606 [0.596–0.614]
+sit significantly **above** `descriptors_diff` 0.571 and `ecfp2_diff` 0.568
+(non-overlapping). So "choice of fingerprint barely matters" holds only *within* the
+top ECFP/MHFP tier — the wider gaps are genuine.
+
+**Multi-label EC.** 6.5% of reactions carry >1 full EC; scoring only the first EC
+understates accuracy by **+0.3–0.5 pp (EC3)** and **+0.7–1.0 pp (full-EC)** under
+any-match scoring — real but minor label noise. `results/multilabel_eval.csv`,
+`fig_multilabel.png`.
+
+**Metric learning, 5 seeds (reframed).** The honest question is transfer to *unseen*
+classes, and the answer is null: held-out **classes** EC3-AMI Δ (metric − baseline)
+= **−0.000 ± 0.052 → within noise**. The large held-out **reactions** gain
+(**+0.254 ± 0.012**) is in-distribution densification of classes the metric was
+trained on — expected by construction, not transfer. Lead with the null result;
+the 0.87 is not evidence the metric generalises. `results/metric_learning.csv`
+(mean/std over seeds), `fig_metric_learning.png` (bars ± std).
+
+**Environment.** Pinned in `environment.txt`; note `drfp` requires `numpy≥2.2` but
+the sklearn 1.2.2 ABI needs `numpy 1.26.4` — keep numpy 1.26.4 (drfp runs fine on it).

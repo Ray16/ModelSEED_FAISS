@@ -1,0 +1,7 @@
+embedding,ec3_ami_mean,ec3_ami_std,ec3_ami_lo,ec3_ami_hi
+ecfp4_drfp,0.613,0.0057,0.6003,0.6211
+secfp_diff,0.5986,0.0046,0.5899,0.6077
+ecfp6_diff,0.6063,0.0051,0.596,0.6144
+descriptors_diff,0.5706,0.006,0.5591,0.5819
+ecfp4_diff,0.5916,0.0052,0.5796,0.5993
+ecfp2_diff,0.5683,0.0038,0.5621,0.5757
