@@ -17,10 +17,9 @@ opinion is added best-effort if torch is available.
 Query featurisation is byte-identical to scripts/embed_fingerprints.py so query and reference
 live in the same geometry.
 
-Outputs:
+Outputs (figures are drawn by viz_predictions.py from these):
   results/predicted_missing_ec.tsv     one row per scoreable missing-EC reaction
   results/missing_ec_landscape.csv     coverage/agreement summary
-  figures/fig_missing_landscape.png    the landscape at a glance
 """
 import os, sys, csv, glob, time
 import numpy as np, pandas as pd
@@ -30,10 +29,6 @@ from rdkit import RDLogger
 RDLogger.DisableLog('rdApp.*')
 from sklearn.preprocessing import normalize
 from sklearn.neighbors import NearestNeighbors
-import matplotlib; matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "_lib"))
-import _style; FS = _style.FS
 csv.field_size_limit(10**7)
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -247,34 +242,7 @@ def main():
             "5":"isomerase","6":"ligase","7":"translocase"}
     for k, v in conf.pred_ec1.value_counts().items():
         log(f"    EC{k} {ec1n.get(str(k),''):16s} {v:5d} ({v/len(conf)*100:.1f}%)")
-
-    # ---------------------------------------------------------------- figure
-    fig, ax = plt.subplots(1, 2, figsize=(16, 7))
-    # (a) coverage vs threshold
-    s = pd.DataFrame(summ)
-    ax[0].plot(s.ec3_conf_threshold, s.coverage, "o-", color="#0072B2", lw=2, ms=9)
-    for _, r in s.iterrows():
-        ax[0].annotate(f"{int(r.n_covered)}", (r.ec3_conf_threshold, r.coverage),
-                       textcoords="offset points", xytext=(0, 10), ha="center", fontsize=FS)
-    ax[0].axvline(GATE, color="#D55E00", ls="--", lw=2)
-    ax[0].set_xlabel("EC3 neighbour-agreement threshold", fontsize=FS)
-    ax[0].set_ylabel("fraction of missing-EC reactions covered", fontsize=FS)
-    ax[0].set_ylim(0, 1); ax[0].grid(alpha=0.25); ax[0].set_axisbelow(True)
-    for sp in ("top", "right"): ax[0].spines[sp].set_visible(False)
-    # (b) predicted EC1 breakdown among confident
-    vc = conf.pred_ec1.value_counts().sort_index()
-    colors = ["#0072B2","#E69F00","#009E73","#CC79A7","#56B4E9","#D55E00","#F0E442"]
-    labels = [f"EC{k}\n{ec1n.get(str(k),'')}" for k in vc.index]
-    ax[1].bar(range(len(vc)), vc.values, color=[colors[int(k)-1] for k in vc.index])
-    for i, v in enumerate(vc.values):
-        ax[1].text(i, v + max(vc.values)*0.01, str(v), ha="center", va="bottom", fontsize=FS)
-    ax[1].set_xticks(range(len(vc))); ax[1].set_xticklabels(labels, fontsize=FS)
-    ax[1].set_ylabel("confident predictions", fontsize=FS)
-    for sp in ("top", "right"): ax[1].spines[sp].set_visible(False)
-    ax[1].grid(axis="y", alpha=0.25); ax[1].set_axisbelow(True)
-    fig.tight_layout()
-    fig.savefig(os.path.join(FIG, "fig_missing_landscape.png"), dpi=300, bbox_inches="tight")
-    log("wrote figures/fig_missing_landscape.png")
+    log("Figures are rendered by viz_predictions.py (reads the saved TSV/landscape CSV).")
 
 if __name__ == "__main__":
     main()

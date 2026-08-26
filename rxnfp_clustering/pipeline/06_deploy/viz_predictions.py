@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Visualise the missing-EC predictions from annotate_missing.py.
 
-Two figures:
+Three figures:
   fig_pred_map.png          joint UMAP of the 13,721 labelled reactions (grey
                             background manifold) + the 22,871 missing-EC reactions,
                             confident predictions coloured by predicted EC1, OOD
@@ -11,6 +11,8 @@ Two figures:
   fig_pred_distributions.png  (a) EC3 neighbour-agreement histogram + gate,
                               (b) top predicted EC3 subclasses (confident),
                               (c) nearest-labelled-analogue similarity by bucket.
+  fig_missing_landscape.png (a) coverage vs confidence threshold,
+                              (b) predicted EC1 breakdown of confident calls.
 
 Layout uses ecfp4_diff (fast to recompute; DRFP adds nothing to a 2-D layout);
 the predictions/flags themselves come from the full ecfp4_drfp retriever (28).
@@ -171,6 +173,36 @@ def main():
     fig.tight_layout()
     fig.savefig(os.path.join(FIG, "fig_pred_distributions.png"), dpi=300, bbox_inches="tight")
     plt.close(fig); log("wrote figures/fig_pred_distributions.png")
+
+    # ================================================= FIG 3: LANDSCAPE
+    land = pd.read_csv(os.path.join(RESULTS, "missing_ec_landscape.csv"))
+    fig, ax = plt.subplots(1, 2, figsize=(17, 8))
+    # (a) coverage vs confidence threshold
+    ax[0].plot(land.ec3_conf_threshold, land.coverage, "o-", color="#0072B2", lw=2.5, ms=10)
+    for _, r in land.iterrows():
+        ax[0].annotate(f"{int(r.n_covered):,}", (r.ec3_conf_threshold, r.coverage),
+                       textcoords="offset points", xytext=(0, 12), ha="center", fontsize=FS)
+    ax[0].axvline(0.6, color="#D55E00", ls="--", lw=2.5)
+    ax[0].text(0.61, 0.06, "gate = 0.6", color="#D55E00", fontsize=FS)
+    ax[0].set_xlabel("EC3 neighbour-agreement threshold", fontsize=FS)
+    ax[0].set_ylabel("fraction of missing-EC reactions covered", fontsize=FS)
+    ax[0].set_ylim(0, 0.85); ax[0].set_title("(a) coverage vs confidence", fontsize=FS)
+    # (b) predicted EC1 among confident calls -- horizontal so names never overlap
+    vc = pd.Series(p1[conf]).value_counts().sort_values()
+    ylabs = [f"EC{k} {EC1NAME.get(str(k), '')}" for k in vc.index]
+    ax[1].barh(range(len(vc)), vc.values, color=[OKABE.get(str(k), "#999") for k in vc.index])
+    ax[1].set_yticks(range(len(vc))); ax[1].set_yticklabels(ylabs, fontsize=FS)
+    for i, v in enumerate(vc.values):
+        ax[1].text(v + max(vc.values) * 0.01, i, f"{v:,}", va="center", fontsize=FS)
+    ax[1].set_xlim(0, max(vc.values) * 1.15)
+    ax[1].set_xlabel("confident predictions", fontsize=FS)
+    ax[1].set_title("(b) predicted EC1 (confident calls)", fontsize=FS)
+    for a in ax:
+        for sp in ("top", "right"): a.spines[sp].set_visible(False)
+        a.grid(axis="x" if a is ax[1] else "y", alpha=0.25); a.set_axisbelow(True)
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG, "fig_missing_landscape.png"), dpi=300, bbox_inches="tight")
+    plt.close(fig); log("wrote figures/fig_missing_landscape.png")
 
 if __name__ == "__main__":
     main()

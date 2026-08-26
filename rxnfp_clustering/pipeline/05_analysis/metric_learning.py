@@ -198,25 +198,28 @@ pd.DataFrame(allrows).to_csv(os.path.join(RESULTS, "metric_learning.csv"), index
 log("wrote results/metric_learning.csv")
 
 # ---------------------------------------------------------------- FIGURE
-fig, axes = plt.subplots(1, 2, figsize=(15, 7))
-metrics = [("ec3_ami_test", "EC3 AMI (clustering)"), ("ec3_15nn", "EC3 15-NN acc"),
-           ("ec3_1nn", "EC3 1-NN acc")]
+fig, axes = plt.subplots(1, 2, figsize=(16, 8))
+metrics = [("ec3_ami_test", "EC3 AMI\n(clustering)"), ("ec3_15nn", "EC3 15-NN\nacc"),
+           ("ec3_1nn", "EC3 1-NN\nacc")]
+handles = None
 for ax, rows, title in [(axes[0], rowsR, "Held-out reactions"),
                         (axes[1], rowsC, "Held-out EC3 classes")]:
     base = rows[0]; learn = rows[1]
     x = np.arange(len(metrics)); w = 0.36
-    ax.bar(x - w/2, [base[k] for k, _ in metrics], w, color="#8593A3", label="baseline SVD-256")
-    ax.bar(x + w/2, [learn[k] for k, _ in metrics], w, color="#0072B2", label="metric-learned")
+    b1 = ax.bar(x - w/2, [base[k] for k, _ in metrics], w, color="#8593A3", label="baseline SVD-256")
+    b2 = ax.bar(x + w/2, [learn[k] for k, _ in metrics], w, color="#0072B2", label="metric-learned")
+    handles = [b1, b2]
     for xi, (k, _) in enumerate(metrics):
         for off, r in [(-w/2, base), (w/2, learn)]:
-            ax.text(xi + off, r[k] + 0.01, f"{r[k]:.2f}", ha="center", va="bottom", fontsize=FS)
-    ax.set_xticks(x); ax.set_xticklabels([lab for _, lab in metrics], rotation=20, ha="right", fontsize=FS)
-    ax.set_ylim(0, 1.0); ax.set_title(title, fontsize=FS)
+            ax.text(xi + off, r[k] + 0.02, f"{r[k]:.2f}", ha="center", va="bottom", fontsize=FS)
+    ax.set_xticks(x); ax.set_xticklabels([lab for _, lab in metrics], fontsize=FS)
+    ax.set_ylim(0, 1.22); ax.set_title(title, fontsize=FS, pad=12)
     for sp in ("top", "right"): ax.spines[sp].set_visible(False)
     ax.grid(axis="y", alpha=0.25); ax.set_axisbelow(True)
 axes[0].set_ylabel("score", fontsize=FS)
-axes[0].legend(fontsize=FS, frameon=False, loc="upper right")
-fig.suptitle("Supervised metric learning vs the structural baseline", fontsize=FS)
+# shared legend below the panels — never overlaps bars/labels/titles
+fig.legend(handles, ["baseline SVD-256", "metric-learned"], fontsize=FS, frameon=False,
+           loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.04))
 fig.tight_layout()
 fig.savefig(os.path.join(FIG, "fig_metric_learning.png"), dpi=300, bbox_inches="tight")
 plt.close(fig)
