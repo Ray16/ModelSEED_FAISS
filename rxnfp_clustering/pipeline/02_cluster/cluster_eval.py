@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Expanded benchmark: many embeddings x many similarity/clustering methods.
 
-Adds over archive/cluster_eval_v1.py:
+Adds over the original cluster_eval (removed; see git history):
   - EC1 scoring + configurable primary level
   - graph community detection (Leiden multi-resolution, Louvain) on a mutual-kNN
     cosine similarity graph  -- the "build a similarity graph, then cluster it" paradigm

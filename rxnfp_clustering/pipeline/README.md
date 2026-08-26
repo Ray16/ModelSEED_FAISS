@@ -18,7 +18,9 @@ New-embedding scripts may need the **modelseed** env (leidenalg/hdbscan/etc.).
 | `04_fusion/` | `fusion_eval.py`, `fusion_search.py`, `cgr_subset_eval.py`, `fusion_figure.py`, `triple_combos.py`, `triple_figure.py`, `fusion_crossaxis.py` | fusion figures/tables | Parts II–III |
 | `05_analysis/` | `visualize_tsne.py`, `compare_two.py`, `irreducible_error.py`, `metric_learning.py` | t-SNE maps, Bayes-floor probe, supervised metric | Part V |
 | `06_deploy/` | `annotate_missing.py`, `viz_predictions.py` | `predicted_missing_ec.tsv`, prediction figures | Part VI (deployment) |
-| `archive/` | `cluster_eval_v1.py` (← `03`), `report_v1.py` (← `04`) | superseded by `02_cluster/` — kept for provenance | — |
+
+(An early `cluster_eval` and `report` were superseded by `02_cluster/cluster_eval.py`
+and `consolidate.py` and removed; recover them from git history if ever needed.)
 
 The EC-annotation-rule study (threshold+abstain, back-off, conformal, OOD) lives
 in its own self-contained module: `../annotation/` (see `annotation/RESULTS.md`).
