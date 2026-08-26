@@ -1,0 +1,5 @@
+split,space,ec3_ami_test,ec1_1nn,ec2_1nn,ec3_1nn,ec1_15nn,ec2_15nn,ec3_15nn
+held-out reactions,baseline (SVD-256),0.5874,0.9535,0.8999,0.8719,0.9088,0.8279,0.7814
+held-out reactions,metric-learned (128),0.8683,0.9601,0.9239,0.887,0.9572,0.9177,0.8848
+held-out classes,baseline (SVD-256),0.5583,0.9992,0.999,0.9984,0.9621,0.9247,0.9147
+held-out classes,metric-learned (128),0.5459,0.9992,0.999,0.9984,0.9545,0.9134,0.9064
