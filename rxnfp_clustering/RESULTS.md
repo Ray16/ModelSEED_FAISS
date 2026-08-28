@@ -480,11 +480,17 @@ CARE 15-NN over its 61,766 reference (exact-duplicate leakage, top-1 sim ≥ 0.9
 so if anything the test favours CARE). On the 5,105 both-confident reactions, among the
 disagreements: **our model is correct ~80% vs CARE ~8–15%** (EC1 80/15, EC2 84/8, EC3 81/8;
 remainder both-wrong). Overall confident accuracy: our model 96/95/93 vs CARE 89/79/76
-(EC1/2/3). **Caveat:** ground truth is ModelSEED's *own* curation and our model is LOO on
-ModelSEED's *own* reference — home-DB advantage; some "CARE wrong" cases are a different-but-
-defensible EC from SwissProt/Rhea curation, not a true error. But the margin is far too large to
-be only curation drift, and for annotating *ModelSEED* reactions, alignment with ModelSEED's EC
-conventions is exactly what is wanted. Script `pipeline/06_deploy/care_who_is_right.py`,
-per-reaction `results/care_who_is_right.tsv`. This refines the "no uniform winner" reading of the
-confusion structure: the disagreement *structure* is symmetric, but on ModelSEED ground truth our
-model resolves the disagreements correctly far more often.
+(EC1/2/3). **Two caveats, one measured.** (1) *Near-duplicate leakage:* our model is a
+parameter-free retriever whose reference IS the labelled set; LOO removes the reaction itself but
+**not near-duplicates**, and **33–36% of the 13,721 have a twin at cosine ≥ 0.99** (ModelSEED is
+redundant). Stripping reactions where our model has such a twin, the EC3 disagreement win deflates
+**81%→73%** and overall EC3 acc **93%→90%** (CARE ~11%/77%, unchanged) — real but robust. (2)
+*Home-DB advantage (unremovable here):* ground truth is ModelSEED's *own* curation and our model
+retrieves from ModelSEED neighbours, so even the leakage-free 90% is ModelSEED-EC-from-ModelSEED;
+some "CARE wrong" cases are defensible SwissProt/Rhea ECs. So: for annotating *ModelSEED*
+reactions our model is the one to trust (home alignment is the goal), but this is **not** a fair
+general "rxnfp > CARE" benchmark. Scripts `pipeline/06_deploy/care_who_is_right.py`
+(+ `tools/CARE_compare/who_is_right.py` for the leakage split), per-reaction
+`results/care_who_is_right.tsv`. Refines the "no uniform winner" reading: the disagreement
+*structure* is symmetric, but on ModelSEED ground truth our model resolves them correctly far
+more often (leakage-corrected 73% vs 11%).
