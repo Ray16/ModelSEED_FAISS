@@ -17,6 +17,7 @@ Reads DB read-only + KEGG REST (cached to kegg_cache.tsv).
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import os
 import subprocess
 import time
@@ -25,7 +26,7 @@ import pandas as pd
 import msbio
 
 ALIAS = os.path.join(msbio.BIOCHEM, "Aliases")
-CACHE = "kegg_cache.tsv"
+CACHE = work("kegg_cache.tsv")
 EXCLUDE = {"cpd00001", "cpd00067"}  # water, proton: KEGG omits
 
 
@@ -84,7 +85,7 @@ def fetch_kegg(rnums):
 
 def main():
     cpd = msbio.load_compounds(); info = msbio.SpeciesInfo.from_compounds(cpd)
-    log = pd.read_csv("corrections_log.tsv", sep="\t", dtype=str, keep_default_na=False)
+    log = pd.read_csv(result("corrections_log.tsv"), sep="\t", dtype=str, keep_default_na=False)
     rxn2k, cpd2k = load_kegg_maps()
 
     # collect KEGG R-numbers to fetch (only for reactions with a KEGG xref that are
@@ -153,7 +154,7 @@ def main():
         out.append({**base(r), "verdict": v, "added": ",".join(added), "detail": detail})
 
     odf = pd.DataFrame(out)
-    odf.to_csv("kegg_validation.tsv", sep="\t", index=False)
+    odf.to_csv(work("kegg_validation.tsv"), sep="\t", index=False)
 
     print("===== KEGG participant validation =====")
     for k, v in verdicts.most_common():

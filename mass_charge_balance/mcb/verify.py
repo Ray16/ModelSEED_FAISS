@@ -12,7 +12,7 @@ import os
 import pandas as pd
 
 from mcb import io as msbio
-from mcb.paths import wp
+from mcb.paths import work
 
 STAGES = [
     ("proton/water",    "proton_water_corrections.tsv"),
@@ -31,9 +31,9 @@ def run():
     orig_stoich = dict(zip(rxn["id"], rxn["stoichiometry"]))
 
     override_ids = set()
-    if os.path.exists(wp("phospho_overrides.tsv")):
+    if os.path.exists(work("phospho_overrides.tsv")):
         try:
-            override_ids = set(pd.read_csv(wp("phospho_overrides.tsv"), sep="\t", dtype=str)["id"])
+            override_ids = set(pd.read_csv(work("phospho_overrides.tsv"), sep="\t", dtype=str)["id"])
         except pd.errors.EmptyDataError:
             pass
 
@@ -42,7 +42,7 @@ def run():
     print("===== PER-STAGE MASS/CHARGE BALANCE AUDIT =====\n")
     for label, path in STAGES:
         try:
-            df = pd.read_csv(wp(path), sep="\t", dtype=str, keep_default_na=False)
+            df = pd.read_csv(work(path), sep="\t", dtype=str, keep_default_na=False)
         except FileNotFoundError:
             print(f"[{label}] file missing: {path}\n")
             continue

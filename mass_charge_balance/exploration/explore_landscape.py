@@ -11,6 +11,7 @@ Output: prints a summary table and writes landscape.tsv (per-reaction diagnosis)
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import glob
 import os
 import re
@@ -195,7 +196,7 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    df.to_csv(os.path.join(OUT, "landscape.tsv"), sep="\t", index=False)
+    df.to_csv(work("landscape.tsv"), sep="\t", index=False)
 
     print("\n===== BUCKET BREAKDOWN (recomputed, active reactions) =====")
     tot = len(df)

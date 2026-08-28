@@ -16,6 +16,7 @@ For each KEGG-checkable correction:
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import os
 from collections import defaultdict, Counter
 import pandas as pd
@@ -36,9 +37,9 @@ MARKERS = {
 
 def main():
     cpd = msbio.load_compounds(); info = msbio.SpeciesInfo.from_compounds(cpd)
-    log = pd.read_csv("corrections_log.tsv", sep="\t", dtype=str, keep_default_na=False)
-    val = pd.read_csv("kegg_validation.tsv", sep="\t", dtype=str, keep_default_na=False)
-    kegg = pd.read_csv("kegg_cache.tsv", sep="\t", dtype=str, keep_default_na=False)
+    log = pd.read_csv(result("corrections_log.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    val = pd.read_csv(work("kegg_validation.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    kegg = pd.read_csv(work("kegg_cache.tsv"), sep="\t", dtype=str, keep_default_na=False)
     kmap = {r["R"]: set(r["compounds"].split(",")) if r["compounds"] else set()
             for _, r in kegg.iterrows()}
 
@@ -85,7 +86,7 @@ def main():
                     "added": v["added"]})
 
     odf = pd.DataFrame(out)
-    odf.to_csv("kegg_verdicts_refined.tsv", sep="\t", index=False)
+    odf.to_csv(inp("kegg_verdicts_refined.tsv"), sep="\t", index=False)
     print("===== refined KEGG verdicts (checkable corrections) =====")
     for k, n in verdicts.most_common():
         print(f"  {k:18s} {n}")

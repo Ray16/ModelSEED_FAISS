@@ -17,6 +17,7 @@ Output (read-only; writes into this folder):
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 from collections import Counter, defaultdict
 
 import pandas as pd
@@ -78,7 +79,7 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    df.to_csv("agent_triage.tsv", sep="\t", index=False)
+    df.to_csv(work("agent_triage.tsv"), sep="\t", index=False)
 
     lines = [f"NON-DETERMINISTIC IMBALANCED REACTIONS: {len(df)}\n"]
     lines.append("=== by defect class ===")
@@ -99,7 +100,7 @@ def main():
         lines.append(f"  EC {k or '(none)'}: {v}")
 
     report = "\n".join(lines)
-    with open("triage_summary.txt", "w") as fh:
+    with open(work("triage_summary.txt"), "w") as fh:
         fh.write(report + "\n")
     print(report)
     print(f"\nwrote agent_triage.tsv ({len(df)} rows) + triage_summary.txt")

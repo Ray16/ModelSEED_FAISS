@@ -8,6 +8,7 @@ fixable (H+/H2O/charge), or genuinely hard (heavy-atom skeleton error).
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import json
 from collections import Counter
 
@@ -19,7 +20,7 @@ from matplotlib.patches import Patch
 OUT = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance"
 FIGROOT = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/figures"
 
-df = pd.read_csv(f"{OUT}/landscape.tsv", sep="\t", keep_default_na=False)
+df = pd.read_csv(work("landscape.tsv"), sep="\t", keep_default_na=False)
 N = len(df)
 
 # --- action-class mapping -------------------------------------------------
@@ -114,7 +115,7 @@ axC.set_ylabel("Reactions")
 axC.set_title(f"C  Charge imbalance is small & integer\n(|Δq| ≤ 10 shown; n = {len(ch):,}) → proton-count fixable")
 axC.set_xticks(range(-10, 11, 2))
 
-fig.savefig(f"{OUT}/imbalance_landscape.png", dpi=300, bbox_inches="tight")
+fig.savefig(figure("imbalance_landscape.png"), dpi=300, bbox_inches="tight")
 fig.savefig(f"{FIGROOT}/mcb_imbalance_landscape.png", dpi=300, bbox_inches="tight")
 print("wrote imbalance_landscape.png")
 
@@ -154,6 +155,6 @@ legend = [Patch(color="#42a5f5", label="O only (candidate: water)"),
           Patch(color="#7e57c2", label="O+P (phosphate bookkeeping)"),
           Patch(color="#e65100", label="C-containing (skeleton — hard)")]
 ax.legend(handles=legend, loc="lower right", fontsize=9)
-fig2.savefig(f"{OUT}/heavy_imbalance_signatures.png", dpi=300, bbox_inches="tight")
+fig2.savefig(figure("heavy_imbalance_signatures.png"), dpi=300, bbox_inches="tight")
 fig2.savefig(f"{FIGROOT}/mcb_heavy_imbalance_signatures.png", dpi=300, bbox_inches="tight")
 print("wrote heavy_imbalance_signatures.png")

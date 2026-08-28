@@ -15,9 +15,9 @@ import os
 import pandas as pd
 
 from mcb import io as msbio
-from mcb.paths import wp, WORKDIR
+from mcb.paths import work, inp, result, WORK
 
-FIXDIR = os.path.join(str(WORKDIR), "fixes")
+FIXDIR = os.path.join(str(WORK), "fixes")
 
 # stage file -> (category label, confidence column or None). Order = priority on overlap.
 STAGES = [
@@ -43,25 +43,25 @@ def main():
     orig = {r["id"]: r for _, r in rxn.iterrows()}
 
     override_ids = set()
-    if os.path.exists(wp("phospho_overrides.tsv")):
-        ov = pd.read_csv(wp("phospho_overrides.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    if os.path.exists(work("phospho_overrides.tsv")):
+        ov = pd.read_csv(work("phospho_overrides.tsv"), sep="\t", dtype=str, keep_default_na=False)
         override_ids = set(ov["id"])
         print(f"phospho overrides (dropped from cosubstrate): {len(override_ids)}")
 
     global_retract = set()
-    if os.path.exists(wp("kegg_retractions.tsv")):
-        rt = pd.read_csv(wp("kegg_retractions.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    if os.path.exists(inp("kegg_retractions.tsv")):
+        rt = pd.read_csv(inp("kegg_retractions.tsv"), sep="\t", dtype=str, keep_default_na=False)
         global_retract = set(rt["reaction_id"])
         print(f"global retractions (KEGG contradicts): {len(global_retract)}")
 
     all_rows = []
     seen = set()
     for path, category, confcol in STAGES:
-        if not os.path.exists(wp(path)):
+        if not os.path.exists(work(path)):
             print(f"skip missing {path}")
             continue
         try:
-            df = pd.read_csv(wp(path), sep="\t", dtype=str, keep_default_na=False)
+            df = pd.read_csv(work(path), sep="\t", dtype=str, keep_default_na=False)
         except pd.errors.EmptyDataError:
             print(f"skip empty {path}")
             continue
@@ -108,7 +108,7 @@ def main():
         print(f"[{category}] {len(rows)} fixes")
 
     master = pd.DataFrame(all_rows)
-    master.to_csv(wp("corrections_log.tsv"), sep="\t", index=False)
+    master.to_csv(result("corrections_log.tsv"), sep="\t", index=False)
 
     print("\n===== correction log summary =====")
     print(f"total fixes logged: {len(master)}")

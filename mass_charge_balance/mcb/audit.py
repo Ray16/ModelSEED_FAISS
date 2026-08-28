@@ -19,7 +19,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb import closures as cl
-from mcb.paths import wp
+from mcb.paths import result
 
 FREEBIES = {"cpd00001", "cpd00067", "cpd00011", "cpd00009", "cpd00012", "cpd00013",
             "cpd00048", "cpd00007", "cpd00024", "cpd00036", "cpd00055"}
@@ -36,7 +36,7 @@ def multiset(species, sign):
 def run():
     cpd = msbio.load_compounds()
     info = msbio.SpeciesInfo.from_compounds(cpd)
-    df = pd.read_csv(wp("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    df = pd.read_csv(result("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
 
     balance_fail, degenerate, unscoreable = [], [], []
     guard_violations = []          # HARD: a polymer/phosphate-conflict correction slipped through
@@ -101,7 +101,7 @@ def run():
              "tier": dd.loc[rid]["tier"] if rid in dd.index else "",
              "equation_after": dd.loc[rid]["equation_after"] if rid in dd.index else ""}
             for rid, fs in flagged.items()]
-    pd.DataFrame(rows).sort_values("flags").to_csv(wp("audit_flags.tsv"), sep="\t", index=False)
+    pd.DataFrame(rows).sort_values("flags").to_csv(result("audit_flags.tsv"), sep="\t", index=False)
     print(f"\n  wrote audit_flags.tsv ({len(rows)} soft-flagged reactions)")
 
     hard = len(balance_fail) + len(degenerate) + len(unscoreable) + len(guard_violations)

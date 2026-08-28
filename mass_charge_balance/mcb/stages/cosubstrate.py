@@ -21,7 +21,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb import closures as cl
-from mcb.paths import wp
+from mcb.paths import work
 
 
 def main():
@@ -107,7 +107,7 @@ def main():
 
     df = pd.DataFrame(rows)
     df = df.sort_values(["confidence", "co_substrate"])
-    df.to_csv(wp("cosubstrate_corrections.tsv"), sep="\t", index=False)
+    df.to_csv(work("cosubstrate_corrections.tsv"), sep="\t", index=False)
     print(f"co-substrate single-species closures found & verified: {len(df)}")
     if len(df):
         print("\nby co-substrate x confidence:")

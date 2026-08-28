@@ -19,7 +19,7 @@ import pandas as pd
 from mcb import io as msbio
 from mcb import closures as cl
 from mcb.stereo import glycosyl_confidence
-from mcb.paths import wp, WORKDIR
+from mcb.paths import work, INPUTS
 
 
 def apply_couple(sp, info, cname, name_of):
@@ -65,7 +65,7 @@ def main():
     orig = {r["id"]: r for _, r in rxn.iterrows()}
 
     decisions = {}
-    for f in sorted(glob.glob(os.path.join(str(WORKDIR), "agent_decisions_*.tsv"))):
+    for f in sorted(glob.glob(os.path.join(str(INPUTS), "agent_decisions_*.tsv"))):
         if "phospho" in os.path.basename(f):
             continue
         d = pd.read_csv(f, sep="\t", dtype=str, keep_default_na=False)
@@ -107,7 +107,7 @@ def main():
             "corrected_stoichiometry": msbio.serialize_stoich(new_sp),
         })
 
-    pd.DataFrame(rows).to_csv(wp("couple_agent_corrections.tsv"), sep="\t", index=False)
+    pd.DataFrame(rows).to_csv(work("couple_agent_corrections.tsv"), sep="\t", index=False)
     print("stats:", dict(stats))
     print(f"wrote couple_agent_corrections.tsv ({len(rows)} balance-verified)")
     if rows:

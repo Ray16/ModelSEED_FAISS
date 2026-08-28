@@ -16,6 +16,7 @@ Reads DB read-only.
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import pandas as pd
 import msbio
 from mcb.closures import pw_close, add
@@ -52,7 +53,7 @@ def main():
     info = msbio.SpeciesInfo.from_compounds(cpd)
     orig = {r["id"]: r for _, r in rxn.iterrows()}
 
-    cs = pd.read_csv("cosubstrate_corrections.tsv", sep="\t", dtype=str, keep_default_na=False)
+    cs = pd.read_csv(work("cosubstrate_corrections.tsv"), sep="\t", dtype=str, keep_default_na=False)
     cs = cs[cs["co_substrate"].isin(["Pi", "PPi"])]
 
     rows = []
@@ -77,7 +78,7 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    df.to_csv("phospho_candidates_for_agent.tsv", sep="\t", index=False)
+    df.to_csv(work("phospho_candidates_for_agent.tsv"), sep="\t", index=False)
     print(f"Pi/PPi corrections total: {len(cs)}")
     print(f"ambiguous (a nucleotide couple also closes): {len(df)}")
     if len(df):

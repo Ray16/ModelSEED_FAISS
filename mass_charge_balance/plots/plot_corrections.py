@@ -5,6 +5,7 @@ confidence, plus the glycosyl stereo-verifiability breakdown. Reads corrections_
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
@@ -12,7 +13,7 @@ from matplotlib.patches import Patch
 OUT = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance"
 FIG = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/figures"
 
-log = pd.read_csv(f"{OUT}/corrections_log.tsv", sep="\t", dtype=str, keep_default_na=False)
+log = pd.read_csv(result(result("corrections_log.tsv")), sep="\t", dtype=str, keep_default_na=False)
 
 # confidence class per row
 def conf_class(r):
@@ -51,7 +52,7 @@ axA.set_xlim(0, cats.max() * 1.12)
 
 # Panel B: glycosyl stereo verifiability
 try:
-    ag = pd.read_csv(f"{OUT}/couple_agent_corrections.tsv", sep="\t", dtype=str, keep_default_na=False)
+    ag = pd.read_csv(work("couple_agent_corrections.tsv"), sep="\t", dtype=str, keep_default_na=False)
     st = ag[ag["stereo_tier"].isin(["structure-stereo-defined", "structure-stereo-undefined", "unverifiable"])]
     counts = st["stereo_tier"].value_counts()
     lbl = {"structure-stereo-defined": "stereo-verifiable\n(epimer checkable)",
@@ -71,6 +72,6 @@ try:
 except FileNotFoundError:
     pass
 
-fig.savefig(f"{OUT}/corrections_summary.png", dpi=300, bbox_inches="tight")
+fig.savefig(figure("corrections_summary.png"), dpi=300, bbox_inches="tight")
 fig.savefig(f"{FIG}/mcb_corrections_summary.png", dpi=300, bbox_inches="tight")
 print(f"wrote corrections_summary.png  (total {total})")

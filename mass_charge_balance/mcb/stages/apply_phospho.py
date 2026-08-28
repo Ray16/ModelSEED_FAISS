@@ -16,7 +16,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb.stages.apply_couples import apply_couple
-from mcb.paths import wp
+from mcb.paths import work, inp
 
 DECISION_TO_COUPLE = {
     "ATP/ADP": "phospho ATP/ADP",
@@ -32,7 +32,7 @@ def main():
     name_of = dict(zip(cpd["id"], cpd["name"]))
     orig = {r["id"]: r for _, r in rxn.iterrows()}
 
-    dec = pd.read_csv(wp("agent_decisions_phospho.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    dec = pd.read_csv(inp("agent_decisions_phospho.tsv"), sep="\t", dtype=str, keep_default_na=False)
 
     corr_rows, override_rows = [], []
     stats = Counter()
@@ -64,8 +64,8 @@ def main():
         })
         override_rows.append({"id": rid, "action": "reassigned", "reason": d.get("reason", "")})
 
-    pd.DataFrame(corr_rows).to_csv(wp("phospho_corrections.tsv"), sep="\t", index=False)
-    pd.DataFrame(override_rows).to_csv(wp("phospho_overrides.tsv"), sep="\t", index=False)
+    pd.DataFrame(corr_rows).to_csv(work("phospho_corrections.tsv"), sep="\t", index=False)
+    pd.DataFrame(override_rows).to_csv(work("phospho_overrides.tsv"), sep="\t", index=False)
     print("decisions:", dict(stats))
     print(f"reassigned (balance-verified): {len(corr_rows)}  -> phospho_corrections.tsv")
     print(f"overrides (drop from cosubstrate): {len(override_rows)} -> phospho_overrides.tsv")

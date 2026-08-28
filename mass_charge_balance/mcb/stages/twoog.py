@@ -15,7 +15,7 @@ Output (work dir): twoog_corrections.tsv
 import pandas as pd
 
 from mcb import io as msbio
-from mcb.paths import wp
+from mcb.paths import work
 
 TWOOG = "cpd00024"   # 2-oxoglutarate
 O2 = "cpd00007"
@@ -80,7 +80,7 @@ def main():
             "corrected_stoichiometry": msbio.serialize_stoich(new_sp),
         })
 
-    pd.DataFrame(rows).to_csv(wp("twoog_corrections.tsv"), sep="\t", index=False)
+    pd.DataFrame(rows).to_csv(work("twoog_corrections.tsv"), sep="\t", index=False)
     print(f"2-OG dioxygenase demethylations corrected & balance-verified: {len(rows)}")
     print(f"EC 1.14.11 reactions skipped (not a 2-species CH2 demethylation): {skipped}")
 

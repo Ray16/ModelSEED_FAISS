@@ -13,6 +13,7 @@ Output: menu_expansion_candidates.tsv  (read-only).
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 from collections import Counter, defaultdict
 import pandas as pd
 import msbio
@@ -68,7 +69,7 @@ def ec_hit(ec, prefixes):
 def main():
     cpd = msbio.load_compounds(); rxn = msbio.load_reactions(True)
     info = msbio.SpeciesInfo.from_compounds(cpd)
-    corrected = set(pd.read_csv("corrections_log.tsv", sep="\t", dtype=str)["reaction_id"])
+    corrected = set(pd.read_csv(result("corrections_log.tsv"), sep="\t", dtype=str)["reaction_id"])
 
     rows = []
     for _, r in rxn.iterrows():
@@ -105,7 +106,7 @@ def main():
                     break
 
     df = pd.DataFrame(rows)
-    df.to_csv("menu_expansion_candidates.tsv", sep="\t", index=False)
+    df.to_csv(work("menu_expansion_candidates.tsv"), sep="\t", index=False)
     print(f"plausible menu-expansion candidates (H2 trap excluded): {len(df)}\n")
     print("by cofactor x EC-hit (yes = EC corroborates -> real; no = likely false):")
     print(pd.crosstab(df["cofactor"], df["ec_hit"]).to_string())

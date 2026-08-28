@@ -10,6 +10,7 @@ machinery, and did we actually correct them? Distinguishes:
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 from collections import Counter, defaultdict
 import pandas as pd
 import msbio
@@ -53,7 +54,7 @@ def couple_closes(res0, donor, acc, info):
 def main():
     cpd = msbio.load_compounds(); rxn = msbio.load_reactions(True)
     info = msbio.SpeciesInfo.from_compounds(cpd)
-    log = pd.read_csv("corrections_log.tsv", sep="\t", dtype=str, keep_default_na=False)
+    log = pd.read_csv(result("corrections_log.tsv"), sep="\t", dtype=str, keep_default_na=False)
     corrected = set(log["reaction_id"])
 
     cls = Counter()

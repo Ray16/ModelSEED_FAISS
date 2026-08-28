@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+# large regenerable diagnostic dumps (rebuild via exploration/ scripts)
+work/landscape.tsv
+work/agent_triage.tsv

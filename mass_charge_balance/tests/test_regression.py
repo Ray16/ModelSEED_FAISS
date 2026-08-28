@@ -21,7 +21,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb import closures as cl
-from mcb.paths import wp
+from mcb.paths import result
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 GOLDEN = os.path.join(HERE, "golden_corrected_reactions.tsv")
@@ -82,7 +82,7 @@ def test_ec_prefilter():
 # Regression tests: the delivered corrections file
 # --------------------------------------------------------------------------- #
 def test_matches_golden():
-    cur = pd.read_csv(wp("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    cur = pd.read_csv(result("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
     gold = pd.read_csv(GOLDEN, sep="\t", dtype=str, keep_default_na=False)
     assert len(cur) == len(gold) == 516, (len(cur), len(gold))
     key = ["reaction_id", "stoichiometry_corrected"]
@@ -92,7 +92,7 @@ def test_matches_golden():
 
 
 def test_all_balanced_and_nondegenerate():
-    df = pd.read_csv(wp("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    df = pd.read_csv(result("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
     bad = []
     for _, r in df.iterrows():
         sp = msbio.parse_stoich(r["stoichiometry_corrected"])
@@ -103,7 +103,7 @@ def test_all_balanced_and_nondegenerate():
 
 
 def test_no_guard_violations():
-    df = pd.read_csv(wp("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    df = pd.read_csv(result("corrected_reactions.tsv"), sep="\t", dtype=str, keep_default_na=False)
     assert not (REFUSED & set(df["reaction_id"])), "a refused reaction reappeared"
     for _, r in df.iterrows():
         after = msbio.parse_stoich(r["stoichiometry_corrected"])

@@ -14,6 +14,7 @@ Tests, read-only:
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 from collections import Counter
 
 from rdkit import Chem
@@ -127,7 +128,7 @@ def main():
              "structure_charge": struct_charge.get(c),
              "smiles": smiles_of.get(c), "n_charge_only_rxns": v}
             for (c, nm), v in defect_cpd_freq.most_common()]
-    pd.DataFrame(rows).to_csv("charge_defect_candidates.tsv", sep="\t", index=False)
+    pd.DataFrame(rows).to_csv(work("charge_defect_candidates.tsv"), sep="\t", index=False)
     print(f"\nwrote charge_defect_candidates.tsv ({len(rows)} candidates)")
 
 

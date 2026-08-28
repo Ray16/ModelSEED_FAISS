@@ -21,7 +21,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb import closures as cl
-from mcb.paths import wp
+from mcb.paths import work
 
 
 def main():
@@ -33,8 +33,8 @@ def main():
     # skip reactions already fixed by earlier stages
     done = set()
     for f in ("proton_water_corrections.tsv", "cosubstrate_corrections.tsv"):
-        if os.path.exists(wp(f)):
-            done |= set(pd.read_csv(wp(f), sep="\t", dtype=str)["id"])
+        if os.path.exists(work(f)):
+            done |= set(pd.read_csv(work(f), sep="\t", dtype=str)["id"])
 
     auto, ambiguous = [], []
     for _, r in rxn.iterrows():
@@ -102,8 +102,8 @@ def main():
         else:
             ambiguous.append(rec)
 
-    pd.DataFrame(auto).to_csv(wp("couple_corrections.tsv"), sep="\t", index=False)
-    pd.DataFrame(ambiguous).to_csv(wp("couple_candidates_for_agent.tsv"), sep="\t", index=False)
+    pd.DataFrame(auto).to_csv(work("couple_corrections.tsv"), sep="\t", index=False)
+    pd.DataFrame(ambiguous).to_csv(work("couple_candidates_for_agent.tsv"), sep="\t", index=False)
     print(f"auto-accepted (unambiguous, EC-corroborated, balance-verified): {len(auto)}")
     if auto:
         print(Counter(a["couple"] for a in auto))

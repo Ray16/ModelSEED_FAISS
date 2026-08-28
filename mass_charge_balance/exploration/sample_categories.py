@@ -4,13 +4,14 @@ can judge how much reasoning each needs (-> cheap subagent vs main model)."""
 
 import os as _os, sys as _sys
 _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
+from mcb.paths import work, result, inp, figure
 import pandas as pd
 import msbio
 
 cpd = msbio.load_compounds(); rxn = msbio.load_reactions(True)
 info = msbio.SpeciesInfo.from_compounds(cpd)
 name = dict(zip(cpd["id"], cpd["name"]))
-tri = pd.read_csv("agent_triage.tsv", sep="\t", dtype=str, keep_default_na=False)
+tri = pd.read_csv(work("agent_triage.tsv"), sep="\t", dtype=str, keep_default_na=False)
 rxn_by_id = {r["id"]: r for _, r in rxn.iterrows()}
 
 # (label, filter) -> pick first N ids

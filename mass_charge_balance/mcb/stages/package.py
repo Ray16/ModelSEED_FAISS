@@ -15,7 +15,7 @@ import os
 import pandas as pd
 
 from mcb import io as msbio
-from mcb.paths import wp
+from mcb.paths import work, inp, result
 
 
 def tier(cat, conf):
@@ -36,15 +36,15 @@ def main():
     name_of = dict(zip(rxn["id"], rxn["name"]))
     ec_of = dict(zip(rxn["id"], rxn["ec_numbers"]))
 
-    log = pd.read_csv(wp("corrections_log.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    log = pd.read_csv(result("corrections_log.tsv"), sep="\t", dtype=str, keep_default_na=False)
 
     kegg = {}
-    if os.path.exists(wp("kegg_verdicts_refined.tsv")):
-        kv = pd.read_csv(wp("kegg_verdicts_refined.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    if os.path.exists(inp("kegg_verdicts_refined.tsv")):
+        kv = pd.read_csv(inp("kegg_verdicts_refined.tsv"), sep="\t", dtype=str, keep_default_na=False)
         kegg = dict(zip(kv["reaction_id"], kv["kegg_verdict"]))
     stereo = {}
-    if os.path.exists(wp("couple_agent_corrections.tsv")):
-        ca = pd.read_csv(wp("couple_agent_corrections.tsv"), sep="\t", dtype=str, keep_default_na=False)
+    if os.path.exists(work("couple_agent_corrections.tsv")):
+        ca = pd.read_csv(work("couple_agent_corrections.tsv"), sep="\t", dtype=str, keep_default_na=False)
         if "stereo_tier" in ca:
             stereo = dict(zip(ca["id"], ca["stereo_tier"]))
 
@@ -68,7 +68,7 @@ def main():
             "stoichiometry_corrected": r["stoichiometry_after"],
         })
     df = pd.DataFrame(rows).sort_values(["tier", "method", "reaction_id"])
-    df.to_csv(wp("corrected_reactions.tsv"), sep="\t", index=False)
+    df.to_csv(result("corrected_reactions.tsv"), sep="\t", index=False)
 
     N = len(df)
     auto = (df["tier"] == "auto-apply").sum()
@@ -108,7 +108,7 @@ def main():
     L.append("- Unscoreable R-group/generic-formula reactions (~38.8% of the DB) - refused by design.")
     L.append("- Redox charge-only (~1,500, implicit electrons), oxygen-only hydroxylations "
              "(~297), heavy-skeleton errors (~1,500) - flagged for supervised rounds / curation.")
-    with open(wp("BALANCE_REPORT.md"), "w") as fh:
+    with open(result("BALANCE_REPORT.md"), "w") as fh:
         fh.write("\n".join(L) + "\n")
 
     print(f"wrote corrected_reactions.tsv ({N} rows: {auto} auto-apply, {review} review)")

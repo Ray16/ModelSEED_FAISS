@@ -18,7 +18,7 @@ import pandas as pd
 
 from mcb import io as msbio
 from mcb import closures as cl
-from mcb.paths import wp
+from mcb.paths import work
 
 REAGENT = {
     cl.CPD_PROTON: ("H+",  {"H": 1, "charge": 1}),
@@ -143,7 +143,7 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    df.to_csv(wp("proton_water_corrections.tsv"), sep="\t", index=False)
+    df.to_csv(work("proton_water_corrections.tsv"), sep="\t", index=False)
 
     lines = ["===== PROTON/WATER BALANCE - CORRECTION REPORT =====",
              "(reads ModelSEEDDatabase read-only; writes proposals into the work dir)\n"]
@@ -153,7 +153,7 @@ def main():
     lines.append(f"  Verified balanced after patch:       {verified_ok}")
     lines.append(f"  Verification FAILURES:               {verify_fail}")
     report = "\n".join(lines)
-    with open(wp("proton_water_report.txt"), "w") as fh:
+    with open(work("proton_water_report.txt"), "w") as fh:
         fh.write(report + "\n")
     print("\n" + report)
 
