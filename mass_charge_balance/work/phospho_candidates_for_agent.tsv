@@ -1,7 +1,5 @@
 id	name	ec	current_assignment	alternatives	residual	definition
 rxn01915	urate-ribonucleotide:orthophosphate D-ribosyltransferase	2.4.2.16	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) Phosphate[0] + (1) Urate D-ribonucleotide[0] <= (1) Urate[0] + (1) Ribose 1-phosphate[0]
-rxn04272	cis-2-Methyl-5-isopropylhexa-2,5-dienoate-CoA ligase	6.2.1.-	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	H:-1,O:-3,P:-1	(1) ATP[0] + (1) CoA[0] + (1) cis-2-Methyl-5-isopropylhexa-2,5-dienoic acid[0] <= (1) Phosphate[0] + (1) AMP[0] + (1) ci
-rxn04273	trans-2-Methyl-5-isopropylhexa-2,5-dienoate-CoA ligase	6.2.1.-	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	H:-1,O:-3,P:-1	(1) ATP[0] + (1) CoA[0] + (1) trans-2-Methyl-5-isopropylhexa-2,5-dienoic acid[0] <= (1) Phosphate[0] + (1) AMP[0] + (1) 
 rxn06117	ATP:polyphosphate phosphotransferase	2.7.4.1	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) ATP[0] <= (1) ADP[0]
 rxn06118	Polyphosphate:D-glucose 6-phosphotransferase	2.7.1.63	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	H:-1,O:+3,P:+1,charge:-2	(1) D-Glucose[0] => (1) D-glucose-6-phosphate[0]
 rxn06120	Polyphosphate:D-glucose 6-phosphotransferase	2.7.1.63	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	H:-1,O:+3,P:+1,charge:-2	(1) beta-D-Glucose[0] => (1) beta-D-Glucose 6-phosphate[0]
@@ -67,7 +65,6 @@ rxn39098	RXN-5106	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:+3,P:+1,charge:-1	(1) (
 rxn39099	RXN-5107	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:+3,P:+1,charge:-1	(1) (E)-geranyl phosphate[0] <=> (1) PPi[0] + (1) beta-Pinene[0]
 rxn39100	RXN-5108	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:+3,P:+1,charge:-1	(1) (E)-geranyl phosphate[0] => (1) PPi[0] + (1) Terpinolene[0]
 rxn39101	RXN-5110	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:+3,P:+1,charge:-1	(1) (E)-geranyl phosphate[0] => (1) PPi[0] + (1) Myrcene[0]
-rxn49477	22452	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) H2O[0] + (1) (Phosphate)n[0] <=> (2) Phosphate[0] + (1) H+[0]
 rxn53888	55404	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) UTP[0] <=> (1) UDP[0]
 rxn53889	55408	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) CTP[0] <=> (1) CDP[0]
 rxn53890	55412	null	free Pi	ATP/ADP|GTP/GDP|UTP/UDP	O:-3,P:-1,charge:+1	(1) GTP[0] <=> (1) GDP[0]

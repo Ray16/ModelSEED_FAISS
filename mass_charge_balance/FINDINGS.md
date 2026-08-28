@@ -3,6 +3,12 @@
 Goal: build a tool that autocorrects mass & charge balance of ModelSEED reactions.
 Separate effort from `thermodynamic_calc/`.
 
+> **Note (current layout):** the flat script names cited below (`proton_water_balance.py`,
+> `cosubstrate_closure.py`, `couple_closure.py`, `apply_couples.py`, `twoog_demethylase.py`,
+> `verify_corrections.py`, …) are the historical stage names. The pipeline now lives in the
+> `mcb/` package — run `python -m mcb run|verify|audit`. See `README.md` for the current
+> structure. Delivery is **516** (not 521): see the audit section below.
+
 ## Data sources (in ModelSEEDDatabase/)
 
 - **Reactions**: `Biochemistry/reaction_*.tsv` (61 shards, 56,012 rows; 48,403 active).

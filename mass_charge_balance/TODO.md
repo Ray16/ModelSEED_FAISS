@@ -16,10 +16,9 @@ Code lives in the `mcb/` package now (was ~20 flat scripts with copy-pasted clos
 ## Now / high priority
 
 - [ ] **Open the PR** for `mass-charge-balance` (branch pushed; PR not opened).
-- [ ] **Deliver the 521 in a usable form** (track 2): emit a single corrected-reactions file
-      in ModelSEED stoichiometry format + a MEMOTE-style before/after balance report.
-      Decide the apply path: additive overlay applied at load time vs. upstream PR to
-      ModelSEEDDatabase. (User: never overwrite originals.)
+- [x] **Deliver the 516 in a usable form** — `results/corrected_reactions.tsv` (ModelSEED
+      stoichiometry format, tiered) + `results/BALANCE_REPORT.md` (MEMOTE-style). Still open:
+      decide the apply path (additive overlay at load time vs. upstream PR). Never overwrite originals.
 - [ ] **Decide what to do with the confidence tiers.** proton/water (309) + high-EC
       co-substrate/couple are solid; the 77 "review" co-substrate + agent tier are proposals.
       Ship all with tier labels, or gate delivery to high-confidence only?
@@ -56,8 +55,8 @@ Code lives in the `mcb/` package now (was ~20 flat scripts with copy-pasted clos
       but they still consume agent tokens).
 - [ ] **CLI packaging** (track 4): wrap the pipeline into one command that runs on any
       ModelSEED release and emits corrections + report + figures.
-- [ ] Add a small **regression test**: the 521 should stay balanced and mechanism-consistent
-      across re-runs; assert 0 degenerate / 0 EC-incompatible / 0 balance failures.
+- [x] Add a small **regression test** (`tests/test_regression.py`, 7 checks): the 516 stay
+      balanced + guard-clean, and the pipeline reproduces the golden set byte-for-byte.
 
 ## Known issues / watch-list
 
