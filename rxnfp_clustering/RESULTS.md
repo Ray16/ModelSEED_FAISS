@@ -472,3 +472,19 @@ cofactor-matched but chemistry-mismatched (NAD(P)H oxidases share that exact moi
 Lesson: **cross-predictor agreement is a good confidence gate at EC1–EC2, but at EC3 the
 fingerprint predictors share a cofactor-substructure bias — reading the O₂ fate in the balanced
 reaction adjudicates the disagreements the fingerprints can't.**
+
+**When they disagree, which is right? (ground-truth test.)** The missing-EC set has no ground
+truth, so we ran BOTH predictors on the **13,721 labelled** reactions (ModelSEED's curated EC as
+truth): our model leave-one-out 15-NN over the same 13,721 (ECFP4-diff‖DRFP, self excluded);
+CARE 15-NN over its 61,766 reference (exact-duplicate leakage, top-1 sim ≥ 0.999, dropped —
+so if anything the test favours CARE). On the 5,105 both-confident reactions, among the
+disagreements: **our model is correct ~80% vs CARE ~8–15%** (EC1 80/15, EC2 84/8, EC3 81/8;
+remainder both-wrong). Overall confident accuracy: our model 96/95/93 vs CARE 89/79/76
+(EC1/2/3). **Caveat:** ground truth is ModelSEED's *own* curation and our model is LOO on
+ModelSEED's *own* reference — home-DB advantage; some "CARE wrong" cases are a different-but-
+defensible EC from SwissProt/Rhea curation, not a true error. But the margin is far too large to
+be only curation drift, and for annotating *ModelSEED* reactions, alignment with ModelSEED's EC
+conventions is exactly what is wanted. Script `pipeline/06_deploy/care_who_is_right.py`,
+per-reaction `results/care_who_is_right.tsv`. This refines the "no uniform winner" reading of the
+confusion structure: the disagreement *structure* is symmetric, but on ModelSEED ground truth our
+model resolves the disagreements correctly far more often.

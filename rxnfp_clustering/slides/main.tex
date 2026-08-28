@@ -381,7 +381,7 @@
 \begin{frame}{Where the two models actually differ (all 7,533 confident)}
   \centering
   \includegraphics[height=0.74\textheight]{care_ec1_confusion.png}
-  \takeaway{\best{88\% on the diagonal}, and the $\sim$12\% off-diagonal is \emph{systematic, not one-sided}: transferase$\leftrightarrow$hydrolase (318+148, a genuinely hard boundary), transferase$\leftrightarrow$oxidoreductase (101), ligase$\to$transferase (85). Neither model uniformly wins --- the disagreements are the hard EC boundaries, not noise.}
+  \takeaway{\best{88\% on the diagonal}; the $\sim$12\% off-diagonal is \emph{systematic} --- transferase$\leftrightarrow$hydrolase (318+148, a hard boundary), transferase$\leftrightarrow$oxidoreductase (101), ligase$\to$transferase (85). And on labelled reactions (ground truth), \best{when they disagree our model is right $\sim$80\%} vs CARE $\sim$10\% (EC1--EC3) --- home-DB advantage, but the margin is real.}
 \end{frame}
 
 \begin{frame}{Per-reaction: our model vs CARE on the disputed cases}
