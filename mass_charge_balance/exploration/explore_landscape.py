@@ -8,6 +8,9 @@ stored status. Then we classify every non-OK reaction into actionable buckets.
 
 Output: prints a summary table and writes landscape.tsv (per-reaction diagnosis).
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import glob
 import os
 import re

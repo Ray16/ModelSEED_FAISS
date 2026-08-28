@@ -13,9 +13,12 @@ Mechanisms tested (besides the current free Pi/PPi):
 Output: phospho_candidates_for_agent.tsv  (id, name, ec, definition, current, alternatives)
 Reads DB read-only.
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import pandas as pd
 import msbio
-from couple_closure import pw_close, add
+from mcb.closures import pw_close, add
 
 # name -> list of (cpd, signed_multiplicity) added together as one mechanism unit
 MECHS = {

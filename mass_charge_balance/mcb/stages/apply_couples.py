@@ -1,42 +1,43 @@
 #!/usr/bin/env python
 """
-Apply agent couple-decisions -> balance-verified, logged corrections.
+Stage 4 - apply agent couple-decisions -> balance-verified, logged corrections.
 
-Reads agent_decisions_*.tsv (id, decision, reason) where `decision` is either a
-couple name from couple_closure.COUPLES or "SKIP". For each non-SKIP decision we
-insert the chosen donor/acceptor couple, close the remainder with proton/water,
-and ACCEPT ONLY IF mass+charge verifies to zero (the agent's pick is never trusted
-blind). Output schema matches build_correction_log's expectations.
+Reads agent_decisions_*.tsv (id, decision, reason) where `decision` is a couple name from
+mcb.closures.COUPLES or "SKIP". For each non-SKIP decision we insert the chosen
+donor/acceptor couple, close the remainder with proton/water, and ACCEPT ONLY IF mass+charge
+verifies to zero -- the agent's pick is never trusted blind. The EC prefilter still applies
+(no transferase couple on an oxidoreductase), and glycosyl picks get a stereo tier.
 
-  couple_agent_corrections.tsv   accepted, balance-verified corrections
-
-Reads DB read-only; writes into this folder.
+Output (work dir): couple_agent_corrections.tsv
 """
 import glob
 import os
 from collections import Counter
+
 import pandas as pd
-import msbio
-from couple_closure import COUPLES, pw_close, add, ec_compatible
-from stereo_check import glycosyl_confidence
+
+from mcb import io as msbio
+from mcb import closures as cl
+from mcb.stereo import glycosyl_confidence
+from mcb.paths import wp, WORKDIR
 
 
 def apply_couple(sp, info, cname, name_of):
     """Try inserting couple cname into species list sp; return corrected species or None."""
-    donor, acceptor, _ = COUPLES[cname]
-    df_ = info.formula(donor); dq_ = info.charge(donor)
-    af_ = info.formula(acceptor); aq_ = info.charge(acceptor)
+    donor, acceptor, _ = cl.COUPLES[cname]
+    df_, dq_ = info.formula(donor), info.charge(donor)
+    af_, aq_ = info.formula(acceptor), info.charge(acceptor)
     if None in (df_, dq_, af_, aq_):
         return None
     res0, fl = msbio.compute_residual(sp, info)
     if fl["no_formula"] or fl["unknown_charge"]:
         return None
     for k in (1, -1):
-        res1 = add(add(res0, af_, aq_, k), df_, dq_, -k)
-        wp = pw_close(res1)
-        if wp is None:
+        res1 = cl.add_species(cl.add_species(res0, af_, aq_, k), df_, dq_, -k)
+        wpr = cl.pw_close(res1)
+        if wpr is None:
             continue
-        w, p = wp
+        w, p = wpr
         new_sp = [dict(s) for s in sp]
         cmpt = Counter(s["cmpt"] for s in sp).most_common(1)[0][0]
         for pc, pk in {donor: -k, acceptor: k, "cpd00001": w, "cpd00067": p}.items():
@@ -56,16 +57,16 @@ def apply_couple(sp, info, cname, name_of):
 
 
 def main():
-    cpd = msbio.load_compounds(); rxn = msbio.load_reactions(True)
+    cpd = msbio.load_compounds()
+    rxn = msbio.load_reactions(True)
     info = msbio.SpeciesInfo.from_compounds(cpd)
     name_of = dict(zip(cpd["id"], cpd["name"]))
     smiles_of = dict(zip(cpd["id"], cpd["smiles"]))
     orig = {r["id"]: r for _, r in rxn.iterrows()}
 
     decisions = {}
-    # couple-decision files only; the phospho decisions are applied by apply_phospho.py
-    for f in sorted(glob.glob("agent_decisions_*.tsv")):
-        if "phospho" in f:
+    for f in sorted(glob.glob(os.path.join(str(WORKDIR), "agent_decisions_*.tsv"))):
+        if "phospho" in os.path.basename(f):
             continue
         d = pd.read_csv(f, sep="\t", dtype=str, keep_default_na=False)
         for _, r in d.iterrows():
@@ -75,18 +76,17 @@ def main():
     rows = []
     stats = Counter()
     for rid, (decision, reason) in decisions.items():
-        if decision == "SKIP" or decision == "":
+        if decision in ("SKIP", ""):
             stats["skip"] += 1
             continue
-        if decision not in COUPLES:
+        if decision not in cl.COUPLES:
             stats[f"unknown_decision:{decision}"] += 1
             continue
         o = orig.get(rid)
         if o is None:
             stats["missing_rxn"] += 1
             continue
-        # EC prefilter defense: never apply a transferase couple to an oxidoreductase etc.
-        if not ec_compatible(o["ec_numbers"], decision):
+        if not cl.ec_compatible(o["ec_numbers"], decision):   # EC prefilter defense
             stats["ec_incompatible_skipped"] += 1
             continue
         sp = msbio.parse_stoich(o["stoichiometry"])
@@ -95,7 +95,6 @@ def main():
             stats["verify_failed"] += 1
             continue
         stats["applied"] += 1
-        # targeted structure/stereo tier for glycosyl (balance is stereo-blind there)
         stereo_tier, stereo_detail = "n/a", ""
         if "glucosyl" in decision or "mannosyl" in decision:
             stereo_tier, stereo_detail = glycosyl_confidence(sp, info, smiles_of)
@@ -108,7 +107,7 @@ def main():
             "corrected_stoichiometry": msbio.serialize_stoich(new_sp),
         })
 
-    pd.DataFrame(rows).to_csv("couple_agent_corrections.tsv", sep="\t", index=False)
+    pd.DataFrame(rows).to_csv(wp("couple_agent_corrections.tsv"), sep="\t", index=False)
     print("stats:", dict(stats))
     print(f"wrote couple_agent_corrections.tsv ({len(rows)} balance-verified)")
     if rows:

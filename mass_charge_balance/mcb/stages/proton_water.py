@@ -1,49 +1,28 @@
 #!/usr/bin/env python
 """
-Proton/water balancer: the deterministic, highest-confidence correction class.
+Stage 1 - proton/water balancer: the deterministic, highest-confidence class.
 
-The only two "free" reagents a reaction can gain/lose without changing its
-chemistry are water and protons. They span exactly three balance axes:
+The only two "free" reagents a reaction can gain/lose without changing its chemistry are
+water and protons; they span exactly three balance axes (H, O, charge), so given the
+residual the fix is fully determined (no search): w = -dO waters, p = -dq protons, then H
+must independently close (dH + 2w + p == 0). See mcb.closures.proton_water_close.
 
-    reagent   H    O    charge
-    H+        +1    0     +1
-    H2O       +2   +1      0
+Refuses reactions containing an indefinite-polymer species (mcb.closures guard) and
+non-H/O/charge (skeleton) residuals -> handled by later stages / left for curation.
 
-Given a reaction's residual (products - reactants) in H, O and charge, the fix is
-FULLY DETERMINED (no search):
-
-    waters  to close O:      w = -residual[O]
-    protons to close charge: p = -residual[charge]
-    then H must independently close: residual[H] + 2*w + p == 0   (consistency)
-
-A reaction is correctable here iff:
-  * every species has a real formula and known charge (else -> needs-structure /
-    needs-charge, handled elsewhere),
-  * the residual involves only H, O, charge (any other heavy element -> skeleton
-    error, handled elsewhere), and
-  * the H consistency check holds.
-
-A pure charge imbalance (only 'charge' off, H and O balanced) is intentionally NOT
-handled here: adding a proton to fix charge injects an H and breaks mass. Those are
-compound-level protonation defects handled by the charge-reassignment corrector.
-
-INPUT : ModelSEEDDatabase (read-only -- never modified).
-OUTPUT (all written into THIS folder, originals untouched):
-    proton_water_corrections.tsv  -- proposed patch + corrected reaction, per fixable rxn
-    proton_water_report.txt       -- summary counts, deferral reasons, examples
+Reads ModelSEEDDatabase read-only; writes proposals into the work directory only.
 """
-import os
 from collections import Counter
 
 import pandas as pd
 
-import msbio
+from mcb import io as msbio
+from mcb import closures as cl
+from mcb.paths import wp
 
-OUT = os.path.dirname(os.path.abspath(__file__))
-
-REAGENT = {  # cpd id -> (name, contribution incl 'charge')
-    msbio.CPD_PROTON: ("H+",  {"H": 1, "charge": 1}),
-    msbio.CPD_WATER:  ("H2O", {"H": 2, "O": 1, "charge": 0}),
+REAGENT = {
+    cl.CPD_PROTON: ("H+",  {"H": 1, "charge": 1}),
+    cl.CPD_WATER:  ("H2O", {"H": 2, "O": 1, "charge": 0}),
 }
 
 
@@ -70,7 +49,6 @@ def solve(residual):
     w = -round(dO)
     p = -round(dq)
     if abs(dH + 2 * w + p) > 1e-6:
-        # Distinguish the diagnostic sub-cases for reporting.
         if set(residual) == {"charge"}:
             return None, "charge_only_protonation_defect"
         if set(residual) == {"O"}:
@@ -85,9 +63,9 @@ def apply_patch(species, patch):
     species = [dict(sp) for sp in species]
     cmpt = Counter(sp["cmpt"] for sp in species).most_common(1)[0][0]
     if patch["H2O"]:
-        add_reagent(species, msbio.CPD_WATER, patch["H2O"], cmpt)
+        add_reagent(species, cl.CPD_WATER, patch["H2O"], cmpt)
     if patch["H+"]:
-        add_reagent(species, msbio.CPD_PROTON, patch["H+"], cmpt)
+        add_reagent(species, cl.CPD_PROTON, patch["H+"], cmpt)
     return [sp for sp in species if abs(sp["coeff"]) > 1e-9]
 
 
@@ -101,9 +79,9 @@ def describe(patch):
 
 
 def render_equation(species):
-    """Human-readable name equation for review."""
     react = [sp for sp in species if sp["coeff"] < 0]
     prod = [sp for sp in species if sp["coeff"] > 0]
+
     def side(items):
         return " + ".join(f'({msbio.format_coeff(abs(sp["coeff"]))}) {sp["name"] or sp["cpd"]}'
                           for sp in items)
@@ -123,6 +101,9 @@ def main():
 
     for _, r in rxn.iterrows():
         species = msbio.parse_stoich(r["stoichiometry"])
+        if cl.is_refused_reaction(species):           # indefinite-polymer / generic species
+            reasons["defer_generic_polymer"] += 1
+            continue
         residual, flags = msbio.compute_residual(species, info)
 
         if flags["no_formula"]:
@@ -162,29 +143,19 @@ def main():
         })
 
     df = pd.DataFrame(rows)
-    out_tsv = os.path.join(OUT, "proton_water_corrections.tsv")
-    df.to_csv(out_tsv, sep="\t", index=False)
+    df.to_csv(wp("proton_water_corrections.tsv"), sep="\t", index=False)
 
-    lines = ["===== PROTON/WATER BALANCE — CORRECTION REPORT =====",
-             "(reads ModelSEEDDatabase read-only; writes proposals into mass_charge_balance/)\n"]
+    lines = ["===== PROTON/WATER BALANCE - CORRECTION REPORT =====",
+             "(reads ModelSEEDDatabase read-only; writes proposals into the work dir)\n"]
     for k, v in reasons.most_common():
         lines.append(f"  {k:34s} {v:7d}")
     lines.append(f"\n  Reactions CORRECTED (patch applied): {reasons['CORRECTED']}")
     lines.append(f"  Verified balanced after patch:       {verified_ok}")
     lines.append(f"  Verification FAILURES:               {verify_fail}")
-    if len(df):
-        lines.append("\n  Patch-type distribution:")
-        for k, v in Counter(df["patch"]).most_common(12):
-            lines.append(f"    {k:34s} {v}")
-        lines.append("\n  Worked examples:")
-        for _, ex in df.head(8).iterrows():
-            lines.append(f"    {ex['id']}  status={ex['orig_status']}  "
-                         f"residual[{ex['residual']}]  ->  {ex['patch']}  [{ex['verified']}]")
     report = "\n".join(lines)
-    with open(os.path.join(OUT, "proton_water_report.txt"), "w") as fh:
+    with open(wp("proton_water_report.txt"), "w") as fh:
         fh.write(report + "\n")
     print("\n" + report)
-    print(f"\nWrote {out_tsv}")
 
 
 if __name__ == "__main__":

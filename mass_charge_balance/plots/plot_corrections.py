@@ -2,6 +2,9 @@
 """Visualize the correction log: how many reactions fixed per category, colored by
 confidence, plus the glycosyl stereo-verifiability breakdown. Reads corrections_log.tsv
 + couple_agent_corrections.tsv."""
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch

@@ -420,6 +420,9 @@ rxn07696	couple:methyl	high	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14
 rxn07794	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
 rxn12084	couple:methyl	high	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
 rxn23093	couple:acetyl	high	no_kegg_xref		
+rxn02627	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated	cpd00024,cpd00007,cpd00055,cpd00036,cpd00011	C5H4O5:present,O2:present,CH2O:present,C4H4O4:present,CO2:present
+rxn03475	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated	cpd00024,cpd00007,cpd00055,cpd00036,cpd00011	C5H4O5:present,O2:present,CH2O:present,C4H4O4:present,CO2:present
+rxn03476	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated	cpd00024,cpd00007,cpd00055,cpd00036,cpd00011	C5H4O5:present,O2:present,CH2O:present,C4H4O4:present,CO2:present
 rxn02757	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
 rxn04364	couple_agent:acetyl	agent	not_in_kegg	cpd00022,cpd00010	C23H34N7O17P3S:absent,C21H32N7O16P3S:absent
 rxn04656	couple_agent:acetyl	agent	kegg_no_equation	cpd00022,cpd00010	R06841
@@ -439,12 +442,9 @@ rxn04402	couple_agent:glucosyl	agent	validated	cpd00026,cpd00014	C15H22N2O17P2:p
 rxn04637	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn04640	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn05740	couple_agent:glucosyl	agent	no_kegg_xref		
-rxn05807	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
-rxn05973	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
 rxn06049	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn06050	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn06165	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
-rxn06272	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn06273	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn07031	couple_agent:mannosyl	agent	no_kegg_xref		
 rxn07375	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
@@ -462,28 +462,16 @@ rxn08615	couple_agent:glucosyl	agent	no_kegg_xref
 rxn09398	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn10533	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn11515	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
-rxn14221	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
-rxn14329	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
-rxn15251	couple_agent:glucosyl	agent	not_in_kegg	cpd00026,cpd00014	C15H22N2O17P2:absent,C9H12N2O12P2:absent
 rxn17379	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn17557	couple_agent:mannosyl	agent	no_kegg_xref		
-rxn17917	couple_agent:mannosyl	agent	no_kegg_xref		
-rxn17942	couple_agent:mannosyl	agent	no_kegg_xref		
-rxn17989	couple_agent:glucosyl	agent	no_kegg_xref		
-rxn18001	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn22517	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn23846	couple_agent:glucosyl	agent	no_kegg_xref		
-rxn35562	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
-rxn35563	couple_agent:mannosyl	agent	not_in_kegg	cpd00083,cpd00031	C16H23N5O16P2:absent,C10H13N5O11P2:absent
 rxn40911	couple_agent:mannosyl	agent	no_kegg_xref		
 rxn42841	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn45109	couple_agent:glucosyl	agent	no_kegg_xref		
 rxn02626	couple_agent:methyl	agent	no_kegg_xref		
-rxn02627	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn02964	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn03370	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn03475	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn03476	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn03480	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn04117	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn04119	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
@@ -504,20 +492,11 @@ rxn07508	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:abs
 rxn07531	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn07536	couple_agent:methyl	agent	no_kegg_xref		
 rxn07564	couple_agent:methyl	agent	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
-rxn07733	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn07802	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn07819	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn07821	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn11533	couple_agent:methyl	agent	validated	cpd00017,cpd00019	C15H23N6O5S:present,C14H20N6O5S:present
-rxn11792	couple_agent:methyl	agent	no_kegg_xref		
 rxn11793	couple_agent:methyl	agent	no_kegg_xref		
-rxn11796	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11797	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11800	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11868	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11869	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11870	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
-rxn11872	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn12098	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent
 rxn12907	couple_agent:methyl	agent	no_kegg_xref		
 rxn15637	couple_agent:methyl	agent	not_in_kegg	cpd00017,cpd00019	C15H23N6O5S:absent,C14H20N6O5S:absent

@@ -5,6 +5,9 @@ Story: the ~48% "imbalanced" fraction is not one problem. Recast every reaction
 by *actionability*: already OK, must-refuse (no formula), deterministically
 fixable (H+/H2O/charge), or genuinely hard (heavy-atom skeleton error).
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import json
 from collections import Counter
 

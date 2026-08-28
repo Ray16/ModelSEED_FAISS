@@ -1,12 +1,15 @@
 # TODO — mass/charge balance autocorrection
 
-Status: **521 corrections, all balance-verified + mechanism-class-consistent + 97% KEGG-consistent.**
+Status: **516 corrections, all balance-verified + mechanism-class-consistent + 100% KEGG-consistent (88/88).**
+(was 521; a sanity audit removed 5 balanced-but-wrong fixes — 4 indefinite-polymer reactions
+and 1 phosphate-mechanism mismatch — now blocked by guards in `mcb/closures.py`.)
 Nothing applied to `ModelSEEDDatabase/` (proposals only). Pushed to branch `mass-charge-balance`.
-See `FINDINGS.md` (what/why), `REFLECTION.md` (why the wrong fixes happened), `corrections_log.tsv` (before/after per reaction).
+See `README.md` (structure + heuristics), `FINDINGS.md` (what/why), `REFLECTION.md`
+(why the wrong fixes happened), `corrections_log.tsv` (before/after per reaction).
 
-Re-run everything: `proton_water_balance.py` → `cosubstrate_closure.py` → `couple_closure.py`
-→ (subagents) → `apply_couples.py` → `apply_phospho.py` → `twoog_demethylase.py`
-→ `build_correction_log.py` → `verify_corrections.py` → `plot_corrections.py`.
+Re-run everything: `python -m mcb run` (stages 1–8 + verify) then `python -m mcb audit`
+and `python tests/test_regression.py`. Individual stage: `python -m mcb <stage>`.
+Code lives in the `mcb/` package now (was ~20 flat scripts with copy-pasted closures).
 
 ---
 
@@ -68,6 +71,13 @@ Re-run everything: `proton_water_balance.py` → `cosubstrate_closure.py` → `c
 
 ## Done (for reference)
 
+- [x] **Sanity audit of all 521 corrections** (`mcb/audit.py`): balance layer 521/521 clean;
+      chemistry layer flagged 5 balanced-but-wrong (4 polymer, 1 phosphate) → refused.
+- [x] **Full codebase restructure** into the `mcb/` package: consolidated the closure
+      primitives (were copy-pasted across 6 files) into `mcb/closures.py`, added the
+      indefinite-polymer + phosphate-mechanism guards uniformly, a `python -m mcb` CLI, a
+      golden-reproduction regression test, and moved one-off diagnostics into
+      `exploration/ validation/ plots/`. Pipeline reproduces the golden 516 byte-for-byte.
 - [x] Imbalance landscape + classification (`explore_landscape.py`, figures).
 - [x] Deterministic proton/water + co-substrate closure.
 - [x] Cofactor-couple closure + 3 Sonnet subagents (methyl/glycosyl/acetyl) by name.

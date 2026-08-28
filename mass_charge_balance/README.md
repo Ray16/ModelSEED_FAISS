@@ -1,0 +1,93 @@
+# ModelSEED mass/charge balance corrector
+
+Proposes mass- and charge-balancing corrections for imbalanced ModelSEED reactions.
+The database is read **strictly read-only**; every correction is written as a *proposal*
+into this directory — nothing in `ModelSEEDDatabase/` is ever modified.
+
+**Current delivery: 521 → 516 corrections** (5 refused by the polymer / phosphate-mechanism
+guards), every one independently re-verified to mass + charge = 0.
+
+## Run it
+
+```bash
+conda activate modelseed          # pandas + rdkit + openbabel
+python -m mcb run                 # full pipeline -> corrected_reactions.tsv + BALANCE_REPORT.md
+python -m mcb verify              # per-stage balance re-check (non-zero exit on any failure)
+python -m mcb audit               # deliverable-level balance + chemistry-guard audit
+python -m mcb <stage>             # one stage: proton_water|cosubstrate|couple|apply_couples|…
+python tests/test_regression.py   # regression + unit tests (7 checks)
+```
+
+Outputs land in `$MCB_WORKDIR` (default: this directory). The pipeline is fully
+deterministic — `run` reproduces `corrected_reactions.tsv` byte-for-byte — except that
+stages 4–5 consume the on-disk `agent_decisions_*.tsv` frozen from the original agent phase.
+
+## Layout
+
+```
+mcb/                      the package (import-only; no logic at top level)
+  io.py                   ModelSEED loaders, formula/stoichiometry parse, residual, serialize
+  closures.py             CLOSURE arithmetic + GUARDS, shared by every stage (see below)
+  paths.py                single source of truth for the work directory
+  stages/                 the ordered pipeline, one module per stage
+    proton_water.py  (1)  deterministic H+/H2O close
+    cosubstrate.py   (2)  one heavy co-substrate {CO2,Pi,PPi,NH4,SO4} + proton/water
+    couple.py        (3)  one donor/acceptor couple (SAM/SAH, UDPglc/UDP, AcCoA/CoA, …)
+    apply_couples.py (4)  apply frozen agent couple-decisions, balance-verified
+    apply_phospho.py (5)  apply frozen phospho-disambiguation decisions
+    twoog.py         (6)  rebuild 2-OG/O2 dioxygenase O-demethylations from scratch
+    build_log.py     (7)  reconcile stages -> corrections_log.tsv (+ fixes/<cat>.tsv)
+    package.py       (8)  -> corrected_reactions.tsv + BALANCE_REPORT.md
+  verify.py               per-stage independent balance re-check
+  audit.py                deliverable-level balance + chemistry-guard audit
+  cli.py / __main__.py    `python -m mcb …`
+  stereo.py               glycosyl structure/stereo confidence tier
+
+tests/                    golden_corrected_reactions.tsv + test_regression.py
+exploration/              one-off diagnostics (landscape, triage, coverage, menu-expansion)
+validation/               KEGG cross-checks
+plots/                    figure generation
+msbio.py, stereo_check.py back-compat shims re-exporting mcb.io / mcb.stereo
+```
+
+## The method: heuristics, staged deterministic → agentic
+
+Each stage is a *physically-meaningful* closure, applied only when it verifies to zero, and
+segregated by class so each can be trusted or rejected on its own.
+
+1. **Proton/water close** — the only two "free" reagents that don't change chemistry span
+   exactly (H, O, charge), so the fix is *determined*, not searched: `w = −ΔO`, `p = −Δq`,
+   accept iff `ΔH + 2w + p = 0`.
+2. **Co-substrate close** — the same idea with one commonly-omitted heavy species
+   (`CO2 / Pi / PPi / NH4 / sulfate`) plus proton/water.
+3. **Cofactor-couple close** — a donor/acceptor group-transfer pair the curator dropped.
+4–5. **Agent decisions** — where several couples are arithmetically valid for one residual,
+   an agent disambiguated *by reaction name* once per group; code applies + re-verifies.
+6. **2-OG dioxygenase rebuild** — reconstructs the full demethylation from EC + formula.
+
+### Guards (refuse balanced-but-wrong fixes) — all in `mcb/closures.py`
+
+Balance-gating alone hides wrong-but-balanced corrections, so orthogonal guards run
+*upstream* of the arithmetic and are re-checked by `audit`:
+
+- **EC mechanism-class prefilter** — never offer a transferase couple (class 2) to an
+  oxidoreductase/hydrolase (caught the 2-OG-dioxygenase-as-methylation error).
+- **Indefinite-polymer refusal** — a species named `(X)n` / `polyphosphate` /
+  `oligophosphate` carries a *placeholder* formula (`(Phosphate)n → HO10P3`), so a
+  fixed-stoichiometry balance is meaningless; refuse the whole reaction.
+- **Phosphate-donor mechanism gate** — `ATP→ADP` releases orthophosphate (Pi), `ATP→AMP`
+  releases pyrophosphate (PPi); never inject the other, even when it balances by luck.
+- **Degeneracy rejection** — no empty / net-no-op reactions.
+- **Stereo tier** — glycosyl picks graded by whether the sugar identity is structurally
+  verifiable (balance is stereo-blind between glucose/mannose/galactose).
+
+## Confidence tiers (in `corrected_reactions.tsv`)
+
+- **auto-apply (330)** — deterministic proton/water, EC-corroborated co-substrate/couple,
+  KEGG-matched dioxygenase.
+- **review (186)** — agent name-based couples + low/no-EC co-substrate: balance-valid but
+  chemically judged; recommend expert sign-off.
+
+100% of the KEGG-cross-referenceable corrections are consistent (88/88).
+See `FINDINGS.md` (what/why), `REFLECTION.md` (why the earlier wrong fixes happened),
+`TODO.md` (next rounds), `corrections_log.tsv` (before/after per reaction).

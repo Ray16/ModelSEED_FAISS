@@ -35,6 +35,9 @@ rxn07695	couple:methyl	high	kegg_incomplete		cpd00017,cpd00019
 rxn07696	couple:methyl	high	kegg_incomplete		cpd00017,cpd00019
 rxn07794	couple:methyl	high	validated		cpd00017,cpd00019
 rxn12084	couple:methyl	high	validated		cpd00017,cpd00019
+rxn02627	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated		cpd00024,cpd00007,cpd00055,cpd00036,cpd00011
+rxn03475	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated		cpd00024,cpd00007,cpd00055,cpd00036,cpd00011
+rxn03476	twoog_demethylase:2OG-dioxygenase-demethylation	high	validated		cpd00024,cpd00007,cpd00055,cpd00036,cpd00011
 rxn02757	couple_agent:acetyl	agent	kegg_incomplete		cpd00022,cpd00010
 rxn04364	couple_agent:acetyl	agent	kegg_incomplete		cpd00022,cpd00010
 rxn04804	couple_agent:acetyl	agent	validated		cpd00022,cpd00010
@@ -44,12 +47,9 @@ rxn12176	couple_agent:acetyl	agent	kegg_incomplete		cpd00022,cpd00010
 rxn04402	couple_agent:glucosyl	agent	validated		cpd00026,cpd00014
 rxn04637	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn04640	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn05807	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn05973	couple_agent:mannosyl	agent	kegg_incomplete		cpd00083,cpd00031
 rxn06049	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn06050	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn06165	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn06272	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn06273	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn07375	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn07377	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
@@ -62,16 +62,8 @@ rxn07699	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
 rxn07796	couple_agent:glucosyl	agent	validated		cpd00026,cpd00014
 rxn07797	couple_agent:glucosyl	agent	validated		cpd00026,cpd00014
 rxn11515	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn14221	couple_agent:mannosyl	agent	kegg_incomplete		cpd00083,cpd00031
-rxn14329	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn15251	couple_agent:glucosyl	agent	kegg_incomplete		cpd00026,cpd00014
-rxn35562	couple_agent:mannosyl	agent	kegg_incomplete		cpd00083,cpd00031
-rxn35563	couple_agent:mannosyl	agent	kegg_incomplete		cpd00083,cpd00031
-rxn02627	couple_agent:methyl	agent	kegg_contradicts	2-oxoglutarate,O2,succinate	cpd00017,cpd00019
 rxn02964	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn03370	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn03475	couple_agent:methyl	agent	kegg_contradicts	2-oxoglutarate,O2,succinate	cpd00017,cpd00019
-rxn03476	couple_agent:methyl	agent	kegg_contradicts	2-oxoglutarate,O2,succinate	cpd00017,cpd00019
 rxn03480	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn04117	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn04119	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
@@ -88,18 +80,10 @@ rxn07339	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07508	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07531	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07564	couple_agent:methyl	agent	validated		cpd00017,cpd00019
-rxn07733	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07802	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07819	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn07821	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn11533	couple_agent:methyl	agent	validated		cpd00017,cpd00019
-rxn11796	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11797	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11800	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11868	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11869	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11870	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
-rxn11872	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn12098	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn15637	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019
 rxn16693	couple_agent:methyl	agent	kegg_incomplete		cpd00017,cpd00019

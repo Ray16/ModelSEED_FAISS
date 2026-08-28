@@ -14,6 +14,9 @@ Output (read-only; writes into this folder):
   agent_triage.tsv   : one row per reaction with its group keys + definition
   triage_summary.txt : groups ranked by size (highest-leverage patterns first)
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 from collections import Counter, defaultdict
 
 import pandas as pd

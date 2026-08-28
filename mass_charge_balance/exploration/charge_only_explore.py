@@ -11,6 +11,9 @@ Tests, read-only:
      gap is transferred electrons, not a compound defect.
   3. does |Δq| match a small electron count consistent with the redox partners?
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 from collections import Counter
 
 from rdkit import Chem

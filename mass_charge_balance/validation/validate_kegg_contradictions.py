@@ -13,6 +13,9 @@ For each KEGG-checkable correction:
     kegg_contradicts   KEGG has a mechanism cofactor we lack -> LIKELY WRONG (retract)
     kegg_incomplete    KEGG lacks our cofactor AND no contradicting marker -> keep
 """
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import os
 from collections import defaultdict, Counter
 import pandas as pd

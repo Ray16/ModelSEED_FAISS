@@ -166,7 +166,10 @@ plausibly right and KEGG is incomplete. Refined verdict:
 | kegg_incomplete | 83 | KEGG omits the same cofactor, no contradicting marker → keep |
 | kegg_contradicts | 3 | KEGG shows another mechanism → **retracted** |
 
-**97% (101/104) consistent with KEGG.** The 3 contradictions were all the same real agent
+The FIRST KEGG pass (before the EC prefilter) was 97% (101/104) consistent with 3 contradictions.
+After root-causing them (EC prefilter removed the whole failure class + twoog fixed the 3 correctly),
+the FINAL set re-validates at **100% (88/88) consistent, 0 contradictions**.
+The original 3 contradictions were all the same real agent
 error: morphine-alkaloid steps (rxn02627/03475/03476) that are 2-oxoglutarate/O2
 dioxygenases, which the methyl agent misread as SAM/SAH methylations. Retracted via
 `kegg_retractions.tsv` (build_correction_log drops them globally).
@@ -186,7 +189,24 @@ KEGG had caught only 3 of these 24 (the rest lacked xrefs) — the prefilter gen
 rebuilds `R-OCH3 + 2OG + O2 → R-OH + formaldehyde + succinate + CO2` (matching KEGG exactly;
 rxn02627 == KEGG R03698), guarded to touch only actually-imbalanced reactions. See `REFLECTION.md`.
 
-**FINAL: 521 corrections, all balance-verified, mechanism-class-consistent, 97% KEGG-consistent.**
+**FINAL: 516 corrections, all balance-verified, mechanism-class-consistent, 100% KEGG-consistent (88/88 checkable).**
+
+## Sanity audit + two new guards (521 → 516)
+An independent audit (`mcb/audit.py`) re-recomputes balance from the corrected stoichiometry
+on disk (trusting no pipeline bookkeeping) and layers chemistry heuristics on top. Balance
+held for all 521; the chemistry layer surfaced **5 balanced-but-wrong** corrections, now
+blocked by guards in `mcb/closures.py`:
+- **4 indefinite-polymer reactions** (`(Phosphate)n / Polyphosphate / Oligophosphate`
+  polyphosphatases). ModelSEED gives the polymer a *fixed* placeholder formula
+  (`(Phosphate)n → HO10P3`), so a fixed-Pi close "balances" a variable-length polymer —
+  meaningless. → **indefinite-polymer refusal** (name-based; the formula looks clean).
+- **1 phosphate-mechanism mismatch** (rxn03028 aerobactin synthetase, 4 ATP→4 ADP): the fix
+  added PPi because 2 PPi supplied the 4 missing P, but ATP→ADP releases orthophosphate (Pi).
+  → **phosphate-donor mechanism gate** (ATP→ADP ⇒ Pi; ATP→AMP ⇒ PPi).
+
+Both guards live beside the closure arithmetic and are re-checked by `audit`; the audit also
+narrows its phosphate check to species the correction *added* (pre-existing Pi/PPi beside a
+nucleotide couple — dikinases, apyrases — is legitimate curator content, not our error).
 
 ## Outputs so far
 - `landscape.tsv` — per-reaction diagnosis (bucket, residual, charge imbalance).

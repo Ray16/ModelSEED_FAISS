@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 """Read a few reactions from each non-deterministic category with full context, so we
 can judge how much reasoning each needs (-> cheap subagent vs main model)."""
+
+import os as _os, sys as _sys
+_sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))))
 import pandas as pd
 import msbio
 

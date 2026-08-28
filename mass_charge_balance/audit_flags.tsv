@@ -1,0 +1,143 @@
+reaction_id	flags	method	tier	equation_after
+rxn33892	large_charge_before(|q|>=3)	cosubstrate:PPi	auto-apply	(1) H2O + (1) ATP <=> (1) PPi + (1) AMP + (2) H+
+rxn31537	large_charge_before(|q|>=3)	cosubstrate:PPi	review	(2) Geranylgeranyl diphosphate <=> (2) H+ + (1) Phytoene + (2) PPi
+rxn22536	large_charge_before(|q|>=3)	cosubstrate:PPi	review	(1) H2O + (1) PPi <=> (2) Phosphate + (1) H+
+rxn33898	large_charge_before(|q|>=3)	proton_water	auto-apply	(7) ATP + (14) NADPH + (8) Acetyl-CoA + (6) H+ + (1) H2O <=> (14) NADP + (7) ADP + (7) Phosphate + (8) CoA + (1) Palmitate
+rxn31099	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) NAD + (1) UDP-glucose + (1) H2O <=> (2) NADH + (1) UDPglucuronate + (3) H+
+rxn30705	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) NADPH + (1) Malonyl-CoA + (1) strcoa + (3) H+ <=> (2) NADP + (1) CoA + (1) CO2 + (1) Icosanoyl-CoA + (1) H2O
+rxn30704	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) NADH + (1) Malonyl-CoA + (1) strcoa + (3) H+ <=> (2) NAD + (1) CoA + (1) CO2 + (1) Icosanoyl-CoA + (1) H2O
+rxn30688	large_charge_before(|q|>=3)	proton_water	auto-apply	(1) ATP + (1) L-Glutamine + (1) XMP + (1) H2O <=> (1) PPi + (1) AMP + (1) L-Glutamate + (1) GMP + (3) H+
+rxn25966	large_charge_before(|q|>=3)	proton_water	auto-apply	(1) Phosphoenolpyruvate + (1) D-mannose-6-phosphate + (1) H2O <=> (1) Phosphate + (1) 2-keto-3-deoxy-D-glycero-D-galacto-nononate-9-phosphate
+rxn30980	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) GSH + (1) Arsenate + (3) H+ <=> (1) Oxidized glutathione + (1) Arsenite + (1) H2O
+rxn11026	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) H2O + (2) ATP + (1) CO2 + (1) L-Glutamine <=> (2) ADP + (1) Phosphate + (1) L-Glutamate + (1) Carbamoylphosphate + (3) H+
+rxn06962	large_charge_before(|q|>=3)	proton_water	auto-apply	(2) GSH + (1) Methylarsonate + (3) H+ <=> (1) Oxidized glutathione + (1) Methylarsonite + (1) H2O
+rxn05263	large_charge_before(|q|>=3)	proton_water	auto-apply	(1) H2O + (30) UDP-glucose + (30) UDP-N-acetyl-D-galactosamine <=> (30) UDP + (30) H+ + (30) UMP + (1) tcam
+rxn17463	large_charge_before(|q|>=3)	proton_water	auto-apply	(3) Malonyl-CoA + (1) N-Methylanthraniloyl-CoA + (3) H+ <=> (4) CoA + (3) CO2 + (1) 1,3-Dihydroxy-N-methylacridone + (1) H2O
+rxn03965	large_charge_before(|q|>=3)|added_product_equals_reactant	proton_water	auto-apply	(2) O2 + (1) Adenosine + (1) H2O <=> (1) H+ + (2) H2O2 + (1) 9-Riburonosyladenine
+rxn03967	large_charge_before(|q|>=3)|added_product_equals_reactant	proton_water	auto-apply	(1) O2 + (1) 5'-Dehydroadenosine + (1) H2O <=> (1) H+ + (1) H2O2 + (1) 9-Riburonosyladenine
+rxn04055	large_charge_before(|q|>=3)|added_product_equals_reactant	proton_water	auto-apply	(1) O2 + (2) 5'-Oxoinosine <=> (2) H+ + (2) 9-Riburonosylhypoxanthine
+rxn30614	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) ATP + (2) H2O <=> (2) Phosphate + (1) AMP + (3) H+
+rxn30910	large_charge_before(|q|>=3)|large_injection	cosubstrate:CO2	review	(1) NADPH + (1) O2 + (1) Gibberellin A14 + (3) H+ <=> (1) NADP + (1) GA4 + (2) H2O
+rxn12123	large_charge_before(|q|>=3)|large_injection	cosubstrate:CO2	review	(1) L-Aspartate + (1) N-Acetylanthranilate + (3) H+ <=> (1) Vasicine + (2) CO2 + (2) H2O
+rxn31388	large_charge_before(|q|>=3)|large_injection	cosubstrate:NH4	review	(2) H2O + (2) Urea + (4) H+ <=> (2) CO2 + (4) NH3
+rxn30963	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) dichlorocarbene + (2) H2O <=> (1) Formate + (2) Cl- + (3) H+
+rxn30819	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) H2O2 + (2) L-Ascorbate <=> (2) Ascorbate radical + (2) H2O + (4) H+
+rxn30817	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) NADPH + (3) Malonyl-CoA + (1) 4-Coumaroyl-CoA + (4) H+ <=> (1) NADP + (4) CoA + (3) CO2 + (1) Isoliquiritigenin + (1) H2O
+rxn30691	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) GTP + (3) H2O <=> (1) PPi + (1) Formate + (1) 2,5-Diamino-6-(5'-phosphoribosylamino)-4-pyrimidineone + (3) H+
+rxn05262	large_charge_before(|q|>=3)|large_injection	proton_water	auto-apply	(1) H2O + (45) ATP + (1) UDP-N-acetylglucosamine + (45) D-Alanine + (45) CDPglycerol + (1) UDP-N-acetyl-D-mannosamine <=> (45) PPi + (1) UDP + (45) AMP + (45) CMP + (136) H+ + (1) UMP + (1) gtca2-45_BS
+rxn02626	large_injection	couple_agent:methyl	review	(1) Morphine + (1) S-Adenosyl-L-methionine <=> (1) Codeine + (1) S-Adenosyl-homocysteine + (1) H+
+rxn02964	large_injection	couple_agent:methyl	review	(1) Ciliatine + (1) S-Adenosyl-L-methionine <=> (1) 2-Methylaminoethylphosphonate + (1) S-Adenosyl-homocysteine + (1) H+
+rxn03370	large_injection	couple_agent:methyl	review	(1) 2-Methylaminoethylphosphonate + (1) S-Adenosyl-L-methionine <=> (1) 2-Dimethylaminoethylphosphonate + (1) S-Adenosyl-homocysteine + (1) H+
+rxn03480	large_injection	couple_agent:methyl	review	(1) Pelletierine + (1) S-Adenosyl-L-methionine <=> (1) N-Methylpelletierine + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04117	large_injection	couple_agent:methyl	review	(1) Demethylalangiside + (1) S-Adenosyl-L-methionine <=> (1) Alangiside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04404	large_injection	couple_agent:methyl	review	(1) Mirtillin + (1) S-Adenosyl-L-methionine <=> (1) Petunidin 3-glucoside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04403	large_injection	couple_agent:methyl	review	(1) Cyanidin 3-O-glucoside + (1) S-Adenosyl-L-methionine <=> (1) Peonidin-3-glucoside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04486	large_injection	couple_agent:methyl	review	(1) Tetrangulol + (1) S-Adenosyl-L-methionine <=> (1) 8-O-Methyltetrangulol + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04489	large_injection	couple_agent:methyl	review	(1) 19-Hydroxytetrangulol + (1) S-Adenosyl-L-methionine <=> (1) 19-Hydroxy-8-O-methyltetrangulol + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04533	large_injection	couple_agent:methyl	review	(1) Tetracenomycin D3 + (1) S-Adenosyl-L-methionine <=> (1) Tetracenomycin B3 + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04119	large_injection	couple_agent:methyl	review	(1) Demethylisoalangiside + (1) S-Adenosyl-L-methionine <=> (1) Isoalangiside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn17557	large_injection	couple_agent:mannosyl	review	(1) beta-D-Mannosylphosphodecaprenol + (1) GDP <=> (1) all-trans decaprenyl phosphate + (1) GDP-mannose + (1) H+
+rxn53890	large_injection	cosubstrate:Pi	review	(1) GTP + (1) H2O <=> (1) GDP + (1) Pi + (1) H+
+rxn07698	large_injection	couple_agent:glucosyl	review	(1) IdB 1027 + (1) UDP-glucose + (1) H+ <=> (1) Cyanidin 5-O-glucoside + (1) UDP
+rxn07547	large_injection	couple_agent:glucosyl	review	(1) Ononin + (1) UDP <=> (1) Formononetin + (1) UDP-glucose + (1) H+
+rxn07470	large_injection	couple_agent:glucosyl	review	(1) 4,4'-Diaponeurosporenic acid + (1) UDP-glucose + (1) H+ <=> (1) Glycosyl-4,4'-diaponeurosporenoate + (1) UDP
+rxn04640	large_injection	couple_agent:glucosyl	review	(1) Apigenin + (1) UDP-glucose + (1) H+ <=> (1) Isovitexin + (1) UDP
+rxn04637	large_injection	couple_agent:glucosyl	review	(1) Apigenin + (1) UDP-glucose <=> (1) Vitexin + (1) UDP + (1) H+
+rxn30178	large_injection	couple_agent:acetyl	review	(1) N-Acetyl-D-glucosamine1-phosphate + (1) CoA + (1) H+ <=> (1) D-Glucosamine phosphate + (1) Acetyl-CoA
+rxn12176	large_injection	couple_agent:acetyl	review	(1) Supraene + (1) Acetyl-CoA + (1) H2O <=> (1) Hopane-29-acetate + (1) CoA
+rxn12099	large_injection	couple_agent:acetyl	review	(1) Deacetylcolchicine + (1) Acetyl-CoA <=> (1) Colchicine + (1) CoA + (1) H+
+rxn04656	large_injection	couple_agent:acetyl	review	(1) L-2-Aminoadipate + (1) Acetyl-CoA <=> (1) N2-Acetyl-L-aminoadipate + (1) CoA + (1) H+
+rxn11180	large_injection	cosubstrate:Sulfate	review	(1) S-sulfocysteine + (1) H2O <=> (1) L-Cysteine + (1) Sulfate + (2) H+
+rxn54354	large_injection	cosubstrate:Pi	review	(1) ADP + (1) H2O <=> (1) AMP + (1) Pi + (2) H+
+rxn04569	large_injection	couple_agent:methyl	review	(1) Nicotine + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) Nornicotine + (1) S-Adenosyl-L-methionine
+rxn07031	large_injection	couple_agent:mannosyl	review	(1) beta-D-Mannosylphosphodecaprenol + (1) GDP <=> (1) Decaprenol phosphate + (1) GDP-mannose + (1) H+
+rxn04799	large_injection	couple_agent:methyl	review	(1) Rifamycin W + (1) S-Adenosyl-L-methionine <=> (1) Methane + (1) Rifamycin W-hemiacetal + (1) S-Adenosyl-homocysteine + (1) H+
+rxn12907	large_injection	couple_agent:methyl	review	(1) NADPH + (1) O2 + (1) Lanosterol + (1) S-Adenosyl-homocysteine + (2) H+ <=> (1) NADP + (1) 4,4-dimethylcholesta-8,14,24-trienol + (1) S-Adenosyl-L-methionine + (2) H2O
+rxn07327	large_injection	couple_agent:methyl	review	(1) 4-methylzymosterol + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) Zymosterol + (1) S-Adenosyl-L-methionine
+rxn28444	large_injection	couple_agent:methyl	review	(1) 1,4,7-trihydroxy-6,8-dimethoxy-2methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) 2,5,8-trihydroxy-1,3-dimethoxyanthraquinone + (1) S-Adenosyl-L-methionine
+rxn28441	large_injection	couple_agent:methyl	review	(1) 1,7-dihydroxy-6,8-dimethoxy-2-methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) 2,8-dihydroxy-1,3-dimethoxyanthraquinone + (1) S-Adenosyl-L-methionine
+rxn28436	large_injection	couple_agent:methyl	review	(1) 1,4,7-trihydroxy-6,8-dimethoxy-2methylanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 1,4-dihydroxy-6,7,8-trimethoxy-2-methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28434	large_injection	couple_agent:methyl	review	(1) 1,7,8-trihydroxy-6-methoxy-2-methylanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 1,7-dihydroxy-6,8-dimethoxy-2-methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28432	large_injection	couple_agent:methyl	review	(1) 1,6,7-trihydroxy-2-methylanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 1,7-dihydroxy-6-methoxy-2-methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28431	large_injection	couple_agent:methyl	review	(1) 1,7-dihydroxy-5,6,8-trimethoxyanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 5-hydroxy-1,2,3,4-tetramethoxyanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28430	large_injection	couple_agent:methyl	review	(1) 1,5,7-trihydroxy-6,8-dimethoxyanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 1,7-dihydroxy-5,6,8-trimethoxyanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28429	large_injection	couple_agent:methyl	review	(1) 1,3,5,8-tetrahydroxy-2-methoxyanthraquinone + (1) S-Adenosyl-L-methionine <=> (1) 1,5,7-trihydroxy-6,8-dimethoxyanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn28427	large_injection	couple_agent:methyl	review	(1) 1,6,8-trihydroxy-7-methoxy-2-methylanthraquinone + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) 1,3,8-trihydroxy-2-methoxyanthraquinone + (1) S-Adenosyl-L-methionine
+rxn24703	large_injection	couple_agent:methyl	review	(1) Norajmaline + (1) S-Adenosyl-L-methionine <=> (1) Ajmaline + (1) S-Adenosyl-homocysteine + (1) H+
+rxn24701	large_injection	couple_agent:methyl	review	(1) 17-O-Acetylnorajmaline + (1) S-Adenosyl-L-methionine <=> (1) acetylajmaline + (1) S-Adenosyl-homocysteine + (1) H+
+rxn23776	large_injection	couple_agent:methyl	review	(1) 4-Hydroxyglucobrassicin + (1) S-Adenosyl-L-methionine <=> (1) 4-Methoxyglucobrassicin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn05134	large_injection	couple_agent:methyl	review	(1) TRIBOA + (1) S-Adenosyl-L-methionine <=> (1) DIMBOA + (1) S-Adenosyl-homocysteine + (1) H+
+rxn21582	large_injection	couple_agent:methyl	review	(1) 2-hydroxy-9-phenyl-phenalen-1-one + (1) S-Adenosyl-L-methionine <=> (1) 1H-Phenalen-1-one, 2-methoxy-9-phenyl- + (1) S-Adenosyl-homocysteine + (1) H+
+rxn15637	large_injection	couple_agent:methyl	review	(1) Nicotine + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) (+)-Nornicotine + (1) S-Adenosyl-L-methionine
+rxn53889	large_injection	cosubstrate:Pi	review	(1) CTP + (1) H2O <=> (1) CDP + (1) Pi + (1) H+
+rxn12098	large_injection	couple_agent:methyl	review	(1) Colcemid + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) Deacetylcolchicine + (1) S-Adenosyl-L-methionine
+rxn11793	large_injection	couple_agent:methyl	review	(1) Morphine + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) Normorphine + (1) S-Adenosyl-L-methionine
+rxn07821	large_injection	couple_agent:methyl	review	(1) Eriodictyol chalcone + (1) S-Adenosyl-L-methionine <=> (1) Homoeriodictyol chalcone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07819	large_injection	couple_agent:methyl	review	(1) Pinocembrin + (1) S-Adenosyl-L-methionine <=> (1) Pinostrobin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07802	large_injection	couple_agent:methyl	review	(1) Eriodictyol + (1) S-Adenosyl-L-methionine <=> (1) Homoeriodictyol + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07564	large_injection	couple_agent:methyl	review	(1) (+)-6a-Hydroxymaackiain + (1) S-Adenosyl-L-methionine <=> (1) Pisatin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07536	large_injection	couple_agent:methyl	review	(1) 2,7,4'-Trihydroxyisoflavanone + (1) S-Adenosyl-L-methionine <=> (1) 2,7-Dihydroxy-4'-methoxyisoflavanone + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07531	large_injection	couple_agent:methyl	review	(1) 6-Hydroxydaidzein + (1) S-Adenosyl-L-methionine <=> (1) Glycitein + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07508	large_injection	couple_agent:methyl	review	(1) 1,2-Anthracenediol + (1) S-Adenosyl-L-methionine <=> (1) 1-Methoxy-2-hydroxyanthracene + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07339	large_injection	couple_agent:methyl	review	(1) beta-Tocopherol + (1) S-Adenosyl-L-methionine <=> (1) Vitamin E + (1) S-Adenosyl-homocysteine + (1) H+
+rxn16693	large_injection	couple_agent:methyl	review	(1) 19-Chloroproansamitocin + (1) S-Adenosyl-L-methionine <=> (1) 20-O-Methyl-19-chloroproansamitocin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn53888	large_injection	cosubstrate:Pi	review	(1) UTP + (1) H2O <=> (1) UDP + (1) Pi + (1) H+
+rxn34124	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Isoleucine + (1) H2O <=> (1) ADP + (1) Isoleucine + (1) Pi + (1) H+
+rxn34136	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Amino acid(Arg-) + (1) H2O <=> (1) ADP + (1) Amino acid(Arg-) + (1) Pi + (1) H+
+rxn11881	large_injection	cosubstrate:PPi	review	(1) Farnesyldiphosphate + (1) H2O <=> (1) Levomenol + (1) PPi + (1) H+
+rxn06150	large_injection	cosubstrate:PPi	review	(1) Farnesyldiphosphate + (1) H2O <=> (1) Polyprenol + (1) PPi + (1) H+
+rxn04283	large_injection	cosubstrate:PPi	review	(1) Geranyldiphosphate + (1) H2O <=> (1) (L)-alpha-Terpineol + (1) PPi + (1) H+
+rxn04186	large_injection	cosubstrate:PPi	review	(1) syn-Copalyl diphosphate + (1) H2O <=> (1) Aphidicolan-16beta-ol + (1) PPi + (1) H+
+rxn24125	large_injection	cosubstrate:NH4	review	(1) 2-hydroxy-4-carboxypyrimidine + (1) NH4 <=> (1) 2-amino-4-carboxypyrimidine + (1) H2O + (1) H+
+rxn07830	large_injection	cosubstrate:NH4	review	(1) 2,4,6-Triaminotoluene + (3) H2O + (3) H+ <=> (1) 2-Methylphloroglucinol + (3) NH4
+rxn12262	large_injection	cosubstrate:CO2	review	(1) ATP + (1) CoA + (1) suberate + (1) CO2 + (1) H+ <=> (1) PPi + (1) AMP + (1) 7-carboxyheptanoyl-coa + (2) H2O
+rxn12062	large_injection	cosubstrate:CO2	review	(1) L-Histidine + (1) Isovaleric acid + (1) H+ <=> (1) Dolichotheline + (1) CO2 + (1) H2O
+rxn11294	large_injection	cosubstrate:CO2	review	(1) Succinyl-CoA + (1) delta1-Piperideine-6-L-carboxylate + (1) CO2 + (1) H2O <=> (1) CoA + (1) N-Succinyl-L-2-amino-6-oxopimelate + (1) H+
+rxn04553	large_injection	cosubstrate:CO2	review	(1) Premithramycin B + (2) H2O + (1) H+ <=> (1) Mithramycin + (1) CO2
+rxn03476	large_injection	twoog_demethylase:2OG-dioxygenase-demethylation	auto-apply	(1) Thebaine + (1) 2-Oxoglutarate + (1) O2 <=> (1) Oripavine + (1) Formaldehyde + (1) Succinate + (1) CO2
+rxn11903	large_injection	cosubstrate:PPi	review	(1) Geranyldiphosphate + (1) H2O <=> (1) Nerol + (1) PPi + (1) H+
+rxn30557	large_injection	proton_water	auto-apply	(3) NADPH + (3) O2 + (1) Obtusifoliol + (2) H+ <=> (3) NADP + (1) Formate + (1) delta8,14 -Sterol + (4) H2O
+rxn07696	large_injection	couple:methyl	auto-apply	(1) Petunidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-L-methionine <=> (1) Malvidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07695	large_injection	couple:methyl	auto-apply	(1) Delphinidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-L-methionine <=> (1) Petunidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07691	large_injection	couple:methyl	auto-apply	(1) Cyanidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-L-methionine <=> (1) Peonidin-3-(p-coumaroyl)-rutinoside-5-glucoside + (1) S-Adenosyl-homocysteine + (1) H+
+rxn07364	large_injection	couple:methyl	auto-apply	(1) Chloroxanthin + (1) S-Adenosyl-L-methionine <=> (1) Methoxyneurosporene + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04805	large_injection	couple:methyl	auto-apply	(1) 27-O-Demethyl-rifamycin SV + (1) S-Adenosyl-L-methionine <=> (1) Rifamycin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04525	large_injection	couple:methyl	auto-apply	(1) Carminomycin + (1) S-Adenosyl-L-methionine <=> (1) Daunomycin + (1) S-Adenosyl-homocysteine + (1) H+
+rxn04519	large_injection	couple:methyl	auto-apply	(1) 13-Deoxycarminomycin + (1) S-Adenosyl-L-methionine <=> (1) Feudomycin A + (1) S-Adenosyl-homocysteine + (1) H+
+rxn02781	large_injection	couple:methyl	auto-apply	(1) Xanthurenate + (1) S-Adenosyl-L-methionine <=> (1) 8-Methoxykynurenate + (1) S-Adenosyl-homocysteine + (1) H+
+rxn23093	large_injection	couple:acetyl	auto-apply	(1) Ornithine + (1) Acetyl-CoA <=> (1) L-N-delta-acetylornithine + (1) CoA + (1) H+
+rxn16043	large_injection	cosubstrate:Sulfate	auto-apply	(1) 1-Hydroxypyrene + (1) Sulfate + (1) H+ <=> (1) 1-Pyrenylsulfate + (1) H2O
+rxn06411	large_injection	cosubstrate:Sulfate	auto-apply	(1) 3-phosphoadenylylsulfate + (1) H2O <=> (1) Adenosine 3-5-bisphosphate + (1) Sulfate + (2) H+
+rxn07794	large_injection	couple:methyl	auto-apply	(1) Desmethylxanthohumol + (1) S-Adenosyl-L-methionine <=> (1) Xanthohumol + (1) S-Adenosyl-homocysteine + (1) H+
+rxn34137	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Amino acid(Arg-) + (1) H2O <=> (1) ADP + (1) Amino acid(Arg-) + (1) Pi + (1) H+
+rxn11906	large_injection	cosubstrate:PPi	review	(1) Geranyldiphosphate + (1) H2O <=> (1) Geraniol + (1) PPi + (1) H+
+rxn33969	large_injection	cosubstrate:PPi	review	(2) H2O + (1) GTP <=> (1) Formate + (1) Dihydroneopterin phosphate + (1) PPi + (3) H+
+rxn34135	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Histidine + (1) H2O <=> (1) ADP + (1) Histidine + (1) Pi + (1) H+
+rxn34134	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Histidine + (1) H2O <=> (1) ADP + (1) Histidine + (1) Pi + (1) H+
+rxn34133	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Lysine + (1) H2O <=> (1) ADP + (1) Lysine + (1) Pi + (1) H+
+rxn34132	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Lysine + (1) H2O <=> (1) ADP + (1) Lysine + (1) Pi + (1) H+
+rxn34131	large_injection	cosubstrate:Pi	review	(1) ATP + (1) L-Tyrosine + (1) H2O <=> (1) ADP + (1) L-Tyrosine + (1) Pi + (1) H+
+rxn34130	large_injection	cosubstrate:Pi	review	(1) ATP + (1) L-Tyrosine + (1) H2O <=> (1) ADP + (1) L-Tyrosine + (1) Pi + (1) H+
+rxn34129	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Phenylalanine + (1) H2O <=> (1) ADP + (1) Phenylalanine + (1) Pi + (1) H+
+rxn34128	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Phenylalanine + (1) H2O <=> (1) ADP + (1) Phenylalanine + (1) Pi + (1) H+
+rxn34126	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Proline + (1) H2O <=> (1) ADP + (1) Proline + (1) Pi + (1) H+
+rxn34125	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Proline + (1) H2O <=> (1) ADP + (1) Proline + (1) Pi + (1) H+
+rxn28839	large_injection	couple_agent:methyl	review	(1) 14-Demethyllanosterol + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) 4-methylzymosterol + (1) S-Adenosyl-L-methionine
+rxn34123	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Isoleucine + (1) H2O <=> (1) ADP + (1) Isoleucine + (1) Pi + (1) H+
+rxn34122	large_injection	cosubstrate:Pi	review	(1) ATP + (1) L-Threonine + (1) H2O <=> (1) ADP + (1) L-Threonine + (1) Pi + (1) H+
+rxn47533	large_injection	couple_agent:methyl	review	(1) Laudanosine + (1) S-Adenosyl-homocysteine + (1) H+ <=> (1) (S)-tetrahydropapaverine + (1) S-Adenosyl-L-methionine
+rxn34121	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Leucine + (1) H2O <=> (1) ADP + (1) Leucine + (1) Pi + (1) H+
+rxn34120	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Leucine + (1) H2O <=> (1) ADP + (1) Leucine + (1) Pi + (1) H+
+rxn34119	large_injection	cosubstrate:Pi	review	(1) ATP + (1) L-Tryptophan + (1) H2O <=> (1) ADP + (1) L-Tryptophan + (1) Pi + (1) H+
+rxn34115	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Glutamine + (1) H2O <=> (1) ADP + (1) Glutamine + (1) Pi + (1) H+
+rxn34114	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Glutamine + (1) H2O <=> (1) ADP + (1) Glutamine + (1) Pi + (1) H+
+rxn34113	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Aspartate + (1) H2O <=> (1) ADP + (1) Aspartate + (1) Pi + (1) H+
+rxn34112	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Aspartate + (1) H2O <=> (1) ADP + (1) Aspartate + (1) Pi + (1) H+
+rxn34109	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Glycine + (1) H2O <=> (1) ADP + (1) Glycine + (1) Pi + (1) H+
+rxn34108	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Glycine + (1) H2O <=> (1) ADP + (1) Glycine + (1) Pi + (1) H+
+rxn34107	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Alanine + (1) H2O <=> (1) ADP + (1) Alanine + (1) Pi + (1) H+
+rxn34105	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Valine + (1) H2O <=> (1) ADP + (1) Valine + (1) Pi + (1) H+
+rxn34104	large_injection	cosubstrate:Pi	review	(1) ATP + (1) Valine + (1) H2O <=> (1) ADP + (1) Valine + (1) Pi + (1) H+
+rxn11909	large_injection	cosubstrate:PPi	review	(1) Geranyldiphosphate + (1) H2O <=> (1) (R)-(+)-Citronellal + (1) PPi + (1) H+
+rxn03475	large_injection|added_product_equals_reactant	twoog_demethylase:2OG-dioxygenase-demethylation	auto-apply	(1) Thebaine + (1) 2-Oxoglutarate + (1) O2 <=> (1) Neopinone + (1) Formaldehyde + (1) Succinate + (1) CO2
+rxn02627	large_injection|added_product_equals_reactant	twoog_demethylase:2OG-dioxygenase-demethylation	auto-apply	(1) Oripavine + (1) 2-Oxoglutarate + (1) O2 <=> (1) Morphinone + (1) Formaldehyde + (1) Succinate + (1) CO2
