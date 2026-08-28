@@ -384,6 +384,13 @@
   \takeaway{\best{88\% on the diagonal}; the $\sim$12\% off-diagonal is \emph{systematic} --- transferase$\leftrightarrow$hydrolase (318+148, a hard boundary), transferase$\leftrightarrow$oxidoreductase (101), ligase$\to$transferase (85). And on labelled reactions (ground truth), \best{when they disagree our model is right $\sim$73--80\%} vs CARE $\sim$10\% --- but that is a retriever on its \emph{own} ModelSEED reference (near-dup leakage + home-DB), so it's the one to trust \emph{for ModelSEED}, not a general win.}
 \end{frame}
 
+\begin{frame}{When they disagree, which is right? (ground truth)}
+  \centering
+  \includegraphics[height=0.66\textheight]{care_who_is_right.png}\\[-2pt]
+  {\scriptsize On the 13,721 \emph{labelled} reactions (ModelSEED EC = truth); our model LOO 15-NN over the same set, CARE over its own 61,766 ref. Disagreements only.}
+  \takeaway{On ModelSEED ground truth, when they disagree \best{our model matches it $\sim$73--76\%} vs CARE $\sim$12--18\%. But 36\% of the set has a near-duplicate twin (LOO leakage); removing it deflates the win 81$\to$73 and acc 93$\to$90 --- and it's still a retriever on its \emph{own} ModelSEED reference. Trust it \emph{for ModelSEED}, not as a general win.}
+\end{frame}
+
 \begin{frame}{Per-reaction: our model vs CARE on the disputed cases}
   \centering
   \includegraphics[height=0.72\textheight]{care_per_reaction.png}\\[-2pt]
