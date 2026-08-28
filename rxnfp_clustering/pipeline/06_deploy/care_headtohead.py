@@ -25,9 +25,12 @@ import os, sys
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 sys.path.insert(0, os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "_lib"))
 import _style  # noqa: F401  (18pt / dpi 300)
+
+MCB = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance"
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RES = os.path.join(HERE, "results")
@@ -35,6 +38,46 @@ FIG = os.path.join(HERE, "figures")
 MCB_QUAL = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance/results/predicted_ec_quality.tsv"
 
 C_US, C_CARE, C_TIE = "#0072B2", "#D55E00", "#999999"   # Okabe-Ito blue / vermillion / grey
+
+
+def per_reaction_figure(ht):
+    """Dumbbell: for each of the 13 corrections, our model's EC3 vs CARE's EC3, with the
+    mechanism verdict on the disputes."""
+    mcb = pd.read_csv(os.path.join(MCB, "results/predicted_ec_corrections.tsv"), sep="\t")
+    short = dict(zip(mcb["reaction_id"], mcb["name"].str.replace("_", " ").str[:22]))
+    care_of = lambda s: dict(kv.split("=") for kv in s.split(";")).get("care", "")
+    d = ht.copy()
+    d["care_ec3"] = d["ec3_by_source"].map(care_of)
+    d["rxnfp_ec3"] = d["pred_ec3"]
+    order = ["1.14.13", "1.14.14", "1.6.3", "1.2.1", "1.1.1"]
+    xlab = ["1.14.13\nmono-\noxygenase", "1.14.14\nmono-\noxygenase", "1.6.3\nNAD(P)H\noxidase",
+            "1.2.1\naldehyde\noxidored.", "1.1.1\ndehydro-\ngenase"]
+    xp = {e: i for i, e in enumerate(order)}
+    d["tie"] = d["adjudicated_winner"].str.startswith("tie")
+    d = d.sort_values(["tie", "reaction_id"]).reset_index(drop=True)
+
+    fig, ax = plt.subplots(figsize=(13.5, 8.2))
+    ylabels = []
+    for i, r in d.iterrows():
+        xu, xc = xp[r["rxnfp_ec3"]], xp[r["care_ec3"]]
+        agree = xu == xc
+        ax.plot([xu, xc], [i, i], color="#cccccc" if agree else C_CARE, lw=2.5, zorder=1, alpha=0.8)
+        ax.scatter([xu], [i], color=C_US, s=170, zorder=3, ec="white", lw=1)
+        ax.scatter([xc], [i], color=C_CARE, s=95, zorder=3, marker="D", ec="white", lw=1)
+        if not agree and r["o2_fate_mechanism"] == "monooxygenase(1.14)":
+            ax.text(xc + 0.18, i, "✓ 1.14", va="center", ha="left", color=C_US, fontweight="bold")
+        ylabels.append(f"{r['reaction_id']}  {short.get(r['reaction_id'], '')}")
+    ax.set_yticks(range(len(d))); ax.set_yticklabels(ylabels)
+    ax.set_xticks(range(len(order))); ax.set_xticklabels(xlab)
+    ax.set_xlim(-0.4, 4.9); ax.set_ylim(-0.7, len(d) - 0.3)
+    ax.axvline(1.5, ls=":", color="#888", lw=1.2)
+    ax.set_title("Per-reaction EC call: our model vs CARE")
+    ax.legend(handles=[Line2D([], [], marker='o', color='w', markerfacecolor=C_US, markersize=14, label='our model (always 1.14)'),
+                       Line2D([], [], marker='D', color='w', markerfacecolor=C_CARE, markersize=11, label='CARE')],
+              loc="upper right", frameon=True, framealpha=0.9)
+    fig.savefig(os.path.join(FIG, "care_per_reaction.png"))
+    fig.savefig(os.path.join(FIG, "mcb_care_per_reaction.png"))
+    print("wrote figures/care_per_reaction.png")
 
 
 def main():
@@ -61,6 +104,8 @@ def main():
         np.where(ht["o2_fate_mechanism"] == "monooxygenase(1.14)", "this model",
                  np.where(ht["o2_fate_mechanism"] == "oxidase(1.6.3)-like", "CARE", "unresolved")))
     ht.to_csv(os.path.join(RES, "care_vs_rxnfp_headtohead.tsv"), sep="\t", index=False)
+
+    per_reaction_figure(ht)
 
     # ---------- (1) calibration: agreement vs joint confidence gate ----------
     ind = agr.care_top1sim >= 0.3
