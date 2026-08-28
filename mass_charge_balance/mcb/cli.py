@@ -15,7 +15,7 @@ fully deterministic and reproduces corrected_reactions.tsv byte-for-byte.
 import sys
 
 from mcb.stages import (proton_water, cosubstrate, couple, apply_couples,
-                        apply_phospho, twoog, build_log, package)
+                        apply_phospho, twoog, build_log, package, predicted_ec)
 from mcb import verify, audit
 
 # ordered pipeline: name -> module with main()
@@ -51,6 +51,9 @@ def main(argv=None):
         return 1 if verify.run() else 0
     if cmd == "audit":
         return 1 if audit.run() else 0
+    if cmd == "predict_ec":         # opt-in, review-only; separate from the curated 516
+        predicted_ec.main()
+        return 0
     if cmd in STAGE_MAP:
         STAGE_MAP[cmd].main()
         return 0

@@ -116,6 +116,27 @@ def test_no_guard_violations():
                 assert not cl.phosphate_cosubstrate_conflict(acpds - {pc}, pc), r["reaction_id"]
 
 
+def test_predicted_ec_isolated():
+    """Predicted-EC corrections (if generated) must stay balanced, tagged review-predicted,
+    and NEVER overlap the curated 516."""
+    path = result("predicted_ec_corrections.tsv")
+    if not os.path.exists(path):
+        return
+    pe = pd.read_csv(path, sep="\t", dtype=str, keep_default_na=False)
+    if not len(pe):
+        return
+    assert (pe["tier"] == "review-predicted").all(), "a predicted-EC row escaped its tier"
+    assert pe["ec_source"].str.startswith("predicted:").all(), "predicted-EC row not tagged"
+    curated = set(pd.read_csv(result("corrected_reactions.tsv"), sep="\t",
+                              dtype=str, keep_default_na=False)["reaction_id"])
+    assert not (curated & set(pe["reaction_id"])), "predicted-EC leaked into the curated 516"
+    for _, r in pe.iterrows():
+        sp = msbio.parse_stoich(r["stoichiometry_corrected"])
+        res, fl = msbio.compute_residual(sp, info())
+        assert not (res or fl["no_formula"] or fl["unknown_charge"]) and \
+            msbio.is_valid_reaction(sp), r["reaction_id"]
+
+
 def _main():
     tests = [v for k, v in sorted(globals().items()) if k.startswith("test_")]
     failed = 0

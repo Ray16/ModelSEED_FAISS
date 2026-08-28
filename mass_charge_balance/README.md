@@ -92,6 +92,30 @@ Balance-gating alone hides wrong-but-balanced corrections, so orthogonal guards 
 - **Stereo tier** — glycosyl picks graded by whether the sugar identity is structurally
   verifiable (balance is stereo-blind between glucose/mannose/galactose).
 
+## Predicted-EC path (opt-in, review-only, tagged — never in the 516)
+
+Roughly half of the still-imbalanced reactions have **no curated EC**, so the EC gate can't
+corroborate a fix. A *predicted* EC (from the `rxnfp_clustering` FAISS retriever — 15-NN
+ECFP4-diff‖DRFP, ~0.90 EC3 accuracy at its confident gate) unlocks some of them, but a
+prediction is **not validated**, so it is handled entirely separately:
+
+```bash
+python -m mcb predict_ec               # -> results/predicted_ec_corrections.tsv
+python exploration/predicted_ec_quality.py   # analogue-precedent quality report
+```
+
+- Reads the frozen `inputs/predicted_ec*.tsv` (predictor-agnostic — CARE / an LLM predictor
+  drop in as extra `inputs/predicted_ec_<name>.tsv`; agreement across predictors is recorded).
+- Only fires on EC=null reactions where the predictor is **confident + in-domain**, and only
+  where the predicted EC *corroborates* a concrete fix (O₂-monooxygenase reductant, or a
+  stocked co-substrate). Every fix is still balance-verified and non-degenerate.
+- **Every row is `tier=review-predicted`, tagged with `ec_source=predicted:<name>`, and is
+  kept out of `corrected_reactions.tsv`.** These are candidates for expert review, not
+  auto-apply.
+- Quality signal: `predicted_ec_quality.py` checks each fix against the retriever's nearest
+  *labeled* analogue — currently **8/13 have a same-EC-subclass analogue that uses the same
+  reductant** (a real precedent), the rest are flagged for extra scrutiny.
+
 ## Confidence tiers (in `corrected_reactions.tsv`)
 
 - **auto-apply (330)** — deterministic proton/water, EC-corroborated co-substrate/couple,
