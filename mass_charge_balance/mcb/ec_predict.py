@@ -52,32 +52,42 @@ def load_predicted_ec(min_conf=0.6):
             prev = out.get(r["rxn_id"])
             if prev is None:
                 rec["sources"] = [src]
+                rec["by_source"] = {src: rec["pred_ec3"]}      # per-source EC3 for cross-checks
                 rec["agree"] = True
                 out[r["rxn_id"]] = rec
             else:
                 prev["sources"].append(src)
+                prev["by_source"][src] = rec["pred_ec3"]
                 prev["agree"] = prev["agree"] and (prev["pred_ec3"] == rec["pred_ec3"])
                 # prefer the usable, higher-confidence call as the representative
                 if (rec["usable"], rec["conf"]) > (prev["usable"], prev["conf"]):
-                    keep_sources, keep_agree = prev["sources"], prev["agree"]
+                    carry = {k: prev[k] for k in ("sources", "by_source", "agree")}
                     out[r["rxn_id"]] = rec
-                    rec["sources"], rec["agree"] = keep_sources, keep_agree
+                    rec.update(carry)
     return out
 
 
-def effective_ec(rid, curated_ec, preds):
-    """Return (ec_string, source, confidence).
+def effective_ec(rid, curated_ec, preds, primary="rxnfp"):
+    """Return (ec_string, source, confidence, corroboration).
 
     source is 'curated' (trusted), 'predicted:<name>' (tagged, review-only), or 'none'.
-    Predicted EC is offered as a full EC3 prefix (e.g. '1.14.13') so the same
-    EC_CORROBORATION / ec_compatible gates apply — but the caller must route the result
-    to the review-predicted tier.
+    When a `primary` source (default rxnfp) has a usable call it DRIVES the returned EC —
+    the fix stays deterministic and attributable — and `corroboration` reports whether the
+    other predictors agree at EC3:
+        {'agree': bool|None, 'by_source': {name: ec3}, 'n_sources': int}
+    Predicted EC is a full EC3 prefix so the same EC_CORROBORATION / ec_compatible gates
+    apply, but the caller must route the result to a review-predicted tier.
     """
     if curated_ec not in ("", "null"):
-        return curated_ec, "curated", 1.0
+        return curated_ec, "curated", 1.0, {"agree": None, "by_source": {}, "n_sources": 0}
     p = preds.get(rid)
-    if p and p["usable"]:
-        tag = "predicted:" + "+".join(sorted(set(p["sources"]))) if p.get("agree") and len(set(p["sources"])) > 1 \
-            else "predicted:" + p["source"]
-        return p["pred_ec3"], tag, p["conf"]
-    return "", "none", 0.0
+    if not (p and p["usable"]):
+        return "", "none", 0.0, {"agree": None, "by_source": {}, "n_sources": 0}
+    by = p.get("by_source", {p["source"]: p["pred_ec3"]})
+    # drive from the primary predictor when it has this reaction; else the representative
+    driver_ec = by.get(primary, p["pred_ec3"])
+    driver_src = primary if primary in by else p["source"]
+    others = {s: e for s, e in by.items() if s != driver_src}
+    agree = (all(e == driver_ec for e in others.values()) if others else None)
+    tag = f"predicted:{driver_src}" + ("+" + "+".join(sorted(others)) if agree else "")
+    return driver_ec, tag, p["conf"], {"agree": agree, "by_source": by, "n_sources": len(by)}

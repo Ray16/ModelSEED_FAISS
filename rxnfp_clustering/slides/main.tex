@@ -371,6 +371,13 @@
   \takeaway{Each rung is one controlled change on the same harness --- so ``beats SOTA'' is decomposable and defensible.}
 \end{frame}
 
+\begin{frame}{Cross-check against an independent predictor (CARE)}
+  \centering
+  \includegraphics[height=0.72\textheight]{care_cross_check.png}\\[-2pt]
+  {\scriptsize Our retriever (ModelSEED ref, ECFP4-diff$\Vert$DRFP) vs CARE's Similarity baseline (curated 62k ref, DRFP), same 15-NN protocol, on the 11.5k reactions we score confidently.}
+  \takeaway{An \emph{independently-built} predictor corroborates us, and \best{agreement calibrates}: EC3 62\%$\to$\best{95\%} as both gate up. \best{5,721 reactions} get a \emph{double-validated} EC subclass. Where the two disagree on O$_2$-monooxygenases, reading the balanced reaction (O$_2$+NAD(P)H$\to$H$_2$O, substrate oxidized $=$ 1.14) confirms our call \best{9/0} --- CARE's fingerprint is misled by the shared NAD(P)H cofactor.}
+\end{frame}
+
 \begin{frame}{Takeaways}
   \begin{enumerate}\small
     \item \fStruct{Structural difference fingerprints} + \textbf{agglomerative-average} are the strong, cheap baseline (EC3 AMI $\approx$0.63); \fLearn{learned reaction embeddings} \emph{underperform} them.

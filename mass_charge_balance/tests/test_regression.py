@@ -125,7 +125,7 @@ def test_predicted_ec_isolated():
     pe = pd.read_csv(path, sep="\t", dtype=str, keep_default_na=False)
     if not len(pe):
         return
-    assert (pe["tier"] == "review-predicted").all(), "a predicted-EC row escaped its tier"
+    assert pe["tier"].str.startswith("review-predicted").all(), "a predicted-EC row escaped its tier"
     assert pe["ec_source"].str.startswith("predicted:").all(), "predicted-EC row not tagged"
     curated = set(pd.read_csv(result("corrected_reactions.tsv"), sep="\t",
                               dtype=str, keep_default_na=False)["reaction_id"])

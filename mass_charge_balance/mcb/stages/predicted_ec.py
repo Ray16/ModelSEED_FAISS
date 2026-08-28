@@ -124,7 +124,7 @@ def main():
             continue                                   # curated EC -> handled by the main pipeline
         if r["id"] in already:
             continue                                   # already in the curated 516 -> not new
-        ec3, source, conf = ec_predict.effective_ec(r["id"], r["ec_numbers"], preds)
+        ec3, source, conf, corr = ec_predict.effective_ec(r["id"], r["ec_numbers"], preds)
         if source == "none":
             continue
         sp = msbio.parse_stoich(r["stoichiometry"])
@@ -147,10 +147,18 @@ def main():
 
         p = preds[r["id"]]
         stats[klass] += 1
+        # cross-predictor corroboration (rxnfp drives; CARE etc. corroborate at EC3)
+        by = corr["by_source"]
+        agree = corr["agree"]
+        tier = ("review-predicted-corroborated" if agree is True
+                else "review-predicted-disputed" if agree is False
+                else "review-predicted-single")
         rows.append({
             "reaction_id": r["id"], "name": r["name"], "class": klass,
-            "tier": "review-predicted", "ec_source": source,
+            "tier": tier, "ec_source": source,
             "pred_ec3": ec3, "pred_conf": conf,
+            "predictor_agree": agree, "n_predictors": corr["n_sources"],
+            "ec3_by_source": ";".join(f"{s}={e}" for s, e in sorted(by.items())),
             "analogue_rxn": p["analogue"], "analogue_ec": p["analogue_ec"],
             "patch": patch,
             "equation_before": msbio.render_equation(sp, name_of),
@@ -163,7 +171,10 @@ def main():
     df.to_csv(result("predicted_ec_corrections.tsv"), sep="\t", index=False)
     print(f"\npredicted-EC corrections (review-predicted, balance-verified): {len(df)}")
     print("by class:", dict(stats))
-    print("ALL are tier=review-predicted — tagged by ec_source, NOT merged into the curated 516.")
+    if len(df):
+        print("by tier (cross-predictor corroboration):")
+        print(df["tier"].value_counts().to_string())
+    print("ALL are review-predicted — tagged by ec_source + predictor agreement, NOT in the 516.")
     print("wrote results/predicted_ec_corrections.tsv")
 
 

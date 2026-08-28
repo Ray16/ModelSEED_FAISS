@@ -416,3 +416,59 @@ the 0.87 is not evidence the metric generalises. `results/metric_learning.csv`
 
 **Environment.** Pinned in `environment.txt`; note `drfp` requires `numpy≥2.2` but
 the sklearn 1.2.2 ABI needs `numpy 1.26.4` — keep numpy 1.26.4 (drfp runs fine on it).
+
+# Part VIII — Independent cross-check against CARE (reaction→EC)
+
+Does an *independent, differently-built* reaction→EC predictor agree with this retriever?
+CARE ([Yang et al., NeurIPS 2024](https://arxiv.org/abs/2406.15669)) provides a curated
+reaction→EC reference (`reaction2EC.csv`, **61,766** pairs, SwissProt/Rhea-derived). We ran
+CARE's **Similarity baseline** (DRFP, k=15 majority) — the *same retrieval protocol* as ours —
+so the only differences are the **reference DB** (CARE-curated 61,766 vs our ModelSEED 13,721)
+and the **featurisation** (DRFP-only vs ECFP4-diff‖DRFP). Agreement then measures whether the
+retriever's calls survive changing the reference and the fingerprint.
+Script: `pipeline/06_deploy/care_cross_check.py` (needs CARE cloned at `../tools/CARE`);
+per-reaction output `results/care_vs_rxnfp_agreement.tsv`.
+
+Run on the **11,513** missing-EC ModelSEED reactions this retriever scored confidently:
+
+| level | agreement (all 11,513) | agreement (both predictors confident, n=7,533) |
+|---|---|---|
+| EC1 (main class) | 78.0% | **87.9%** |
+| EC2 | 65.5% | 78.3% |
+| EC3 (subclass) | 61.5% | **75.9%** |
+
+EC3 has 261 populated classes → chance agreement <1%, so **76% EC3 / 88% EC1 is strong
+cross-source corroboration**: the retriever's calls are not an artefact of the ModelSEED
+reference — an independently-curated predictor lands on the same enzyme class most of the time,
+and nearly always on the main class.
+
+**Agreement calibrates, and the yield is real.** Gating both predictors by their neighbour-
+agreement confidence, EC3 agreement climbs monotonically **62% → 76% → 93% → 95%** at gates
+0/0.6/0.9/1.0 — so the confidence score is meaningful and the two methods converge where both
+are sure. Cascading the gate as an annotation funnel: **22,871** missing-EC reactions → **11,513**
+our model confident+in-domain → **7,533** where CARE is also confident → **5,721 where both
+predictors agree at EC3** — a *double-validated* EC-subclass annotation set (mean neighbour
+confidence 0.94), a concrete deliverable stronger than either predictor alone. Figure
+`figures/care_cross_check.png` (script `pipeline/06_deploy/care_headtohead.py`).
+
+**Caveat (honest):** both methods use DRFP, so they are not *fully* independent — CARE's
+**CREEP** (learned reaction↔protein contrastive model, no shared featurisation) would be the
+truly independent test, and is the worthwhile follow-up. The reference DBs do differ
+substantially, so this is still a meaningful check.
+
+**Where it bites — and why the *reaction* beats the *fingerprint*.** On a downstream use
+(13 predicted-EC mass/charge-balance corrections in `mass_charge_balance/`), the two agree
+**13/13 at EC1** but only **4/13 at EC3**: CARE calls several O₂-consuming oxidoreductases
+**1.6.3** (NAD(P)H oxidase) or **1.1.1** (dehydrogenase) where this retriever says **1.14.13/14**
+(monooxygenase). But the disagreement is **resolvable from the balanced reaction**, and it
+resolves *against CARE*: every one of the 9 disputed reactions consumes **O₂ + NAD(P)H**,
+produces **H₂O and never H₂O₂**, and **transforms the organic substrate** — the definitional
+monooxygenase signature (one O of O₂ into the substrate chemistry, the other to water). A 1.6.3
+oxidase would leave the substrate untouched and make H₂O₂; a 1.1.1 uses no O₂. So **rxnfp's 1.14
+is correct on all 9** (incl. CYP79 amino-acid→aldoxime and CYP51 sterol-demethylase cases where
+CO₂/formate loss fools a naive substrate-O count). CARE mis-calls them because **DRFP is
+dominated by the large NAD(P)H↔NADP cofactor substructure**, so its nearest neighbours are
+cofactor-matched but chemistry-mismatched (NAD(P)H oxidases share that exact moiety).
+Lesson: **cross-predictor agreement is a good confidence gate at EC1–EC2, but at EC3 the
+fingerprint predictors share a cofactor-substructure bias — reading the O₂ fate in the balanced
+reaction adjudicates the disagreements the fingerprints can't.**

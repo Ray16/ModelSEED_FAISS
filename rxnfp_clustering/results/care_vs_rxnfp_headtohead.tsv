@@ -1,0 +1,14 @@
+reaction_id	class	pred_ec3	ec3_by_source	care_agree	o2_fate_mechanism	adjudicated_winner
+rxn20840	O2-monooxygenase	1.14.14	care=1.14.14;rxnfp=1.14.14	True	monooxygenase(1.14)	tie (both agree)
+rxn20841	O2-monooxygenase	1.14.14	care=1.14.14;rxnfp=1.14.14	True	monooxygenase(1.14)	tie (both agree)
+rxn22451	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn22717	O2-monooxygenase	1.14.13	care=1.2.1;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn23782	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn25828	O2-monooxygenase	1.14.14	care=1.14.14;rxnfp=1.14.14	True	ambiguous	tie (both agree)
+rxn28306	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn30786	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn30807	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn30843	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn31530	O2-monooxygenase	1.14.13	care=1.14.13;rxnfp=1.14.13	True	monooxygenase(1.14)	tie (both agree)
+rxn31547	O2-monooxygenase	1.14.13	care=1.6.3;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
+rxn34585	O2-monooxygenase	1.14.13	care=1.1.1;rxnfp=1.14.13	False	monooxygenase(1.14)	this model
