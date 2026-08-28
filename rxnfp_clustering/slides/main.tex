@@ -378,11 +378,17 @@
   \takeaway{An \emph{independently-built} predictor corroborates us, and \best{agreement calibrates}: EC3 62\%$\to$\best{95\%} as both gate up. \best{5,721 reactions} get a \emph{double-validated} EC subclass. Where the two disagree on O$_2$-monooxygenases, reading the balanced reaction (O$_2$+NAD(P)H$\to$H$_2$O, substrate oxidized $=$ 1.14) confirms our call \best{9/0} --- CARE's fingerprint is misled by the shared NAD(P)H cofactor.}
 \end{frame}
 
+\begin{frame}{Where the two models actually differ (all 7,533 confident)}
+  \centering
+  \includegraphics[height=0.74\textheight]{care_ec1_confusion.png}
+  \takeaway{\best{88\% on the diagonal}, and the $\sim$12\% off-diagonal is \emph{systematic, not one-sided}: transferase$\leftrightarrow$hydrolase (318+148, a genuinely hard boundary), transferase$\leftrightarrow$oxidoreductase (101), ligase$\to$transferase (85). Neither model uniformly wins --- the disagreements are the hard EC boundaries, not noise.}
+\end{frame}
+
 \begin{frame}{Per-reaction: our model vs CARE on the disputed cases}
   \centering
   \includegraphics[height=0.72\textheight]{care_per_reaction.png}\\[-2pt]
-  {\scriptsize The 13 O$_2$-monooxygenase corrections. Top 4: both predictors agree. Bottom 9: our model holds \fStruct{1.14} (monooxygenase); CARE scatters to \fCGR{1.6.3 oxidase / 1.1.1 dehydrogenase}.}
-  \takeaway{Reading the balanced reaction (O$_2$+NAD(P)H$\to$H$_2$O, substrate oxidized) confirms \best{1.14 on every dispute} --- CARE is pulled off by the shared NAD(P)H fingerprint, not the chemistry.}
+  {\scriptsize The 13 O$_2$-monooxygenase corrections the balance tool made (\emph{not} a disagreement sample --- 4 of the 13 agree). Bottom 9: our model holds \fStruct{1.14} (monooxygenase); CARE scatters to \fCGR{1.6.3 oxidase / 1.1.1 dehydrogenase}.}
+  \takeaway{On this \emph{cofactor-dominated slice}, reading the balanced reaction (O$_2$+NAD(P)H$\to$H$_2$O, substrate oxidized) confirms \best{1.14 on every dispute} --- CARE is pulled off by the shared NAD(P)H fingerprint. A favourable class, not a general win: across all reactions the two disagree at EC3 $\sim$24\%, with no systematic winner.}
 \end{frame}
 
 \begin{frame}{Takeaways}
