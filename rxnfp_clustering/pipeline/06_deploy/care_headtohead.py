@@ -34,7 +34,7 @@ MCB = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance"
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RES = os.path.join(HERE, "results")
-FIG = os.path.join(HERE, "figures")
+FIG = os.path.join(HERE, "figures", "care")
 MCB_QUAL = "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/mass_charge_balance/results/predicted_ec_quality.tsv"
 
 C_US, C_CARE, C_TIE = "#0072B2", "#D55E00", "#999999"   # Okabe-Ito blue / vermillion / grey
@@ -76,7 +76,6 @@ def per_reaction_figure(ht):
                        Line2D([], [], marker='D', color='w', markerfacecolor=C_CARE, markersize=11, label='CARE')],
               loc="upper right", frameon=True, framealpha=0.9)
     fig.savefig(os.path.join(FIG, "care_per_reaction.png"))
-    fig.savefig(os.path.join(FIG, "mcb_care_per_reaction.png"))
     print("wrote figures/care_per_reaction.png")
 
 
@@ -158,7 +157,6 @@ def main():
     fig.tight_layout(w_pad=2.5)
 
     fig.savefig(os.path.join(FIG, "care_cross_check.png"))
-    fig.savefig(os.path.join(FIG, "mcb_care_cross_check.png"))
     print(f"calibration EC3: t=0 {curves['ec3'][0]:.0f}% -> t=0.9 {curves['ec3'][-2]:.0f}% "
           f"-> t=1.0 {curves['ec3'][-1]:.0f}%")
     print(f"yield funnel: missing {n_missing} -> our-conf {n_rx} -> both-conf {n_both} "

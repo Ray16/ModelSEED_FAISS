@@ -22,7 +22,7 @@ FS = _style.FS
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(HERE, "data"); EMB = os.path.join(HERE, "embeddings")
-RESULTS = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures")
+RESULTS = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures", "benchmark")
 df = pd.read_parquet(os.path.join(DATA, "dataset.parquet"))
 mask = np.load(os.path.join(DATA, "cgr_mask.npy")); idx = np.where(mask)[0]
 CONT = {"descriptors_diff", "chemberta_diff", "rxnfp"}

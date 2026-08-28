@@ -34,7 +34,7 @@ csv.field_size_limit(10**7)
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(HERE, "data"); RESULTS = os.path.join(HERE, "results")
-EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures")
+EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures", "benchmark")
 CACHE = os.path.join(HERE, "cache"); os.makedirs(CACHE, exist_ok=True)
 DB = os.path.join(HERE, "..", "ModelSEEDDatabase", "Biochemistry")
 def log(*a): print(f"[{time.strftime('%H:%M:%S')}]", *a, file=sys.stderr, flush=True)

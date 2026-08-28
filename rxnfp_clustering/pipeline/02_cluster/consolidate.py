@@ -21,7 +21,7 @@ FS = _style.FS
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # project root
 DATA = os.path.join(HERE, "data"); RESULTS = os.path.join(HERE, "results"); CACHE = os.path.join(HERE, "cache")
-FIG = os.path.join(HERE, "figures"); os.makedirs(FIG, exist_ok=True)
+FIG = os.path.join(HERE, "figures", "benchmark"); os.makedirs(FIG, exist_ok=True)
 
 # ---- merge shards ----
 shards = sorted(glob.glob(os.path.join(RESULTS, "results_s*.csv")))

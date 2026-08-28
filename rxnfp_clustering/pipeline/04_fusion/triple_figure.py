@@ -12,7 +12,7 @@ import _style  # 18pt fonts, dpi 300
 FS = _style.FS
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-RESULTS = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures")
+RESULTS = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures", "benchmark")
 res = pd.read_csv(os.path.join(RESULTS, "triple_combos.csv"))
 
 TOP = 12

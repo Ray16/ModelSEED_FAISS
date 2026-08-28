@@ -20,7 +20,7 @@ import _style  # project rule: all figure text >= 18pt, dpi 300
 FS = _style.FS
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-DATA = os.path.join(HERE, "data"); EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures")
+DATA = os.path.join(HERE, "data"); EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures", "benchmark")
 df = pd.read_parquet(os.path.join(DATA, "dataset.parquet"))
 mask = np.load(os.path.join(DATA, "cgr_mask.npy")); idx = np.where(mask)[0]
 CONT = {"descriptors_diff"}

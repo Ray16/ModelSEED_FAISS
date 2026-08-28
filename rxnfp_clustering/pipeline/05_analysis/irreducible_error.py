@@ -36,7 +36,7 @@ FS = _style.FS
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 DATA = os.path.join(HERE, "data"); RESULTS = os.path.join(HERE, "results")
-EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures")
+EMB = os.path.join(HERE, "embeddings"); FIG = os.path.join(HERE, "figures", "benchmark")
 def log(*a): print(f"[{time.strftime('%H:%M:%S')}]", *a, file=sys.stderr, flush=True)
 
 df = pd.read_parquet(os.path.join(DATA, "dataset.parquet"))

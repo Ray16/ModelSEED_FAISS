@@ -26,7 +26,7 @@ FS = _style.FS
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # project root
 DATA = os.path.join(HERE, "data"); RESULTS = os.path.join(HERE, "results"); CACHE = os.path.join(HERE, "cache")
 EMB = os.path.join(HERE, "embeddings")
-FIG = os.path.join(HERE, "figures"); os.makedirs(FIG, exist_ok=True)
+FIG = os.path.join(HERE, "figures", "benchmark"); os.makedirs(FIG, exist_ok=True)
 TSNE = os.path.join(CACHE, "tsne_coords"); os.makedirs(TSNE, exist_ok=True)
 def log(*a): print(f"[{time.strftime('%H:%M:%S')}]", *a, file=sys.stderr, flush=True)
 

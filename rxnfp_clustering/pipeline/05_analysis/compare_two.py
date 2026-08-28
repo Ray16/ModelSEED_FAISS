@@ -10,7 +10,7 @@ FS = _style.FS
 
 HERE=os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # project root
 DATA=os.path.join(HERE,"data"); RESULTS=os.path.join(HERE,"results")
-FIG=os.path.join(HERE,"figures"); CACHE=os.path.join(HERE,"cache")
+FIG=os.path.join(HERE,"figures","benchmark"); CACHE=os.path.join(HERE,"cache")
 df=pd.read_parquet(os.path.join(DATA,"dataset.parquet")); ec1=df.ec1.to_numpy()
 res=pd.read_csv(os.path.join(RESULTS,"results.csv")); knn=pd.read_csv(os.path.join(RESULTS,"knn_results.csv"))
 A,B="ecfp4_drfp","rxnfp"

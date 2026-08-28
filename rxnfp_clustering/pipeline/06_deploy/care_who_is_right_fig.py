@@ -23,7 +23,7 @@ sys.path.insert(0, os.path.join(
 import _style  # noqa
 
 HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-RES = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures")
+RES = os.path.join(HERE, "results"); FIG = os.path.join(HERE, "figures", "care")
 C_US, C_CARE, C_BOTH = "#0072B2", "#D55E00", "#bbbbbb"
 
 
@@ -91,7 +91,6 @@ def main():
 
     fig.tight_layout(w_pad=2)
     fig.savefig(os.path.join(FIG, "care_who_is_right.png"))
-    fig.savefig(os.path.join(FIG, "mcb_care_who_is_right.png"))
     print(f"near-dup fraction {frac_nd:.0f}%; EC3 disagreement win {ec3_all[0]:.0f}%->{ec3_nl[0]:.0f}%; "
           f"overall acc {acc_all:.0f}%->{acc_nl:.0f}%")
     print("wrote figures/care_who_is_right.png")
