@@ -494,3 +494,78 @@ general "rxnfp > CARE" benchmark. Scripts `pipeline/06_deploy/care_who_is_right.
 `results/care_who_is_right.tsv`. Refines the "no uniform winner" reading: the disagreement
 *structure* is symmetric, but on ModelSEED ground truth our model resolves them correctly far
 more often (leakage-corrected 73% vs 11%).
+
+---
+
+# Part IX — Fair external benchmark: CARE task-2, neutral (Rhea/SwissProt) ground truth
+
+Part VIII graded on ModelSEED's *own* curation (home-DB advantage — our retriever
+scores its home reference against its home labels). Part IX removes that entirely:
+we evaluate on **CARE's task-2 reaction→EC test splits**, whose ground-truth EC is
+**Rhea/SwissProt-derived** (CARE's home field, ours away), and compare against CARE's
+*published* baselines (Similarity, CREEP, CLIPZyme, ChatGPT, random) scored with
+**CARE's own top-k metric** — reproduced to 1e-3 (CARE Similarity, easy, full-EC
+top-1 = 0.593). Script `pipeline/06_deploy/care_task2_benchmark.py`
+(+ `care_task2_figure.py`); data `results/care_task2_benchmark.csv`; figure
+`figures/care/care_task2_benchmark.png`.
+
+Our retriever is the RESULTS.md-best `ecfp4_diff‖DRFP`, ranking EC classes by the
+**max cosine similarity of any neighbour of that class** (= CARE's Similarity
+protocol; full-dim cosine, no SVD — SVD-256 is a deployment detail, not part of the
+method comparison). Two references:
+- **(A) CARE-train** — CARE's own per-split train. Same reference as CARE, so the
+  only difference is the *featurisation* → "is the method better?"
+- **(B) ModelSEED 13,721** — our deployed tool. Leakage-checked: exact-reaction
+  overlap of CARE test with ModelSEED = **0.0 / 0.0 / 1.1%** (easy/medium/hard).
+
+**Split construction (verified).** Fraction of test EC3 classes present in the
+reference: CARE-train **100% / 93% / 0%** (easy/medium/**hard**); the hard split
+holds out *whole EC3 classes*. ModelSEED covers **98%** of test EC3 in every split.
+
+## EC3 top-1 accuracy (the primary number)
+| method | easy | medium | hard |
+|--------|-----:|-------:|-----:|
+| **Ours [CARE-train]** | **0.794** | 0.397 | 0.000 |
+| CARE Similarity (DRFP) | 0.771 | 0.402 | 0.000 |
+| CARE CREEP (learned) | 0.664 | 0.443 | 0.048 |
+| CLIPZyme | 0.400 | 0.260 | 0.041 |
+| ChatGPT | 0.226 | 0.242 | 0.263 |
+| **Ours [ModelSEED]** | 0.405 | 0.405 | **0.556** |
+| random | 0.010 | 0.005 | 0.009 |
+
+## EC1 top-1 accuracy (main class)
+| method | easy | medium | hard |
+|--------|-----:|-------:|-----:|
+| **Ours [CARE-train]** | 0.924 | 0.794 | 0.520 |
+| CARE Similarity (DRFP) | 0.906 | 0.733 | 0.420 |
+| CARE CREEP (learned) | 0.929 | 0.865 | 0.576 |
+| **Ours [ModelSEED]** | 0.766 | 0.766 | 0.791 |
+| ChatGPT | 0.710 | 0.712 | 0.570 |
+
+## Findings (honest)
+1. **Same-reference, our featurisation ≥ CARE's DRFP Similarity** — EC1 **+1.8 / +6.1
+   / +10.0 pp** (easy/medium/hard), EC3 +2.3 / −0.5 / 0. A **real but modest** edge,
+   largest at EC1 and on the harder splits.
+2. **vs CREEP (the independent, no-shared-fingerprint learned model): mixed, not a
+   win.** CREEP is better at EC1 overall and at EC3 top-5 ranking (0.97/0.74 easy/med
+   vs our 0.94/0.65) and is the only method with non-zero EC3 on held-out classes;
+   we win EC3 top-1 on easy. Retrieval is a **strong baseline** (it crushes CLIPZyme
+   and ChatGPT), but it does **not** dominate the learned model.
+3. **All train-restricted retrievers collapse to ~0 EC3 on `hard`** (whole EC classes
+   held out). This is the **Part-V sparsity ceiling, confirmed on external data** —
+   pure similarity retrieval cannot invent an unseen class, ours included.
+4. **The genuine distinctive strength is reference *coverage*, not featurisation.**
+   Our deployed ModelSEED-referenced tool holds **EC1 top-1 = 0.77 / 0.77 / 0.79 —
+   flat** across difficulty, while every CARE-train method degrades sharply
+   easy→hard; EC3 on hard is **0.556 vs everyone's ~0**. This is driven by ModelSEED
+   spanning 98% of the classes (leakage-excluded, ~0% exact overlap), i.e. a broad
+   reference degrades **gracefully** on novel chemistry where class-restricted
+   references fall off a cliff.
+
+## Bottom line
+On **neutral external ground truth**, the method is **on par with / modestly better
+than CARE's best retrieval baseline and competitive with its learned CREEP model** —
+the Part-VIII "73 vs 11" was **home-DB advantage and does not generalise**. For the
+actual goal (annotating *ModelSEED* reactions) the honest selling point is not that
+the fingerprint is superior but that a **broad ModelSEED reference gives graceful
+degradation** on hard/novel reactions that train-split predictors cannot handle.

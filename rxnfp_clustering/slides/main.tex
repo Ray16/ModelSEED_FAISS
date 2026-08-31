@@ -165,6 +165,45 @@
   \takeaway{One harness, every embedding $\times$ every algorithm, scored identically --- 800+ configurations.}
 \end{frame}
 
+\begin{frame}{Reading the metric --- EC3 AMI (adjusted mutual information)}
+  \begin{columns}[T]
+    \begin{column}{0.52\textwidth}
+      \begin{block}{What it asks}\small
+        If I tell you a reaction's \emph{cluster}, how much does that reveal
+        its true \emph{EC3 subclass}? \textbf{Mutual information} $MI$ measures
+        that overlap; \textbf{AMI subtracts the $MI$ expected by chance}, so a
+        method is not rewarded for merely splitting into many small clusters.
+      \end{block}
+      \begin{block}{Definition}\small
+        For clusters $U$ and EC3 classes $V$ over $N$ reactions:
+        \[
+          \mathrm{AMI}(U,V)=\frac{MI(U,V)-\mathbb{E}[MI]}
+          {\tfrac12\!\big(H(U)+H(V)\big)-\mathbb{E}[MI]}
+        \]
+        $H(\cdot)$ = entropy; $\mathbb{E}[MI]$ = mean $MI$ over random
+        labelings with the same cluster/class sizes (\texttt{sklearn} default).
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{How to read a cell}\small
+        \begin{itemize}
+          \item \best{1.0} --- clusters match EC3 exactly.
+          \item \textbf{0.0} --- no better than random.
+          \item \textbf{Chance- \& count-corrected}: fair to compare 45 clusters
+            (Louvain) with 800 (K-means) in one grid.
+        \end{itemize}
+      \end{block}
+      \begin{block}{What it is \emph{not}}\small
+        AMI scores an \emph{unsupervised partition}, not prediction accuracy,
+        and on a different scale (tops $\approx$0.63 here). \bad{The number to
+        quote for ``can we predict EC?'' is the kNN retrieval accuracy}
+        (EC3 $\approx$0.78) --- next section.
+      \end{block}
+    \end{column}
+  \end{columns}
+  \takeaway{EC3 AMI $=$ chance-corrected agreement of clusters with EC3 subclasses; \best{1 $=$ perfect, 0 $=$ random}, comparable across cluster counts.}
+\end{frame}
+
 % ===================== PART I =====================
 \partdivider{Part I}{The benchmark}{22 embeddings $\times$ 9 algorithms, one scoring harness}
 
@@ -398,6 +437,13 @@
   \takeaway{On this \emph{cofactor-dominated slice}, reading the balanced reaction (O$_2$+NAD(P)H$\to$H$_2$O, substrate oxidized) confirms \best{1.14 on every dispute} --- CARE is pulled off by the shared NAD(P)H fingerprint. A favourable class, not a general win: across all reactions the two disagree at EC3 $\sim$24\%, with no systematic winner.}
 \end{frame}
 
+\begin{frame}{The fair test: neutral (Rhea/SwissProt) ground truth}
+  \centering
+  \includegraphics[height=0.56\textheight]{care_task2_benchmark.png}\\[-1pt]
+  {\scriptsize CARE task-2 reaction$\to$EC splits --- ground truth Rhea/SwissProt (CARE's home field, \emph{ours away}). Our ECFP4-diff$\Vert$DRFP retriever with \fStruct{CARE's own train} (dark) and \best{ModelSEED} (light) as reference, vs CARE's published baselines, CARE's own top-$k$ metric. Leakage-checked: exact test$\cap$ModelSEED $=$ 0/0/1\%.}
+  \takeaway{Off the home field the 73-vs-11 dominance \emph{evaporates} --- honestly. Same reference, we \best{edge CARE's Similarity} (EC1 $+2/{+}6/{+}10$pp) but only \emph{tie} the learned \best{CREEP}. \bad{Every train-restricted retriever falls to $\sim$0 EC3 on \emph{hard}} (whole classes held out) --- the Part-V sparsity ceiling, confirmed externally. Real edge $=$ \best{coverage}: our ModelSEED tool stays \best{flat (EC1 0.77$\to$0.79)} across difficulty while others collapse, spanning 98\% of classes (no leakage).}
+\end{frame}
+
 \begin{frame}{Takeaways}
   \begin{enumerate}\small
     \item \fStruct{Structural difference fingerprints} + \textbf{agglomerative-average} are the strong, cheap baseline (EC3 AMI $\approx$0.63); \fLearn{learned reaction embeddings} \emph{underperform} them.
@@ -405,6 +451,7 @@
     \item \fCGR{CGR} (atom-mapped bond changes) wins the full-EC retrieval it was designed for, but is coverage-limited and not dominant alone.
     \item \textbf{Multi-view fusion} of complementary views (\fPhys{PhysChem}$\oplus$\fCGR{CGR}$\oplus$\fLearn{ChemBERTa}) \best{beats every individual method} --- EC3 AMI 0.71 --- unsupervised.
     \item \textbf{More exotic $\neq$ better}: 3D shape, pharmacophore, learned-graph, and a 335M biochemistry-native model add \bad{no EC signal} the 2D views lack (Part III).
+    \item On \textbf{neutral external ground truth} (CARE task-2, Rhea/SwissProt) the method is \best{on par} with the best baselines --- the home-DB ``73 vs 11'' does not generalise; its real edge is \textbf{reference coverage} $\to$ graceful degradation on novel chemistry.
     \item Next: \textbf{hierarchical-EC metric learning}, evaluated zero-shot on held-out EC subclasses.
   \end{enumerate}
 \end{frame}
