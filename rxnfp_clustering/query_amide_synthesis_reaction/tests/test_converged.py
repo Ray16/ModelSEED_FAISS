@@ -97,3 +97,29 @@ class LeadSignatureTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class WeakAxisTests(unittest.TestCase):
+    """Family membership is excluded from the headline count.
+
+    42,490 of 54,199 candidates (78%) carry a lead-family signature, because
+    the lead families include ATP-grasp at 9,160 members and acyl-CoA
+    N-acyltransferase at 13,500. An axis most of the table satisfies cannot
+    discriminate, and counting it beside rare observations overstates
+    agreement.
+    """
+
+    def test_family_membership_is_named_as_weak(self):
+        self.assertIn('lead_family_verdict', cv.WEAK_AXES)
+
+    def test_a_family_only_candidate_has_no_discriminating_line(self):
+        found = cv.axes(row(), {'PF00501'})
+        discriminating = [c for c in found.columns if c not in cv.WEAK_AXES]
+        self.assertEqual(int(found[discriminating].sum(axis=1).iloc[0]), 0)
+        self.assertEqual(int(found.sum(axis=1).iloc[0]), 1)
+
+    def test_rare_observations_still_count(self):
+        found = cv.axes(row(bound_bifunctional_ligand='API',
+                            struct_S=0.5), {'PF00501'})
+        discriminating = [c for c in found.columns if c not in cv.WEAK_AXES]
+        self.assertEqual(int(found[discriminating].sum(axis=1).iloc[0]), 2)

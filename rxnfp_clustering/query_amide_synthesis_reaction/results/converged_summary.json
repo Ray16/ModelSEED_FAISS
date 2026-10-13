@@ -7,7 +7,16 @@
     "3": 24,
     "4": 4
   },
-  "converged_at_or_above_3": 28,
+  "by_discriminating_line_count": {
+    "0": 50212,
+    "1": 3957,
+    "2": 26,
+    "3": 4
+  },
+  "converged_at_or_above_3": 4,
+  "weak_axes_excluded_from_the_headline": [
+    "lead_family_verdict"
+  ],
   "axis_totals": {
     "measured_nylon_activity": 49,
     "own_reaction_chemistry": 3862,
