@@ -155,3 +155,47 @@ class ResolutionTests(unittest.TestCase):
         client.assert_not_called()
         self.assertEqual(result.status, 'no_identifier')
         self.assertEqual(product_names(float('nan')), [])
+
+
+class ForeignPivotTests(unittest.TestCase):
+    """Rhea reachable through a sibling identifier, not just the SEED id.
+
+    MetaNetX may not register a reaction under `seed.reaction:` while knowing
+    it as MetaCyc or KEGG. Measured: 14 of the 77 unresolved MetaCyc-bearing
+    reactions gain a Rhea this way, including rxn19370, which looked
+    undeposited under the SEED pivot alone.
+    """
+
+    def setUp(self):
+        self.hit = SimpleNamespace(rxn_id='rxn1', ec='nan', definition='')
+
+    def test_metacyc_pivot_supplies_rhea_when_seed_pivot_is_empty(self):
+        client = Mock(return_value=([protein('A')], False, False))
+        resolve_reaction(self.hit,
+                         {'rxn1': {'MetaCyc': {'RXN-10996'}}}, {},
+                         search_client=client,
+                         foreign={'MetaCyc': {'RXN-10996': ['123']}})
+        self.assertEqual(client.call_args_list[0].args, ('rhea:123',))
+
+    def test_route_label_records_the_pivot_used(self):
+        client = Mock(return_value=([protein('A')], False, False))
+        result = resolve_reaction(self.hit,
+                                  {'rxn1': {'MetaCyc': {'RXN-1'}}}, {},
+                                  search_client=client,
+                                  foreign={'MetaCyc': {'RXN-1': ['9']}})
+        self.assertIn('MetaNetX-xref', result.entries[0]['_route'])
+
+    def test_absent_foreign_map_is_not_fatal(self):
+        client = Mock(return_value=([], False, False))
+        result = resolve_reaction(self.hit, {}, {}, search_client=client)
+        self.assertEqual(result.status, 'no_identifier')
+
+    def test_pivots_are_unioned_not_preferred(self):
+        client = Mock(return_value=([protein('A')], False, False))
+        resolve_reaction(self.hit,
+                         {'rxn1': {'Rhea': {'1'}, 'KEGG': {'R001'}}},
+                         {'rxn1': ['2']},
+                         search_client=client,
+                         foreign={'KEGG': {'R001': ['3']}})
+        self.assertEqual(client.call_args_list[0].args,
+                         ('rhea:1 OR rhea:2 OR rhea:3',))

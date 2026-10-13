@@ -28,6 +28,18 @@ from .http import get
 DOWNLOAD = CACHE / 'metanetx_download'               # untrusted downloaded data
 XREF = DOWNLOAD / 'reac_xref.tsv'
 MAP_CACHE = CACHE / 'metanetx_seed_to_rhea.json'
+FOREIGN_CACHE = CACHE / 'metanetx_foreign_to_rhea.json'
+
+# ModelSEED's alias table names these; MetaNetX indexes each under its own
+# prefix. Pivoting through them reaches reactions whose SEED id is absent from
+# MetaNetX even though a sibling identifier is present - measured: 14 of the 77
+# unresolved MetaCyc-bearing reactions gain a Rhea this way, including
+# rxn19370, which looked undeposited under the SEED pivot alone.
+FOREIGN_PREFIXES = {
+    'MetaCyc': 'metacyc.reaction:',
+    'KEGG': 'kegg.reaction:',
+    'BiGG': 'bigg.reaction:',
+}
 URL = 'https://www.metanetx.org/ftp/latest/reac_xref.tsv'
 
 
@@ -87,3 +99,62 @@ def seed_to_rhea(refresh: bool = False) -> dict[str, list[str]]:
     print(f'MetaNetX: {len(mapping):,} ModelSEED reactions carry a Rhea ID',
           flush=True)
     return mapping
+
+
+def foreign_to_rhea(refresh: bool = False) -> dict[str, dict[str, list[str]]]:
+    """{namespace: {foreign reaction id -> Rhea ids}} pivoted through MNXR.
+
+    The SEED pivot only helps when MetaNetX knows the reaction under its
+    `seed.reaction:` identifier. Many ModelSEED reactions are cross-referenced
+    to MetaCyc or KEGG but not registered under their own SEED id, so pivoting
+    from the sibling identifier reaches reactions the SEED pivot cannot.
+    """
+    if FOREIGN_CACHE.exists() and not refresh:
+        return json.loads(FOREIGN_CACHE.read_text())
+    if not ensure_download():
+        return {}
+
+    rhea_by_mnx: dict[str, list[str]] = defaultdict(list)
+    foreign_by_id: dict[str, dict[str, list[str]]] = {
+        name: defaultdict(list) for name in FOREIGN_PREFIXES}
+    with XREF.open() as handle:
+        for line in handle:
+            if line.startswith('#'):
+                continue
+            parts = line.rstrip('\n').split('\t')
+            if len(parts) < 2:
+                continue
+            source, mnx = parts[0], parts[1]
+            if mnx in ('EMPTY', ''):
+                continue
+            if source.startswith('rhea:'):
+                rhea_by_mnx[mnx].append(source.split(':', 1)[1])
+                continue
+            for name, prefix in FOREIGN_PREFIXES.items():
+                if source.startswith(prefix):
+                    foreign_by_id[name][source.split(':', 1)[1]].append(mnx)
+                    break
+
+    out: dict[str, dict[str, list[str]]] = {}
+    for name, by_id in foreign_by_id.items():
+        resolved = {}
+        for foreign, mnxs in by_id.items():
+            rheas = sorted({r for mnx in mnxs for r in rhea_by_mnx.get(mnx, ())},
+                           key=int)
+            if rheas:
+                resolved[foreign] = rheas
+        out[name] = resolved
+    FOREIGN_CACHE.write_text(json.dumps(out))
+    print('MetaNetX foreign pivot: '
+          + ', '.join(f'{k} {len(v):,}' for k, v in out.items()), flush=True)
+    return out
+
+
+def rhea_for_reaction(rxn_id, aliases, seed_map, foreign_map):
+    """Every Rhea id reachable for one ModelSEED reaction, by any pivot."""
+    found = set(seed_map.get(rxn_id, ()))
+    entry = aliases.get(rxn_id, {})
+    for name, table in (foreign_map or {}).items():
+        for foreign in entry.get(name, ()):
+            found.update(table.get(foreign, ()))
+    return sorted(found, key=int)

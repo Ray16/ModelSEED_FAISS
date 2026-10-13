@@ -149,7 +149,7 @@ class Resolution:
         return 'no_hits' if self.has_identifier else 'no_identifier'
 
 
-def resolve_reaction(hit, aliases, metanetx, *, search_client):
+def resolve_reaction(hit, aliases, metanetx, *, search_client, foreign=None):
     """Collect Rhea AND EC evidence, then try product names if no hits arrived.
 
     Search failures and saturated pools are distinct from successful empty
@@ -157,9 +157,17 @@ def resolve_reaction(hit, aliases, metanetx, *, search_client):
     """
     from_modelseed = set(aliases.get(hit.rxn_id, {}).get('Rhea', ()))
     from_metanetx = set(metanetx.get(hit.rxn_id, ()))
-    rhea = sorted(from_modelseed | from_metanetx, key=int)[:6]
-    source = ('ModelSEED+MetaNetX' if from_modelseed and from_metanetx
-              else 'MetaNetX' if from_metanetx else 'ModelSEED')
+    # Pivot from sibling identifiers too. MetaNetX may not know the reaction
+    # under its seed.reaction: id while knowing it as MetaCyc or KEGG.
+    from_foreign = set()
+    for name, table in (foreign or {}).items():
+        for key in aliases.get(hit.rxn_id, {}).get(name, ()):
+            from_foreign.update(table.get(key, ()))
+    rhea = sorted(from_modelseed | from_metanetx | from_foreign, key=int)[:6]
+    labels = [n for n, present in (('ModelSEED', from_modelseed),
+                                   ('MetaNetX', from_metanetx),
+                                   ('MetaNetX-xref', from_foreign)) if present]
+    source = '+'.join(labels) or 'ModelSEED'
     ec = [e for e in str(hit.ec).split(';')
           if e and e != 'nan' and '-' not in e and not e.split('.')[-1].isalpha()]
     found, routes, cuts = [], [], []

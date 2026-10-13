@@ -144,7 +144,7 @@ rather than assumed:
 
 | | count | meaning |
 |---|---:|---|
-| no Rhea and no EC at all | 83 | only a MetaCyc `RXN-xxxxx`; nothing UniProt indexes. The product-name route is the only handle. |
+| no Rhea and no EC at all | 83 | only a MetaCyc `RXN-xxxxx`. **Partly recoverable** - see the xref pivot below. |
 | had an identifier, UniProt returns **zero** | 21 | genuinely undeposited enzymology |
 | had an identifier, UniProt **does** return hits | **2** | a real loss — now fixed |
 
@@ -164,6 +164,24 @@ resolve them, though their ECs return 100 and 26 UniProt entries.
 Admission is now decided once, in stage 03. The OOD floor survives as a
 **label** (`below_ood_floor`) rather than a filter, so the information is kept
 without gating anything.
+
+### The sibling-identifier pivot
+
+"MetaCyc-only means product-name-only" turned out to be wrong as well. The
+MetaNetX pivot only looked up `seed.reaction:<id>`, but MetaNetX often knows a
+reaction under a *sibling* identifier while not registering it under its SEED
+id at all. Pivoting from those recovers Rhea IDs the SEED pivot cannot:
+
+```
+MetaCyc  6,073      KEGG  5,067      BiGG  9,896     (foreign id -> Rhea)
+```
+
+14 of the 77 unresolved MetaCyc-bearing reactions gain a Rhea this way.
+Reactions resolved 156 -> 159; 277 enzyme rows arrive via `MetaNetX-xref`.
+
+`rxn19370` is instructive: the pivot *does* supply its Rhea IDs, and UniProt
+*still* returns nothing for them. The identifier gap and the deposition gap
+are separate problems, and only the first is ours to fix.
 
 ## What is NOT validated
 

@@ -36,7 +36,7 @@ from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 
 from .paths import DB, RES, ood_floor
-from .metanetx import seed_to_rhea
+from .metanetx import seed_to_rhea, foreign_to_rhea
 from .uniprot import search
 
 import csv
@@ -96,9 +96,11 @@ def main():
     # rxn21314 (BibC), the top-scoring hit, which otherwise reaches UniProt only
     # through a string match on its product name.
     metanetx = seed_to_rhea() if not useful.empty else {}
+    foreign = foreign_to_rhea() if not useful.empty else {}
 
     def resolve(hit):
-        result = resolve_reaction(hit, aliases, metanetx, search_client=search)
+        result = resolve_reaction(
+            hit, aliases, metanetx, search_client=search, foreign=foreign)
         note = (f'  [TRUNCATED: {"+".join(result.truncated)} pool exceeds page budget]'
                 if result.truncated else '')
         if result.failed:
