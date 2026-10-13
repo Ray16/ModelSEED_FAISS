@@ -147,6 +147,28 @@ class DiamineAxisTests(unittest.TestCase):
         self.assertTrue(bool(found.acylates_a_free_diamine.iloc[0]))
         self.assertFalse(bool(found.own_reaction_chemistry.iloc[0]))
 
+class ChemistryFloorTests(unittest.TestCase):
+    """The 0.75 floor sits in a real gap in a discrete distribution.
+
+    Values near it: 0.7439, 0.7465, 0.7467 (1,154 candidates) then 0.7526,
+    0.7640 (1,745). Trypanothione synthetase at 0.7384 misses by 0.0116 and is
+    deliberately not rescued - tuning a threshold to admit a liked candidate is
+    how a ranking stops meaning anything.
+    """
+
+    def test_a_value_just_below_the_floor_does_not_count(self):
+        found = cv.axes(row(substrate_distance_measured=0.7384), set())
+        self.assertFalse(bool(found.own_reaction_chemistry.iloc[0]))
+
+    def test_a_value_just_above_does(self):
+        found = cv.axes(row(substrate_distance_measured=0.7526), set())
+        self.assertTrue(bool(found.own_reaction_chemistry.iloc[0]))
+
+    def test_the_floor_is_documented_as_checked_not_guessed(self):
+        source = Path(cv.__file__).read_text()
+        self.assertIn('0.7467', source)
+        self.assertIn('Trypanothione', source)
+
 
 if __name__ == '__main__':
     unittest.main()

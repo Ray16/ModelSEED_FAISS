@@ -45,6 +45,24 @@ import pandas as pd
 
 from .paths import RES
 
+# 0.75 is a round number, so it was checked against the distribution rather
+# than left as a guess. Substrate distance is DISCRETE here - each value is one
+# reaction's score, shared by every protein annotated to it - and 0.75 falls in
+# a real gap:
+#
+#     ... 0.7439 (8)  0.7465 (8)  0.7467 (1,154) | 0.7526 (1)  0.7640 (1,745) ...
+#
+# so it separates clusters instead of slicing one. Lowering it to 0.73 would
+# admit 5,200 instead of 3,862.
+#
+# THE NEAR MISS WORTH KNOWING ABOUT. Trypanothione synthetase (O60993, Q9GT49,
+# EC 6.3.1.9) scores 0.7384 - short by 0.0116 - and is otherwise a strong
+# candidate: it acylates a free diamine, sits in a lead family, and its pocket
+# has held a ligand spanning 30 between amines against HMDA's 6. It is
+# deliberately NOT rescued by moving the floor, because tuning a threshold to
+# admit a candidate one likes is how a ranking stops meaning anything. It sits
+# at 2 discriminating lines and a reader who wants near-misses should read
+# `n_discriminating_lines == 2`, which is 1,795 candidates.
 CHEMISTRY_FLOOR = 0.75
 MIN_LINES = 3
 
