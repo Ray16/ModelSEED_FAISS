@@ -79,6 +79,41 @@ http://sabiork.h-its.org/sabioRestWebServices/kineticLaws?q=ECNumber:"6.3.2.17"
 
 Not a transient failure — the same response for four different ECs.
 
+## The acceptor side, measured against UniProt directly
+
+The nylon-6,6 acceptor is hexane-1,6-diamine. Asking UniProt how many enzymes
+anywhere are curated to act on it:
+
+```
+cc_catalytic_activity:"hexane-1,6-diamine"   0 entries
+cc_catalytic_activity:"1,6-diaminohexane"    0 entries
+```
+
+**Zero, in the whole knowledgebase.** That is the project's premise stated at
+the source rather than inferred from our own table, and it is why no amount of
+retrieval will find an enzyme that already does this reaction.
+
+So the question becomes the nearest native acceptor, and the answer is sharp:
+
+| acceptor | UniProt entries | of those, amide-FORMING (EC 2.3 / 6.3) |
+|---|---:|---:|
+| hexane-1,6-diamine (C6) | 0 | 0 |
+| **cadaverine (C5)** | 1,139 | **3** |
+| putrescine (C4) | 22,073 | — |
+| spermidine | 24,607 | — |
+
+All **three** of the amide-forming cadaverine enzymes in UniProt are already
+in this table, and two are in the converged shortlist:
+
+```
+Q9RDS6  GlnA2  gamma-glutamylpolyamine synthetase   EC 6.3.1.-   converged, 4 lines
+Q9KZC7  GlnA3  gamma-glutamylpolyamine synthetase   EC 6.3.1.-   converged
+O41136  vPAT   viral polyamine acetyltransferase    EC 2.3.1.57
+```
+
+Cadaverine is one methylene shorter than HMDA. On the acceptor side, this
+pipeline has found everything UniProt knows.
+
 ## Tried and rejected on precision
 
 **Substrate-name search of the catalytic-activity field.** The largest
@@ -104,7 +139,16 @@ ubiquitous metabolite. The hits are every ligase that mentions acetyl-CoA or
 L-glutamate anywhere — not the enzyme for that reaction.
 
 This is the same failure mode as the GO route criticised in
-`MAPPING_REVIEW.md`: chemically true, biologically meaningless. A distinctive
+`MAPPING_REVIEW.md`: chemically true, biologically meaningless.
+
+**A sharper reason emerged later, and it is the real one.** The page-cap
+argument above only explains why COMMON metabolites fail. Re-tested on
+`cadaverine`, a *specific* metabolite returning a tractable 1,139 entries:
+only **3** of those carry an amide-forming EC. The other 1,136 are
+transaminases (EC 2.6.1), amine oxidases (EC 1.4) and decarboxylases
+(EC 4.1) - enzymes that consume or transfer the amine rather than acylate it.
+Naming a metabolite says nothing about the DIRECTION of the chemistry, which
+is why this route fails even where the query is precise. A distinctive
 **product** name (putrebactin, bisucaberin, alcaligin) identifies one enzyme;
 a common **substrate** name identifies thousands. Building it would have added
 roughly twelve thousand spurious associations and inflated the candidate count
