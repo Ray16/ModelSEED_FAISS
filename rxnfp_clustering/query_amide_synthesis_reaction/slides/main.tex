@@ -195,34 +195,76 @@
 \end{frame}
 
 % ---------------------------------------------------------------- deliverable
-\begin{frame}{Candidates for the bench}
-  \centering
-  \footnotesize
-  \begin{tabular}{lllrl}
+\begin{frame}{Neither monomer has an enzyme --- measured, not assumed}
+  This project kept saying ``no enzyme is known to do this''. Asked of UniProt
+  directly rather than of our own table:
+
+  \smallskip
+  \centering\footnotesize
+  \begin{tabular}{lrr}
     \toprule
-    \textbf{Enzyme} & \textbf{UniProt} & \textbf{Family} & \textbf{aa} & \textbf{Why test it} \\
+    \textbf{Substrate} & \textbf{UniProt entries} & \textbf{amide-forming} \\
     \midrule
-    \nis{PubC}  & \texttt{P0DXD6}     & \nis{IucA/IucC} & 629 & cleanest dimerisation of a half-amide \\
-    \nis{BibC}  & \texttt{B6EP94}     & \nis{IucA/IucC} & 819 & same, C5 monomer; highest cosine \\
-    AsbA        & \texttt{A0A0F7RJ52} & \nis{IucA/IucC} & 602 & two \emph{different} monomers (AA/BB) \\
-    AsbB        & \texttt{Q81RQ8}     & \nis{IucA/IucC} & 612 & chain extension; has a PDB structure \\
-    PuuA        & \texttt{P78061}     & Gln synthetase  & 472 & \emph{E.~coli}; easiest expression/assay \\
+    \bad{hexane-1,6-diamine} (acceptor, C6) & 0 & \bad{0} \\
+    cadaverine (C5) & 1{,}139 & \good{3} --- \textbf{all three held} \\
+    putrescine (C4) & 22{,}073 & --- \\
+    \midrule
+    \bad{adipate / hexanedioate} (donor, C6) & 2{,}926 & \bad{0}$^\dagger$ \\
+    pimelate C7 \ldots\ sebacate C10 & 0 & 0 \\
+    succinate (C4) & 341{,}933 & 38{,}438 \\
     \bottomrule
   \end{tabular}
 
-  \medskip
-  \begin{block}{Deliverable}
-    \texttt{results/shortlist\_annotated.tsv} --- a \textbf{301-protein}
-    bench shortlist over \textbf{50 families} and 205 organisms, drawn from
-    \textbf{54{,}199} candidates (2{,}048 Swiss-Prot reviewed). Carries
-    \textbf{253 AlphaFold models} (median pLDDT \good{93.8}, none unusable),
-    105 experimental structures, 41 cofactor-bound, \textbf{194 proteins with
-    a measured $K_M$/$k_{cat}$}, and 48 with \textbf{measured nylon-6,6 titre}.
-  \end{block}
+  \smallskip
+  {\scriptsize $^\dagger$the single hit is a palmitoyl\emph{transferase} ---
+  a thioester on cysteine, not an amide.}
 
-  \takeaway{Similarity is to \emph{reactions}. No listed enzyme is known to
-  accept adipate or HMDA --- this analysis \textbf{generates} that hypothesis,
-  it does not validate it.}
+  \takeaway{The target sits \textbf{two extrapolations away}: one methylene on
+  the amine, two on the acid. Of the three enzymes on Earth curated to
+  acylate cadaverine, this pipeline holds \good{all three} --- two in its top
+  tier.}
+\end{frame}
+
+% ---------------------------------------------------------------- bench
+\begin{frame}{Candidates for the bench}
+  Ranked by \textbf{how many independent lines agree} --- not by cosine, which
+  is dominated by the cofactor. \bad{BibC}, the former headline at cosine
+  0.911, reaches \bad{two}.
+
+  \smallskip
+  \centering\scriptsize
+  % p{} on the last column: the evidence strings are long and an `l` column
+  % cannot wrap, which overfull-boxes the frame.
+  \begin{tabular}{@{}llr p{0.46\linewidth}@{}}
+    \toprule
+    \textbf{Enzyme} & \textbf{UniProt} & \textbf{Lines} & \textbf{What agrees} \\
+    \midrule
+    \good{GlnA2} $\gamma$-glutamylpolyamine syn. & \texttt{Q9RDS6} & \good{4} &
+      free diamine; 0.873; ligand; geometry. \textbf{Takes cadaverine};
+      $K_M$ 0.13\,mM; span 17 \\
+    \good{AsbB} chain extension & \texttt{Q81RQ8} & \good{4} &
+      free diamine; 0.789; cofactor structure; geometry. Span \textbf{23} \\
+    \good{MurE} & \texttt{P9WJL3} & \good{4} &
+      free diamine; 0.764; \textbf{meso-DAP in the crystal}. Acid span 10,
+      amine 5 \\
+    \good{PylC} & \texttt{Q46E79} & \good{4} &
+      free diamine; ligand; cofactor structure; geometry \\
+    \midrule
+    TryS trypanothione syn. & \texttt{O60993} & 2$^\ast$ &
+      misses the floor by \textbf{0.0116}; span \textbf{30/30} \\
+    GspSA glutathionylspermidine syn. & \texttt{P0AES0} & 2$^\ast$ &
+      span 19/9; bifunctional ligand bound \\
+    \bottomrule
+  \end{tabular}
+
+  \smallskip
+  {\scriptsize $^\ast$near misses, admitted on a \emph{stated} second
+  criterion --- two lines \emph{and} room for both monomers. The threshold was
+  not moved to include them.}
+
+  \takeaway{Four proteins, four chemistries; MurE and AsbB already have staged
+  cofold inputs. \texttt{CANDIDATES.md} carries 28 dossiers, each stating what
+  is measured and what is inferred.}
 \end{frame}
 
 % ---------------------------------------------------------------- routes
