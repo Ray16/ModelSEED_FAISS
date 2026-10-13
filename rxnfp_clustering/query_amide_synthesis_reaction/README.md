@@ -64,6 +64,18 @@ produced it.
 | `proxied` | literature-curated, carries an independent geometric score | n/a |
 | `chemistry_neighbour` | borrowed from a reaction with the same proven acylation chemistry; an INFERENCE, weight 0.25 | measured, from the source reaction |
 
+`results/shortlist.tsv` + `shortlist.fasta` are the actionable deliverable:
+**292 proteins**, 33 families, 149 organisms, 82 with a PDB entry, 75
+self-condensing, and all 48 assayed proteins with measured titre. A 34k-row
+table is a search result, not a recommendation, so the shortlist applies bench
+constraints (expressible length, has a sequence, annotation not contradicted)
+and then allocates slots PER EVIDENCE TIER, with family/clade/genus caps
+applied *within* a tier. Applying those caps globally was actively harmful -
+the strongest evidence is concentrated in a few well-studied families while
+clade homologs are spread thinly, so a global cap spent the list on homologs
+and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
+written to `excluded_because` rather than dropped silently.
+
 Current totals: **34,134 candidates** - 34,133 with a sequence, 25,011 with a
 curated catalytic-activity statement, 22,505 with an AlphaFold model, 136 with
 a PDB entry, 879 self-condensing, 36 carrying an independent geometric score.

@@ -1,0 +1,33 @@
+{
+  "candidates_considered": 34134,
+  "excluded": {
+    "": 25321,
+    "too_short": 4865,
+    "annotation_contradicts_chemistry": 2901,
+    "too_long": 1046,
+    "no_sequence": 1
+  },
+  "eligible": 25321,
+  "shortlisted": 292,
+  "distinct_families": 33,
+  "distinct_organisms": 149,
+  "by_evidence": {
+    "exact_reaction": 88,
+    "measured_activity": 48,
+    "activity_ec": 38,
+    "family_homolog": 38,
+    "precomputed_rhea_or_go": 25,
+    "clade_homolog": 25,
+    "name_match": 12,
+    "literature_curated": 12,
+    "reaction_name_match": 6
+  },
+  "with_measured_activity": 48,
+  "with_pdb": 82,
+  "self_condensing": 75,
+  "caps": {
+    "family": 12,
+    "clade": 3,
+    "genus": 8
+  }
+}
