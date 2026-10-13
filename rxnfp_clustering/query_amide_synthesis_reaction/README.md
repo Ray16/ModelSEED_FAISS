@@ -86,9 +86,27 @@ accession and no annotation: 9,074 accessions, **98,296 values filled**.
 | PDB | 0.5% |
 
 The last three are UniProt's own coverage of unreviewed entries, not a
-retrieval gap. The assayed panel resolved 10 of 48 NCBI accessions to UniProt;
-the rest are environmental sequences with no UniProt entry, which is reported
-rather than hidden.
+retrieval gap.
+
+**The assayed panel needed a different route.** Accession matching reached only
+10 of 48 - most are environmental sequences with no UniProtKB entry - so
+`uniparc.py` looks them up by EXACT SEQUENCE instead. UniParc archives every
+sequence ever deposited in any member database, keyed by CRC64, so this is
+identity rather than homology: a protein absent from UniProtKB is usually still
+there under a RefSeq or EMBL cross-reference. **48 of 49 matched**, giving
+organism and protein name for every one, and 12 an active UniProt accession.
+Organism coverage across the whole table reached 100%.
+
+That also identifies what the panel is: the names returned are
+"Long-chain-fatty-acid--CoA ligase", "O-succinylbenzoate--CoA ligase",
+"3-methylmercaptopropionyl-CoA ligase" - class I adenylate-forming (ANL)
+enzymes, consistent with the independent PF00501 seeding.
+
+CRC64 correctness is load-bearing here and was got wrong first: a bad checksum
+returns zero hits, which reads as "none of these proteins are in UniParc"
+rather than as a bug. It reported 0 of 48. The implementation is now the
+canonical Swiss-Prot algorithm, with a known-answer test against a checksum
+UniProt publishes for P78061.
 
 Annotation is only ever ADDED - an existing value always wins - and the stage
 writes `master_candidates_enriched.tsv` rather than overwriting its input,

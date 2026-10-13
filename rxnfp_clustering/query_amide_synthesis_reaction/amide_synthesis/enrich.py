@@ -13,10 +13,16 @@ UniProt record, but two do not:
                     project. These are the MOST valuable rows in the table -
                     they are the only proteins anywhere here with measured
                     titre on the nylon-6,6 diad - and the least annotated.
-                    Best-effort NCBI -> UniProt resolution is attempted and
-                    the outcome recorded; most are environmental sequences
-                    with no UniProt entry, so partial success is expected and
-                    is reported rather than hidden.
+
+                    Two routes, because accession matching is weak here:
+                    NCBI -> UniProt reaches only 10 of 48, since most are
+                    environmental sequences with no UniProtKB entry. EXACT
+                    SEQUENCE lookup through UniParc reaches 48 of 50 and
+                    supplies organism and protein name for every one. UniParc
+                    archives every sequence ever deposited in any member
+                    database, so this is identity, not homology - a sequence
+                    absent from UniProtKB is usually still there under a
+                    RefSeq or EMBL cross-reference.
 
 Annotation is only ever ADDED. An existing value always wins, so re-running
 this cannot overwrite a stronger route's record with a weaker lookup.
@@ -37,6 +43,7 @@ from concurrent.futures import ThreadPoolExecutor
 import pandas as pd
 
 from . import uniprot
+from . import uniparc
 from .paths import RES
 
 BATCH = int(os.environ.get('ENRICH_BATCH', 20))
@@ -160,6 +167,30 @@ def main():
         table, filled2 = apply_records(table, records2)
         print(f'  filled {filled2} values for the panel', flush=True)
 
+    # Exact-sequence identity for the panel, where accessions fail.
+    sequences = dict(zip(assayed.uniprot, assayed.get('sequence', '')))
+    archived = uniparc.lookup_many(sequences) if sequences else {}
+    print(f'  assayed panel: {len(archived)} of {len(sequences)} sequences '
+          f'found in UniParc by exact match', flush=True)
+    if archived:
+        frame = pd.DataFrame.from_dict(archived, orient='index')
+        for column in frame.columns:
+            incoming = table.uniprot.map(frame[column])
+            if column not in table.columns:
+                table[column] = incoming
+            else:
+                gap = blank(table[column])
+                table.loc[gap, column] = incoming[gap]
+        # Fill the display fields from the archive where still empty.
+        for target, source in (('organism', 'uniparc_organism'),
+                               ('protein_name', 'uniparc_protein_name'),
+                               ('gene', 'uniparc_gene')):
+            if source in table.columns:
+                gap = blank(table.get(target, pd.Series('', index=table.index)))
+                if target not in table.columns:
+                    table[target] = ''
+                table.loc[gap, target] = table.loc[gap, source]
+
     table.to_csv(RES / 'master_candidates_enriched.tsv', sep='\t', index=False)
 
     coverage = {column: round(float((~blank(table[column])).mean() * 100), 1)
@@ -173,6 +204,8 @@ def main():
                'failed_batches': failures,
                'ncbi_requested': len(ncbi),
                'ncbi_resolved': len(mapped),
+               'uniparc_exact_matches': len(archived),
+               'uniparc_requested': len(sequences),
                'coverage_percent': coverage}
     print('\n' + json.dumps(summary, indent=2), flush=True)
     (RES / 'enrichment_summary.json').write_text(json.dumps(summary, indent=2) + '\n')

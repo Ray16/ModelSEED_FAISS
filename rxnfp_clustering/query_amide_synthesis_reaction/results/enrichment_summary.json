@@ -5,9 +5,11 @@
   "failed_batches": 0,
   "ncbi_requested": 48,
   "ncbi_resolved": 10,
+  "uniparc_exact_matches": 48,
+  "uniparc_requested": 49,
   "coverage_percent": {
     "ec": 81.8,
-    "organism": 99.9,
+    "organism": 100.0,
     "lineage": 99.9,
     "pfam": 99.4,
     "interpro": 99.7,
