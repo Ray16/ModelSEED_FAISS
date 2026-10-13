@@ -62,6 +62,11 @@ produced it.
 | `clade` | member of a validated protein's own UniRef50 cluster, where the Pfam is too broad to mean anything | inherited, discounted |
 | `assayed` | **measured** nylon-6,6 L1 titre | n/a - it is a measurement |
 | `proxied` | literature-curated, carries an independent geometric score | n/a |
+| `chemistry_neighbour` | borrowed from a reaction with the same proven acylation chemistry; an INFERENCE, weight 0.25 | measured, from the source reaction |
+
+Current totals: **34,134 candidates** - 34,133 with a sequence, 25,011 with a
+curated catalytic-activity statement, 22,505 with an AlphaFold model, 136 with
+a PDB entry, 879 self-condensing, 36 carrying an independent geometric score.
 
 Measured and inherited distances are kept in separate columns and are not
 interchangeable.
@@ -130,6 +135,13 @@ that touches a validated protein is wrong in two opposite ways:
   irrelevance: Mur ligase (0.07) and AMP-binding (0.01) are ancient and
   universal, so only a clade is relevant and those expand by the seed's own
   UniRef50 cluster instead.
+
+Page budgets are per tier, and saturation is reported rather than hidden. Of
+363 expansion queries, 31 still truncate: 20 are the `diverse` tier, capped at
+3 pages deliberately because it supplies breadth rather than evidence, and 11
+are UniRef50 clusters with more than 800 members, where further paging returns
+near-identical orthologs of a protein already in the table. Both are choices,
+not oversights.
 
 Enrichment is not sufficient either. PF06276 is shared by the NIS synthetases
 and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation

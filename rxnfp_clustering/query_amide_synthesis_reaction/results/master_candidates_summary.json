@@ -1,17 +1,17 @@
 {
-  "total_candidates": 23442,
+  "total_candidates": 34134,
   "by_route": {
-    "clade": 17890,
-    "domain": 3898,
-    "precomputed_link": 1131,
+    "clade": 28031,
+    "domain": 4456,
+    "precomputed_link": 1124,
     "reaction": 459,
     "assayed": 49,
     "proxied": 15
   },
   "by_evidence": {
-    "clade_homolog": 17890,
-    "family_homolog": 3898,
-    "precomputed_rhea_or_go": 1131,
+    "clade_homolog": 28031,
+    "family_homolog": 4456,
+    "precomputed_rhea_or_go": 1124,
     "exact_reaction": 249,
     "activity_ec": 161,
     "measured_activity": 49,
@@ -19,12 +19,12 @@
     "literature_curated": 15,
     "reaction_name_match": 8
   },
-  "reviewed": 1223,
-  "with_pdb": 128,
-  "with_alphafold": 15745,
-  "with_catalytic_activity": 16380,
-  "with_sequence": 23441,
+  "reviewed": 1233,
+  "with_pdb": 136,
+  "with_alphafold": 22505,
+  "with_catalytic_activity": 25011,
+  "with_sequence": 34133,
   "with_structural_score": 36,
-  "self_condensing": 664,
-  "annotation_contradicts_chemistry": 1837
+  "self_condensing": 879,
+  "annotation_contradicts_chemistry": 2915
 }

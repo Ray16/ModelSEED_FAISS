@@ -75,6 +75,10 @@ FAMILY_SD_FLOOR = float(os.environ.get('FAMILY_SD_FLOOR', 0.40))
 MIN_ENRICHMENT_PER_1K = float(os.environ.get('MIN_ENRICHMENT_PER_1K', 1.0))
 # A single seed cannot distinguish a catalytic domain from a passenger domain.
 MIN_SEEDS = int(os.environ.get('MIN_FAMILY_SEEDS', 2))
+# Pages per clade query. Most UniRef50 clusters fit in one, but the large ones
+# were truncating at 3, which silently let UniProt's relevance order decide
+# which members of a validated protein's own cluster we got to see.
+CLADE_PAGES = int(os.environ.get('CLADE_PAGES', 8))
 # Polite to a public API; the same cap the reaction routes use.
 THREADS = 6
 
@@ -265,7 +269,7 @@ def main():
     print(f'\nclade route: {len(clades)} seed proteins', flush=True)
     clade_rows, clade_report = {}, []
     if clades:
-        jobs = [(a, m, 3) for a, m in clades.items()]
+        jobs = [(a, m, CLADE_PAGES) for a, m in clades.items()]
         with ThreadPoolExecutor(max_workers=THREADS) as pool:
             for accession, tier, rows, failed, saturated in pool.map(
                     _fetch_clade, jobs):
