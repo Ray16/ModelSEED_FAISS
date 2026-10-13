@@ -40,6 +40,37 @@ themselves, and three of them make the nylon amide bond regardless.
 This table could offer at best 30.6% identity to a measured producer.
 BLAST reaches **65.3%**. Full ranking: `results/blast_actives_ranked.tsv`.
 
+## The two groups are disjoint on *both* axes
+
+The 150 BLAST hits were put through the same machinery as every other
+candidate here. Not one of them has substrate-level evidence:
+
+```
+own curated reaction scoring > 0        0 of 150
+EC-class substrate ceiling              0 of 150
+pocket room for HMDA or adipate         0 of 150
+```
+
+All 54 that carry an EC are **EC 6.2** — acid–thiol ligase, which forms a
+**thioester with CoA**. The amide screen scores those zero by construction,
+and correctly: forming a thioester is not forming an amide.
+
+So:
+
+| | substrate evidence | identity to a measured producer |
+|---|---|---|
+| **group A** | 4 independent lines each | ~8% |
+| **group B** | **zero** | **50–65%** |
+
+Neither group has both, and that is the whole problem in one table. The
+proteins that demonstrably make this bond are annotated for *different
+chemistry*, so annotation-based retrieval — the basis of this entire
+pipeline — cannot reach them, and the chemistry screen correctly refuses them
+when it does.
+
+**That is not a bug to fix. It is the reason the assay round decides
+something no further computation can.**
+
 ## Why both
 
 Group A has mechanistic support and no measured support. Group B has the only
