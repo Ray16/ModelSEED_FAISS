@@ -2,7 +2,7 @@
   "names_admitted": 12,
   "names_refused": [],
   "proteins": 4568,
-  "novel_against_existing_master": 1066,
+  "novel_against_existing_master": 0,
   "per_name": [
     {
       "name": "amide synthetase",

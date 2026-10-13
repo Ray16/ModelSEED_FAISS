@@ -76,3 +76,30 @@ class PolymerElongationTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
+
+class TubulinTests(unittest.TestCase):
+    """A glutamate chain on TUBULIN is protein modification, not polyamide.
+
+    rxn58922/rxn58972 matched the polymer term `glutamyl-l-glutamate` and
+    were re-admitted, because no generic stem catches the name "tubulin".
+    """
+
+    def test_tubulin_polyglutamylation_is_not_polymer_elongation(self):
+        definition = ('(1) ATP + (1) L-Glutamate + (1) gamma-L-glutamyl-'
+                      'L-glutamate residue <=> (1) ADP + (1) Phosphate + '
+                      '(1) a [tubulin]-(alpha-glutamyl-gamma-L-glutamyl)-'
+                      'L-glutamate')
+        self.assertFalse(is_polymer_elongation(definition, [], {}))
+
+    def test_beta_tubulin_too(self):
+        self.assertFalse(is_polymer_elongation(
+            'a [beta-tubulin]-(alpha-L-glutamyl-gamma-L-glutamyl)-L-glutamate',
+            [], {}))
+
+    def test_a_genuine_polyamide_is_still_admitted(self):
+        """The fix must not cost the chemistry the re-admission was for."""
+        self.assertTrue(is_polymer_elongation(
+            'cyanophycin + L-aspartate + ATP', [], {}))
+        self.assertTrue(is_polymer_elongation(
+            'coenzyme F420-2 + L-glutamate', [], {}))

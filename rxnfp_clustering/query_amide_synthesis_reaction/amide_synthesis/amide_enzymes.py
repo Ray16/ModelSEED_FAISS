@@ -123,7 +123,19 @@ POLYMER_ACCEPTOR_TERMS = (
 # the reaction stays excluded whatever else it matches.
 TRUE_MACROMOLECULE_TERMS = (
     'protei', 'carrier', 'bccp', 'lysw', 'pup', 'trna', 'ribosom',
-    'peptidoglyc', 'enzyme', 'subunit', 'domain', 'apo-', 'holo-')
+    'peptidoglyc', 'enzyme', 'subunit', 'domain', 'apo-', 'holo-',
+    # Named proteins that no generic stem catches. Tubulin
+    # polyglutamylation (rxn58922, rxn58972) matched the polymer term
+    # `glutamyl-l-glutamate` and was re-admitted, but a glutamate chain on
+    # TUBULIN is protein modification, not small-molecule polycondensation.
+    #
+    # A general rule was tried instead and rejected: ModelSEED brackets
+    # macromolecular entities as `[tubulin]`, so "any bracketed non-numeric
+    # token" looks principled - but 11 reactions carry one and only 2 are
+    # proteins; the rest are chemical fragments like `[glu]`, `[L-Cys]` and
+    # `[amino(iminio)methyl]`. It would have excluded 9 legitimate reactions
+    # to catch 2.
+    'tubulin')
 
 
 def _mask_cofactors(text):
