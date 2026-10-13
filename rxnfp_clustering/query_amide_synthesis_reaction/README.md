@@ -200,7 +200,7 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **36,155 candidates** - 25,264 with a curated
+Current totals: **36,190 candidates** - 25,264 with a curated
 catalytic-activity statement, 22,823 with an AlphaFold model, 206 with a PDB
 entry, 875 self-condensing, 36 carrying an independent geometric score.
 
@@ -222,7 +222,7 @@ reconstruction, merely not nylon-like enough to clear the floor. Removing it
 | reactions resolved to a protein | 168 | **305** |
 | reaction-route candidates | 459 | **800** |
 | precomputed-link candidates | 1,131 | **2,808** |
-| total candidates | 34,134 | **36,155** |
+| total candidates | 34,134 | **36,190** |
 | candidates with an experimental structure | 179 | **257** |
 | with a cofactor-bound structure | 42 | **55** |
 
@@ -304,6 +304,32 @@ Page budgets are per tier, and saturation is reported rather than hidden. Of
 are UniRef50 clusters with more than 800 members, where further paging returns
 near-identical orthologs of a protein already in the table. Both are choices,
 not oversights.
+
+### A polymer acceptor is not a protein acceptor
+
+The macromolecular screen refuses acylation of a folded protein or carrier,
+which is right: you cannot offer HMDA to an enzyme whose acceptor is a protein
+lysine. But it also refused every enzyme whose acceptor is its **own growing
+polyamide** — which is what a nylon polymerase is. Auditing it (rather than
+loosening it) found two faults:
+
+* **The stem `enzyme` matches "coenzyme".** A pre-existing false positive that
+  flagged every coenzyme-bearing reaction as macromolecular, silently excluding
+  the **coenzyme F420 polyglutamate ligases** CofE/CofF — iterative
+  glutamylation of a growing poly-γ-glutamate tail, i.e. the target chemistry.
+  All five are now admitted.
+* **Polymer and protein acceptors were collapsed.** `is_polymer_elongation`
+  separates them, protein evidence always winning, and polymer elongation is
+  admitted as a labelled class.
+
+Screen-eligible reactions 473 → 482; shortlist self-condensing members 72 → 88.
+
+Cyanophycin synthetase prompted the audit — poly(Asp-Arg) biopolymer extended
+by ATP-dependent amide bonds, the closest biological analogue to nylon
+polycondensation here. Its *reactions* stay excluded, but by the **balance**
+guard rather than this one: the polymer primer is an R-group compound, so the
+reaction cannot be heavy-atom balanced. The **enzyme** is in the candidate set
+anyway, via `activity_ec` (`cphA` O86109, P56947) and `family_homolog`.
 
 Enrichment is not sufficient either. PF06276 is shared by the NIS synthetases
 and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation

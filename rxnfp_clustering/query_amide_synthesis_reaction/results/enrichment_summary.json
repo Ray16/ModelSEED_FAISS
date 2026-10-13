@@ -1,7 +1,7 @@
 {
-  "accessions_enriched": 10842,
-  "records_retrieved": 10842,
-  "values_filled": 134457,
+  "accessions_enriched": 10869,
+  "records_retrieved": 10869,
+  "values_filled": 134948,
   "failed_batches": 0,
   "ncbi_requested": 48,
   "ncbi_resolved": 10,
@@ -14,7 +14,7 @@
     "pfam": 99.4,
     "interpro": 99.7,
     "catalytic_activity": 77.6,
-    "function": 56.6,
+    "function": 56.7,
     "keywords": 99.9,
     "alphafold": 70.9,
     "pdb": 0.7

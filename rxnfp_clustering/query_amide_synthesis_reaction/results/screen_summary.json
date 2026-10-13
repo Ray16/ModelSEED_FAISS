@@ -1,11 +1,12 @@
 {
   "n_reactions": 33246,
   "acylates_a_free_amine": 726,
-  "of_those_macromolecular_substrate": 231,
+  "of_those_macromolecular_substrate": 224,
+  "of_those_polymer_elongation_readmitted": 5,
   "of_those_on_a_free_diamine_donor": 92,
   "of_those_excluded_as_unbalanced": 22,
-  "eligible_for_ranking": 473,
-  "eligible_above_substrate_distance_floor": 473,
+  "eligible_for_ranking": 482,
+  "eligible_above_substrate_distance_floor": 482,
   "substrate_distance_floor": 0.0,
-  "self_condensing_iterative": 20
+  "self_condensing_iterative": 29
 }
