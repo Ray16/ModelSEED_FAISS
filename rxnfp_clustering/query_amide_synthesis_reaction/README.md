@@ -15,6 +15,10 @@ So the target sits **two extrapolations away**: one methylene on the amine,
 two on the acid. Everything below is about finding the enzymes best placed to
 cross that gap.
 
+**If you are here to order proteins, read `results/ASSAY_ROUND.md`** — eight
+proteins, four from each of the two competing readings of the evidence, with
+a positive control and the reason for each pick.
+
 Run on ModelSEEDDatabase `master` @ `b539adb6` (2026-10-06).
 **`results/CANDIDATES.md` is the deliverable** — 28 dossiers, each stating
 what is measured, what is inferred, and where it came from. Whole pipeline:
