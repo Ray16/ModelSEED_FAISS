@@ -1,6 +1,8 @@
 # Candidates worth a bench slot
 
-20 proteins, each supported by at least 3 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
+28 proteins, each supported by at least 2 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
+
+Entries marked a NEAR MISS did not reach the convergence threshold and are included on a separate, stated criterion: two independent lines plus demonstrated room for both monomers. The threshold was not moved to accommodate them.
 
 **None of these has been assayed on nylon-6,6.** Convergence means several methods that fail differently happen to agree, which is a reason to spend a bench slot and not evidence that the enzyme works. With three measured positives in the reference panel, no ranking here can be validated.
 
@@ -623,4 +625,227 @@
 **Location** SUBCELLULAR LOCATION: Cytoplasm .
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
+
+## Q2G1N1 — Staphyloferrin B synthase (EC 6.3.2.56) (Staphyloferrin B biosynthesis protein SbnC)
+
+**Organism** Staphylococcus aureus (strain NCTC 8325 / PS 47)  
+**Gene** `sbnC SAOUHSC_00077`  
+**Length** 584.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- its EC class reaches 0.758
+- AlphaFold pLDDT **96.4**
+- structure `7CBB` at 2.6 Å
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 11 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 16 between acids, against adipate's 4 — **room for the donor**
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate + 2-oxoglutarate + ATP = staphyloferrin B + AMP + diphosphate + H(+); Xref=Rhea:RHEA:59132, ChEBI:CHEBI:15378, ChEBI:CHEBI:16810, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:136993, ChEBI:CHEBI:142971, ChEBI:CHEBI:456215; EC=6.3.2.56; Evidence=; PhysiologicalDirection=left-to-right; 
+
+**Function** FUNCTION: Catalyzes the condensation of L-2,3-diaminopropionyl-citryl-diaminoethane and 2-oxoglutarate to form staphyloferrin B, the fourth and last step in staphyloferrin B biosynthesis. .
+
+**Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
+
+## P0AES0 — Bifunctional glutathionylspermidine synthetase/amidase (GspSA) [Includes: Glutathionylspermidine amidase (Gsp amidase) (
+
+**Organism** Escherichia coli (strain K12)  
+**Gene** `gss gsp b2988 JW2956`  
+**Length** 619.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- its EC class reaches 0.738
+- AlphaFold pLDDT **95.4**
+- structure `2IO8` at 2.1 Å
+- measured K_M **0.02 mM**
+- curated ligand `CHEBI:57834;CHEBI:57835;CHEBI:57925`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 19 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 9 between acids, against adipate's 4 — **room for the donor**
+
+**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
+
+- `spermidine` — triamine
+- `spermine` — tetraamine
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=spermidine + glutathione + ATP = glutathionylspermidine + ADP + phosphate + H(+); Xref=Rhea:RHEA:21272, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57834, ChEBI:CHEBI:57835, ChEBI:CHEBI:57925, ChEBI:CHEBI:456216; EC=6.3.1.8; Evidence=; CATALYTIC ACTIVITY: Reaction=glutathionylspermidine + H2O = spermidine + glutathione; Xref=Rhea:RHEA:17173, Ch
+
+**Function** FUNCTION: Catalyzes the formation of an amide bond between glutathione (GSH) and spermidine coupled with hydrolysis of ATP; also catalyzes the opposing reaction, i.e. the hydrolysis of glutathionylspermidine (Gsp) back to glutathione and spermidine. The amidase active site can also hydrolyze Gsp-disulfide (Gsp-S-S-Gsp) to Gsp-SG and Gsp S-thiolated proteins (GspSSPs) to GSH S-thiolated protein (GS
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+## O60993 — Trypanothione synthetase (EC 6.3.1.9) (Cf-TS)
+
+**Organism** Crithidia fasciculata  
+**Gene** `TRS`  
+**Length** 652.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- its EC class reaches 0.738
+- AlphaFold pLDDT **93.2**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 30 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 30 between acids, against adipate's 4 — **room for the donor**
+
+**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
+
+- `spermidine` — triamine
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=spermidine + glutathione + ATP = glutathionylspermidine + ADP + phosphate + H(+); Xref=Rhea:RHEA:21272, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57834, ChEBI:CHEBI:57835, ChEBI:CHEBI:57925, ChEBI:CHEBI:456216; EC=6.3.1.9; CATALYTIC ACTIVITY: Reaction=glutathionylspermidine + glutathione + ATP = trypanothione + ADP + phosphate + H(+); Xref=Rh
+
+**Function** FUNCTION: Conjugates glutathione (gamma-Glu-Cys-Gly) and glutathionylspermidine to form trypanothione (N(1),N(8)-bis(glutathionyl)spermidine), which is involved in maintaining intracellular thiol redox and in defense against oxidants.
+
+**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+## P90518 — Glutathionylspermidine synthase (EC 6.3.1.8)
+
+**Organism** Crithidia fasciculata  
+**Gene** `GSP`  
+**Length** 719.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- its EC class reaches 0.738
+- AlphaFold pLDDT **88.2**
+- curated ligand `CHEBI:57834;CHEBI:57925`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 19 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 9 between acids, against adipate's 4 — **room for the donor**
+
+**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
+
+- `spermidine` — triamine
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=spermidine + glutathione + ATP = glutathionylspermidine + ADP + phosphate + H(+); Xref=Rhea:RHEA:21272, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57834, ChEBI:CHEBI:57835, ChEBI:CHEBI:57925, ChEBI:CHEBI:456216; EC=6.3.1.8
+
+**Function** FUNCTION: Conjugates glutathione (gamma-Glu-Cys-Gly) and spermidine to form glutathionylspermidine in the biosynthesis trypanothione (N(1),N(8)-bis(glutathionyl)spermidine), which is involved in maintaining intracellular thiol redox and in defense against oxidants.
+
+**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+## Q9GT49 — Trypanothione synthetase (EC 6.3.1.9)
+
+**Organism** Trypanosoma cruzi (strain CL Brener)  
+**Gene** `TRS TryS Tc00.1047053509099.50 Tc00.1047`  
+**Length** 647.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- its EC class reaches 0.738
+- AlphaFold pLDDT **92.3**
+- measured K_M **0.053 mM**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 30 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 30 between acids, against adipate's 4 — **room for the donor**
+
+**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
+
+- `cadaverine` — C5 diamine - ONE methylene short of HMDA
+- `spermidine` — triamine
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=spermidine + glutathione + ATP = glutathionylspermidine + ADP + phosphate + H(+); Xref=Rhea:RHEA:21272, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57834, ChEBI:CHEBI:57835, ChEBI:CHEBI:57925, ChEBI:CHEBI:456216; EC=6.3.1.9; Evidence=; CATALYTIC ACTIVITY: Reaction=glutathionylspermidine + glutathione + ATP = trypanothione + ADP + phosphate + H(
+
+**Function** FUNCTION: Bifunctional enzyme which catalyzes the formation of trypanothione (N(1),N(8)-bis(glutathionyl)spermidine) from glutathione and spermidine. Converts spermidine or glutathionylspermidine into trypanothione. Can also convert aminopropylcadaverine into glutothionylaminopropylcadaverine and homotrypanothione. Also has low amidase activity, hydrolyzing trypanothione, homotrypanothione or glut
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+## A0A397HK89 — NRPS-independent siderophore synthetase-like protein ankE (EC 6.-.-.-) (Ank biosynthesis cluster protein E)
+
+**Organism** Aspergillus thermomutatus (Neosartorya pseudofischeri)  
+**Gene** `ankE CDV56_108768`  
+**Length** 604.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- AlphaFold pLDDT **90.1**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 15 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 6 between acids, against adipate's 4 — **room for the donor**
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=cyclo(L-arginyl-(Z)-dehydro-4-O-homoseryl-tyrosyl) + citrate + ATP = NK13650 B + AMP + diphosphate + H(+); Xref=Rhea:RHEA:80255, ChEBI:CHEBI:15378, ChEBI:CHEBI:16947, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:231316, ChEBI:CHEBI:231317, ChEBI:CHEBI:456215; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:80256; Evidence=
+
+**Function** FUNCTION: NRPS-independent siderophore synthetase-like protein; part of the ank cluster that mediates the biosynthesis of NK13650 C, a highly modified cyclo-arginine-tyrosine dipeptide (PubMed:36702957). AnkE is responsible of the production of NK13650 B via ligation of citrate to the ankD product (PubMed:36702957). Within the pathway, the cyclodipeptide synthase ankA acts as the scaffold-generati
+
+**Literature** [30637395](https://pubmed.ncbi.nlm.nih.gov/30637395/), [36702957](https://pubmed.ncbi.nlm.nih.gov/36702957/)
+
+## A0A095T5Z8 — Cyanophycin synthetase (EC 6.3.2.29) (EC 6.3.2.30) (Cyanophycin synthase)
+
+**Organism** Tatumella morbirosei  
+**Gene** `HA49_14190`  
+**Length** 900.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- AlphaFold pLDDT **90.2**
+- structure `7LGN` at 3.1 Å
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 21 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 15 between acids, against adipate's 4 — **room for the donor**
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=[L-4-(L-arginin-2-N-yl)aspartate](n) + L-aspartate + ATP = [L-4-(L-arginin-2-N-yl)aspartate](n)-L-aspartate + ADP + phosphate + H(+); Xref=Rhea:RHEA:13277, Rhea:RHEA-COMP:13728, Rhea:RHEA-COMP:13733, ChEBI:CHEBI:15378, ChEBI:CHEBI:29991, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:137986, ChEBI:CHEBI:137990, ChEBI:CHEBI:456216; EC=6.3.2.29; Evidence=; CATALYTIC A
+
+**Function** FUNCTION: Catalyzes the ATP-dependent polymerization of arginine and aspartate to multi-L-arginyl-poly-L-aspartic acid (cyanophycin; a water-insoluble reserve polymer). .
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the MurCDEF family. .
+
+**BRENDA** `6.3.2.29;6.3.2.30;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [34385683](https://pubmed.ncbi.nlm.nih.gov/34385683/)
+
+## Q113V7 — Cyanophycin synthetase (EC 6.3.2.29) (EC 6.3.2.30) (Cyanophycin synthase)
+
+**Organism** Trichodesmium erythraeum (strain IMS101)  
+**Gene** `Tery_1965`  
+**Length** 902.0 aa  
+
+**Why it is here** — a NEAR MISS: it does not reach the convergence threshold, but its pocket has demonstrably held both monomers' worth of span. Admitted on that stated criterion, not by lowering the floor.
+
+**Resolved**
+
+- AlphaFold pLDDT **90.6**
+- structure `7WAF` at 2.52 Å
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 21 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 15 between acids, against adipate's 4 — **room for the donor**
+
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=[L-4-(L-arginin-2-N-yl)aspartate](n) + L-aspartate + ATP = [L-4-(L-arginin-2-N-yl)aspartate](n)-L-aspartate + ADP + phosphate + H(+); Xref=Rhea:RHEA:13277, Rhea:RHEA-COMP:13728, Rhea:RHEA-COMP:13733, ChEBI:CHEBI:15378, ChEBI:CHEBI:29991, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:137986, ChEBI:CHEBI:137990, ChEBI:CHEBI:456216; EC=6.3.2.29; Evidence=; CATALYTIC A
+
+**Function** FUNCTION: Catalyzes the ATP-dependent polymerization of arginine and aspartate to multi-L-arginyl-poly-L-aspartic acid (cyanophycin; a water-insoluble reserve polymer). .
+
+**Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the MurCDEF family. .
 

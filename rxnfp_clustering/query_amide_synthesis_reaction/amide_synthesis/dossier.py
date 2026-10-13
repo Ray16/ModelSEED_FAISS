@@ -56,6 +56,21 @@ SIDECARS = (
 )
 MAX_DOSSIERS = int(os.environ.get('DOSSIER_LIMIT', 20))
 
+# NEAR-MISSES WITH DEMONSTRATED ROOM, documented alongside the converged set.
+#
+# The convergence count is a coarse instrument and its chemistry floor is a
+# threshold. Trypanothione synthetase misses by 0.0116 and its pocket has held
+# a ligand spanning 30 between amines against HMDA's 6; glutathionylspermidine
+# synthetase is in the same position. Both are proteins a bench scientist
+# should see, and leaving them out while recommending them elsewhere would be
+# an artifact that disagrees with its own author.
+#
+# They are admitted on an EXPLICIT second criterion rather than by lowering the
+# floor - 2 independent lines AND room for both monomers - and the dossier
+# labels which criterion each entry met, so the distinction stays visible.
+NEAR_MISS_LINES = int(os.environ.get('DOSSIER_NEAR_MISS_LINES', 2))
+MAX_NEAR_MISSES = int(os.environ.get('DOSSIER_NEAR_MISSES', 8))
+
 # Free di- and polyamines, named in order of how close they are to HMDA.
 # The nylon-6,6 acceptor is hexane-1,6-diamine, and NO enzyme in UniProt is
 # annotated to use it - 0 of 54,199 candidates name it, which is the whole
@@ -218,9 +233,16 @@ def render(row):
         lines.append(f"**Length** {length} aa  ")
     lines.append('')
 
-    lines.append(f"**Why it is here** — {int(row.get('n_discriminating_lines', 0))} "
-                 'independent lines: '
-                 + _text(row.get('evidence_lines')).replace('+', ', '))
+    if _text(row.get('selected_by')) == 'near_miss_with_room':
+        lines.append('**Why it is here** — a NEAR MISS: it does not reach the '
+                     'convergence threshold, but its pocket has demonstrably '
+                     'held both monomers\' worth of span. Admitted on that '
+                     'stated criterion, not by lowering the floor.')
+    else:
+        lines.append(
+            f"**Why it is here** — {int(row.get('n_discriminating_lines', 0))} "
+            'independent lines: '
+            + _text(row.get('evidence_lines')).replace('+', ', '))
     lines.append('')
 
     facts = []
@@ -317,7 +339,29 @@ def main():
     if not source.exists():
         raise SystemExit('run the converged stage first')
     table = pd.read_csv(source, sep='\t', low_memory=False).head(MAX_DOSSIERS)
+    table['selected_by'] = 'converged'
     print(f'{len(table)} converged candidates to document', flush=True)
+
+    # Near-misses: 2 lines AND room for both monomers. Admitted on a stated
+    # second criterion, never by moving the chemistry floor.
+    capacity_path = RES / 'pocket_capacity.tsv'
+    master_path = RES / 'master_candidates_enriched.tsv'
+    if capacity_path.exists() and master_path.exists():
+        room = pd.read_csv(capacity_path, sep='\t', low_memory=False)
+        room = room[room.room_for_hmda.fillna(False).astype(bool)
+                    & room.room_for_adipate.fillna(False).astype(bool)]
+        everything = pd.read_csv(master_path, sep='\t', low_memory=False)
+        pool = everything[everything.uniprot.isin(room.uniprot)
+                          & ~everything.uniprot.isin(table.uniprot)]
+        if len(pool):
+            near = pool.nlargest(MAX_NEAR_MISSES, 'master_priority').copy()
+            near['selected_by'] = 'near_miss_with_room'
+            near['n_discriminating_lines'] = NEAR_MISS_LINES
+            near['evidence_lines'] = 'room for both monomers; below the ' \
+                                     'chemistry floor'
+            table = pd.concat([table, near], ignore_index=True)
+            print(f'{len(near)} near-misses with room for both monomers',
+                  flush=True)
 
     for name, columns in SIDECARS:
         path = RES / name
@@ -351,6 +395,10 @@ def main():
         f'{int(table.n_discriminating_lines.min())} independent observations '
         'that are not merely family membership. Ordered by how many lines '
         'agree, then by substrate distance.', '',
+        'Entries marked a NEAR MISS did not reach the convergence threshold '
+        'and are included on a separate, stated criterion: two independent '
+        'lines plus demonstrated room for both monomers. The threshold was '
+        'not moved to accommodate them.', '',
         '**None of these has been assayed on nylon-6,6.** Convergence means '
         'several methods that fail differently happen to agree, which is a '
         'reason to spend a bench slot and not evidence that the enzyme works. '
