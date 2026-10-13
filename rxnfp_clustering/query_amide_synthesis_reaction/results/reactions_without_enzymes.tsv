@@ -39,6 +39,7 @@ rxn03268	0.4784	R04777	False	2.3.1.-	(1) Glycine[0] + (1) 4-Hydroxyphenylacetyl-
 rxn45674	0.471		False		(1) Acetyl-CoA[0] + (1) 1,3-Propanediamine[0] <=> (1) CoA[0] + (1) H+[0] + (1) N-(3-aminopropyl)acetamide[0]	no_hits
 rxn01798	0.4681	Malonyl-CoA:D-tryptophan N-malonyltransferase	True	2.3.1.112	(1) Malonyl-CoA[0] + (1) D-Tryptophan[0] <=> (1) CoA[0] + (2) H+[0] + (1) N2-Malonyl-D-tryptophan[0]	no_hits
 rxn41113	0.4652		True	6.3.2.44	(1) ATP[0] + (1) beta-Alanine[0] + (1) Pantoate[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) PAN[0]	no_hits
+rxn59882	0.4646		False		(1) 14-methylpentadecanoate[0] + (1) SEP-384[0] <=> (1) H2O[0] + (2) H+[0] + (1) Septacidin[0]	no_hits
 rxn45326	0.4645		False		(1) Decanoyl-CoA[0] + (1) N4-hydroxy-1-aminopropane[0] <=> (1) CoA[0] + (1) N3-decanoyl-N3-hydroxy-1,3-diaminopropane[0]	no_hits
 rxn09908	0.4619	L-amino acid ligase (L-alanylglycine)	False		(1) ATP[0] + (1) Glycine[0] + (1) L-Alanine[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) L-alanylglycine[0]	no_hits
 rxn10425	0.4603	R08323	False		(1) ATP[0] + (1) L-Threonine[0] + (1) 7-mercaptoheptanoic acid[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) 7-mercaptoheptanoylthreonine[0]	no_hits

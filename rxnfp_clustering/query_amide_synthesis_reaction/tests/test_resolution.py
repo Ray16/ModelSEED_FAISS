@@ -48,12 +48,33 @@ class SelectionTests(unittest.TestCase):
     def test_zero_slots(self):
         self.assertEqual(rank_entries([protein('A')], limit=0), [])
 
-    def test_ood_floor_and_best_framing(self):
+    def test_best_framing_per_reaction_is_kept(self):
         hits = pd.DataFrame({'rxn_id': ['a', 'a', 'b', 'c', 'd'],
                              'cosine_similarity': [.4, .8, .5, .49, float('nan')]})
         result = select_reactions(hits, .5)
-        self.assertEqual(result.rxn_id.tolist(), ['a', 'b'])
-        self.assertEqual(result.cosine_similarity.tolist(), [.8, .5])
+        self.assertEqual(result.rxn_id.tolist(), ['a', 'b', 'c', 'd'])
+        self.assertEqual(result.cosine_similarity.tolist()[:3], [.8, .5, .49])
+
+    def test_ood_floor_labels_rather_than_refuses(self):
+        """Admission is decided once, in stage 03, not re-litigated here.
+
+        Refusing a reaction that stage 03 already admitted - against a
+        DIFFERENT threshold - cost real enzymes: rxn14123 (EC 2.3.2.2) and
+        rxn19001 (EC 6.3.1.10) sit at cosine 0.499 against a floor of 0.5041,
+        and their ECs return 100 and 26 UniProt entries respectively.
+        """
+        hits = pd.DataFrame({'rxn_id': ['a', 'b', 'c'],
+                             'cosine_similarity': [.8, .5, .49]})
+        result = select_reactions(hits, .5)
+        self.assertEqual(len(result), 3, 'nothing is dropped')
+        self.assertEqual(result.set_index('rxn_id').below_ood_floor.tolist(),
+                         [False, False, True])
+
+    def test_substrate_distance_clears_the_ood_label(self):
+        hits = pd.DataFrame({'rxn_id': ['c'], 'cosine_similarity': [.1],
+                             'substrate_distance': [.9]})
+        result = select_reactions(hits, .5)
+        self.assertFalse(result.below_ood_floor.iloc[0])
 
 
 class ResolutionTests(unittest.TestCase):

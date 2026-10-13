@@ -118,7 +118,17 @@ def select_reactions(hits, floor, rescue=SUBSTRATE_DISTANCE_RESCUE):
     admitted = useful.cosine_similarity >= floor
     if 'substrate_distance' in useful.columns:
         admitted |= useful.substrate_distance.fillna(0) >= rescue
-    return useful[admitted].copy()
+    # Stage 03 already decided admission, having applied the mechanism screens.
+    # Re-deciding it here against a DIFFERENT threshold meant a reaction could
+    # be admitted to the candidate table and then never resolved - which is
+    # simply incoherent, and it cost real enzymes: rxn14123 (EC 2.3.2.2) and
+    # rxn19001 (EC 6.3.1.10) sit at cosine 0.499 against a floor of 0.5041 and
+    # were refused, though their ECs return 100 and 26 UniProt entries.
+    # Everything that reached `hits` is resolved; the floor is kept as a LABEL
+    # so the OOD information survives without gating anything.
+    useful = useful.copy()
+    useful['below_ood_floor'] = ~admitted
+    return useful
 
 
 @dataclass
