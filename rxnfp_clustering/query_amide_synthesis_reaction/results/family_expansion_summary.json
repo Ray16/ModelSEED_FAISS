@@ -1,0 +1,22 @@
+{
+  "families_seeded": 28,
+  "route_domain": 11,
+  "route_clade": 12,
+  "route_passenger_dropped": 5,
+  "clade_seed_proteins": 72,
+  "members_retrieved": 5255,
+  "new_accessions": 5158,
+  "by_tier": {
+    "clade_uniref50": 2893,
+    "diverse": 2237,
+    "reviewed": 105,
+    "structure": 12,
+    "protein_evidence": 8
+  },
+  "by_evidence": {
+    "clade_homolog": 2893,
+    "family_homolog": 2362
+  },
+  "saturated_queries": 15,
+  "failed_queries": 0
+}

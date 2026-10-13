@@ -1,0 +1,252 @@
+% Nylon-6,6 amide synthesis: querying ModelSEED for analogous reactions/enzymes.
+% House style: seahorse colortheme, light chrome tinted from `structure`.
+\documentclass[aspectratio=169,10pt]{beamer}
+\usetheme{default}
+\usecolortheme{seahorse}
+\usefonttheme{professionalfonts}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[skins]{tcolorbox}
+\usepackage{tikz}
+\graphicspath{{../figures/}}
+
+\definecolor{cInk}{HTML}{0B3D5C}
+\definecolor{cAccent}{HTML}{0072B2}
+\definecolor{cNIS}{HTML}{D55E00}
+\definecolor{cGood}{HTML}{1E8449}
+\definecolor{cBad}{HTML}{B03A2E}
+
+% Chrome stays LIGHT, tinted from seahorse's `structure` (house rule): a soft
+% bar with dark text, not a dark/navy block.
+\setbeamercolor{frametitle}{fg=structure!65!black,bg=structure!28!white}
+% Paint the title bar explicitly: setting only fg=white without drawing the
+% background leaves white-on-white, i.e. an invisible frame title.
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=3.0ex,dp=1.4ex,leftskip=0.35cm,
+                         rightskip=0.35cm]{frametitle}%
+    \usebeamerfont{frametitle}\insertframetitle%
+  \end{beamercolorbox}%
+}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamercolor{block title}{bg=structure!20!white,fg=black}
+\setbeamercolor{block body}{bg=structure!8!white}
+\setbeamertemplate{footline}[frame number]
+\setbeamercolor{footline}{fg=structure!50!black}
+
+\newcommand{\good}[1]{{\color{cGood}\textbf{#1}}}
+\newcommand{\bad}[1]{{\color{cBad}#1}}
+\newcommand{\nis}[1]{{\color{cNIS}\textbf{#1}}}
+\newcommand{\takeaway}[1]{\vfill\begin{tcolorbox}[colback=structure!12!white,
+  colframe=structure!60!black,boxrule=0.4pt,left=5pt,right=5pt,top=3pt,bottom=3pt]
+  \small #1\end{tcolorbox}}
+
+\title{\textbf{Is there an enzyme for nylon-6,6?}}
+\subtitle{Querying 33{,}246 ModelSEED reactions with the encoded diad-forming reaction}
+\date{8 October 2026}
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \begin{center}\small ECFP4 + DRFP reaction embedding $\cdot$ ModelSEED master @ \texttt{b539adb6}\end{center}
+\end{frame}
+
+% ---------------------------------------------------------------- question
+\begin{frame}{The question}
+  \textbf{Nylon-6,6} is a polyamide: \textbf{adipate} (C6 diacid) +
+  \textbf{hexamethylenediamine} (C6 diamine), joined by amide bonds.
+
+  \medskip
+  Is there anything in ModelSEED that does this chemistry --- and what enzyme
+  catalyses it?
+
+  \medskip
+  \begin{block}{Both monomers are already ModelSEED compounds}
+    \texttt{cpd03642} adipate \quad $\cdot$ \quad \texttt{cpd25003}
+    1,6-diaminohexane \quad $\cdot$ \quad \texttt{cpd09842} adipyl-CoA
+    \smallskip
+
+    The substrates exist. Only the amide-forming \emph{reaction} is missing.
+  \end{block}
+
+  \takeaway{Approach: encode the target reaction in the same embedding the
+  EC-prediction benchmark selected (ECFP4+DRFP), find its neighbours, then screen
+  those neighbours by \emph{mechanism} before trusting any ranking.}
+\end{frame}
+
+% ---------------------------------------------------------------- framings
+\begin{frame}{Biology does not condense a free acid with a free amine}
+  So the target is encoded in \textbf{six mechanistic framings}, each a separate
+  query, each asserted mass- and charge-balanced.
+
+  \medskip
+  \centering
+  \begin{tabular}{lrc}
+    \toprule
+    \textbf{Framing} & \textbf{Top-1 cosine} & \textbf{Out of distribution?} \\
+    \midrule
+    Direct condensation (acid + amine) & 0.502 & \bad{yes} (4.9th pct) \\
+    ATP $\rightarrow$ AMP + PPi        & 0.751 & no \\
+    ATP $\rightarrow$ ADP + P$_i$      & 0.749 & no \\
+    Acyl-CoA aminolysis                & \good{0.890} & no \\
+    \bottomrule
+  \end{tabular}
+
+  \takeaway{The nylon step is unprecedented \emph{only in its uncatalysed form}.
+  Posed the way an enzyme would do it --- activate the acid, then attack with the
+  amine --- it lands inside populated ModelSEED territory.}
+\end{frame}
+
+% ---------------------------------------------------------------- map
+\begin{frame}{Where the target lands in reaction space}
+  \centering
+  \includegraphics[width=0.93\linewidth]{fig_tsne_nylon_query.png}
+  \takeaway{Diamonds are the top candidate enzymes, drawn at the reaction that
+  retrieved them. t-SNE does not preserve cosine rank --- the ranking is
+  authoritative, the map is for orientation.}
+\end{frame}
+
+% ---------------------------------------------------------------- caution
+\begin{frame}{Cosine alone is not evidence of chemistry}
+  A whole-reaction difference fingerprint is dominated by the largest
+  compositional change --- \textbf{the cofactor}, not the amide bond.
+
+  \medskip
+  \begin{block}{Worked example}
+    The acyl-CoA query's nearest EC-labelled neighbours are thioester
+    \bad{hydrolases} (EC 3.1.2, agreement 0.80, no abstain). They make
+    \textbf{no amide at all}; they merely release CoA.
+  \end{block}
+
+  \medskip
+  Candidates therefore pass three \textbf{embedding-independent} screens,
+  applied \emph{before} any top-$N$ cut:
+  \begin{enumerate}
+    \item a free amine is acylated --- proven by \textbf{cutting the product
+      amide and reconstituting the parent amine}, which also \emph{names} the acceptor;
+    \item that nitrogen is a genuine aliphatic amine (not aromatic, amide,
+      nitrile or guanidino);
+    \item the substrate is a small molecule, not a protein.
+  \end{enumerate}
+
+  \takeaway{33{,}246 reactions $\rightarrow$ \textbf{726} acylate a free amine
+  $\rightarrow$ \textbf{473} eligible after excluding macromolecular (231) and
+  unbalanced (22) cases. 20 curated controls guard these screens.}
+\end{frame}
+
+% ---------------------------------------------------------------- families
+\begin{frame}{The hits converge on one family}
+  \centering
+  \includegraphics[width=0.82\linewidth]{fig_families.png}
+  \takeaway{\nis{16 of the top 60 candidates are a single family} ---
+  IucA/IucC, the \textbf{NIS (NRPS-independent siderophore) synthetases}. One
+  family found sixteen times is convergence, not sixteen independent hits.}
+\end{frame}
+
+% ---------------------------------------------------------------- chemistry
+\begin{frame}{Why this family: they make polyamides}
+  NIS synthetases form ATP-dependent amide bonds between carboxylic acids and
+  \textbf{free polyamines} --- and several \textbf{iteratively oligomerise}
+  bifunctional monomers into dimers and trimers.
+
+  \medskip
+  \centering
+  \footnotesize
+  \begin{tabular}{llrl}
+    \toprule
+    \textbf{Enzyme} & \textbf{Native reaction (UniProt, experimental)} & \textbf{Cosine} & \textbf{Family} \\
+    \midrule
+    \nis{BibC}  & 2 $\times$ succinyl-N-OH-cadaverine + 2 ATP $\rightarrow$ bisucaberin & \good{0.911} & \nis{IucA/IucC} \\
+    \nis{PubC}  & 2 $\times$ succinyl-N-OH-putrescine + 2 ATP $\rightarrow$ putrebactin & \good{0.898} & \nis{IucA/IucC} \\
+    AsbA        & spermidine + citrate + ATP $\rightarrow$ N$^8$-citryl-spermidine      & 0.851 & \nis{IucA/IucC} \\
+    AsbB        & N$^8$-citryl-spermidine + spermidine + ATP (chain extension)          & 0.772 & \nis{IucA/IucC} \\
+    SfnaD       & D-ornithine + citrate + ATP                                           & 0.753 & \nis{IucA/IucC} \\
+    PuuA        & putrescine + L-glutamate + ATP $\rightarrow$ $\gamma$-Glu-putrescine  & 0.749 & Gln synthetase \\
+    \bottomrule
+  \end{tabular}
+
+  \takeaway{BibC and PubC take \emph{one} bifunctional monomer and join it
+  head-to-tail \textbf{twice}. That is polycondensation --- the same operation
+  nylon-6,6 synthesis requires.}
+\end{frame}
+
+% ---------------------------------------------------------------- the key slide
+\begin{frame}{The native substrate is the nylon diad's structural class}
+  \centering
+  \includegraphics[width=\linewidth]{fig_substrate_gap.png}
+
+  \medskip
+  \begin{minipage}{0.92\linewidth}\small
+    All three are \textbf{diamine--diacid half-amides}: free carboxylate at one
+    end, free primary amine at the other. BibC and PubC natively \emph{dimerise}
+    this exact motif.
+  \end{minipage}
+
+  \takeaway{This reframes the experiment: not only ``make the diad'', but
+  \textbf{feed the pre-formed diad to BibC/PubC} and look for dimerisation ---
+  the chain-extension step of nylon-6,6. \bad{Gap:} native monomers are
+  N-hydroxylated and two carbons shorter per arm.}
+\end{frame}
+
+% ---------------------------------------------------------------- deliverable
+\begin{frame}{Candidates for the bench}
+  \centering
+  \footnotesize
+  \begin{tabular}{lllrl}
+    \toprule
+    \textbf{Enzyme} & \textbf{UniProt} & \textbf{Family} & \textbf{aa} & \textbf{Why test it} \\
+    \midrule
+    \nis{PubC}  & \texttt{P0DXD6}     & \nis{IucA/IucC} & 629 & cleanest dimerisation of a half-amide \\
+    \nis{BibC}  & \texttt{B6EP94}     & \nis{IucA/IucC} & 819 & same, C5 monomer; highest cosine \\
+    AsbA        & \texttt{A0A0F7RJ52} & \nis{IucA/IucC} & 602 & two \emph{different} monomers (AA/BB) \\
+    AsbB        & \texttt{Q81RQ8}     & \nis{IucA/IucC} & 612 & chain extension; has a PDB structure \\
+    PuuA        & \texttt{P78061}     & Gln synthetase  & 472 & \emph{E.~coli}; easiest expression/assay \\
+    \bottomrule
+  \end{tabular}
+
+  \medskip
+  \begin{block}{Deliverable}
+    \texttt{results/candidates\_ranked.tsv} --- \textbf{152 enzymes}, 87
+    Swiss-Prot reviewed, all top-20 prokaryotic, AlphaFold models for all.
+    Evidence columns exposed: cosine, \textbf{Pfam family}, evidence strength
+    (exact-Rhea / EC / name), diamine acceptor, length, PDB.
+  \end{block}
+
+  \takeaway{Similarity is to \emph{reactions}. No listed enzyme is known to
+  accept adipate or HMDA --- this analysis \textbf{generates} that hypothesis,
+  it does not validate it.}
+\end{frame}
+
+% ---------------------------------------------------------------- caveats
+\begin{frame}{What we found along the way}
+  \begin{block}{The 2026-10-06 ModelSEED structure refresh is wrong for amides}
+    $\sim$17\% of compounds --- including NAD, NADH, NADP, CoA, every acyl-CoA,
+    nicotinamide --- write carboxamides as \bad{iminols} (\texttt{C([O-])=N} and
+    \texttt{C(O)=N}), with adenine N1 as \texttt{[nH+]}. An iminol is
+    \textbf{invisible to an amide SMARTS}. 6{,}313 compounds repaired; the repair
+    reproduces the previous snapshot exactly.
+  \end{block}
+
+  \begin{block}{Honest limitations}
+    \begin{itemize}
+      \item The repair is \emph{not} charge-neutral (5{,}807 compounds shift
+        charge), so the corpus audits heavy-atom balance and proton-fixability
+        separately; unbalanced reactions are excluded, not hidden.
+      \item The two best hits (BibC, PubC) carry \textbf{no Rhea and no EC in
+        ModelSEED}; they were recovered by pivoting through \textbf{MetaNetX}
+        to the Rhea reaction cited in their own UniProt records. Without that,
+        29\% of ranked reactions resolve to no enzyme at all.
+      \item Screens are structural inference, not atom-mapped proof.
+    \end{itemize}
+  \end{block}
+
+  \takeaway{Whole pipeline reproducible in \textbf{$\sim$5 minutes}
+  (\texttt{run\_all.py}), parallelised with load-aware worker sizing;
+  20 curated controls; corpus pinned by content hash.}
+\end{frame}
+
+\end{document}

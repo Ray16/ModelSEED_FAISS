@@ -1,0 +1,19 @@
+pfam	family	n_enzymes	best_cosine	n_experimental_statements	ec_numbers	example_genes	representative_native_substrates	members
+PF06276	Ferric iron reductase FhuF-like transporter	16	0.9106	14	6.3.2.56;6.3.2.58;6.3.2.63;6.3.2.64	bibC;pubC;asbA;asbB;sfnaD;alcC	N-(3-carboxypropanoyl)-N-hydroxyputrescine	A0A0F7RJ52;A0A0L0MDY2;A0A0R4J7U8;A0A0T7CQT4;A0A1C3K734;A0A1C3K7J0;A0A8J3F6N4;A0ABU8ZC62;A0ACE0BKA1;B6EP94
+PF04183	IucA / IucC family	16	0.9106	14	6.3.2.56;6.3.2.58;6.3.2.63;6.3.2.64	bibC;pubC;asbA;asbB;sfnaD;alcC	N-(3-carboxypropanoyl)-N-hydroxyputrescine	A0A0F7RJ52;A0A0L0MDY2;A0A0R4J7U8;A0A0T7CQT4;A0A1C3K734;A0A1C3K7J0;A0A8J3F6N4;A0ABU8ZC62;A0ACE0BKA1;B6EP94
+PF13523	Acetyltransferase (GNAT) domain	1	0.9106	3	6.3.2.64	bibC	N-(3-carboxypropanoyl)-N-hydroxycadaverine	B6EP94
+PF00120	Glutamine synthetase, catalytic domain	8	0.7493	10	6.3.1.11	JCM19235_6102;puuA;GEAM_2303;glnA2;glnA3;MPL3356_310153	putrescine + L-glutamate	A0A024HPU7;A0A085G9T0;A0A090DU11;A0A090RTN3;I3R584;P78061;Q9KZC7;Q9RDS6
+PF03951	Glutamine synthetase, beta-Grasp domain	1	0.7493	4		glnA2	putrescine + L-glutamate	Q9RDS6
+PF16952	Glutamine synthetase N-terminal domain	1	0.7493	1	6.3.1.11	glnA2	putrescine + L-glutamate	I3R584
+PF02875	Mur ligase, glutamate ligase domain	8	0.7057	2	6.3.2.37;6.3.2.7	ETAA8_47270;murE;Pan97_25500;murE_1;Enr8_16300;murE_3	UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + L-lysine	A0A150HGB9;A0A2S9YL87;A0A2X4W351;A0A517YHC3;A0A518C8G2;A0A5B9P7B8;A0A5C5V6T3;Q9WY79
+PF08245	Mur ligase middle domain	7	0.7057	2	6.3.2.37;6.3.2.7	ETAA8_47270;murE;Pan97_25500;murE_1;Enr8_16300	UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + L-lysine	A0A2S9YL87;A0A2X4W351;A0A517YHC3;A0A518C8G2;A0A5B9P7B8;A0A5C5V6T3;Q9WY79
+PF01225	Mur ligase family, catalytic domain	4	0.7057	2	6.3.2.37;6.3.2.7	murE;murE_1;Enr8_16300	UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + L-lysine	A0A2X4W351;A0A5B9P7B8;A0A5C5V6T3;Q9WY79
+PF08840	BAAT / Acyl-CoA thioester hydrolase C terminal	4	0.6856	25	2.3.1.65;3.1.2.2;3.1.2.27	Acnat1;Baat;BAAT	choloyl-CoA + glycine	A2AKK5;Q14032;Q63276;Q91X34
+PF04775	Acyl-CoA thioester hydrolase/BAAT N-terminal region	4	0.6856	25	2.3.1.65;3.1.2.2;3.1.2.27	Acnat1;Baat;BAAT	choloyl-CoA + glycine	A2AKK5;Q14032;Q63276;Q91X34
+PF00583	Acetyltransferase (GNAT) family	6	0.6752	32	2.3.1.87	CELE_T10B5.4;AANATL2;CELE_R13D11.4;speck	dopamine + (9Z)-octadecenoyl-CoA	A0A0K3ASB6;A0A0K3ASV9;A0A0K3AVV8;F0IWS9;Q94521;Q9VMG0
+nan	nan	4	0.6752	0	2.3.1.87	CELE_W02D7.4;CELE_W02D7.5;Bcep18194_C6699;iaaL	dopamine + (9Z)-octadecenoyl-CoA	A0A193SGS7;O17525;O17526;Q39P67
+PF08444	Aralkyl acyl-CoA:amino acid N-acyltransferase, C-terminal region	3	0.6354	14	2.3.1.13	GLYATL3;Glyatl3;GLYATL2	an acyl-CoA + glycine	E9Q5L8;Q5SZD4;Q8WU03
+PF06021	Aralkyl acyl-CoA:amino acid N-acyltransferase	3	0.6354	14	2.3.1.13	GLYATL3;Glyatl3;GLYATL2	an acyl-CoA + glycine	E9Q5L8;Q5SZD4;Q8WU03
+PF03738	Glutathionylspermidine synthase preATP-grasp	6	0.6344	0		Fbal_2253;orfa;Psed_0171;ygiC;ACTIVE_7860;PC1_0311		A0A7D4ABJ6;C6DIS0;C9Y0C1;D4E0R7;E1SWH4;F4CKA0
+PF00501	AMP-binding enzyme	4	0.631	0	6.3.2.20	iaaL;An02g13080	(indol-3-yl)acetate + L-lysine	A0ABY1UDC9;A0ABY1UG66;A2QF28;P18204
+PF08454	RyR and IP3R Homology associated	1	0.631	0		IMG5_029930		G0QLF6

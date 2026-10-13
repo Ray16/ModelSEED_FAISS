@@ -1,0 +1,44 @@
+dropping 113 zero-norm (degenerate) reactions
+PCA(50) on (33252, 4096)
+t-SNE
+[t-SNE] Computing 151 nearest neighbors...
+[t-SNE] Indexed 33252 samples in 0.006s...
+[t-SNE] Computed neighbors for 33252 samples in 2.426s...
+[t-SNE] Computed conditional probabilities for sample 1000 / 33252
+[t-SNE] Computed conditional probabilities for sample 2000 / 33252
+[t-SNE] Computed conditional probabilities for sample 3000 / 33252
+[t-SNE] Computed conditional probabilities for sample 4000 / 33252
+[t-SNE] Computed conditional probabilities for sample 5000 / 33252
+[t-SNE] Computed conditional probabilities for sample 6000 / 33252
+[t-SNE] Computed conditional probabilities for sample 7000 / 33252
+[t-SNE] Computed conditional probabilities for sample 8000 / 33252
+[t-SNE] Computed conditional probabilities for sample 9000 / 33252
+[t-SNE] Computed conditional probabilities for sample 10000 / 33252
+[t-SNE] Computed conditional probabilities for sample 11000 / 33252
+[t-SNE] Computed conditional probabilities for sample 12000 / 33252
+[t-SNE] Computed conditional probabilities for sample 13000 / 33252
+[t-SNE] Computed conditional probabilities for sample 14000 / 33252
+[t-SNE] Computed conditional probabilities for sample 15000 / 33252
+[t-SNE] Computed conditional probabilities for sample 16000 / 33252
+[t-SNE] Computed conditional probabilities for sample 17000 / 33252
+[t-SNE] Computed conditional probabilities for sample 18000 / 33252
+[t-SNE] Computed conditional probabilities for sample 19000 / 33252
+[t-SNE] Computed conditional probabilities for sample 20000 / 33252
+[t-SNE] Computed conditional probabilities for sample 21000 / 33252
+[t-SNE] Computed conditional probabilities for sample 22000 / 33252
+[t-SNE] Computed conditional probabilities for sample 23000 / 33252
+[t-SNE] Computed conditional probabilities for sample 24000 / 33252
+[t-SNE] Computed conditional probabilities for sample 25000 / 33252
+[t-SNE] Computed conditional probabilities for sample 26000 / 33252
+[t-SNE] Computed conditional probabilities for sample 27000 / 33252
+[t-SNE] Computed conditional probabilities for sample 28000 / 33252
+[t-SNE] Computed conditional probabilities for sample 29000 / 33252
+[t-SNE] Computed conditional probabilities for sample 30000 / 33252
+[t-SNE] Computed conditional probabilities for sample 31000 / 33252
+[t-SNE] Computed conditional probabilities for sample 32000 / 33252
+[t-SNE] Computed conditional probabilities for sample 33000 / 33252
+[t-SNE] Computed conditional probabilities for sample 33252 / 33252
+[t-SNE] Mean sigma: 0.000000
+[t-SNE] KL divergence after 250 iterations with early exaggeration: 79.804352
+[t-SNE] KL divergence after 1000 iterations: 0.984621
+Saved /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/figures/fig_tsne_nylon_query.png

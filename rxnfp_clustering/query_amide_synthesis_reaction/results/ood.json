@@ -1,0 +1,37 @@
+{
+  "reference": "EC-labelled subset (n=13081)",
+  "ood_threshold_5th_pct_of_reference_1nn": 0.5041,
+  "reference_1nn_median": 0.8909,
+  "queries": {
+    "direct_condensation": {
+      "top1_similarity": 0.5024,
+      "is_ood": true,
+      "percentile_vs_reference_1nn": 4.92
+    },
+    "atp_amp_ligase": {
+      "top1_similarity": 0.7507,
+      "is_ood": false,
+      "percentile_vs_reference_1nn": 23.24
+    },
+    "atp_adp_ligase": {
+      "top1_similarity": 0.7493,
+      "is_ood": false,
+      "percentile_vs_reference_1nn": 23.02
+    },
+    "coa_aminolysis": {
+      "top1_similarity": 0.89,
+      "is_ood": false,
+      "percentile_vs_reference_1nn": 49.83
+    },
+    "coa_aminolysis_putrescine": {
+      "top1_similarity": 0.8823,
+      "is_ood": false,
+      "percentile_vs_reference_1nn": 48.25
+    },
+    "coa_aminolysis_cadaverine": {
+      "top1_similarity": 0.8823,
+      "is_ood": false,
+      "percentile_vs_reference_1nn": 48.25
+    }
+  }
+}

@@ -1,0 +1,32 @@
+repaired 5,867 structures (5,807 of them changed formal charge)
+36,889 compounds with a parseable structure
+33,359 scoreable reactions (13,100 with a full 4-level EC); 4,025 not heavy-atom balanced
+  ECFP4 10,000/33,359
+  ECFP4 20,000/33,359
+  ECFP4 30,000/33,359
+DRFP encoding on 16 workers
+  DRFP 5,000/33,359
+  DRFP 10,000/33,359
+  DRFP 15,000/33,359
+  DRFP 20,000/33,359
+  DRFP 25,000/33,359
+  DRFP 30,000/33,359
+  DRFP 30,359/33,359
+{
+  "branch": "master",
+  "commit": "b539adb69a955dac15cc30dbeb3debbd87739018",
+  "commit_date": "2026-10-06",
+  "n_compounds_with_structure": 36889,
+  "structures_repaired": 5867,
+  "structures_repaired_with_charge_change": 5807,
+  "n_reactions": 33359,
+  "n_reactions_with_full_ec": 13100,
+  "n_reactions_not_heavy_balanced": 4025,
+  "embedding_shape": [
+    33359,
+    4096
+  ],
+  "corpus_sha256": "e16c646d13be4771e06286805d430b5d88746d51f4d497e3ddc477c1491238e2",
+  "rdkit_version": "2026.03.5",
+  "proton_convention": "H+ (cpd00067) stripped from every reaction"
+}

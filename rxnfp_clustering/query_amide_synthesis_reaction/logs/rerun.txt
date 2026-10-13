@@ -1,0 +1,175 @@
+python   /homes/rzhu/miniforge3/envs/palm/bin/python
+workers  N_WORKERS=24
+
+== enzymes: resolve UniProt enzymes (network)
+101 distinct small-molecule amide-forming reactions to resolve
+Resolving 101 reactions on 6 UniProt workers
+  rxn21038 cos=0.851 via Rhea: 1 enzymes
+  rxn21314 cos=0.911 via Name: 1 enzymes
+  rxn21301 cos=0.816 via no identifier: 0 enzymes
+  rxn21308 cos=0.898 via Name: 2 enzymes
+  rxn21296 cos=0.847 via no identifier: 0 enzymes
+  rxn21300 cos=0.806 via no identifier: 0 enzymes
+  rxn21036 cos=0.772 via Rhea: 1 enzymes
+  rxn40655 cos=0.754 via no identifier: 0 enzymes
+  rxn42510 cos=0.753 via Rhea: 1 enzymes
+  rxn41215 cos=0.754 via no identifier: 0 enzymes
+  rxn47068 cos=0.754 via no identifier: 0 enzymes
+  rxn48383 cos=0.754 via no identifier: 0 enzymes
+  rxn44948 cos=0.720 via no identifier: 0 enzymes
+  rxn52889 cos=0.686 via Rhea: 1 enzymes
+  rxn42600 cos=0.720 via Name: 1 enzymes
+  rxn52888 cos=0.686 via Rhea: 1 enzymes
+  rxn22343 cos=0.706 via Rhea+EC: 14 enzymes
+  rxn52893 cos=0.686 via Rhea: 1 enzymes
+  rxn21311 cos=0.738 via Name: 18 enzymes
+  rxn52892 cos=0.686 via Rhea: 1 enzymes
+  rxn01553 cos=0.719 via no identifier: 0 enzymes
+  rxn54618 cos=0.676 via Rhea: 1 enzymes
+  rxn52891 cos=0.686 via Rhea: 1 enzymes
+  rxn52890 cos=0.686 via Rhea: 1 enzymes
+  rxn05123 cos=0.749 via Rhea+EC: 304 enzymes
+  rxn56035 cos=0.675 via Rhea: 1 enzymes
+  rxn42395 cos=0.676 via Name: 75 enzymes
+  rxn20903 cos=0.658 via no identifier: 0 enzymes
+  rxn16116 cos=0.644 via no identifier: 0 enzymes
+  rxn53137 cos=0.675 via Rhea: 300 enzymes
+  rxn53143 cos=0.671 via Rhea: 300 enzymes
+  rxn53138 cos=0.675 via Rhea: 300 enzymes
+  rxn55641 cos=0.635 via Rhea: 1 enzymes
+  rxn53139 cos=0.671 via Rhea: 300 enzymes
+  rxn55642 cos=0.635 via Rhea: 1 enzymes
+  rxn55643 cos=0.635 via Rhea: 1 enzymes
+  rxn52837 cos=0.635 via Rhea: 3 enzymes
+  rxn53112 cos=0.635 via Rhea: 3 enzymes
+  rxn54490 cos=0.635 via Rhea: 2 enzymes
+  rxn52835 cos=0.635 via Rhea: 3 enzymes
+  rxn53141 cos=0.671 via Rhea: 300 enzymes
+  rxn53135 cos=0.635 via Rhea: 1 enzymes
+  rxn53136 cos=0.635 via Rhea: 1 enzymes
+  rxn55638 cos=0.635 via Rhea: 1 enzymes
+  rxn52836 cos=0.635 via Rhea: 3 enzymes
+  rxn55640 cos=0.635 via Rhea: 1 enzymes
+  rxn47618 cos=0.618 via no identifier: 0 enzymes
+  rxn12045 cos=0.634 via EC: 36 enzymes
+  rxn20914 cos=0.625 via no identifier: 0 enzymes
+  rxn54616 cos=0.618 via Rhea: 1 enzymes
+  rxn53142 cos=0.643 via Rhea: 300 enzymes
+  rxn54750 cos=0.610 via Rhea: 1 enzymes
+  rxn02221 cos=0.631 via Rhea+EC: 8 enzymes
+  rxn53134 cos=0.607 via Rhea: 1 enzymes
+  rxn02706 cos=0.617 via Rhea+EC: 38 enzymes
+  rxn59693 cos=0.604 via no identifier: 0 enzymes
+  rxn47516 cos=0.605 via Rhea+EC: 11 enzymes
+  rxn60457 cos=0.604 via no identifier: 0 enzymes
+  rxn60293 cos=0.604 via no identifier: 0 enzymes
+  rxn01552 cos=0.605 via no identifier: 0 enzymes
+  rxn59530 cos=0.604 via no identifier: 0 enzymes
+  rxn01463 cos=0.608 via EC: 300 enzymes
+  rxn20913 cos=0.602 via no identifier: 0 enzymes
+  rxn21039 cos=0.602 via Rhea: 1 enzymes
+  rxn55541 cos=0.599 via Rhea: 3 enzymes
+  rxn02096 cos=0.597 via Rhea+EC: 2 enzymes
+  rxn11953 cos=0.595 via no identifier: 0 enzymes
+  rxn23366 cos=0.554 via Rhea: 3 enzymes
+  rxn09897 cos=0.553 via no identifier: 0 enzymes
+  rxn12043 cos=0.585 via EC: 36 enzymes
+  rxn23369 cos=0.553 via no identifier: 0 enzymes
+  rxn52405 cos=0.552 via no identifier: 0 enzymes
+  rxn01791 cos=0.620 via Rhea+EC: 600 enzymes
+  rxn52404 cos=0.552 via no identifier: 0 enzymes
+  rxn52403 cos=0.552 via no identifier: 0 enzymes
+  rxn00661 cos=0.594 via EC: 300 enzymes
+  rxn25245 cos=0.503 via Rhea: 1 enzymes
+  rxn24205 cos=0.523 via no identifier: 0 enzymes
+  rxn01159 cos=0.524 via Rhea+EC: 49 enzymes
+  rxn60283 cos=0.502 via no identifier: 0 enzymes
+  rxn05054 cos=0.496 via EC: 26 enzymes
+  rxn19001 cos=0.496 via EC: 26 enzymes
+  rxn01460 cos=0.484 via no identifier: 0 enzymes
+  rxn12042 cos=0.484 via EC: 36 enzymes
+  rxn53854 cos=0.453 via Rhea: 2 enzymes
+  rxn59882 cos=0.465 via no identifier: 0 enzymes
+  rxn15958 cos=0.453 via Name: 7 enzymes
+  rxn24632 cos=0.430 via no identifier: 0 enzymes
+  rxn53855 cos=0.453 via Rhea: 2 enzymes
+  rxn52033 cos=0.453 via Rhea: 6 enzymes
+  rxn16218 cos=0.596 via Rhea+EC: 600 enzymes
+  rxn53857 cos=0.430 via Rhea: 2 enzymes
+  rxn55494 cos=0.430 via Rhea: 2 enzymes
+  rxn53519 cos=0.423 via Rhea: 6 enzymes
+  rxn53123 cos=0.552 via Rhea: 300 enzymes
+  rxn14123 cos=0.499 via EC: 300 enzymes
+  rxn53856 cos=0.383 via Rhea: 2 enzymes
+  rxn54110 cos=0.368 via Rhea: 3 enzymes
+  rxn52034 cos=0.423 via Rhea: 4 enzymes
+  rxn53520 cos=0.402 via Rhea: 6 enzymes
+  rxn20060 cos=0.368 via EC: 2 enzymes
+
+291 enzymes across 71 reactions (132 prokaryotic, 42 with a PDB structure)
+  rxn_id  cosine_similarity    uniprot                                             gene                                                                                                                      organism                                                                                                                                                                                                                                                   protein_name
+rxn21038             0.8510 A0A0F7RJ52                                   asbA GBAA_1981                                                                                                            Bacillus anthracis                                                                                                                                                                                 Spermidine-citrate ligase (EC 6.3.2.-) (Petrobactin biosynthesis protein AsbA)
+rxn21036             0.7722     Q81RQ8                                   asbB GBAA_1982                                                                                                            Bacillus anthracis                                                                                                                                Citryl-spermidine/3,4-dihydroxybenzoyl-citryl-spermidine:spermidine ligase (EC 6.3.2.-) (Petrobactin biosynthesis protein AsbB)
+rxn42510             0.7528     Q2FW70                              sfnaD SAOUHSC_02436                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                                                                                                                                      D-ornithine--citrate ligase (EC 6.3.2.58)
+rxn05123             0.7493     P78061                           puuA ycjK b1297 JW5201                                                                                                 Escherichia coli (strain K12)                                                                                                                                               Gamma-glutamylputrescine synthetase PuuA (Gamma-Glu-Put synthetase) (EC 6.3.1.11) (Glutamate--putrescine ligase)
+rxn05123             0.7493     I3R584 glnA2 HFX_1688 BM92_00670 C439_02042 E6P09_11460 Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4) (Halobacterium mediterranei)                                                                                                                                                    Gamma-glutamylputrescine synthetase (Gamma-Glu-Put synthetase) (EC 6.3.1.11) (Glutamate--putrescine ligase)
+rxn05123             0.7493     Q9RDS6                                    glnA2 SCO2241                                                                  Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)                                                                                                                                                                                                          Gamma-glutamylpolyamine synthetase GlnA2 (EC 6.3.1.-)
+rxn05123             0.7493     Q9KZC7                                    glnA3 SCO6962                                                                  Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)                                                                                                                                                                                                          Gamma-glutamylpolyamine synthetase GlnA3 (EC 6.3.1.-)
+rxn05123             0.7493 A0A1U9YYU0                                  puuA Mame_01242                                                                                             Martelella mediterranea DSM 17316                                                                                                                                                                                                         Gamma-glutamylputrescine synthetase PuuA (EC 6.3.1.11)
+rxn05123             0.7493     M5EX69                                     MESS2_760102                                                                                          Mesorhizobium metallidurans STM 2683                                                                                                                                                                                                                     Glutamate--putrescine ligase (EC 6.3.1.11)
+rxn05123             0.7493 A0A1E3H007                               puuA_3 A6302_03071                                                                                                   Methylobrevis pamukkalensis                                                                                                                                                                                                         Gamma-glutamylputrescine synthetase PuuA (EC 6.3.1.11)
+rxn05123             0.7493 A0A2C9D2J1                                 puuA_2 HDIA_0933                                                                                                Hartmannibacter diazotrophicus                                                                                                                                                                                                         Gamma-glutamylputrescine synthetase PuuA (EC 6.3.1.11)
+rxn22343             0.7057     Q9WY79                                     murE TM_0237                                           Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8) UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase (EC 6.3.2.37) (EC 6.3.2.7) (D-lysine-adding enzyme) (L-lysine-adding enzyme) (UDP-MurNAc-L-Ala-D-Glu:LD-Lys ligase) (UDP-MurNAc-tripeptide synthetase) (UDP-N-acetylmuramyl-tripeptide synthetase)
+rxn22343             0.7057 A0A518C8G2                                      Pan97_25500                                                                                                           Bremerella volcania                                                                                                                                                                                                                                 MurE-like ligase (EC 6.3.2.37)
+rxn22343             0.7057 A0A517YHC3                                      ETAA8_47270                                                                                                      Anatilimnocola aggregata                                                                                                                                                                                                                                 MurE-like ligase (EC 6.3.2.37)
+rxn22343             0.7057 A0A2S9YL87                               murE_1 ENSA5_01830                                                                                                            Enhygromyxa salina                                                                                                                                                                                      UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase (EC 6.3.2.37)
+rxn22343             0.7057 A0A5B9P7B8                                murE MFFC18_24180                                                                                                        Mariniblastus fucicola                                                                                                                                                                                      UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase (EC 6.3.2.37)
+rxn22343             0.7057 A0A2X4W351                            murE_1 NCTC4824_02073                                                                                           Lederbergia lenta (Bacillus lentus)                                                                                                                                                                 UDP-N-acetylmuramoylalanyl-D-glutamate--2, 6-diaminopimelate ligase (EC 6.3.2.13, EC 6.3.2.37)
+rxn22343             0.7057 A0A5C5V6T3                                       Enr8_16300                                                                                                  Blastopirellula retiformator                                                                                                                                                                                                                                 MurE-like ligase (EC 6.3.2.37)
+rxn22343             0.7057 A0A5C5WDG0                                     Pla111_04990                                                                                                     Botrimarina hoheduenensis                                                                                                                                                                                                                                 MurE-like ligase (EC 6.3.2.37)
+rxn42395             0.6765     Q2G1N1                               sbnC SAOUHSC_00077                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                                                                                           Staphyloferrin B synthase (EC 6.3.2.56) (Staphyloferrin B biosynthesis protein SbnC)
+rxn42395             0.6765     Q2G1M9                               sbnE SAOUHSC_00079                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                                                                             L-2,3-diaminopropanoate--citrate ligase (EC 6.3.2.54) (Staphyloferrin B biosynthesis protein SbnE)
+rxn42395             0.6765     A6QDA0                                   sbnA NWMN_0060                                                                                         Staphylococcus aureus (strain Newman)                                                                                                                                   N-(2-amino-2-carboxyethyl)-L-glutamate synthase (ACEGA synthase) (EC 2.5.1.140) (Staphyloferrin B biosynthesis protein SbnA)
+rxn42395             0.6765     Q2G1N3                               sbnA SAOUHSC_00075                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                                                   N-(2-amino-2-carboxyethyl)-L-glutamate synthase (ACEGA synthase) (EC 2.5.1.140) (Staphyloferrin B biosynthesis protein SbnA)
+rxn42395             0.6765     Q2G1N2                               sbnB SAOUHSC_00076                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                                                           N-((2S)-2-amino-2-carboxyethyl)-L-glutamate dehydrogenase (EC 1.5.1.51) (Staphyloferrin B biosynthesis protein SbnB)
+rxn42395             0.6765     Q2G1M8                               sbnF SAOUHSC_00080                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)                                                                                                           2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase (EC 6.3.2.55) (Staphyloferrin B biosynthesis protein SbnF)
+   done in 39.5s
+
+== table: prioritised candidate table
+156 distinct candidate enzymes (54 on free-diamine reactions, 75 with exact-reaction evidence)
+ priority    uniprot                                             gene                                                                                                                      organism  cosine_similarity  acylates_free_diamine  exact_reaction_evidence
+   6.7722     Q81RQ8                                   asbB GBAA_1982                                                                                                            Bacillus anthracis             0.7722                   True                     True
+   6.7057     Q9WY79                                     murE TM_0237                                           Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)             0.7057                   True                     True
+   6.6765     Q2G1N1                               sbnC SAOUHSC_00077                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)             0.6765                   True                     True
+   6.5537     Q46E79                                  pylC Mbar_A0837                                                                              Methanosarcina barkeri (strain Fusaro / DSM 804)             0.5537                   True                     True
+   5.8510 A0A0F7RJ52                                   asbA GBAA_1981                                                                                                            Bacillus anthracis             0.8510                   True                     True
+   5.7528     Q2FW70                              sfnaD SAOUHSC_02436                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)             0.7528                   True                     True
+   5.7493     I3R584 glnA2 HFX_1688 BM92_00670 C439_02042 E6P09_11460 Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4) (Halobacterium mediterranei)             0.7493                   True                     True
+   5.7493     Q9RDS6                                    glnA2 SCO2241                                                                  Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)             0.7493                   True                     True
+   5.7493     P78061                           puuA ycjK b1297 JW5201                                                                                                 Escherichia coli (strain K12)             0.7493                   True                     True
+   5.7493     Q9KZC7                                    glnA3 SCO6962                                                                  Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)             0.7493                   True                     True
+   5.6310     P18204                                             iaaL                                                                  Pseudomonas savastanoi (Pseudomonas syringae pv. savastanoi)             0.6310                   True                     True
+   5.6183     Q2G1M9                               sbnE SAOUHSC_00079                                                                              Staphylococcus aureus (strain NCTC 8325 / PS 47)             0.6183                   True                     True
+   5.5537     Q8PWY3                                     pylC MM_1443               Methanosarcina mazei (strain ATCC BAA-159 / DSM 3647 / Goe1 / Go1 / JCM 11833 / OCM 88) (Methanosarcina frisia)             0.5537                   True                     True
+   5.5537     Q8TUC0                                     pylC MA_0153                                                   Methanosarcina acetivorans (strain ATCC 35395 / DSM 2834 / JCM 12185 / C2A)             0.5537                   True                     True
+   4.7493 A0A1U9YYU0                                  puuA Mame_01242                                                                                             Martelella mediterranea DSM 17316             0.7493                   True                    False
+   4.7493 A0A2C9D2J1                                 puuA_2 HDIA_0933                                                                                                Hartmannibacter diazotrophicus             0.7493                   True                    False
+   4.7493     M5EX69                                     MESS2_760102                                                                                          Mesorhizobium metallidurans STM 2683             0.7493                   True                    False
+   4.7493 A0A1E3H007                               puuA_3 A6302_03071                                                                                                   Methylobrevis pamukkalensis             0.7493                   True                    False
+   4.7057 A0A2S9YL87                               murE_1 ENSA5_01830                                                                                                            Enhygromyxa salina             0.7057                   True                    False
+   4.7057 A0A517YHC3                                      ETAA8_47270                                                                                                      Anatilimnocola aggregata             0.7057                   True                    False
+   done in 0.7s
+
+== figure: t-SNE map with candidates overlaid
+dropping 113 zero-norm (degenerate) reactions
+reusing cached layout tsne_6d72dc38113becf8.npy
+Saved /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/figures/fig_tsne_nylon_query.png
+   done in 9.0s
+
+==============================================
+  enzymes      39.5s  ok
+  table         0.7s  ok
+  figure        9.0s  ok
+  TOTAL        49.2s
+
+Candidates: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/candidates_ranked.tsv

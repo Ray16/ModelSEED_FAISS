@@ -1,0 +1,20 @@
+{
+  "branch": "master",
+  "commit": "b539adb69a955dac15cc30dbeb3debbd87739018",
+  "commit_date": "2026-10-06",
+  "n_compounds_with_structure": 36889,
+  "structures_repaired": 6313,
+  "structures_repaired_with_charge_change": 5807,
+  "n_reactions": 33359,
+  "n_reactions_with_full_ec": 13100,
+  "n_reactions_not_heavy_balanced": 4025,
+  "n_reactions_not_proton_fixable": 6363,
+  "embedding_shape": [
+    33359,
+    4096
+  ],
+  "corpus_sha256": "ccefc87a393adb0724a3d8599e10a3950049b09726564fb5c62033c967f8cec9",
+  "embedding_sha256": "94a92d4663c881452fdf2ec34c5151c027799c75f90324ac8480de893747f54e",
+  "rdkit_version": "2026.03.5",
+  "proton_convention": "H+ (cpd00067) stripped from every reaction"
+}

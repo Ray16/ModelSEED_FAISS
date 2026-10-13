@@ -1,0 +1,12 @@
+{
+  "branch": "master",
+  "commit": "b539adb69a955dac15cc30dbeb3debbd87739018",
+  "commit_date": "2026-10-06",
+  "n_compounds_with_structure": 36889,
+  "n_reactions": 33359,
+  "n_reactions_with_full_ec": 13100,
+  "embedding_shape": [
+    33359,
+    4096
+  ]
+}
