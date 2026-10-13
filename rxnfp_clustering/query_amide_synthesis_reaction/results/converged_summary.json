@@ -1,0 +1,20 @@
+{
+  "candidates": 54199,
+  "by_line_count": {
+    "1": 38627,
+    "0": 11646,
+    "2": 3898,
+    "3": 24,
+    "4": 4
+  },
+  "converged_at_or_above_3": 28,
+  "axis_totals": {
+    "measured_nylon_activity": 49,
+    "own_reaction_chemistry": 3862,
+    "lead_family_verdict": 42490,
+    "crystallographic_bifunctional_ligand": 17,
+    "adenylation_competent_structure": 57,
+    "independent_geometric_score": 36
+  },
+  "note": "Convergence of methods that fail differently - a reason to spend a bench slot, not evidence the enzyme works. Nothing here is validated against nylon-6,6 activity."
+}
