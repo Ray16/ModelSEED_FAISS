@@ -24,6 +24,29 @@ bash /nfs/lambda_stor_01/homes/rzhu/Tool/uplifting-biomolecular-modeling/boltz2/
   -- --use_msa_server --diffusion_samples 50
 ```
 
+## What is staged, and why these proteins
+
+Restaged 2026-10-13 against the convergence analysis. The original three were
+chosen before it existed, and three of the current top four had no input at
+all — so a run on the old set would have folded the wrong proteins.
+
+| input | lines | why it is here |
+|---|---:|---|
+| `Q9RDS6.yaml` **GlnA2** | 4 | natively acylates **cadaverine**, the C5 diamine one methylene short of HMDA; K_M 0.13 mM; pocket span 17 vs HMDA's 6 |
+| `Q81RQ8.yaml` **AsbB** | 4 | pocket span **23**; cofactor-bound structure; independent geometric score |
+| `P9WJL3.yaml` **MurE** | 4 | **meso-diaminopimelate bound in the crystal**; acid span 10, amine span 5 — the predicted failure is on the acceptor |
+| `Q46E79.yaml` **PylC** | 4 | bifunctional ligand bound; cofactor structure; geometric score |
+| `O60993.yaml` **TryS** | 2* | near miss by 0.0116; pocket span **30/30**, the largest in the set |
+| `P0DXD6.yaml` **PubC** | 3 | kept: the project's original headline, useful as a comparison |
+| `Q9WY79.yaml` **MurE** *T. maritima* | 3 | kept: a second MurE, tests whether the result is species-specific |
+| `OPY85079_1.yaml` **AS17** | — | **positive control**: measured 1.91 µg/ml on the nylon-6,6 diad |
+
+Each is the protein plus adipate `OC(=O)CCCCC(=O)O`, HMDA `NCCCCCCN` and ATP.
+
+AS17 is the one that matters most for interpretation: if the scoring cannot
+separate a measured producer from the rest, the negative results below it mean
+nothing.
+
 ## Why it did not run
 
 **lambda13 has a driver/library version mismatch.** It is the only
