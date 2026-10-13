@@ -2,9 +2,9 @@ rxn_id	substrate_distance	verdict	uniprot_hits
 rxn21300	0.7526	no_identifier_name_tried	0
 rxn21296	0.7526	no_identifier_name_tried	0
 rxn21301	0.0	no_identifier_name_tried	0
-rxn52404	0.355	no_identifier_name_tried	0
 rxn52405	0.35	no_identifier_name_tried	0
 rxn52403	0.3583	no_identifier_name_tried	0
+rxn52404	0.355	no_identifier_name_tried	0
 rxn24205	0.0	no_identifier_name_tried	0
 rxn01460	0.425	identifier_but_uniprot_empty	0
 rxn59882	0.3528	no_identifier_name_tried	0
@@ -32,10 +32,10 @@ rxn58421	0.3908	no_identifier_name_tried	0
 rxn59433	0.5289	no_identifier_name_tried	0
 rxn60618	0.3908	no_identifier_name_tried	0
 rxn60652	0.3336	no_identifier_no_name	0
+rxn41215	0.0	no_identifier_name_tried	0
 rxn47068	0.0	no_identifier_name_tried	0
 rxn40655	0.0	no_identifier_name_tried	0
 rxn48383	0.0	no_identifier_name_tried	0
-rxn41215	0.0	no_identifier_name_tried	0
 rxn44948	0.0	no_identifier_name_tried	0
 rxn01553	0.0	identifier_but_uniprot_empty	0
 rxn20903	0.3917	no_identifier_no_name	0
@@ -97,8 +97,6 @@ rxn47505	0.6036	no_identifier_name_tried	0
 rxn54689	0.6607	no_identifier_name_tried	0
 rxn55515	0.6129	identifier_but_uniprot_empty	0
 rxn58661	0.7387	no_identifier_name_tried	0
-rxn58922	0.8245	no_identifier_no_name	0
-rxn58972	0.8245	no_identifier_no_name	0
 rxn59797	0.738	no_identifier_name_tried	0
 rxn59943	0.7406	no_identifier_name_tried	0
 rxn59956	0.2898	no_identifier_name_tried	0
@@ -107,9 +105,9 @@ rxn60148	0.4607	no_identifier_name_tried	0
 rxn60184	0.4083	no_identifier_no_name	0
 rxn60487	0.5108	no_identifier_name_tried	0
 rxn60717	0.7396	no_identifier_name_tried	0
-rxn60457	0.0	no_identifier_name_tried	0
 rxn57895	0.0	no_identifier_name_tried	0
-rxn60293	0.0	no_identifier_name_tried	0
+rxn59530	0.0	no_identifier_name_tried	0
+rxn59693	0.0	no_identifier_name_tried	0
 rxn00464	0.6107	identifier_but_uniprot_empty	0
 rxn01551	0.0	no_identifier_name_tried	0
 rxn01798	0.5612	identifier_but_uniprot_empty	0
@@ -165,10 +163,10 @@ rxn58921	0.0	no_identifier_name_tried	0
 rxn59392	0.0	no_identifier_name_tried	0
 rxn59553	0.4	no_identifier_name_tried	0
 rxn59571	0.0	no_identifier_name_tried	0
-rxn59693	0.0	no_identifier_name_tried	0
 rxn60050	0.0	no_identifier_name_tried	0
+rxn60457	0.0	no_identifier_name_tried	0
 rxn16116	0.53	no_identifier_name_tried	0
-rxn59530	0.0	no_identifier_name_tried	0
+rxn60293	0.0	no_identifier_name_tried	0
 rxn16117	0.515	no_identifier_name_tried	0
 rxn57020	0.475	no_identifier_name_tried	0
 rxn59921	0.0	no_identifier_name_tried	0

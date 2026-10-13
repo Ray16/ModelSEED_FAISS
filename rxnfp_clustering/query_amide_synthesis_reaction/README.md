@@ -604,7 +604,7 @@ demoted rather than deleted.
 
 ### Where recall stops — re-probed after every change
 
-Of 473 admitted reactions, 305 resolve to at least one protein. The unresolved
+Of 480 admitted reactions, 308 resolve to at least one protein. The unresolved
 count is **not** a quality measure on its own: it rose 91 -> 168 when the
 substrate-distance gate was removed, purely because 214 previously *excluded*
 reactions became admitted ones. So it is re-probed rather than tracked.
@@ -770,7 +770,7 @@ protons alone, are **excluded** from ranking rather than merely flagged.
 
 Of 33,246 corpus reactions, **726** acylate a free amine;
 231 of those act on a macromolecule and 22 are unbalanced, leaving
-**473 eligible** for ranking, of which 92 acylate a free diamine.
+**480 eligible** for ranking, of which 89 acylate a free diamine.
 
 `scripts/test_screens.py` holds 24 curated controls (positives, negatives and
 repair cases), each one a bug that is now guarded. Run it after touching
@@ -850,7 +850,7 @@ N-hydroxylated and two carbons shorter per arm.
 
 ## Performance
 
-Fully parallelised; ~5 min end-to-end on an idle-ish 80-core node.
+Fully parallelised. ~40 min end-to-end on an idle-ish 80-core node, most of it polite querying of public APIs rather than compute.
 
 | Stage | Time | Parallelism |
 |---|---:|---|
