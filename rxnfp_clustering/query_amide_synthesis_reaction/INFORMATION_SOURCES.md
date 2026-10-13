@@ -46,6 +46,27 @@ to a person's identity, so it is not something to do on the user's behalf.
 provided, kinetics and substrate-specificity annotation can be added for every
 candidate carrying an EC number.
 
+Four sources have now been tested for kinetics, so this is a measured
+conclusion rather than an assumption: UniProt's own `kinetics` field works and
+yields 194 proteins (in use, above); BRENDA needs credentials; SABIO-RK's REST
+endpoint is dead; ChEMBL covers 1 of 253. There is no credential-free route to
+kinetics at the scale of the ~31,000 EC-bearing candidates.
+
+**ChEMBL** — the other credential-free bioactivity database, and the last
+untested route to kinetics. Measured on the 253 shortlisted proteins carrying a
+UniProt accession:
+
+```
+with a ChEMBL target record   14 of 253
+with any Km activity           1        (P90518, 3 values)
+```
+
+ChEMBL indexes pharmacological bioactivity against drug targets. Our
+candidates are bacterial biosynthetic enzymes, so the one protein with real
+coverage is P07862 (D-alanine--D-alanine ligase), which is there because it is
+a well-studied antibiotic target rather than because it is an amide synthetase.
+Not usable.
+
 **SABIO-RK** — the obvious credential-free alternative for kinetic data. Its
 documented REST endpoint no longer serves data:
 
