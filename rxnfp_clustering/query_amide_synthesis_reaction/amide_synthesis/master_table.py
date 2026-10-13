@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 
 import pandas as pd
@@ -56,10 +57,40 @@ INHERITED_DISCOUNT = float(os.environ.get('INHERITED_DISCOUNT', 0.7))
 DISQUALIFYING = (
     'reductase', 'dehydrogenase', 'oxidase', 'transporter', 'permease',
     'hydrolase', 'amidase', 'esterase', 'peptidase', 'protease', 'nuclease',
-    'phosphatase', 'isomerase', 'channel', 'receptor', 'binding protein')
+    'phosphatase', 'isomerase', 'channel', 'receptor', 'binding protein',
+    # Added after the protein-name route admitted a "Carboxylate--amine
+    # ligase" sitting in a helicase family: a qualifying name on a protein
+    # whose actual machinery is unrelated to acyl transfer.
+    'helicase', 'chaperone', 'polymerase', 'topoisomerase', 'gyrase',
+    'ribosomal protein', 'elongation factor')
 # A bifunctional enzyme naming both is not a contradiction.
 QUALIFYING = ('synthetase', 'synthase', 'ligase', 'transferase')
 CONTRADICTION_PENALTY = 3.0
+
+# TESTED AND REJECTED: applying DISQUALIFYING to the `family` field as well.
+# It would flag 545 further rows, but the largest groups are "2-oxoacid
+# dehydrogenases acyltransferase (catalytic domain)" (57) and "CO
+# dehydrogenase/acetyl-CoA synthase delta subunit" (282) - acyl-transfer
+# chemistry caught only because a multi-domain FAMILY name contains the word
+# "dehydrogenase". A family names context, not catalytic function, so the
+# check stays on the protein's own name and EC. One known survivor: a
+# "Carboxylate--amine ligase" whose family is a helicase domain. It is visible
+# in the family column rather than silently penalised.
+#
+# Forming an amide from a carboxylate and an amine is EC 6 (ligase) or EC 2
+# (acyltransferase). EC 1/3/4/5 are oxidoreductase / hydrolase / lyase /
+# isomerase - none of them makes this bond, and class 3 actively breaks it.
+#
+# This is checked because a NAME can qualify while the curated EC contradicts
+# it, and the EC is the more reliable of the two. O52547 is the clear case:
+# "Rifamycin amide synthase" by name, EC 4.4.1.- (a carbon-sulfur lyase) by
+# annotation. A qualifying name therefore does NOT rescue a contradicting EC.
+#
+# Only a protein whose EVERY EC class is non-forming is challenged, so a
+# genuinely bifunctional enzyme carrying both 3.5.1.- and 6.3.- is not.
+AMIDE_FORMING_EC_CLASSES = frozenset({2, 6})
+NON_FORMING_EC_CLASSES = frozenset({1, 3, 4, 5})
+EC_PATTERN = r'(\d+)\.[\d\-]+\.[\d\-]+\.[\w\-]+'
 
 EVIDENCE_WEIGHT = {
     'measured_activity': 10.0,  # assayed on the nylon-6,6 diad itself
@@ -68,6 +99,10 @@ EVIDENCE_WEIGHT = {
     'activity_ec': 2.0,         # matching EC, broader
     'literature_curated': 2.0,  # carries an independent structural score
     'name_match': 1.0,          # distinctive product name
+    # UniProt names the protein for the target function. No reaction is known
+    # for it, so it carries no substrate distance and cannot outrank a
+    # reaction-anchored candidate - see enzyme_names.py.
+    'enzyme_name_match': 1.0,
     'reaction_name_match': 0.5,  # ModelSEED's reaction label
     'chemistry_neighbour': 0.25,  # inferred, not annotated; weakest of all
     'family_homolog': 1.0,      # enriched Pfam family
@@ -188,6 +223,26 @@ def _truthy(series):
     return series.fillna('').astype(str).str.strip().ne('')
 
 
+def ec_classes(value):
+    """The top-level EC classes named in a possibly-multi-EC field."""
+    return {int(match) for match in
+            re.findall(EC_PATTERN, str(value or ''))}
+
+
+def ec_contradicts(series):
+    """True where every EC the protein carries is non-amide-forming.
+
+    A protein with no EC at all is NOT contradicted - absence of annotation is
+    not evidence against it, and most candidates here are unreviewed.
+    """
+    def judge(value):
+        found = ec_classes(value)
+        if not found or found & AMIDE_FORMING_EC_CLASSES:
+            return False
+        return found.issubset(NON_FORMING_EC_CLASSES)
+    return series.map(judge).fillna(False).astype(bool)
+
+
 def load_structural(path=STRUCTURAL_SCORES):
     """Independently computed geometric scores, if the file is present."""
     if not Path(path).exists():
@@ -256,7 +311,8 @@ def build(reaction_candidates, expansion, structural=None,
     # Only homologs are challenged this way. A reaction-anchored protein was
     # proven by the screen on its own reaction, which outranks its name.
     table['annotation_contradicts_chemistry'] = (
-        disqualified & ~qualified & table.discovery_route.ne('reaction'))
+        ((disqualified & ~qualified) | ec_contradicts(_column(table, 'ec')))
+        & table.discovery_route.ne('reaction'))
 
     distance = table[['substrate_distance_measured',
                       'substrate_distance_inherited']].max(axis=1)
@@ -296,7 +352,8 @@ def main():
                if details_path.exists() else None)
     extras = []
     for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv',
-                 'chemistry_neighbour_candidates.tsv'):
+                 'chemistry_neighbour_candidates.tsv',
+                 'enzyme_name_candidates.tsv'):
         path = RES / name
         if path.exists():
             extras.append(pd.read_csv(path, sep='\t', low_memory=False))

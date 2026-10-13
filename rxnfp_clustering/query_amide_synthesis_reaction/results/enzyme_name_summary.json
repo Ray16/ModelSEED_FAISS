@@ -1,0 +1,98 @@
+{
+  "names_admitted": 7,
+  "names_refused": [],
+  "proteins": 3488,
+  "novel_against_existing_master": 3469,
+  "per_name": [
+    {
+      "name": "amide synthetase",
+      "total": 26,
+      "fetched": 26,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "states the target function; 26 entries, all PF00501+PF13193 ANL"
+    },
+    {
+      "name": "amide bond synthetase",
+      "total": 2,
+      "fetched": 2,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "the engineered-biocatalysis name for acid + amine coupling"
+    },
+    {
+      "name": "amide synthase",
+      "total": 42,
+      "fetched": 42,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "the -synthase spelling of the same function"
+    },
+    {
+      "name": "amide ligase",
+      "total": 6,
+      "fetched": 6,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "the -ligase spelling of the same function"
+    },
+    {
+      "name": "acid--amine ligase",
+      "total": 166,
+      "fetched": 166,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "EC 6.3.1.- systematic name; YgiC/YjfC ATP-grasp amide synthetases"
+    },
+    {
+      "name": "carboxylate--amine ligase",
+      "total": 3243,
+      "fetched": 3243,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "EC 6.3.1.- systematic name for carboxylate + amine -> amide"
+    },
+    {
+      "name": "beta-lactam synthetase",
+      "total": 3,
+      "fetched": 3,
+      "admitted": true,
+      "failed": false,
+      "saturated": false,
+      "note": "intramolecular amide closure by an ANL-family adenylating enzyme"
+    }
+  ],
+  "rejected_names": [
+    {
+      "name": "N-acyltransferase",
+      "total": 59383,
+      "reason": "a superfamily label, not a function: spans acetyl-, succinyl-, myristoyl- and every other acyl donor"
+    },
+    {
+      "name": "peptide synthetase",
+      "total": 18124,
+      "reason": "NRPS modules; the amide is formed on a carrier-bound thioester, not between two free monomers, and the screen rejects that chemistry"
+    },
+    {
+      "name": "aminoacyltransferase",
+      "total": 930,
+      "reason": "aminoacyl-tRNA and ribosomal machinery; acceptor is not a free amine"
+    },
+    {
+      "name": "glutamine synthetase",
+      "total": 64888,
+      "reason": "forms a TERMINAL amide from ammonia. The substrate screen scores this 0.0 because a terminal amide cannot polycondense. Genuine members are already present via the EC route where a reaction maps to them"
+    },
+    {
+      "name": "cyanophycin synthetase",
+      "total": 3819,
+      "reason": "on-chemistry and the closest biological nylon analogue, but CphA is ALREADY captured by activity_ec and family_homolog. Adding ~3,800 near-identical orthologs would inflate the candidate count without adding one new family"
+    }
+  ]
+}

@@ -41,6 +41,8 @@ STAGES = (
           'assayed panel + literature-curated proteins (network)', True),
     Stage('neighbours', 'chemistry_neighbours',
           'borrow enzymes across chemically equivalent reactions'),
+    Stage('names', 'enzyme_names',
+          'candidates named for the target function in UniProt (network)', True),
     Stage('master', 'master_table', 'merge every route, keeping provenance'),
     Stage('enrich', 'enrich',
           'fill annotation for bare candidates; UniParc for the panel (network)',

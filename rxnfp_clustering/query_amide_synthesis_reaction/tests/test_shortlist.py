@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 
 from amide_synthesis import shortlist as sl
+from amide_synthesis.master_table import EVIDENCE_WEIGHT
 
 
 def candidate(accession, evidence='exact_reaction', priority=5.0,
@@ -133,3 +134,35 @@ class FastaTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
+
+class UnallocatedTierTests(unittest.TestCase):
+    """A tier missing from TIER_SHARE must fail loudly, not vanish.
+
+    The protein-name route shipped with no share entry. Because the quotas
+    already overfilled the target, the backfill never ran and all 3,469 of its
+    candidates were silently unshortlistable while the summary looked normal.
+    """
+
+    def _pool(self, tier):
+        return pd.DataFrame([{
+            'uniprot': f'P{i:05d}', 'evidence_strength': tier,
+            'master_priority': 1.0, 'length': 500,
+            'organism': f'Org{i} sp.', 'family': f'Fam{i}',
+            'sequence': 'M' * 500, 'protein_name': 'amide synthetase',
+        } for i in range(5)])
+
+    def test_an_unallocated_tier_raises(self):
+        with self.assertRaises(ValueError) as caught:
+            sl.build(self._pool('a_brand_new_route'), target=10)
+        self.assertIn('a_brand_new_route', str(caught.exception))
+
+    def test_an_allocated_tier_is_selected(self):
+        out = sl.build(self._pool('enzyme_name_match'), target=10)
+        self.assertGreater(len(out), 0)
+
+    def test_every_evidence_weight_has_a_share(self):
+        """Every route master_table can emit must be allocatable."""
+        shares = {tier for tier, _ in sl.TIER_SHARE}
+        for tier in EVIDENCE_WEIGHT:
+            self.assertIn(tier, shares, f'{tier} has no shortlist share')

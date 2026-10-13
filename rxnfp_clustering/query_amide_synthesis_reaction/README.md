@@ -50,7 +50,7 @@ one it validates.
 ## Retrieval architecture (current)
 
 ModelSEED ships **no reaction -> enzyme mapping**, so breadth comes from having
-several independent bridges rather than one good one. Six routes feed one
+several independent bridges rather than one good one. Seven routes feed one
 table, `results/master_candidates.tsv`, and every row records which route
 produced it.
 
@@ -63,6 +63,7 @@ produced it.
 | `assayed` | **measured** nylon-6,6 L1 titre | n/a - it is a measurement |
 | `proxied` | literature-curated, carries an independent geometric score | n/a |
 | `chemistry_neighbour` | borrowed from a reaction with the same proven acylation chemistry; an INFERENCE, weight 0.25 | measured, from the source reaction |
+| `enzyme_name` | UniProt NAMES the protein for the target function ("amide synthetase", "carboxylate--amine ligase"); reaction unknown | none - claims no distance |
 
 ### Annotation coverage
 
@@ -200,12 +201,79 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **36,190 candidates** - 25,264 with a curated
-catalytic-activity statement, 22,823 with an AlphaFold model, 206 with a PDB
-entry, 875 self-condensing, 36 carrying an independent geometric score.
+Current totals: **39,659 candidates** - 28,255 with a curated
+catalytic-activity statement, 28,146 with an AlphaFold model, 261 with a PDB
+entry, 889 self-condensing, 36 carrying an independent geometric score.
 
 Measured and inherited distances are kept in separate columns and are not
 interchangeable.
+
+### Recall measured against an external list, not against our own tests
+
+Every control in `tests/` encodes an assumption this project already held, so
+the suite can be entirely green while a whole class of candidate is missing.
+The check that does not share that blind spot is to take a list of enzymes
+defined *outside* this pipeline and ask how many of them it found.
+
+Measured 2026-10-13 on the proteins UniProt literally names "Amide
+synthetase", with nylon-degrading NylC hydrolases as a negative control:
+
+| | before | after |
+|---|---:|---:|
+| named "Amide synthetase", found | **0 of 26** | **26 of 26** |
+| NylC nylon hydrolases, found (should be 0) | 0 of 4 | 0 of 4 |
+
+All 26 carry PF00501 + PF13193 — AMP-binding/ANL, the **assayed panel's own
+family**, one this pipeline does cover. PF00501 has ~450,000 members, too
+broad for the domain route, so it is handled by the clade route at 8 pages per
+seed: 767 members sampled out of 450,000, and the ones whose *name* states the
+target function were not among them. A sixth budget deciding retrieval.
+
+The fix is a seventh route that asks UniProt directly what the enzyme is
+called (`amide_synthesis/enzyme_names.py`), which no reaction pivot can do.
+
+**Precision, and why a size rule is wrong.** A sibling route was rejected for
+imprecision — substrate-name search returned the 100-result page cap on every
+ubiquitous metabolite. The obvious defence, admit only small queries, was
+tested here and fails: `cyanophycin synthetase` has 3,819 members and is
+perfectly specific, while `N-acyltransferase` has 59,383 and is a superfamily
+label. Size tracks how widespread an enzyme is, not how precise its name is.
+Names are therefore curated on chemistry with the reason recorded, rejections
+included, and the count survives only as a sanity ceiling that refuses a
+superfamily label loudly instead of ingesting it.
+
+| | before | after |
+|---|---:|---:|
+| total candidates | 36,190 | **39,659** |
+| shortlist | 289 | **301** |
+| shortlist families | 40 | **43** |
+| shortlist organisms | 211 | **220** |
+
+The route's best finds are `cocJ`/`uncG`, UniProt-named "Amide-bond
+synthetase" (EC 6.2.1.-, AMP-binding) — the engineered acid + amine coupling
+class — and P0DJQ7 beta-lactam synthetase, independently the single best
+in-line adenylation geometry in the whole candidate set (2.26 Å).
+
+### Two bugs this found, both silent
+
+1. **An evidence tier absent from `TIER_SHARE` got zero shortlist slots, and
+   the summary looked normal.** The backfill that should have rescued it only
+   fires when the quotas *under*fill the target, and they already overfilled
+   it, so all 3,469 new candidates were unshortlistable. `shortlist.build` now
+   raises on an unallocated tier rather than dropping it, and a control asserts
+   every weight in `EVIDENCE_WEIGHT` has a share.
+2. **A curated EC can contradict a qualifying name, and only the name was
+   read.** O52547 is "Rifamycin amide synthase" by name and EC 4.4.1.- — a
+   carbon-sulfur lyase — by annotation, so the `synthase` in its name cleared
+   it. Amide formation is EC 6 or EC 2; classes 1/3/4/5 do not make this bond
+   and class 3 breaks it. Challenging a protein whose *every* EC class is
+   non-forming flags 574 further rows, nearly all fatty-acid amide
+   **hydrolases**, dipeptidases and lyases. A bifunctional enzyme carrying both
+   is untouched, and a protein with no EC is never penalised for it.
+
+`shortlist.eligible` also still used `DataFrame.get(name)`, which returns
+`None` for an absent column — the same trap already fixed in `master_table`
+and `enrich`.
 
 ### No score gates retrieval — including this project's own
 

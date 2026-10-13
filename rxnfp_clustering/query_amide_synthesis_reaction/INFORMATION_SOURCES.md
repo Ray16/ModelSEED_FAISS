@@ -15,6 +15,7 @@ the dead ends.
 | **RCSB PDB** | method, resolution, bound ligands/metals; downloaded mmCIF for geometry | 179 candidates, 825 entries, 0 lookup failures |
 | **InterPro** | readable family names from Pfam accessions | 1,121 rows that had only `PF…` |
 | **external link table** (`uniprot-msd-links.tsv`) | precomputed UniProt→ModelSEED links | +1,131 candidates; see `MAPPING_REVIEW.md` |
+| **UniProtKB protein names** | proteins NAMED for the target function, which no reaction pivot reaches | 3,488 proteins, 3,469 of them new; fixed a measured 0-of-26 recall hole |
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 
@@ -77,6 +78,24 @@ while lowering its value.
 
 Not built. This is why the 121 stay unresolved: not for want of a query, but
 because no *specific* query exists for them.
+
+**Protein-name queries that are superfamily labels or the wrong chemistry.**
+The protein-name route (now in use, above) is curated, and these were measured
+and left out rather than forgotten. Their totals are given to show that size
+was *not* the deciding test — `cyanophycin synthetase` has more members than
+`aminoacyltransferase` and is admissible on chemistry while the latter is not:
+
+| name | entries | why not |
+|---|---:|---|
+| `glutamine synthetase` | 64,888 | forms a **terminal** amide from ammonia; the substrate screen scores that 0.0 because it cannot polycondense |
+| `N-acyltransferase` | 59,383 | a superfamily label spanning every acyl donor, not a function |
+| `peptide synthetase` | 18,124 | NRPS; the amide forms on a carrier-bound thioester, not between two free monomers |
+| `cyanophycin synthetase` | 3,819 | on-chemistry, and the closest biological nylon analogue — but CphA is already captured by `activity_ec` and `family_homolog`, so this would add ~3,800 near-identical orthologs and not one new family |
+| `aminoacyltransferase` | 930 | aminoacyl-tRNA and ribosomal machinery; the acceptor is not a free amine |
+
+A name matching more than `ENZYME_NAME_CEILING` (10,000) entries is refused
+loudly instead of ingested, so a superfamily label added here later fails
+visibly rather than quietly inflating the count.
 
 ## Deliberately not used
 

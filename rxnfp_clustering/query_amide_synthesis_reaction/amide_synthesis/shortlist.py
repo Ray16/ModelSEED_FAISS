@@ -61,6 +61,9 @@ TIER_SHARE = (
     ('precomputed_rhea_or_go', 0.10),
     ('literature_curated', 0.05),
     ('name_match', 0.05),
+    # UniProt names the protein for the target function but no reaction is
+    # known for it. Same evidence weight as `name_match`, so the same share.
+    ('enzyme_name_match', 0.05),
     ('reaction_name_match', 0.03),
     ('family_homolog', 0.15),
     ('clade_homolog', 0.10),
@@ -90,12 +93,26 @@ def _genus(organism):
     return re.split(r'[\s(]', name)[0] if name else ''
 
 
+def _column(frame, name, default=''):
+    """Always a Series aligned to `frame`.
+
+    `DataFrame.get(name)` returns None when the column is absent, so every
+    `.fillna`/`.isin` call below raises AttributeError on a table that happens
+    not to carry it. The same trap was already fixed in `master_table` and
+    `enrich`; this copy was still live.
+    """
+    if name in frame.columns:
+        return frame[name]
+    return pd.Series([default] * len(frame), index=frame.index)
+
+
 def eligible(table):
     """Bench constraints, with the reason for every exclusion recorded."""
     out = table.copy()
-    length = pd.to_numeric(out.get('length'), errors='coerce')
-    sequence = out.get('sequence').fillna('').astype(str)
-    contradicted = out.get('annotation_contradicts_chemistry').fillna(False)
+    length = pd.to_numeric(_column(out, 'length', None), errors='coerce')
+    sequence = _column(out, 'sequence').fillna('').astype(str)
+    contradicted = _column(
+        out, 'annotation_contradicts_chemistry', False).fillna(False)
 
     reasons = pd.Series('', index=out.index)
     reasons = reasons.mask(sequence.str.len() < 1, 'no_sequence')
@@ -107,7 +124,7 @@ def eligible(table):
         'annotation_contradicts_chemistry')
     # Measured activity overrides every predicted objection except a missing
     # sequence, which would make the row untestable.
-    measured = out.get('evidence_strength').isin(ALWAYS_KEEP)
+    measured = _column(out, 'evidence_strength').isin(ALWAYS_KEEP)
     reasons = reasons.mask(measured & sequence.str.len().gt(0), '')
 
     out['excluded_because'] = reasons
@@ -146,9 +163,25 @@ def diversify(frame, limit, per_family=MAX_PER_FAMILY,
 
 
 def build(table, target=TARGET, shares=TIER_SHARE):
-    """Stratify by evidence tier, diversify within each, then backfill."""
+    """Stratify by evidence tier, diversify within each, then backfill.
+
+    A tier absent from `shares` gets no slots, and the backfill below cannot
+    rescue it because that only fires when the quotas UNDERfill the target.
+    When the protein-name route was added its tier was missing here, so all
+    3,469 of its candidates were silently unshortlistable - the quotas already
+    overfilled the target, the backfill never ran, and the summary looked
+    normal. An unallocated tier is a curation mistake, not a ranking decision,
+    so it fails loudly rather than disappearing.
+    """
     screened = eligible(table)
     pool = screened[screened.excluded_because.eq('')]
+    unallocated = (set(pool.evidence_strength.dropna().unique())
+                   - {tier for tier, _ in shares})
+    if unallocated:
+        raise ValueError(
+            f'evidence tiers with no slot allocation: {sorted(unallocated)}. '
+            'Add them to TIER_SHARE with a deliberate share; leaving one out '
+            'silently drops every candidate it carries.')
     picked = []
     for tier, share in shares:
         tier_rows = pool[pool.evidence_strength.eq(tier)]

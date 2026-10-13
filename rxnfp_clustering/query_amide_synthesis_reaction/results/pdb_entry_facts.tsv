@@ -82,6 +82,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1JBV	X-RAY DIFFRACTION	1.95	ACP;MG	True	ACP	True	False
 1JBW	X-RAY DIFFRACTION	1.85	ACQ;MG	False		True	False
 1JG0	X-RAY DIFFRACTION	2.0		False		False	False
+1JGT	X-RAY DIFFRACTION	1.95	APC;CMA;MG	True	APC	True	False
 1JKX	X-RAY DIFFRACTION	1.6		False		False	False
 1JM4	SOLUTION NMR			False		False	False
 1JTQ	X-RAY DIFFRACTION	2.5	UMP	False		False	False
@@ -103,11 +104,15 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1L3E	SOLUTION NMR		ZN	False		True	False
 1M0T	X-RAY DIFFRACTION	2.3		False		False	False
 1M0W	X-RAY DIFFRACTION	1.8	ANP;MG	True	ANP	True	False
+1M1Z	X-RAY DIFFRACTION	1.95		False		False	False
 1M44	X-RAY DIFFRACTION	1.6		False		False	False
 1M4D	X-RAY DIFFRACTION	1.8		False		False	False
 1M4G	X-RAY DIFFRACTION	1.8		False		False	False
 1M4I	X-RAY DIFFRACTION	1.5		False		False	False
 1M9N	X-RAY DIFFRACTION	1.93	K	False		False	False
+1MB9	X-RAY DIFFRACTION	2.11	AMP;ATP;MG;POP	True	AMP;ATP	True	False
+1MBZ	X-RAY DIFFRACTION	2.47	IOT;MG;POP	False		True	False
+1MC1	X-RAY DIFFRACTION	2.16	AMP;MG;POP	True	AMP	True	False
 1MEJ	X-RAY DIFFRACTION	2.0		False		False	False
 1MEN	X-RAY DIFFRACTION	2.23		False		False	False
 1MEO	X-RAY DIFFRACTION	1.72		False		False	False
@@ -533,6 +538,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 3LVV	X-RAY DIFFRACTION	2.2	ADP;LBP;MG	True	ADP	True	False
 3LVW	X-RAY DIFFRACTION	2.5		False		False	False
 3MJF	X-RAY DIFFRACTION	1.47	NA	False		False	False
+3MNF	X-RAY DIFFRACTION	2.97		False		False	False
 3MUE	X-RAY DIFFRACTION	2.701		False		False	False
 3NE7	X-RAY DIFFRACTION	2.3	BME;COA;NI	False		True	False
 3NRS	X-RAY DIFFRACTION	1.8		False		False	False
