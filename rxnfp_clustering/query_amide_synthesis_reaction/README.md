@@ -4,46 +4,51 @@
 similar to the nylon-6,6 diad-forming step, the amide bond between adipate (C6
 diacid) and hexamethylenediamine (HMDA, C6 diamine)?
 
-**Answer.** No exact analogue exists, but the search converges on one family
-with striking consistency: **NIS (NRPS-independent siderophore) synthetases**.
-They form ATP-dependent amide bonds between carboxylic acids and **free
-polyamines**, and — the part that matters most for nylon — several members
-**iteratively oligomerise bifunctional amine-acid monomers** into dimers and
-trimers. That is enzymatic polyamide chemistry.
+**Answer.** No enzyme anywhere does this reaction, and that is now measured
+rather than inferred. UniProt returns **zero** entries for
+`hexane-1,6-diamine` and **zero** amide-forming entries for adipate. The
+nearest native acceptor is **cadaverine**, the C5 diamine one methylene short
+of HMDA — and only **three** enzymes in UniProt acylate it. This pipeline
+holds all three, two of them in its top tier.
+
+So the target sits **two extrapolations away**: one methylene on the amine,
+two on the acid. Everything below is about finding the enzymes best placed to
+cross that gap.
 
 Run on ModelSEEDDatabase `master` @ `b539adb6` (2026-10-06).
-`results/candidates_ranked.tsv` is the deliverable: **118 candidate enzymes**
-with evidence columns exposed for independent scoring. Whole pipeline: **~5 min**.
+**`results/CANDIDATES.md` is the deliverable** — 28 dossiers, each stating
+what is measured, what is inferred, and where it came from. Whole pipeline:
+28 stages, ~40 min, mostly polite querying of public APIs.
 
 ---
 
 ## Headline candidates
 
-| Enzyme | UniProt | Organism | Cosine | Why |
+Ranked by how many **independent** lines of evidence agree — *not* by cosine
+similarity, which this project found is dominated by the cofactor rather than
+the amide bond (BibC, the former headline at cosine 0.911, reaches only two
+lines).
+
+| Enzyme | UniProt | Organism | Lines | Evidence |
 |---|---|---|---:|---|
-| **BibC** bisucaberin synthase (EC 6.3.2.64) | `B6EP94` | *A. salmonicida* | **0.911** | **Dimerises two identical amine-acid monomers** into a macrocyclic diamide — closest thing to a polycondensation step |
-| **PubC** putrebactin synthase (EC 6.3.2.63) | `P0DXD6` | *Shewanella* sp. | 0.898 | Same iterative dimerisation, putrescine-derived monomer |
-| **AsbA** spermidine–citrate ligase | `A0A0F7RJ52` | *B. anthracis* | 0.851 | ATP-dependent amide, **free polyamine + polyacid** |
-| **AsbB** chain extension | `Q81RQ8` | *B. anthracis* | 0.772 | Adds a **second** polyamine to the same acid core |
-| **SfnaD** D-ornithine–citrate ligase | `Q2FW70` | *S. aureus* | 0.753 | Independent NIS synthetase, same chemistry |
-| **PuuA** γ-glutamylputrescine synthetase | `P78061` | *E. coli* K-12 | 0.749 | ATP-dependent amide onto a **free C4 diamine**; easiest to express and assay |
-| **AlcC** alcaligin synthetase | `Q7W557` | *B. parapertussis* | 0.738 | Macrocyclic dimerising NIS synthetase |
-| **SbnC / SbnF** staphyloferrin B | `Q2G1N1` / `Q2G1M8` | *S. aureus* | 0.677 | NIS synthetases |
+| **GlnA2** γ-glutamylpolyamine synthetase | `Q9RDS6` | *S. coelicolor* | **4** | acylates a free diamine · chemistry 0.873 · bifunctional ligand · geometric score. **Natively acylates cadaverine**; K_M 0.13 mM; pocket span 17 vs HMDA's 6 |
+| **AsbB** chain extension | `Q81RQ8` | *B. anthracis* | **4** | free diamine · chemistry 0.789 · cofactor-bound structure · geometric score. Pocket span **23** |
+| **MurE** UDP-MurNAc-tripeptide synthetase | `P9WJL3` | *M. tuberculosis* | **4** | free diamine · chemistry 0.764 · **meso-diaminopimelate bound in the crystal** · cofactor structure. Acid span 10; amine span 5 — one short |
+| **PylC** | `Q46E79` | *M. barkeri* | **4** | free diamine · bifunctional ligand · cofactor structure · geometric score |
+| *near miss* **TryS** trypanothione synthetase | `O60993` | *C. fasciculata* | 2 | misses the chemistry floor by **0.0116**; pocket span **30/30** — room for both monomers |
+| *near miss* **GspSA** glutathionylspermidine synthetase | `P0AES0` | *E. coli* | 2 | span 19/9; bifunctional ligand bound |
 
-The desferrioxamine/bisucaberin/putrebactin reactions are the most nylon-like
-chemistry in the database: a **single bifunctional monomer carrying both a free
-amine and a carboxylate**, joined head-to-tail by ATP-dependent amide bonds,
-**iteratively** (dimer → trimer). Nylon-6,6 is the AA/BB analogue of the same
-polycondensation.
+**Suggested first experiment.** Offer **adipate + HMDA + ATP** to **GlnA2**
+(nearest native acceptor, measured kinetics, easiest to justify), **AsbB** and
+**MurE** (both have staged cofold inputs), and **TryS** (largest demonstrated
+pocket). Four proteins, four distinct chemistries.
 
-**Suggested first experiment.** Offer **adipate + HMDA + ATP** to BibC/PubC (the
-oligomerisers) and to PuuA (easiest expression). AsbA/AsbB cover the
-two-different-monomers case directly.
-
-**The honest gap:** these natively prefer C4–C5 hydroxamate monomers or
-spermidine/putrescine, not HMDA's C6 spacing, and AsbA's native acid is citrate.
-Activity on the nylon monomers is a hypothesis this analysis *generates*, not
-one it validates.
+**The honest gap.** None of these has been assayed on nylon-6,6. Convergence
+means several methods that fail differently happen to agree — a reason to
+spend a bench slot, not evidence the enzyme works. With three measured
+positives in the reference panel, no ranking here can be validated: the
+bootstrap CI on AUROC spans 0.23–0.85, and sequence length alone outscores
+every score this project could build.
 
 ---
 
