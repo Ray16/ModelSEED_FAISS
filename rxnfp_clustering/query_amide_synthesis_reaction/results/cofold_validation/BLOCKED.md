@@ -41,7 +41,19 @@ all — so a run on the old set would have folded the wrong proteins.
 | `Q9WY79.yaml` **MurE** *T. maritima* | 3 | kept: a second MurE, tests whether the result is species-specific |
 | `OPY85079_1.yaml` **AS17** | — | **positive control**: measured 1.91 µg/ml on the nylon-6,6 diad |
 
+| `A0A075UYU2.yaml` | — | **the other hypothesis**: ANL, 30.6% identity to AS9 |
+| `A1YAM3.yaml` | — | ANL, 30.6% to AS9 |
+| `D2TMN3.yaml` **entE** | — | ANL, 30.2% to AS9 |
+| `A0ABC8C1M7.yaml` | — | ANL, 29.8% to AS23 |
+
 Each is the protein plus adipate `OC(=O)CCCCC(=O)O`, HMDA `NCCCCCCN` and ATP.
+
+The last four reach **no** independent evidence line in this pipeline. They
+are staged because `results/ASSAY_ROUND.md` recommends them under the
+competing reading — that the ANL/adenylate-forming panel is the family that
+works — and folding only the chemistry-driven picks would test half the
+question on a GPU that is hard to get. 12 inputs: 8 chemistry-side (including
+the AS17 control), 4 measured-data-side.
 
 AS17 is the one that matters most for interpretation: if the scoring cannot
 separate a measured producer from the rest, the negative results below it mean
