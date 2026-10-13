@@ -340,9 +340,46 @@ Reactions resolved 156 -> 159; 277 enzyme rows arrive via `MetaNetX-xref`.
 *still* returns nothing for them. The identifier gap and the deposition gap
 are separate problems, and only the first is ours to fix.
 
-## What is NOT validated
+## What is NOT validated — and how much validation is even possible
 
 The ranking has never been fitted to, or validated against, measured activity.
+That statement was unquantified for most of this work, so
+`tools/validate_against_activity.py` quantifies it.
+
+The only measured ground truth is the 48-member assayed panel (titre on the
+nylon-6,6 L1 diad, 3 strong producers: AS9, AS17, AS23). The obvious
+sequence-level predictor — identity to a known active — was tested
+leave-one-out:
+
+```
+AUROC                        0.596
+permutation p (20k shuffles) 0.300          <- not significant
+bootstrap 95% CI             0.234 - 0.848  <- spans chance
+Spearman vs titre            +0.310, p=0.032
+
+baseline: mean identity to the panel   AUROC 0.333
+baseline: SEQUENCE LENGTH ALONE        AUROC 0.659   <- beats it
+```
+
+So homology to the known actives does **not** separate them, and a trivial
+length baseline scores higher. The nominally significant Spearman is a false
+comfort: the permutation test on the actual discrimination task gives p=0.30.
+
+**The binding limit is the panel, not the model.** With 3 positives the
+bootstrap CI on AUROC spans 0.23–0.85 — this panel could not detect even a
+strongly predictive score, let alone rank 292 candidates with one. Any model
+tuned until it ranks AS9/AS17/AS23 highly is fitting three data points, which
+is precisely what the upstream project records about its own structural score
+("Parameters were selected on this same panel, so this is retrospective
+enrichment").
+
+Nothing is fitted here and no sequence-level ranker is shipped. The honest
+conclusion is a sample-size statement: validating a candidate ranking needs
+more measured actives.
+
+The panel is genuinely diverse (median pairwise identity 0.331, max 0.489), so
+none of this is a near-duplicate artifact — the diversity is real, there just
+are not enough positives.
 
 The one independent check available - a geometric score computed in a separate
 project, joined read-only - shows **no correlation** with substrate distance
