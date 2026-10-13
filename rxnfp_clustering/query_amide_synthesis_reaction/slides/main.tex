@@ -104,7 +104,8 @@
 % ---------------------------------------------------------------- map
 \begin{frame}{Where the target lands in reaction space}
   \centering
-  \includegraphics[width=0.93\linewidth]{fig_tsne_nylon_query.png}
+  \includegraphics[width=0.93\linewidth,height=0.70\textheight,%
+                   keepaspectratio]{fig_tsne_nylon_query.png}
   \takeaway{Diamonds are the top candidate enzymes, drawn at the reaction that
   retrieved them. t-SNE does not preserve cosine rank --- the ranking is
   authoritative, the map is for orientation.}
@@ -134,17 +135,18 @@
   \end{enumerate}
 
   \takeaway{33{,}246 reactions $\rightarrow$ \textbf{726} acylate a free amine
-  $\rightarrow$ \textbf{473} eligible after excluding macromolecular (231) and
-  unbalanced (22) cases. 20 curated controls guard these screens.}
+  $\rightarrow$ \textbf{482} eligible after excluding macromolecular (224, less
+  5 polymer-elongation cases re-admitted) and unbalanced (22). \textbf{24
+  curated screen controls} plus 327 unit tests guard this.}
 \end{frame}
 
 % ---------------------------------------------------------------- families
 \begin{frame}{The hits converge on one family}
   \centering
   \includegraphics[width=0.82\linewidth]{fig_families.png}
-  \takeaway{\nis{16 of the top 60 candidates are a single family} ---
-  IucA/IucC, the \textbf{NIS (NRPS-independent siderophore) synthetases}. One
-  family found sixteen times is convergence, not sixteen independent hits.}
+  \takeaway{\nis{IucA/IucC --- the NIS (NRPS-independent siderophore)
+  synthetases} --- is recovered 41 times over by independent seeds. One family
+  found forty-one times is convergence, not forty-one independent hits.}
 \end{frame}
 
 % ---------------------------------------------------------------- chemistry
@@ -210,15 +212,102 @@
 
   \medskip
   \begin{block}{Deliverable}
-    \texttt{results/candidates\_ranked.tsv} --- \textbf{152 enzymes}, 87
-    Swiss-Prot reviewed, all top-20 prokaryotic, AlphaFold models for all.
-    Evidence columns exposed: cosine, \textbf{Pfam family}, evidence strength
-    (exact-Rhea / EC / name), diamine acceptor, length, PDB.
+    \texttt{results/shortlist\_annotated.tsv} --- a \textbf{301-protein}
+    bench shortlist over \textbf{50 families} and 205 organisms, drawn from
+    \textbf{54{,}199} candidates (2{,}048 Swiss-Prot reviewed). Carries
+    \textbf{253 AlphaFold models} (median pLDDT \good{93.8}, none unusable),
+    105 experimental structures, 41 cofactor-bound, \textbf{194 proteins with
+    a measured $K_M$/$k_{cat}$}, and 48 with \textbf{measured nylon-6,6 titre}.
   \end{block}
 
   \takeaway{Similarity is to \emph{reactions}. No listed enzyme is known to
   accept adipate or HMDA --- this analysis \textbf{generates} that hypothesis,
   it does not validate it.}
+\end{frame}
+
+% ---------------------------------------------------------------- routes
+\begin{frame}{ModelSEED has no reaction $\rightarrow$ enzyme mapping}
+  So breadth comes from having \textbf{seven independent bridges}, not one good
+  one. Every row records which produced it.
+
+  \smallskip
+  \centering\footnotesize
+  \begin{tabular}{llr}
+    \toprule
+    \textbf{Route} & \textbf{What it claims} & \textbf{Candidates} \\
+    \midrule
+    \texttt{reaction}          & annotated to a screened ModelSEED reaction & 816 \\
+    \texttt{precomputed\_link} & a global UniProt$\rightarrow$ModelSEED table & 2{,}554 \\
+    \texttt{domain}            & Pfam/InterPro family with \emph{characteristic} chemistry & 9{,}365 \\
+    \texttt{clade}             & UniRef50 neighbourhood of a validated protein & 36{,}889 \\
+    \texttt{enzyme\_name}      & UniProt \emph{names} it for the target function & 4{,}512 \\
+    \texttt{assayed}           & \good{measured nylon-6,6 titre} & 49 \\
+    \texttt{proxied}           & literature-curated, carries a geometric score & 14 \\
+    \bottomrule
+  \end{tabular}
+
+  \takeaway{\textbf{ModelSEED is not the bottleneck.} Screening all 36{,}552
+  Rhea reactions with our own screen found \textbf{417} amide-forming reactions
+  unreachable from ModelSEED --- and they yield \bad{3} proteins, because 21 of
+  the top 25 have \emph{no enzyme annotated at all}. The missing links do not
+  exist.}
+\end{frame}
+
+% ---------------------------------------------------------------- gates
+\begin{frame}{A score must rank retrieval, never gate it}
+  Cosine on a whole-reaction fingerprint is dominated by the cofactor, yet it
+  was deciding \emph{which reactions were ever looked at} --- in five places,
+  including one this project added itself.
+
+  \smallskip
+  \centering\footnotesize
+  \begin{tabular}{llr}
+    \toprule
+    \textbf{Gate} & \textbf{What it discarded} & \textbf{Cost} \\
+    \midrule
+    \texttt{TOPN=30} per query      & 41 of the 62 best-scoring reactions & \bad{high} \\
+    \texttt{priority} tie-break     & broke every tie on cosine & now \good{zero} \\
+    OOD floor on admission          & 96 of 205 reactions, the \emph{highest}-scoring & all FPGS, all Mur \\
+    stage 04 re-litigating stage 03 & \texttt{rxn14123} at cosine 0.499 vs floor 0.5041 & 126 proteins \\
+    \bad{our own} \texttt{SD\_FLOOR=0.40} & 214 of 482 \emph{screen-proven} reactions & see below \\
+    \bottomrule
+  \end{tabular}
+
+  \takeaway{Removing our own floor: reactions resolved 168 $\rightarrow$
+  \good{308}, candidates $+2{,}021$ --- and annotation coverage went \emph{up}.
+  Gating on a score discards evidence; ranking on it does not.}
+\end{frame}
+
+% ---------------------------------------------------------------- families
+\begin{frame}{Judge the family, not just the protein}
+  A protein admitted by family membership \textbf{inherits} its family's score,
+  so the decision governing tens of thousands of candidates is made once per
+  family. It is now made explicitly, on the \emph{measured} chemistry of each
+  family's own validated seeds.
+
+  \smallskip
+  \centering
+  \begin{tabular}{lrl}
+    \toprule
+    \textbf{Verdict} & \textbf{n} & \textbf{Criterion} \\
+    \midrule
+    \good{lead}  & 54 & diacid + diamine, self-condensing, or bifunctional one side \\
+    watch        & 16 & monofunctional, or the donor drags a large scaffold \\
+    \bad{reject} & 33 & terminal amide, or the members contradict the chemistry \\
+    \bottomrule
+  \end{tabular}
+
+  \smallskip
+  \begin{block}{What seed chemistry alone misses}
+    $\gamma$-glutamyltranspeptidase scores 0.64 on its seeds and looked like a
+    lead --- while \bad{1{,}550 of its 1{,}594 members} are annotated as a
+    non-amide-forming activity. It is a hydrolase family running a
+    transpeptidation side reaction.
+  \end{block}
+
+  \takeaway{103 families from 298 Pfam/InterPro signatures; the verdict
+  \textbf{prunes 8{,}409} candidates from the bench list. This is the lever
+  that makes the search more \emph{targeted}, not larger.}
 \end{frame}
 
 % ---------------------------------------------------------------- caveats
@@ -234,19 +323,17 @@
   \begin{block}{Honest limitations}
     \begin{itemize}
       \item The repair is \emph{not} charge-neutral (5{,}807 compounds shift
-        charge), so the corpus audits heavy-atom balance and proton-fixability
-        separately; unbalanced reactions are excluded, not hidden.
-      \item The two best hits (BibC, PubC) carry \textbf{no Rhea and no EC in
-        ModelSEED}; they were recovered by pivoting through \textbf{MetaNetX}
-        to the Rhea reaction cited in their own UniProt records. Without that,
-        29\% of ranked reactions resolve to no enzyme at all.
+        charge), so the corpus audits balance separately; unbalanced reactions
+        are excluded, not hidden.
+      \item BibC and PubC carry \textbf{no Rhea and no EC in ModelSEED}; both
+        were recovered by pivoting through \textbf{MetaNetX}. 308 of 482
+        screened reactions resolve to an enzyme.
       \item Screens are structural inference, not atom-mapped proof.
     \end{itemize}
   \end{block}
 
-  \takeaway{Whole pipeline reproducible in \textbf{$\sim$5 minutes}
-  (\texttt{run\_all.py}), parallelised with load-aware worker sizing;
-  20 curated controls; corpus pinned by content hash.}
+  \takeaway{Reproducible by \texttt{run\_all.py}: 23 stages, $\sim$40 min,
+  mostly polite API querying; 327 unit tests, 24 screen controls.}
 \end{frame}
 
 \end{document}
