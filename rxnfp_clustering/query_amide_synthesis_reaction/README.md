@@ -50,6 +50,36 @@ positives in the reference panel, no ranking here can be validated: the
 bootstrap CI on AUROC spans 0.23–0.85, and sequence length alone outscores
 every score this project could build.
 
+## The nylon-6 target, for free
+
+The pipeline is aimed at the nylon-6,6 **diad** — two different monomers,
+AA/BB. Nylon-6 is the other industrial polyamide: a *single* bifunctional
+monomer, 6-aminohexanoate, condensing head-to-tail. Scored with the same
+screen:
+
+```
+nylon-6,6 diad                  0.9650
+nylon-6 self-condensation       0.9191
+```
+
+So the screen already rates both as excellent targets, and **1,934 candidates
+sit on self-condensing chemistry** — one bifunctional monomer joined to a copy
+of itself.
+
+The leaderboard changes when you ask that question. The standout is
+**D-alanine--D-alanine ligase (Ddl)**: `P07862` (*E. coli*), `P0A1F0`
+(*S. typhimurium*), substrate distance 0.8686 and the highest
+`master_priority` in the whole table at 10.1. It natively condenses two
+identical bifunctional monomers — precisely the nylon-6 operation, with a C3
+monomer instead of C6. It sits mid-list for nylon-6,6 because that target
+needs a *diamine* acceptor, which Ddl does not use.
+
+No separate pipeline is needed: filter `master_candidates_enriched.tsv` on
+`self_condensation`, or re-run the screen with the nylon-6 reaction as the
+query. Recorded because a reader with the adjacent target should not have to
+rediscover it, and because it shows what the ranking is and is not sensitive
+to.
+
 ---
 
 ## Retrieval architecture (current)
