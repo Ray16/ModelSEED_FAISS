@@ -98,6 +98,39 @@ A name matching more than `ENZYME_NAME_CEILING` (10,000) entries is refused
 loudly instead of ingested, so a superfamily label added here later fails
 visibly rather than quietly inflating the count.
 
+**Rhea, searched directly instead of pivoted into.** Every reaction route in
+this pipeline starts from a ModelSEED reaction, so it can only ever reach
+chemistry ModelSEED contains. Rhea does not have that limit, so the obvious
+remaining move was to screen Rhea itself: download `rhea-reaction-smiles.tsv`
+(36,552 reactions), run the project's OWN validated screen over all of it, and
+query UniProt by `rhea:ID` for every reaction that proves amide formation on a
+free amine. No new judgement, no new scoring - the existing screen decides.
+
+Measured 2026-10-13:
+
+| | |
+|---|---:|
+| Rhea reactions with SMILES | 36,552 |
+| prove amide formation on a free amine | 532 |
+| of those, NOT reachable from ModelSEED | **417** |
+| novel and scoring >= 0.8 | 18 |
+| best novel score (RHEA:21366) | **0.9191**, above anything we hold |
+
+That looks like a large win and is not one. Querying UniProt for the 25
+highest-scoring novel reactions returns **3 new proteins**, because 21 of the
+25 have no UniProt protein annotated to them at all - the same "undeposited
+enzymology" category as our own 21 unresolved reactions. The 3 that did return
+are histone acetyltransferase KAT2A, a PROTEIN acetyltransferase that scores
+0.88 only because Rhea writes the substrate lysine as a free small molecule, so
+the macromolecular guard never fires.
+
+So the conclusion is the opposite of the premise: **ModelSEED is not the
+bottleneck.** Rhea curates far more amide chemistry than ModelSEED does, and
+almost none of it has an enzyme attached. Not adopted - it would add one real
+protein and one false positive. This is the cleanest evidence yet that the
+remaining 174 unresolved reactions are source-limited rather than
+retrieval-limited.
+
 ## Deliberately not used
 
 **KEGG REST** (free, works — tested `get/ec:6.3.2.17` and `link/ko/ec:…`). It
