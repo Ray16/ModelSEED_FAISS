@@ -42,6 +42,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 import pandas as pd
 
+from . import families
 from . import uniprot
 from . import uniparc
 from .paths import RES
@@ -63,6 +64,13 @@ FILLABLE = {
     'Gene Ontology (molecular function)': 'go_function',
     'Gene Ontology (biological process)': 'go_process',
 }
+
+
+def _column(frame, name, default=''):
+    """Always a Series: DataFrame.get returns a scalar when the column is absent."""
+    if name in frame.columns:
+        return frame[name]
+    return pd.Series([default] * len(frame), index=frame.index)
 
 
 def blank(series):
@@ -190,6 +198,33 @@ def main():
                 if target not in table.columns:
                     table[target] = ''
                 table.loc[gap, target] = table.loc[gap, source]
+
+    # A Pfam accession is not a family name. 1,121 rows arrived from the
+    # expansion routes with PF accessions and no readable label, which makes
+    # them unreadable in the shortlist and uncountable by family.
+    gap = blank(_column(table, 'family')) & ~blank(_column(table, 'pfam'))
+    if gap.any():
+        accessions = []
+        for value in table.loc[gap, 'pfam']:
+            accessions.extend(families.split_accessions(str(value)))
+        names = families.pfam_names(accessions)
+        resolved = 0
+        primary, every = [], []
+        for value in table.loc[gap, 'pfam']:
+            accs = families.split_accessions(str(value))
+            labels = [names.get(a) or a for a in accs]
+            main = next((l for l in labels
+                         if l not in families.SECONDARY_DOMAINS),
+                        labels[0] if labels else '')
+            primary.append(main)
+            every.append(';'.join(labels))
+            resolved += int(bool(main) and main not in accs)
+        table.loc[gap, 'family'] = primary
+        if 'family_all' in table.columns:
+            still = blank(table.family_all) & gap
+            table.loc[still, 'family_all'] = pd.Series(every, index=table.index[gap])[still]
+        print(f'  family names: filled {int(gap.sum())} rows '
+              f'({resolved} with a readable InterPro name)', flush=True)
 
     table.to_csv(RES / 'master_candidates_enriched.tsv', sep='\t', index=False)
 

@@ -9,8 +9,8 @@
   },
   "eligible": 25321,
   "shortlisted": 292,
-  "distinct_families": 33,
-  "distinct_organisms": 214,
+  "distinct_families": 35,
+  "distinct_organisms": 215,
   "by_evidence": {
     "exact_reaction": 88,
     "measured_activity": 48,

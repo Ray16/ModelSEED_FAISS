@@ -76,7 +76,9 @@ accession and no annotation: 9,074 accessions, **98,296 values filled**.
 
 | field | coverage |
 |---|---:|
-| organism / lineage / keywords | 99.9% |
+| organism | 100% |
+| family (readable name, not an accession) | 99.8% |
+| lineage / keywords | 99.9% |
 | InterPro | 99.7% |
 | Pfam | 99.4% |
 | EC | 81.8% |
