@@ -1,16 +1,16 @@
 {
-  "candidates_considered": 34134,
+  "candidates_considered": 36155,
   "excluded": {
-    "": 25321,
-    "too_short": 4865,
+    "": 27076,
+    "too_short": 5126,
     "annotation_contradicts_chemistry": 2901,
-    "too_long": 1046,
+    "too_long": 1051,
     "no_sequence": 1
   },
-  "eligible": 25321,
-  "shortlisted": 292,
-  "distinct_families": 35,
-  "distinct_organisms": 215,
+  "eligible": 27076,
+  "shortlisted": 289,
+  "distinct_families": 40,
+  "distinct_organisms": 212,
   "by_evidence": {
     "exact_reaction": 88,
     "measured_activity": 48,
@@ -20,13 +20,13 @@
     "clade_homolog": 25,
     "name_match": 12,
     "literature_curated": 12,
-    "reaction_name_match": 6
+    "reaction_name_match": 3
   },
   "with_measured_activity": 48,
-  "with_pdb": 82,
-  "with_experimental_structure": 82,
-  "with_cofactor_bound_structure": 34,
-  "self_condensing": 75,
+  "with_pdb": 97,
+  "with_experimental_structure": 97,
+  "with_cofactor_bound_structure": 41,
+  "self_condensing": 72,
   "caps": {
     "family": 12,
     "clade": 3,

@@ -1,9 +1,9 @@
 {
-  "candidates_with_structure": 179,
-  "pdb_entries_queried": 825,
+  "candidates_with_structure": 257,
+  "pdb_entries_queried": 1222,
   "lookups_failed": 0,
-  "entries_with_atp_like": 80,
-  "candidates_with_cofactor_bound": 42,
-  "candidates_with_metal_bound": 87,
+  "entries_with_atp_like": 111,
+  "candidates_with_cofactor_bound": 55,
+  "candidates_with_metal_bound": 115,
   "median_best_resolution_a": 2.0
 }

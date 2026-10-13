@@ -69,7 +69,24 @@ TOPN = 30
 # and the meso-diaminopimelate Mur ligases. Reactions are now admitted if they
 # are near in embedding space OR nylon-like in substrate chemistry; the two
 # routes are unioned and labelled, so this can only add candidates.
-SD_FLOOR = float(os.environ.get('SUBSTRATE_DISTANCE_FLOOR', 0.40))
+# DEFAULT 0.0: admit every reaction the screen has PROVEN forms an amide on a
+# free small-molecule amine, and let substrate distance RANK them rather than
+# gate them.
+#
+# This project removed four separate places where the embedding silently gated
+# retrieval instead of ranking it (the per-query top-N, the candidate-table
+# priority, the OOD floor, and stage 04 re-litigating stage 03's admission).
+# Then it left a gate of its own: a 0.40 substrate-distance floor, which
+# excluded 214 of the 473 screen-eligible reactions - every one of them a
+# reaction whose amide formation on a free amine had been PROVEN by
+# reconstruction, merely not nylon-like enough for the floor.
+#
+# Gating on a score discards evidence; ranking on it does not. The score still
+# does all the prioritisation work downstream - `master_priority` weights it
+# 3x, and the shortlist allocates slots by evidence tier - so low-scoring
+# chemistry cannot crowd out the nylon-like candidates. Set the environment
+# variable to restore a floor if a run needs one.
+SD_FLOOR = float(os.environ.get('SUBSTRATE_DISTANCE_FLOOR', 0.0))
 from .workers import worker_count, describe
 WORKERS = worker_count()
 

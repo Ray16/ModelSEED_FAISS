@@ -1,22 +1,22 @@
 {
-  "accessions_enriched": 9074,
-  "records_retrieved": 9074,
-  "values_filled": 98296,
+  "accessions_enriched": 10842,
+  "records_retrieved": 10842,
+  "values_filled": 134457,
   "failed_batches": 0,
   "ncbi_requested": 48,
   "ncbi_resolved": 10,
   "uniparc_exact_matches": 48,
   "uniparc_requested": 49,
   "coverage_percent": {
-    "ec": 81.8,
+    "ec": 82.8,
     "organism": 100.0,
     "lineage": 99.9,
     "pfam": 99.4,
     "interpro": 99.7,
-    "catalytic_activity": 76.5,
-    "function": 55.6,
+    "catalytic_activity": 77.6,
+    "function": 56.6,
     "keywords": 99.9,
-    "alphafold": 69.2,
-    "pdb": 0.5
+    "alphafold": 70.9,
+    "pdb": 0.7
   }
 }

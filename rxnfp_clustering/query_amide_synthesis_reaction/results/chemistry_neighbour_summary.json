@@ -1,7 +1,7 @@
 {
-  "reactions_bridged": 19,
-  "associations": 121,
-  "unique_proteins": 58,
+  "reactions_bridged": 20,
+  "associations": 134,
+  "unique_proteins": 71,
   "identical_chemistry": 23,
   "new_proteins_added": 0,
   "min_substrate_distance": 0.6,

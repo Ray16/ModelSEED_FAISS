@@ -200,12 +200,38 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **34,134 candidates** - 34,133 with a sequence, 25,011 with a
-curated catalytic-activity statement, 22,505 with an AlphaFold model, 136 with
-a PDB entry, 879 self-condensing, 36 carrying an independent geometric score.
+Current totals: **36,155 candidates** - 25,264 with a curated
+catalytic-activity statement, 22,823 with an AlphaFold model, 206 with a PDB
+entry, 875 self-condensing, 36 carrying an independent geometric score.
 
 Measured and inherited distances are kept in separate columns and are not
 interchangeable.
+
+### No score gates retrieval — including this project's own
+
+Cosine was gating retrieval in three places, the OOD floor in a fourth, and
+then this project added a fifth of its own: a 0.40 **substrate-distance** floor
+on admission. It excluded 214 of the 473 screen-eligible reactions — every one
+a reaction whose amide formation on a free amine had been *proven* by
+reconstruction, merely not nylon-like enough to clear the floor. Removing it
+(default now 0.0):
+
+| | before | after |
+|---|---:|---:|
+| reactions admitted | 259 | **473** |
+| reactions resolved to a protein | 168 | **305** |
+| reaction-route candidates | 459 | **800** |
+| precomputed-link candidates | 1,131 | **2,808** |
+| total candidates | 34,134 | **36,155** |
+| candidates with an experimental structure | 179 | **257** |
+| with a cofactor-bound structure | 42 | **55** |
+
+Gating on a score discards evidence; ranking on it does not. The score still
+does all the prioritisation — `master_priority` weights it 3x and the shortlist
+allocates slots by evidence tier — so low-scoring chemistry cannot crowd out
+the nylon-like candidates. Shortlist families went 35 → 40 and PDB-bearing
+members 82 → 97, i.e. the extra breadth improved the deliverable rather than
+diluting it.
 
 ### Cosine is a recall route, never a gate
 
