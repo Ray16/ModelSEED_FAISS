@@ -86,7 +86,21 @@ accession and no annotation: 9,074 accessions, **98,296 values filled**.
 | PDB | 0.5% |
 
 The last three are UniProt's own coverage of unreviewed entries, not a
-retrieval gap.
+retrieval gap - **verified, not assumed**. `tools/verify_annotation_ceiling.py`
+re-queries UniProt for a random sample of accessions that are BLANK in our
+table and asks whether UniProt has the field at all. If it does, we have a
+bug; if it does not, the percentage is a property of the source.
+
+```
+catalytic_activity   probed 120   UniProt has it:  0   genuinely absent: 120
+function             probed  80   UniProt has it:  0   genuinely absent:  80
+```
+
+0 failed batches in both. 8,008 rows lack catalytic activity, of which 5,756
+are clade homologs and 2,076 family homologs - unreviewed TrEMBL entries,
+which systematically carry no CC lines - and 47 are the assayed panel, which
+has no UniProtKB entry at all. Re-run the tool after any retrieval change
+rather than trusting the number.
 
 **The assayed panel needed a different route.** Accession matching reached only
 10 of 48 - most are environmental sequences with no UniProtKB entry - so
