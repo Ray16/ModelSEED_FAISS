@@ -11,9 +11,8 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
 
-import evaluate_families as ev   # noqa: E402
+from amide_synthesis import family_evaluation as ev   # noqa: E402
 
 
 def family(**kw):

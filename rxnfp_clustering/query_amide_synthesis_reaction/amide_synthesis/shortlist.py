@@ -147,6 +147,14 @@ def eligible(table):
         reasons.eq('') & pd.to_numeric(prose, errors='coerce')
         .fillna(0).astype(bool),
         'family_prose_contradicts_chemistry')
+    # The family was judged on its own validated seeds' chemistry and failed -
+    # see family_evaluation.py. A reaction-anchored protein is exempt: its own
+    # reaction was screened, which outranks its family's verdict.
+    in_rejected = _column(out, 'in_rejected_family', False)
+    reasons = reasons.mask(
+        reasons.eq('') & pd.to_numeric(in_rejected, errors='coerce')
+        .fillna(0).astype(bool),
+        'family_judged_reject')
     # Measured activity overrides every predicted objection except a missing
     # sequence, which would make the row untestable.
     measured = _column(out, 'evidence_strength').isin(ALWAYS_KEEP)
@@ -256,6 +264,31 @@ def main():
     if pdb_facts.exists():
         facts = pd.read_csv(pdb_facts, sep='\t')
         table = table.merge(facts, on='uniprot', how='left')
+
+    # Family verdicts. A protein admitted by family membership inherits its
+    # family's score, so a family judged `reject` on its own seeds' chemistry
+    # should not be contributing bench candidates at all. This PRUNES rather
+    # than broadens: it is the lever that makes the table more targeted.
+    verdicts = RES / 'family_evaluation.tsv'
+    if verdicts.exists():
+        judged = pd.read_csv(verdicts, sep='\t', low_memory=False)
+        rejected = set()
+        for row in judged[judged.verdict.eq('reject')].itertuples():
+            for accession in str(getattr(row, 'signatures', '') or '').split(';'):
+                accession = accession.strip()
+                if accession:
+                    rejected.add(accession)
+        if rejected:
+            pattern = '|'.join(re.escape(a) for a in sorted(rejected))
+            signature_text = (_column(table, 'pfam').fillna('').astype(str)
+                              + ';' + _column(table, 'interpro')
+                              .fillna('').astype(str))
+            table['in_rejected_family'] = (
+                signature_text.str.contains(pattern, regex=True)
+                & _column(table, 'discovery_route').ne('reaction'))
+            print(f'family verdicts: {len(rejected)} signatures in rejected '
+                  f'families; {int(table.in_rejected_family.sum())} candidates '
+                  'flagged', flush=True)
 
     # Curated properties, for the family-prose cross-check above. Only the
     # flag is joined: the prose itself belongs in the annotated deliverable,

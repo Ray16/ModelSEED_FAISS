@@ -201,7 +201,7 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **40,725 candidates** - 28,255 with a curated
+Current totals: **54,199 candidates** - 28,255 with a curated
 catalytic-activity statement, 28,146 with an AlphaFold model, 261 with a PDB
 entry, 889 self-condensing, 36 carrying an independent geometric score.
 
@@ -254,6 +254,22 @@ members** carry an annotation contradicting amide formation — it is a hydrolas
 family running a transpeptidation side reaction. A contradicted majority now
 rejects the family outright.
 
+### Known defect: the candidate table's `family` label can be wrong
+
+A protein is labelled with the first name in its signature list, so
+`P0ADT5`/`P33222` — "Putative acid--amine ligase YgiC/YjfC (EC 6.3.1.-)", seeded
+from PF03738 and genuinely on-chemistry — appear under **"CHAP domain"**,
+because IPR016185 was historically labelled that way. The chemistry and the
+ranking are unaffected (they key on the signature, not the label), but the
+shortlist's family *names* are partly wrong, and so is any count of distinct
+families read off that column.
+
+`family_evaluation.py` already resolves each signature's own curated name from
+InterPro and caches it (`cache/signature_names.json`). Applying the same
+resolution to the main table's `family` column is the fix; it is not done here
+because that column feeds the figures and the Beamer deck, and relabelling
+those is a separate change.
+
 ### Recall measured against an external list, not against our own tests
 
 Every control in `tests/` encodes an assumption this project already held, so
@@ -290,10 +306,10 @@ superfamily label loudly instead of ingesting it.
 
 | | before | after |
 |---|---:|---:|
-| total candidates | 36,190 | **40,725** |
+| total candidates | 36,190 | **54,199** |
 | shortlist | 289 | **301** |
-| shortlist families | 40 | **43** |
-| shortlist organisms | 211 | **220** |
+| shortlist families | 40 | **46** |
+| shortlist organisms | 211 | 202 |
 
 The route's best finds are `cocJ`/`uncG`, UniProt-named "Amide-bond
 synthetase" (EC 6.2.1.-, AMP-binding) — the engineered acid + amine coupling

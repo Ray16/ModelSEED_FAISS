@@ -201,3 +201,36 @@ class BenchConstraintTests(unittest.TestCase):
         frame = self._row('').drop(columns=['keywords'])
         out = sl.eligible(frame)
         self.assertEqual(out.excluded_because.iloc[0], '')
+
+
+class RejectedFamilyTests(unittest.TestCase):
+    """A family judged `reject` on its own seeds must stop supplying bench rows.
+
+    This is the lever that makes the table more TARGETED rather than larger:
+    the family verdict prunes homologues of families whose chemistry cannot
+    reach the nylon bond.
+    """
+
+    def _row(self, rejected, evidence='family_homolog'):
+        return pd.DataFrame([{
+            'uniprot': 'P00001', 'evidence_strength': evidence,
+            'master_priority': 5.0, 'length': 500, 'sequence': 'M' * 500,
+            'organism': 'E. coli', 'family': 'Fam', 'keywords': '',
+            'in_rejected_family': rejected,
+        }])
+
+    def test_a_member_of_a_rejected_family_is_excluded(self):
+        out = sl.eligible(self._row(True))
+        self.assertEqual(out.excluded_because.iloc[0], 'family_judged_reject')
+
+    def test_a_member_of_an_accepted_family_is_kept(self):
+        out = sl.eligible(self._row(False))
+        self.assertEqual(out.excluded_because.iloc[0], '')
+
+    def test_measured_activity_still_overrides(self):
+        out = sl.eligible(self._row(True, 'measured_activity'))
+        self.assertEqual(out.excluded_because.iloc[0], '')
+
+    def test_a_table_without_the_column_is_unaffected(self):
+        frame = self._row(False).drop(columns=['in_rejected_family'])
+        self.assertEqual(sl.eligible(frame).excluded_because.iloc[0], '')

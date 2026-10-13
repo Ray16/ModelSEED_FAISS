@@ -4,8 +4,8 @@
   "models_found": 253,
   "network_failures": 0,
   "no_model": 0,
-  "plddt_mean_median": 94.12,
-  "confident_ge_70": 253,
+  "plddt_mean_median": 93.75,
+  "confident_ge_70": 247,
   "unusable_lt_50": 0,
   "thresholds": {
     "confident": 70.0,
