@@ -96,6 +96,10 @@ nylon-6,10 really does make sebacate outscore adipate. Recorded because a reader
 rediscover it, and because it shows what the ranking is and is not sensitive
 to.
 
+See **`VERIFICATION.md`** for how the project checks itself — six
+re-runnable tools, each written because a claim had been asserted rather than
+measured, and three of which found the assertion wrong.
+
 ---
 
 ## Retrieval architecture (current)
