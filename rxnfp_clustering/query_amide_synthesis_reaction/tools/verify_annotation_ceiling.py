@@ -35,7 +35,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from amide_synthesis.enrich import FILLABLE, blank, fetch   # noqa: E402
 from amide_synthesis.paths import RES                        # noqa: E402
 
-UNIPROT_ACCESSION = r'^[A-NR-Z0-9][0-9][A-Z0-9]{3}[0-9]'
+# The canonical pattern, imported rather than re-written. The local copy here
+# was `^[A-NR-Z0-9][0-9][A-Z0-9]{3}[0-9]`, whose first class EXCLUDES O, P and
+# Q and which was not end-anchored. It matched 51,595 of 54,198 accessions,
+# and the 2,603 it skipped are disproportionately REVIEWED Swiss-Prot entries
+# - precisely the ones most likely to carry the annotation this tool asks
+# about. The sample was therefore biased toward unreviewed TrEMBL, which
+# would push the answer toward "UniProt has nothing" regardless of the truth.
+from amide_synthesis.curated_properties import ACCESSION as UNIPROT_ACCESSION
 
 
 def verify(field='catalytic_activity', size=120, seed=0):
