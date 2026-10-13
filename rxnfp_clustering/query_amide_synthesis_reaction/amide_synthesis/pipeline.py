@@ -19,12 +19,37 @@ class Stage:
     needs_uniprot: bool = False
 
 
+# Order is dependency order, and `--only` is reordered to match it.
+#
+# Two ordering constraints are load-bearing and were each a bug once:
+#   * `enrich` must run AFTER `master` and writes its OWN file, because
+#     rewriting master_candidates.tsv in place let a later master run silently
+#     discard every enriched value.
+#   * `refs` must not read master_candidates.tsv to decide what is missing -
+#     that made its output depend on whether a later stage had already run.
 STAGES = (
     Stage('corpus', 'rebuild_corpus', 'rebuild reactions + ECFP4/DRFP'),
     Stage('search', 'encode_and_search', 'encode queries, cosine nearest neighbours'),
-    Stage('screen', 'amide_enzymes', 'mechanism screens + per-EC shortlist'),
+    Stage('screen', 'amide_enzymes', 'mechanism screens + substrate distance'),
     Stage('enzymes', 'fetch_enzymes', 'resolve UniProt enzymes (network)', True),
     Stage('table', 'candidate_table', 'prioritised candidate table (+ family)'),
+    Stage('families', 'expand_families',
+          'expand validated families by domain / clade (network)', True),
+    Stage('links', 'precomputed_links',
+          'ingest the external UniProt->ModelSEED link table'),
+    Stage('refs', 'reference_actives',
+          'assayed panel + literature-curated proteins (network)', True),
+    Stage('neighbours', 'chemistry_neighbours',
+          'borrow enzymes across chemically equivalent reactions'),
+    Stage('master', 'master_table', 'merge every route, keeping provenance'),
+    Stage('enrich', 'enrich',
+          'fill annotation for bare candidates; UniParc for the panel (network)',
+          True),
+    Stage('pdb', 'pdb_evidence', 'experimental structures per candidate (network)',
+          True),
+    Stage('geometry', 'adenylation_geometry',
+          'adenylation geometry in cofactor-bound structures (network)', True),
+    Stage('shortlist', 'shortlist', 'bench-ready diverse shortlist + FASTA'),
     Stage('native', 'native_substrates', 'native reactions + family grouping'),
     Stage('deckfigs', 'deck_figures', 'family and substrate-gap figures'),
     Stage('figure', 'project_tsne', 't-SNE map with candidates overlaid'),

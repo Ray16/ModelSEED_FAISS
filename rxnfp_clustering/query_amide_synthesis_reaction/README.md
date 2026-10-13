@@ -674,7 +674,8 @@ Reproduce:
 ```bash
 cd rxnfp_clustering/query_amide_synthesis_reaction
 P=/homes/rzhu/miniforge3/envs/palm/bin/python     # env `palm` has rdkit + drfp
-$P run_all.py                        # full pipeline, ~5 min
+$P run_all.py                        # full pipeline, all 17 stages
+$P run_all.py --dry-run              # list the stages in dependency order
 $P run_all.py --skip-corpus          # reuse corpus + embeddings
 $P run_all.py --skip-corpus --offline  # reuse UniProt files; no HTTP requests
 $P run_all.py --only screen table    # single stages
