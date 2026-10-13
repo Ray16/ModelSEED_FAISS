@@ -68,7 +68,12 @@ def load_panel(path=PANEL):
 
 
 def missing_proxy_accessions(path=PROXY, known=()):
-    """Structurally scored proteins that no ModelSEED route reached."""
+    """Structurally scored proteins, minus any caller-supplied exclusions.
+
+    `known` defaults to empty on purpose: see `main`. Excluding proteins that
+    another route already found is de-duplication, and de-duplication happens
+    once, in `master_table.build`.
+    """
     if not Path(path).exists():
         return []
     frame = pd.read_csv(path)
@@ -92,13 +97,14 @@ def main():
     from .master_table import RENAME
     ensure_directories()
 
-    known = set()
-    master = RES / 'master_candidates.tsv'
-    if master.exists():
-        known = set(pd.read_csv(master, sep='\t', low_memory=False).uniprot)
-
+    # Deliberately NOT gated on master_candidates.tsv. That file is written
+    # AFTER this stage, so reading it here made the output order-dependent: on
+    # a second run the proteins looked "already known", were skipped, and the
+    # merge then had nothing to add - structural-score coverage silently fell
+    # from 36 to 21. Every scored protein is fetched every time; master_table
+    # de-duplicates, which is where that belongs.
     panel = load_panel()
-    missing = missing_proxy_accessions(known=known)
+    missing = missing_proxy_accessions()
     print(f'assay panel: {len(panel)} proteins '
           f'({int(panel.is_strong_producer.sum()) if len(panel) else 0} strong)',
           flush=True)

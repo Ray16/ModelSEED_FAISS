@@ -40,7 +40,22 @@ Four questions, in decreasing order of how much they matter for a polyamide:
    shorter per arm, so this is the term that quantifies it rather than
    asserting it in prose.
 
-4. IS THE BACKBONE A PLAIN ALIPHATIC CHAIN? Nylon monomers are unsubstituted
+4. IS THE SUBSTRATE MOSTLY THE MOTIF, OR MOSTLY SCAFFOLD? A high score on
+   questions 1-3 describes the BOND, not the molecule carrying it, and an
+   active site has to hold the whole molecule. Folylpolyglutamate synthetase
+   scores 0.883 on bond chemistry - it really does iteratively extend a
+   polyamide onto a free amine - but its substrate is
+   tetrahydrofolyl-polyglutamate, and the pocket is built to grip a pterin
+   ring. MurE/MurF likewise form the right amide onto meso-diaminopimelate
+   while recognising UDP-MurNAc-tripeptide. Neither will see a C6 diacid.
+
+   Adipate is 10 heavy atoms and HMDA is 8. A substrate carrying a pterin, a
+   UDP-sugar, a CoA or a nucleotide is mostly recognition element, and the
+   fraction of it that is NOT the nylon-like motif is charged for here. This
+   is the term that separates "forms the right bond" from "accepts the right
+   molecule".
+
+5. IS THE BACKBONE A PLAIN ALIPHATIC CHAIN? Nylon monomers are unsubstituted
    methylene chains. Citrate (AsbA's native acid) is branched, hydroxylated and
    a triacid; the NIS monomers are N-hydroxylated. Both are real deviations and
    both are charged for here.
@@ -65,10 +80,18 @@ N_HYDROXY = Chem.MolFromSmarts('[NX3][OX2H1]')
 AMIDE_N = Chem.MolFromSmarts('[NX3][CX3]=[OX1]')
 
 # Component weights; they sum to 1.0 so the score reads as a fraction.
-W_POLYCONDENSATION = 0.40
-W_PRODUCT_REACTIVE = 0.15
-W_SPACER = 0.25
-W_BACKBONE = 0.20
+W_POLYCONDENSATION = 0.35
+W_PRODUCT_REACTIVE = 0.10
+W_SPACER = 0.20
+W_BACKBONE = 0.15
+W_PARSIMONY = 0.20
+
+# Heavy atoms in the nylon-6,6 monomers; substrates much larger than these are
+# mostly scaffold the active site must also accommodate.
+ADIPATE_HEAVY = 10
+HMDA_HEAVY = 8
+# Tolerance in heavy atoms before the excess is charged in full.
+PARSIMONY_SLACK = 6.0
 
 # Spacer tolerance: a one-carbon mismatch keeps most of the credit, a
 # three-carbon mismatch keeps little.
@@ -117,6 +140,19 @@ def _widest_spacer(mol, anchors):
             if count is not None and (best is None or count > best):
                 best, best_path = count, path
     return best, best_path
+
+
+def _parsimony(mol, reference_heavy):
+    """1.0 at the nylon monomer's size, decaying as scaffold is added.
+
+    Measures the molecule, not the motif: this is the only term that notices
+    a pterin, a UDP-sugar, a CoA or a nucleotide hanging off an otherwise
+    perfect amide.
+    """
+    if mol is None:
+        return 0.0
+    excess = max(0, mol.GetNumHeavyAtoms() - reference_heavy)
+    return float(PARSIMONY_SLACK / (PARSIMONY_SLACK + excess))
 
 
 def _spacer_credit(observed, reference):
@@ -182,6 +218,10 @@ def describe_event(event):
         'amine_spacer': None,
         'acid_spacer': None,
         'backbone_penalty': 1.0,
+        'acceptor_heavy_atoms': None,
+        'acyl_heavy_atoms': None,
+        'donor_parent_heavy_atoms': None,
+        'parsimony': 0.0,
     }
     if acceptor is None:
         return out
@@ -220,6 +260,19 @@ def describe_event(event):
         out['product_retains_amine'] = count_free_amines(product) > 0
         out['product_retains_acid'] = bool(_acid_carbons(product))
 
+    out['acceptor_heavy_atoms'] = acceptor.GetNumHeavyAtoms()
+    out['acyl_heavy_atoms'] = acyl.GetNumHeavyAtoms() if acyl is not None else None
+    # Charge for the PARENT donor, which still carries the scaffold.
+    donor_heavy = event.get('donor_parent_heavy_atoms')
+    if donor_heavy is None and acyl is not None:
+        donor_heavy = acyl.GetNumHeavyAtoms()
+    out['donor_parent_heavy_atoms'] = donor_heavy
+    donor_credit = (PARSIMONY_SLACK
+                    / (PARSIMONY_SLACK + max(0, (donor_heavy or 0) - ADIPATE_HEAVY))
+                    if donor_heavy else 0.0)
+    out['parsimony'] = round(0.5 * (_parsimony(acceptor, HMDA_HEAVY)
+                                    + donor_credit), 4)
+
     penalties = [p for p in (
         _backbone_penalty(acceptor, amine_path) if amine_path else None,
         _backbone_penalty(acyl or acceptor, acid_path) if acid_path else None,
@@ -247,12 +300,20 @@ def score_event(features):
     spacer = 0.5 * (_spacer_credit(features['amine_spacer'], HMDA_SPACER)
                     + _spacer_credit(features['acid_spacer'], ADIPATE_SPACER))
 
+    if poly == 0.0:
+        # A terminal amide cannot extend a chain, so nothing else about it is
+        # relevant. Without this, a small, clean, well-behaved acetamide earns
+        # parsimony and backbone credit for being an excellent example of a
+        # reaction we do not want.
+        return 0.0
+
     backbone = 1.0 - features['backbone_penalty']
 
     return round(W_POLYCONDENSATION * poly
                  + W_PRODUCT_REACTIVE * reactive
                  + W_SPACER * spacer
-                 + W_BACKBONE * backbone, 4)
+                 + W_BACKBONE * backbone
+                 + W_PARSIMONY * features.get('parsimony', 0.0), 4)
 
 
 def score_reaction(rxn_smiles, max_heavy=60):

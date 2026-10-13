@@ -91,6 +91,41 @@ class TestPolycondensationLogic(unittest.TestCase):
             self.assertLessEqual(score_reaction(rxn)[0], 1.0)
 
 
+FPGS_LIKE = ('[NH3+]C(CCC(=O)[O-])C(=O)[O-].'
+             'O=C([O-])C(CCC(=O)[O-])NC(=O)c1ccc(NCC2CNc3nc(N)[nH]c(=O)c3N2)cc1'
+             '>>[O-]C(=O)C(CCC(=O)NC(CCC(=O)[O-])C(=O)[O-])'
+             'NC(=O)c1ccc(NCC2CNc3nc(N)[nH]c(=O)c3N2)cc1.O')
+
+
+class TestScaffoldParsimony(unittest.TestCase):
+    """Forming the right BOND is not accepting the right MOLECULE.
+
+    Folylpolyglutamate synthetase genuinely runs iterative polyamide
+    extension onto a free amine and scored 0.883 on bond chemistry alone -
+    above every NIS synthetase. Its substrate is tetrahydrofolyl-
+    polyglutamate and its pocket grips a pterin, so it will never see a C6
+    diacid. The scaffold has to be counted.
+    """
+
+    def test_parent_donor_is_measured_not_the_cut_fragment(self):
+        """The acyl half is small by construction; the parent carries the pterin."""
+        features = describe_event(acylation_events(FPGS_LIKE)[0])
+        self.assertGreater(features['donor_parent_heavy_atoms'], 25,
+                           'the pterin-bearing parent must be the thing measured')
+
+    def test_bulky_scaffold_scores_below_the_bare_monomer(self):
+        self.assertGreater(score_reaction(NYLON_DIAD)[0],
+                           score_reaction(FPGS_LIKE)[0])
+
+    def test_parsimony_is_perfect_for_the_nylon_monomers(self):
+        features = describe_event(acylation_events(NYLON_DIAD)[0])
+        self.assertAlmostEqual(features['parsimony'], 1.0, places=2)
+
+    def test_parsimony_cannot_rescue_a_terminal_amide(self):
+        """Small and clean is not a virtue if the chemistry cannot polymerise."""
+        self.assertEqual(score_reaction(TERMINAL_ACETAMIDE)[0], 0.0)
+
+
 class TestSpacerGeometry(unittest.TestCase):
     """Chain length must be measured, since it is the stated gap to the NIS
     enzymes (native monomers are two carbons shorter per arm)."""

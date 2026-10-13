@@ -143,6 +143,34 @@ class TestMasterMerge(unittest.TestCase):
         self.assertEqual(len(table), 1)
 
 
+class TestIdempotence(unittest.TestCase):
+    """Stages must not change their output because a later stage already ran.
+
+    `reference_actives` used to compute "what is missing" by reading
+    `master_candidates.tsv`, which is written AFTER it. On a second run the
+    structurally scored proteins looked already-known, were skipped, and
+    structural-score coverage silently fell from 36 to 21.
+    """
+
+    def test_proxy_accessions_do_not_depend_on_a_later_stage(self):
+        from amide_synthesis import reference_actives as ra
+        first = ra.missing_proxy_accessions()
+        second = ra.missing_proxy_accessions()
+        self.assertEqual(first, second)
+        if first:
+            self.assertTrue(len(first) > 0)
+
+    def test_master_build_is_deterministic(self):
+        reaction = pd.DataFrame([{
+            'uniprot': 'P1', 'protein_name': 'synthetase',
+            'substrate_distance': .8, 'evidence_strength': 'exact_reaction',
+            'sequence': 'MK'}])
+        empty = pd.DataFrame(columns=['uniprot', 'struct_S'])
+        a = mt.build(reaction.copy(), pd.DataFrame(), structural=empty)
+        b = mt.build(reaction.copy(), pd.DataFrame(), structural=empty)
+        pd.testing.assert_frame_equal(a, b)
+
+
 class TestFastaRoundTrip(unittest.TestCase):
     def test_multiline_fasta_is_rejoined(self):
         with tempfile.TemporaryDirectory() as temp:

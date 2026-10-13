@@ -1,10 +1,10 @@
 {
   "link_table_rows": 262380,
-  "screened_reactions": 205,
-  "reactions_resolved": 93,
-  "candidate_rows": 1378,
-  "unique_proteins": 1264,
-  "new_vs_master": 1135,
+  "screened_reactions": 259,
+  "reactions_resolved": 109,
+  "candidate_rows": 1775,
+  "unique_proteins": 1639,
+  "new_vs_master": 371,
   "over_annotated_reactions": 2,
-  "with_sequence": 1378
+  "with_sequence": 1775
 }

@@ -1,16 +1,16 @@
 ec	best_similarity	acylates_free_diamine	n_reactions	example_reaction_name	reactions	matched_queries
-6.3.2.-	0.7542	True	4		rxn23346;rxn23347;rxn26012;rxn40655	atp_adp_ligase;atp_amp_ligase
+6.3.2.-	0.7542	True	5		rxn23346;rxn23347;rxn24153;rxn26012;rxn40655	atp_adp_ligase;atp_amp_ligase;direct_condensation
 6.3.2.ae	0.7528	True	1		rxn42510	atp_adp_ligase;atp_amp_ligase
 6.3.1.11	0.7493	True	1	glutamate putrescine ligase	rxn05123	atp_adp_ligase;direct_condensation
 6.3.2.37	0.7057	True	2	D-lysine-adding enzyme	rxn16438;rxn22343	atp_adp_ligase;direct_condensation
 6.3.2.ad	0.6765	True	1		rxn42395	atp_amp_ligase
-2.3.1.-	0.6442	True	3	4-coumaroyl-CoA:putrescine N4-coumaroyltransferase	rxn00316;rxn16116;rxn16117	coa_aminolysis;coa_aminolysis_putrescine
+2.3.1.-	0.6442	True	5	4-coumaroyl-CoA:putrescine N4-coumaroyltransferase	rxn00316;rxn03268;rxn14043;rxn16116;rxn16117	coa_aminolysis;coa_aminolysis_putrescine
 6.3.1.9	0.6344	True	6	glutathione:glutathionylaminopropylcadaverine ligase (ADP-forming)	rxn01403;rxn02706;rxn12042;rxn12043;rxn12044;rxn12045	atp_adp_ligase
 6.3.2.20	0.631	True	1	Indoleacetate:L-lysine ligase (ADP-forming)	rxn02221	atp_adp_ligase;direct_condensation
 6.3.2.ab	0.6183	True	1		rxn47618	atp_amp_ligase
-6.3.2.11	0.6076	True	3	L-histidine:4-aminobutanoate ligase (AMP-forming)	rxn00659;rxn00661;rxn01463	atp_amp_ligase
+6.3.2.11	0.6076	True	7	L-histidine:4-aminobutanoate ligase (AMP-forming)	rxn00659;rxn00661;rxn00864;rxn01463;rxn02352;rxn19261;rxn21501	atp_adp_ligase;atp_amp_ligase
 2.3.1.64	0.5819	True	2	4-Coumaroyl-CoA:agmatine N4-coumaroyltransferase	rxn01183;rxn16115	coa_aminolysis_putrescine
-2.3.1.57	0.5762	True	3	acetyl-CoA:putrescine N-acetyltransferase	rxn00855;rxn09264;rxn09265	coa_aminolysis;coa_aminolysis_putrescine
+2.3.1.57	0.5762	True	5	acetyl-CoA:putrescine N-acetyltransferase	rxn00855;rxn09264;rxn09265;rxn09880;rxn09949	coa_aminolysis;coa_aminolysis_putrescine
 6.3.2.46	0.5756	True	1		rxn46045	atp_amp_ligase
 2.3.1.249	0.5727	True	1		rxn42518	coa_aminolysis
 6.3.2.ac	0.563	True	1		rxn45007	atp_amp_ligase
@@ -30,7 +30,7 @@ ec	best_similarity	acylates_free_diamine	n_reactions	example_reaction_name	react
 2.3.1.M54	0.2965	True	1	RXN-683.c	rxn24204	coa_aminolysis
 2.3.1.102	0.2796	True	1	Acetyl-CoA:N6-hydroxy-L-lysine 6-acetyltransferase	rxn02266	coa_aminolysis
 6.3.2.18	0.7191	False	2	L-Glutamate:histamine ligase	rxn01552;rxn01553	atp_adp_ligase;atp_amp_ligase
-6.3.-.-	0.6584	False	3	RXN-10429.c	rxn20903;rxn20913;rxn20914	atp_amp_ligase
+6.3.-.-	0.6584	False	5	RXN-10429.c	rxn20903;rxn20913;rxn20914;rxn21193;rxn21194	atp_amp_ligase
 6.3.2.M5	0.6249	False	1	RXN-10439.c	rxn20914	atp_amp_ligase
 6.3.2.1	0.6199	False	1	(R)-Pantoate:beta-alanine ligase (AMP-forming)	rxn01791	atp_amp_ligase
 6.3.4.24	0.6052	False	1		rxn47516	atp_adp_ligase
@@ -40,6 +40,7 @@ ec	best_similarity	acylates_free_diamine	n_reactions	example_reaction_name	react
 6.3.2.39	0.5814	False	1	N2-citryl-N6-acetyl-N6-hydroxy-L-lysine:N6-acetyl-N6-hydroxy-L-lysine ligase (AMP-forming)	rxn40000	atp_amp_ligase
 6.3.2.38	0.5785	False	1	citrate:N6-acetyl-N6-hydroxy-L-lysine ligase (AMP-forming)	rxn39999	atp_amp_ligase
 6.3.2.af	0.5676	False	1		rxn48321	atp_amp_ligase
+6.3.2.14	0.534	False	2	2,3-Dihydroxybenzoate:L-serine ligase	rxn01097;rxn01098	atp_adp_ligase;atp_amp_ligase
 6.3.4.12	0.5242	False	1	L-Glutamate:methylamine ligase (ADP-forming)	rxn01159	atp_adp_ligase
 2.3.2.2	0.4992	False	2	gamma-Glutamyl-beta-aminopropiononitrile amidohydrolase	rxn02791;rxn14123	direct_condensation
 6.3.1.10	0.4963	False	2	adenosylcobinamide-phosphate synthase	rxn05054;rxn19001	atp_adp_ligase
@@ -47,16 +48,28 @@ ec	best_similarity	acylates_free_diamine	n_reactions	example_reaction_name	react
 6.3.2.23	0.4811	False	1	gamma-L-Glutamyl-L-cysteine:beta-alanine ligase (ADP-forming)	rxn01979	atp_adp_ligase
 6.3.2.3	0.4794	False	2	Lumped Glutathione Synthesis	rxn00351;rxn34002	atp_adp_ligase
 6.3.2.2	0.4794	False	2	Lumped Glutathione Synthesis	rxn00646;rxn34002	atp_adp_ligase
+2.3.1.13	0.4784	False	1	phenylacetyl-CoA:glycine N-phenylacetyltransferase	rxn04073	coa_aminolysis
+2.3.1.192	0.4784	False	1	phenylacetyl-CoA:glycine N-phenylacetyltransferase	rxn04073	coa_aminolysis
 6.3.2.17	0.4771	False	6	10-Formyltetrahydrofolyl L-glutamate:L-glutamate gamma-ligase (ADP-forming)	rxn01210;rxn06882;rxn27860;rxn36719;rxn36720;rxn38875	atp_adp_ligase
 6.3.2.12	0.469	False	1	10-Formyltetrahydrofolate:L-glutamate ligase (ADP-forming)	rxn01210	atp_adp_ligase
 2.3.1.112	0.4681	False	1	Malonyl-CoA:D-tryptophan N-malonyltransferase	rxn01798	coa_aminolysis
+6.3.2.44	0.4652	False	1		rxn41113	atp_adp_ligase
 6.3.2.27	0.4286	False	1	citrate:N6-acetyl-N6-hydroxy-L-lysine ligase (ADP-forming)	rxn06661	atp_adp_ligase
+2.3.1.14	0.4071	False	1	Phenylacetyl-CoA:L-glutamine alpha-N-phenylacetyltransferase	rxn01878	coa_aminolysis
 6.3.2.29	0.4041	False	1		rxn46365	atp_adp_ligase
 6.3.2.4	0.4009	False	1	D-alanine:D-alanine ligase (ADP-forming)	rxn00851	atp_adp_ligase
 6.3.2.42	0.3816	False	2	N-acetyl-L-aspartate:L-glutamate ligase (ADP, N-acetyl-L-aspartyl-L-glutamyl-L-glutamate-forming)	rxn40420;rxn40421	atp_adp_ligase
 6.3.2.41	0.3715	False	1	N-acetyl-L-aspartate:L-glutamate ligase (ADP, N-acetyl-L-aspartyl-L-glutamate-forming)	rxn40420	atp_adp_ligase
+2.3.1.71	0.3641	False	1	Benzoyl-CoA:glycine N-benzoyltransferase	rxn01773	coa_aminolysis
 6.3.1.17	0.3611	False	1	citrate:L-glutamate ligase (ADP-forming)	rxn40419	atp_adp_ligase
 6.3.2.10	0.3567	False	1	UDP-N-acetylmuramoyl-L-alanyl-D-glutamyl-L-lysine:alanyl-D-alanine	rxn03141	atp_adp_ligase
+6.3.2.35	0.3544	False	1	D-alanine:D-serine ligase (ADP-forming)	rxn16437	atp_adp_ligase
+2.3.1.271	0.3449	False	1		rxn40715	coa_aminolysis_putrescine
+2.3.1.183	0.3362	False	1	acetyl-CoA:demethylphosphinothricin N-acetyltransferase	rxn14043	coa_aminolysis
+2.3.1.1	0.3345	False	1	acetyl-CoA:L-glutamate N-acetyltransferase	rxn00192	coa_aminolysis
+2.3.1.17	0.3345	False	1	Acetyl-CoA:L-aspartate N-acetyltransferase	rxn00344	coa_aminolysis
+2.3.1.66	0.3299	False	1	Acetyl-CoA:L-leucine N-acetyltransferase	rxn00805	coa_aminolysis
+6.3.2.47	0.3263	False	1		rxn40843	atp_adp_ligase
 6.3.2.33	0.2921	False	1	tetrahydromethanopterin:alpha-L-glutamate ligase (ADP-forming)	rxn10543	atp_adp_ligase
 2.3.2.-	0.2323	False	1	R05207	rxn03523	direct_condensation
 2.3.2.14	0.0755	False	1	L-Glutamine:D-alanine gamma-glutamyltransferase	rxn00850	atp_adp_ligase

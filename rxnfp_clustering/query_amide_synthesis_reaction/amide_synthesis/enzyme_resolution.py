@@ -93,11 +93,32 @@ def rank_entries(entries, limit=PER_REACTION, max_eukaryote=MAX_EUKARYOTE):
     return kept
 
 
-def select_reactions(hits, floor):
-    """Best framing per reaction, admitted only at or above the OOD floor."""
+# A reaction the screen has PROVEN acylates a free amine, and which scores this
+# highly on nylon-like substrate chemistry, is not out-of-distribution in any
+# useful sense - whatever the cofactor-dominated cosine says.
+SUBSTRATE_DISTANCE_RESCUE = 0.40
+
+
+def select_reactions(hits, floor, rescue=SUBSTRATE_DISTANCE_RESCUE):
+    """Best framing per reaction, admitted on cosine OR on substrate chemistry.
+
+    The OOD floor is a cosine threshold, and cosine here is dominated by the
+    cofactor rather than the amide bond. Applying it alone was the third and
+    last place the embedding silently gated retrieval: it refused 96 of the
+    205 screened reactions, and they were the HIGHEST-scoring ones - every
+    folylpolyglutamate synthetase (a processive amide polymerase, substrate
+    distance 0.883) and the meso-diaminopimelate Mur ligases (0.877), all of
+    which carry a usable EC and would have resolved immediately.
+
+    The floor still does its job for reactions with no independent evidence;
+    it just no longer overrules the screen.
+    """
     useful = (hits.sort_values('cosine_similarity', ascending=False, kind='stable')
                   .drop_duplicates('rxn_id'))
-    return useful[useful.cosine_similarity >= floor].copy()
+    admitted = useful.cosine_similarity >= floor
+    if 'substrate_distance' in useful.columns:
+        admitted |= useful.substrate_distance.fillna(0) >= rescue
+    return useful[admitted].copy()
 
 
 @dataclass

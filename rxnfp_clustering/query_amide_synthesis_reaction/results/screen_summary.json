@@ -5,7 +5,7 @@
   "of_those_on_a_free_diamine_donor": 92,
   "of_those_excluded_as_unbalanced": 22,
   "eligible_for_ranking": 473,
-  "eligible_above_substrate_distance_floor": 131,
+  "eligible_above_substrate_distance_floor": 192,
   "substrate_distance_floor": 0.4,
   "self_condensing_iterative": 20
 }

@@ -197,6 +197,16 @@ def acylation_events(rxn_smiles, max_heavy=60):
         if key:
             product_keys.add(key)
 
+    # The PARENT molecules, not just the reacting fragments. The acyl half is
+    # recovered by cutting the new amide, so it is small by construction even
+    # when the real donor carries a pterin, a UDP-sugar or a CoA. Scoring the
+    # fragment alone cannot see the scaffold an active site must also hold.
+    parents = []
+    for smiles in lhs.split('.'):
+        mol = Chem.MolFromSmiles(smiles)
+        if mol is not None:
+            parents.append(mol)
+
     events = {}
     for smiles in rhs.split('.'):
         product = Chem.MolFromSmiles(smiles)
@@ -217,10 +227,26 @@ def acylation_events(rxn_smiles, max_heavy=60):
                 continue
             acceptor, amines = reactants[key]
             acyl_smiles = Chem.MolToSmiles(acyl) if acyl is not None else None
+            donor_heavy = None
+            if acyl is not None:
+                # The donor reactant is the one containing this acyl skeleton.
+                for parent in parents:
+                    if parent.GetNumHeavyAtoms() < acyl.GetNumHeavyAtoms():
+                        continue
+                    try:
+                        if parent.HasSubstructMatch(acyl, useChirality=False):
+                            size = parent.GetNumHeavyAtoms()
+                            if donor_heavy is None or size > donor_heavy:
+                                donor_heavy = size
+                    except Exception:
+                        continue
+                if donor_heavy is None:
+                    donor_heavy = acyl.GetNumHeavyAtoms()
             slot = events.setdefault(
                 (acceptor, acyl_smiles),
                 {'acceptor': acceptor, 'acceptor_free_amines': amines,
-                 'acyl_acid': acyl_smiles, 'product': smiles})
+                 'acyl_acid': acyl_smiles, 'product': smiles,
+                 'donor_parent_heavy_atoms': donor_heavy})
             slot['acceptor_free_amines'] = max(slot['acceptor_free_amines'], amines)
     return sorted(events.values(), key=lambda e: -e['acceptor_free_amines'])
 

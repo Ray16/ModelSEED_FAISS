@@ -47,6 +47,115 @@ one it validates.
 
 ---
 
+## Retrieval architecture (current)
+
+ModelSEED ships **no reaction -> enzyme mapping**, so breadth comes from having
+several independent bridges rather than one good one. Six routes feed one
+table, `results/master_candidates.tsv`, and every row records which route
+produced it.
+
+| route | what it claims | substrate distance |
+|---|---|---|
+| `reaction` | UniProt annotated to a ModelSEED-mappable reaction the screen PROVED acylates a free amine (Rhea / MetaNetX pivot / EC / product name) | **measured** |
+| `precomputed_link` | present in a global UniProt->ModelSEED link table, filtered through the screen | measured |
+| `domain` | member of a Pfam family whose chemistry is *characteristic* (enrichment test) | inherited, discounted |
+| `clade` | member of a validated protein's own UniRef50 cluster, where the Pfam is too broad to mean anything | inherited, discounted |
+| `assayed` | **measured** nylon-6,6 L1 titre | n/a - it is a measurement |
+| `proxied` | literature-curated, carries an independent geometric score | n/a |
+
+Measured and inherited distances are kept in separate columns and are not
+interchangeable.
+
+### Cosine is a recall route, never a gate
+
+The encoding is still ECFP4-diff || DRFP, but a whole-reaction difference
+fingerprint is dominated by the **cofactor**, not the amide bond. Ranking on it
+is actively misleading - AsbA has the third-highest cosine in the shortlist and
+ranks 32 of 36 on an independent geometric proxy, while PylC at cosine 0.554
+ranks 11.
+
+Worse, cosine was *gating* retrieval in three separate places. Each one was
+removed:
+
+1. `TOPN=30` per query, applied to cosine, before enzyme lookup.
+2. `priority` in the candidate table, where cosine broke every tie.
+3. The OOD floor in `select_reactions`, a cosine threshold that refused
+   reactions the screen had already proven.
+
+The third was the worst: it discarded **every folylpolyglutamate synthetase**
+and the **meso-diaminopimelate Mur ligases** - the highest-scoring reactions in
+the whole screen, all carrying a usable EC that would have resolved
+immediately. Reactions are now admitted on cosine **or** on substrate
+chemistry, and cosine contributes nothing to ranking.
+
+### `substrate_distance`: scoring the chemistry, not the embedding
+
+`amide_synthesis/substrate_distance.py` scores the acyl donor and the amine
+acceptor that the screen has already proven, using no embedding:
+
+1. **Can it polycondense at all?** The boolean screen cannot separate a
+   terminal amide (glutamine synthetase: one bond, then stop) from an AA/BB
+   pair (a diacid acylating a diamine - nylon-6,6) from a self-condensing
+   bifunctional monomer (BibC/PubC: the product is again a substrate, so the
+   same enzyme runs again, monomer -> dimer -> trimer). Only the last two
+   extend a chain.
+2. **Does the product stay reactive?**
+3. **Are the spacers the right length?** Adipate puts 4 carbons between its
+   carboxyls, HMDA puts 6 between its nitrogens. This quantifies the known gap
+   to the NIS enzymes rather than asserting it in prose.
+4. **Is the substrate mostly motif, or mostly scaffold?** Forming the right
+   bond is not accepting the right molecule. FPGS genuinely runs iterative
+   polyamide extension and scored 0.883 on bond chemistry alone - but its
+   substrate is tetrahydrofolyl-polyglutamate and its pocket grips a pterin.
+   Parsimony charges for the **parent** donor (32 heavy atoms there, against
+   adipate's 10), which the cut acyl fragment cannot reveal.
+5. **Is the backbone a plain aliphatic chain?**
+
+Weights are flat, documented and exposed per-component, in the spirit of
+`priority`: a stated chemical opinion, not a fit to data.
+
+### Family expansion: enrichment, clades, and passengers
+
+A family whose chemistry is validated makes every member a candidate. But
+"family" means different things at different scales, and expanding every Pfam
+that touches a validated protein is wrong in two opposite ways:
+
+* **Co-occurrence.** Crediting every domain on a multi-domain protein promoted
+  a peptidoglycan amidase domain (CHAP, a *hydrolase*) and a calcium-channel
+  domain (RyR/IP3R homology) to "validated amide-forming families". Domains
+  seen on a single seed are now dropped as passengers.
+* **Scale.** Enrichment - validated seeds per 1000 members - separates a family
+  whose chemistry is characteristic (DdaG 47/1k, IucA/IucC 3.5/1k) from one
+  where it is incidental (GNAT 0.03/1k). But low enrichment is **not**
+  irrelevance: Mur ligase (0.07) and AMP-binding (0.01) are ancient and
+  universal, so only a clade is relevant and those expand by the seed's own
+  UniRef50 cluster instead.
+
+Enrichment is not sufficient either. PF06276 is shared by the NIS synthetases
+and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation
+contradicts the chemistry are flagged (`annotation_contradicts_chemistry`) and
+demoted rather than deleted.
+
+## What is NOT validated
+
+The ranking has never been fitted to, or validated against, measured activity.
+
+The one independent check available - a geometric score computed in a separate
+project, joined read-only - shows **no correlation** with substrate distance
+(Spearman +0.14, p=0.60, n=17). This is expected rather than alarming: the two
+score **different steps**. The geometric score measures the carboxylate O--P
+distance and in-line angle to ATP, describing *adenylation*; substrate distance
+describes the *amide bond*. A ligase can activate its acid perfectly and never
+accept a C6 diamine. Neither validates the other, so `struct_S` is reported
+alongside and never folded into the ranking.
+
+A second limitation: `substrate_distance` scores a **reaction**, and many
+proteins map to one reaction, so all inherit the same score. `glnA2` sits at
+0.8225 purely because it shares `rxn05123` with PuuA - and its geometric score
+is ~0.
+
+See `MAPPING_REVIEW.md` for the review of the external link table.
+
 ## Method
 
 Encoding is the benchmark winner throughout — **ECFP4-diff ‖ DRFP** (Morgan r=2,
