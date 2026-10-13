@@ -71,6 +71,8 @@ STAGES = (
           True),
     Stage('converged', 'converged',
           'candidates backed by several INDEPENDENT lines of evidence'),
+    Stage('dossier', 'dossier',
+          'full dossier per converged candidate (network)', True),
     Stage('native', 'native_substrates', 'native reactions + family grouping'),
     Stage('deckfigs', 'deck_figures', 'family and substrate-gap figures'),
     Stage('figure', 'project_tsne', 't-SNE map with candidates overlaid'),
