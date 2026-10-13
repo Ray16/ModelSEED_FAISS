@@ -1,10 +1,10 @@
 {
-  "total_candidates": 23434,
+  "total_candidates": 23442,
   "by_route": {
     "clade": 17890,
     "domain": 3898,
     "precomputed_link": 1131,
-    "reaction": 451,
+    "reaction": 459,
     "assayed": 49,
     "proxied": 15
   },
@@ -16,14 +16,15 @@
     "activity_ec": 161,
     "measured_activity": 49,
     "name_match": 41,
-    "literature_curated": 15
+    "literature_curated": 15,
+    "reaction_name_match": 8
   },
-  "reviewed": 1218,
-  "with_pdb": 125,
-  "with_alphafold": 15737,
-  "with_catalytic_activity": 16375,
-  "with_sequence": 23433,
+  "reviewed": 1223,
+  "with_pdb": 128,
+  "with_alphafold": 15745,
+  "with_catalytic_activity": 16380,
+  "with_sequence": 23441,
   "with_structural_score": 36,
-  "self_condensing": 656,
+  "self_condensing": 664,
   "annotation_contradicts_chemistry": 1837
 }

@@ -136,34 +136,32 @@ and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation
 contradicts the chemistry are flagged (`annotation_contradicts_chemistry`) and
 demoted rather than deleted.
 
-### Where recall stops, and why — probed, not assumed
+### Where recall stops — probed after every change, not assumed
 
-Of 259 screened reactions, ~106 resolve to no protein. That residual was
-checked by re-querying UniProt for every unresolved reaction's identifiers,
-rather than assumed:
+Of 259 screened reactions, 168 resolve to at least one protein. The residual
+was re-probed after each new route (the composition shifts every time one
+lands, so a stale breakdown is worthless):
 
 | | count | meaning |
 |---|---:|---|
-| no Rhea and no EC at all | 83 | only a MetaCyc `RXN-xxxxx`. **Partly recoverable** - see the xref pivot below. |
-| had an identifier, UniProt returns **zero** | 21 | genuinely undeposited enzymology |
-| had an identifier, UniProt **does** return hits | **2** | a real loss — now fixed |
+| identifier present, UniProt returns **zero** | 18 | genuinely undeposited enzymology |
+| identifier present, UniProt returns hits | **0** | nothing is being lost |
+| no identifier; a name was tried, UniProt had nothing | 60 | no such protein is named in UniProt |
+| no identifier and no usable name | 13 | nothing left to query |
 
-`rxn19370` is the clean undeposited case: it carries **both** `Rhea:35623` and
-`EC 2.3.2.1`, so it looks like a retrieval failure, but `rhea:35623` and
-`ec:2.3.2.1` each return **zero** entries. D-glutamyltransferase has no
-deposited protein. No pipeline change recovers that.
+The important line is the third: **0 reactions remain where an identifier
+would have worked.** Every reaction that can be resolved through Rhea, EC, a
+sibling-identifier pivot, a product name or the reaction name now is. The
+remaining 91 are limited by what has been deposited and named, not by
+retrieval.
 
-The 2 recoverable ones were a bug worth recording, because it was a FOURTH
-place the embedding gated retrieval. `rxn14123` (EC 2.3.2.2) and `rxn19001`
-(EC 6.3.1.10) sit at cosine 0.499 against an OOD floor of 0.5041 — a hair's
-breadth — with substrate distance 0, so the chemistry rescue could not save
-them either. Stage 03 admitted them to the candidate table and stage 04 then
-re-litigated that decision against a *different* threshold and refused to
-resolve them, though their ECs return 100 and 26 UniProt entries.
+`rxn19370` is the clean undeposited case: the xref pivot *does* supply its
+Rhea IDs (35623-35626) and UniProt *still* returns nothing for them.
+D-glutamyltransferase has no deposited protein. The identifier gap and the
+deposition gap are separate problems; only the first was ours.
 
-Admission is now decided once, in stage 03. The OOD floor survives as a
-**label** (`below_ood_floor`) rather than a filter, so the information is kept
-without gating anything.
+27 of the 91 score >= 0.6 on substrate distance, so the loss is not uniformly
+uninteresting - but it is not addressable from UniProt.
 
 ### The sibling-identifier pivot
 

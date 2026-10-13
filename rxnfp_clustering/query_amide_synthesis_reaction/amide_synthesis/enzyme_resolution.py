@@ -39,6 +39,27 @@ def product_names(definition: str):
             names.append(name[4:])
     return list(dict.fromkeys(names))
 
+ENZYME_NAME = re.compile(
+    r'\b(synthase|synthetase|ligase|transferase|amidotransferase)\b', re.I)
+
+
+def enzyme_like_name(reaction_name):
+    """A ModelSEED reaction name usable as a protein-name query, else None.
+
+    Requires an enzyme-class word, so substrate-shaped names are not sent to
+    UniProt as protein names. Trailing parentheticals are stripped: ModelSEED
+    writes "...ligase (ADP-forming)" where UniProt does not.
+    """
+    if not isinstance(reaction_name, str) or not ENZYME_NAME.search(reaction_name):
+        return None
+    cleaned = re.sub(r'\s*\(.*?\)', '', reaction_name).strip()
+    # A bare class word matches tens of thousands of unrelated proteins.
+    if len(cleaned) < 12 or cleaned.lower() in {
+            'ligase', 'synthase', 'synthetase', 'transferase'}:
+        return None
+    return cleaned
+
+
 def is_prokaryote(entry):
     lineage = entry.get('Taxonomic lineage', '')
     return 'Bacteria' in lineage or 'Archaea' in lineage
@@ -49,6 +70,8 @@ def evidence_strength(route):
         return 'exact_reaction'
     if route.startswith('EC'):
         return 'activity_ec'
+    if route.startswith('ReactionName'):
+        return 'reaction_name_match'
     return 'name_match'
 
 
@@ -211,6 +234,24 @@ def resolve_reaction(hit, aliases, metanetx, *, search_client, foreign=None):
                     hit_any = True
         if hit_any:
             routes.append('Name')
+
+    if not found:
+        # Last resort: ModelSEED's REACTION name is frequently the enzyme's
+        # name outright ("folylpolyglutamate synthase", "L-amino acid
+        # ligase"), which is a different string from any product in the
+        # definition and so is never tried by the product-name route. For the
+        # 82 reactions left with no identifier at all, this is the only handle
+        # remaining; it recovered the L-amino acid ligases, an ATP-grasp
+        # family that forms amide bonds between two amino acids and that no
+        # other route reached.
+        #
+        # Deliberately the weakest route: the name is a reaction label, not an
+        # annotation, so it is recorded separately rather than folded into
+        # `name_match`.
+        label = enzyme_like_name(getattr(hit, 'reaction_name', ''))
+        if label and collect(f'protein_name:"{label}"', 'ReactionName',
+                             f'ReactionName:{label}', size=25):
+            routes.append('ReactionName')
     result = Resolution(rank_entries(found), '+'.join(routes), len(found), failed,
                         tuple(dict.fromkeys(cuts)), queried)
     if not result.route:

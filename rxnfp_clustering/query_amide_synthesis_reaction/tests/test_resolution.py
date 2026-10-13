@@ -6,6 +6,7 @@ from unittest.mock import Mock
 import pandas as pd
 
 from amide_synthesis.enzyme_resolution import (
+    enzyme_like_name, evidence_strength,
     rank_entries, resolve_reaction, select_reactions, product_names,
 )
 
@@ -199,3 +200,46 @@ class ForeignPivotTests(unittest.TestCase):
                          foreign={'KEGG': {'R001': ['3']}})
         self.assertEqual(client.call_args_list[0].args,
                          ('rhea:1 OR rhea:2 OR rhea:3',))
+
+
+class ReactionNameRouteTests(unittest.TestCase):
+    """ModelSEED's reaction name is often the enzyme's name outright.
+
+    It is a different string from any product in the definition, so the
+    product-name route never tries it. For the 82 reactions with no
+    identifier at all it is the only handle left, and it recovered the
+    L-amino acid ligases - an ATP-grasp family forming amide bonds between
+    two amino acids that no other route reached.
+    """
+
+    def test_enzyme_like_name_accepts_a_real_enzyme_name(self):
+        self.assertEqual(enzyme_like_name('L-amino acid ligase'),
+                         'L-amino acid ligase')
+
+    def test_trailing_parenthetical_is_stripped(self):
+        self.assertEqual(
+            enzyme_like_name('UDP-MurNAc:L-lysine ligase (ADP-forming)'),
+            'UDP-MurNAc:L-lysine ligase')
+
+    def test_bare_class_word_is_refused(self):
+        """"ligase" alone matches tens of thousands of unrelated proteins."""
+        for name in ('ligase', 'synthase', 'Synthetase'):
+            self.assertIsNone(enzyme_like_name(name))
+
+    def test_substrate_shaped_name_is_refused(self):
+        self.assertIsNone(enzyme_like_name('ATP + L-glutamate + NH3'))
+        self.assertIsNone(enzyme_like_name(''))
+        self.assertIsNone(enzyme_like_name(None))
+
+    def test_route_is_labelled_as_the_weakest_evidence(self):
+        self.assertEqual(evidence_strength('ReactionName:L-amino acid ligase'),
+                         'reaction_name_match')
+
+    def test_route_only_fires_when_everything_else_is_empty(self):
+        hit = SimpleNamespace(rxn_id='r', ec='6.3.2.1', definition='',
+                              reaction_name='L-amino acid ligase')
+        client = Mock(return_value=([protein('A')], False, False))
+        resolve_reaction(hit, {}, {}, search_client=client)
+        queries = [c.args[0] for c in client.call_args_list]
+        self.assertEqual(queries, ['ec:6.3.2.1'],
+                         'a successful EC lookup must not trigger the fallback')

@@ -68,6 +68,7 @@ EVIDENCE_WEIGHT = {
     'activity_ec': 2.0,         # matching EC, broader
     'literature_curated': 2.0,  # carries an independent structural score
     'name_match': 1.0,          # distinctive product name
+    'reaction_name_match': 0.5,  # ModelSEED's reaction label; weakest route
     'family_homolog': 1.0,      # enriched Pfam family
     'clade_homolog': 1.0,       # UniRef50 neighbourhood of a validated protein
 }
