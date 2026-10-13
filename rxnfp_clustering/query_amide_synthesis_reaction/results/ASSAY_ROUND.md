@@ -47,7 +47,7 @@ here. Not one has substrate-level evidence — and this was re-tested at 13×
 the sample size precisely because a null result on 150 could be chance:
 
 ```
-deep search, AS9 + AS23 vs all UniProtKB   1,988 distinct hits
+deep search, all 3 producers vs UniProtKB  2,952 distinct hits
   >= 45% identity to a measured producer     259
   >= 40%                                     822
   already among our 54,199                     0
