@@ -51,6 +51,8 @@ STAGES = (
           True),
     Stage('geometry', 'adenylation_geometry',
           'adenylation geometry in cofactor-bound structures (network)', True),
+    Stage('ecsub', 'ec_substrate',
+          'EC-class substrate ceiling from all of Rhea (network)', True),
     Stage('members', 'member_similarity',
           'discriminate members within a family (tie-break only)'),
     Stage('famval', 'family_evaluation',

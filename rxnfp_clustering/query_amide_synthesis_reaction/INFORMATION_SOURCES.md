@@ -18,6 +18,7 @@ the dead ends.
 | **UniProtKB protein names** | proteins NAMED for the target function, which no reaction pivot reaches | 3,488 proteins, 3,469 of them new; fixed a measured 0-of-26 recall hole |
 | **AlphaFold DB API** | model confidence (mean pLDDT + per-band fractions) for shortlisted candidates | 253 of 301; median pLDDT 94.1, none below 50 |
 | **UniProt curated properties** (7 fields never requested) | curated family statement, domain architecture, subcellular location, kinetics, pH/temp optima | family statement 75.4%, domains 73.3%, location 37.3%, kinetics 0.5% (189 proteins) |
+| **Rhea bulk SMILES + `rhea2ec`** | EC-class substrate ceiling: the best amide chemistry anyone in an EC class is curated to perform | 26,410 of 38,542 EC-bearing candidates; 13,063 at ≥0.6 |
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 
@@ -154,6 +155,14 @@ enzymology" category as our own 21 unresolved reactions. The 3 that did return
 are histone acetyltransferase KAT2A, a PROTEIN acetyltransferase that scores
 0.88 only because Rhea writes the substrate lysine as a free small molecule, so
 the macromolecular guard never fires.
+
+**The data was right, the application was wrong.** Rhea is poor at naming
+enzymes and excellent at describing reactions, so it is useless for retrieval
+and valuable for ANNOTATION. The same scored corpus now supplies an
+*EC-class substrate ceiling* — see `amide_synthesis/ec_substrate.py` — reaching
+26,410 candidates that previously had only an inherited family distance, and
+giving the protein-name route its first substrate-level number at all. The
+retrieval verdict below stands; the dismissal of the dataset did not.
 
 So the conclusion is the opposite of the premise: **ModelSEED is not the
 bottleneck.** Rhea curates far more amide chemistry than ModelSEED does, and
