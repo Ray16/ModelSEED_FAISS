@@ -220,3 +220,20 @@ class PocketCapacityTests(unittest.TestCase):
         for name in found.columns:
             self.assertNotIn('span', name)
             self.assertNotIn('capacity', name)
+
+
+class CoverageTests(unittest.TestCase):
+    """Every converged candidate is documented, not an arbitrary top-N.
+
+    The cap was 20 against 28 converged, dropping eight - including P0AES0,
+    whose crystal holds a three-amine ligand, and sbnC. Both were being
+    recommended in prose while missing from the document.
+    """
+
+    def test_the_default_imposes_no_limit(self):
+        self.assertEqual(dos.MAX_DOSSIERS, 0)
+
+    def test_a_limit_is_still_honoured_when_set(self):
+        """Kept configurable; it just must not silently default to one."""
+        source = Path(dos.__file__).read_text()
+        self.assertIn('if MAX_DOSSIERS:', source)

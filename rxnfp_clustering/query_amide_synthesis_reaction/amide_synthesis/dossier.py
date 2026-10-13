@@ -54,7 +54,12 @@ SIDECARS = (
                           'pdb_has_atp_like']),
     ('adenylation_geometry.tsv', ['d_nuc_P', 'inline_angle_deg']),
 )
-MAX_DOSSIERS = int(os.environ.get('DOSSIER_LIMIT', 20))
+# EVERY converged candidate is documented, not an arbitrary top-N. The cap
+# was 20 against 28 converged, which silently dropped eight - including
+# P0AES0, whose crystal holds a three-amine ligand and whose pocket spans
+# 19/9, and sbnC. Both were being recommended in prose while absent from the
+# document a bench scientist reads. 0 means no limit.
+MAX_DOSSIERS = int(os.environ.get('DOSSIER_LIMIT', 0))
 
 # NEAR-MISSES WITH DEMONSTRATED ROOM, documented alongside the converged set.
 #
@@ -345,7 +350,9 @@ def main():
     source = RES / 'converged_candidates.tsv'
     if not source.exists():
         raise SystemExit('run the converged stage first')
-    table = pd.read_csv(source, sep='\t', low_memory=False).head(MAX_DOSSIERS)
+    table = pd.read_csv(source, sep='\t', low_memory=False)
+    if MAX_DOSSIERS:
+        table = table.head(MAX_DOSSIERS)
     table['selected_by'] = 'converged'
     print(f'{len(table)} converged candidates to document', flush=True)
 
