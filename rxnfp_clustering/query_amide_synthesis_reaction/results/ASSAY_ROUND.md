@@ -42,13 +42,17 @@ BLAST reaches **65.3%**. Full ranking: `results/blast_actives_ranked.tsv`.
 
 ## The two groups are disjoint on *both* axes
 
-The 150 BLAST hits were put through the same machinery as every other
-candidate here. Not one of them has substrate-level evidence:
+The BLAST hits were put through the same machinery as every other candidate
+here. Not one has substrate-level evidence — and this was re-tested at 13×
+the sample size precisely because a null result on 150 could be chance:
 
 ```
-own curated reaction scoring > 0        0 of 150
-EC-class substrate ceiling              0 of 150
-pocket room for HMDA or adipate         0 of 150
+deep search, AS9 + AS23 vs all UniProtKB   1,988 distinct hits
+  >= 45% identity to a measured producer     259
+  >= 40%                                     820
+  already among our 54,199                     0
+  of the 259, with an amide-forming
+  curated reaction or EC ceiling               0
 ```
 
 All 54 that carry an EC are **EC 6.2** — acid–thiol ligase, which forms a

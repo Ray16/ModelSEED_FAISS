@@ -163,6 +163,12 @@ best identity from this table      30.6%
 best identity from BLAST           65.3%   (A0A7Y0L7E5, S. harzensis)
 hits at >= 45% identity               57
 of the 150 hits, already in our 54,199:  0
+
+deep search (1,000 alignments, E < 1e-10):
+  distinct hits                    1,988
+  at >= 45% identity                 259
+  already in our 54,199                0
+  of the 259, with amide evidence      0
 ```
 
 **Not one.** And the reason is structural rather than a retrieval gap: 53 are
