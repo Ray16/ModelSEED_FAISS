@@ -310,45 +310,36 @@ and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation
 contradicts the chemistry are flagged (`annotation_contradicts_chemistry`) and
 demoted rather than deleted.
 
-### Where recall stops — probed after every change, not assumed
+### Where recall stops — re-probed after every change
 
-Of 259 screened reactions, 168 resolve to at least one protein. The residual
-was re-probed after each new route (the composition shifts every time one
-lands, so a stale breakdown is worthless):
+Of 473 admitted reactions, 305 resolve to at least one protein. The unresolved
+count is **not** a quality measure on its own: it rose 91 -> 168 when the
+substrate-distance gate was removed, purely because 214 previously *excluded*
+reactions became admitted ones. So it is re-probed rather than tracked.
+`tools/probe_unresolved.py` re-queries UniProt through every pivot the pipeline
+knows and sorts the failures:
 
-| | count | meaning |
-|---|---:|---|
-| identifier present, UniProt returns **zero** | 18 | genuinely undeposited enzymology |
-| identifier present, UniProt returns hits | **0** | nothing is being lost |
-| no identifier; a name was tried, UniProt had nothing | 60 | no such protein is named in UniProt |
-| no identifier and no usable name | 13 | nothing left to query |
+```
+    0  OUR BUG - identifier works, we missed it     <- the number to watch
+   21  undeposited - identifier returns zero
+  117  no identifier; a name was tried, nothing found
+   30  no identifier and no usable name
+```
 
-The important line is the third: **0 reactions remain where an identifier
-would have worked.** Every reaction that can be resolved through Rhea, EC, a
-sibling-identifier pivot, a product name or the reaction name now is. The
-remaining 91 are limited by what has been deposited and named, not by
-retrieval.
+**The first line is the only actionable one, and it is zero.** No reaction
+remains where an identifier would have worked. It has been nonzero once:
+`rxn14123` and `rxn19001` sat at cosine 0.499 against an OOD floor of 0.5041
+and were refused by a stage that re-litigated an admission already decided
+upstream.
 
-`rxn19370` is the clean undeposited case: the xref pivot *does* supply its
-Rhea IDs (35623-35626) and UniProt *still* returns nothing for them.
+`rxn19370` is the clean undeposited case: the MetaNetX xref pivot *does* supply
+its Rhea IDs (35623-35626) and UniProt *still* returns nothing for them.
 D-glutamyltransferase has no deposited protein. The identifier gap and the
 deposition gap are separate problems; only the first was ours.
 
-27 of the 91 score >= 0.6 on substrate distance, so the loss is not uniformly
-uninteresting - but it is not addressable from UniProt.
-
-**Nor by chemical inference.** A final route (`chemistry_neighbours.py`) asks
-whether an unresolved reaction performs the same acylation chemistry as one
-that resolved, and if so borrows that reaction's enzymes. It bridges 19
-reactions with 121 associations - and adds **zero new candidates**, because
-the enzymes are borrowed from resolved reactions and are therefore already in
-the table under stronger evidence.
-
-That negative is the most useful completeness statement available: **the 91
-unresolved reactions cannot yield a new protein.** Not through identifiers,
-and not through chemistry. The candidate set is saturated with respect to the
-reaction routes, and further breadth has to come from the family/clade
-expansion or from a database other than UniProt.
+27 of the 168 score >= 0.6 on substrate distance, so the residual is not
+uniformly uninteresting — it is simply not reachable from UniProt. Nor by
+chemical inference: see below.
 
 ### The sibling-identifier pivot
 
