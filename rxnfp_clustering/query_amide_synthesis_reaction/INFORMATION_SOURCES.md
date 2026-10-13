@@ -23,6 +23,30 @@ the dead ends.
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 
+## The 12 unresolved reactions that would matter most, checked individually
+
+`probe_unresolved` reports 0 actionable losses in aggregate. Aggregates can
+hide a small number of valuable cases, so the 12 unresolved reactions scoring
+>= 0.6 on substrate distance — the ones whose chemistry is most nylon-like —
+were checked one at a time:
+
+| reaction | sd | why it is unreachable |
+|---|---:|---|
+| `rxn19370` | **0.882** | carries EC **2.3.2.1**, which has **0 entries in all of UniProt** — a deleted or transferred EC number |
+| `rxn21300`, `rxn21296` | 0.753 | MetaCyc ids only (`RXN-11000`, `RXN-10997`), no name and no identifier |
+| `rxn59943`, `rxn60717`, `rxn58661`, `rxn59797` | 0.74 | no EC, no Rhea, no reaction name at all |
+| `rxn24632`, `rxn24633`, `rxn42902` | 0.71 | MetaCyc ids only |
+| `rxn47505` | 0.604 | named "rhizoctricin A-valine ligase" — searched as a protein name, **0 hits** |
+| `rxn44025` | 0.602 | named for a phosphonopantanoate-valine ligase — **0 hits** |
+
+The two with distinctive enzyme-like names were the most promising, because a
+specific name is exactly what the protein-name route exploits. Neither
+`rhizoctricin`, `rhizocticin`, `valine ligase` nor `phosphonopantanoate`
+appears in any UniProt protein name.
+
+So the highest-value unresolved reactions are confirmed source-limited
+individually, not merely in aggregate. There is no enzyme to find for them.
+
 ## Tried and unusable
 
 **BRENDA, partially substituted.** UniProt curates kinetics itself, in a
