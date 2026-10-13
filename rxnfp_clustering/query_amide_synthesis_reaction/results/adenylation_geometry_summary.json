@@ -1,0 +1,15 @@
+{
+  "candidates": 42,
+  "structures_measured": 42,
+  "download_failed": 0,
+  "no_nucleophile_within_cutoff": 0,
+  "nucleophile_source": {
+    "protein_side_chain": 31,
+    "bound_ligand": 11
+  },
+  "nucleophile_is_crystallisation_artifact": 11,
+  "genuine_substrate_carboxylate": 0,
+  "median_d_nuc_P": 5.14,
+  "median_inline_angle_deg": 148.2,
+  "note": "raw geometry only; the external 50-pose score is NOT applied to a single crystal pose. NEGATIVE RESULT: no deposited structure contains a substrate carboxylate poised at the phosphorus - side chains are Mg/catalytic, bound ligands are buffer artifacts (SO4/PO4/GOL). Cofolding is required, not optional."
+}

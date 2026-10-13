@@ -123,6 +123,37 @@ That raises structural coverage from 36 predicted scores to 179 candidates
 with experimental structures. Every field is a fact about a deposited model;
 nothing here is a score and nothing enters the ranking.
 
+### Measuring adenylation geometry in those structures — a negative result
+
+The 42 cofactor-bound structures were downloaded and measured
+(`adenylation_geometry.py`): nearest carboxylate oxygen to the attacked
+phosphorus, and the in-line attack angle. All 42 measured cleanly, 0 download
+failures, and the alpha phosphate was correctly identified in nearly every
+case.
+
+**None of them contains a substrate carboxylate poised to attack.**
+
+| nearest carboxylate is… | count |
+|---|---:|
+| a protein Asp/Glu side chain — near an alpha phosphate these are Mg-coordinating or catalytic, not the nucleophile | 31 |
+| a bound ligand, and **every one is a crystallisation artifact** — PO4, SO4 or glycerol from buffer and cryoprotectant | 11 |
+| **a genuine substrate carboxylate** | **0** |
+
+So adenylation geometry cannot be read off the crystallographic record for
+these enzymes. The numbers are real measurements of the wrong thing, kept only
+so the attempt is not repeated, with `nucleophile_is_artifact` flagging the
+artifact cases — a 5.1 A "substrate" distance that is actually a sulfate ion is
+exactly the sort of number that survives into a figure.
+
+The frozen 50-pose score is deliberately NOT applied to a single crystal pose:
+its regularizer was calibrated at that ensemble size, and feeding n=1 into it
+would produce a number that looks comparable to the published scores and is
+not.
+
+This settles what the cofolding stage was waiting on. It is **not a
+convenience**: the proxy needs a modelled substrate pose because no deposited
+structure supplies one.
+
 `results/shortlist.tsv` + `shortlist.fasta` are the actionable deliverable:
 **292 proteins**, 33 families, 149 organisms, 82 with a PDB entry, 75
 self-condensing, and all 48 assayed proteins with measured titre. A 34k-row
