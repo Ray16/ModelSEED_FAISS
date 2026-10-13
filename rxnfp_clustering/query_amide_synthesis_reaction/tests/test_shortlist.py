@@ -234,3 +234,40 @@ class RejectedFamilyTests(unittest.TestCase):
     def test_a_table_without_the_column_is_unaffected(self):
         frame = self._row(False).drop(columns=['in_rejected_family'])
         self.assertEqual(sl.eligible(frame).excluded_because.iloc[0], '')
+
+
+class TieBreakTests(unittest.TestCase):
+    """Member similarity orders tied rows and must do nothing else.
+
+    8,593 of 9,365 family homologs share a priority with >= 100 others, so
+    without a tie-break the bench list is chosen by accession string.
+    """
+
+    def _tied(self, similarities):
+        return pd.DataFrame([{
+            'uniprot': f'P{i:05d}', 'evidence_strength': 'family_homolog',
+            'master_priority': 2.4001, 'member_similarity': s,
+            'length': 500, 'sequence': 'M' * 500,
+            'organism': f'Org{i} sp.', 'family': f'Fam{i}', 'keywords': '',
+        } for i, s in enumerate(similarities)])
+
+    def test_the_most_similar_tied_row_is_chosen(self):
+        frame = self._tied([0.1, 0.9, 0.3]).sort_values(
+            ['master_priority', 'member_similarity', 'uniprot'],
+            ascending=[False, False, True])
+        out = sl.build(frame, target=1)
+        self.assertEqual(out.uniprot.iloc[0], 'P00001')
+
+    def test_a_higher_priority_row_still_wins_a_lower_similarity(self):
+        """The tie-break must never outrank evidence."""
+        frame = self._tied([0.1, 0.9])
+        frame.loc[0, 'master_priority'] = 9.0
+        frame = frame.sort_values(
+            ['master_priority', 'member_similarity', 'uniprot'],
+            ascending=[False, False, True])
+        out = sl.build(frame, target=1)
+        self.assertEqual(out.uniprot.iloc[0], 'P00000')
+
+    def test_a_missing_similarity_column_is_not_fatal(self):
+        frame = self._tied([0.5]).drop(columns=['member_similarity'])
+        self.assertEqual(len(sl.build(frame, target=1)), 1)

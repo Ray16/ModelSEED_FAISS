@@ -13,7 +13,7 @@
   "eligible": 31820,
   "shortlisted": 301,
   "distinct_families": 50,
-  "distinct_organisms": 202,
+  "distinct_organisms": 205,
   "by_evidence": {
     "exact_reaction": 88,
     "measured_activity": 48,
@@ -27,8 +27,8 @@
     "reaction_name_match": 3
   },
   "with_measured_activity": 48,
-  "with_pdb": 106,
-  "with_experimental_structure": 106,
+  "with_pdb": 105,
+  "with_experimental_structure": 105,
   "with_cofactor_bound_structure": 41,
   "self_condensing": 83,
   "caps": {

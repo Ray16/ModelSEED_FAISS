@@ -269,6 +269,18 @@ def main():
     # family's score, so a family judged `reject` on its own seeds' chemistry
     # should not be contributing bench candidates at all. This PRUNES rather
     # than broadens: it is the lever that makes the table more targeted.
+    # Member-specific similarity, used ONLY to order rows that are already
+    # tied. 8,593 of 9,365 family homologs sit in a tie of >= 100 rows and
+    # 36,274 of 36,889 clade homologs do, so without this the rows that reach
+    # the bench list are chosen by accession string. It cannot change which
+    # tier or which score a row has - see member_similarity.py.
+    similarity = RES / 'member_similarity.tsv'
+    if similarity.exists():
+        scored = pd.read_csv(similarity, sep='\t', low_memory=False)
+        if 'member_similarity' in scored.columns:
+            table = table.merge(scored[['uniprot', 'member_similarity']],
+                                on='uniprot', how='left')
+
     verdicts = RES / 'family_evaluation.tsv'
     if verdicts.exists():
         judged = pd.read_csv(verdicts, sep='\t', low_memory=False)
@@ -300,6 +312,12 @@ def main():
         if column in extra.columns:
             table = table.merge(extra[['uniprot', column]],
                                 on='uniprot', how='left')
+    # Re-sort so the tie-break applies. The primary key is unchanged, so no
+    # row moves relative to a row with a different priority.
+    if 'member_similarity' in table.columns:
+        table = table.sort_values(
+            ['master_priority', 'member_similarity', 'uniprot'],
+            ascending=[False, False, True]).reset_index(drop=True)
     screened = eligible(table)
     short = build(table)
 

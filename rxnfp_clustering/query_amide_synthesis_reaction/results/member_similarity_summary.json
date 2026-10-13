@@ -1,0 +1,17 @@
+{
+  "homologs_scored": 46254,
+  "with_a_seed_profile": 46254,
+  "median": {
+    "domain_jaccard": 1.0,
+    "kmer_cosine": 0.2673,
+    "length_ratio": 0.9977,
+    "member_similarity": 0.749
+  },
+  "distinct_values": {
+    "domain_jaccard": 88,
+    "kmer_cosine": 8478,
+    "length_ratio": 1882,
+    "member_similarity": 5623
+  },
+  "note": "Reported and used only as a tie-break inside an evidence tier, never in master_priority. Not validated against activity; see tools/validate_against_activity.py."
+}

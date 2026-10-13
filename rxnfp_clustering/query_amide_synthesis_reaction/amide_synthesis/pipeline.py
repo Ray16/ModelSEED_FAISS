@@ -51,6 +51,8 @@ STAGES = (
           True),
     Stage('geometry', 'adenylation_geometry',
           'adenylation geometry in cofactor-bound structures (network)', True),
+    Stage('members', 'member_similarity',
+          'discriminate members within a family (tie-break only)'),
     Stage('famval', 'family_evaluation',
           'judge each family on its own seeds\' chemistry (network)', True),
     Stage('properties', 'curated_properties',

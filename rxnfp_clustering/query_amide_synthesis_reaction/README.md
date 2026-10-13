@@ -254,6 +254,41 @@ members** carry an annotation contradicting amide formation — it is a hydrolas
 family running a transpeptidation side reaction. A contradicted majority now
 rejects the family outright.
 
+### Telling members of one family apart
+
+A protein admitted by family membership inherits its family's score, so every
+member scores the same — and the consequence was not cosmetic:
+
+| tier | candidates | distinct priorities | in a tie of ≥100 |
+|---|---:|---:|---:|
+| `family_homolog` | 9,365 | 94 | **8,593** |
+| `clade_homolog` | 36,889 | 49 | **36,274** |
+
+The largest single tie is 10,250 rows at one priority, and `master_table`
+sorts by `(master_priority, uniprot)` — so which 38 of 9,365 family homologs
+reached the bench list was decided by the **accession string**.
+
+`member_similarity.py` computes three member-specific signals against that
+member's *own* family's validated seeds: `domain_jaccard` (does it carry the
+seed's whole architecture, or share one domain with it — the passenger-domain problem
+asked per member), `kmer_cosine` (alignment-free identity proxy; 46k × 600
+alignments is not affordable), and `length_ratio` (a 200-residue fragment
+sharing a domain with a 900-residue synthetase is usually a fragment).
+
+**It is used only as a tie-break inside an evidence tier.** It is not in
+`master_priority` and gates nothing, because it is not validated against
+activity and the panel says it could not be — identity to the known actives
+gives AUROC 0.596 at p=0.30, and sequence length alone scores higher. A
+tie-break is the one place it cannot do harm: every row it reorders had an
+identical score by construction. Result: 16 shortlist rows swapped, now
+selected at similarity 0.95–1.00 to a validated seed instead of
+alphabetically, and distinct organisms rose 202 → 205.
+
+The trade-off is worth naming: within a tie this prefers the member *closest*
+to a validated seed, which is the safer bet but the less novel one. Breadth is
+enforced separately by the diversity caps (12 per family, 3 per UniRef50 clade,
+8 per genus), so near-identical orthologs cannot monopolise the list.
+
 ### A member is labelled by the signature that SEEDED it
 
 Expansion rows used to take `family` from the **seed protein's** label, and a
