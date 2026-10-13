@@ -163,6 +163,19 @@ deposition gap are separate problems; only the first was ours.
 27 of the 91 score >= 0.6 on substrate distance, so the loss is not uniformly
 uninteresting - but it is not addressable from UniProt.
 
+**Nor by chemical inference.** A final route (`chemistry_neighbours.py`) asks
+whether an unresolved reaction performs the same acylation chemistry as one
+that resolved, and if so borrows that reaction's enzymes. It bridges 19
+reactions with 121 associations - and adds **zero new candidates**, because
+the enzymes are borrowed from resolved reactions and are therefore already in
+the table under stronger evidence.
+
+That negative is the most useful completeness statement available: **the 91
+unresolved reactions cannot yield a new protein.** Not through identifiers,
+and not through chemistry. The candidate set is saturated with respect to the
+reaction routes, and further breadth has to come from the family/clade
+expansion or from a database other than UniProt.
+
 ### The sibling-identifier pivot
 
 "MetaCyc-only means product-name-only" turned out to be wrong as well. The

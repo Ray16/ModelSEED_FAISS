@@ -68,7 +68,8 @@ EVIDENCE_WEIGHT = {
     'activity_ec': 2.0,         # matching EC, broader
     'literature_curated': 2.0,  # carries an independent structural score
     'name_match': 1.0,          # distinctive product name
-    'reaction_name_match': 0.5,  # ModelSEED's reaction label; weakest route
+    'reaction_name_match': 0.5,  # ModelSEED's reaction label
+    'chemistry_neighbour': 0.25,  # inferred, not annotated; weakest of all
     'family_homolog': 1.0,      # enriched Pfam family
     'clade_homolog': 1.0,       # UniRef50 neighbourhood of a validated protein
 }
@@ -103,6 +104,7 @@ COLUMNS = [
     'self_condensation', 'struct_S', 'annotation_contradicts_chemistry',
     'activity_ugml', 'activity_std', 'is_strong_producer',
     'n_proteins_on_reaction', 'over_annotated_reaction',
+    'borrowed_from_rxn', 'chemistry_feature_distance',
     'family', 'pfam', 'interpro', 'seed_pfam', 'clade_seed',
     'rxn_id', 'reaction_name', 'query', 'cosine_similarity',
     'ec', 'catalytic_activity', 'cofactor', 'pathway', 'function',
@@ -293,7 +295,8 @@ def main():
     details = (pd.read_csv(details_path, sep='\t', low_memory=False)
                if details_path.exists() else None)
     extras = []
-    for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv'):
+    for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv',
+                 'chemistry_neighbour_candidates.tsv'):
         path = RES / name
         if path.exists():
             extras.append(pd.read_csv(path, sep='\t', low_memory=False))
