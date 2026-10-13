@@ -63,6 +63,30 @@ MIN_LINES = 3
 # the same either way, which is the useful check.
 WEAK_AXES = ('lead_family_verdict',)
 
+# TESTED AND REJECTED: a curated ATP-binding site as structural evidence.
+#
+# `adenylation_competent_structure` reaches only 57 candidates, because few
+# have a structure with a cofactor in it, and the obvious thickening is
+# UniProt's own `binding_site` ATP annotation - 12,145 candidates, 22.4%,
+# which is not weak by coverage. Coverage was the wrong test. Measured, it
+# takes the >= 3-line list from 8 to 1,759: a 220-fold inflation.
+#
+# The reason is chemical, not statistical. Binding ATP is a PRECONDITION
+# shared by essentially every ATP-dependent ligase, and this candidate set is
+# selected for ligases - so the annotation is necessary rather than
+# evidential. The crystallographic form earns its place because it shows the
+# cofactor positioned in THAT pocket and comes with a measured nucleophile
+# distance and attack angle; the sequence annotation carries neither.
+#
+# 1,759 "candidates on three independent lines" would have read as progress
+# and meant nothing. Any new axis must be tested for what it does to the
+# distribution, not just for how much it covers.
+REJECTED_AXES = {
+    'curated_atp_binding_site': (
+        'a precondition of every ATP-dependent ligase, not evidence of amide '
+        'formation; inflates the >= 3-line list from 8 to 1,759'),
+}
+
 SIDECARS = (
     ('ligand_evidence.tsv', ['bound_bifunctional_ligand',
                              'any_bifunctional_ligand']),
