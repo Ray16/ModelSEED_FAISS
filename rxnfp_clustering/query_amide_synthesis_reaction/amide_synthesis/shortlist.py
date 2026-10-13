@@ -138,6 +138,15 @@ def eligible(table):
     reasons = reasons.mask(
         reasons.eq('') & contradicted.astype(bool),
         'annotation_contradicts_chemistry')
+    # UniProt's own curated family statement, a third axis independent of the
+    # protein name and the EC that `master_table` already checks, and
+    # independent of the Pfam/InterPro grouping the family routes rely on.
+    # Computed by the `properties` stage; absent if that stage has not run.
+    prose = _column(out, 'family_prose_contradicts_chemistry', False)
+    reasons = reasons.mask(
+        reasons.eq('') & pd.to_numeric(prose, errors='coerce')
+        .fillna(0).astype(bool),
+        'family_prose_contradicts_chemistry')
     # Measured activity overrides every predicted objection except a missing
     # sequence, which would make the row untestable.
     measured = _column(out, 'evidence_strength').isin(ALWAYS_KEEP)
@@ -247,6 +256,17 @@ def main():
     if pdb_facts.exists():
         facts = pd.read_csv(pdb_facts, sep='\t')
         table = table.merge(facts, on='uniprot', how='left')
+
+    # Curated properties, for the family-prose cross-check above. Only the
+    # flag is joined: the prose itself belongs in the annotated deliverable,
+    # not in the selection step.
+    properties = RES / 'curated_properties.tsv'
+    if properties.exists():
+        extra = pd.read_csv(properties, sep='\t', low_memory=False)
+        column = 'family_prose_contradicts_chemistry'
+        if column in extra.columns:
+            table = table.merge(extra[['uniprot', column]],
+                                on='uniprot', how='left')
     screened = eligible(table)
     short = build(table)
 

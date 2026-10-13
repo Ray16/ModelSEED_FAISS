@@ -153,7 +153,20 @@ def main():
         columns=['uniprot', 'plddt_mean'])
     quality.to_csv(RES / 'alphafold_quality.tsv', sep='\t', index=False)
 
+    # One annotated deliverable, assembled from the sidecar files the later
+    # stages write. Each sidecar is keyed by accession and optional: a missing
+    # one leaves its columns absent rather than failing the stage.
     annotated = short.merge(quality, on='uniprot', how='left')
+    for sidecar in ('curated_properties.tsv',):
+        path = RES / sidecar
+        if path.exists():
+            extra = pd.read_csv(path, sep='\t', low_memory=False)
+            overlap = [c for c in extra.columns
+                       if c != 'uniprot' and c in annotated.columns]
+            annotated = annotated.merge(extra.drop(columns=overlap),
+                                        on='uniprot', how='left')
+            print(f'merged {sidecar}: '
+                  f'{len(extra.columns) - 1 - len(overlap)} columns', flush=True)
     annotated.to_csv(RES / 'shortlist_annotated.tsv', sep='\t', index=False)
 
     plddt = pd.to_numeric(quality.get('plddt_mean'), errors='coerce') \

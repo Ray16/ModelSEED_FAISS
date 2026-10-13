@@ -17,10 +17,20 @@ the dead ends.
 | **external link table** (`uniprot-msd-links.tsv`) | precomputed UniProt→ModelSEED links | +1,131 candidates; see `MAPPING_REVIEW.md` |
 | **UniProtKB protein names** | proteins NAMED for the target function, which no reaction pivot reaches | 3,488 proteins, 3,469 of them new; fixed a measured 0-of-26 recall hole |
 | **AlphaFold DB API** | model confidence (mean pLDDT + per-band fractions) for shortlisted candidates | 253 of 301; median pLDDT 94.1, none below 50 |
+| **UniProt curated properties** (7 fields never requested) | curated family statement, domain architecture, subcellular location, kinetics, pH/temp optima | family statement 75.4%, domains 73.3%, location 37.3%, kinetics 0.5% (189 proteins) |
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 
 ## Tried and unusable
+
+**BRENDA, partially substituted.** UniProt curates kinetics itself, in a
+field this pipeline never requested (`kinetics`; note that
+`cc_biophysicochemical_properties`, the name the documentation suggests,
+returns HTTP 400). It yields 189 proteins with a measured KM or kcat, each
+with an ECO:0000269 publication, 42 of them on the shortlist, tightest KM
+0.21 uM. That is real but it is 189 against the ~31,000 EC-bearing candidates
+BRENDA would cover, and it is 0% for unreviewed entries, so BRENDA remains the
+blocked high-value source rather than a solved one.
 
 **BRENDA** — the one remaining source that would add genuinely new information
 (Km, kcat, substrate specificity, optimal pH/temperature by EC, which 81.8% of
