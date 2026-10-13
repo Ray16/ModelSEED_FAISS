@@ -135,6 +135,37 @@ The seven glutarate hits are acylases (EC 2.3.2.2 γ-glutamyltransferase,
 EC 2.3.1.149 PAF acetylhydrolase), six of which this table already holds, and
 they act on a glutaryl group rather than condensing a free diacid.
 
+### The large N-acyltransferase families: held, or correctly excluded
+
+Succinate is the reachable donor analogue, so the N-succinyl/N-acyl
+transferases are where a donor-side gap would show. Each was checked against
+this project's own screen rather than against an EC heuristic:
+
+| EC | UniProt | ours | verdict |
+|---|---:|---:|---|
+| 2.3.1.109 Arg-N-succinyltransferase | 2,164 | 361 | held; screen scores it **0.851** |
+| 2.3.1.57 diamine N-acetyltransferase | 3,141 | 1,567 | held; 0.511 |
+| 6.3.2.11 carnosine synthase | 326 | 287 | held; 0.667 |
+| **2.3.1.117 DapD** | **12,241** | **0** | **correctly excluded — see below** |
+| 2.3.1.89 THDP N-acetyltransferase | 2,476 | 0 | correctly excluded, same reason |
+
+DapD looks like the largest donor-side gap in the project: 12,241 proteins
+transferring a succinyl — a C4 diacid — onto a nitrogen, absent entirely. It
+is not a gap. Its Rhea reaction (RHEA:17326) has the acceptor
+
+```
+O=C([O-])C1=N[C@H](C(=O)[O-])CCC1
+```
+
+a **cyclic imine** (`C1=N` in the ring), on which the screen finds **zero**
+free aliphatic amines and returns zero acylation events. The nitrogen only
+becomes an amine by ring-opening during catalysis, so the enzyme never
+acylates a free amine and cannot be run on HMDA.
+
+This is the screen's second rule — *the nitrogen must be a genuine aliphatic
+amine, not aromatic, amide, nitrile or guanidino* — rejecting a 12,241-protein
+family that an EC-based route would have swept in whole.
+
 **So neither nylon-6,6 monomer has a curated amide-forming enzyme anywhere in
 UniProt.** The reachable analogues are cadaverine on the acceptor side (C5,
 three enzymes, all three held) and succinate on the donor side (C4, where
