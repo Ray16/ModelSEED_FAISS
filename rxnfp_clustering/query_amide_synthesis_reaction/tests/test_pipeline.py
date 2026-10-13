@@ -133,3 +133,45 @@ class EcSubstrateOrderingTests(unittest.TestCase):
         chosen = [s.name for s in pipeline.select_stages(
             only={'master', 'ecsub'})]
         self.assertEqual(chosen, ['ecsub', 'master'])
+
+
+class ColumnAuditTests(unittest.TestCase):
+    """A column computed upstream and dropped at the merge must fail loudly.
+
+    This happened twice: `acylates_free_diamine` (the screen's proof that the
+    acceptor is a free diamine, now the most discriminating convergence axis)
+    and `borrowed_from_rxn` (the chemistry-neighbour route's entire answer,
+    0 of 54,199). Neither failed - the column existed and held nothing.
+    """
+
+    def _audit(self, frame):
+        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
+        import audit_columns
+        return audit_columns.audit(frame, declared=list(frame.columns))
+
+    def test_an_empty_column_is_reported(self):
+        import pandas as pd
+        frame = pd.DataFrame({'a': [1, 2, 3], 'dropped': [None, None, None]})
+        empty, _ = self._audit(frame)
+        self.assertIn('dropped', [c for c, _ in empty])
+
+    def test_a_blank_string_column_counts_as_empty(self):
+        import pandas as pd
+        frame = pd.DataFrame({'a': [1, 2, 3], 'blank': ['', '  ', None]})
+        empty, _ = self._audit(frame)
+        self.assertIn('blank', [c for c, _ in empty])
+
+    def test_a_thin_column_is_not_an_error(self):
+        """struct_S covers 36 of 54,199 because 36 proteins were scored."""
+        import pandas as pd
+        frame = pd.DataFrame({'a': range(1000),
+                              'rare': [1] + [None] * 999})
+        empty, thin = self._audit(frame)
+        self.assertEqual(empty, [])
+        self.assertIn('rare', [c for c, _ in thin])
+
+    def test_a_fully_populated_column_is_neither(self):
+        import pandas as pd
+        frame = pd.DataFrame({'a': range(100)})
+        empty, thin = self._audit(frame)
+        self.assertEqual((empty, thin), ([], []))
