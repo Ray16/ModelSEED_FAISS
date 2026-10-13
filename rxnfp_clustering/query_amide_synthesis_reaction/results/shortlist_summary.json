@@ -24,6 +24,8 @@
   },
   "with_measured_activity": 48,
   "with_pdb": 82,
+  "with_experimental_structure": 82,
+  "with_cofactor_bound_structure": 34,
   "self_condensing": 75,
   "caps": {
     "family": 12,

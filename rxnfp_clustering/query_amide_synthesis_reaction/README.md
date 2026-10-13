@@ -95,6 +95,34 @@ writes `master_candidates_enriched.tsv` rather than overwriting its input,
 because rewriting in place would let a later `master_table` run silently
 discard every enriched value.
 
+### Experimental structural evidence, no folding required
+
+The structural stage proper - cofolding against adipate, HMDA and ATP - needs
+shared-cluster GPUs and is deliberately sequenced after retrieval. But 179
+candidates already have experimental structures (825 distinct PDB entries), and
+for those crystallography has answered what a predicted pose only estimates.
+`pdb_evidence.py` reads them over HTTP:
+
+| | |
+|---|---:|
+| candidates with an experimental structure | **179** |
+| PDB entries queried (0 lookups failed) | 825 |
+| entries with ATP, ADP, AMP or a non-hydrolysable analogue | 80 |
+| **candidates with a cofactor-bound structure** | **42** |
+| candidates with a bound metal (Mg/Mn) | 87 |
+| median best resolution | 2.0 A |
+
+The 42 matter most. The geometric proxy this project corroborates against
+scores the carboxylate oxygen attacking ATP's phosphorus, so it needs an ATP
+position - and those structures supply one experimentally. They can be scored
+without cofolding at all, and they are the right templates for cofolding the
+rest. A cofactor-bound structure is preferred over a better-resolution apo one
+for exactly this reason.
+
+That raises structural coverage from 36 predicted scores to 179 candidates
+with experimental structures. Every field is a fact about a deposited model;
+nothing here is a score and nothing enters the ranking.
+
 `results/shortlist.tsv` + `shortlist.fasta` are the actionable deliverable:
 **292 proteins**, 33 families, 149 organisms, 82 with a PDB entry, 75
 self-condensing, and all 48 assayed proteins with measured titre. A 34k-row

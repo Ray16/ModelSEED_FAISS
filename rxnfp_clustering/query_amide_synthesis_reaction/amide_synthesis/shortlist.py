@@ -191,6 +191,13 @@ def main():
     source = enriched if enriched.exists() else RES / 'master_candidates.tsv'
     table = pd.read_csv(source, sep='\t', low_memory=False)
     print(f'shortlisting from {source.name}', flush=True)
+
+    # Experimental structural facts, where crystallography has already
+    # answered what a predicted pose only estimates.
+    pdb_facts = RES / 'pdb_evidence.tsv'
+    if pdb_facts.exists():
+        facts = pd.read_csv(pdb_facts, sep='\t')
+        table = table.merge(facts, on='uniprot', how='left')
     screened = eligible(table)
     short = build(table)
 
@@ -208,6 +215,10 @@ def main():
         'with_measured_activity': int(
             short.evidence_strength.eq('measured_activity').sum()),
         'with_pdb': int(short.pdb.notna().sum()),
+        'with_experimental_structure': int(short.get(
+            'best_pdb', pd.Series(dtype=object)).notna().sum()),
+        'with_cofactor_bound_structure': int(short.get(
+            'pdb_has_atp_like', pd.Series(dtype=bool)).fillna(False).sum()),
         'self_condensing': int(short.self_condensation.fillna(False).sum()),
         'caps': {'family': MAX_PER_FAMILY, 'clade': MAX_PER_CLADE,
                  'genus': MAX_PER_GENUS},
@@ -216,7 +227,8 @@ def main():
     (RES / 'shortlist_summary.json').write_text(json.dumps(summary, indent=2) + '\n')
 
     show = ['uniprot', 'gene', 'organism', 'family', 'evidence_strength',
-            'substrate_distance_measured', 'struct_S', 'master_priority']
+            'substrate_distance_measured', 'struct_S', 'best_pdb',
+            'pdb_has_atp_like', 'master_priority']
     show = [c for c in show if c in short.columns]
     print('\nTop 20:', flush=True)
     print(short.head(20)[show].to_string(index=False), flush=True)
