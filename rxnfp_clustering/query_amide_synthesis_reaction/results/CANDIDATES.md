@@ -1,6 +1,6 @@
 # Candidates worth a bench slot
 
-31 proteins, each supported by at least 2 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
+35 proteins, each supported by at least 0 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
 
 Entries marked a NEAR MISS did not reach the convergence threshold and are included on a separate, stated criterion: two independent lines plus demonstrated room for both monomers. The threshold was not moved to accommodate them.
 
@@ -1071,4 +1071,47 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
 **Literature** [12384590](https://pubmed.ncbi.nlm.nih.gov/12384590/), [12704152](https://pubmed.ncbi.nlm.nih.gov/12704152/)
+
+## D2TMN3 — Enterobactin synthetase component E (EC 2.3.1.-, EC 2.7.7.58)
+
+**Organism** Citrobacter rodentium (strain ICC168) (Citrobacter freundii biotype 4280)  
+**Gene** `entE ROD_06031`  
+**Length** 535.0 aa  
+
+**Why it is here** — the OTHER hypothesis. It reaches no independent evidence line in this pipeline; it is here because it is among the ANL candidates most similar to a protein with MEASURED activity on the nylon-6,6 diad: 30.2% identity to AS9, a measured producer.
+
+**Literature** [19897651](https://pubmed.ncbi.nlm.nih.gov/19897651/)
+
+## A0A075UYU2 — Amide synthetase
+
+**Organism** Amycolatopsis japonica  
+**Gene** `AJAP_12390`  
+**Length** 521.0 aa  
+
+**Why it is here** — the OTHER hypothesis. It reaches no independent evidence line in this pipeline; it is here because it is among the ANL candidates most similar to a protein with MEASURED activity on the nylon-6,6 diad: 30.6% identity to AS9, a measured producer.
+
+**Family (UniProt)** SIMILARITY: Belongs to the ATP-dependent AMP-binding enzyme family. .
+
+**Literature** [25193710](https://pubmed.ncbi.nlm.nih.gov/25193710/)
+
+## A0ABC8C1M7 — Amide synthetase
+
+**Organism** Kitasatospora albolonga  
+**Gene** `B7C62_33055`  
+**Length** 514.0 aa  
+
+**Why it is here** — the OTHER hypothesis. It reaches no independent evidence line in this pipeline; it is here because it is among the ANL candidates most similar to a protein with MEASURED activity on the nylon-6,6 diad: 29.8% identity to AS23, a measured producer.
+
+**Family (UniProt)** SIMILARITY: Belongs to the ATP-dependent AMP-binding enzyme family. .
+
+## A1YAM3 — Amide synthetase
+
+**Organism** Amycolatopsis orientalis (Nocardia orientalis)  
+**Length** 521.0 aa  
+
+**Why it is here** — the OTHER hypothesis. It reaches no independent evidence line in this pipeline; it is here because it is among the ANL candidates most similar to a protein with MEASURED activity on the nylon-6,6 diad: 30.6% identity to AS9, a measured producer.
+
+**Family (UniProt)** SIMILARITY: Belongs to the ATP-dependent AMP-binding enzyme family. .
+
+**Literature** [17136886](https://pubmed.ncbi.nlm.nih.gov/17136886/)
 

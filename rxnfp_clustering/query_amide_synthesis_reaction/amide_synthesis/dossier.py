@@ -84,6 +84,18 @@ MAX_DOSSIERS = int(os.environ.get('DOSSIER_LIMIT', 0))
 # artificially truncated.
 NEAR_MISS_LINES = int(os.environ.get('DOSSIER_NEAR_MISS_LINES', 2))
 
+# THE ASSAY PICKS FROM THE OTHER HYPOTHESIS, documented alongside.
+#
+# The measured-data reading - that the ANL/adenylate-forming panel is the
+# family that works - produces picks the convergence count never sees,
+# because those candidates have no mapped reaction, no structure and no bound
+# ligand. results/ASSAY_ROUND.md recommends four of them, so they belong in
+# the document a bench scientist reads. Recommending a protein in one file
+# and omitting it from the other has happened five times in this project;
+# this is the sixth place it would have.
+ANL_PICKS = int(os.environ.get('DOSSIER_ANL_PICKS', 4))
+ANL_RANKING = 'anl_similarity_to_actives.tsv'
+
 # Free di- and polyamines, named in order of how close they are to HMDA.
 # The nylon-6,6 acceptor is hexane-1,6-diamine, and NO enzyme in UniProt is
 # annotated to use it - 0 of 54,199 candidates name it, which is the whole
@@ -246,7 +258,14 @@ def render(row):
         lines.append(f"**Length** {length} aa  ")
     lines.append('')
 
-    if _text(row.get('selected_by')) == 'near_miss_with_room':
+    if _text(row.get('selected_by')) == 'anl_closest_to_a_measured_active':
+        lines.append('**Why it is here** — the OTHER hypothesis. It reaches '
+                     'no independent evidence line in this pipeline; it is '
+                     'here because it is among the ANL candidates most '
+                     'similar to a protein with MEASURED activity on the '
+                     'nylon-6,6 diad: '
+                     + _text(row.get('evidence_lines')) + '.')
+    elif _text(row.get('selected_by')) == 'near_miss_with_room':
         lines.append('**Why it is here** — a NEAR MISS: it does not reach the '
                      'convergence threshold, but its pocket has demonstrably '
                      'held both monomers\' worth of span. Admitted on that '
@@ -388,6 +407,38 @@ def main():
                                      'chemistry floor'
             table = pd.concat([table, near], ignore_index=True)
             print(f'{len(near)} near-misses with room for both monomers',
+                  flush=True)
+
+    # The ANL picks, ranked by identity to a measured active rather than by
+    # our own evidence - which is the point of including them.
+    ranking = RES / ANL_RANKING
+    if ANL_PICKS and ranking.exists():
+        anl = pd.read_csv(ranking, sep='\t', low_memory=False)
+        everything = pd.read_csv(RES / 'master_candidates_enriched.tsv',
+                                 sep='\t', low_memory=False)
+        lengths = dict(zip(everything.uniprot, everything.length))
+        panel = everything[everything.evidence_strength
+                           .eq('measured_activity')]
+        median = float(pd.to_numeric(panel.length, errors='coerce').median())
+        anl['length'] = anl.uniprot.map(lengths)
+        # Comparable length only: identity is normalised by the shorter
+        # sequence, so a 134-residue fragment matching one domain outranks a
+        # whole enzyme. That nearly reached the recommendation list.
+        anl = anl[(anl.length >= median * 0.75)
+                  & (anl.length <= median * 1.25)]
+        chosen = anl.head(ANL_PICKS).uniprot.tolist()
+        extra = everything[everything.uniprot.isin(chosen)
+                           & ~everything.uniprot.isin(table.uniprot)].copy()
+        if len(extra):
+            identity = dict(zip(anl.uniprot, anl.pct_id_to_active))
+            closest = dict(zip(anl.uniprot, anl.closest_active))
+            extra['selected_by'] = 'anl_closest_to_a_measured_active'
+            extra['n_discriminating_lines'] = 0
+            extra['evidence_lines'] = [
+                f'{identity.get(a, 0)}% identity to {closest.get(a, "?")}, '
+                'a measured producer' for a in extra.uniprot]
+            table = pd.concat([table, extra], ignore_index=True)
+            print(f'{len(extra)} ANL picks closest to a measured active',
                   flush=True)
 
     for name, columns in SIDECARS:

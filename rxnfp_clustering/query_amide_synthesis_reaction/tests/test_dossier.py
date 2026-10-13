@@ -265,3 +265,38 @@ class AccessionPatternTests(unittest.TestCase):
         source = Path(dos.__file__).read_text()
         self.assertIn('from .curated_properties import ACCESSION', source)
         self.assertNotIn('[A-NR-Z0-9][0-9A-Z]', source)
+
+
+class AssayPickCoverageTests(unittest.TestCase):
+    """Every protein the assay round recommends must have a dossier.
+
+    ASSAY_ROUND.md recommends four ANL candidates chosen for their similarity
+    to a measured producer. They reach no evidence line in this pipeline, so
+    nothing else would have documented them - the sixth place in this project
+    where a recommendation would have sat in one file and the documentation
+    in none.
+    """
+
+    def test_the_anl_picks_are_configured(self):
+        self.assertGreaterEqual(dos.ANL_PICKS, 4)
+        self.assertEqual(dos.ANL_RANKING, 'anl_similarity_to_actives.tsv')
+
+    def test_an_anl_pick_renders_its_own_reason(self):
+        row = pd.Series({
+            'uniprot': 'A0A075UYU2',
+            'selected_by': 'anl_closest_to_a_measured_active',
+            'evidence_lines': '30.6% identity to AS9, a measured producer',
+            'n_discriminating_lines': 0})
+        out = dos.render(row)
+        self.assertIn('OTHER hypothesis', out)
+        self.assertIn('MEASURED activity', out)
+        self.assertIn('30.6%', out)
+
+    def test_it_does_not_claim_independent_lines(self):
+        """It has none; saying otherwise would overstate the pipeline."""
+        row = pd.Series({
+            'uniprot': 'A0A075UYU2',
+            'selected_by': 'anl_closest_to_a_measured_active',
+            'evidence_lines': '30.6% identity to AS9, a measured producer',
+            'n_discriminating_lines': 0})
+        self.assertNotIn('independent lines:', dos.render(row))
