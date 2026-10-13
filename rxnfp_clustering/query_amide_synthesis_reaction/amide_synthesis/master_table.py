@@ -58,7 +58,21 @@ INHERITED_DISCOUNT = float(os.environ.get('INHERITED_DISCOUNT', 0.7))
 DISQUALIFYING = (
     'reductase', 'dehydrogenase', 'oxidase', 'transporter', 'permease',
     'hydrolase', 'amidase', 'esterase', 'peptidase', 'protease', 'nuclease',
-    'phosphatase', 'isomerase', 'channel', 'receptor', 'binding protein',
+    'phosphatase', 'isomerase', 'channel', 'receptor',
+    # NOT the bare 'binding protein'. That term was meant for the periplasmic
+    # and ABC-transporter solute receptors, but it matched "AMP-binding
+    # protein" - UniProt's standard name for the ANL adenylating superfamily,
+    # which is the catalytic family of the three MEASURED producers. It was
+    # disqualifying 36 adenylating enzymes (35 AMP-binding, 1 pyrrolysine-
+    # biosynthesis ATP-binding) to catch one multidrug ABC transporter that
+    # 'transporter' already catches. Narrowed to the transport-specific forms.
+    # Enumerating the transport prefixes instead was whack-a-mole -
+    # "maltose/maltodextrin-binding protein" escaped a six-term list. The real
+    # rule is the complement and it is short: every "X-binding protein" is a
+    # transport or nucleic-acid receptor EXCEPT where X is the nucleotide or
+    # cofactor an adenylating enzyme activates. Fixed-width lookbehinds, one
+    # per prefix, so the broad term survives intact.
+    r'(?<!amp.)(?<!atp.)(?<!adp.)(?<!gtp.)(?<!nad.)(?<!fad.)binding protein',
     # Added after the protein-name route admitted a "Carboxylate--amine
     # ligase" sitting in a helicase family: a qualifying name on a protein
     # whose actual machinery is unrelated to acyl transfer.

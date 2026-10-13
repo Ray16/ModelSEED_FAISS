@@ -252,13 +252,35 @@ def write_fasta(frame, path):
                 handle.write(sequence[start:start + 60] + '\n')
 
 
+def choose_source(res):
+    """The table to shortlist from, refusing a stale enriched copy.
+
+    The enriched table is preferred when the annotation stage has run; it is
+    a superset, never a replacement. But only when it was built from the
+    CURRENT master. `enrich` needs UniProt, so `--offline` drops it, and
+    re-running `master` alone then leaves the enriched table one generation
+    behind - whereupon this stage would silently shortlist from superseded
+    flags. That happened: a disqualifier fix cleared 38 rows in `master` and
+    the shortlist did not move, because it was still reading the pre-fix
+    enriched copy. Fail instead of guessing; the alternative is a wrong
+    shortlist that looks right.
+    """
+    enriched = res / 'master_candidates_enriched.tsv'
+    master = res / 'master_candidates.tsv'
+    if enriched.exists() and master.exists() and (
+            enriched.stat().st_mtime < master.stat().st_mtime):
+        raise SystemExit(
+            f'{enriched.name} is older than {master.name}: it was built from '
+            'a superseded master table. Re-run the `enrich` stage (it needs '
+            'UniProt, so not under --offline), or delete the enriched file '
+            'to shortlist from the master directly.')
+    return enriched if enriched.exists() else master
+
+
 def main():
     from .paths import ensure_directories
     ensure_directories()
-    # Prefer the enriched table when the annotation stage has run; it is a
-    # superset, never a replacement.
-    enriched = RES / 'master_candidates_enriched.tsv'
-    source = enriched if enriched.exists() else RES / 'master_candidates.tsv'
+    source = choose_source(RES)
     table = pd.read_csv(source, sep='\t', low_memory=False)
     print(f'shortlisting from {source.name}', flush=True)
 

@@ -748,6 +748,16 @@ and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation
 contradicts the chemistry are flagged (`annotation_contradicts_chemistry`) and
 demoted rather than deleted.
 
+The disqualifying terms need care in the other direction too. `binding protein`
+was meant for periplasmic and ABC solute receptors, but it also matches
+**"AMP-binding protein"** — UniProt's standard name for the ANL adenylating
+superfamily, which is the catalytic family of the three *measured* producers.
+It was demoting 38 adenylating enzymes, 12 of them homologs of a measured
+active, to catch one multidrug ABC transporter that `transporter` already
+caught. The term now carries a fixed-width lookbehind per nucleotide prefix
+(`amp`/`atp`/`adp`/`gtp`/`nad`/`fad`), so every other `X-binding protein` —
+periplasmic, substrate, maltose, DNA, penicillin — is still demoted.
+
 ### Where recall stops — re-probed after every change
 
 Of 480 admitted reactions, 308 resolve to a protein by direct annotation and

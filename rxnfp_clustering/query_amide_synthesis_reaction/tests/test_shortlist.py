@@ -5,6 +5,10 @@ the ones that quietly produce a plausible-looking but wrong recommendation.
 """
 from __future__ import annotations
 
+import os
+import pathlib
+import shutil
+import tempfile
 import unittest
 
 import numpy as np
@@ -271,3 +275,33 @@ class TieBreakTests(unittest.TestCase):
     def test_a_missing_similarity_column_is_not_fatal(self):
         frame = self._tied([0.5]).drop(columns=['member_similarity'])
         self.assertEqual(len(sl.build(frame, target=1)), 1)
+
+
+class TestChooseSource(unittest.TestCase):
+    """A stale enriched table must stop the stage, not be used silently."""
+
+    def setUp(self):
+        self.dir = pathlib.Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.dir)
+        self.master = self.dir / 'master_candidates.tsv'
+        self.enriched = self.dir / 'master_candidates_enriched.tsv'
+
+    def _write(self, path, mtime):
+        path.write_text('uniprot\nP00000\n')
+        os.utime(path, (mtime, mtime))
+
+    def test_fresh_enriched_is_preferred(self):
+        self._write(self.master, 1000)
+        self._write(self.enriched, 2000)
+        self.assertEqual(sl.choose_source(self.dir), self.enriched)
+
+    def test_stale_enriched_raises(self):
+        self._write(self.master, 2000)
+        self._write(self.enriched, 1000)
+        with self.assertRaises(SystemExit) as caught:
+            sl.choose_source(self.dir)
+        self.assertIn('superseded', str(caught.exception))
+
+    def test_master_alone_is_used(self):
+        self._write(self.master, 1000)
+        self.assertEqual(sl.choose_source(self.dir), self.master)

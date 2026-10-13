@@ -3,7 +3,8 @@
 Six re-runnable tools, each written because a claim had been asserted rather
 than measured — and in three cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
-the command shown.
+the command shown. One further check is not a tool but a guard inside a stage,
+described with the others below: it refuses to run on a superseded input.
 
 | check | command | current result |
 |---|---|---|
@@ -36,6 +37,15 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **The stale-input guard in `shortlist`** was added after the stage read an
+  enriched table one generation behind the master it was built from. `enrich`
+  needs UniProt, so `--offline` drops it; re-running `master` alone leaves the
+  enriched copy superseded, and the shortlist silently rebuilt itself from the
+  old flags. The symptom was the most dangerous kind available: a fix landed
+  in `master`, the shortlist did **not** move, and the unchanged number looked
+  like a measured result. A new defect class — not a wrong computation but a
+  correct one on a superseded input — so the guard compares mtimes and fails
+  the stage rather than choosing.
 - **`validate_against_activity`** is the one that has never found a bug,
   because its answer has never changed: with three measured positives the
   bootstrap CI spans chance and sequence length alone outscores every ranking
