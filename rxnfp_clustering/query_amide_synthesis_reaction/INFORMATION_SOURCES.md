@@ -44,6 +44,40 @@ http://sabiork.h-its.org/sabioRestWebServices/kineticLaws?q=ECNumber:"6.3.2.17"
 
 Not a transient failure — the same response for four different ECs.
 
+## Tried and rejected on precision
+
+**Substrate-name search of the catalytic-activity field.** The largest
+unresolved bucket is 121 reactions with no Rhea/EC whose *product* names
+returned nothing. The name route reads only the product side by design, so
+searching for the **reactant** names instead looked like the obvious remaining
+route — a synthetase does name its substrate in its catalytic-activity
+statement.
+
+Tested on the 10 highest-scoring of those 121. All 10 "resolved" — and that is
+the problem:
+
+```
+rxn21307  "Succinyl-CoA" -> 100 hits  Succinate--CoA ligase subunit beta
+rxn40659  "Acetyl-CoA"   -> 100 hits  Acyl-CoA synthetase short-chain family
+rxn21149  "L-Alanine"    -> 100 hits  Nonribosomal peptide synthetase echPS
+rxn59943  "L-Glutamate"  -> 100 hits  Glutamate--methylamine ligase
+rxn23369  "L-Lysine"     -> 100 hits  Hydroxylysine--glutamate ligase
+```
+
+Every query hit the 100-result page cap, because every substrate named is a
+ubiquitous metabolite. The hits are every ligase that mentions acetyl-CoA or
+L-glutamate anywhere — not the enzyme for that reaction.
+
+This is the same failure mode as the GO route criticised in
+`MAPPING_REVIEW.md`: chemically true, biologically meaningless. A distinctive
+**product** name (putrebactin, bisucaberin, alcaligin) identifies one enzyme;
+a common **substrate** name identifies thousands. Building it would have added
+roughly twelve thousand spurious associations and inflated the candidate count
+while lowering its value.
+
+Not built. This is why the 121 stay unresolved: not for want of a query, but
+because no *specific* query exists for them.
+
 ## Deliberately not used
 
 **KEGG REST** (free, works — tested `get/ec:6.3.2.17` and `link/ko/ec:…`). It
