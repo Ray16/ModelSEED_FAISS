@@ -1,0 +1,9 @@
+{
+  "blast_hits": 2952,
+  "passing_identity_and_length": 822,
+  "records_retrieved": 822,
+  "failed_batches": 0,
+  "min_identity": 40.0,
+  "panel_median_length": 519.0,
+  "note": "Anchored in MEASURED activity rather than annotation - the only route here that is. Identity to a producer is evidence of shared function, not evidence that the shared function is nylon amide synthesis."
+}

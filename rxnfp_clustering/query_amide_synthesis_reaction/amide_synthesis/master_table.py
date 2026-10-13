@@ -98,6 +98,13 @@ EVIDENCE_WEIGHT = {
     'exact_reaction': 3.0,      # UniProt annotated to that Rhea reaction
     'precomputed_rhea_or_go': 2.5,  # colleague's global link table
     'activity_ec': 2.0,         # matching EC, broader
+    # Sequence identity to a protein with MEASURED activity on the diad. The
+    # only route anchored in measurement rather than annotation, and the only
+    # one that reaches the family the panel demonstrates - which annotation
+    # cannot, since those proteins are annotated EC 6.2, thioester chemistry.
+    # Level with activity_ec: better than a domain match, well below a
+    # protein measured on the diad itself. See active_homologs.py.
+    'homolog_of_measured_active': 2.0,
     'literature_curated': 2.0,  # carries an independent structural score
     'name_match': 1.0,          # distinctive product name
     # UniProt names the protein for the target function. No reaction is known
@@ -139,6 +146,7 @@ COLUMNS = [
     'substrate_distance_measured', 'substrate_distance_inherited',
     'substrate_distance_own_rhea', 'substrate_distance_source',
     'ec_substrate_ceiling', 'ec_beats_own_reaction',
+    'pct_identity_to_active', 'closest_measured_active',
     'acylates_free_diamine',
     'self_condensation', 'struct_S', 'annotation_contradicts_chemistry',
     'activity_ugml', 'activity_std', 'is_strong_producer',
@@ -443,7 +451,8 @@ def main():
     extras = []
     for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv',
                  'chemistry_neighbour_candidates.tsv',
-                 'enzyme_name_candidates.tsv'):
+                 'enzyme_name_candidates.tsv',
+                 'active_homolog_candidates.tsv'):
         path = RES / name
         if path.exists():
             extras.append(pd.read_csv(path, sep='\t', low_memory=False))
@@ -485,6 +494,7 @@ def main():
             'substrate_distance_measured', 'substrate_distance_inherited',
     'substrate_distance_own_rhea', 'substrate_distance_source',
     'ec_substrate_ceiling', 'ec_beats_own_reaction',
+    'pct_identity_to_active', 'closest_measured_active',
     'acylates_free_diamine',
             'struct_S', 'master_priority']
     print('\nTop 25:', flush=True)

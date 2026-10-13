@@ -1,10 +1,11 @@
 {
-  "total_candidates": 54199,
+  "total_candidates": 55021,
   "by_route": {
     "clade": 36889,
     "domain": 9365,
     "enzyme_name": 4512,
     "precomputed_link": 2554,
+    "active_homolog": 822,
     "reaction": 816,
     "assayed": 49,
     "proxied": 14
@@ -14,6 +15,7 @@
     "family_homolog": 9365,
     "enzyme_name_match": 4512,
     "precomputed_rhea_or_go": 2554,
+    "homolog_of_measured_active": 822,
     "exact_reaction": 509,
     "activity_ec": 251,
     "name_match": 51,
@@ -23,10 +25,10 @@
   },
   "reviewed": 2048,
   "with_pdb": 239,
-  "with_alphafold": 35369,
-  "with_catalytic_activity": 35596,
-  "with_sequence": 54198,
+  "with_alphafold": 35903,
+  "with_catalytic_activity": 35764,
+  "with_sequence": 55020,
   "with_structural_score": 36,
   "self_condensing": 1934,
-  "annotation_contradicts_chemistry": 3499
+  "annotation_contradicts_chemistry": 3511
 }

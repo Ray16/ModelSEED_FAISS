@@ -46,6 +46,8 @@ STAGES = (
     # BEFORE master: master consumes `substrate_distance_own_rhea` to rank, so
     # this reads the route files rather than the master table. See
     # ec_substrate.candidate_annotations.
+    Stage('actives', 'active_homologs',
+          'candidates reached from the MEASURED actives (network)', True),
     Stage('ecsub', 'ec_substrate',
           'substrate distance from each protein\'s own Rhea reaction (network)',
           True),

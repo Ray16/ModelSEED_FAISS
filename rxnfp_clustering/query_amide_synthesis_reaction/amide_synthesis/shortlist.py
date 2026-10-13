@@ -58,6 +58,10 @@ TIER_SHARE = (
     ('measured_activity', 1.00),   # uncapped; it is measurement, not prediction
     ('exact_reaction', 0.35),
     ('activity_ec', 0.15),
+    # The other hypothesis. Given a real share rather than a token one: it is
+    # the only tier anchored in measured activity, and a bench round that
+    # tests only annotation-derived candidates tests half the question.
+    ('homolog_of_measured_active', 0.15),
     ('precomputed_rhea_or_go', 0.10),
     ('literature_curated', 0.05),
     ('name_match', 0.05),
@@ -295,9 +299,26 @@ def main():
             signature_text = (_column(table, 'pfam').fillna('').astype(str)
                               + ';' + _column(table, 'interpro')
                               .fillna('').astype(str))
+            # Exempt, for the same reason `reaction` is exempt: the route's
+            # evidence does not come from the family's annotated chemistry.
+            #
+            # 819 of the 822 measured-active homologs carry PF13193 /
+            # IPR045851, which belong to "ATP-dependent AMP-binding enzyme" -
+            # a family `famval` rejects, correctly, because its product is a
+            # thioester that cannot polycondense. Applying that verdict here
+            # would suppress the ENTIRE measured-data hypothesis on the
+            # strength of the chemistry hypothesis, and the two are in direct
+            # conflict: three members of that rejected family are the only
+            # proteins known to make the nylon bond.
+            #
+            # A family verdict is a statement about annotated chemistry. This
+            # route's evidence is measured activity by descent, which is
+            # exactly the evidence that contradicts the annotation, so the
+            # verdict has no authority over it.
+            exempt = _column(table, 'discovery_route').isin(
+                ('reaction', 'active_homolog'))
             table['in_rejected_family'] = (
-                signature_text.str.contains(pattern, regex=True)
-                & _column(table, 'discovery_route').ne('reaction'))
+                signature_text.str.contains(pattern, regex=True) & ~exempt)
             print(f'family verdicts: {len(rejected)} signatures in rejected '
                   f'families; {int(table.in_rejected_family.sum())} candidates '
                   'flagged', flush=True)

@@ -1,15 +1,15 @@
 {
-  "candidates": 54199,
+  "candidates": 55021,
   "by_line_count": {
-    "1": 39535,
-    "0": 10137,
+    "1": 40354,
+    "0": 10140,
     "2": 2708,
     "3": 1791,
     "4": 24,
     "5": 4
   },
   "by_discriminating_line_count": {
-    "0": 48104,
+    "0": 48926,
     "1": 4272,
     "2": 1795,
     "3": 24,
@@ -23,7 +23,7 @@
     "measured_nylon_activity": 49,
     "acylates_a_free_diamine": 189,
     "own_reaction_chemistry": 3862,
-    "lead_family_verdict": 42490,
+    "lead_family_verdict": 43309,
     "bifunctional_ligand_in_the_pocket": 3757,
     "adenylation_competent_structure": 57,
     "independent_geometric_score": 36
