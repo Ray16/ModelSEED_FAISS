@@ -151,3 +151,72 @@ class DiamineAcceptorTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PocketCapacityTests(unittest.TestCase):
+    """Room for the monomer, measured from ligands rather than docking.
+
+    HMDA spans 6 between its amines and adipate 4 between its acids, so a
+    pocket seen holding spermidine (8) or meso-diaminopimelate (5 acid) has
+    room on that side. Capacity is necessary and nowhere near sufficient.
+    """
+
+    STRUCTURES = {
+        '1': 'NCCCNCCCCN',                 # spermidine, amine span 8
+        '2': 'NCCCCCN',                    # cadaverine, amine span 5
+        '3': 'OC(=O)C(N)CCCC(N)C(=O)O',    # meso-DAP, acid span 5
+        '4': '[Mg+2]',                     # a metal
+    }
+
+    def _row(self, text):
+        return pd.Series({'uniprot': 'P1', 'binding_site': text,
+                          'catalytic_activity': ''})
+
+    def test_spermidine_clears_the_hmda_span(self):
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:1'), self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 8)
+        self.assertTrue(got['fits_hmda'])
+
+    def test_cadaverine_does_not_clear_it(self):
+        """C5 is one methylene short; capacity must not round up."""
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:2'), self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 5)
+        self.assertFalse(got['fits_hmda'])
+
+    def test_meso_dap_clears_the_adipate_span(self):
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:3'), self.STRUCTURES)
+        self.assertTrue(got['fits_adipate'])
+
+    def test_the_widest_ligand_wins(self):
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:1 ChEBI:CHEBI:2'),
+                                  self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 8)
+        self.assertEqual(got['widest_ligand'], '1')
+
+    def test_a_metal_contributes_nothing(self):
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:4'), self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 0)
+        self.assertFalse(got['fits_hmda'])
+
+    def test_catalytic_activity_counts_too(self):
+        """GlnA2's acceptor is named there, not in binding_site."""
+        row = pd.Series({'uniprot': 'P1', 'binding_site': '',
+                         'catalytic_activity': 'spermidine ChEBI:CHEBI:1'})
+        self.assertTrue(dos.pocket_capacity(row, self.STRUCTURES)['fits_hmda'])
+
+    def test_the_bare_chebi_form_is_also_matched(self):
+        """UniProt writes ChEBI:CHEBI:30616; a bare form must not slip past."""
+        got = dos.pocket_capacity(self._row('ChEBI:1'), self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 8)
+
+    def test_an_unresolved_chebi_is_skipped(self):
+        got = dos.pocket_capacity(self._row('ChEBI:CHEBI:9999'), self.STRUCTURES)
+        self.assertEqual(got['amine_span'], 0)
+
+    def test_capacity_is_not_a_convergence_axis(self):
+        """It derives from the same ligand data as the ligand axis."""
+        from amide_synthesis import converged as cv
+        found = cv.axes(pd.DataFrame([{'uniprot': 'P1'}]), set())
+        for name in found.columns:
+            self.assertNotIn('span', name)
+            self.assertNotIn('capacity', name)

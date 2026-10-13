@@ -21,6 +21,11 @@
 - measured K_M **0.13 mM**
 - curated ligand `CHEBI:29985`
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 17 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 3, short of adipate's 4
+
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
 - `cadaverine` — C5 diamine - ONE methylene short of HMDA
@@ -51,6 +56,11 @@
 - structure `3TO3` at 2.382 Å
 - in-line adenylation geometry 5.2 Å
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 23 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 2, short of adipate's 4
+
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
 - `spermidine` — triamine
@@ -78,6 +88,11 @@
 - in-line adenylation geometry 6.2 Å
 - crystallographic ligand `UAG`
 - curated ligand `CHEBI:57791`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 10 between acids, against adipate's 4 — **room for the donor**
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
 
@@ -107,6 +122,10 @@
 - crystallographic ligand `0TK`
 - curated ligand `CHEBI:32551;CHEBI:57668`
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 11 between amines, against HMDA's 6 — **room for the acceptor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=(3R)-3-methyl-D-ornithine + L-lysine + ATP = (3R)-3-methyl-D-ornithyl-N(6)-L-lysine + ADP + phosphate + H(+); Xref=Rhea:RHEA:32763, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:32551, ChEBI:CHEBI:43474, ChEBI:CHEBI:64642, ChEBI:CHEBI:64643, ChEBI:CHEBI:456216; EC=6.3.2.59; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:32764; Evidence=
 
 **Function** FUNCTION: Is required for the biosynthesis of pyrrolysine (By similarity). Catalyzes the ATP-dependent ligation between (3R)-3-methyl-D-ornithine and L-lysine, leading to (3R)-3-methyl-D-ornithyl-N6-L-lysine (Probable). .
@@ -128,6 +147,11 @@
 - substrate distance **0.873** (own_curated_reaction)
 - AlphaFold pLDDT **96.0**
 - curated ligand `CHEBI:29985`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 17 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 3, short of adipate's 4
 
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
@@ -161,6 +185,10 @@
 - measured K_M **0.31 mM**
 - crystallographic ligand `CIT`
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 5 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=L-aspartate + L-methionine + ATP = L-aspartyl-L-methionine + ADP + phosphate + H(+); Xref=Rhea:RHEA:76447, ChEBI:CHEBI:15378, ChEBI:CHEBI:29991, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57844, ChEBI:CHEBI:195235, ChEBI:CHEBI:456216; Evidence=
 
 **Function** FUNCTION: L-amino acid ligase, which preferentially catalyzes the formation of L-aspartyl-L-methionine dipeptide from L-aspartate and L-methionine in the presence of ATP. Less active with L-asparagine and L-methionine as substrates. Less active with L-aspartate and either L-phenylalanine, L-valine, L-leucine or L-isoleucine as substrates. Decreased activity when L-methionine is substituted with se
@@ -181,6 +209,11 @@
 - its EC class reaches 0.857
 - AlphaFold pLDDT **94.6**
 - curated ligand `CHEBI:29985`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 9 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 3, short of adipate's 4
 
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
@@ -213,6 +246,11 @@
 - AlphaFold pLDDT **92.7**
 - measured K_M **2.07 mM**
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 9 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 3, short of adipate's 4
+
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
 - `putrescine` — C4 diamine
@@ -242,6 +280,11 @@
 - AlphaFold pLDDT **88.3**
 - measured K_M **0.55 mM**
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 2, short of HMDA's 6
+- spans 6 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=(S)-2,3-diaminopropanoate + fumarate + ATP = N(3)-fumaroyl-(S)-2,3-diaminopropanoate + AMP + diphosphate; Xref=Rhea:RHEA:44340, ChEBI:CHEBI:29806, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57721, ChEBI:CHEBI:84330, ChEBI:CHEBI:456215; EC=6.3.2.46; Evidence=
 
 **Function** FUNCTION: Involved in dapdiamide antibiotics biosynthesis. Ligates fumarate and 2,3-diaminopropionate (DAP) to form N-beta-fumaroyl-DAP. Can also form N-succinoyl-DAP from succinate and DAP, with lower efficiency. .
@@ -264,6 +307,11 @@
 - its EC class reaches 0.809
 - AlphaFold pLDDT **94.4**
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 4, short of HMDA's 6
+- spans 9 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=D-ornithine + citrate + ATP = N(5)-[(S)-citryl]-D-ornithine + AMP + diphosphate + H(+); Xref=Rhea:RHEA:59136, ChEBI:CHEBI:15378, ChEBI:CHEBI:16947, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57668, ChEBI:CHEBI:142972, ChEBI:CHEBI:456215; EC=6.3.2.58; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:59137; Evidence=
 
 **Function** FUNCTION: Involved in the biosynthesis of the siderophore staphyloferrin A. Catalyzes the ATP-dependent condensation of D-ornithine and citrate to form a citryl-D-ornithine intermediate. .
@@ -283,6 +331,11 @@
 - substrate distance **0.807** (own_curated_reaction)
 - its EC class reaches 0.761
 - AlphaFold pLDDT **91.1**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 11 between amines, against HMDA's 6 — **room for the acceptor**
+- spans 6 between acids, against adipate's 4 — **room for the donor**
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=2-[(2-aminoethylcarbamoyl)methyl]-2-hydroxybutanedioate + (S)-2,3-diaminopropanoate + ATP = 2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate + AMP + diphosphate; Xref=Rhea:RHEA:59128, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57721, ChEBI:CHEBI:142970, ChEBI:CHEBI:142971, ChEBI:CHEBI:456215; EC=6.3.2.55; Evidence=; PhysiologicalD
 
@@ -304,6 +357,11 @@
 - its EC class reaches 0.807
 - AlphaFold pLDDT **92.6**
 - measured K_M **0.99 mM**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 2, short of HMDA's 6
+- spans 7 between acids, against adipate's 4 — **room for the donor**
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=(S)-2,3-diaminopropanoate + citrate + ATP = 2-[(L-alanin-3-ylcarbamoyl)methyl]-2-hydroxybutanedioate + AMP + diphosphate; Xref=Rhea:RHEA:59124, ChEBI:CHEBI:16947, ChEBI:CHEBI:30616, ChEBI:CHEBI:33019, ChEBI:CHEBI:57721, ChEBI:CHEBI:142969, ChEBI:CHEBI:456215; EC=6.3.2.54; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:59125; Evidence=
 
@@ -327,6 +385,11 @@
 - structure `2VOS` at 2.0 Å
 - in-line adenylation geometry 6.12 Å
 - curated ligand `CHEBI:17839`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 3, short of HMDA's 6
+- widest acid span 3, short of adipate's 4
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=7,8-dihydropteroate + L-glutamate + ATP = 7,8-dihydrofolate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23584, ChEBI:CHEBI:15378, ChEBI:CHEBI:17839, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57451, ChEBI:CHEBI:456216; EC=6.3.2.12; Evidence=; CATALYTIC ACTIVITY: Reaction=(6S)-5,6,7,8-tetrahydrofolyl-(gamma-L-Glu)(n) + L-glutamate + ATP = (6S)-5,6
 
@@ -360,6 +423,11 @@
 - measured K_M **0.0006 mM**
 - curated ligand `CHEBI:17839`
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 3, short of HMDA's 6
+- widest acid span 3, short of adipate's 4
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=7,8-dihydropteroate + L-glutamate + ATP = 7,8-dihydrofolate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23584, ChEBI:CHEBI:15378, ChEBI:CHEBI:17839, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57451, ChEBI:CHEBI:456216; EC=6.3.2.12; Evidence=; CATALYTIC ACTIVITY: Reaction=(6S)-5,6,7,8-tetrahydrofolyl-(gamma-L-Glu)(n) + L-glutamate + ATP = (6S)-5,6
 
 **Function** FUNCTION: Functions in two distinct reactions of the de novo folate biosynthetic pathway. Catalyzes the addition of a glutamate residue to dihydropteroate (7,8-dihydropteroate or H2Pte) to form dihydrofolate (7,8-dihydrofolate monoglutamate or H2Pte-Glu). Also catalyzes successive additions of L-glutamate to tetrahydrofolate or 10-formyltetrahydrofolate or 5,10-methylenetetrahydrofolate, leading t
@@ -381,6 +449,11 @@
 - substrate distance **0.789** (own_modelseed_reaction)
 - AlphaFold pLDDT **93.4**
 - measured K_M **5.65 mM**
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- spans 8 between amines, against HMDA's 6 — **room for the acceptor**
+- widest acid span 3, short of adipate's 4
 
 **Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
 
@@ -413,6 +486,11 @@
 - in-line adenylation geometry 6.51 Å
 - measured K_M **0.087 mM**
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 6 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + L-lysine + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-L-lysine + ADP + phosphate + H(+); Xref=Rhea:RHEA:17969, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:32551, ChEBI:CHEBI:43474, ChEBI:CHEBI:83900, ChEBI:CHEBI:83903, ChEBI:CHEBI:456216; EC=6.3.2.7; Evidence=
 
 **Function** FUNCTION: Catalyzes the addition of L-lysine to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. Cannot use diaminopimelate as substrate (PubMed:10498701, PubMed:14114846, PubMed:20659527). Can accept L-ornithine as substrate, but the efficiency is 400-fold lower than that with L-lysine (PubMed:20659527). Seems to h
@@ -440,6 +518,11 @@
 - in-line adenylation geometry 6.37 Å
 - measured K_M **0.45 mM**
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 10 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + L-lysine + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-L-lysine + ADP + phosphate + H(+); Xref=Rhea:RHEA:17969, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:32551, ChEBI:CHEBI:43474, ChEBI:CHEBI:83900, ChEBI:CHEBI:83903, ChEBI:CHEBI:456216; EC=6.3.2.7; Evidence=; CATALYTIC ACTIVITY: Reaction=UD
 
 **Function** FUNCTION: Catalyzes the addition of both L- and D-lysine to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. Is also able to use meso-diaminopimelate as the amino acid substrate in vitro, although much less efficiently. .
@@ -465,6 +548,11 @@
 - measured K_M **0.036 mM**
 - crystallographic ligand `API;UAG`
 - curated ligand `CHEBI:57791`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 10 between acids, against adipate's 4 — **room for the donor**
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
 
@@ -492,6 +580,11 @@
 - measured K_M **0.13 mM**
 - curated ligand `CHEBI:57791`
 
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 10 between acids, against adipate's 4 — **room for the donor**
+
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
 
 **Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
@@ -515,6 +608,11 @@
 - substrate distance **0.764** (own_modelseed_reaction)
 - its EC class reaches 0.764
 - curated ligand `CHEBI:57791`
+
+**Pocket capacity** (from ligands it is curated to handle; room, not competence)
+
+- widest amine span 5, short of HMDA's 6
+- spans 10 between acids, against adipate's 4 — **room for the donor**
 
 **Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
 

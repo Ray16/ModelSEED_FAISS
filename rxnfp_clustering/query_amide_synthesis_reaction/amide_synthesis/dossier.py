@@ -74,6 +74,75 @@ DIAMINE_ACCEPTORS = (
 )
 
 
+# POCKET CAPACITY, from ligands rather than from docking.
+#
+# The blocked cofold would answer "can this pocket hold adipate and HMDA in a
+# catalytically competent pose". A weaker but unblocked question is answerable
+# now: has the pocket been SEEN holding something at least as long? Every
+# ligand a protein binds or acts on is named with a ChEBI id, Rhea publishes
+# ChEBI structures, and `_widest_spacer` already measures the span the
+# substrate score uses.
+#
+#     HMDA        amine-to-amine span 6
+#     adipate     acid-to-acid span   4
+#     cadaverine  5   putrescine 4   spermidine 8   meso-DAP 5 amine / 5 acid
+#
+# So spermidine spans LONGER than HMDA, and meso-diaminopimelate longer than
+# adipate: a pocket demonstrably accommodating either has room for the nylon
+# monomer on that side.
+#
+# This is capacity, NOT competence - room is necessary and nowhere near
+# sufficient, and it is deliberately not a convergence axis because it derives
+# from the same ligand data as `bifunctional_ligand_in_the_pocket` and would
+# be counted twice.
+HMDA_AMINE_SPAN = 6
+ADIPATE_ACID_SPAN = 4
+# UniProt writes `ChEBI:CHEBI:30616`; case-insensitive so a bare `ChEBI:30616`
+# cannot slip past either.
+CHEBI_ANY = re.compile(r'chebi:(\d+)', re.I)
+
+
+def _chebi_structures():
+    from .paths import CACHE
+    path = CACHE / 'rhea-chebi-smiles.tsv'
+    if not path.exists():
+        return {}
+    frame = pd.read_csv(path, sep='\t', header=None,
+                        names=['chebi', 'smiles'])
+    return {str(r.chebi).replace('CHEBI:', ''): r.smiles
+            for r in frame.itertuples()}
+
+
+def pocket_capacity(row, structures=None):
+    """Widest amine and acid span among the ligands this protein handles."""
+    from rdkit import Chem
+    from rdkit import RDLogger
+    from .substrate_distance import (_acid_carbons, _amine_nitrogens,
+                                     _widest_spacer)
+    RDLogger.DisableLog('rdApp.*')
+
+    structures = _chebi_structures() if structures is None else structures
+    text = ' '.join(_text(row.get(k)) for k in
+                    ('binding_site', 'catalytic_activity'))
+    amine = acid = 0
+    widest = None
+    for identifier in set(CHEBI_ANY.findall(text)):
+        smiles = structures.get(identifier)
+        if not smiles:
+            continue
+        molecule = Chem.MolFromSmiles(smiles)
+        if molecule is None:
+            continue
+        span = _widest_spacer(molecule, _amine_nitrogens(molecule))[0] or 0
+        if span > amine:
+            amine, widest = span, identifier
+        acid = max(acid, _widest_spacer(
+            molecule, _acid_carbons(molecule))[0] or 0)
+    return {'amine_span': amine, 'acid_span': acid, 'widest_ligand': widest,
+            'fits_hmda': amine >= HMDA_AMINE_SPAN,
+            'fits_adipate': acid >= ADIPATE_ACID_SPAN}
+
+
 def native_diamine_acceptors(row):
     """Free di/polyamines this protein is curated to accept."""
     text = ' '.join(_text(row.get(k)).lower()
@@ -184,6 +253,28 @@ def render(row):
     if facts:
         lines += ['**Resolved**', ''] + [f'- {f}' for f in facts] + ['']
 
+    capacity = row.get('_capacity')
+    if isinstance(capacity, dict) and (capacity['amine_span']
+                                       or capacity['acid_span']):
+        verdict = []
+        if capacity['fits_hmda']:
+            verdict.append(f"spans {capacity['amine_span']} between amines, "
+                           f'against HMDA\'s {HMDA_AMINE_SPAN} — **room for '
+                           'the acceptor**')
+        elif capacity['amine_span']:
+            verdict.append(f"widest amine span {capacity['amine_span']}, "
+                           f"short of HMDA's {HMDA_AMINE_SPAN}")
+        if capacity['fits_adipate']:
+            verdict.append(f"spans {capacity['acid_span']} between acids, "
+                           f'against adipate\'s {ADIPATE_ACID_SPAN} — **room '
+                           'for the donor**')
+        elif capacity['acid_span']:
+            verdict.append(f"widest acid span {capacity['acid_span']}, "
+                           f"short of adipate's {ADIPATE_ACID_SPAN}")
+        lines += ['**Pocket capacity** (from ligands it is curated to handle; '
+                  'room, not competence)', '']
+        lines += [f'- {v}' for v in verdict] + ['']
+
     acceptors = native_diamine_acceptors(row)
     if acceptors:
         lines += ['**Native acceptor is a free di/polyamine** — the '
@@ -246,6 +337,13 @@ def main():
     if len(fetched):
         table = table.merge(fetched.drop_duplicates('uniprot'),
                             on='uniprot', how='left')
+
+    structures = _chebi_structures()
+    table['_capacity'] = [pocket_capacity(row, structures)
+                          for _, row in table.iterrows()]
+    fits = sum(1 for c in table._capacity if c['fits_hmda'])
+    print(f'pocket has held a ligand spanning >= HMDA: {fits} of {len(table)}',
+          flush=True)
 
     header = [
         '# Candidates worth a bench slot', '',
