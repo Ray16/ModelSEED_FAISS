@@ -198,3 +198,51 @@ class CuratedBindingSiteTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PocketCapacityTests(unittest.TestCase):
+    """Room for the monomer, persisted for every candidate.
+
+    HMDA spans 6 between its amines, adipate 4 between its acids. Room is
+    necessary and nowhere near sufficient, which is why this is written to a
+    file and kept out of the convergence count.
+    """
+
+    SPANS = {'1': (8, 0),    # spermidine
+             '2': (5, 0),    # cadaverine - one methylene short
+             '3': (5, 5),    # meso-diaminopimelate
+             '4': (0, 0)}    # a metal
+
+    def test_spermidine_gives_room_for_hmda(self):
+        got = le.capacity(['ChEBI:CHEBI:1'], self.SPANS).iloc[0]
+        self.assertEqual(got.amine_span, 8)
+        self.assertTrue(got.room_for_hmda)
+
+    def test_cadaverine_does_not(self):
+        got = le.capacity(['ChEBI:CHEBI:2'], self.SPANS).iloc[0]
+        self.assertFalse(got.room_for_hmda)
+
+    def test_meso_dap_gives_room_for_adipate(self):
+        got = le.capacity(['ChEBI:CHEBI:3'], self.SPANS).iloc[0]
+        self.assertTrue(got.room_for_adipate)
+        self.assertFalse(got.room_for_hmda)
+
+    def test_the_widest_ligand_is_recorded(self):
+        got = le.capacity(['ChEBI:CHEBI:1 ChEBI:CHEBI:2'], self.SPANS).iloc[0]
+        self.assertEqual(got.widest_amine_ligand, '1')
+
+    def test_a_metal_gives_no_room(self):
+        got = le.capacity(['ChEBI:CHEBI:4'], self.SPANS).iloc[0]
+        self.assertFalse(got.room_for_hmda)
+        self.assertFalse(got.room_for_adipate)
+
+    def test_an_empty_row_is_zero_not_missing(self):
+        got = le.capacity(['', None], self.SPANS)
+        self.assertEqual(list(got.amine_span), [0, 0])
+
+    def test_spans_are_measured_with_the_substrate_screen_predicates(self):
+        spans = le.ligand_spans({'x': 'NCCCNCCCCN'})   # spermidine
+        self.assertEqual(spans['x'][0], 8)
+
+    def test_an_unparseable_smiles_is_skipped(self):
+        self.assertEqual(le.ligand_spans({'x': 'not a molecule'}), {})

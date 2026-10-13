@@ -160,6 +160,20 @@ def ligand_chemistry(components, fetch=get_text, threads=THREADS):
     return known
 
 
+def _chebi_smiles():
+    """ChEBI id -> SMILES, from the cached Rhea bulk file."""
+    if not CHEBI_SMILES.exists():
+        body, _, failed = get_text(CHEBI_URL, timeout=180)
+        if failed or not body:
+            return {}
+        CHEBI_SMILES.parent.mkdir(parents=True, exist_ok=True)
+        CHEBI_SMILES.write_text(body)
+    frame = pd.read_csv(CHEBI_SMILES, sep='\t', header=None,
+                        names=['chebi', 'smiles'])
+    return {str(r.chebi).replace('CHEBI:', ''): r.smiles
+            for r in frame.itertuples()}
+
+
 def chebi_chemistry(accessions_needed):
     """ChEBI id -> (acids, amines, heavy atoms), from the Rhea bulk SMILES.
 
@@ -206,6 +220,65 @@ def curated_bifunctional(binding_sites, chemistry):
                         if c in qualifying})
         out.append(';'.join('CHEBI:' + c for c in found) if found else None)
     return out, qualifying
+
+
+# POCKET CAPACITY for every candidate, not only the few in the dossier.
+#
+# HMDA spans 6 atoms between its amines and adipate 4 between its acids, so a
+# pocket demonstrably holding something at least that long has ROOM on that
+# side. Spermidine spans 8 and meso-diaminopimelate 5/5, which is why the
+# polyamine and DAP handlers clear it.
+#
+# This is the half of the blocked cofold that needs no docking. It is a
+# necessary condition and nowhere near sufficient - room is not competence -
+# and it is deliberately not a convergence axis, because it derives from the
+# same ligand data as the ligand axis and would be counted twice.
+#
+# Measured over the whole table: 3,397 candidates have room for HMDA, 13,777
+# for adipate, and 1,844 for BOTH - of which only 4 are among the 28 converged
+# candidates, so this surfaces proteins the convergence count does not.
+HMDA_AMINE_SPAN = 6
+ADIPATE_ACID_SPAN = 4
+CHEBI_ANY = re.compile(r'chebi:(\d+)', re.I)
+
+
+def ligand_spans(chemistry_by_id):
+    """ChEBI id -> (amine span, acid span), cached per id."""
+    from rdkit import Chem
+    from rdkit import RDLogger
+    from .substrate_distance import (_acid_carbons, _amine_nitrogens,
+                                     _widest_spacer)
+    RDLogger.DisableLog('rdApp.*')
+
+    out = {}
+    for identifier, smiles in chemistry_by_id.items():
+        molecule = Chem.MolFromSmiles(str(smiles))
+        if molecule is None:
+            continue
+        out[identifier] = (
+            _widest_spacer(molecule, _amine_nitrogens(molecule))[0] or 0,
+            _widest_spacer(molecule, _acid_carbons(molecule))[0] or 0)
+    return out
+
+
+def capacity(texts, spans):
+    """Widest amine and acid span among each row's named ligands."""
+    rows = []
+    for text in texts:
+        amine = acid = 0
+        widest = None
+        for identifier in set(CHEBI_ANY.findall(str(text or ''))):
+            found = spans.get(identifier)
+            if not found:
+                continue
+            if found[0] > amine:
+                amine, widest = found[0], identifier
+            acid = max(acid, found[1])
+        rows.append({'amine_span': amine, 'acid_span': acid,
+                     'widest_amine_ligand': widest,
+                     'room_for_hmda': amine >= HMDA_AMINE_SPAN,
+                     'room_for_adipate': acid >= ADIPATE_ACID_SPAN})
+    return pd.DataFrame(rows)
 
 
 def attach(evidence, chemistry):
@@ -282,6 +355,28 @@ def main():
         per_candidate = per_candidate.merge(curated.drop_duplicates('uniprot'),
                                             on='uniprot', how='outer')
         curated_count = int(curated.curated_bifunctional_ligand.notna().sum())
+
+    # Pocket capacity for the whole table, from the same ChEBI structures.
+    if master.exists():
+        full = pd.read_csv(
+            master, sep='\t', low_memory=False,
+            usecols=lambda c: c in ('uniprot', 'binding_site',
+                                    'catalytic_activity'))
+        text = (full.get('binding_site', pd.Series('', index=full.index))
+                .fillna('').astype(str) + ' '
+                + full.get('catalytic_activity',
+                           pd.Series('', index=full.index))
+                .fillna('').astype(str))
+        needed = {c for value in text for c in CHEBI_IN_TEXT.findall(value)}
+        structures = {k: v for k, v in _chebi_smiles().items() if k in needed}
+        spans = ligand_spans(structures)
+        room = capacity(text, spans)
+        room.insert(0, 'uniprot', full.uniprot.values)
+        room.to_csv(RES / 'pocket_capacity.tsv', sep='\t', index=False)
+        print(f'pocket capacity: {int(room.room_for_hmda.sum()):,} have room '
+              f'for HMDA, {int(room.room_for_adipate.sum()):,} for adipate, '
+              f'{int((room.room_for_hmda & room.room_for_adipate).sum()):,} '
+              'for both', flush=True)
 
     if 'curated_bifunctional_ligand' not in per_candidate.columns:
         per_candidate['curated_bifunctional_ligand'] = None
