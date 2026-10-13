@@ -62,12 +62,19 @@ QUALIFYING = ('synthetase', 'synthase', 'ligase', 'transferase')
 CONTRADICTION_PENALTY = 3.0
 
 EVIDENCE_WEIGHT = {
-    'exact_reaction': 3.0,   # UniProt annotated to that Rhea reaction
-    'activity_ec': 2.0,      # matching EC, broader
-    'name_match': 1.0,       # distinctive product name
-    'family_homolog': 1.0,   # enriched Pfam family
-    'clade_homolog': 1.0,    # UniRef50 neighbourhood of a validated protein
+    'measured_activity': 10.0,  # assayed on the nylon-6,6 diad itself
+    'exact_reaction': 3.0,      # UniProt annotated to that Rhea reaction
+    'precomputed_rhea_or_go': 2.5,  # colleague's global link table
+    'activity_ec': 2.0,         # matching EC, broader
+    'literature_curated': 2.0,  # carries an independent structural score
+    'name_match': 1.0,          # distinctive product name
+    'family_homolog': 1.0,      # enriched Pfam family
+    'clade_homolog': 1.0,       # UniRef50 neighbourhood of a validated protein
 }
+
+# Measurement dominates prediction. A protein with an assayed titre on the
+# target chemistry is not a hypothesis, and must not be displaced by one.
+MEASURED_ACTIVITY_BONUS = 5.0
 
 # An independently computed geometric proxy, read-only, from a separate project.
 STRUCTURAL_SCORES = Path(
@@ -93,6 +100,8 @@ COLUMNS = [
     'discovery_route', 'evidence_strength', 'discovery_tier',
     'substrate_distance_measured', 'substrate_distance_inherited',
     'self_condensation', 'struct_S', 'annotation_contradicts_chemistry',
+    'activity_ugml', 'activity_std', 'is_strong_producer',
+    'n_proteins_on_reaction', 'over_annotated_reaction',
     'family', 'pfam', 'interpro', 'seed_pfam', 'clade_seed',
     'rxn_id', 'reaction_name', 'query', 'cosine_similarity',
     'ec', 'catalytic_activity', 'cofactor', 'pathway', 'function',
@@ -100,6 +109,76 @@ COLUMNS = [
     'binding_site', 'active_site', 'keywords', 'go_function', 'go_process',
     'subunit', 'lineage', 'sequence',
 ]
+
+
+# Stage 04 writes the full UniProt record under its own column names, and the
+# sequences to FASTA. The candidate table keeps only a display subset, which
+# left the BEST candidates - the reaction-anchored ones - with no sequence,
+# InterPro, keywords or lineage at all, and therefore unusable for the
+# structural stage. They are re-joined here rather than re-fetched.
+REACTION_FIELD_ALIASES = {
+    'binding_sites': 'binding_site',
+    'active_sites': 'active_site',
+    'go_molecular_function': 'go_function',
+    'go_biological_process': 'go_process',
+    'evidence': 'protein_existence',
+}
+
+
+def read_fasta(path):
+    """{accession: sequence} from the stage-04 export."""
+    sequences, accession, chunks = {}, None, []
+    path = Path(path)
+    if not path.exists():
+        return sequences
+    for line in path.read_text().splitlines():
+        if line.startswith('>'):
+            if accession:
+                sequences[accession] = ''.join(chunks)
+            accession, chunks = line[1:].split('|')[0], []
+        elif accession:
+            chunks.append(line.strip())
+    if accession:
+        sequences[accession] = ''.join(chunks)
+    return sequences
+
+
+def enrich_reaction_rows(reaction, details, sequences):
+    """Fill the reaction-anchored rows from the full stage-04 record."""
+    if details is not None and len(details):
+        details = details.rename(columns=REACTION_FIELD_ALIASES)
+        details = details.drop_duplicates('uniprot').set_index('uniprot')
+        for column in details.columns:
+            if column in ('rxn_id', 'reaction_name', 'cosine_similarity'):
+                continue          # the candidate table's own values are current
+            incoming = reaction.uniprot.map(details[column])
+            if column in reaction.columns:
+                existing = reaction[column]
+                blank = existing.isna() | existing.astype(str).str.strip().eq('')
+                reaction[column] = existing.where(~blank, incoming)
+            else:
+                reaction[column] = incoming
+    if sequences:
+        existing = reaction.get('sequence')
+        incoming = reaction.uniprot.map(sequences)
+        reaction['sequence'] = (incoming if existing is None else
+                                existing.where(existing.notna()
+                                               & existing.astype(str).str.strip().ne(''),
+                                               incoming))
+    return reaction
+
+
+def _column(frame, name, default=''):
+    """Always a Series aligned to `frame`.
+
+    `DataFrame.get(name, default)` returns the SCALAR default when the column
+    is absent, so every downstream `.fillna`/`.str` call raises AttributeError.
+    Routes contribute different column sets by design, so absent columns are
+    normal and must not be fatal.
+    """
+    if name in frame.columns:
+        return frame[name]
+    return pd.Series([default] * len(frame), index=frame.index)
 
 
 def _truthy(series):
@@ -115,12 +194,20 @@ def load_structural(path=STRUCTURAL_SCORES):
         ['uniprot', 'struct_S']]
 
 
-def build(reaction_candidates, expansion, structural=None):
-    """Merge the routes into one ranked table. No I/O."""
-    reaction = reaction_candidates.copy()
+def build(reaction_candidates, expansion, structural=None,
+          reaction_details=None, sequences=None, extra_sources=()):
+    """Merge every route into one ranked table. No I/O.
+
+    `extra_sources` are frames that already carry `uniprot`,
+    `discovery_route` and `evidence_strength` - the precomputed link table and
+    the reference/assayed proteins. They are appended last and de-duplicated
+    against the stronger routes.
+    """
+    reaction = enrich_reaction_rows(reaction_candidates.copy(),
+                                    reaction_details, sequences or {})
     reaction['discovery_route'] = 'reaction'
-    reaction['substrate_distance_measured'] = reaction.get(
-        'substrate_distance', 0.0)
+    reaction['substrate_distance_measured'] = _column(
+        reaction, 'substrate_distance', 0.0)
 
     homologs = expansion.rename(columns=RENAME).copy() if len(expansion) else \
         pd.DataFrame(columns=['uniprot'])
@@ -129,29 +216,38 @@ def build(reaction_candidates, expansion, structural=None):
             {'family_homolog': 'domain', 'clade_homolog': 'clade'}).fillna('domain')
         homologs['substrate_distance_inherited'] = (
             INHERITED_DISCOUNT * homologs.family_substrate_distance)
-        homologs['self_condensation'] = homologs.get('family_self_condensing', False)
+        homologs['self_condensation'] = _column(
+            homologs, 'family_self_condensing', False)
         # A protein found by a reaction keeps the stronger record.
         homologs = homologs[~homologs.uniprot.isin(set(reaction.uniprot))]
 
-    table = pd.concat([reaction, homologs], ignore_index=True)
+    frames = [reaction, homologs]
+    for extra in extra_sources:
+        if extra is None or not len(extra):
+            continue
+        extra = extra.copy()
+        seen = set(pd.concat(frames, ignore_index=True).uniprot.dropna())
+        frames.append(extra[~extra.uniprot.isin(seen)])
+    table = pd.concat(frames, ignore_index=True)
     for column in ('substrate_distance_measured', 'substrate_distance_inherited'):
-        table[column] = pd.to_numeric(table.get(column), errors='coerce').fillna(0.0)
+        table[column] = pd.to_numeric(_column(table, column, 0.0),
+                                      errors='coerce').fillna(0.0)
 
     structural = load_structural() if structural is None else structural
     table = table.merge(structural, on='uniprot', how='left')
 
-    table['self_condensation'] = table.get(
-        'self_condensation', False).fillna(False).astype(bool)
-    reviewed = table.get('reviewed', '').fillna('').astype(str).str.lower()
+    table['self_condensation'] = (pd.to_numeric(
+        _column(table, 'self_condensation', False), errors='coerce')
+        .fillna(0).astype(bool))
+    reviewed = _column(table, 'reviewed').fillna('').astype(str).str.lower()
     table['is_reviewed'] = reviewed.str.startswith('reviewed')
-    table['has_pdb'] = _truthy(table.get('pdb', pd.Series('', index=table.index)))
-    observed = table.get('protein_existence', '').fillna('').astype(str)
+    table['has_pdb'] = _truthy(_column(table, 'pdb'))
+    observed = _column(table, 'protein_existence').fillna('').astype(str)
     table['protein_level_evidence'] = observed.str.contains(
         'protein level', case=False)
 
-    names = (table.protein_name.fillna('').astype(str) + ' '
-             + table.get('ec', pd.Series('', index=table.index))
-             .fillna('').astype(str)).str.lower()
+    names = (_column(table, 'protein_name').fillna('').astype(str) + ' '
+             + _column(table, 'ec').fillna('').astype(str)).str.lower()
     disqualified = names.str.contains('|'.join(DISQUALIFYING), regex=True)
     qualified = names.str.contains('|'.join(QUALIFYING), regex=True)
     # Only homologs are challenged this way. A reaction-anchored protein was
@@ -170,6 +266,9 @@ def build(reaction_candidates, expansion, structural=None):
         + 0.5 * table.protein_level_evidence.astype(int)
         - CONTRADICTION_PENALTY
         * table.annotation_contradicts_chemistry.astype(int)
+        + MEASURED_ACTIVITY_BONUS
+        * pd.to_numeric(_column(table, 'is_strong_producer', False),
+                        errors='coerce').fillna(0).astype(float)
     ).round(4)
 
     for column in COLUMNS:
@@ -189,7 +288,18 @@ def main():
     expansion_path = RES / 'family_expansion.tsv'
     expansion = (pd.read_csv(expansion_path, sep='\t', low_memory=False)
                  if expansion_path.exists() else pd.DataFrame())
-    table = build(reaction, expansion)
+    details_path = RES / 'enzymes_uniprot.tsv'
+    details = (pd.read_csv(details_path, sep='\t', low_memory=False)
+               if details_path.exists() else None)
+    extras = []
+    for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv'):
+        path = RES / name
+        if path.exists():
+            extras.append(pd.read_csv(path, sep='\t', low_memory=False))
+    table = build(reaction, expansion,
+                  reaction_details=details,
+                  sequences=read_fasta(RES / 'enzymes.fasta'),
+                  extra_sources=extras)
     table.to_csv(RES / 'master_candidates.tsv', sep='\t', index=False)
 
     summary = {
@@ -204,9 +314,9 @@ def main():
         'with_catalytic_activity': int(_truthy(table.catalytic_activity).sum()),
         'with_sequence': int(_truthy(table.sequence).sum()),
         'with_structural_score': int(table.struct_S.notna().sum()),
-        'self_condensing': int(table.self_condensation.fillna(False).sum()),
+        'self_condensing': int(table.self_condensation.sum()),
         'annotation_contradicts_chemistry': int(
-            table.annotation_contradicts_chemistry.fillna(False).sum()),
+            table.annotation_contradicts_chemistry.sum()),
     }
     print(json.dumps(summary, indent=2), flush=True)
     (RES / 'master_candidates_summary.json').write_text(
