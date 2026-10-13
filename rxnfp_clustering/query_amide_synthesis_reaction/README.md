@@ -136,6 +136,28 @@ and by FhuF, a ferric siderophore *reductase*, so homologs whose own annotation
 contradicts the chemistry are flagged (`annotation_contradicts_chemistry`) and
 demoted rather than deleted.
 
+### Where recall now stops, and why
+
+Of 259 screened reactions, 153 resolve to at least one protein and **106 do
+not**. That residual is a limit of the source databases, not of retrieval:
+
+| | count | meaning |
+|---|---:|---|
+| `no_hits` | 89 | we had an identifier, queried UniProt, and it returned nothing |
+| `no_identifier` | 19 | the reaction carries nothing UniProt indexes |
+
+`rxn19370` is the clean example. It carries **both** `Rhea:35623` and
+`EC 2.3.2.1`, so it looks like a retrieval failure - but `rhea:35623` and
+`ec:2.3.2.1` each return **zero** entries from UniProtKB. D-glutamyltransferase
+has no annotated protein anywhere in UniProt. Nothing in this pipeline can
+recover an enzyme that has never been deposited.
+
+The 19 `no_identifier` reactions are mostly MetaCyc-only (`RXN-10996` and
+friends). UniProt does not index MetaCyc reaction identifiers, so the product
+name is the only remaining handle; that route queries both `protein_name` and
+`cc_catalytic_activity`, since an enzyme making putrebactin may simply be
+called "PubC" while the product appears only in its catalytic-activity line.
+
 ## What is NOT validated
 
 The ranking has never been fitted to, or validated against, measured activity.

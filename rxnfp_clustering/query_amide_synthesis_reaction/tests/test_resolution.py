@@ -74,13 +74,44 @@ class ResolutionTests(unittest.TestCase):
         self.assertNotIn('_route', entry)
 
     def test_name_fallback_also_runs_after_successful_empty_structured_lookup(self):
-        client = Mock(side_effect=[([], False, False), ([], False, False),
-                                   ([protein('AlcC')], False, False)])
+        # Respond by query content, not call order: the number of queries is
+        # a property under test elsewhere and must not break this fixture.
+        def client_fn(query, **kwargs):
+            if query.startswith('protein_name:"alcaligin"'):
+                return [protein('AlcC')], False, False
+            return [], False, False
+
+        client = Mock(side_effect=client_fn)
         result = resolve_reaction(self.hit, {}, {}, search_client=client)
         self.assertEqual(result.entries[0]['_route'], 'Name:alcaligin')
-        self.assertEqual(client.call_args_list[-1].args,
-                         ('protein_name:"alcaligin" AND (synthase OR synthetase OR ligase)',))
+        queries = [c.args[0] for c in client.call_args_list]
+        self.assertIn('protein_name:"alcaligin" AND (synthase OR synthetase OR ligase)',
+                      queries)
         self.assertEqual(client.call_args_list[-1].kwargs, {'size': 25})
+
+    def test_name_route_queries_the_catalytic_activity_field_too(self):
+        """A product name belongs in the activity line, not the protein name.
+
+        An enzyme that makes putrebactin may simply be called "PubC"; the
+        product appears in its catalytic-activity statement. Searching only
+        protein_name is the wrong field for the 79 unresolved reactions that
+        have nothing but a MetaCyc identifier.
+        """
+        client = Mock(return_value=([], False, False))
+        resolve_reaction(self.hit, {}, {}, search_client=client)
+        queries = [c.args[0] for c in client.call_args_list]
+        self.assertIn(
+            'cc_catalytic_activity:"alcaligin" AND (synthase OR synthetase OR ligase)',
+            queries)
+
+    def test_name_route_does_not_stop_at_the_first_hit(self):
+        """Later product names were being discarded for no reason."""
+        self.hit.definition = '(1) ATP[0] => (1) pre-alcaligin[0] + (1) bisucaberin[0]'
+        client = Mock(return_value=([], False, False))
+        resolve_reaction(self.hit, {}, {}, search_client=client)
+        queries = ' '.join(c.args[0] for c in client.call_args_list)
+        self.assertIn('bisucaberin', queries)
+        self.assertIn('alcaligin', queries)
 
     def test_truncation_and_partial_failure_are_retained(self):
         client = Mock(side_effect=[([protein('A')], False, True), ([], True, False)])

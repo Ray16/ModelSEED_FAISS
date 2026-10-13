@@ -78,10 +78,15 @@ MIN_SEEDS = int(os.environ.get('MIN_FAMILY_SEEDS', 2))
 # Polite to a public API; the same cap the reaction routes use.
 THREADS = 6
 
+# Page budgets per tier. Raised after 45 queries reported saturation: a
+# saturated query means the family had MORE informative members than we
+# returned, and which ones you got was decided by UniProt's relevance order
+# inside a truncation. The curated tiers are worth paging further; `diverse`
+# is deliberately capped because it is breadth, not evidence.
 TIERS = (
-    ('reviewed', 'reviewed:true', 10),
-    ('structure', 'database:pdb', 5),
-    ('protein_evidence', 'existence:1', 5),
+    ('reviewed', 'reviewed:true', 25),
+    ('structure', 'database:pdb', 15),
+    ('protein_evidence', 'existence:1', 15),
     ('diverse', 'fragment:false', 3),
 )
 

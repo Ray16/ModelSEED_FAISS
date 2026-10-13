@@ -49,13 +49,15 @@ from .enzyme_resolution import (
 ENZYME_COLUMNS = [
     'rxn_id', 'reaction_name', 'cosine_similarity', 'acylates_free_diamine',
     'resolved_via', 'evidence_strength', 'uniprot', 'entry_name', 'protein_name',
-    'gene', 'organism', 'is_prokaryote', 'ec', 'length', 'has_pdb', 'pdb', 'alphafold',
+    'gene', 'organism', 'lineage', 'is_prokaryote', 'ec', 'length', 'has_pdb',
+    'pdb', 'alphafold',
     'reviewed', 'evidence', 'function', 'catalytic_activity', 'cofactor', 'pathway',
     'subunit', 'go_molecular_function', 'go_biological_process', 'pfam', 'interpro',
     'binding_sites', 'active_sites', 'keywords', 'sequence',
 ]
 ANNOTATION_COLUMNS = [
-    'uniprot', 'entry_name', 'organism', 'rxn_id', 'reviewed', 'evidence', 'ec',
+    'uniprot', 'entry_name', 'organism', 'lineage', 'rxn_id', 'reviewed',
+    'evidence', 'ec',
     'length', 'pdb', 'alphafold', 'pfam', 'interpro', 'cofactor', 'pathway', 'subunit',
     'catalytic_activity', 'function', 'go_molecular_function', 'go_biological_process',
     'binding_sites', 'active_sites', 'keywords',
@@ -131,6 +133,9 @@ def main():
                 'protein_name': entry.get('Protein names', ''),
                 'gene': entry.get('Gene Names', ''),
                 'organism': entry.get('Organism', ''),
+                # Kept because it drives expression-host choice downstream; the
+                # derived is_prokaryote flag discards the detail.
+                'lineage': entry.get('Taxonomic lineage', ''),
                 'is_prokaryote': is_prokaryote(entry),
                 'ec': entry.get('EC number', ''),
                 'length': entry.get('Length', ''),

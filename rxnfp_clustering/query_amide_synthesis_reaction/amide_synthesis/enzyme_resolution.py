@@ -172,11 +172,27 @@ def resolve_reaction(hit, aliases, metanetx, *, search_client):
     if ec and collect(' OR '.join(f'ec:{e}' for e in ec), 'EC', f"EC:{','.join(ec)}"):
         routes.append('EC')
     if not found:
+        # Two fields, and every name, unioned rather than first-hit-wins.
+        #
+        # A reaction known only to MetaCyc has no identifier UniProt indexes -
+        # 79 of the 109 unresolved reactions are in exactly that position - so
+        # the product name is the only remaining handle. Searching
+        # `protein_name` alone is the wrong field for a PRODUCT: an enzyme that
+        # makes putrebactin may simply be called "PubC", while the product
+        # appears in its CATALYTIC ACTIVITY line. Measured on putrebactin, the
+        # two fields return overlapping but different sets (5 and 2), so both
+        # are queried. Stopping at the first name that hit also discarded the
+        # later names for no reason.
+        hit_any = False
         for name in product_names(getattr(hit, 'definition', '')):
-            if collect(f'protein_name:"{name}" AND (synthase OR synthetase OR ligase)',
-                       'Name', f'Name:{name}', size=25):
-                routes.append('Name')
-                break
+            guard = '(synthase OR synthetase OR ligase)'
+            for field, tag in (('protein_name', 'Name'),
+                               ('cc_catalytic_activity', 'Activity')):
+                if collect(f'{field}:"{name}" AND {guard}',
+                           tag, f'{tag}:{name}', size=25):
+                    hit_any = True
+        if hit_any:
+            routes.append('Name')
     result = Resolution(rank_entries(found), '+'.join(routes), len(found), failed,
                         tuple(dict.fromkeys(cuts)), queried)
     if not result.route:
