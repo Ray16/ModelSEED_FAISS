@@ -375,11 +375,47 @@ def build(reaction_candidates, expansion, structural=None,
     for column in COLUMNS:
         if column not in table.columns:
             table[column] = pd.NA
-    return (table[COLUMNS]
-            .sort_values(['master_priority', 'uniprot'],
-                         ascending=[False, True])
-            .drop_duplicates('uniprot')
-            .reset_index(drop=True))
+    table = (table[COLUMNS]
+             .sort_values(['master_priority', 'uniprot'],
+                          ascending=[False, True])
+             .drop_duplicates('uniprot')
+             .reset_index(drop=True))
+
+    # Re-attach the chemistry-neighbour association AFTER de-duplication.
+    #
+    # Every borrowed protein is already present via a stronger route, so the
+    # dedup above drops the neighbour row - and with it `borrowed_from_rxn`
+    # and `chemistry_feature_distance`, which were 0 of 54,199 in the output.
+    # The route's proteins were never lost, but its ANSWER was: that a protein
+    # is also chemically linked to another screened reaction. For 42 of the 71
+    # that reaction scores HIGHER than anything the protein carries, with the
+    # top at 0.88, which is decision-relevant for someone choosing targets.
+    #
+    # Reported, never ranked. The link is OUR inference from chemical
+    # equivalence rather than an annotation anyone made, which is why
+    # `chemistry_neighbour` is the weakest evidence weight in the table and
+    # why this does not touch `substrate_distance`.
+    return attach_borrowed(table)
+
+
+def attach_borrowed(table, borrowed=None):
+    """Join the neighbour route's association onto the de-duplicated table."""
+    if borrowed is None:
+        path = RES / 'chemistry_neighbour_candidates.tsv'
+        if not path.exists():
+            return table
+        borrowed = pd.read_csv(path, sep='\t', low_memory=False)
+    if not len(borrowed) or 'uniprot' not in borrowed.columns:
+        return table
+    columns = [c for c in ('borrowed_from_rxn', 'chemistry_feature_distance')
+               if c in borrowed.columns]
+    if not columns:
+        return table
+    best = (borrowed.sort_values('chemistry_feature_distance')
+            if 'chemistry_feature_distance' in borrowed.columns else borrowed)
+    best = best.drop_duplicates('uniprot')[['uniprot'] + columns]
+    merged = table.drop(columns=[c for c in columns if c in table.columns])
+    return merged.merge(best, on='uniprot', how='left')
 
 
 def main():

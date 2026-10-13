@@ -303,3 +303,44 @@ class TargetParameterTests(unittest.TestCase):
             os.environ.pop('TARGET_ACID_HEAVY_ATOMS', None)
             importlib.reload(sd)
         self.assertEqual(sd.ADIPATE_SPACER, 4)
+
+
+class BorrowedAssociationTests(unittest.TestCase):
+    """The neighbour route's answer must survive de-duplication.
+
+    Every borrowed protein is already present via a stronger route, so the
+    dedup drops the neighbour row and with it `borrowed_from_rxn` - which was
+    0 of 54,199 in the output. The proteins were never lost; the association
+    was.
+    """
+
+    def _table(self):
+        return pd.DataFrame([{'uniprot': 'P1', 'master_priority': 5.0},
+                             {'uniprot': 'P2', 'master_priority': 4.0}])
+
+    def _borrowed(self):
+        return pd.DataFrame([
+            {'uniprot': 'P1', 'borrowed_from_rxn': 'rxn21295',
+             'chemistry_feature_distance': 0.02}])
+
+    def test_the_association_is_attached(self):
+        from amide_synthesis.master_table import attach_borrowed
+        out = attach_borrowed(self._table(),
+                              self._borrowed()).set_index('uniprot')
+        self.assertEqual(out.loc['P1', 'borrowed_from_rxn'], 'rxn21295')
+
+    def test_a_protein_without_one_is_left_blank(self):
+        from amide_synthesis.master_table import attach_borrowed
+        out = attach_borrowed(self._table(),
+                              self._borrowed()).set_index('uniprot')
+        self.assertTrue(pd.isna(out.loc['P2', 'borrowed_from_rxn']))
+
+    def test_no_rows_are_added_or_lost(self):
+        from amide_synthesis.master_table import attach_borrowed
+        out = attach_borrowed(self._table(), self._borrowed())
+        self.assertEqual(len(out), 2)
+
+    def test_empty_input_is_not_fatal(self):
+        from amide_synthesis.master_table import attach_borrowed
+        out = attach_borrowed(self._table(), pd.DataFrame())
+        self.assertEqual(len(out), 2)
