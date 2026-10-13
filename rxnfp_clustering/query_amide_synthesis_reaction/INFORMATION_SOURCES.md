@@ -23,6 +23,35 @@ the dead ends.
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 
+## A structural template for the measured actives
+
+The three strong producers — AS9 (9.28 µg/ml), AS17 (1.91), AS23 (1.45) — are
+the only proteins in this project with measured activity on the nylon-6,6
+diad, and they are the **least** structurally characterised: NCBI accessions
+with no UniProtKB entry, so no AlphaFold model, no PDB, no geometric score.
+
+Aligned against the 290 candidates that do have an experimental structure,
+all three return the **same** best template:
+
+```
+AS9   9.28 µg/ml   29.3% identity
+AS17  1.91         28.0%          ->  Q47NR5  2,3-dihydroxybenzoate-AMP ligase
+AS23  1.45         29.0%              PDB 6E8O, 6E97
+```
+
+28–29% is the twilight zone — enough for the fold, not for pocket detail —
+but all three converging on one template is itself informative: it confirms
+the panel is ANL/adenylate-forming, which the UniParc name lookup had
+suggested and nothing had tested. `6E8O` is the structure to look at when
+reasoning about why these three work and the other 46 do not.
+
+**A caveat this exposed.** The 4-mer cosine used as a tie-break in
+`member_similarity` ranked three *different* best hits (Tfu_1871, EntE, MurE)
+and agreed with proper alignment for only one of three. That is a different
+regime from its actual use — tie-breaking *within* a family, where sequences
+are genuinely related — but it is a reason not to trust it across distant
+pairs, and it is why this section used alignment rather than the cheap proxy.
+
 ## The 12 unresolved reactions that would matter most, checked individually
 
 `probe_unresolved` reports 0 actionable losses in aggregate. Aggregates can
