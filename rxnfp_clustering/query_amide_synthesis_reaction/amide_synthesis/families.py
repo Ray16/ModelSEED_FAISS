@@ -40,7 +40,12 @@ def pfam_names(accessions):
         return known
     changed = False
     for accession in missing:
-        url = f'https://www.ebi.ac.uk/interpro/api/entry/pfam/{accession}/'
+        # Both signature databases. InterPro accessions reach this function
+        # now that families are seeded along two axes, and sending an IPR to
+        # the /entry/pfam/ endpoint 404s - which, cached, would have made the
+        # name permanently missing.
+        database = 'interpro' if accession.startswith('IPR') else 'pfam'
+        url = f'https://www.ebi.ac.uk/interpro/api/entry/{database}/{accession}/'
         text, _, failed = get_text(url, timeout=30)
         try:
             if failed:

@@ -254,21 +254,38 @@ members** carry an annotation contradicting amide formation — it is a hydrolas
 family running a transpeptidation side reaction. A contradicted majority now
 rejects the family outright.
 
-### Known defect: the candidate table's `family` label can be wrong
+### A member is labelled by the signature that SEEDED it
 
-A protein is labelled with the first name in its signature list, so
-`P0ADT5`/`P33222` — "Putative acid--amine ligase YgiC/YjfC (EC 6.3.1.-)", seeded
-from PF03738 and genuinely on-chemistry — appear under **"CHAP domain"**,
-because IPR016185 was historically labelled that way. The chemistry and the
-ranking are unaffected (they key on the signature, not the label), but the
-shortlist's family *names* are partly wrong, and so is any count of distinct
-families read off that column.
+Expansion rows used to take `family` from the **seed protein's** label, and a
+seed protein is itself labelled by the first name in its own signature list.
+So PF03738's members inherited whatever that seed's first-listed signature
+happened to be called: `P0ADT5`/`P33222` — "Putative acid--amine ligase
+YgiC/YjfC (EC 6.3.1.-)", genuinely on-chemistry — were presented as **"CHAP
+domain"**, a peptidoglycan hydrolase. Chemistry and ranking were unaffected
+(both key on the signature) but every family *name*, and every count of
+distinct families read off that column, was suspect.
 
-`family_evaluation.py` already resolves each signature's own curated name from
-InterPro and caches it (`cache/signature_names.json`). Applying the same
-resolution to the main table's `family` column is the fix; it is not done here
-because that column feeds the figures and the Beamer deck, and relabelling
-those is a separate change.
+Members now carry the seeding signature's own curated name, resolved from
+InterPro and cached. PF03738 → "Glutathionylspermidine synthase preATP-grasp".
+The correction *raised* the shortlist's distinct-family count from 46 to **50**:
+four families had been collapsed under other labels, so the figure was
+understated rather than inflated.
+
+`families.pfam_names` was also Pfam-only. Now that families are seeded along
+two axes, InterPro accessions reach it, and an `IPR…` sent to the
+`/entry/pfam/` endpoint 404s — which, once cached, would have made that name
+permanently missing. It routes by accession prefix, and a lookup outage falls
+back to the previous label rather than blanking the column the figures group by.
+
+**And the label fix overturned a chemistry call I had made twice.** CHAP was
+recorded here as a passenger — a peptidoglycan hydrolase domain to be stripped.
+For these rows it is not: all 143 are seeded from PF05257 via the clade route,
+and the members are overwhelmingly "Bifunctional glutathionylspermidine
+amidase/synthase" and "Trypanothione synthetase", where the CHAP/peptidase-C51
+domain is the **amidase half of a bifunctional amide synthetase**. Inherited
+distance 0.7384, and the acceptor is spermidine — a polyamine, the closest
+common biological motif to HMDA. Looking at the protein names rather than the
+domain's reputation reversed it.
 
 ### Recall measured against an external list, not against our own tests
 
@@ -308,7 +325,7 @@ superfamily label loudly instead of ingesting it.
 |---|---:|---:|
 | total candidates | 36,190 | **54,199** |
 | shortlist | 289 | **301** |
-| shortlist families | 40 | **46** |
+| shortlist families | 40 | **50** |
 | shortlist organisms | 211 | 202 |
 
 The route's best finds are `cocJ`/`uncG`, UniProt-named "Amide-bond

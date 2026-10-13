@@ -332,7 +332,22 @@ def expand(families, search=uniprot.search, threads=THREADS,
         return frame, pd.DataFrame(report)
 
     meta = frame.seed_pfam.map(lambda p: families.get(p, {}))
-    frame['family'] = [m.get('family', '') for m in meta]
+    # Label a member by the SIGNATURE THAT SEEDED IT, resolved to its own
+    # curated name - not by the seed protein's label.
+    #
+    # Taking the seed's label was wrong in a way that looked fine: a seed
+    # protein is labelled by the first name in its own signature list, so
+    # P0ADT5 and P33222 - "Putative acid--amine ligase YgiC/YjfC (EC 6.3.1.-)",
+    # seeded from PF03738 and genuinely on-chemistry - were presented as "CHAP
+    # domain", a peptidoglycan hydrolase, because IPR016185 carried that name
+    # historically. The chemistry and the ranking were unaffected (both key on
+    # the signature) but every family NAME and every count of distinct
+    # families read off the column was suspect.
+    from .families import pfam_names
+    resolved = pfam_names(sorted({p for p in frame.seed_pfam.dropna().unique()}))
+    frame['family'] = [
+        resolved.get(signature) or m.get('family', '')
+        for signature, m in zip(frame.seed_pfam, meta)]
     frame['family_substrate_distance'] = [
         m.get('family_substrate_distance', 0.0) for m in meta]
     frame['family_self_condensing'] = [

@@ -286,3 +286,45 @@ class MemberTierTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class FamilyLabelTests(unittest.TestCase):
+    """A member is labelled by the signature that seeded it.
+
+    Taking the SEED PROTEIN's label was wrong in a way that looked fine: a
+    seed is labelled by the first name in its own signature list, so
+    P0ADT5/P33222 - acid--amine ligases seeded from PF03738 - were presented
+    as "CHAP domain", a peptidoglycan hydrolase.
+    """
+
+    def _expand(self, resolved):
+        import amide_synthesis.families as fam
+        original = fam.pfam_names
+        fam.pfam_names = lambda accessions: resolved
+        try:
+            families = {'PF03738': {
+                'pfam': 'PF03738', 'family': 'CHAP domain',
+                'family_substrate_distance': 0.74, 'self_condensing': False,
+                'n_seeds': 4, 'family_size': 900, 'seed_accessions': ['P1']}}
+
+            def search(query, size=100, max_pages=5, fields=''):
+                return [{'Entry': 'P0ADT5'}], False, False
+            return ef.expand(families, search=search, threads=1,
+                             enumerate_all=True)[0]
+        finally:
+            fam.pfam_names = original
+
+    def test_the_signature_name_wins_over_the_seeds_label(self):
+        frame = self._expand(
+            {'PF03738': 'Glutathionylspermidine synthase preATP-grasp'})
+        self.assertEqual(frame.family.iloc[0],
+                         'Glutathionylspermidine synthase preATP-grasp')
+
+    def test_the_seed_label_is_the_fallback_when_unresolved(self):
+        """A lookup outage must not blank the column."""
+        frame = self._expand({})
+        self.assertEqual(frame.family.iloc[0], 'CHAP domain')
+
+    def test_an_empty_resolved_name_falls_back(self):
+        frame = self._expand({'PF03738': ''})
+        self.assertEqual(frame.family.iloc[0], 'CHAP domain')
