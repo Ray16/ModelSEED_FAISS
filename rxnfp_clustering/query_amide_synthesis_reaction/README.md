@@ -650,7 +650,9 @@ demoted rather than deleted.
 
 ### Where recall stops — re-probed after every change
 
-Of 480 admitted reactions, 308 resolve to at least one protein. The unresolved
+Of 480 admitted reactions, 308 resolve to a protein by direct annotation and
+19 more carry an enzyme borrowed from a chemically equivalent reaction,
+leaving **153 with no enzyme at all**. The unresolved
 count is **not** a quality measure on its own: it rose 91 -> 168 when the
 substrate-distance gate was removed, purely because 214 previously *excluded*
 reactions became admitted ones. So it is re-probed rather than tracked.

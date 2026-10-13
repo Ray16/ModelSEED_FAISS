@@ -21,12 +21,13 @@ watch. It has been nonzero once: rxn14123 and rxn19001 sat at cosine 0.499
 against an OOD floor of 0.5041 and were refused by a stage that re-litigated
 an admission already decided upstream.
 
-Measured 2026-10-13, after the gate removal (473 admitted, 305 resolved):
+Measured 2026-10-13, current pipeline (480 screened, 308 directly resolved,
+19 holding a borrowed association, 153 with no enzyme at all):
 
       0  identifier present, UniProt returns hits   <- nothing is being lost
-     21  identifier present, UniProt returns zero
-    117  no identifier, a name was tried, nothing found
-     30  no identifier and no usable name
+     15  identifier present, UniProt returns zero
+    109  no identifier, a name was tried, nothing found
+     29  no identifier and no usable name
 
 Usage:
     python tools/probe_unresolved.py
@@ -58,17 +59,42 @@ def clean_ec(value):
             and not e.split('.')[-1].isalpha()]
 
 
+# Direct annotation: UniProt says THIS protein catalyses THIS reaction.
+DIRECT = ('enzymes_uniprot.tsv', 'precomputed_link_candidates.tsv')
+# Borrowed: the chemistry-neighbour route attached an enzyme from a reaction
+# proven to do the same acylation. A real association, but a weaker claim, so
+# it is counted separately rather than folded into either total.
+BORROWED = ('chemistry_neighbour_candidates.tsv',)
+
+
 def unresolved(hits=None):
+    """Reactions with no enzyme at all, plus the two weaker categories.
+
+    Returns (frame, screened, directly_resolved, borrowed_only).
+
+    The borrowed category was previously ignored, so 19 reactions that DO
+    carry an enzyme - attached by the neighbour route from a chemically
+    equivalent reaction - were reported as unresolved. "172 unresolved" was
+    therefore an overstatement of "no enzyme anywhere": the honest figure is
+    153, with 19 more holding a borrowed association.
+    """
     hits = (pd.read_csv(RES / 'amide_forming_neighbours.tsv', sep='\t')
             if hits is None else hits).drop_duplicates('rxn_id')
-    resolved = set()
-    for name, column in (('enzymes_uniprot.tsv', 'rxn_id'),
-                         ('precomputed_link_candidates.tsv', 'rxn_id')):
-        path = RES / name
-        if path.exists():
-            resolved |= set(pd.read_csv(path, sep='\t',
-                                        low_memory=False)[column])
-    return hits[~hits.rxn_id.isin(resolved)], len(hits), len(resolved)
+
+    def gather(names):
+        found = set()
+        for name in names:
+            path = RES / name
+            if path.exists():
+                frame = pd.read_csv(path, sep='\t', low_memory=False)
+                if 'rxn_id' in frame.columns:
+                    found |= set(frame.rxn_id.dropna())
+        return found
+
+    direct = gather(DIRECT)
+    borrowed = gather(BORROWED) - direct
+    pending = hits[~hits.rxn_id.isin(direct | borrowed)]
+    return pending, len(hits), len(direct), len(hits[hits.rxn_id.isin(borrowed)])
 
 
 def classify(row, aliases, seed_map, foreign_map, client=search):
@@ -97,9 +123,10 @@ def classify(row, aliases, seed_map, foreign_map, client=search):
 
 
 def main():
-    pending, screened, resolved = unresolved()
-    print(f'screened {screened}  resolved {resolved}  '
-          f'unresolved {len(pending)}\n')
+    pending, screened, resolved, borrowed = unresolved()
+    print(f'screened {screened}  directly resolved {resolved}  '
+          f'borrowed association {borrowed}  '
+          f'no enzyme at all {len(pending)}\n')
     if pending.empty:
         print('nothing unresolved')
         return
