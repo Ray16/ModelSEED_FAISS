@@ -1,24 +1,27 @@
 {
   "candidates": 54199,
   "by_line_count": {
-    "1": 39633,
-    "0": 10150,
-    "2": 2638,
-    "3": 1770,
-    "4": 8
+    "1": 39535,
+    "0": 10137,
+    "2": 2708,
+    "3": 1791,
+    "4": 24,
+    "5": 4
   },
   "by_discriminating_line_count": {
-    "0": 48226,
-    "1": 4193,
-    "2": 1772,
-    "3": 8
+    "0": 48104,
+    "1": 4272,
+    "2": 1795,
+    "3": 24,
+    "4": 4
   },
-  "converged_at_or_above_3": 8,
+  "converged_at_or_above_3": 28,
   "weak_axes_excluded_from_the_headline": [
     "lead_family_verdict"
   ],
   "axis_totals": {
     "measured_nylon_activity": 49,
+    "acylates_a_free_diamine": 189,
     "own_reaction_chemistry": 3862,
     "lead_family_verdict": 42490,
     "bifunctional_ligand_in_the_pocket": 3757,

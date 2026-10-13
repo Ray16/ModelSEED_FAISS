@@ -117,6 +117,36 @@ class RejectedAxisTests(unittest.TestCase):
                                  '/ligand_id="ChEBI:CHEBI:30616";')
         self.assertEqual(int(cv.axes(frame, set()).sum(axis=1).iloc[0]), 0)
 
+class DiamineAxisTests(unittest.TestCase):
+    """Acylating a free DIAMINE is the acceptor-side nylon requirement.
+
+    It qualifies where curated ATP binding did not: 0.35% coverage against
+    22.4%, and Jaccard 0.01 against the chemistry axis rather than measuring
+    the same thing.
+    """
+
+    def test_a_proven_free_diamine_acceptor_counts(self):
+        found = cv.axes(row(acylates_free_diamine=True), set())
+        self.assertTrue(bool(found.acylates_a_free_diamine.iloc[0]))
+
+    def test_it_is_a_discriminating_axis_not_a_weak_one(self):
+        self.assertNotIn('acylates_a_free_diamine', cv.WEAK_AXES)
+
+    def test_absence_does_not_count(self):
+        self.assertFalse(bool(cv.axes(row(acylates_free_diamine=False), set())
+                              .acylates_a_free_diamine.iloc[0]))
+
+    def test_a_missing_column_does_not_raise(self):
+        self.assertFalse(bool(cv.axes(row(), set())
+                              .acylates_a_free_diamine.iloc[0]))
+
+    def test_it_is_independent_of_the_chemistry_axis(self):
+        """A diamine acceptor with weak distance still earns its own line."""
+        found = cv.axes(row(acylates_free_diamine=True,
+                            substrate_distance_measured=0.1), set())
+        self.assertTrue(bool(found.acylates_a_free_diamine.iloc[0]))
+        self.assertFalse(bool(found.own_reaction_chemistry.iloc[0]))
+
 
 if __name__ == '__main__':
     unittest.main()

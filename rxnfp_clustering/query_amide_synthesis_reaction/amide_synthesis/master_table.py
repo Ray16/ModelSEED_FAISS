@@ -139,6 +139,7 @@ COLUMNS = [
     'substrate_distance_measured', 'substrate_distance_inherited',
     'substrate_distance_own_rhea', 'substrate_distance_source',
     'ec_substrate_ceiling', 'ec_beats_own_reaction',
+    'acylates_free_diamine',
     'self_condensation', 'struct_S', 'annotation_contradicts_chemistry',
     'activity_ugml', 'activity_std', 'is_strong_producer',
     'n_proteins_on_reaction', 'over_annotated_reaction',
@@ -269,6 +270,15 @@ def build(reaction_candidates, expansion, structural=None,
     reaction['discovery_route'] = 'reaction'
     reaction['substrate_distance_measured'] = _column(
         reaction, 'substrate_distance', 0.0)
+    # The screen PROVES, by cutting the product amide and reconstituting the
+    # parent, that the acceptor is a free DIAMINE - which is precisely what
+    # HMDA is. 89 of 482 screened reactions do it. The flag was computed and
+    # then dropped at this merge, so the most directly nylon-relevant
+    # acceptor-side fact the pipeline establishes never reached the ranking
+    # or the convergence count.
+    reaction['acylates_free_diamine'] = pd.to_numeric(
+        _column(reaction, 'acylates_free_diamine', False),
+        errors='coerce').fillna(0).astype(bool)
 
     homologs = expansion.rename(columns=RENAME).copy() if len(expansion) else \
         pd.DataFrame(columns=['uniprot'])
@@ -439,6 +449,7 @@ def main():
             'substrate_distance_measured', 'substrate_distance_inherited',
     'substrate_distance_own_rhea', 'substrate_distance_source',
     'ec_substrate_ceiling', 'ec_beats_own_reaction',
+    'acylates_free_diamine',
             'struct_S', 'master_priority']
     print('\nTop 25:', flush=True)
     print(table.head(25)[show].to_string(index=False), flush=True)

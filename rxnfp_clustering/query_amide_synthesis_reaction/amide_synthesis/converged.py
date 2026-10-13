@@ -128,6 +128,13 @@ def axes(table, lead):
     return pd.DataFrame({
         'measured_nylon_activity':
             _series(table, 'evidence_strength', '').eq('measured_activity'),
+        # The screen proved the acceptor is a free DIAMINE - what HMDA is.
+        # Rare (0.35% of the table) and near-orthogonal to the chemistry axis
+        # (Jaccard 0.01; 138 of its 189 carry information no other axis has),
+        # which is why it qualifies where curated ATP binding did not.
+        'acylates_a_free_diamine':
+            pd.to_numeric(_series(table, 'acylates_free_diamine', False),
+                          errors='coerce').fillna(0).astype(bool),
         'own_reaction_chemistry':
             _num(table, 'substrate_distance_measured').combine(
                 _num(table, 'substrate_distance_own_rhea'), max)
