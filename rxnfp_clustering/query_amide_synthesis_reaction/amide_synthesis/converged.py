@@ -64,7 +64,8 @@ MIN_LINES = 3
 WEAK_AXES = ('lead_family_verdict',)
 
 SIDECARS = (
-    ('ligand_evidence.tsv', ['bound_bifunctional_ligand']),
+    ('ligand_evidence.tsv', ['bound_bifunctional_ligand',
+                             'any_bifunctional_ligand']),
     ('pdb_evidence.tsv', ['pdb_has_atp_like']),
     ('adenylation_geometry.tsv', ['d_nuc_P']),
 )
@@ -109,8 +110,13 @@ def axes(table, lead):
             >= CHEMISTRY_FLOOR,
         'lead_family_verdict':
             signatures.map(lambda v: any(a in v for a in lead)),
-        'crystallographic_bifunctional_ligand':
-            _series(table, 'bound_bifunctional_ligand').notna(),
+        # Crystallographic OR curated: one claim about what the pocket holds,
+        # from two partially correlated sources. Falls back to the
+        # crystallographic column alone if the merged flag is absent.
+        'bifunctional_ligand_in_the_pocket':
+            (_series(table, 'any_bifunctional_ligand', False)
+             .fillna(False).astype(bool)
+             | _series(table, 'bound_bifunctional_ligand').notna()),
         # ONE observation: the geometry is measured from these structures.
         'adenylation_competent_structure': cofactor | geometry,
         'independent_geometric_score': _series(table, 'struct_S').notna(),

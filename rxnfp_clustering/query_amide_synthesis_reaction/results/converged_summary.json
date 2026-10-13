@@ -1,19 +1,19 @@
 {
   "candidates": 54199,
   "by_line_count": {
-    "1": 38627,
-    "0": 11646,
-    "2": 3898,
-    "3": 24,
-    "4": 4
+    "1": 39633,
+    "0": 10150,
+    "2": 2638,
+    "3": 1770,
+    "4": 8
   },
   "by_discriminating_line_count": {
-    "0": 50212,
-    "1": 3957,
-    "2": 26,
-    "3": 4
+    "0": 48226,
+    "1": 4193,
+    "2": 1772,
+    "3": 8
   },
-  "converged_at_or_above_3": 4,
+  "converged_at_or_above_3": 8,
   "weak_axes_excluded_from_the_headline": [
     "lead_family_verdict"
   ],
@@ -21,7 +21,7 @@
     "measured_nylon_activity": 49,
     "own_reaction_chemistry": 3862,
     "lead_family_verdict": 42490,
-    "crystallographic_bifunctional_ligand": 17,
+    "bifunctional_ligand_in_the_pocket": 3757,
     "adenylation_competent_structure": 57,
     "independent_geometric_score": 36
   },

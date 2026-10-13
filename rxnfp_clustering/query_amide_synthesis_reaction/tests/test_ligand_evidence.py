@@ -137,6 +137,64 @@ class RankingIsolationTests(unittest.TestCase):
         self.assertNotIn('bound_ligand', source)
         self.assertNotIn('bound_bifunctional', source)
 
+class CuratedBindingSiteTests(unittest.TestCase):
+    """Curated binding sites extend the SAME axis, with a compactness cap.
+
+    Crystallography reaches 17 candidates; UniProt's binding_site annotation
+    reaches 23,502. Merged rather than counted separately, because a curator
+    often reads the ligand off the structure and this project has twice
+    overstated convergence by treating correlated observations as independent.
+    """
+
+    def _chemistry(self):
+        return {
+            # meso-diaminopimelate: the motif we want, 13 heavy atoms.
+            '57791': (2, 2, 13),
+            # L-glutamate: diacid, compact.
+            '29985': (2, 1, 10),
+            # UDP-MurNAc-L-Ala-D-Glu: bifunctional but a 58-atom scaffold.
+            '83900': (2, 0, 58),
+            # ATP: the cofactor, not a substrate.
+            '30616': (0, 0, 31),
+        }
+
+    def test_a_compact_bifunctional_ligand_counts(self):
+        found, _ = le.curated_bifunctional(
+            ['BINDING 150; /ligand="meso-2,6-diaminopimelate"; '
+             '/ligand_id="ChEBI:CHEBI:57791";'], self._chemistry())
+        self.assertEqual(found[0], 'CHEBI:57791')
+
+    def test_a_large_scaffold_is_excluded(self):
+        """58 heavy atoms is what the pocket is built around, not a monomer."""
+        found, _ = le.curated_bifunctional(
+            ['/ligand_id="ChEBI:CHEBI:83900";'], self._chemistry())
+        self.assertIsNone(found[0])
+
+    def test_the_cofactor_is_excluded(self):
+        found, _ = le.curated_bifunctional(
+            ['/ligand_id="ChEBI:CHEBI:30616";'], self._chemistry())
+        self.assertIsNone(found[0])
+
+    def test_several_ligands_are_all_reported(self):
+        found, _ = le.curated_bifunctional(
+            ['ChEBI:CHEBI:57791 ... ChEBI:CHEBI:29985 ... ChEBI:CHEBI:30616'],
+            self._chemistry())
+        self.assertEqual(found[0], 'CHEBI:29985;CHEBI:57791')
+
+    def test_an_empty_binding_site_is_none(self):
+        found, _ = le.curated_bifunctional(['', None], self._chemistry())
+        self.assertEqual(found, [None, None])
+
+    def test_an_unresolved_chebi_id_is_skipped(self):
+        found, _ = le.curated_bifunctional(
+            ['/ligand_id="ChEBI:CHEBI:999999";'], self._chemistry())
+        self.assertIsNone(found[0])
+
+    def test_the_compactness_cap_matches_the_family_parsimony_tolerance(self):
+        from amide_synthesis import family_evaluation as fe
+        self.assertEqual(le.MAX_LIGAND_HEAVY_ATOMS,
+                         int(fe.ADIPATE_HEAVY_ATOMS * fe.SCAFFOLD_TOLERANCE))
+
 
 if __name__ == '__main__':
     unittest.main()

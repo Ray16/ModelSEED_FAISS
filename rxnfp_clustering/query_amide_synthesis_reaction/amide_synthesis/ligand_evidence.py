@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from concurrent.futures import ThreadPoolExecutor
 
 import pandas as pd
@@ -55,6 +56,32 @@ THREADS = int(os.environ.get('LIGAND_THREADS', 6))
 # What the nylon-6,6 bond needs on each side. Two of either makes a monomer
 # that can extend a chain rather than cap it.
 BIFUNCTIONAL_MIN = 2
+
+# CURATED binding sites, as well as crystallographic ones.
+#
+# Crystallography reaches 17 candidates, because almost none has a structure
+# with a ligand in it. UniProt's `binding_site` annotation names the ligand
+# with a ChEBI id for 23,502 candidates (43%) - the same kind of claim about
+# what the pocket holds, from sequence-level curation instead of a crystal.
+# Only 90 distinct ligands appear, so this costs one cached file.
+#
+# Merged into the SAME axis as the crystallographic evidence rather than added
+# as a new one. The two are partially correlated - a curator often reads the
+# ligand off the structure - and this project has twice overstated convergence
+# by counting correlated observations separately.
+CHEBI_SMILES = CACHE / 'rhea-chebi-smiles.tsv'
+CHEBI_URL = 'https://ftp.expasy.org/databases/rhea/tsv/rhea-chebi-smiles.tsv'
+CHEBI_IN_TEXT = re.compile(r'ChEBI:CHEBI:(\d+)')
+
+# A bound ligand only counts if it is also COMPACT. meso-diaminopimelate (13
+# heavy atoms against adipate's 10) is the motif we want;
+# UDP-N-acetylmuramoyl-L-alanyl-D-glutamate, at 58, is a scaffold the pocket
+# is built around rather than a nylon-like monomer. The tolerance is the same
+# 3x adipate that `family_evaluation` uses for donor parsimony, so the two
+# cannot drift apart.
+ADIPATE_HEAVY_ATOMS = 10
+SCAFFOLD_TOLERANCE = 3.0
+MAX_LIGAND_HEAVY_ATOMS = int(ADIPATE_HEAVY_ATOMS * SCAFFOLD_TOLERANCE)
 
 
 def split_components(value):
@@ -133,6 +160,54 @@ def ligand_chemistry(components, fetch=get_text, threads=THREADS):
     return known
 
 
+def chebi_chemistry(accessions_needed):
+    """ChEBI id -> (acids, amines, heavy atoms), from the Rhea bulk SMILES.
+
+    Rhea publishes ChEBI structures, and this project already trusts and
+    caches Rhea reaction SMILES, so no new source is introduced. Classified
+    with the substrate screen's own predicates, as the PDB components are.
+    """
+    from rdkit import Chem
+    from rdkit import RDLogger
+    from .substrate_distance import _acid_carbons, _amine_nitrogens
+    RDLogger.DisableLog('rdApp.*')
+
+    if not CHEBI_SMILES.exists():
+        body, _, failed = get_text(CHEBI_URL, timeout=180)
+        if failed or not body:
+            return {}
+        CHEBI_SMILES.parent.mkdir(parents=True, exist_ok=True)
+        CHEBI_SMILES.write_text(body)
+    frame = pd.read_csv(CHEBI_SMILES, sep='\t', header=None,
+                        names=['chebi', 'smiles'])
+    wanted = set(accessions_needed)
+    out = {}
+    for row in frame.itertuples():
+        identifier = str(row.chebi).replace('CHEBI:', '')
+        if identifier not in wanted:
+            continue
+        molecule = Chem.MolFromSmiles(str(row.smiles))
+        if molecule is None:
+            continue
+        out[identifier] = (len(_acid_carbons(molecule)),
+                           len(_amine_nitrogens(molecule)),
+                           molecule.GetNumHeavyAtoms())
+    return out
+
+
+def curated_bifunctional(binding_sites, chemistry):
+    """Per-row: the compact bifunctional ligands a curator assigned."""
+    qualifying = {k for k, (acids, amines, heavy) in chemistry.items()
+                  if (acids >= BIFUNCTIONAL_MIN or amines >= BIFUNCTIONAL_MIN)
+                  and heavy <= MAX_LIGAND_HEAVY_ATOMS}
+    out = []
+    for text in binding_sites:
+        found = sorted({c for c in CHEBI_IN_TEXT.findall(str(text or ''))
+                        if c in qualifying})
+        out.append(';'.join('CHEBI:' + c for c in found) if found else None)
+    return out, qualifying
+
+
 def attach(evidence, chemistry):
     """Per-candidate best bound bifunctional ligand."""
     if not len(chemistry):
@@ -184,6 +259,36 @@ def main():
 
     per_candidate = attach(pd.read_csv(evidence, sep='\t', low_memory=False),
                            chemistry)
+
+    # Curated binding sites, for every candidate rather than only those with a
+    # structure. Joined onto the same frame and merged into one axis.
+    master = RES / 'master_candidates_enriched.tsv'
+    if not master.exists():
+        master = RES / 'master_candidates.tsv'
+    curated_count = 0
+    if master.exists():
+        table = pd.read_csv(master, sep='\t', low_memory=False,
+                            usecols=lambda c: c in ('uniprot', 'binding_site'))
+        sites = (table.binding_site.fillna('').astype(str)
+                 if 'binding_site' in table.columns
+                 else pd.Series('', index=table.index))
+        needed = {c for text in sites for c in CHEBI_IN_TEXT.findall(text)}
+        chebi = chebi_chemistry(needed)
+        found, qualifying = curated_bifunctional(sites, chebi)
+        curated = pd.DataFrame({'uniprot': table.uniprot,
+                                'curated_bifunctional_ligand': found})
+        print(f'{len(needed)} binding-site ChEBI ligands, {len(qualifying)} '
+              f'compact and bifunctional', flush=True)
+        per_candidate = per_candidate.merge(curated.drop_duplicates('uniprot'),
+                                            on='uniprot', how='outer')
+        curated_count = int(curated.curated_bifunctional_ligand.notna().sum())
+
+    if 'curated_bifunctional_ligand' not in per_candidate.columns:
+        per_candidate['curated_bifunctional_ligand'] = None
+    # ONE axis: crystallographic or curated. See the module docstring.
+    per_candidate['any_bifunctional_ligand'] = (
+        per_candidate.bound_bifunctional_ligand.notna()
+        | per_candidate.curated_bifunctional_ligand.notna())
     per_candidate.to_csv(RES / 'ligand_evidence.tsv', sep='\t', index=False)
 
     hits = per_candidate[per_candidate.bound_bifunctional_ligand.notna()]
@@ -194,6 +299,10 @@ def main():
         if 'smiles' in chemistry else 0,
         'bifunctional_components': int(len(bifunctional)),
         'candidates_with_bound_bifunctional_ligand': int(len(hits)),
+        'candidates_with_curated_bifunctional_ligand': curated_count,
+        'candidates_on_either': int(
+            per_candidate.any_bifunctional_ligand.sum()),
+        'max_ligand_heavy_atoms': MAX_LIGAND_HEAVY_ATOMS,
         'note': 'Experimental observation of what the pocket holds. Reported '
                 'and usable as a tie-break; deliberately NOT added to '
                 'master_priority - see the module docstring.',
