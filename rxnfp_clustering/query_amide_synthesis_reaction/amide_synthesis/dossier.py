@@ -38,6 +38,7 @@ import re
 import pandas as pd
 
 from . import uniprot
+from .curated_properties import ACCESSION
 from .paths import RES
 
 EXTRA_FIELDS = ('accession,lit_pubmed_id,cc_biotechnology,cc_miscellaneous,'
@@ -401,8 +402,13 @@ def main():
                 extra[['uniprot'] + keep].drop_duplicates('uniprot'),
                 on='uniprot', how='left')
 
+    # The canonical UniProt pattern, imported rather than hand-rolled. A
+    # third local copy of it here began `[A-NR-Z0-9]`, which EXCLUDES O, P
+    # and Q - so P07862, P0AES0, Q9RDS6, O60993 and fourteen others silently
+    # had no mutagenesis, literature or BRENDA data fetched: 10 of 28
+    # converged candidates were queried instead of all 28.
     accessions = [a for a in table.uniprot.dropna().astype(str)
-                  if re.match(r'^[A-NR-Z0-9][0-9A-Z]{3,9}$', a)]
+                  if re.match(ACCESSION, a)]
     fetched = gather(accessions)
     if len(fetched):
         table = table.merge(fetched.drop_duplicates('uniprot'),

@@ -43,6 +43,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
 
+**Biotechnology** BIOTECHNOLOGY: This protein has some activity with cysteine and hence may be useful in biotechnical applications as gamma-glutamylation of cysteine strongly increases its solubility in water, which is critical for its usage in medications. .
+
+**Literature** [12000953](https://pubmed.ncbi.nlm.nih.gov/12000953/), [16932908](https://pubmed.ncbi.nlm.nih.gov/16932908/), [28487688](https://pubmed.ncbi.nlm.nih.gov/28487688/), [35409114](https://pubmed.ncbi.nlm.nih.gov/35409114/)
+
 ## Q81RQ8 — Citryl-spermidine/3,4-dihydroxybenzoyl-citryl-spermidine:spermidine ligase (EC 6.3.2.-) (Petrobactin biosynthesis protei
 
 **Organism** Bacillus anthracis  
@@ -72,6 +76,15 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Involved in the biosynthesis of petrobactin, a catecholate siderophore that functions in both iron acquisition and virulence (PubMed:16875672, PubMed:17189355, PubMed:22408253). Catalyzes the ATP-dependent condensation of spermidine with N(8)-citryl-spermidine or N(1)-(3,4-dihydroxbenzoyl)-N(8)-citryl-spermidine, two intermediates in petrobactin biosynthesis pathway (PubMed:18758617, Pub
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
+
+**Mutagenesis** (residue-level functional data)
+
+- 313: K->A: Preference for spermidine is not completely abrogated, but activity is increased with unnatural nucleophiles such as spermine, l,8-diaminooctane and 
+- 313: K->M: Increases acceptance of polyamines lacking a secondary amine.
+- 461: E->A: Increases relative acceptance of spermine, norspermidine and 1-aminoethyl-1,3-propanediamine.
+- 461: E->D: Displays selectivity close to that of wild type.
+
+**Literature** [18952800](https://pubmed.ncbi.nlm.nih.gov/18952800/), [14756782](https://pubmed.ncbi.nlm.nih.gov/14756782/), [16875672](https://pubmed.ncbi.nlm.nih.gov/16875672/), [17189355](https://pubmed.ncbi.nlm.nih.gov/17189355/), [18758617](https://pubmed.ncbi.nlm.nih.gov/18758617/), [27425635](https://pubmed.ncbi.nlm.nih.gov/27425635/), [22408253](https://pubmed.ncbi.nlm.nih.gov/22408253/)
 
 ## P9WJL3 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
 
@@ -106,6 +119,12 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
 
+**Note** MISCELLANEOUS: Was identified as a high-confidence drug target.
+
+**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [9634230](https://pubmed.ncbi.nlm.nih.gov/9634230/), [19099550](https://pubmed.ncbi.nlm.nih.gov/19099550/), [21969609](https://pubmed.ncbi.nlm.nih.gov/21969609/)
+
 ## Q46E79 — 3-methyl-D-ornithine--L-lysine ligase (EC 6.3.2.59) ((3R)-3-methyl-D-ornithine:L-lysine ligase) (Pyrrolysine biosynthesi
 
 **Organism** Methanosarcina barkeri (strain Fusaro / DSM 804)  
@@ -135,6 +154,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 magnesium ions per subunit.
 
 **Family (UniProt)** SIMILARITY: Belongs to the PylC family. .
+
+**BRENDA** `6.3.2.59;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [16980466](https://pubmed.ncbi.nlm.nih.gov/16980466/), [22985965](https://pubmed.ncbi.nlm.nih.gov/22985965/)
 
 ## Q9KZC7 — Gamma-glutamylpolyamine synthetase GlnA3 (EC 6.3.1.-)
 
@@ -170,6 +193,8 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
 
+**Literature** [12000953](https://pubmed.ncbi.nlm.nih.gov/12000953/), [16932908](https://pubmed.ncbi.nlm.nih.gov/16932908/), [28487688](https://pubmed.ncbi.nlm.nih.gov/28487688/), [35409114](https://pubmed.ncbi.nlm.nih.gov/35409114/)
+
 ## Q2FWC5 — L-aspartate--L-methionine ligase (LdmS) (EC 6.3.2.-) (ATP-dependent dipeptide ligase) (ATP-grasp enzyme) (L-Asp-L-Met li
 
 **Organism** Staphylococcus aureus (strain NCTC 8325 / PS 47)  
@@ -196,6 +221,19 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: L-amino acid ligase, which preferentially catalyzes the formation of L-aspartyl-L-methionine dipeptide from L-aspartate and L-methionine in the presence of ATP. Less active with L-asparagine and L-methionine as substrates. Less active with L-aspartate and either L-phenylalanine, L-valine, L-leucine or L-isoleucine as substrates. Decreased activity when L-methionine is substituted with se
 
 **Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
+
+**Mutagenesis** (residue-level functional data)
+
+- 44: L->A: 19% relative activity.
+- 44: L->E,D: Loss of activity.
+- 44: L->F: 14% relative activity.
+- 44: L->H: 13% relative activity.
+- 44: L->K: 7% relative activity.
+- 44: L->Y: 8% relative activity.
+- 47: R->A,H: Loss of activity.
+- 47: R->K: 9% relative activity.
+
+**Literature** [25888466](https://pubmed.ncbi.nlm.nih.gov/25888466/), [35988643](https://pubmed.ncbi.nlm.nih.gov/35988643/)
 
 ## I3R584 — Gamma-glutamylputrescine synthetase (Gamma-Glu-Put synthetase) (EC 6.3.1.11) (Glutamate--putrescine ligase)
 
@@ -267,6 +305,13 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
 
+**Mutagenesis** (residue-level functional data)
+
+- 282: H->N: Activity is impaired to 9% of wild-type.
+- 357: R->Q: Activity is impaired to 3% of wild-type.
+
+**Literature** [9097039](https://pubmed.ncbi.nlm.nih.gov/9097039/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [14527658](https://pubmed.ncbi.nlm.nih.gov/14527658/), [15590624](https://pubmed.ncbi.nlm.nih.gov/15590624/), [18495664](https://pubmed.ncbi.nlm.nih.gov/18495664/)
+
 ## E2JA32 — Fumarate--(S)-2,3-diaminopropanoate ligase (EC 6.3.2.46) (ATP-dependent fumaroyl-DAP ligase)
 
 **Organism** Enterobacter agglomerans (Erwinia herbicola) (Pantoea agglomerans)  
@@ -320,6 +365,8 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
 
+**Literature** [19138128](https://pubmed.ncbi.nlm.nih.gov/19138128/)
+
 ## Q2G1M8 — 2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase (EC 6.3.2.55) (Staphyloferrin 
 
 **Organism** Staphylococcus aureus (strain NCTC 8325 / PS 47)  
@@ -344,6 +391,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Catalyzes the condensation of L-2,3-diaminopropionic acid (L-Dap) and citryl-diaminoethane to form L-2,3-diaminopropionyl-citryl-diaminoethane, the third step in staphyloferrin B biosynthesis. .
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
+
+**BRENDA** `6.3.2.55;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
 ## Q2G1M9 — L-2,3-diaminopropanoate--citrate ligase (EC 6.3.2.54) (Staphyloferrin B biosynthesis protein SbnE)
 
@@ -370,6 +421,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Catalyzes the synthesis of citryl-L-2,3-diaminopropionic acid from L-2,3-diaminopropionic acid (L-Dap) and citrate, the first step in staphyloferrin B biosynthesis. .
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
+
+**BRENDA** `6.3.2.54;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
 ## I6Y0R5 — Dihydrofolate synthase/folylpolyglutamate synthase (DHFS / FPGS) (EC 6.3.2.12) (EC 6.3.2.17) (Folylpoly-gamma-glutamate 
 
@@ -438,6 +493,18 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the folylpolyglutamate synthase family. .
 
+**Note** MISCELLANEOUS: Mutant studies have shown that dihydrofolate synthase and folylpolyglutamate synthetase activities are catalyzed by a single catalytic site. .
+
+**Mutagenesis** (residue-level functional data)
+
+- 122: T->H,W: Causes large decrease in affinity for both THF and DHP.
+- 154: D->A: Severely impairs activity with THF as substrate, even more so than with DHP. Both substrates show a reduced affinity, but the catalytic rate with THF
+- 155: A->H: Causes large decrease in affinity for both THF and DHP.
+
+**BRENDA** `6.3.2.17;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [3040739](https://pubmed.ncbi.nlm.nih.gov/3040739/), [3040734](https://pubmed.ncbi.nlm.nih.gov/3040734/), [9205837](https://pubmed.ncbi.nlm.nih.gov/9205837/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [2985605](https://pubmed.ncbi.nlm.nih.gov/2985605/), [1989505](https://pubmed.ncbi.nlm.nih.gov/1989505/), [18232714](https://pubmed.ncbi.nlm.nih.gov/18232714/)
+
 ## A0A0F7RJ52 — Spermidine-citrate ligase (EC 6.3.2.-) (Petrobactin biosynthesis protein AsbA)
 
 **Organism** Bacillus anthracis  
@@ -503,6 +570,12 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
 
+**Note** MISCELLANEOUS: Expression of this protein in E.coli results in 50% incorporation of L-Lys into the peptidoglycan (which normally contains meso-diaminopimelate instead), leading to abnormal morphological changes and subsequent cell lysis. .
+
+**BRENDA** `6.3.2.7;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [14114846](https://pubmed.ncbi.nlm.nih.gov/14114846/), [10498701](https://pubmed.ncbi.nlm.nih.gov/10498701/), [14996801](https://pubmed.ncbi.nlm.nih.gov/14996801/), [20659527](https://pubmed.ncbi.nlm.nih.gov/20659527/)
+
 ## Q9WY79 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase (EC 6.3.2.37) (EC 6.3.2.7) (D-lysine-adding enzyme) (L-lysin
 
 **Organism** Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)  
@@ -532,6 +605,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Location** SUBCELLULAR LOCATION: Cytoplasm .
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
+
+**Note** MISCELLANEOUS: The peptidoglycan of T.maritima was shown to contain approximate amounts of both enantiomers of lysine and no diaminopimelate.
+
+**Literature** [10360571](https://pubmed.ncbi.nlm.nih.gov/10360571/), [16595662](https://pubmed.ncbi.nlm.nih.gov/16595662/)
 
 ## P22188 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
 
@@ -566,6 +643,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
 
+**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [2692800](https://pubmed.ncbi.nlm.nih.gov/2692800/), [1630901](https://pubmed.ncbi.nlm.nih.gov/1630901/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [9166795](https://pubmed.ncbi.nlm.nih.gov/9166795/), [2198024](https://pubmed.ncbi.nlm.nih.gov/2198024/), [2269304](https://pubmed.ncbi.nlm.nih.gov/2269304/), [3905407](https://pubmed.ncbi.nlm.nih.gov/3905407/)
+
 ## Q819Q0 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
 
 **Organism** Bacillus cereus (strain ATCC 14579 / DSM 31 / CCUG 7414 / JCM 2152 / NBRC 15305 / NCIMB 93  
@@ -596,6 +677,8 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Location** SUBCELLULAR LOCATION: Cytoplasm .
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
+
+**Literature** [12721630](https://pubmed.ncbi.nlm.nih.gov/12721630/), [4967958](https://pubmed.ncbi.nlm.nih.gov/4967958/)
 
 ## A0QF47 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
 
@@ -805,6 +888,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
 
+**BRENDA** `6.3.2.56;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
+
 ## P0AES0 — Bifunctional glutathionylspermidine synthetase/amidase (GspSA) [Includes: Glutathionylspermidine amidase (Gsp amidase) (
 
 **Organism** Escherichia coli (strain K12)  
@@ -840,6 +927,23 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
+**Note** MISCELLANEOUS: Gsp forms mixed disulfides with the thiols of a variety of E.coli proteins. These mixed disulfides represent a previously uncharacterized type of post-translational modification. The level of these proteins is increased by oxidative stress, which implies that Gsp might protect protein thiols against irreversible oxidation (PubMed:20530482). .; MISCELLANEOUS: No metal ion is required
+
+**Mutagenesis** (residue-level functional data)
+
+- 59: C->A: Loss of amidase activity.
+- 173: C->A: No effect on amidase activity.
+- 316: R->E: Loss of synthetase activity.
+- 335: S->A: 3.6-fold decrease in GSH affinity, 1.6-fold decrease in spermidine activity, and 1.3-fold decrease in synthetase activity.
+- 337: S->A: No effect on GSH and spermidine affinity, but 2-fold decrease in synthetase activity.
+- 338: C->A: 10-fold decrease in GSH affinity, 5-fold decrease in spermidine activity, but no effect on synthetase activity.
+- 391: E->A: 2-fold decrease in GSH affinity, 60-fold decrease in spermidine activity, and 10-fold decrease in synthetase activity.
+- 392: E->A: 33-fold decrease in GSH affinity, 13-fold decrease in spermidine activity, and 6-fold decrease in synthetase activity.
+
+**BRENDA** `3.5.1.78;6.3.1.8;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [7775463](https://pubmed.ncbi.nlm.nih.gov/7775463/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [9398217](https://pubmed.ncbi.nlm.nih.gov/9398217/), [8999955](https://pubmed.ncbi.nlm.nih.gov/8999955/), [23097746](https://pubmed.ncbi.nlm.nih.gov/23097746/), [17124497](https://pubmed.ncbi.nlm.nih.gov/17124497/), [20530482](https://pubmed.ncbi.nlm.nih.gov/20530482/)
+
 ## P90518 — Glutathionylspermidine synthase (EC 6.3.1.8)
 
 **Organism** Crithidia fasciculata  
@@ -872,6 +976,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
+**BRENDA** `6.3.1.8;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [9677355](https://pubmed.ncbi.nlm.nih.gov/9677355/), [1304372](https://pubmed.ncbi.nlm.nih.gov/1304372/)
+
 ## O60993 — Trypanothione synthetase (EC 6.3.1.9) (Cf-TS)
 
 **Organism** Crithidia fasciculata  
@@ -902,6 +1010,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
+**BRENDA** `6.3.1.9;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [9677355](https://pubmed.ncbi.nlm.nih.gov/9677355/), [1304372](https://pubmed.ncbi.nlm.nih.gov/1304372/), [9115252](https://pubmed.ncbi.nlm.nih.gov/9115252/)
+
 ## Q113V7 — Cyanophycin synthetase (EC 6.3.2.29) (EC 6.3.2.30) (Cyanophycin synthase)
 
 **Organism** Trichodesmium erythraeum (strain IMS101)  
@@ -925,6 +1037,10 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Catalyzes the ATP-dependent polymerization of arginine and aspartate to multi-L-arginyl-poly-L-aspartic acid (cyanophycin; a water-insoluble reserve polymer). .
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the MurCDEF family. .
+
+**BRENDA** `6.3.2.29;` — an entry exists; the API needs credentials this project does not have
+
+**Literature** [36042318](https://pubmed.ncbi.nlm.nih.gov/36042318/)
 
 ## P0AES1 — Bifunctional glutathionylspermidine synthetase/amidase (GspSA) [Includes: Glutathionylspermidine amidase (Gsp amidase) (
 
@@ -953,4 +1069,6 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Catalyzes the formation of an amide bond between glutathione (GSH) and spermidine coupled with hydrolysis of ATP; also catalyzes the opposing reaction, i.e. the hydrolysis of glutathionylspermidine (Gsp) back to glutathione and spermidine. May act synergistically with glutaredoxin to regulate the redox environment and defend against oxidative damage. .
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+**Literature** [12384590](https://pubmed.ncbi.nlm.nih.gov/12384590/), [12704152](https://pubmed.ncbi.nlm.nih.gov/12704152/)
 

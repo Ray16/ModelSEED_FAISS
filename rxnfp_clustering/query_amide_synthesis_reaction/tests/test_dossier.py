@@ -237,3 +237,31 @@ class CoverageTests(unittest.TestCase):
         """Kept configurable; it just must not silently default to one."""
         source = Path(dos.__file__).read_text()
         self.assertIn('if MAX_DOSSIERS:', source)
+
+
+class AccessionPatternTests(unittest.TestCase):
+    """O, P and Q accessions must be queried for the extra fields.
+
+    A hand-rolled pattern here began `[A-NR-Z0-9]`, which excludes them, so
+    10 of 28 converged candidates were queried and 18 - including P07862,
+    P0AES0, Q9RDS6 and O60993 - silently had no mutagenesis, literature or
+    BRENDA data fetched.
+    """
+
+    def _match(self, accession):
+        import re
+        from amide_synthesis.curated_properties import ACCESSION
+        return bool(re.match(ACCESSION, accession))
+
+    def test_o_p_and_q_accessions_match(self):
+        for accession in ('O60993', 'P07862', 'P0AES0', 'Q9RDS6', 'Q2FWC5'):
+            self.assertTrue(self._match(accession), accession)
+
+    def test_other_prefixes_still_match(self):
+        for accession in ('A0A095T5Z8', 'A1BJY3', 'B6EP94'):
+            self.assertTrue(self._match(accession), accession)
+
+    def test_the_dossier_imports_the_shared_pattern(self):
+        source = Path(dos.__file__).read_text()
+        self.assertIn('from .curated_properties import ACCESSION', source)
+        self.assertNotIn('[A-NR-Z0-9][0-9A-Z]', source)
