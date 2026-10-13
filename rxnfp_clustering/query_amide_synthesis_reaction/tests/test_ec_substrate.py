@@ -90,24 +90,107 @@ class AttachTests(unittest.TestCase):
         self.assertAlmostEqual(out.set_index('uniprot').loc[
             'P2', 'ec_substrate_ceiling'], 0.7)
 
-    def test_the_discovery_flag_fires_only_when_the_class_does_better(self):
-        out = es.attach(self._table(), self._ceiling()).set_index('uniprot')
-        self.assertTrue(bool(out.loc['P1', 'ec_beats_own_reaction']))
-        self.assertFalse(bool(out.loc['P2', 'ec_beats_own_reaction']))
-
-    def test_inherited_distance_also_counts_as_the_protein_s_own(self):
-        table = self._table()
-        table.loc[0, 'substrate_distance_inherited'] = 0.95
-        out = es.attach(table, self._ceiling()).set_index('uniprot')
-        self.assertFalse(bool(out.loc['P1', 'ec_beats_own_reaction']))
 
 
 class RankingIsolationTests(unittest.TestCase):
-    def test_the_ceiling_is_absent_from_the_priority_formula(self):
-        from amide_synthesis import master_table
-        source = Path(master_table.__file__).read_text().lower()
-        self.assertNotIn('ec_substrate', source)
+    """The CEILING stays out of the ranking; the protein's OWN reaction goes in.
+
+    These are different columns from the same sidecar and the distinction is
+    the whole point. `ec_substrate_ceiling` is a maximum over an EC class, so
+    many unrelated proteins share one value and it must not score anything.
+    `substrate_distance_own_rhea` is measured on the reaction UniProt
+    attributes to that protein, which is the same kind of evidence as
+    `substrate_distance_measured` and does feed the ranking.
+    """
+
+    def _build(self, **overrides):
+        from amide_synthesis.master_table import build
+        row = {'uniprot': 'P1', 'substrate_distance': 0.3,
+               'evidence_strength': 'exact_reaction',
+               'protein_name': 'ligase'}
+        row.update(overrides)
+        return build(pd.DataFrame([row]),
+                     pd.DataFrame(columns=['uniprot']),
+                     structural=pd.DataFrame(columns=['uniprot', 'struct_S']))
+
+    def test_the_ceiling_does_not_change_the_priority(self):
+        """Behavioural, not textual: master MAY read it, but not score on it."""
+        low = self._build(ec_substrate_ceiling=0.05).master_priority.iloc[0]
+        high = self._build(ec_substrate_ceiling=0.99).master_priority.iloc[0]
+        self.assertAlmostEqual(low, high)
+
+    def test_the_own_reaction_distance_DOES_change_the_priority(self):
+        low = self._build(substrate_distance_own_rhea=0.0)
+        high = self._build(substrate_distance_own_rhea=0.9)
+        self.assertGreater(high.master_priority.iloc[0],
+                           low.master_priority.iloc[0])
+
+    def test_the_own_reaction_distance_supersedes_an_inherited_value(self):
+        out = self._build(substrate_distance_own_rhea=0.9)
+        self.assertEqual(out.substrate_distance_source.iloc[0],
+                         'own_curated_reaction')
+
+    def test_a_weaker_own_reaction_does_not_displace_a_measured_one(self):
+        out = self._build(substrate_distance=0.8,
+                          substrate_distance_own_rhea=0.2)
+        self.assertEqual(out.substrate_distance_source.iloc[0],
+                         'own_modelseed_reaction')
+
+    def test_the_discovery_flag_fires_when_the_class_does_better(self):
+        out = self._build(substrate_distance=0.2, ec_substrate_ceiling=0.9)
+        self.assertTrue(bool(out.ec_beats_own_reaction.iloc[0]))
+
+    def test_the_discovery_flag_is_quiet_when_it_does_not(self):
+        out = self._build(substrate_distance=0.9, ec_substrate_ceiling=0.2)
+        self.assertFalse(bool(out.ec_beats_own_reaction.iloc[0]))
 
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class OwnReactionTests(unittest.TestCase):
+    """The protein's own curated reaction, from its catalytic-activity line."""
+
+    def _scores(self, rows):
+        return pd.DataFrame(rows, columns=['rhea', 'substrate_distance'])
+
+    def test_the_cited_rhea_id_is_scored(self):
+        statement = ('CATALYTIC ACTIVITY: Reaction=2 D-alanine + ATP = '
+                     'D-alanyl-D-alanine; Xref=Rhea:RHEA:11224, '
+                     'ChEBI:CHEBI:15378; EC=6.3.2.4;')
+        best, cited = es.own_reaction_distance(
+            [statement], self._scores([(11224, 0.87)]))
+        self.assertAlmostEqual(best[0], 0.87)
+        self.assertEqual(cited[0], 11224)
+
+    def test_the_direction_group_is_scanned_in_both_directions(self):
+        """The statement may cite one member while the score sits on another."""
+        best, _ = es.own_reaction_distance(
+            ['Xref=Rhea:RHEA:11225'], self._scores([(11224, 0.8)]))
+        self.assertAlmostEqual(best[0], 0.8)
+
+    def test_a_statement_with_no_rhea_id_scores_none(self):
+        best, cited = es.own_reaction_distance(
+            ['CATALYTIC ACTIVITY: Reaction=something;'],
+            self._scores([(11224, 0.8)]))
+        self.assertIsNone(best[0])
+        self.assertIsNone(cited[0])
+
+    def test_a_cited_reaction_that_scores_zero_gives_none_not_zero(self):
+        """None means 'no amide chemistry'; 0.0 would read as a real measure."""
+        best, _ = es.own_reaction_distance(
+            ['Xref=Rhea:RHEA:11224'], self._scores([(11224, 0.0)]))
+        self.assertIsNone(best[0])
+
+    def test_the_best_of_several_cited_reactions_wins(self):
+        best, cited = es.own_reaction_distance(
+            ['Xref=Rhea:RHEA:10000; Xref=Rhea:RHEA:20000'],
+            self._scores([(10000, 0.3), (20000, 0.9)]))
+        self.assertAlmostEqual(best[0], 0.9)
+        self.assertEqual(cited[0], 20000)
+
+    def test_missing_statements_do_not_raise(self):
+        best, _ = es.own_reaction_distance(
+            [None, '', float('nan')], self._scores([(1, 0.5)]))
+        self.assertEqual(best, [None, None, None])

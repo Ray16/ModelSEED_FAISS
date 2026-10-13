@@ -102,3 +102,34 @@ class StageOrderTests(unittest.TestCase):
             module = importlib.import_module(f'amide_synthesis.{stage.module}')
             self.assertTrue(callable(getattr(module, 'main', None)),
                             f'{stage.name} ({stage.module}) has no main()')
+
+
+class EcSubstrateOrderingTests(unittest.TestCase):
+    """`ecsub` must precede `master`, and must not read the master table.
+
+    master_table consumes substrate_distance_own_rhea to rank, so if this
+    stage read master the two would be mutually dependent and the only way to
+    satisfy both would be a two-pass run - the order-dependent arrangement
+    that has already silently discarded results twice here (`enrich` after
+    `master`, `refs` reading `master`).
+    """
+
+    def _order(self):
+        names = [s.name for s in pipeline.STAGES]
+        return names.index('ecsub'), names.index('master')
+
+    def test_ecsub_runs_before_master(self):
+        ecsub, master = self._order()
+        self.assertLess(ecsub, master)
+
+    def test_ecsub_does_not_read_the_master_table(self):
+        """Checks the READ expression, not the prose that explains the rule."""
+        from amide_synthesis import ec_substrate
+        source = Path(ec_substrate.__file__).read_text()
+        self.assertNotIn("RES / 'master_candidates", source)
+        self.assertNotIn('RES / "master_candidates', source)
+
+    def test_selection_preserves_the_order_regardless_of_request_order(self):
+        chosen = [s.name for s in pipeline.select_stages(
+            only={'master', 'ecsub'})]
+        self.assertEqual(chosen, ['ecsub', 'master'])

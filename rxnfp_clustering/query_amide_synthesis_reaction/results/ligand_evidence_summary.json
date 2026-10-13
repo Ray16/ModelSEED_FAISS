@@ -1,7 +1,7 @@
 {
   "pdb_entries": 1316,
   "distinct_components": 147,
-  "components_resolved": 147,
+  "components_resolved": 148,
   "bifunctional_components": 18,
   "candidates_with_bound_bifunctional_ligand": 17,
   "note": "Experimental observation of what the pocket holds. Reported and usable as a tie-break; deliberately NOT added to master_priority - see the module docstring."

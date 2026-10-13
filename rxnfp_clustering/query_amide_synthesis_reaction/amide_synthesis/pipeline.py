@@ -43,6 +43,12 @@ STAGES = (
           'borrow enzymes across chemically equivalent reactions'),
     Stage('names', 'enzyme_names',
           'candidates named for the target function in UniProt (network)', True),
+    # BEFORE master: master consumes `substrate_distance_own_rhea` to rank, so
+    # this reads the route files rather than the master table. See
+    # ec_substrate.candidate_annotations.
+    Stage('ecsub', 'ec_substrate',
+          'substrate distance from each protein\'s own Rhea reaction (network)',
+          True),
     Stage('master', 'master_table', 'merge every route, keeping provenance'),
     Stage('enrich', 'enrich',
           'fill annotation for bare candidates; UniParc for the panel (network)',
@@ -53,8 +59,6 @@ STAGES = (
           'adenylation geometry in cofactor-bound structures (network)', True),
     Stage('ligands', 'ligand_evidence',
           'classify crystallographically bound ligands (network)', True),
-    Stage('ecsub', 'ec_substrate',
-          'EC-class substrate ceiling from all of Rhea (network)', True),
     Stage('members', 'member_similarity',
           'discriminate members within a family (tie-break only)'),
     Stage('famval', 'family_evaluation',
@@ -65,6 +69,8 @@ STAGES = (
     Stage('models', 'model_quality',
           'AlphaFold confidence + curated properties on the shortlist (network)',
           True),
+    Stage('converged', 'converged',
+          'candidates backed by several INDEPENDENT lines of evidence'),
     Stage('native', 'native_substrates', 'native reactions + family grouping'),
     Stage('deckfigs', 'deck_figures', 'family and substrate-gap figures'),
     Stage('figure', 'project_tsne', 't-SNE map with candidates overlaid'),

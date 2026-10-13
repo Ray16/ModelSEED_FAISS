@@ -37,6 +37,7 @@ import os
 import re
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from .paths import RES
@@ -136,6 +137,8 @@ COLUMNS = [
     'master_priority', 'uniprot', 'gene', 'protein_name', 'organism',
     'discovery_route', 'evidence_strength', 'discovery_tier',
     'substrate_distance_measured', 'substrate_distance_inherited',
+    'substrate_distance_own_rhea', 'substrate_distance_source',
+    'ec_substrate_ceiling', 'ec_beats_own_reaction',
     'self_condensation', 'struct_S', 'annotation_contradicts_chemistry',
     'activity_ugml', 'activity_std', 'is_strong_producer',
     'n_proteins_on_reaction', 'over_annotated_reaction',
@@ -314,8 +317,37 @@ def build(reaction_candidates, expansion, structural=None,
         ((disqualified & ~qualified) | ec_contradicts(_column(table, 'ec')))
         & table.discovery_route.ne('reaction'))
 
-    distance = table[['substrate_distance_measured',
-                      'substrate_distance_inherited']].max(axis=1)
+    # A protein's OWN curated reaction, scored by our screen, is measured
+    # evidence about that protein - the same kind as
+    # `substrate_distance_measured`, which is scored on a ModelSEED reaction;
+    # only the source database differs. So where UniProt attributes a reaction
+    # to this protein it SUPERSEDES an inherited family value, which describes
+    # a relative. 27,603 candidates gain one, 17,185 of them improving on what
+    # they carried. This is better data in an existing slot, not a new weight.
+    #
+    # Written by the `ecsub` stage; absent until it has run, and the column is
+    # optional so the merge does not depend on stage order.
+    own = pd.to_numeric(_column(table, 'substrate_distance_own_rhea', None),
+                        errors='coerce')
+    table['substrate_distance_own_rhea'] = own
+    measured = pd.to_numeric(_column(table, 'substrate_distance_measured', 0.0),
+                             errors='coerce').fillna(0.0)
+    inherited = pd.to_numeric(
+        _column(table, 'substrate_distance_inherited', 0.0),
+        errors='coerce').fillna(0.0)
+    table['substrate_distance_source'] = np.where(
+        own.fillna(0.0) > measured.combine(inherited, max),
+        'own_curated_reaction',
+        np.where(measured >= inherited, 'own_modelseed_reaction', 'inherited'))
+    distance = pd.concat(
+        [measured, inherited, own.fillna(0.0)], axis=1).max(axis=1)
+    # Computed here rather than in `ecsub`, which runs earlier and does not
+    # have the measured or inherited distances: a candidate whose EC CLASS
+    # does better nylon-like chemistry than anything attributed to the protein
+    # itself. A discovery signal, reported only.
+    ceiling = pd.to_numeric(_column(table, 'ec_substrate_ceiling', None),
+                            errors='coerce')
+    table['ec_beats_own_reaction'] = (ceiling.fillna(0.0) > distance)
     table['master_priority'] = (
         table.evidence_strength.map(EVIDENCE_WEIGHT).fillna(0.0)
         + 3.0 * distance
@@ -350,6 +382,18 @@ def main():
     details_path = RES / 'enzymes_uniprot.tsv'
     details = (pd.read_csv(details_path, sep='\t', low_memory=False)
                if details_path.exists() else None)
+    # The own-reaction distance is computed by `ecsub`, which runs later, so
+    # it is joined when present rather than required. On a first run the
+    # column is absent and the ranking falls back to measured/inherited.
+    own_path = RES / 'ec_substrate_ceiling.tsv'
+    own_frame = None
+    if own_path.exists():
+        sidecar = pd.read_csv(own_path, sep='\t', low_memory=False)
+        wanted = [c for c in ('uniprot', 'substrate_distance_own_rhea',
+                              'ec_substrate_ceiling') if c in sidecar.columns]
+        if 'substrate_distance_own_rhea' in wanted:
+            own_frame = sidecar[wanted]
+
     extras = []
     for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv',
                  'chemistry_neighbour_candidates.tsv',
@@ -357,6 +401,14 @@ def main():
         path = RES / name
         if path.exists():
             extras.append(pd.read_csv(path, sep='\t', low_memory=False))
+    if own_frame is not None:
+        reaction = reaction.merge(own_frame, on='uniprot', how='left')
+        extras = [e.merge(own_frame, on='uniprot', how='left')
+                  if 'uniprot' in e.columns else e for e in extras]
+        expansion = (expansion.merge(
+            own_frame.rename(columns={'uniprot': 'Entry'}), on='Entry',
+            how='left') if len(expansion) and 'Entry' in expansion.columns
+            else expansion)
     table = build(reaction, expansion,
                   reaction_details=details,
                   sequences=read_fasta(RES / 'enzymes.fasta'),
@@ -385,6 +437,8 @@ def main():
 
     show = ['uniprot', 'gene', 'discovery_route', 'evidence_strength',
             'substrate_distance_measured', 'substrate_distance_inherited',
+    'substrate_distance_own_rhea', 'substrate_distance_source',
+    'ec_substrate_ceiling', 'ec_beats_own_reaction',
             'struct_S', 'master_priority']
     print('\nTop 25:', flush=True)
     print(table.head(25)[show].to_string(index=False), flush=True)
