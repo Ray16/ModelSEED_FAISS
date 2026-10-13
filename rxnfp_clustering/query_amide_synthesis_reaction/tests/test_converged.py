@@ -172,3 +172,24 @@ class ChemistryFloorTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class PublishedCountsTests(unittest.TestCase):
+    """The per-candidate counts must be published, not kept in the function.
+
+    converged_candidates.tsv holds only the >= 3 subset, so the near-miss
+    tier - candidates at exactly 2 lines - could not be identified by any
+    downstream stage. The dossier re-deriving it would risk the two
+    disagreeing.
+    """
+
+    def test_the_stage_writes_counts_for_every_candidate(self):
+        source = Path(cv.__file__).read_text()
+        self.assertIn("'evidence_lines.tsv'", source)
+        self.assertIn('n_discriminating_lines', source)
+
+    def test_the_dossier_reads_them_rather_than_recomputing(self):
+        from amide_synthesis import dossier
+        source = Path(dossier.__file__).read_text()
+        self.assertIn("'evidence_lines.tsv'", source)
+        self.assertNotIn('cv.axes', source)

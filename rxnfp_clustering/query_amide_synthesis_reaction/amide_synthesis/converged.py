@@ -206,6 +206,15 @@ def main():
          _num(table, 'substrate_distance_inherited'),
          _num(table, 'substrate_distance_own_rhea')], axis=1).max(axis=1).round(3)
 
+    # Publish the count for EVERY candidate, not only those clearing the
+    # threshold. The near-miss tier needs to know which candidates hold
+    # exactly two lines, and that information existed nowhere outside this
+    # function - converged_candidates.tsv holds only the >= 3 subset, so a
+    # downstream stage could not ask the question at all.
+    table[['uniprot', 'n_independent_lines', 'n_discriminating_lines',
+           'evidence_lines']].to_csv(RES / 'evidence_lines.tsv', sep='\t',
+                                     index=False)
+
     converged = table[table.n_discriminating_lines >= MIN_LINES].sort_values(
         ['n_discriminating_lines', 'best_substrate_distance'],
         ascending=False)

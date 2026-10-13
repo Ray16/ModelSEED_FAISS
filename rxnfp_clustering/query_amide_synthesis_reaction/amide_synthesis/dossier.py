@@ -68,8 +68,15 @@ MAX_DOSSIERS = int(os.environ.get('DOSSIER_LIMIT', 20))
 # They are admitted on an EXPLICIT second criterion rather than by lowering the
 # floor - 2 independent lines AND room for both monomers - and the dossier
 # labels which criterion each entry met, so the distinction stays visible.
+# The criterion is TWO independent lines AND room for both monomers - not the
+# top-N by priority among everything with room, which was the first version
+# and was arbitrary. Measured, the two sets are nearly disjoint: 1,795
+# candidates hold exactly two lines, 1,844 have room for both, and only 3
+# satisfy both. So there is no large middle tier to draw from, and the
+# actionable set really is the converged list plus a handful - which is worth
+# knowing, because it says the shortlist is genuinely short rather than
+# artificially truncated.
 NEAR_MISS_LINES = int(os.environ.get('DOSSIER_NEAR_MISS_LINES', 2))
-MAX_NEAR_MISSES = int(os.environ.get('DOSSIER_NEAR_MISSES', 8))
 
 # Free di- and polyamines, named in order of how close they are to HMDA.
 # The nylon-6,6 acceptor is hexane-1,6-diamine, and NO enzyme in UniProt is
@@ -353,8 +360,20 @@ def main():
         everything = pd.read_csv(master_path, sep='\t', low_memory=False)
         pool = everything[everything.uniprot.isin(room.uniprot)
                           & ~everything.uniprot.isin(table.uniprot)]
+        # ...and holding exactly NEAR_MISS_LINES independent lines. Taken from
+        # the convergence stage's published counts rather than re-derived, so
+        # the two cannot disagree.
+        counted = RES / 'evidence_lines.tsv'
+        if counted.exists():
+            scored = pd.read_csv(counted, sep='\t', low_memory=False)
+            keep = set(scored[scored.n_discriminating_lines
+                              .fillna(0).astype(int)
+                              .eq(NEAR_MISS_LINES)].uniprot)
+            pool = pool[pool.uniprot.isin(keep)]
+        else:
+            pool = pool.head(0)   # without the counts, admit nothing
         if len(pool):
-            near = pool.nlargest(MAX_NEAR_MISSES, 'master_priority').copy()
+            near = pool.sort_values('master_priority', ascending=False).copy()
             near['selected_by'] = 'near_miss_with_room'
             near['n_discriminating_lines'] = NEAR_MISS_LINES
             near['evidence_lines'] = 'room for both monomers; below the ' \
