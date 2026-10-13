@@ -13,6 +13,7 @@ import unittest
 
 import pandas as pd
 
+from amide_synthesis import substrate_distance as sd
 from amide_synthesis.acylation import acylation_events
 from amide_synthesis.substrate_distance import (describe_event, score_event,
                                                 score_reaction)
@@ -258,3 +259,47 @@ class TestExpansionPlumbing(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
+
+class TargetParameterTests(unittest.TestCase):
+    """The target is four numbers; nothing else in the module is nylon-6,6.
+
+    They are overridable so the pipeline can be aimed at another polyamide
+    without editing code. The defaults must not drift: every reference score
+    quoted throughout this project assumes them.
+    """
+
+    def test_the_defaults_are_nylon_6_6(self):
+        self.assertEqual(sd.ADIPATE_SPACER, 4)
+        self.assertEqual(sd.HMDA_SPACER, 6)
+        self.assertEqual(sd.ADIPATE_HEAVY, 10)
+        self.assertEqual(sd.HMDA_HEAVY, 8)
+
+    def test_the_reference_score_is_unchanged(self):
+        """0.965 is quoted in the README, the deck and several commits."""
+        score, _ = sd.score_reaction(
+            'OC(=O)CCCCC(=O)O.NCCCCCCN>>OC(=O)CCCCC(=O)NCCCCCCN')
+        self.assertAlmostEqual(score, 0.965, places=3)
+
+    def test_retargeting_changes_which_spacer_scores_best(self):
+        """Nylon-6,10 wants a C10 diacid, so sebacate should beat adipate."""
+        import importlib
+        import os
+        sebacate = ('OC(=O)CCCCCCCCC(=O)O.NCCCCCCN'
+                    '>>OC(=O)CCCCCCCCC(=O)NCCCCCCN')
+        adipate = 'OC(=O)CCCCC(=O)O.NCCCCCCN>>OC(=O)CCCCC(=O)NCCCCCCN'
+        before = (sd.score_reaction(adipate)[0],
+                  sd.score_reaction(sebacate)[0])
+        self.assertGreater(before[0], before[1])      # nylon-6,6 default
+        os.environ['TARGET_ACID_SPACER'] = '8'
+        os.environ['TARGET_ACID_HEAVY_ATOMS'] = '14'
+        try:
+            retargeted = importlib.reload(sd)
+            after = (retargeted.score_reaction(adipate)[0],
+                     retargeted.score_reaction(sebacate)[0])
+            self.assertGreater(after[1], after[0])    # nylon-6,10 prefers C10
+        finally:
+            os.environ.pop('TARGET_ACID_SPACER', None)
+            os.environ.pop('TARGET_ACID_HEAVY_ATOMS', None)
+            importlib.reload(sd)
+        self.assertEqual(sd.ADIPATE_SPACER, 4)

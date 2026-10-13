@@ -67,13 +67,30 @@ them without rerunning anything.
 """
 from __future__ import annotations
 
+import os
+
 from rdkit import Chem
 
 from .acylation import FREE_AMINE, acylation_events, count_free_amines, neutral_key
 
 # Nylon-6,6 reference geometry.
-ADIPATE_SPACER = 4      # carbons between adipate's two carboxyl carbons
-HMDA_SPACER = 6         # carbons between HMDA's two nitrogens
+# THE TARGET IS THESE FOUR NUMBERS, and nothing else in this module is
+# specific to nylon-6,6. They are environment-overridable so the pipeline can
+# be aimed at another polyamide without editing code - the screens, the
+# routes and the ranking are all target-agnostic once these are set.
+#
+#   polyamide        donor            acceptor          spacers   heavy atoms
+#   nylon-6,6        adipate C6       HMDA C6            4 / 6     10 / 8
+#   nylon-6,10       sebacate C10     HMDA C6            8 / 6     14 / 8
+#   nylon-6,12       dodecanedioate   HMDA C6           10 / 6     16 / 8
+#   nylon-4,6        adipate C6       putrescine C4      4 / 4     10 / 6
+#
+# Nylon-6 and nylon-12 are self-condensations of one bifunctional monomer, so
+# they need the nylon-6 reaction as the SEARCH QUERY rather than different
+# constants here; see the README. Defaults are unchanged, and a control pins
+# the reference scores so an override cannot silently become the default.
+ADIPATE_SPACER = int(os.environ.get('TARGET_ACID_SPACER', 4))
+HMDA_SPACER = int(os.environ.get('TARGET_AMINE_SPACER', 6))
 
 CARBOXYLIC_ACID = Chem.MolFromSmarts('[CX3](=[OX1])[OX2H1,OX1-]')
 N_HYDROXY = Chem.MolFromSmarts('[NX3][OX2H1]')
@@ -88,8 +105,8 @@ W_PARSIMONY = 0.20
 
 # Heavy atoms in the nylon-6,6 monomers; substrates much larger than these are
 # mostly scaffold the active site must also accommodate.
-ADIPATE_HEAVY = 10
-HMDA_HEAVY = 8
+ADIPATE_HEAVY = int(os.environ.get('TARGET_ACID_HEAVY_ATOMS', 10))
+HMDA_HEAVY = int(os.environ.get('TARGET_AMINE_HEAVY_ATOMS', 8))
 # Tolerance in heavy atoms before the excess is charged in full.
 PARSIMONY_SLACK = 6.0
 

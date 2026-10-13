@@ -76,7 +76,23 @@ needs a *diamine* acceptor, which Ddl does not use.
 
 No separate pipeline is needed: filter `master_candidates_enriched.tsv` on
 `self_condensation`, or re-run the screen with the nylon-6 reaction as the
-query. Recorded because a reader with the adjacent target should not have to
+query.
+
+### Aiming at a different polyamide
+
+The target is **four numbers**, and nothing else in `substrate_distance.py` is
+specific to nylon-6,6. They are environment-overridable:
+
+| polyamide | donor | acceptor | `TARGET_ACID_SPACER` / `AMINE_SPACER` | `..._HEAVY_ATOMS` |
+|---|---|---|---|---|
+| **nylon-6,6** (default) | adipate C6 | HMDA C6 | 4 / 6 | 10 / 8 |
+| nylon-6,10 | sebacate C10 | HMDA C6 | 8 / 6 | 14 / 8 |
+| nylon-6,12 | dodecanedioate | HMDA C6 | 10 / 6 | 16 / 8 |
+| nylon-4,6 | adipate C6 | putrescine C4 | 4 / 4 | 10 / 6 |
+
+A control asserts the defaults and the 0.965 reference score, so an override
+cannot silently become the default, and another checks that retargeting to
+nylon-6,10 really does make sebacate outscore adipate. Recorded because a reader with the adjacent target should not have to
 rediscover it, and because it shows what the ranking is and is not sensitive
 to.
 
