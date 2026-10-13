@@ -19,16 +19,26 @@ donor, a diamine acceptor. No measured activity on the diad.
 ## B. Measured-data hypothesis — closest to a protein that works
 
 The 49-member panel is the only measured activity that exists; AS9, AS17 and
-AS23 produce 9.28, 1.91 and 1.45 µg/ml. These are the ANL candidates most
-similar to them, restricted to comparable length (519 aa ± 25%) so that a
-fragment matching one domain cannot outrank a whole enzyme.
+AS23 produce 9.28, 1.91 and 1.45 µg/ml. BLASTing all three against the whole
+of UniProtKB — not just this project's table — gives:
 
 | protein | organism | aa | % id | to |
 |---|---|---:|---:|---|
-| **A0A075UYU2** AJAP_12390 | Amycolatopsis japonica | 521 | 30.6 | AS9 |
-| **A1YAM3** nan | Amycolatopsis orientalis (Noca | 521 | 30.6 | AS9 |
-| **D2TMN3** entE ROD_06031 | Citrobacter rodentium (strain  | 535 | 30.2 | AS9 |
-| **A0ABC8C1M7** B7C62_33055 | Kitasatospora albolonga | 514 | 29.8 | AS23 |
+| **A0A7Y0L7E5** | Sulfobacillus harzensis | 524 | **65.3** | AS23 |
+| **G8U0Y4** | Sulfobacillus acidophilus (strain  | 524 | **65.3** | AS23 |
+| **A0A3E0HG69** | Kutzneria buriramensis | 505 | **51.4** | AS9 |
+| **R4SVL2** | Amycolatopsis keratiniphila | 521 | **50.3** | AS9 |
+
+**None of these 150 hits is among this project's 54,199 candidates, and the
+reason is structural.** They are annotated as long-chain-fatty-acid–CoA
+ligases (53) and acyl-CoA synthetases (25) — that is, for **thioester**
+chemistry. A reaction-anchored pipeline finds enzymes through the reaction
+they are annotated to catalyse, so it cannot reach one whose annotation
+describes the wrong reaction. The panel proteins are annotated that way
+themselves, and three of them make the nylon amide bond regardless.
+
+This table could offer at best 30.6% identity to a measured producer.
+BLAST reaches **65.3%**. Full ranking: `results/blast_actives_ranked.tsv`.
 
 ## Why both
 

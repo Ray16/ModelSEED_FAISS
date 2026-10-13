@@ -1,0 +1,151 @@
+Hit	DB	Accession	Description	Organism	Length	Score(Bits)	Identities(%)	Positives(%)	E()	query	in_our_table
+2	TR	A0A7Y0L7E5	Long-chain-fatty-acid--CoA ligase OS=Sulfobacillus harzensis OX=2729629 GN=HIJ39_13240 PE=3 SV=1	Sulfobacillus harzensis	524	1758	65.3	76.6	0.0	AS23	False
+1	TR	G8U0Y4	O-succinylbenzoate--CoA ligase OS=Sulfobacillus acidophilus (strain ATCC 700253 / DSM 10332 / NAL) OX=679936 GN=Sulac_3074 PE=3 SV=1	Sulfobacillus acidophilus (strain ATCC 700253 / DSM 10332 / NAL)	524	1772	65.3	77.3	0.0	AS23	False
+1	TR	A0A3E0HG69	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Kutzneria buriramensis OX=1045776 GN=BCF44_108189 PE=3 SV=1	Kutzneria buriramensis	505	1277	51.4	67.5	5.4e-169	AS9	False
+3	TR	R4SVL2	Long-chain-fatty-acid--CoA ligase OS=Amycolatopsis keratiniphila OX=129921 GN=fadD PE=3 SV=1	Amycolatopsis keratiniphila	521	1263	50.3	66.3	1.2e-166	AS9	False
+8	TR	A0ABR9LGI3	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Amycolatopsis roodepoortensis OX=700274 GN=H4W30_006462 PE=3 SV=1	Amycolatopsis roodepoortensis	521	1250	50.1	66.1	1.1e-164	AS9	False
+4	TR	A0A075V3N2	Long-chain-fatty-acid--CoA ligase OS=Amycolatopsis japonica OX=208439 GN=AJAP_31510 PE=3 SV=1	Amycolatopsis japonica	532	1261	50.1	66.3	3.6e-166	AS9	False
+30	TR	A0ABV0LJN0	Long-chain fatty acid--CoA ligase OS=Amycolatopsis melonis OX=3156488 GN=ABJI51_25155 PE=3 SV=1	Amycolatopsis melonis	517	1219	50.0	65.5	4.8e-160	AS9	False
+27	TR	A0ABU5RE15	Long-chain fatty acid--CoA ligase OS=Amycolatopsis heterodermiae OX=3110235 GN=VA596_33630 PE=3 SV=1	Amycolatopsis heterodermiae	510	1220	49.8	66.3	2.7e-160	AS9	False
+5	TR	A0A7W9NF12	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Kutzneria kofuensis OX=103725 GN=BJ998_000822 PE=3 SV=1	Kutzneria kofuensis	505	1257	49.6	68.3	5.8e-166	AS9	False
+9	TR	A0ACD5B3Z7	Long-chain-fatty-acid--CoA ligase OS=Amycolatopsis coloradensis OX=76021 GN=LCL61_00650 PE=3 SV=1	Amycolatopsis coloradensis	521	1244	49.5	66.7	9.2e-164	AS9	False
+11	TR	A0ABV6MKT4	AMP-binding protein OS=Kutzneria chonburiensis OX=1483604 GN=ACFFH7_05430 PE=3 SV=1	Kutzneria chonburiensis	505	1240	48.9	66.7	2.2e-163	AS9	False
+40	TR	A0ABY8XQ29	Long-chain fatty acid--CoA ligase OS=Amycolatopsis nalaikhensis OX=715472 GN=QP939_03495 PE=3 SV=1	Amycolatopsis nalaikhensis	517	1211	48.7	65.9	7.8e-159	AS9	False
+24	TR	A0A0J6YIT0	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium chubuense OX=1800 GN=MCHUDSM44219_04773 PE=3 SV=1	Mycolicibacterium chubuense	554	1227	48.5	65.9	1e-160	AS9	False
+23	TR	A0ABY3UKH6	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium rufum OX=318424 GN=MJO55_03840 PE=3 SV=1	Mycolicibacterium rufum	520	1224	48.5	65.3	9.4e-161	AS9	False
+15	TR	A0A439DVE6	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium elephantis DSM 44368 OX=1335622 GN=MELE44368_03380 PE=3 SV=1	Mycolicibacterium elephantis DSM 44368	522	1233	48.5	67.2	4.4e-162	AS9	False
+2	TR	A0A1E3S588	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycobacterium intermedium OX=28445 GN=BST27_25560 PE=3 SV=1	Mycobacterium intermedium	522	1264	48.5	68.6	9e-167	AS9	False
+31	TR	A0A0J6W562	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium chlorophenolicum OX=37916 GN=MCHLDSM_03082 PE=3 SV=1	Mycolicibacterium chlorophenolicum	520	1219	48.3	65.7	5.3e-160	AS9	False
+26	TR	A0A0M2JZF4	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium obuense OX=1807 GN=WN67_10785 PE=3 SV=1	Mycolicibacterium obuense	520	1222	48.3	65.7	1.9e-160	AS9	False
+39	TR	A0ABQ4V959	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium cyprinidarum OX=2860311 GN=NGTWS1702_15100 PE=3 SV=1	Mycolicibacterium cyprinidarum	519	1212	48.1	65.5	5.9e-159	AS9	False
+45	TR	A0A7I7S0V0	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium arabiense OX=1286181 GN=MARA_30230 PE=3 SV=1	Mycolicibacterium arabiense	521	1209	48.1	66.4	1.8000000000000002e-158	AS9	False
+7	TR	A0A7I9YIE3	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycobacterium bourgelatii OX=1273442 GN=MBOU_04760 PE=3 SV=1	Mycobacterium bourgelatii	522	1251	48.1	68.0	8.300000000000001e-165	AS9	False
+18	TR	A0A5S9Q110	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium austroafricanum OX=39687 GN=AELLOGFF_00843 PE=3 SV=1	Mycolicibacterium austroafricanum	520	1227	48.0	64.9	3.3e-161	AS9	False
+17	TR	A0A7I7UFW7	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium pulveris OX=36813 GN=MPUL_15160 PE=3 SV=1	Mycolicibacterium pulveris	525	1229	48.0	66.2	1.9e-161	AS9	False
+44	TR	A0A5Q2MAX3	Long-chain-fatty-acid--CoA ligase OS=Aeromicrobium yanjiei OX=2662028 GN=GEV26_02015 PE=3 SV=1	Aeromicrobium yanjiei	521	1209	48.0	64.6	1.8000000000000002e-158	AS9	False
+32	TR	A0A7I7M5A1	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium psychrotolerans OX=216929 GN=MPSYJ_01740 PE=3 SV=1	Mycolicibacterium psychrotolerans	520	1216	47.9	65.5	1.5e-159	AS9	False
+43	TR	I4BDZ7	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium chubuense (strain NBB4) OX=710421 GN=Mycch_0686 PE=3 SV=1	Mycolicibacterium chubuense (strain NBB4)	542	1211	47.9	65.7	1.8000000000000002e-158	AS9	False
+37	TR	A0ABQ1BYI6	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycobacterium paragordonae OX=1389713 GN=MPRG_04880 PE=3 SV=1	Mycobacterium paragordonae	522	1213	47.9	66.4	4.6e-159	AS9	False
+42	TR	A0A7I9ZKK6	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium hippocampi OX=659824 GN=MHIP_18220 PE=3 SV=1	Mycolicibacterium hippocampi	520	1209	47.7	65.7	1.7000000000000002e-158	AS9	False
+10	TR	A0A1M5ULA4	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Jatrophihabitans endophyticus OX=1206085 GN=SAMN05443575_4234 PE=3 SV=1	Jatrophihabitans endophyticus	530	1244	47.7	64.8	1.2e-163	AS9	False
+4	TR	A0ABZ1BX77	Long-chain-fatty-acid--CoA ligase OS=Carboxydichorda subterranea OX=3109565 GN=U7230_14085 PE=3 SV=1	Carboxydichorda subterranea	531	1231	47.5	65.2	1.7e-161	AS23	False
+6	TR	A0A5Q3QGB1	Long-chain-fatty-acid--CoA ligase OS=Allosaccharopolyspora coralli OX=2665642 GN=GIY23_14120 PE=3 SV=1	Allosaccharopolyspora coralli	521	1257	47.5	66.1	9.9e-166	AS9	False
+34	TR	A0A375YG23	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium parafortuitum OX=39692 GN=MPP7335_01762 PE=3 SV=1	Mycolicibacterium parafortuitum	520	1215	47.5	65.7	2.1e-159	AS9	False
+19	TR	A0ABS2M8D2	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Nocardioides salarius OX=374513 GN=JOE61_001272 PE=3 SV=1	Nocardioides salarius	543	1228	47.5	65.7	5e-161	AS9	False
+46	TR	X0RIG3	Putative fatty-acid--CoA ligase OS=Rhodococcus wratislaviensis NBRC 100605 OX=1219028 GN=RW1_096_00900 PE=3 SV=1	Rhodococcus wratislaviensis NBRC 100605	520	1208	47.4	63.2	2.5000000000000003e-158	AS9	False
+49	TR	A0ABX8VNS5	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycolicibacterium pallens OX=370524 GN=K0O64_04020 PE=3 SV=1	Mycolicibacterium pallens	521	1207	47.4	65.1	3.6000000000000003e-158	AS9	False
+38	TR	A0ABN2PNK6	Long-chain fatty acid--CoA ligase OS=Nocardioides lentus OX=338077 GN=GCM10009737_31110 PE=3 SV=1	Nocardioides lentus	538	1214	47.3	64.5	5.5e-159	AS9	False
+22	TR	A0A7Y9JQU0	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Nocardioides marinisabuli OX=419476 GN=BKA08_002013 PE=3 SV=1	Nocardioides marinisabuli	549	1227	47.3	65.9	8.600000000000001e-161	AS9	False
+29	TR	A0ABT8TVF0	Long-chain-fatty-acid--CoA ligase OS=Nocardioides cremeus OX=3058044 GN=QWJ41_16765 PE=3 SV=1	Nocardioides cremeus	547	1222	47.3	65.7	4.6e-160	AS9	False
+35	TR	A0A1A6BPH4	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycobacterium gordonae OX=1778 GN=AWC08_32170 PE=3 SV=1	Mycobacterium gordonae	522	1215	47.3	66.7	2.3e-159	AS9	False
+25	TR	A0A7Y9E3V2	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Nocardioides panaciterrulae OX=661492 GN=BJZ21_000826 PE=3 SV=1	Nocardioides panaciterrulae	524	1224	47.2	64.0	1.1e-160	AS9	False
+6	TR	A0ABM6RQS8	O-succinylbenzoate--CoA ligase OS=Sulfobacillus thermotolerans OX=338644 GN=BXT84_07120 PE=3 SV=1	Sulfobacillus thermotolerans	529	1211	47.2	63.4	1.7000000000000002e-158	AS23	False
+13	TR	A0A4P7GNS1	Long-chain-fatty-acid--CoA ligase OS=Nocardioides euryhalodurans OX=2518370 GN=EXE57_15815 PE=3 SV=1	Nocardioides euryhalodurans	523	1241	47.2	65.0	2.8e-163	AS9	False
+5	TR	A0A1W1WLY5	Fatty-acyl-CoA synthase OS=Sulfobacillus thermosulfidooxidans (strain DSM 9293 / VKM B-1269 / AT-1) OX=929705 GN=SAMN00768000_3248 PE=3 SV=1	Sulfobacillus thermosulfidooxidans (strain DSM 9293 / VKM B-1269 / AT-1)	526	1217	47.1	64.5	1.9e-159	AS23	False
+20	TR	A0A1A3MZI6	Long-chain-fatty-acid--CoA ligase FadD13 OS=Mycobacterium asiaticum OX=1790 GN=A5636_07605 PE=3 SV=1	Mycobacterium asiaticum	522	1225	47.1	67.1	7.100000000000001e-161	AS9	False
+14	TR	A0ABY6NXC2	Long-chain-fatty-acid--CoA ligase OS=Rhodococcus antarcticus OX=2987751 GN=RHODO2019_12750 PE=3 SV=1	Rhodococcus antarcticus	524	1234	47.0	64.5	3.3e-162	AS9	False
+36	TR	A0A3N0GZX4	Long-chain-fatty-acid--CoA ligase OS=Nocardioides pocheonensis OX=661485 GN=EFL26_00085 PE=3 SV=1	Nocardioides pocheonensis	525	1214	46.9	65.1	3.6e-159	AS9	False
+33	TR	A0AA46TEV8	Long-chain-fatty-acid--CoA ligase OS=Solicola gregarius OX=2908642 GN=L0C25_13270 PE=3 SV=1	Solicola gregarius	518	1215	46.9	64.5	2.0000000000000002e-159	AS9	False
+48	TR	A0AAX3YML7	Long-chain-fatty-acid--CoA ligase OS=Rhodococcus opacus OX=37919 GN=O4328_02305 PE=3 SV=1	Rhodococcus opacus	520	1207	46.9	64.0	3.5e-158	AS9	False
+21	TR	A0ACN7CD76	Long-chain-fatty-acid--CoA ligase OS=Nocardioides dongxiaopingii OX=2576036 GN=FE634_06200 PE=4 SV=1	Nocardioides dongxiaopingii	525	1225	46.7	64.6	7.800000000000001e-161	AS9	False
+12	TR	A0A7W3IX36	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Nocardioides ginsengisegetis OX=661491 GN=FB382_000395 PE=3 SV=1	Nocardioides ginsengisegetis	521	1241	46.5	66.2	2.6e-163	AS9	False
+16	TR	A0ABN2Z414	Long-chain fatty acid--CoA ligase OS=Nocardioides koreensis OX=433651 GN=GCM10009844_02580 PE=3 SV=1	Nocardioides koreensis	523	1230	46.3	66.4	1.3000000000000002e-161	AS9	False
+41	TR	A0ABW4THS2	Long-chain-fatty-acid--CoA ligase OS=Nocardioides aestuarii OX=252231 GN=ACFSDE_05320 PE=3 SV=1	Nocardioides aestuarii	526	1210	46.3	65.2	1.5e-158	AS9	False
+3	TR	A0A494X160	Fatty acid--CoA ligase OS=Desulfofundulus salinus OX=2419843 GN=D7024_06680 PE=3 SV=1	Desulfofundulus salinus	531	1234	46.2	65.5	6.1e-162	AS23	False
+47	TR	A0ACH2NUL2	Long-chain-fatty-acid--CoA ligase OS=Mumia qirimensis OX=3234852 GN=AB3M34_02585 PE=3 SV=1	Mumia qirimensis	523	1208	46.1	64.2	2.7e-158	AS9	False
+28	TR	A0A7X0VBK7	Long-chain-fatty-acid--CoA ligase OS=Nocardioides luti OX=2761101 GN=H5V45_15750 PE=3 SV=1	Nocardioides luti	523	1220	45.8	64.9	4.2e-160	AS9	False
+50	TR	A0ABV5KA94	Long-chain-fatty-acid--CoA ligase OS=Nocardioides plantarum OX=29299 GN=ACFFRI_11420 PE=3 SV=1	Nocardioides plantarum	526	1207	45.8	63.9	4.200000000000001e-158	AS9	False
+7	TR	A0A7S7SML2	Long-chain-fatty-acid--CoA ligase OS=Paludibaculum fermentans OX=1473598 GN=IRI77_04205 PE=3 SV=1	Paludibaculum fermentans	529	1133	45.7	61.8	1e-146	AS23	False
+10	TR	A0A327YEQ3	Fatty-acyl-CoA synthase OS=Paranoxybacillus vitaminiphilus OX=581036 GN=B0I26_106152 PE=3 SV=1	Paranoxybacillus vitaminiphilus	530	1118	44.6	60.9	1.9e-144	AS23	False
+17	TR	A0A7W8N809	Fatty-acyl-CoA synthase OS=Anoxybacillus mongoliensis OX=452565 GN=HNR43_000302 PE=3 SV=1	Anoxybacillus mongoliensis	530	1109	44.4	61.1	4.4e-143	AS23	False
+13	TR	A0AAW7TG18	Long-chain-fatty-acid--CoA ligase OS=Anoxybacillus gonensis OX=198467 GN=NBU54_02990 PE=3 SV=1	Anoxybacillus gonensis	530	1116	44.4	61.1	3.8e-144	AS23	False
+11	TR	A0A0D0S438	Short-chain-fatty-acid--CoA ligase OS=Anoxybacillus thermarum OX=404937 GN=LH47_00137 PE=3 SV=1	Anoxybacillus thermarum	530	1117	44.3	61.3	2.7e-144	AS23	False
+19	TR	A0A1V3FXI2	AMP-dependent synthetase OS=Anoxybacillus kestanbolensis OX=227476 GN=BO219_00535 PE=3 SV=1	Anoxybacillus kestanbolensis	530	1107	44.3	60.7	8.7e-143	AS23	False
+24	TR	A0A160F0Y9	AMP-binding enzyme family protein OS=Anoxybacteroides amylolyticum OX=294699 GN=GFC30_1069 PE=3 SV=1	Anoxybacteroides amylolyticum	530	1101	44.2	60.6	7e-142	AS23	False
+8	TR	A0A7V8SVJ5	Long-chain-fatty-acid--CoA ligase (Fragment) OS=Candidatus Acidiferrum panamense OX=2741543 GN=HRJ53_01695 PE=3 SV=1	Candidatus Acidiferrum panamense	528	1124	44.2	64.2	2.2e-145	AS23	False
+22	TR	A0A5Q2RT01	Long-chain-fatty-acid--CoA ligase OS=Actinomarinicola tropica OX=2789776 GN=GH723_15195 PE=3 SV=1	Actinomarinicola tropica	499	1100	44.2	62.0	3.6e-142	AS23	False
+16	TR	A0A840DNQ3	Fatty-acyl-CoA synthase OS=Anoxybacteroides voinovskiense OX=230470 GN=GGR02_002367 PE=3 SV=1	Anoxybacteroides voinovskiense	530	1111	44.1	60.7	2.2e-143	AS23	False
+15	TR	A0A7V9Z693	Fatty-acyl-CoA synthase OS=Thermaerobacillus caldiproteolyticus OX=247480 GN=HNR31_001628 PE=3 SV=1	Thermaerobacillus caldiproteolyticus	530	1113	44.1	60.5	1.1e-143	AS23	False
+12	TR	A0A7V9Z181	Fatty-acyl-CoA synthase OS=[Anoxybacillus] calidus OX=575178 GN=HNQ85_002345 PE=3 SV=1	[Anoxybacillus] calidus	530	1117	44.0	61.0	2.7e-144	AS23	False
+14	TR	A0AAU7ZN57	Long-chain-fatty-acid--CoA ligase OS=Tunturiibacter psychrotolerans OX=3069686 GN=RBB77_17195 PE=3 SV=1	Tunturiibacter psychrotolerans	531	1115	44.0	61.7	5.6e-144	AS23	False
+18	TR	A0A1I2TIK4	Fatty-acyl-CoA synthase OS=Desulfotruncus arcticus DSM 17038 OX=1121424 GN=SAMN05660649_02241 PE=3 SV=1	Desulfotruncus arcticus DSM 17038	526	1107	43.9	62.1	7.7e-143	AS23	False
+34	TR	C0QKB7	AcsL1 OS=Desulforapulum autotrophicum (strain ATCC 43914 / DSM 3382 / VKM B-1955 / HRM2) OX=177437 GN=acsL1 PE=3 SV=1	Desulforapulum autotrophicum (strain ATCC 43914 / DSM 3382 / VKM B-1955 / HRM2)	520	1094	43.8	61.2	5.8e-141	AS23	False
+40	TR	A0A1I0TGZ4	Fatty-acyl-CoA synthase OS=Anoxybacillus pushchinoensis OX=150248 GN=SAMN05216169_10272 PE=3 SV=1	Anoxybacillus pushchinoensis	530	1089	43.7	60.2	4.5e-140	AS23	False
+9	TR	A0A401G002	Uncharacterized protein OS=Desulfonema ishimotonii OX=45657 GN=DENIS_3526 PE=3 SV=1	Desulfonema ishimotonii	523	1118	43.7	60.7	1.5e-144	AS23	False
+21	TR	A0A7X0D9N3	Fatty-acyl-CoA synthase OS=Anoxybacillus tengchongensis OX=576944 GN=HNQ82_001475 PE=3 SV=1	Anoxybacillus tengchongensis	530	1105	43.7	60.4	1.6999999999999998e-142	AS23	False
+31	TR	A0A0K6GLB8	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Anoxybacillus suryakundensis OX=1325335 GN=Ga0061060_103116 PE=3 SV=1	Anoxybacillus suryakundensis	530	1096	43.7	60.2	4e-141	AS23	False
+44	TR	A0ABT5W8K7	Long-chain-fatty-acid--CoA ligase OS=Anoxybacteroides rupiense OX=311460 GN=PNH38_17645 PE=3 SV=1	Anoxybacteroides rupiense	530	1082	43.5	60.8	5.0999999999999996e-139	AS23	False
+47	TR	A0ABV3NMN2	Long-chain-fatty-acid--CoA ligase OS=Heyndrickxia faecalis OX=2824910 GN=ABC651_14940 PE=3 SV=1	Heyndrickxia faecalis	530	1080	43.5	59.4	9.999999999999999e-139	AS23	False
+32	TR	A0A6G9J266	Fatty-acyl-CoA synthase OS=Parageobacillus toebii NBRC 107807 OX=1223503 GN=HNR78_001204 PE=3 SV=1	Parageobacillus toebii NBRC 107807	530	1096	43.5	59.8	4e-141	AS23	False
+36	TR	A0A917W2P0	Acyl-CoA synthetase OS=Sporolactobacillus putidus OX=492735 GN=GCM10007968_18700 PE=3 SV=1	Sporolactobacillus putidus	529	1093	43.5	61.1	1.1e-140	AS23	False
+27	TR	A0A846MKU7	Fatty-acyl-CoA synthase OS=Saccharococcus thermophilus OX=29396 GN=BDD39_002740 PE=3 SV=1	Saccharococcus thermophilus	530	1099	43.5	60.3	1.4e-141	AS23	False
+35	TR	A0A8J8GIQ0	Long-chain-fatty-acid--CoA ligase OS=Calidifontibacillus erzurumensis OX=2741433 GN=HR057_15050 PE=3 SV=1	Calidifontibacillus erzurumensis	533	1094	43.4	61.5	8.799999999999999e-141	AS23	False
+29	TR	A0ABT8HTX0	Long-chain-fatty-acid--CoA ligase OS=Fictibacillus fluitans OX=3058422 GN=QYB97_07020 PE=3 SV=1	Fictibacillus fluitans	530	1097	43.3	63.3	2.8e-141	AS23	False
+20	TR	A0A1I0TFY2	Fatty-acyl-CoA synthase OS=Parageobacillus thermantarcticus OX=186116 GN=SAMN05192569_10272 PE=3 SV=1	Parageobacillus thermantarcticus	530	1105	43.3	61.1	1.6999999999999998e-142	AS23	False
+37	TR	A0ABT8E1T8	Long-chain-fatty-acid--CoA ligase OS=Fictibacillus terranigra OX=3058424 GN=QYF49_02315 PE=3 SV=1	Fictibacillus terranigra	530	1093	43.2	61.4	1.1e-140	AS23	False
+45	TR	G9QMW7	O-succinylbenzoate-CoA ligase OS=Bacillus smithii 7_3_47FAA OX=665952 GN=HMPREF1015_00884 PE=3 SV=1	Bacillus smithii 7_3_47FAA	530	1082	43.1	60.0	5.0999999999999996e-139	AS23	False
+38	TR	A0A7W8MW81	Fatty-acyl-CoA synthase OS=Anoxybacteroides tepidamans OX=265948 GN=HNQ34_002175 PE=3 SV=1	Anoxybacteroides tepidamans	530	1092	43.1	60.0	1.6e-140	AS23	False
+25	TR	A0ABX6C055	Long-chain-fatty-acid--CoA ligase OS=Tepidiforma bonchosmolovskayae OX=2601677 GN=Tbon_04830 PE=3 SV=1	Tepidiforma bonchosmolovskayae	528	1100	43.1	61.2	9.3e-142	AS23	False
+41	TR	U6STL0	AMP-dependent synthetase OS=Alkalihalophilus marmarensis DSM 21297 OX=1188261 GN=A33I_03180 PE=3 SV=1	Alkalihalophilus marmarensis DSM 21297	528	1088	43.1	62.8	5.9999999999999985e-140	AS23	False
+28	TR	S5ZA60	AMP-dependent synthetase OS=Geobacillus genomosp. 3 OX=1921421 GN=M493_03615 PE=3 SV=2	Geobacillus genomosp. 3	532	1098	43.0	61.2	2.1e-141	AS23	False
+23	TR	A0A2A9HAM1	Fatty-acyl-CoA synthase OS=Tepidiforma thermophila OX=2761530 GN=A9A59_0200 PE=3 SV=1	Tepidiforma thermophila	528	1102	42.9	61.2	4.6e-142	AS23	False
+50	TR	A0A7U9JBB2	AMP-dependent synthetase OS=Geobacillus thermopakistaniensis OX=1408282 GN=T260_08790 PE=3 SV=1	Geobacillus thermopakistaniensis	531	1080	42.9	60.9	1.1e-138	AS23	False
+49	TR	A0ABM5MEH1	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Geobacillus thermoleovorans CCB_US3_UF5 OX=1111068 GN=GTCCBUS3UF5_7710 PE=3 SV=1	Geobacillus thermoleovorans CCB_US3_UF5	531	1080	42.9	60.9	1.1e-138	AS23	False
+30	TR	A0ABT9VMH4	Fatty-acyl-CoA synthase OS=Aeribacillus alveayuensis OX=279215 GN=J2S06_001254 PE=3 SV=1	Aeribacillus alveayuensis	527	1096	42.8	61.2	3.6e-141	AS23	False
+42	TR	A0ABY7M9V7	Long-chain-fatty-acid--CoA ligase OS=Tepidiforma flava OX=3004094 GN=O0235_04790 PE=3 SV=1	Tepidiforma flava	528	1084	42.7	61.2	2.4e-139	AS23	False
+46	TR	A0AAN1D6C6	AMP-dependent synthetase OS=Parageobacillus thermoglucosidasius OX=1426 GN=BCV53_06965 PE=3 SV=1	Parageobacillus thermoglucosidasius	530	1081	42.5	60.0	7.2e-139	AS23	False
+43	TR	A0A084H1U1	AMP-dependent synthetase OS=Metabacillus indicus OX=246786 GN=GS18_0200750 PE=3 SV=1	Metabacillus indicus	529	1084	42.5	62.1	2.5e-139	AS23	False
+48	TR	A0A4R1QFM1	Fatty-acyl-CoA synthase OS=Thermolongibacillus altinsuensis OX=575256 GN=EDD69_104124 PE=3 SV=1	Thermolongibacillus altinsuensis	530	1080	42.3	59.6	9.999999999999999e-139	AS23	False
+1	TR	A0A942YD29	Acyl--CoA ligase OS=Neobacillus citreus OX=2833578 GN=KHB02_007380 PE=3 SV=1	Neobacillus citreus	538	1027	41.9	61.1	1.7000000000000002e-130	AS17	False
+39	TR	A0A917XV37	Acyl-CoA synthetase OS=Oceanobacillus indicireducens OX=1004261 GN=GCM10007971_08410 PE=3 SV=1	Oceanobacillus indicireducens	530	1089	41.8	60.7	4.5e-140	AS23	False
+26	TR	A0ABV6NI71	Long-chain-fatty-acid--CoA ligase OS=Halalkalibacter alkalisediminis OX=935616 GN=ACFFH4_13005 PE=3 SV=1	Halalkalibacter alkalisediminis	527	1099	41.5	61.7	1.3e-141	AS23	False
+33	TR	A0ABY9SY67	Long-chain-fatty-acid--CoA ligase OS=Brevibacillus brevis OX=1393 GN=RGB73_18850 PE=3 SV=1	Brevibacillus brevis	530	1096	41.3	61.2	4e-141	AS23	False
+10	TR	A0A562QDA1	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Halalkalibacter nanhaiisediminis OX=688079 GN=IQ10_02908 PE=3 SV=1	Halalkalibacter nanhaiisediminis	521	962	40.1	61.0	5.7e-121	AS17	False
+4	TR	A0ABV9Q175	Class I adenylate-forming enzyme family protein OS=Effusibacillus consociatus OX=1117041 GN=ACFO8Q_10815 PE=3 SV=1	Effusibacillus consociatus	543	989	39.9	59.9	1e-124	AS17	False
+6	TR	K6DTU2	AMP-dependent synthetase and ligase OS=Neobacillus bataviensis LMG 21833 OX=1117379 GN=BABA_00670 PE=3 SV=1	Neobacillus bataviensis LMG 21833	537	982	39.8	60.3	9.3e-124	AS17	False
+3	TR	A0A511V4V8	O-succinylbenzoic acid--CoA ligase OS=Aneurinibacillus danicus OX=267746 GN=ADA01nite_14140 PE=3 SV=1	Aneurinibacillus danicus	530	993	39.4	60.6	1.7e-125	AS17	False
+7	TR	A0A1B7LIH6	Long-chain fatty acid--CoA ligase OS=Desulfotomaculum copahuensis OX=1838280 GN=A6M21_16620 PE=3 SV=1	Desulfotomaculum copahuensis	548	974	39.4	61.0	2.1e-122	AS17	False
+19	TR	A0A942YBE8	Acyl--CoA ligase OS=Neobacillus citreus OX=2833578 GN=KHB02_023190 PE=3 SV=1	Neobacillus citreus	528	946	39.3	57.8	1.8e-118	AS17	False
+8	TR	A0A1I3P516	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Thermoflavimicrobium dichotomicum OX=46223 GN=SAMN05421852_10590 PE=3 SV=1	Thermoflavimicrobium dichotomicum	534	969	39.2	58.4	7.6e-122	AS17	False
+28	TR	A0A7U9JB22	O-succinylbenzoic acid--CoA ligase OS=Geobacillus thermopakistaniensis OX=1408282 GN=T260_09055 PE=3 SV=1	Geobacillus thermopakistaniensis	533	922	38.9	59.0	8.2e-115	AS17	False
+5	TR	A0A7I8D660	AMP-dependent ligase OS=Effusibacillus dendaii OX=2743772 GN=skT53_04620 PE=3 SV=1	Effusibacillus dendaii	540	984	38.7	62.1	5.1e-124	AS17	False
+13	TR	A0A2U1K5X3	Long-chain fatty acid--CoA ligase OS=Pueribacillus theae OX=2171751 GN=DCC39_03805 PE=3 SV=1	Pueribacillus theae	541	956	38.7	60.9	8.4e-120	AS17	False
+9	TR	A0A1I2QIE8	Long-chain acyl-CoA synthetase OS=Desulfotruncus arcticus DSM 17038 OX=1121424 GN=SAMN05660649_01257 PE=3 SV=1	Desulfotruncus arcticus DSM 17038	541	965	38.6	60.3	3.6999999999999997e-121	AS17	False
+18	TR	A0ABU0CUD2	Long-chain acyl-CoA synthetase OS=Caldalkalibacillus uzonensis OX=353224 GN=J2S00_002739 PE=3 SV=1	Caldalkalibacillus uzonensis	537	947	38.6	59.7	1.7000000000000004e-118	AS17	False
+23	TR	A0ABV6GVQ8	Class I adenylate-forming enzyme family protein OS=Geobacillus jurassicus OX=235932 GN=ACFFHQ_14405 PE=3 SV=1	Geobacillus jurassicus	533	924	38.5	58.8	4.1e-115	AS17	False
+34	TR	A0A7W8IMK2	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Anoxybacteroides tepidamans OX=265948 GN=HNQ34_000362 PE=3 SV=1	Anoxybacteroides tepidamans	532	914	38.5	58.4	1.3e-113	AS17	False
+11	TR	A0ABU5ZMW0	Class I adenylate-forming enzyme family protein OS=Ferviditalea candida OX=3108399 GN=VF724_19765 PE=3 SV=1	Ferviditalea candida	539	962	38.5	58.8	9.899999999999999e-121	AS17	False
+14	TR	A0A511V955	O-succinylbenzoic acid--CoA ligase OS=Aneurinibacillus danicus OX=267746 GN=ADA01nite_28700 PE=3 SV=1	Aneurinibacillus danicus	526	953	38.5	59.2	1.5e-119	AS17	False
+25	TR	A0A942YVS1	Acyl--CoA ligase OS=Neobacillus rhizophilus OX=2833579 GN=KHA99_12520 PE=3 SV=1	Neobacillus rhizophilus	528	922	38.5	57.1	7e-115	AS17	False
+30	TR	A0ABT5V8U0	Acyl--CoA ligase OS=Alkalihalobacterium chitinilyticum OX=2980103 GN=N7Z68_00600 PE=3 SV=1	Alkalihalobacterium chitinilyticum	534	921	38.2	58.6	1.2e-114	AS17	False
+47	TR	A0A942U1S4	O-succinylbenzoate--CoA ligase OS=Neobacillus rhizophilus OX=2833579 GN=menE PE=3 SV=1	Neobacillus rhizophilus	516	859	38.2	58.8	1.3e-105	AS17	False
+16	TR	A0ABR5MN58	Long-chain fatty acid--CoA ligase OS=Oceanobacillus caeni OX=405946 GN=AFL42_01645 PE=3 SV=1	Oceanobacillus caeni	517	950	38.1	61.1	3.2e-119	AS17	False
+42	TR	A0A1H4E1Y4	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Thalassobacillus cyri OX=571932 GN=SAMN05421743_108105 PE=3 SV=1	Thalassobacillus cyri	527	877	38.1	57.6	3.7e-108	AS17	False
+17	TR	A0A841PWM8	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Geomicrobium halophilum OX=549000 GN=HNR44_000692 PE=3 SV=1	Geomicrobium halophilum	518	949	38.0	59.3	4.7e-119	AS17	False
+31	TR	U6SSB6	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Alkalihalophilus marmarensis DSM 21297 OX=1188261 GN=A33I_04450 PE=3 SV=1	Alkalihalophilus marmarensis DSM 21297	525	917	38.0	58.9	3.6e-114	AS17	False
+24	TR	A0A0M2SQS1	AMP-dependent synthetase OS=Mesobacillus campisalis OX=1408103 GN=WQ57_16885 PE=3 SV=1	Mesobacillus campisalis	533	923	38.0	59.7	5.8e-115	AS17	False
+26	TR	A0A942YYM9	Acyl--CoA ligase OS=Neobacillus rhizophilus OX=2833579 GN=KHA99_22215 PE=3 SV=1	Neobacillus rhizophilus	528	922	37.9	60.0	7e-115	AS17	False
+32	TR	A0ABN5N7A7	Long-chain fatty acid--CoA ligase OS=Peribacillus butanolivorans OX=421767 GN=DTO10_24840 PE=3 SV=1	Peribacillus butanolivorans	529	917	37.8	59.2	4.1e-114	AS17	False
+2	TR	A0ABS4GW24	Long-chain acyl-CoA synthetase OS=Ammoniphilus resinae OX=861532 GN=J2Z37_004077 PE=3 SV=1	Ammoniphilus resinae	533	1008	37.6	61.9	1e-127	AS17	False
+27	TR	A0A327Y774	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Paranoxybacillus vitaminiphilus OX=581036 GN=B0I26_11546 PE=3 SV=1	Paranoxybacillus vitaminiphilus	529	922	37.6	60.5	7.3e-115	AS17	False
+29	TR	A0A2U1K5J0	Long-chain fatty acid--CoA ligase OS=Pueribacillus theae OX=2171751 GN=DCC39_03780 PE=3 SV=1	Pueribacillus theae	549	923	37.5	59.7	9.3e-115	AS17	False
+12	TR	A0A5K7Z6V0	AMP-dependent ligase OS=Desulfosarcina widdelii OX=947919 GN=DSCW_33560 PE=3 SV=1	Desulfosarcina widdelii	533	960	37.5	57.7	1.7e-120	AS17	False
+20	TR	K6DEM1	AMP-dependent synthetase and ligase OS=Neobacillus bataviensis LMG 21833 OX=1117379 GN=BABA_03919 PE=3 SV=1	Neobacillus bataviensis LMG 21833	529	929	37.5	58.8	6.5e-116	AS17	False
+41	TR	A0ABU0CQS9	Long-chain acyl-CoA synthetase OS=Caldalkalibacillus uzonensis OX=353224 GN=J2S00_000137 PE=3 SV=1	Caldalkalibacillus uzonensis	523	880	37.4	58.5	1.2e-108	AS17	False
+48	TR	A0A5Q2RLL4	AMP-binding protein OS=Actinomarinicola tropica OX=2789776 GN=GH723_07510 PE=4 SV=1	Actinomarinicola tropica	558	861	37.3	55.4	2.2e-105	AS17	False
+22	TR	A0ABN1AXQ0	Class I adenylate-forming enzyme family protein OS=Salinibacillus aidingensis OX=237684 GN=GCM10008986_09220 PE=3 SV=1	Salinibacillus aidingensis	539	927	37.2	59.2	1.7e-115	AS17	False
+15	TR	A0A1H9YY03	Long-chain acyl-CoA synthetase OS=Salinibacillus kushneri OX=237682 GN=SAMN05421676_101334 PE=3 SV=1	Salinibacillus kushneri	539	954	37.2	60.1	1.6e-119	AS17	False
+36	TR	A0ABW5RML8	Class I adenylate-forming enzyme family protein OS=Bacillus seohaeanensis OX=284580 GN=ACFSUL_03205 PE=3 SV=1	Bacillus seohaeanensis	533	908	37.2	59.3	1e-112	AS17	False
+37	TR	A0AB94IPK4	AMP-dependent synthetase and ligase OS=Neobacillus vireti LMG 21834 OX=1131730 GN=BAVI_09701 PE=3 SV=1	Neobacillus vireti LMG 21834	529	907	37.2	58.2	1.3e-112	AS17	False
+50	TR	A0A7I8D7Q2	Fatty-acid--CoA ligase OS=Effusibacillus dendaii OX=2743772 GN=skT53_11190 PE=3 SV=1	Effusibacillus dendaii	520	857	37.2	58.0	2.9e-105	AS17	False
+44	TR	A0A927HBD4	Long-chain fatty acid--CoA ligase OS=Peribacillus faecalis OX=2772559 GN=IEO70_02835 PE=3 SV=1	Peribacillus faecalis	515	866	37.1	59.6	1.1e-106	AS17	False
+39	TR	A0A5K7YJA4	Long-chain-fatty-acid--CoA ligase OS=Desulfosarcina alkanivorans OX=571177 GN=DSCA_36820 PE=3 SV=1	Desulfosarcina alkanivorans	515	889	37.1	58.0	4.2e-110	AS17	False
+38	TR	A0A023DAX8	Long-chain-fatty-acid--CoA ligase OS=Parageobacillus caldoxylosilyticus NBRC 107762 OX=1220594 GN=fadD PE=3 SV=1	Parageobacillus caldoxylosilyticus NBRC 107762	532	904	37.1	59.8	3.9e-112	AS17	False
+45	TR	A0A081B8M8	3-methylmercaptopropionyl-CoA ligase OS=Tepidicaulis marinus OX=1333998 GN=M2A_0895 PE=3 SV=1	Tepidicaulis marinus	583	868	37.0	56.4	4.1e-106	AS17	False
+21	TR	A0A514LF92	Long-chain fatty acid--CoA ligase OS=Salicibibacter halophilus OX=2502791 GN=EPH95_04410 PE=3 SV=1	Salicibibacter halophilus	543	928	36.8	59.9	1.4e-115	AS17	False
+49	TR	A0A1V2A5T8	AMP-dependent synthetase OS=Domibacillus epiphyticus OX=1714355 GN=BTO28_13015 PE=3 SV=1	Domibacillus epiphyticus	523	858	36.4	58.0	2.3e-105	AS17	False
+40	TR	A0ABT9VR58	Acyl-CoA synthetase (AMP-forming)/AMP-acid ligase II OS=Aeribacillus alveayuensis OX=279215 GN=J2S06_002435 PE=3 SV=1	Aeribacillus alveayuensis	535	883	36.3	56.7	5.9e-109	AS17	False
+35	TR	A0ABY4HGA5	Acyl--CoA ligase OS=Halobacillus amylolyticus OX=2932259 GN=MUO15_10455 PE=3 SV=1	Halobacillus amylolyticus	528	908	36.3	59.8	8.8e-113	AS17	False
+33	TR	A0A5C4TC51	Acyl--CoA ligase OS=Paenibacillus hemerocallicola OX=1172614 GN=FE784_12420 PE=3 SV=1	Paenibacillus hemerocallicola	521	916	36.2	58.6	4.5e-114	AS17	False
+43	TR	A0A3E0J7T9	Long-chain fatty acid--CoA ligase OS=Halobacillus trueperi OX=156205 GN=DYE48_11595 PE=3 SV=1	Halobacillus trueperi	524	867	36.0	56.8	1.1e-106	AS17	False
+46	TR	A0AAU0USQ3	Acyl--CoA ligase OS=Metallumcola ferriviriculae OX=3039180 GN=MFMK1_002131 PE=3 SV=1	Metallumcola ferriviriculae	532	861	35.3	57.5	1.0999999999999998e-105	AS17	False

@@ -155,11 +155,23 @@ above 30%                                 4
 above 40%                                 0
 ```
 
-So **this table contains no close relative of the proteins that work.**
-34.3% is barely better than the 28–29% template already found for the actives
-themselves. If the panel's reading is right, the correct next step is a BLAST
-of AS9/AS17/AS23 against all of UniProt — which this pipeline does not do, and
-which the panel's owners are better placed to run.
+So **this table contains no close relative of the proteins that work.** So the
+BLAST was run — against all of UniProtKB, not just this table:
+
+```
+best identity from this table      30.6%
+best identity from BLAST           65.3%   (A0A7Y0L7E5, S. harzensis)
+hits at >= 45% identity               57
+of the 150 hits, already in our 54,199:  0
+```
+
+**Not one.** And the reason is structural rather than a retrieval gap: 53 are
+annotated as long-chain-fatty-acid–CoA ligases and 25 as acyl-CoA
+synthetases — **thioester** chemistry. A reaction-anchored pipeline finds
+enzymes through the reaction they are *annotated* to catalyse, so it cannot
+reach one whose annotation names the wrong reaction. The panel proteins carry
+exactly those annotations, and three of them make the nylon amide bond
+anyway.
 
 **But the composition of that list is informative.** Among the 25 ANL
 candidates closest to a measured active, **12 came from the protein-name
