@@ -208,6 +208,52 @@ entry, 889 self-condensing, 36 carrying an independent geometric score.
 Measured and inherited distances are kept in separate columns and are not
 interchangeable.
 
+### Evaluating the FAMILY, not just the proteins
+
+A protein admitted by family membership inherits its family's score, so the
+decision that governs tens of thousands of candidates is made once per family
+— and it was being made implicitly, by an enrichment number with no statement
+of the chemistry behind it. `tools/evaluate_families.py` makes it explicit:
+**103 distinct families** (collapsed from 298 Pfam/InterPro signatures),
+each described by the MEASURED chemistry of its own validated seeds,
+recomputed from their reaction SMILES with the same screen the pipeline uses.
+
+| verdict | n | meaning |
+|---|---:|---|
+| `lead` | 54 | diacid donor + diamine acceptor, self-condensing, or bifunctional on one side |
+| `watch` | 16 | amide-forming but monofunctional, or the donor drags a large scaffold |
+| `reject` | 33 | terminal amide, or the members contradict the chemistry |
+
+The verdict is a transparent consequence of named columns (`donor_acids`,
+`acceptor_amines`, `aa_bb_pair`, `self_condensing`, `retains_acid/amine`,
+`donor_heavy_atoms`), never a fitted model, so a reader can disagree with one
+line and recompute it.
+
+**Three wrong answers were tried first**, and each is recorded in the tool so
+none is repeated:
+
+1. **Enumerate every member.** Built, then turned off (`ENUMERATE_DOMAIN=0`).
+   The validated families hold **257,297** members, and since every member
+   inherits its family's distance those rows would carry ~61 distinct scores
+   between them — a membership list, not an evaluation, burying the 816
+   reaction-anchored candidates under 300× their number of homologues. This is
+   a *targeted* search; completeness of a homology list trades against it.
+2. **Trust enrichment alone.** It says a family is unusually full of seeds, not
+   what bond they make. It admitted PF06276 (shared with FhuF, a ferric
+   siderophore *reductase*) and re-admitted CHAP, a peptidoglycan hydrolase.
+3. **Group families by name.** InterPro names every subdomain, so one enzyme
+   became seven rows. Grouping by seed-set overlap fixed it — but *containment*
+   over-merged catastrophically, chaining a broad fold to every narrow family
+   inside it (137 signatures in one blob) and flattening the hierarchy
+   InterPro encodes deliberately. Mutual similarity (Jaccard ≥ 0.7) keeps a
+   superfamily as its own, legitimately broader, row.
+
+**The check that seed chemistry alone misses:** γ-glutamyltranspeptidase scores
+0.64 on its seeds and would have been a lead, while **1,550 of its 1,594
+members** carry an annotation contradicting amide formation — it is a hydrolase
+family running a transpeptidation side reaction. A contradicted majority now
+rejects the family outright.
+
 ### Recall measured against an external list, not against our own tests
 
 Every control in `tests/` encodes an assumption this project already held, so

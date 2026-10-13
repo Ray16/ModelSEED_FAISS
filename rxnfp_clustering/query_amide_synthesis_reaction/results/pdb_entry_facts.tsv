@@ -1,4 +1,5 @@
 pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_metal	lookup_failed
+12JC	X-RAY DIFFRACTION	1.8		False		False	False
 1AIQ	X-RAY DIFFRACTION	2.2	UMP	False		False	False
 1AJM	X-RAY DIFFRACTION	2.4		False		False	False
 1AN5	X-RAY DIFFRACTION	2.6		False		False	False
@@ -49,6 +50,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1F4E	X-RAY DIFFRACTION	1.9		False		False	False
 1F4F	X-RAY DIFFRACTION	2.0		False		False	False
 1F4G	X-RAY DIFFRACTION	1.75		False		False	False
+1F68	SOLUTION NMR			False		False	False
 1FFL	X-RAY DIFFRACTION	2.94		False		False	False
 1FGG	X-RAY DIFFRACTION	2.3	MN;UDP;UNX	False		True	False
 1FGS	X-RAY DIFFRACTION	2.4	MG;POP	False		True	False
@@ -113,6 +115,9 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1MB9	X-RAY DIFFRACTION	2.11	AMP;ATP;MG;POP	True	AMP;ATP	True	False
 1MBZ	X-RAY DIFFRACTION	2.47	IOT;MG;POP	False		True	False
 1MC1	X-RAY DIFFRACTION	2.16	AMP;MG;POP	True	AMP	True	False
+1MD9	X-RAY DIFFRACTION	2.8		False		False	False
+1MDB	X-RAY DIFFRACTION	2.15	AMP;DBH	True	AMP	False	False
+1MDF	X-RAY DIFFRACTION	2.5		False		False	False
 1MEJ	X-RAY DIFFRACTION	2.0		False		False	False
 1MEN	X-RAY DIFFRACTION	2.23		False		False	False
 1MEO	X-RAY DIFFRACTION	1.72		False		False	False
@@ -154,6 +159,8 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1PV2	X-RAY DIFFRACTION	2.71		False		False	False
 1Q2U	X-RAY DIFFRACTION	1.6		False		False	False
 1QQQ	X-RAY DIFFRACTION	1.5		False		False	False
+1QSM	X-RAY DIFFRACTION	2.4		False		False	False
+1QSO	X-RAY DIFFRACTION	2.9		False		False	False
 1R0M	X-RAY DIFFRACTION	1.3		False		False	False
 1R8G	X-RAY DIFFRACTION	2.15		False		False	False
 1RBM	X-RAY DIFFRACTION	2.3		False		False	False
@@ -209,11 +216,14 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1X2M	SOLUTION NMR			False		False	False
 1XPY	X-RAY DIFFRACTION	2.3	MG	False		True	False
 1XS2	X-RAY DIFFRACTION	2.3	MG	False		True	False
+1YK3	X-RAY DIFFRACTION	2.2		False		False	False
 1YLE	X-RAY DIFFRACTION	1.7	CA	False		True	False
 1YOP	SOLUTION NMR		ZN	False		True	False
+1YR0	X-RAY DIFFRACTION	2.0		False		False	False
 1YRW	X-RAY DIFFRACTION	1.7		False		False	False
 1YVO	X-RAY DIFFRACTION	1.9		False		False	False
 1YWS	SOLUTION NMR		ZN	False		True	False
+1Z4R	X-RAY DIFFRACTION	1.74		False		False	False
 1Z73	X-RAY DIFFRACTION	2.5		False		False	False
 1Z74	X-RAY DIFFRACTION	2.7		False		False	False
 1Z75	X-RAY DIFFRACTION	2.4		False		False	False
@@ -228,6 +238,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 1ZRQ	X-RAY DIFFRACTION	2.2		False		False	False
 1ZS5	SOLUTION NMR			False		False	False
 21AK	ELECTRON MICROSCOPY	3.23		False		False	False
+29ZM	X-RAY DIFFRACTION	2.4	MG	False		True	False
 2A7X	X-RAY DIFFRACTION	1.7		False		False	False
 2A84	X-RAY DIFFRACTION	1.55	ATP;MG	True	ATP	True	False
 2A86	X-RAY DIFFRACTION	1.85		False		False	False
@@ -268,7 +279,9 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 2EQA	X-RAY DIFFRACTION	1.8		False		False	False
 2F00	X-RAY DIFFRACTION	2.5	MG	False		True	False
 2F5I	X-RAY DIFFRACTION	2.3		False		False	False
+2FE7	X-RAY DIFFRACTION	2.0		False		False	False
 2FKP	X-RAY DIFFRACTION	2.0		False		False	False
+2FL4	X-RAY DIFFRACTION	1.6		False		False	False
 2FMN	X-RAY DIFFRACTION	2.05		False		False	False
 2FMO	X-RAY DIFFRACTION	2.25		False		False	False
 2FQ1	X-RAY DIFFRACTION	2.3	MG	False		True	False
@@ -345,6 +358,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 2QK4	X-RAY DIFFRACTION	2.45		False		False	False
 2QM6	X-RAY DIFFRACTION	1.6		False		False	False
 2QMC	X-RAY DIFFRACTION	1.55		False		False	False
+2QML	X-RAY DIFFRACTION	1.55		False		False	False
 2R1T	X-RAY DIFFRACTION	1.7		False		False	False
 2R1U	X-RAY DIFFRACTION	1.5		False		False	False
 2R1V	X-RAY DIFFRACTION	1.7		False		False	False
@@ -420,6 +434,10 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 2YEP	X-RAY DIFFRACTION	2.7		False		False	False
 2YIC	X-RAY DIFFRACTION	1.96	CA;MG;TPP	False		True	False
 2YID	X-RAY DIFFRACTION	2.25	CA;MG;TD7	False		True	False
+2YRW	X-RAY DIFFRACTION	2.2		False		False	False
+2YRX	X-RAY DIFFRACTION	1.9		False		False	False
+2YS6	X-RAY DIFFRACTION	2.21		False		False	False
+2YS7	X-RAY DIFFRACTION	2.21		False		False	False
 2YW2	X-RAY DIFFRACTION	1.8		False		False	False
 2YYA	X-RAY DIFFRACTION	2.4		False		False	False
 2Z86	X-RAY DIFFRACTION	2.4	MN;UDP;UGA	False		True	False
@@ -471,6 +489,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 3CZ9	X-RAY DIFFRACTION	1.15		False		False	False
 3CZA	X-RAY DIFFRACTION	1.2		False		False	False
 3D3S	X-RAY DIFFRACTION	1.87		False		False	False
+3D7C	X-RAY DIFFRACTION	2.06		False		False	False
 3DA8	X-RAY DIFFRACTION	1.3	MG	False		True	False
 3DCJ	X-RAY DIFFRACTION	2.2	MG	False		True	False
 3DF7	X-RAY DIFFRACTION	1.87		False		False	False
@@ -479,6 +498,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 3DR8	X-RAY DIFFRACTION	1.95		False		False	False
 3E0K	X-RAY DIFFRACTION	2.52		False		False	False
 3E2H	X-RAY DIFFRACTION	3.8		False		False	False
+3EAG	X-RAY DIFFRACTION	2.55		False		False	False
 3ERY	X-RAY DIFFRACTION	1.95		False		False	False
 3EZG	X-RAY DIFFRACTION	1.15		False		False	False
 3F0A	X-RAY DIFFRACTION	2.5	ACO;NI	False		True	False
@@ -493,6 +513,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 3GAR	X-RAY DIFFRACTION	1.9		False		False	False
 3GG3	X-RAY DIFFRACTION	2.25		False		False	False
 3GUZ	X-RAY DIFFRACTION	1.67		False		False	False
+3HN7	X-RAY DIFFRACTION	1.65		False		False	False
 3I12	X-RAY DIFFRACTION	2.2		False		False	False
 3I3G	X-RAY DIFFRACTION	1.86		False		False	False
 3I3J	X-RAY DIFFRACTION	2.33		False		False	False
@@ -540,6 +561,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 3MJF	X-RAY DIFFRACTION	1.47	NA	False		False	False
 3MNF	X-RAY DIFFRACTION	2.97		False		False	False
 3MUE	X-RAY DIFFRACTION	2.701		False		False	False
+3MVN	X-RAY DIFFRACTION	1.9		False		False	False
 3NE7	X-RAY DIFFRACTION	2.3	BME;COA;NI	False		True	False
 3NRS	X-RAY DIFFRACTION	1.8		False		False	False
 3NZT	X-RAY DIFFRACTION	2.0		False		False	False
@@ -631,6 +653,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 4DO3	X-RAY DIFFRACTION	2.25	OHO	False		False	False
 4DOT	X-RAY DIFFRACTION	1.96		False		False	False
 4DPZ	X-RAY DIFFRACTION	1.25		False		False	False
+4E0A	X-RAY DIFFRACTION	1.801		False		False	False
 4E1B	X-RAY DIFFRACTION	1.8	MG;TXA	False		True	False
 4E1K	X-RAY DIFFRACTION	2.0		False		False	False
 4E8O	X-RAY DIFFRACTION	2.138		False		False	False
@@ -644,6 +667,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 4EW3	X-RAY DIFFRACTION	1.702		False		False	False
 4F0Y	X-RAY DIFFRACTION	2.56	MG	False		True	False
 4F2V	X-RAY DIFFRACTION	2.493		False		False	False
+4F6A	X-RAY DIFFRACTION	2.009		False		False	False
 4FA0	X-RAY DIFFRACTION	2.65		False		False	False
 4FE2	X-RAY DIFFRACTION	2.288	ADP;ASP;MG	True	ADP	True	False
 4FFL	X-RAY DIFFRACTION	1.5	ADP;CO3;MG;PO4	True	ADP	True	False
@@ -819,6 +843,8 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 5GIH	X-RAY DIFFRACTION	1.392		False		False	False
 5GII	X-RAY DIFFRACTION	1.294		False		False	False
 5GZZ	X-RAY DIFFRACTION	2.386		False		False	False
+5H84	X-RAY DIFFRACTION	2.0		False		False	False
+5H86	X-RAY DIFFRACTION	2.08		False		False	False
 5I47	X-RAY DIFFRACTION	2.35		False		False	False
 5IP5	X-RAY DIFFRACTION	1.66		False		False	False
 5J9F	X-RAY DIFFRACTION	2.1		False		False	False
@@ -842,6 +868,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 5LVR	X-RAY DIFFRACTION	2.05		False		False	False
 5MKX	X-RAY DIFFRACTION	1.68		False		False	False
 5ML0	X-RAY DIFFRACTION	1.64		False		False	False
+5MLJ	X-RAY DIFFRACTION	1.8		False		False	False
 5NRH	X-RAY DIFFRACTION	1.3	MG	False		True	False
 5NRI	X-RAY DIFFRACTION	1.5	DAL;MG	False		True	False
 5NU5	X-RAY DIFFRACTION	1.6		False		False	False
@@ -858,12 +885,15 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 5T3D	X-RAY DIFFRACTION	2.8	75C	False		False	False
 5T7D	X-RAY DIFFRACTION	1.4		False		False	False
 5T7E	X-RAY DIFFRACTION	1.8		False		False	False
+5TRL	X-RAY DIFFRACTION	2.299		False		False	False
+5TRM	X-RAY DIFFRACTION	2.9		False		False	False
 5TYH	X-RAY DIFFRACTION	2.1		False		False	False
 5UG4	X-RAY DIFFRACTION	2.15	CA	False		True	False
 5US1	X-RAY DIFFRACTION	2.48		False		False	False
 5UY8	X-RAY DIFFRACTION	2.39	MG	False		True	False
 5UZ0	X-RAY DIFFRACTION	1.79	MG	False		True	False
 5VMK	X-RAY DIFFRACTION	2.55		False		False	False
+5VVW	X-RAY DIFFRACTION	2.3		False		False	False
 5VYQ	X-RAY DIFFRACTION	1.6	K;LI;NA	False		False	False
 5WIF	X-RAY DIFFRACTION	2.5	K	False		False	False
 5WN0	X-RAY DIFFRACTION	2.6		False		False	False
@@ -925,6 +955,8 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 6E1Q	X-RAY DIFFRACTION	2.148		False		False	False
 6E1X	X-RAY DIFFRACTION	1.35		False		False	False
 6E5Z	X-RAY DIFFRACTION	1.35		False		False	False
+6E8O	X-RAY DIFFRACTION	1.7		False		False	False
+6E97	X-RAY DIFFRACTION	1.8		False		False	False
 6F87	X-RAY DIFFRACTION	2.62		False		False	False
 6F89	X-RAY DIFFRACTION	2.81		False		False	False
 6F8Y	X-RAY DIFFRACTION	2.86		False		False	False
@@ -940,6 +972,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 6IYK	X-RAY DIFFRACTION	2.45		False		False	False
 6IYL	X-RAY DIFFRACTION	2.56		False		False	False
 6J3O	X-RAY DIFFRACTION	2.11		False		False	False
+6J3P	X-RAY DIFFRACTION	1.598		False		False	False
 6K4N	ELECTRON MICROSCOPY	9.8		False		False	False
 6K5M	X-RAY DIFFRACTION	1.793		False		False	False
 6K80	X-RAY DIFFRACTION	1.28		False		False	False
@@ -990,6 +1023,8 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 6W43	X-RAY DIFFRACTION	1.99	MG	False		True	False
 6W4I	X-RAY DIFFRACTION	2.2	MN	False		True	False
 6W4T	X-RAY DIFFRACTION	2.77		False		False	False
+6X9F	X-RAY DIFFRACTION	2.35		False		False	False
+6X9N	X-RAY DIFFRACTION	2.25		False		False	False
 6XRC	X-RAY DIFFRACTION	2.45	ATP;MG	True	ATP	True	False
 6YUG	X-RAY DIFFRACTION	1.95		False		False	False
 6YVQ	X-RAY DIFFRACTION	1.48		False		False	False
@@ -1021,6 +1056,9 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 7B6Q	X-RAY DIFFRACTION	1.82		False		False	False
 7B9E	X-RAY DIFFRACTION	2.12		False		False	False
 7B9W	X-RAY DIFFRACTION	1.82		False		False	False
+7BVA	X-RAY DIFFRACTION	2.303	ZN	False		True	False
+7BVB	X-RAY DIFFRACTION	3.191	ZN	False		True	False
+7BY1	X-RAY DIFFRACTION	1.8	ZN	False		True	False
 7C3Z	X-RAY DIFFRACTION	1.957		False		False	False
 7C41	X-RAY DIFFRACTION	2.276	GDP;MG	False		True	False
 7C62	X-RAY DIFFRACTION	2.027		False		False	False
@@ -1051,6 +1089,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 7KWX	X-RAY DIFFRACTION	2.42		False		False	False
 7KX2	X-RAY DIFFRACTION	2.6		False		False	False
 7KX3	X-RAY DIFFRACTION	2.67		False		False	False
+7LGM	ELECTRON MICROSCOPY	4.4		False		False	False
 7LGN	X-RAY DIFFRACTION	3.1		False		False	False
 7LJE	X-RAY DIFFRACTION	2.607		False		False	False
 7LPG	X-RAY DIFFRACTION	2.08		False		False	False
@@ -1059,11 +1098,14 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 7LPJ	X-RAY DIFFRACTION	2.56	MN	False		True	False
 7MCR	X-RAY DIFFRACTION	1.9	MG	False		True	False
 7MEV	X-RAY DIFFRACTION	1.6	GOL;MG	False		True	False
+7MGQ	X-RAY DIFFRACTION	2.67	MG	False		True	False
+7OVV	X-RAY DIFFRACTION	1.45		False		False	False
 7PA2	X-RAY DIFFRACTION	1.21	6SI	False		False	False
 7PA3	X-RAY DIFFRACTION	1.42	6SI	False		False	False
 7PK0	X-RAY DIFFRACTION	1.5		False		False	False
 7PK1	X-RAY DIFFRACTION	1.65		False		False	False
 7PK2	X-RAY DIFFRACTION	1.25		False		False	False
+7QF6	X-RAY DIFFRACTION	1.87	K	False		False	False
 7QGS	X-RAY DIFFRACTION	2.0	ZN	False		True	False
 7QP5	X-RAY DIFFRACTION	1.92	FES	False		False	False
 7QYR	X-RAY DIFFRACTION	2.4		False		False	False
@@ -1102,9 +1144,12 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 7WGR	ELECTRON MICROSCOPY	2.92	CA;MG;TPP	False		True	False
 7XEZ	SOLUTION NMR		ZN	False		True	False
 7XFG	SOLUTION NMR		ZN	False		True	False
+7ZHC	X-RAY DIFFRACTION	1.819		False		False	False
+7ZKT	X-RAY DIFFRACTION	2.06	NA	False		False	False
 7ZOM	X-RAY DIFFRACTION	1.601		False		False	False
 7ZOT	X-RAY DIFFRACTION	1.735		False		False	False
 8CU9	X-RAY DIFFRACTION	2.65		False		False	False
+8DOF	X-RAY DIFFRACTION	2.6		False		False	False
 8E1D	SOLUTION NMR		ZN	False		True	False
 8E1H	X-RAY DIFFRACTION	1.9	ADP;I7P;MG	True	ADP	True	False
 8E1I	X-RAY DIFFRACTION	2.0	ATP;MG	True	ATP	True	False
@@ -1112,6 +1157,11 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 8E1S	X-RAY DIFFRACTION	1.72	ANP;MN	True	ANP	True	False
 8E1T	X-RAY DIFFRACTION	1.71	ANP;MG	True	ANP	True	False
 8E1V	X-RAY DIFFRACTION	1.9	ANP;MG	True	ANP	True	False
+8E6O	X-RAY DIFFRACTION	2.37		False		False	False
+8EGM	X-RAY DIFFRACTION	2.2		False		False	False
+8EGN	X-RAY DIFFRACTION	1.95		False		False	False
+8EWA	X-RAY DIFFRACTION	1.85		False		False	False
+8F5D	X-RAY DIFFRACTION	2.56		False		False	False
 8FBZ	X-RAY DIFFRACTION	1.59		False		False	False
 8FDX	X-RAY DIFFRACTION	2.07		False		False	False
 8FDY	X-RAY DIFFRACTION	2.06		False		False	False
@@ -1126,6 +1176,10 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 8G8P	X-RAY DIFFRACTION	1.83	GDP;GTP;MN;NA	False		True	False
 8GJH	X-RAY DIFFRACTION	3.6		False		False	False
 8GZC	X-RAY DIFFRACTION	2.0	ZN	False		True	False
+8H65	X-RAY DIFFRACTION	3.0		False		False	False
+8H66	X-RAY DIFFRACTION	2.8		False		False	False
+8H6C	X-RAY DIFFRACTION	2.5		False		False	False
+8H6D	X-RAY DIFFRACTION	3.26		False		False	False
 8HAG	ELECTRON MICROSCOPY	3.2		False		False	False
 8HAH	ELECTRON MICROSCOPY	3.9		False		False	False
 8HAI	ELECTRON MICROSCOPY	4.7		False		False	False
@@ -1139,6 +1193,7 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 8IZF	ELECTRON MICROSCOPY	3.85		False		False	False
 8K5S	X-RAY DIFFRACTION	2.65		False		False	False
 8K5T	X-RAY DIFFRACTION	2.8		False		False	False
+8KD8	X-RAY DIFFRACTION	2.581		False		False	False
 8OG1	X-RAY DIFFRACTION	1.58		False		False	False
 8OG4	X-RAY DIFFRACTION	2.1	MN;UDP	False		True	False
 8OW5	X-RAY DIFFRACTION	2.84	CA;CTP	False		True	False
@@ -1159,16 +1214,28 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 8QTR	ELECTRON MICROSCOPY	3.2	7PO	False		False	False
 8QZ6	ELECTRON MICROSCOPY	3.2	NAG;PLM	False		False	False
 8QZ7	ELECTRON MICROSCOPY	3.0	NAG	False		False	False
+8RMZ	X-RAY DIFFRACTION	1.739		False		False	False
 8V8W	X-RAY DIFFRACTION	1.65		False		False	False
 8V8X	X-RAY DIFFRACTION	2.3		False		False	False
 8V8Y	X-RAY DIFFRACTION	1.65	MG;NA	False		True	False
 8VW0	X-RAY DIFFRACTION	1.7	CA;MG	False		True	False
 8VW1	X-RAY DIFFRACTION	1.7	ADP;CA;MG	True	ADP	True	False
 8VW2	X-RAY DIFFRACTION	1.95	ATP;CA;MG	True	ATP	True	False
+8W9Z	ELECTRON MICROSCOPY	3.0	FE;MG;ZN	False		True	False
+8WA0	ELECTRON MICROSCOPY	2.7	FE;MG;ZN	False		True	False
+8WA1	ELECTRON MICROSCOPY	2.8	FE;MG;ZN	False		True	False
 8WMB	X-RAY DIFFRACTION	1.645		False		False	False
 8WME	X-RAY DIFFRACTION	2.283		False		False	False
 8X02	ELECTRON MICROSCOPY	3.3		False		False	False
+8XBN	X-RAY DIFFRACTION	1.35		False		False	False
+8XBP	X-RAY DIFFRACTION	1.99	CA	False		True	False
+8XJ5	X-RAY DIFFRACTION	2.04		False		False	False
+8XJ9	X-RAY DIFFRACTION	1.1		False		False	False
+8XJB	X-RAY DIFFRACTION	1.45		False		False	False
+8XJF	X-RAY DIFFRACTION	2.0		False		False	False
+8XJH	X-RAY DIFFRACTION	1.75		False		False	False
 8XLL	ELECTRON MICROSCOPY	3.1		False		False	False
+8XZV	ELECTRON MICROSCOPY	3.16	FE	False		False	False
 8Y2M	ELECTRON MICROSCOPY	3.07		False		False	False
 8Y2N	ELECTRON MICROSCOPY	3.19		False		False	False
 8Y9F	ELECTRON MICROSCOPY	3.3		False		False	False
@@ -1196,13 +1263,17 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 9CGG	X-RAY DIFFRACTION	2.01		False		False	False
 9CMX	X-RAY DIFFRACTION	1.63		False		False	False
 9CMY	X-RAY DIFFRACTION	1.69		False		False	False
+9D9K	X-RAY DIFFRACTION	2.63		False		False	False
+9D9M	X-RAY DIFFRACTION	2.32		False		False	False
 9DP1	X-RAY DIFFRACTION	2.29		False		False	False
 9DP2	X-RAY DIFFRACTION	1.99	MN	False		True	False
 9DP3	X-RAY DIFFRACTION	2.1		False		False	False
 9DP4	X-RAY DIFFRACTION	2.25	MG	False		True	False
 9DQW	X-RAY DIFFRACTION	1.45	MG;UMA	False		True	False
+9DSB	X-RAY DIFFRACTION	1.5	K;NA	False		False	False
 9DZ8	ELECTRON MICROSCOPY	2.51		False		False	False
 9EOT	ELECTRON MICROSCOPY	3.02	NAG;PLM	False		False	False
+9EPC	ELECTRON MICROSCOPY	3.0	CA;DTT;FE;K;ZN	False		True	False
 9FZY	ELECTRON MICROSCOPY	2.71	NI;SF4;XCC	False		True	False
 9FZZ	ELECTRON MICROSCOPY	2.65	NI;SF4;XCC	False		True	False
 9G00	ELECTRON MICROSCOPY	2.88	NI;SF4;XCC	False		True	False
@@ -1219,12 +1290,20 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 9MY6	X-RAY DIFFRACTION	2.07	CA	False		True	False
 9MY7	X-RAY DIFFRACTION	2.53	CA	False		True	False
 9MZA	X-RAY DIFFRACTION	2.1		False		False	False
+9NIJ	X-RAY DIFFRACTION	1.51		False		False	False
+9NIK	X-RAY DIFFRACTION	1.44		False		False	False
+9NIL	X-RAY DIFFRACTION	1.44		False		False	False
+9NIM	X-RAY DIFFRACTION	1.44		False		False	False
 9NJT	ELECTRON MICROSCOPY	5.72		False		False	False
+9NNQ	X-RAY DIFFRACTION	2.5	MG	False		True	False
+9NNR	X-RAY DIFFRACTION	2.9	MG	False		True	False
 9NOM	X-RAY DIFFRACTION	2.87		False		False	False
 9NX6	X-RAY DIFFRACTION	2.48		False		False	False
 9O4G	ELECTRON MICROSCOPY	3.42	MN;UDP	False		True	False
+9OA7	X-RAY DIFFRACTION	2.6	MG	False		True	False
 9Q8Z	ELECTRON MICROSCOPY	3.0	MN;NAG;UDP	False		True	False
 9QUR	X-RAY DIFFRACTION	2.65	AGS;MG	True	AGS	True	False
+9S8I	X-RAY DIFFRACTION	2.3		False		False	False
 9V5H	ELECTRON MICROSCOPY	4.0		False		False	False
 9W3Z	ELECTRON MICROSCOPY	3.36		False		False	False
 9WI0	ELECTRON MICROSCOPY	2.89		False		False	False

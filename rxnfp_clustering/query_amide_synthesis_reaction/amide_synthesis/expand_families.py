@@ -60,6 +60,7 @@ precisely so this is never confused with a per-reaction measurement.
 from __future__ import annotations
 
 import json
+import functools
 import os
 from concurrent.futures import ThreadPoolExecutor
 
@@ -82,6 +83,23 @@ CLADE_PAGES = int(os.environ.get('CLADE_PAGES', 8))
 # Polite to a public API; the same cap the reaction routes use.
 THREADS = 6
 
+# The signature axis to expand along. Pfam was the only one for a long time,
+# and that was a silent limit rather than a decision: EVERY family route here
+# grouped proteins by Pfam, so anything Pfam splits differently from the
+# curated signature databases was unreachable. InterPro aggregates TIGRFAM/
+# NCBIfam, PANTHER, PIRSF and HAMAP, which classify by curated function
+# rather than by domain match, and it is enriched far harder - IPR048223
+# carries 3 validated seeds among 6 total members (500 per 1k) against the
+# best Pfam entry's 47 per 1k.
+#
+# The enrichment, tiering and passenger-removal logic is identical for both,
+# so it is parameterised rather than copied: a fix to the shared logic then
+# applies to both axes instead of one.
+SIGNATURES = {
+    'pfam': {'prefix': 'PF', 'column': 'pfam', 'xref': 'xref:pfam-'},
+    'interpro': {'prefix': 'IPR', 'column': 'interpro', 'xref': 'xref:interpro-'},
+}
+
 # Page budgets per tier. Raised after 45 queries reported saturation: a
 # saturated query means the family had MORE informative members than we
 # returned, and which ones you got was decided by UniProt's relevance order
@@ -94,8 +112,76 @@ TIERS = (
     ('diverse', 'fragment:false', 3),
 )
 
+# EVALUATE THE WHOLE FAMILY, do not sample it.
+#
+# The tiers above are a sampling scheme: they spend a page budget on the most
+# informative members and accept that the rest are never seen. Measured, that
+# returned 26,074 of 257,297 members of the validated families - 10.1%. Which
+# 90% went missing was decided by UniProt's relevance ordering inside a
+# truncation, which is not a criterion at all.
+#
+# It was defended on the grounds that the shortlist caps any family at 12
+# members, so the unseen members could not reach the deliverable anyway. That
+# confuses the deliverable with the evaluation: a member that is never
+# retrieved is never scored, never annotated, and cannot be found again by
+# anyone reading the outputs. For a family whose chemistry the enrichment test
+# has already VALIDATED, there is no reason to see a tenth of it.
+#
+# IMPLEMENTED, THEN TURNED OFF ON PURPOSE - default '0'.
+#
+# Enumerating the 61 validated family groups in full is 257,297 members. It
+# was built, and then the arithmetic settled it against itself: every
+# enumerated member INHERITS its family's substrate distance, so 257,297 rows
+# would carry about 61 distinct scores between them. That is a membership
+# list, not an evaluation. It cannot rank, it cannot prioritise, and it buries
+# the 816 reaction-anchored candidates - the only ones whose chemistry was
+# actually measured - under three hundred times their number of homologues.
+#
+# This pipeline is a TARGETED search: chemistry first, then the enzymes that
+# do it. Completeness of a homology list is not the same goal and trades
+# against it.
+#
+# Kept behind the flag because the capability is real and the right answer
+# depends on the question. If a specific family needs exhaustive coverage -
+# for a phylogenetic analysis, or to pick assay targets within one family -
+# set ENUMERATE_DOMAIN=1, ideally with the family set narrowed first.
+ENUMERATE_DOMAIN = os.environ.get('ENUMERATE_DOMAIN', '0') == '1'
+ENUMERATE_PAGE_SIZE = int(os.environ.get('ENUMERATE_PAGE_SIZE', 500))
+# Slack over ceil(size/page) so a family that grew since it was sized is still
+# finished rather than silently truncated.
+ENUMERATE_SLACK_PAGES = int(os.environ.get('ENUMERATE_SLACK_PAGES', 4))
 
-def seed_families(candidates, floor=FAMILY_SD_FLOOR):
+
+def member_tier(row):
+    """Label a member from its OWN record, not from the query that found it.
+
+    Under the tiered scheme the label said which filter retrieved a protein,
+    which is an artifact of the sampling order. Enumerating removes the query
+    as a variable, so the tier becomes a property of the member.
+    """
+    if str(row.get('Reviewed', '')).lower().startswith('reviewed'):
+        return 'reviewed'
+    if str(row.get('PDB', '') or '').strip():
+        return 'structure'
+    if 'protein level' in str(row.get('Protein existence', '')).lower():
+        return 'protein_evidence'
+    return 'diverse'
+
+
+def _enumerate_family(job, search=uniprot.search):
+    """Every member of one family, in as few requests as the API allows."""
+    pfam, size, xref = job
+    pages = max(1, -(-int(size or 0) // ENUMERATE_PAGE_SIZE)) + ENUMERATE_SLACK_PAGES
+    rows, failed, saturated = search(f'{xref}{pfam}',
+                                     size=ENUMERATE_PAGE_SIZE,
+                                     max_pages=pages)
+    for row in rows:
+        row['discovery_tier'] = member_tier(row)
+        row['seed_pfam'] = pfam
+    return pfam, 'enumerated', rows, failed, saturated
+
+
+def seed_families(candidates, floor=FAMILY_SD_FLOOR, signature='pfam'):
     """Pfam accessions worth expanding, with the evidence that justifies each.
 
     A candidate's `pfam` column lists every domain on the protein and any of
@@ -103,12 +189,14 @@ def seed_families(candidates, floor=FAMILY_SD_FLOOR):
     passengers are removed afterwards by `classify_families`, which has the
     family sizes needed to tell a catalytic domain from a co-occurring one.
     """
+    config = SIGNATURES[signature]
     out = {}
     for row in candidates.itertuples():
         distance = float(getattr(row, 'substrate_distance', 0.0) or 0.0)
-        for accession in str(getattr(row, 'pfam', '') or '').split(';'):
+        raw = str(getattr(row, config['column'], '') or '')
+        for accession in raw.replace(',', ';').split(';'):
             accession = accession.strip()
-            if not accession.startswith('PF'):
+            if not accession.startswith(config['prefix']):
                 continue
             slot = out.setdefault(accession, {
                 'pfam': accession, 'family': getattr(row, 'family', ''),
@@ -124,12 +212,12 @@ def seed_families(candidates, floor=FAMILY_SD_FLOOR):
             if v['family_substrate_distance'] >= floor}
 
 
-def family_size(pfam, count=None):
-    """Total UniProtKB entries carrying this domain."""
+def family_size(pfam, count=None, signature='pfam'):
+    """Total UniProtKB entries carrying this signature."""
     if count is None:
         from .uniprot import total_results
         count = total_results
-    return count(f'xref:pfam-{pfam}')
+    return count(f"{SIGNATURES[signature]['xref']}{pfam}")
 
 
 def classify_families(families, sizes,
@@ -197,8 +285,8 @@ def _fetch_clade(job, search=uniprot.search):
 
 
 def _fetch_tier(job, search=uniprot.search):
-    pfam, tier, filt, pages = job
-    query = f'xref:pfam-{pfam} AND {filt}'
+    pfam, tier, filt, pages, xref = job
+    query = f'{xref}{pfam} AND {filt}'
     rows, failed, saturated = search(query, max_pages=pages)
     for row in rows:
         row['discovery_tier'] = tier
@@ -206,14 +294,28 @@ def _fetch_tier(job, search=uniprot.search):
     return pfam, tier, rows, failed, saturated
 
 
-def expand(families, search=uniprot.search, threads=THREADS):
-    """Retrieve tiered members for every family. Returns (frame, report)."""
-    jobs = [(pfam, tier, filt, pages)
-            for pfam in families
-            for tier, filt, pages in TIERS]
+def expand(families, search=uniprot.search, threads=THREADS,
+           signature='pfam', enumerate_all=None):
+    """Retrieve members for every family. Returns (frame, report).
+
+    `enumerate_all` takes the whole family; the tiered path samples it under a
+    page budget and is kept for comparison. See ENUMERATE_DOMAIN.
+    """
+    xref = SIGNATURES[signature]['xref']
+    if enumerate_all is None:
+        enumerate_all = ENUMERATE_DOMAIN
+    if enumerate_all:
+        jobs = [(pfam, meta.get('family_size', 0), xref)
+                for pfam, meta in families.items()]
+        fetch = _enumerate_family
+    else:
+        jobs = [(pfam, tier, filt, pages, xref)
+                for pfam in families
+                for tier, filt, pages in TIERS]
+        fetch = _fetch_tier
     collected, report = {}, []
     with ThreadPoolExecutor(max_workers=threads) as pool:
-        results = pool.map(lambda j: _fetch_tier(j, search), jobs)
+        results = pool.map(lambda j: fetch(j, search), jobs)
         for pfam, tier, rows, failed, saturated in results:
             report.append({'pfam': pfam, 'tier': tier, 'returned': len(rows),
                            'failed': failed, 'saturated': saturated})
@@ -243,15 +345,58 @@ def main():
     from .paths import ensure_directories
     ensure_directories()
     candidates = pd.read_csv(RES / 'candidates_ranked.tsv', sep='\t')
-    families = seed_families(candidates)
 
-    # Family sizes are the denominator of the enrichment test; fetch them
-    # without downloading the families themselves.
-    with ThreadPoolExecutor(max_workers=THREADS) as pool:
-        sizes = dict(zip(families, pool.map(family_size, families)))
-    families = classify_families(families, sizes)
+    # `candidates_ranked.tsv` keeps only a display subset and has no InterPro
+    # column, so seeding the second axis from it silently produced nothing -
+    # the stage ran, reported "0 signatures seeded" for InterPro, and looked
+    # fine. The full stage-04 record has it, and that stage runs before this
+    # one, so it is joined rather than re-fetched.
+    details = RES / 'enzymes_uniprot.tsv'
+    if details.exists() and 'interpro' not in candidates.columns:
+        full = (pd.read_csv(details, sep='\t', low_memory=False)
+                .drop_duplicates('uniprot').set_index('uniprot'))
+        if 'interpro' in full.columns:
+            candidates['interpro'] = candidates.uniprot.map(full.interpro)
+    missing = ('interpro' not in candidates.columns
+               or not candidates.interpro.notna().any())
+    if missing:
+        print('WARNING: no InterPro column available; the second signature '
+              'axis will seed nothing', flush=True)
 
-    for route in ('domain', 'clade', 'passenger'):
+    # Both signature axes, scored by the same enrichment test. Pfam groups by
+    # domain match; InterPro aggregates the curated databases (TIGRFAM/NCBIfam,
+    # PANTHER, PIRSF, HAMAP) that group by function, and splits families Pfam
+    # merges. Expanding only Pfam was a silent limit, not a decision.
+    families = {}
+    for signature in SIGNATURES:
+        seeded = seed_families(candidates, signature=signature)
+        if not seeded:
+            continue
+        sizer = functools.partial(family_size, signature=signature)
+        with ThreadPoolExecutor(max_workers=THREADS) as pool:
+            sizes = dict(zip(seeded, pool.map(sizer, seeded)))
+        seeded = classify_families(seeded, sizes)
+        for accession, meta in seeded.items():
+            meta['signature'] = signature
+        print(f'{signature}: {len(seeded)} signatures seeded', flush=True)
+        families.update(seeded)
+
+    # The second axis contributes to the DOMAIN route only, and that is a
+    # measured decision rather than caution. The clade route is keyed on the
+    # seed PROTEIN's UniRef50 cluster, not on the signature, and 580 of the
+    # 614 seed proteins are shared between the axes - so letting InterPro feed
+    # it re-expanded the same clusters and took clade_homolog from 28,029 to
+    # 44,061 rows. That is ortholog count on the weakest evidence tier, not
+    # new chemistry, and the shortlist caps any family at 12 members so it
+    # cannot reach the deliverable either. The domain route is different: it
+    # is keyed on the signature, and InterPro splits families Pfam merges, so
+    # it genuinely adds families (23 -> 81).
+    CLADE_AXIS = 'pfam'
+    for accession, meta in families.items():
+        if meta.get('signature') != CLADE_AXIS and meta.get('route') == 'clade':
+            meta['route'] = 'clade_duplicate_axis'
+
+    for route in ('domain', 'clade', 'passenger', 'clade_duplicate_axis'):
         chosen = {k: v for k, v in families.items() if v['route'] == route}
         print(f'\n{route}: {len(chosen)} families', flush=True)
         for pfam, meta in sorted(chosen.items(),
@@ -261,9 +406,27 @@ def main():
                   f'enrich={meta["enrichment_per_1k"]:>7.3f}/1k  '
                   f'{meta["family"][:40]}', flush=True)
 
-    domain_families = {k: v for k, v in families.items()
-                       if v['route'] == 'domain'}
-    frame, report = expand(domain_families)
+    frames, reports = [], []
+    for signature in SIGNATURES:
+        chosen = {k: v for k, v in families.items()
+                  if v['route'] == 'domain' and v.get('signature') == signature}
+        if not chosen:
+            continue
+        part, part_report = expand(chosen, signature=signature)
+        if len(part):
+            part['signature_db'] = signature
+            frames.append(part)
+        if len(part_report):
+            part_report['signature_db'] = signature
+            reports.append(part_report)
+    frame = (pd.concat(frames, ignore_index=True) if frames
+             else pd.DataFrame(columns=['Entry']))
+    report = (pd.concat(reports, ignore_index=True) if reports
+              else pd.DataFrame())
+    # One protein can be reached by both axes; the first keeps it, and
+    # `signature_db` records which.
+    if len(frame) and 'Entry' in frame.columns:
+        frame = frame.drop_duplicates('Entry').reset_index(drop=True)
 
     clades = clade_seeds(families)
     print(f'\nclade route: {len(clades)} seed proteins', flush=True)

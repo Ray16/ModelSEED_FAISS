@@ -1,22 +1,22 @@
 {
-  "families_seeded": 81,
-  "route_domain": 21,
+  "families_seeded": 298,
+  "route_domain": 81,
   "route_clade": 41,
-  "route_passenger_dropped": 19,
-  "clade_seed_proteins": 279,
-  "members_retrieved": 32795,
-  "new_accessions": 32487,
+  "route_passenger_dropped": 66,
+  "clade_seed_proteins": 426,
+  "members_retrieved": 46692,
+  "new_accessions": 46254,
   "by_tier": {
-    "clade_uniref50": 28229,
-    "diverse": 3966,
-    "reviewed": 473,
-    "protein_evidence": 100,
-    "structure": 27
+    "clade_uniref50": 37138,
+    "diverse": 8526,
+    "reviewed": 807,
+    "protein_evidence": 176,
+    "structure": 45
   },
   "by_evidence": {
-    "clade_homolog": 28229,
-    "family_homolog": 4566
+    "clade_homolog": 37138,
+    "family_homolog": 9554
   },
-  "saturated_queries": 31,
+  "saturated_queries": 87,
   "failed_queries": 0
 }

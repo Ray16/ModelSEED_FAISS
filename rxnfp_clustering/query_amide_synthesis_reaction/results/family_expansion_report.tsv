@@ -1,364 +1,751 @@
-pfam	tier	returned	failed	saturated
-PF04958	reviewed	53	False	False
-PF04958	structure	1	False	False
-PF04958	protein_evidence	2	False	False
-PF04958	diverse	300	False	True
-PF29831	reviewed	53	False	False
-PF29831	structure	1	False	False
-PF29831	protein_evidence	2	False	False
-PF29831	diverse	300	False	True
-PF06276	reviewed	20	False	False
-PF06276	structure	11	False	False
-PF06276	protein_evidence	25	False	False
-PF06276	diverse	300	False	True
-PF04183	reviewed	19	False	False
-PF04183	structure	10	False	False
-PF04183	protein_evidence	24	False	False
-PF04183	diverse	300	False	True
-PF03738	reviewed	10	False	False
-PF03738	structure	4	False	False
-PF03738	protein_evidence	7	False	False
-PF03738	diverse	300	False	True
-PF02655	reviewed	11	False	False
-PF02655	structure	4	False	False
-PF02655	protein_evidence	9	False	False
-PF02655	diverse	300	False	True
-PF21360	reviewed	3	False	False
-PF21360	structure	2	False	False
-PF21360	protein_evidence	4	False	False
-PF21360	diverse	300	False	True
-PF27279	reviewed	1	False	False
-PF27279	structure	0	False	False
-PF27279	protein_evidence	1	False	False
-PF27279	diverse	127	False	False
-PF22998	reviewed	2	False	False
-PF22998	structure	0	False	False
-PF22998	protein_evidence	2	False	False
-PF22998	diverse	300	False	True
-PF18419	reviewed	15	False	False
-PF18419	structure	2	False	False
-PF18419	protein_evidence	3	False	False
-PF18419	diverse	300	False	True
-PF04262	reviewed	119	False	False
-PF04262	structure	4	False	False
-PF04262	protein_evidence	5	False	False
-PF04262	diverse	300	False	True
-PF18130	reviewed	8	False	False
-PF18130	structure	1	False	False
-PF18130	protein_evidence	16	False	False
-PF18130	diverse	300	False	True
-PF15632	reviewed	3	False	False
-PF15632	structure	0	False	False
-PF15632	protein_evidence	8	False	False
-PF15632	diverse	300	False	True
-PF13535	reviewed	12	False	False
-PF13535	structure	3	False	False
-PF13535	protein_evidence	14	False	False
-PF13535	diverse	300	False	True
-PF03917	reviewed	12	False	False
-PF03917	structure	7	False	False
-PF03917	protein_evidence	67	False	False
-PF03917	diverse	300	False	True
-PF03199	reviewed	12	False	False
-PF03199	structure	5	False	False
-PF03199	protein_evidence	48	False	False
-PF03199	diverse	300	False	True
-PF08443	reviewed	195	False	False
-PF08443	structure	12	False	False
-PF08443	protein_evidence	27	False	False
-PF08443	diverse	300	False	True
-PF08444	reviewed	14	False	False
-PF08444	structure	1	False	False
-PF08444	protein_evidence	29	False	False
-PF08444	diverse	300	False	True
-PF06021	reviewed	14	False	False
-PF06021	structure	1	False	False
-PF06021	protein_evidence	42	False	False
-PF06021	diverse	300	False	True
-PF18921	reviewed	5	False	False
-PF18921	structure	1	False	False
-PF18921	protein_evidence	3	False	False
-PF18921	diverse	300	False	True
-PF03599	reviewed	22	False	False
-PF03599	structure	6	False	False
-PF03599	protein_evidence	11	False	False
-PF03599	diverse	300	False	True
-PF01225	clade:Q9WY79	4	False	False
-PF01225	clade:P22188	519	False	False
-PF01225	clade:P9WJL3	607	False	False
-PF01225	clade:Q819Q0	214	False	False
-PF01225	clade:A0QF47	0	False	False
-PF01225	clade:A3MY85	0	False	False
-PF01225	clade:A2C0L8	0	False	False
-PF01225	clade:A1BJY3	0	False	False
-PF01225	clade:A0A5C5V6T3	0	False	False
-PF01225	clade:A0A5B9P7B8	1	False	False
-PF01225	clade:A0A2X4W351	0	False	False
-PF01225	clade:P11880	378	False	False
-PF01225	clade:A0A067A2L9	0	False	False
-PF01225	clade:A0A066RTU2	0	False	False
-PF01225	clade:A0A090TD66	0	False	False
-PF01225	clade:A0A069P074	0	False	False
-PF01225	clade:A0A024HP64	0	False	False
-PF01225	clade:P43948	0	False	False
-PF01225	clade:A0A072N110	0	False	False
-PF01225	clade:P37773	800	False	True
-PF01225	clade:Q2FWH4	82	False	False
-PF01225	clade:A0A091BTM3	0	False	False
-PF01225	clade:A0A0H2WWP1	0	False	False
-PF01225	clade:A0A0C1M413	0	False	False
-PF01225	clade:A0A0D1A923	0	False	False
-PF01225	clade:O83401	2	False	False
-PF01225	clade:P45061	153	False	False
-PF01225	clade:P0A5L5	0	False	False
-PF01225	clade:P9WJL1	367	False	False
-PF01225	clade:O69556	0	False	False
-PF01225	clade:O33804	541	False	False
-PF01225	clade:O05953	32	False	False
-PF02875	clade:Q2FZP6	114	False	False
-PF02875	clade:A4VU28	0	False	False
-PF02875	clade:A2RG75	0	False	False
-PF02875	clade:A3CPL6	0	False	False
-PF02875	clade:P65480	0	False	False
-PF02875	clade:Q9A196	80	False	False
-PF02875	clade:Q97PS1	171	False	False
-PF02875	clade:A1WC11	238	False	False
-PF02875	clade:A0A517YHC3	1	False	False
-PF02875	clade:A0A518C8G2	0	False	False
-PF02875	clade:A0A150HGB9	1	False	False
-PF02875	clade:A0A2S9YL87	2	False	False
-PF02875	clade:P08192	654	False	False
-PF02875	clade:I6Y0R5	103	False	False
-PF02875	clade:P15925	20	False	False
-PF02875	clade:A0A075TYP7	0	False	False
-PF02875	clade:A0A069CWM7	0	False	False
-PF02875	clade:A0A0A0DI87	0	False	False
-PF02875	clade:Q89AT2	1	False	False
-PF02875	clade:P57265	3	False	False
-PF02875	clade:Q05865	78	False	False
-PF02875	clade:D4GW05	125	False	False
-PF02875	clade:P43775	100	False	False
-PF02875	clade:O86109	0	False	False
-PF02875	clade:P56947	243	False	False
-PF02875	clade:P58572	0	False	False
-PF02875	clade:P73833	0	False	False
-PF02875	clade:A0A011NXF2	0	False	False
-PF02875	clade:Q9KGY4	0	False	False
-PF02875	clade:A0A091BC42	0	False	False
-PF02875	clade:A0A017RZF2	0	False	False
-PF05257	clade:P0AES0	181	False	False
-PF05257	clade:P0AES1	0	False	False
-PF05257	clade:A0A089Q039	0	False	False
-PF05257	clade:A0A085JCS5	112	False	False
-PF05257	clade:A0A084ZP18	0	False	False
-PF05257	clade:O60993	0	False	False
-PF05257	clade:Q9GT49	37	False	False
-PF05257	clade:P90518	14	False	False
-PF00583	clade:Q7W980	53	False	False
-PF00583	clade:Q9KL03	443	False	False
-PF00583	clade:Q5YW78	79	False	False
-PF00583	clade:Q6PR33	4	False	False
-PF00583	clade:O52249	152	False	False
-PF00583	clade:Q4JQJ5	13	False	False
-PF00583	clade:Q5WL79	52	False	False
-PF00583	clade:O06059	29	False	False
-PF00583	clade:Q9AP35	2	False	False
-PF00583	clade:O17731	12	False	False
-PF00583	clade:Q8PYC8	9	False	False
-PF00583	clade:Q6LYX3	3	False	False
-PF00583	clade:O34895	15	False	False
-PF00583	clade:Q96F10	151	False	False
-PF00583	clade:Q9HL57	3	False	False
-PF00583	clade:O41136	4	False	False
-PF00583	clade:P21340	345	False	False
-PF00583	clade:P48026	0	False	False
-PF00583	clade:P21673	404	False	False
-PF00583	clade:P39909	35	False	False
-PF00583	clade:Q9JHD1	230	False	False
-PF00583	clade:Q92831	0	False	False
-PF00583	clade:D4FZ53	0	False	False
-PF00583	clade:A0ACG2T9L4	0	False	False
-PF00583	clade:A0A5Q2N904	2	False	False
-PF00583	clade:A0AA48MBG9	0	False	False
-PF00583	clade:Q7PCJ8	0	False	False
-PF00583	clade:Q7PCJ9	0	False	False
-PF00583	clade:Q6P8J2	249	False	False
-PF00583	clade:Q87M87	0	False	False
-PF00583	clade:O33289	800	False	True
-PF00583	clade:P46854	131	False	False
-PF00583	clade:E9P8D2	36	False	False
-PF00583	clade:P76112	198	False	False
-PF00583	clade:A0A7W3N8P7	0	False	False
-PF00583	clade:P22567	513	False	False
-PF00583	clade:P71043	518	False	False
-PF00583	clade:P16426	6	False	False
-PF00583	clade:P0A6C5	800	False	True
-PF00583	clade:D3ZVU9	0	False	False
-PF00583	clade:A4IGD2	219	False	False
-PF00583	clade:Q3UGX3	0	False	False
-PF00583	clade:Q8N9F0	67	False	False
-PF00583	clade:Q09927	2	False	False
-PF00583	clade:A4II32	11	False	False
-PF00583	clade:A0A0R4J0R4	0	False	False
-PF00583	clade:A0A498MJK4	0	False	False
-PF00583	clade:A0A073CHS4	0	False	False
-PF00583	clade:A0A060JNH8	4	False	False
-PF00583	clade:P31668	201	False	False
-PF00583	clade:Q57146	9	False	False
-PF00583	clade:Q94521	58	False	False
-PF00583	clade:A0AAD4NRG4	0	False	False
-PF00583	clade:A0A0K3AVV8	2	False	False
-PF00583	clade:Q9VMG0	14	False	False
-PF00583	clade:A0A0K3ASV9	0	False	False
-PF00583	clade:A0A0K3ASB6	0	False	False
-PF00583	clade:F0IWS9	11	False	False
-PF00120	clade:Q9RDS6	800	False	True
-PF00120	clade:I3R584	6	False	False
-PF00120	clade:P78061	244	False	False
-PF00120	clade:Q9KZC7	322	False	False
-PF00120	clade:A0A090RTN3	0	False	False
-PF00120	clade:A0A090DU11	0	False	False
-PF00120	clade:A0A085G9T0	0	False	False
-PF00120	clade:A0A024HPU7	0	False	False
-PF00120	clade:A9ZPH9	298	False	False
-PF00120	clade:F5RH07	0	False	False
-PF00120	clade:Q936T0	2	False	False
-PF00120	clade:A0A076FWF4	0	False	False
-PF00120	clade:A0A076FWE9	3	False	False
-PF00120	clade:A0A076FWE5	0	False	False
-PF00120	clade:A0A076FWE2	6	False	False
-PF00120	clade:A0A076FWD7	0	False	False
-PF00120	clade:A0A076FWD2	0	False	False
-PF13302	clade:P0A951	537	False	False
-PF13302	clade:A0A0M3KKU5	0	False	False
-PF13302	clade:P0A952	0	False	False
-PF13302	clade:P0DKR8	0	False	False
-PF13523	clade:Q47317	96	False	False
-PF13523	clade:A0A0N0E3P2	1	False	False
-PF13523	clade:R9PKF4	4	False	False
-PF13523	clade:A0A081FVG2	1	False	False
-PF13523	clade:A0A0H3KEY2	0	False	False
-PF13523	clade:A0A085APY7	0	False	False
-PF13523	clade:A0A090TAI0	1	False	False
-PF13523	clade:A0A0H2M073	0	False	False
-PF13523	clade:B6EP94	2	False	False
-PF00501	clade:P18204	22	False	False
-PF00501	clade:A0ABN8GJE2	0	False	False
-PF00501	clade:A0ABY1UDC9	0	False	False
-PF00501	clade:A0ABY1UG66	0	False	False
-PF00501	clade:A2QF28	14	False	False
-PF00501	clade:P11454	158	False	False
-PF00501	clade:P10378	564	False	False
-PF00501	clade:Q8XBV9	0	False	False
-PF00501	clade:Q8XBV3	0	False	False
-PF00501	clade:P29698	0	False	False
-PF07478	clade:A0KKW8	0	False	False
-PF07478	clade:P07862	468	False	False
-PF07478	clade:P0A1F0	0	False	False
-PF07478	clade:B2I1J3	0	False	False
-PF07478	clade:B1YSS6	0	False	False
-PF07478	clade:A3NZL3	0	False	False
-PF07478	clade:P56191	164	False	False
-PF07478	clade:Q9CM00	67	False	False
-PF07478	clade:P0A6J8	520	False	False
-PF07478	clade:Q47720	45	False	False
-PF07478	clade:P29753	0	False	False
-PF02458	clade:A0A3B6DKZ2	0	False	False
-PF02458	clade:A9ZPJ6	171	False	False
-PF02458	clade:O80467	97	False	False
-PF02458	clade:A0A810VTJ1	0	False	False
-PF02458	clade:A0A810VNI3	0	False	False
-PF02458	clade:A9ZPJ7	0	False	False
-PF02458	clade:Q9FNP9	83	False	False
-PF02458	clade:A0A1P8AJ18	0	False	False
-PF02458	clade:A0A810VUK9	0	False	False
-PF02458	clade:Q8GYW8	0	False	False
-PF02458	clade:A0ACB7U3P2	0	False	False
-PF02458	clade:A0ACB7U3M2	0	False	False
-PF02458	clade:A0ACB7U3E5	0	False	False
-PF02458	clade:A0ACG4MG23	0	False	False
-PF02458	clade:A0ACB7U3K3	0	False	False
-PF02458	clade:A0ACB7U3H6	0	False	False
-PF02458	clade:A0ACB7U3H2	1	False	False
-PF02458	clade:A0ABD1HAQ7	0	False	False
-PF02458	clade:D2Y3X2	52	False	False
-PF02458	clade:Q58VT1	0	False	False
-PF02458	clade:A0A2G3D6U1	0	False	False
-PF13527	clade:A0A5Q2N3I0	2	False	False
-PF13527	clade:A0A0F8B563	4	False	False
-PF01071	clade:Q8DXM9	77	False	False
-PF01071	clade:Q8Y3R3	23	False	False
-PF01071	clade:A0AMA3	0	False	False
-PF04107	clade:Q8ZR41	0	False	False
-PF04107	clade:P77213	189	False	False
-PF04107	clade:D4GZN2	279	False	False
-PF04107	clade:P9WPK7	230	False	False
-PF04107	clade:P9WPK9	0	False	False
-PF02955	clade:P04425	800	False	True
-PF02955	clade:A0A482PU20	0	False	False
-PF02955	clade:O32463	183	False	False
-PF02955	clade:B7UHZ4	0	False	False
-PF00303	clade:P0A884	0	False	False
-PF00303	clade:P0CI79	57	False	False
-PF00303	clade:P11044	800	False	True
-PF00809	clade:P13009	800	False	True
-PF02569	clade:P31663	800	False	True
-PF02569	clade:P9WIL4	0	False	False
-PF02569	clade:Q2FV22	45	False	False
-PF02569	clade:P9WIL5	340	False	False
-PF02569	clade:Q6G456	38	False	False
-PF02569	clade:Q6GDK5	0	False	False
-PF02569	clade:P65659	0	False	False
-PF02569	clade:A0R580	63	False	False
-PF01960	clade:Q9K8V3	178	False	False
-PF01960	clade:P9WPZ3	689	False	False
-PF01960	clade:Q07908	800	False	True
-PF01960	clade:Q8CK24	0	False	False
-PF01019	clade:P54422	54	False	False
-PF01019	clade:P18956	380	False	False
-PF01019	clade:P63186	0	False	False
-PF01019	clade:Q05053	0	False	False
-PF01019	clade:P74181	2	False	False
-PF01019	clade:P36267	739	False	False
-PF01019	clade:P15557	220	False	False
-PF01019	clade:O05218	185	False	False
-PF01812	clade:A0R3H2	242	False	False
-PF01812	clade:P0AC28	186	False	False
-PF18030	clade:Q8TKX5	0	False	False
-PF18030	clade:Q8Q0M5	36	False	False
-PF18030	clade:A0A7G8PSQ3	0	False	False
-PF08267	clade:Q8CWX6	271	False	False
-PF08267	clade:P80877	181	False	False
-PF08267	clade:A1KTL3	0	False	False
-PF08267	clade:A1T007	0	False	False
-PF08267	clade:A1JIE5	0	False	False
-PF08267	clade:A0AJD5	0	False	False
-PF08267	clade:P25665	800	False	True
-PF08267	clade:Q9JZQ2	0	False	False
-PF00550	clade:P0ADI4	357	False	False
-PF00550	clade:P0ADI6	0	False	False
-PF00550	clade:P0ADI5	0	False	False
-PF01808	clade:P31939	800	False	True
-PF01808	clade:P31335	367	False	False
-PF01808	clade:Q9CWJ9	0	False	False
-PF01808	clade:Q5R5C2	0	False	False
-PF01808	clade:Q0VCK0	0	False	False
-PF01808	clade:A0A8L2QB21	0	False	False
-PF01808	clade:A0A3Q1LXU9	0	False	False
-PF01808	clade:O35567	0	False	False
-PF03074	clade:P19468	0	False	False
-PF03074	clade:Q9W3K5	114	False	False
-PF03074	clade:P97494	102	False	False
-PF03074	clade:P48506	462	False	False
-PF18603	clade:A0A0A0BKG4	1	False	False
-PF18603	clade:A0A081P5H3	1	False	False
-PF18603	clade:A0A5E4ZBZ2	1	False	False
-PF18603	clade:A0A5E4ZCZ5	0	False	False
-PF13420	clade:A0A086ZP37	0	False	False
-PF13420	clade:P21861	17	False	False
-PF04060	clade:O27748	0	False	False
-PF04060	clade:Q57576	31	False	False
-PF04060	clade:Q8PV87	0	False	False
-PF04060	clade:O29871	0	False	False
-PF04060	clade:Q50539	58	False	False
-PF04060	clade:Q8PZ09	0	False	False
+pfam	tier	returned	failed	saturated	signature_db
+PF04958	reviewed	53	False	False	pfam
+PF04958	structure	1	False	False	pfam
+PF04958	protein_evidence	2	False	False	pfam
+PF04958	diverse	300	False	True	pfam
+PF29831	reviewed	53	False	False	pfam
+PF29831	structure	1	False	False	pfam
+PF29831	protein_evidence	2	False	False	pfam
+PF29831	diverse	300	False	True	pfam
+PF06276	reviewed	20	False	False	pfam
+PF06276	structure	11	False	False	pfam
+PF06276	protein_evidence	25	False	False	pfam
+PF06276	diverse	300	False	True	pfam
+PF04183	reviewed	19	False	False	pfam
+PF04183	structure	10	False	False	pfam
+PF04183	protein_evidence	24	False	False	pfam
+PF04183	diverse	300	False	True	pfam
+PF03738	reviewed	10	False	False	pfam
+PF03738	structure	4	False	False	pfam
+PF03738	protein_evidence	7	False	False	pfam
+PF03738	diverse	300	False	True	pfam
+PF02655	reviewed	11	False	False	pfam
+PF02655	structure	4	False	False	pfam
+PF02655	protein_evidence	9	False	False	pfam
+PF02655	diverse	300	False	True	pfam
+PF21360	reviewed	3	False	False	pfam
+PF21360	structure	2	False	False	pfam
+PF21360	protein_evidence	4	False	False	pfam
+PF21360	diverse	300	False	True	pfam
+PF27279	reviewed	1	False	False	pfam
+PF27279	structure	0	False	False	pfam
+PF27279	protein_evidence	1	False	False	pfam
+PF27279	diverse	127	False	False	pfam
+PF01996	reviewed	30	False	False	pfam
+PF01996	structure	2	False	False	pfam
+PF01996	protein_evidence	4	False	False	pfam
+PF01996	diverse	300	False	True	pfam
+PF22998	reviewed	2	False	False	pfam
+PF22998	structure	0	False	False	pfam
+PF22998	protein_evidence	2	False	False	pfam
+PF22998	diverse	300	False	True	pfam
+PF18419	reviewed	15	False	False	pfam
+PF18419	structure	2	False	False	pfam
+PF18419	protein_evidence	3	False	False	pfam
+PF18419	diverse	300	False	True	pfam
+PF04262	reviewed	119	False	False	pfam
+PF04262	structure	4	False	False	pfam
+PF04262	protein_evidence	5	False	False	pfam
+PF04262	diverse	300	False	True	pfam
+PF13535	reviewed	12	False	False	pfam
+PF13535	structure	3	False	False	pfam
+PF13535	protein_evidence	14	False	False	pfam
+PF13535	diverse	300	False	True	pfam
+PF18130	reviewed	8	False	False	pfam
+PF18130	structure	1	False	False	pfam
+PF18130	protein_evidence	16	False	False	pfam
+PF18130	diverse	300	False	True	pfam
+PF15632	reviewed	3	False	False	pfam
+PF15632	structure	0	False	False	pfam
+PF15632	protein_evidence	8	False	False	pfam
+PF15632	diverse	300	False	True	pfam
+PF03917	reviewed	12	False	False	pfam
+PF03917	structure	7	False	False	pfam
+PF03917	protein_evidence	67	False	False	pfam
+PF03917	diverse	300	False	True	pfam
+PF03199	reviewed	12	False	False	pfam
+PF03199	structure	5	False	False	pfam
+PF03199	protein_evidence	48	False	False	pfam
+PF03199	diverse	300	False	True	pfam
+PF08443	reviewed	195	False	False	pfam
+PF08443	structure	12	False	False	pfam
+PF08443	protein_evidence	27	False	False	pfam
+PF08443	diverse	300	False	True	pfam
+PF08444	reviewed	14	False	False	pfam
+PF08444	structure	1	False	False	pfam
+PF08444	protein_evidence	29	False	False	pfam
+PF08444	diverse	300	False	True	pfam
+PF06021	reviewed	14	False	False	pfam
+PF06021	structure	1	False	False	pfam
+PF06021	protein_evidence	42	False	False	pfam
+PF06021	diverse	300	False	True	pfam
+PF18921	reviewed	5	False	False	pfam
+PF18921	structure	1	False	False	pfam
+PF18921	protein_evidence	3	False	False	pfam
+PF18921	diverse	300	False	True	pfam
+PF18603	reviewed	1	False	False	pfam
+PF18603	structure	1	False	False	pfam
+PF18603	protein_evidence	1	False	False	pfam
+PF18603	diverse	300	False	True	pfam
+PF03599	reviewed	22	False	False	pfam
+PF03599	structure	6	False	False	pfam
+PF03599	protein_evidence	11	False	False	pfam
+PF03599	diverse	300	False	True	pfam
+IPR007041	reviewed	53	False	False	interpro
+IPR007041	structure	1	False	False	interpro
+IPR007041	protein_evidence	2	False	False	interpro
+IPR007041	diverse	300	False	True	interpro
+IPR063993	reviewed	53	False	False	interpro
+IPR063993	structure	1	False	False	interpro
+IPR063993	protein_evidence	2	False	False	interpro
+IPR063993	diverse	300	False	True	interpro
+IPR005761	reviewed	212	False	False	interpro
+IPR005761	structure	9	False	False	interpro
+IPR005761	protein_evidence	15	False	False	interpro
+IPR005761	diverse	300	False	True	interpro
+IPR007310	reviewed	19	False	False	interpro
+IPR007310	structure	10	False	False	interpro
+IPR007310	protein_evidence	24	False	False	interpro
+IPR007310	diverse	300	False	True	interpro
+IPR022770	reviewed	20	False	False	interpro
+IPR022770	structure	11	False	False	interpro
+IPR022770	protein_evidence	25	False	False	interpro
+IPR022770	diverse	300	False	True	interpro
+IPR037455	reviewed	19	False	False	interpro
+IPR037455	structure	10	False	False	interpro
+IPR037455	protein_evidence	24	False	False	interpro
+IPR037455	diverse	300	False	True	interpro
+IPR051705	reviewed	5	False	False	interpro
+IPR051705	structure	2	False	False	interpro
+IPR051705	protein_evidence	5	False	False	interpro
+IPR051705	diverse	300	False	True	interpro
+IPR005494	reviewed	10	False	False	interpro
+IPR005494	structure	4	False	False	interpro
+IPR005494	protein_evidence	7	False	False	interpro
+IPR005494	diverse	300	False	True	interpro
+IPR003806	reviewed	11	False	False	interpro
+IPR003806	structure	4	False	False	interpro
+IPR003806	protein_evidence	9	False	False	interpro
+IPR003806	diverse	300	False	True	interpro
+IPR048764	reviewed	3	False	False	interpro
+IPR048764	structure	2	False	False	interpro
+IPR048764	protein_evidence	4	False	False	interpro
+IPR048764	diverse	300	False	True	interpro
+IPR023890	reviewed	3	False	False	interpro
+IPR023890	structure	1	False	False	interpro
+IPR023890	protein_evidence	3	False	False	interpro
+IPR023890	diverse	114	False	False	interpro
+IPR012772	reviewed	18	False	False	interpro
+IPR012772	structure	1	False	False	interpro
+IPR012772	protein_evidence	3	False	False	interpro
+IPR012772	diverse	300	False	True	interpro
+IPR053158	reviewed	3	False	False	interpro
+IPR053158	structure	0	False	False	interpro
+IPR053158	protein_evidence	1	False	False	interpro
+IPR053158	diverse	300	False	True	interpro
+IPR048223	reviewed	1	False	False	interpro
+IPR048223	structure	0	False	False	interpro
+IPR048223	protein_evidence	1	False	False	interpro
+IPR048223	diverse	6	False	False	interpro
+IPR060135	reviewed	1	False	False	interpro
+IPR060135	structure	0	False	False	interpro
+IPR060135	protein_evidence	1	False	False	interpro
+IPR060135	diverse	127	False	False	interpro
+IPR017650	reviewed	52	False	False	interpro
+IPR017650	structure	0	False	False	interpro
+IPR017650	protein_evidence	1	False	False	interpro
+IPR017650	diverse	300	False	True	interpro
+IPR051016	reviewed	22	False	False	interpro
+IPR051016	structure	10	False	False	interpro
+IPR051016	protein_evidence	39	False	False	interpro
+IPR051016	diverse	300	False	True	interpro
+IPR022525	reviewed	3	False	False	interpro
+IPR022525	structure	0	False	False	interpro
+IPR022525	protein_evidence	3	False	False	interpro
+IPR022525	diverse	300	False	True	interpro
+IPR019432	reviewed	18	False	False	interpro
+IPR019432	structure	6	False	False	interpro
+IPR019432	protein_evidence	9	False	False	interpro
+IPR019432	diverse	300	False	True	interpro
+IPR027455	reviewed	2	False	False	interpro
+IPR027455	structure	1	False	False	interpro
+IPR027455	protein_evidence	3	False	False	interpro
+IPR027455	diverse	300	False	True	interpro
+IPR016376	reviewed	6	False	False	interpro
+IPR016376	structure	4	False	False	interpro
+IPR016376	protein_evidence	22	False	False	interpro
+IPR016376	diverse	300	False	True	interpro
+IPR008225	reviewed	29	False	False	interpro
+IPR008225	structure	2	False	False	interpro
+IPR008225	protein_evidence	4	False	False	interpro
+IPR008225	diverse	300	False	True	interpro
+IPR002847	reviewed	30	False	False	interpro
+IPR002847	structure	2	False	False	interpro
+IPR002847	protein_evidence	4	False	False	interpro
+IPR002847	diverse	300	False	True	interpro
+IPR019943	reviewed	14	False	False	interpro
+IPR019943	structure	1	False	False	interpro
+IPR019943	protein_evidence	2	False	False	interpro
+IPR019943	diverse	300	False	True	interpro
+IPR023661	reviewed	14	False	False	interpro
+IPR023661	structure	1	False	False	interpro
+IPR023661	protein_evidence	2	False	False	interpro
+IPR023661	diverse	300	False	True	interpro
+IPR023659	reviewed	15	False	False	interpro
+IPR023659	structure	1	False	False	interpro
+IPR023659	protein_evidence	2	False	False	interpro
+IPR023659	diverse	300	False	True	interpro
+IPR055100	reviewed	2	False	False	interpro
+IPR055100	structure	0	False	False	interpro
+IPR055100	protein_evidence	2	False	False	interpro
+IPR055100	diverse	300	False	True	interpro
+IPR053013	reviewed	2	False	False	interpro
+IPR053013	structure	0	False	False	interpro
+IPR053013	protein_evidence	2	False	False	interpro
+IPR053013	diverse	300	False	True	interpro
+IPR007370	reviewed	119	False	False	interpro
+IPR007370	structure	4	False	False	interpro
+IPR007370	protein_evidence	5	False	False	interpro
+IPR007370	diverse	300	False	True	interpro
+IPR006335	reviewed	14	False	False	interpro
+IPR006335	structure	2	False	False	interpro
+IPR006335	protein_evidence	3	False	False	interpro
+IPR006335	diverse	300	False	True	interpro
+IPR006334	reviewed	119	False	False	interpro
+IPR006334	structure	4	False	False	interpro
+IPR006334	protein_evidence	5	False	False	interpro
+IPR006334	diverse	300	False	True	interpro
+IPR040657	reviewed	15	False	False	interpro
+IPR040657	structure	2	False	False	interpro
+IPR040657	protein_evidence	3	False	False	interpro
+IPR040657	diverse	300	False	True	interpro
+IPR005757	reviewed	2	False	False	interpro
+IPR005757	structure	3	False	False	interpro
+IPR005757	protein_evidence	4	False	False	interpro
+IPR005757	diverse	300	False	True	interpro
+IPR041472	reviewed	8	False	False	interpro
+IPR041472	structure	1	False	False	interpro
+IPR041472	protein_evidence	16	False	False	interpro
+IPR041472	diverse	300	False	True	interpro
+IPR031046	reviewed	3	False	False	interpro
+IPR031046	structure	0	False	False	interpro
+IPR031046	protein_evidence	12	False	False	interpro
+IPR031046	diverse	300	False	True	interpro
+IPR005615	reviewed	12	False	False	interpro
+IPR005615	structure	7	False	False	interpro
+IPR005615	protein_evidence	68	False	False	interpro
+IPR005615	diverse	300	False	True	interpro
+IPR014042	reviewed	12	False	False	interpro
+IPR014042	structure	6	False	False	interpro
+IPR014042	protein_evidence	51	False	False	interpro
+IPR014042	diverse	300	False	True	interpro
+IPR014709	reviewed	12	False	False	interpro
+IPR014709	structure	6	False	False	interpro
+IPR014709	protein_evidence	50	False	False	interpro
+IPR014709	diverse	300	False	True	interpro
+IPR014049	reviewed	12	False	False	interpro
+IPR014049	structure	6	False	False	interpro
+IPR014049	protein_evidence	60	False	False	interpro
+IPR014049	diverse	300	False	True	interpro
+IPR037013	reviewed	12	False	False	interpro
+IPR037013	structure	6	False	False	interpro
+IPR037013	protein_evidence	53	False	False	interpro
+IPR037013	diverse	300	False	True	interpro
+IPR004887	reviewed	12	False	False	interpro
+IPR004887	structure	5	False	False	interpro
+IPR004887	protein_evidence	48	False	False	interpro
+IPR004887	diverse	300	False	True	interpro
+IPR013651	reviewed	195	False	False	interpro
+IPR013651	structure	12	False	False	interpro
+IPR013651	protein_evidence	27	False	False	interpro
+IPR013651	diverse	300	False	True	interpro
+IPR004666	reviewed	186	False	False	interpro
+IPR004666	structure	6	False	False	interpro
+IPR004666	protein_evidence	18	False	False	interpro
+IPR004666	diverse	300	False	True	interpro
+IPR053432	reviewed	4	False	False	interpro
+IPR053432	structure	0	False	False	interpro
+IPR053432	protein_evidence	1	False	False	interpro
+IPR053432	diverse	54	False	False	interpro
+IPR058167	reviewed	2	False	False	interpro
+IPR058167	structure	0	False	False	interpro
+IPR058167	protein_evidence	2	False	False	interpro
+IPR058167	diverse	33	False	False	interpro
+IPR010313	reviewed	14	False	False	interpro
+IPR010313	structure	1	False	False	interpro
+IPR010313	protein_evidence	43	False	False	interpro
+IPR010313	diverse	300	False	True	interpro
+IPR013652	reviewed	14	False	False	interpro
+IPR013652	structure	1	False	False	interpro
+IPR013652	protein_evidence	29	False	False	interpro
+IPR013652	diverse	300	False	True	interpro
+IPR015938	reviewed	14	False	False	interpro
+IPR015938	structure	1	False	False	interpro
+IPR015938	protein_evidence	42	False	False	interpro
+IPR015938	diverse	300	False	True	interpro
+IPR011963	reviewed	5	False	False	interpro
+IPR011963	structure	4	False	False	interpro
+IPR011963	protein_evidence	5	False	False	interpro
+IPR011963	diverse	300	False	True	interpro
+IPR031039	reviewed	2	False	False	interpro
+IPR031039	structure	0	False	False	interpro
+IPR031039	protein_evidence	1	False	False	interpro
+IPR031039	diverse	16	False	False	interpro
+IPR024050	reviewed	10	False	False	interpro
+IPR024050	structure	3	False	False	interpro
+IPR024050	protein_evidence	33	False	False	interpro
+IPR024050	diverse	300	False	True	interpro
+IPR011810	reviewed	5	False	False	interpro
+IPR011810	structure	3	False	False	interpro
+IPR011810	protein_evidence	5	False	False	interpro
+IPR011810	diverse	300	False	True	interpro
+IPR044019	reviewed	5	False	False	interpro
+IPR044019	structure	1	False	False	interpro
+IPR044019	protein_evidence	3	False	False	interpro
+IPR044019	diverse	300	False	True	interpro
+IPR040570	reviewed	1	False	False	interpro
+IPR040570	structure	1	False	False	interpro
+IPR040570	protein_evidence	1	False	False	interpro
+IPR040570	diverse	300	False	True	interpro
+IPR016041	reviewed	22	False	False	interpro
+IPR016041	structure	6	False	False	interpro
+IPR016041	protein_evidence	11	False	False	interpro
+IPR016041	diverse	300	False	True	interpro
+IPR051069	reviewed	21	False	False	interpro
+IPR051069	structure	6	False	False	interpro
+IPR051069	protein_evidence	10	False	False	interpro
+IPR051069	diverse	300	False	True	interpro
+IPR016218	reviewed	10	False	False	interpro
+IPR016218	structure	2	False	False	interpro
+IPR016218	protein_evidence	4	False	False	interpro
+IPR016218	diverse	300	False	True	interpro
+IPR023427	reviewed	9	False	False	interpro
+IPR023427	structure	0	False	False	interpro
+IPR023427	protein_evidence	2	False	False	interpro
+IPR023427	diverse	100	False	False	interpro
+PF01225	clade:Q9WY79	4	False	False	
+PF01225	clade:P22188	519	False	False	
+PF01225	clade:P9WJL3	607	False	False	
+PF01225	clade:A2C0L8	0	False	False	
+PF01225	clade:A1BJY3	0	False	False	
+PF01225	clade:A0QF47	0	False	False	
+PF01225	clade:Q819Q0	214	False	False	
+PF01225	clade:A3MY85	0	False	False	
+PF01225	clade:A0A2X4W351	0	False	False	
+PF01225	clade:A0A5C5V6T3	0	False	False	
+PF01225	clade:A0A5B9P7B8	1	False	False	
+PF01225	clade:P11880	378	False	False	
+PF01225	clade:A0A067A2L9	0	False	False	
+PF01225	clade:A0A066RTU2	0	False	False	
+PF01225	clade:P37773	800	False	True	
+PF01225	clade:A0A024HP64	0	False	False	
+PF01225	clade:A0A090TD66	0	False	False	
+PF01225	clade:A0A069P074	0	False	False	
+PF01225	clade:A0A072N110	0	False	False	
+PF01225	clade:P43948	0	False	False	
+PF01225	clade:Q8ZIE8	0	False	False	
+PF01225	clade:B7GV74	0	False	False	
+PF01225	clade:P17952	800	False	True	
+PF01225	clade:P45066	0	False	False	
+PF01225	clade:A0A091BTM3	0	False	False	
+PF01225	clade:A0A0D1A923	0	False	False	
+PF01225	clade:A0A0C1M413	0	False	False	
+PF01225	clade:Q2FWH4	82	False	False	
+PF01225	clade:A0A0H2WWP1	0	False	False	
+PF01225	clade:O33804	541	False	False	
+PF01225	clade:P9WJL1	367	False	False	
+PF01225	clade:P0A5L5	0	False	False	
+PF01225	clade:P45061	153	False	False	
+PF01225	clade:O05953	32	False	False	
+PF01225	clade:O83401	2	False	False	
+PF01225	clade:O69556	0	False	False	
+PF01225	clade:Q2FXJ0	800	False	True	
+PF01225	clade:Q97PS8	0	False	False	
+PF01225	clade:P9WJL7	84	False	False	
+PF01225	clade:P65475	0	False	False	
+PF02875	clade:Q2FZP6	114	False	False	
+PF02875	clade:A3CPL6	0	False	False	
+PF02875	clade:A4VU28	0	False	False	
+PF02875	clade:Q97PS1	171	False	False	
+PF02875	clade:A2RG75	0	False	False	
+PF02875	clade:Q9A196	80	False	False	
+PF02875	clade:P65480	0	False	False	
+PF02875	clade:A1WC11	238	False	False	
+PF02875	clade:A0A2S9YL87	2	False	False	
+PF02875	clade:A0A517YHC3	1	False	False	
+PF02875	clade:A0A150HGB9	1	False	False	
+PF02875	clade:A0A518C8G2	0	False	False	
+PF02875	clade:I6Y0R5	103	False	False	
+PF02875	clade:P15925	20	False	False	
+PF02875	clade:P08192	654	False	False	
+PF02875	clade:Q8E186	0	False	False	
+PF02875	clade:P14900	620	False	False	
+PF02875	clade:B7H1N2	0	False	False	
+PF02875	clade:A0A075TYP7	0	False	False	
+PF02875	clade:A0A0A0DI87	0	False	False	
+PF02875	clade:A0A069CWM7	0	False	False	
+PF02875	clade:Q05865	78	False	False	
+PF02875	clade:D4GW05	125	False	False	
+PF02875	clade:Q89AT2	1	False	False	
+PF02875	clade:P43775	100	False	False	
+PF02875	clade:P57265	3	False	False	
+PF02875	clade:Q8K9X3	0	False	False	
+PF02875	clade:A5U4I2	0	False	False	
+PF02875	clade:Q8P775	255	False	False	
+PF02875	clade:P0A090	0	False	False	
+PF02875	clade:Q4UWX9	0	False	False	
+PF02875	clade:C4RJF7	0	False	False	
+PF02875	clade:P0C0D7	0	False	False	
+PF02875	clade:P9WJL5	282	False	False	
+PF02875	clade:Q2FZ92	97	False	False	
+PF02875	clade:P73833	0	False	False	
+PF02875	clade:P58572	0	False	False	
+PF02875	clade:Q9KGY4	0	False	False	
+PF02875	clade:A0A011NXF2	0	False	False	
+PF02875	clade:A0A091BC42	0	False	False	
+PF02875	clade:A0A017RZF2	0	False	False	
+PF02875	clade:P56947	243	False	False	
+PF02875	clade:O86109	0	False	False	
+PF08245	clade:Q2P5V2	0	False	False	
+PF08245	clade:Q87EA7	0	False	False	
+PF08245	clade:Q3BR29	0	False	False	
+PF08245	clade:A4X981	204	False	False	
+PF08245	clade:Q5H2Y1	0	False	False	
+PF08245	clade:F4JYE9	14	False	False	
+PF05257	clade:P0AES0	181	False	False	
+PF05257	clade:A0A084ZP18	0	False	False	
+PF05257	clade:P0AES1	0	False	False	
+PF05257	clade:A0A089Q039	0	False	False	
+PF05257	clade:A0A085JCS5	112	False	False	
+PF05257	clade:P90518	14	False	False	
+PF05257	clade:O60993	0	False	False	
+PF05257	clade:Q9GT49	37	False	False	
+PF00583	clade:Q7W980	53	False	False	
+PF00583	clade:Q9KL03	443	False	False	
+PF00583	clade:O06059	29	False	False	
+PF00583	clade:Q9AP35	2	False	False	
+PF00583	clade:Q4JQJ5	13	False	False	
+PF00583	clade:Q5WL79	52	False	False	
+PF00583	clade:O52249	152	False	False	
+PF00583	clade:Q5YW78	79	False	False	
+PF00583	clade:Q6PR33	4	False	False	
+PF00583	clade:O17731	12	False	False	
+PF00583	clade:Q6LYX3	3	False	False	
+PF00583	clade:O34895	15	False	False	
+PF00583	clade:Q8PYC8	9	False	False	
+PF00583	clade:Q9R381	22	False	False	
+PF00583	clade:Q43899	0	False	False	
+PF00583	clade:Q44057	28	False	False	
+PF00583	clade:Q96F10	151	False	False	
+PF00583	clade:P21340	345	False	False	
+PF00583	clade:O41136	4	False	False	
+PF00583	clade:Q9HL57	3	False	False	
+PF00583	clade:P39909	35	False	False	
+PF00583	clade:Q92831	0	False	False	
+PF00583	clade:P48026	0	False	False	
+PF00583	clade:Q9JHD1	230	False	False	
+PF00583	clade:P21673	404	False	False	
+PF00583	clade:D4FZ53	0	False	False	
+PF00583	clade:P37506	19	False	False	
+PF00583	clade:P08457	82	False	False	
+PF00583	clade:P13018	40	False	False	
+PF00583	clade:A0A5Q2N904	2	False	False	
+PF00583	clade:A0ACG2T9L4	0	False	False	
+PF00583	clade:A0AA48MBG9	0	False	False	
+PF00583	clade:P10051	21	False	False	
+PF00583	clade:Q54441	19	False	False	
+PF00583	clade:Q9RBW7	65	False	False	
+PF00583	clade:Q44245	0	False	False	
+PF00583	clade:Q7PCJ9	0	False	False	
+PF00583	clade:Q7PCJ8	0	False	False	
+PF00583	clade:Q6P8J2	249	False	False	
+PF00583	clade:O33289	800	False	True	
+PF00583	clade:Q87M87	0	False	False	
+PF00583	clade:P16426	6	False	False	
+PF00583	clade:Q9HUU7	0	False	False	
+PF00583	clade:Q8ZPD3	153	False	False	
+PF00583	clade:A6VCX3	492	False	False	
+PF00583	clade:Q6FBS8	0	False	False	
+PF00583	clade:P71043	518	False	False	
+PF00583	clade:A0A7W7CLP7	0	False	False	
+PF00583	clade:A0A7W7FUB0	0	False	False	
+PF00583	clade:P46854	131	False	False	
+PF00583	clade:E9P8D2	36	False	False	
+PF00583	clade:P76112	198	False	False	
+PF00583	clade:A0A7W3N8P7	0	False	False	
+PF00583	clade:P0A6C5	800	False	True	
+PF00583	clade:P22567	513	False	False	
+PF00583	clade:A0A085V953	0	False	False	
+PF00583	clade:A0A068SMC0	0	False	False	
+PF00583	clade:A0A069PBE2	0	False	False	
+PF00583	clade:P31668	201	False	False	
+PF00583	clade:Q57146	9	False	False	
+PF00583	clade:W0SLW8	83	False	False	
+PF00583	clade:P9WJM7	257	False	False	
+PF00583	clade:Q8FBQ3	253	False	False	
+PF00583	clade:O25094	4	False	False	
+PF00583	clade:P54951	55	False	False	
+PF00583	clade:A4IGD2	219	False	False	
+PF00583	clade:Q8N9F0	67	False	False	
+PF00583	clade:Q3UGX3	0	False	False	
+PF00583	clade:D3ZVU9	0	False	False	
+PF00583	clade:A0A498MJK4	0	False	False	
+PF00583	clade:A0A0R4J0R4	0	False	False	
+PF00583	clade:A4II32	11	False	False	
+PF00583	clade:Q09927	2	False	False	
+PF00583	clade:A0A060JNH8	4	False	False	
+PF00583	clade:A0A073CHS4	0	False	False	
+PF00583	clade:A0A060YG77	0	False	False	
+PF00583	clade:A0A060W9K5	0	False	False	
+PF00583	clade:A0A087Y0E3	0	False	False	
+PF00583	clade:Q0P4Y1	62	False	False	
+PF00583	clade:U3U715	69	False	False	
+PF00583	clade:I3J7Q8	33	False	False	
+PF00583	clade:A0A0P7ZBK2	0	False	False	
+PF00583	clade:A0A498MYB1	0	False	False	
+PF00583	clade:A0A383RN23	0	False	False	
+PF00583	clade:A0ABM9FIF1	82	False	False	
+PF00583	clade:A0ABU0UNB0	27	False	False	
+PF00583	clade:A0A380STX6	0	False	False	
+PF00583	clade:P16691	0	False	False	
+PF00583	clade:Q94521	58	False	False	
+PF00583	clade:A0PLC7	0	False	False	
+PF00583	clade:A0LWI8	35	False	False	
+PF00583	clade:A0QAU8	0	False	False	
+PF00583	clade:A0JZC2	0	False	False	
+PF00583	clade:Q9KZV0	781	False	False	
+PF00583	clade:A1R8Y2	91	False	False	
+PF00583	clade:Q8ZKE6	114	False	False	
+PF00583	clade:A1KGV2	0	False	False	
+PF00583	clade:A0A014LYK2	0	False	False	
+PF00583	clade:A0A022PK20	0	False	False	
+PF00583	clade:A0A068QQD9	0	False	False	
+PF00583	clade:A0A068R7Y1	0	False	False	
+PF00583	clade:A0A077PGK8	0	False	False	
+PF00583	clade:A0A084ZTY0	0	False	False	
+PF00583	clade:P27832	0	False	False	
+PF00583	clade:E3Q1H1	9	False	False	
+PF00583	clade:Q5KQI6	31	False	False	
+PF00583	clade:Q17427	7	False	False	
+PF00583	clade:Q96EK6	104	False	False	
+PF00583	clade:A0A087RYS4	0	False	False	
+PF00583	clade:A0A518GJD8	0	False	False	
+PF00583	clade:A0A7D5R1Y3	0	False	False	
+PF00583	clade:P43577	18	False	False	
+PF00583	clade:P39979	15	False	False	
+PF00583	clade:O34350	83	False	False	
+PF00583	clade:A0AAD4NRG4	0	False	False	
+PF00583	clade:A0A9W8ZAZ5	0	False	False	
+PF00583	clade:A0A9W8X1G5	9	False	False	
+PF00583	clade:A0A9W8QYC7	74	False	False	
+PF00583	clade:A0A9W8W633	0	False	False	
+PF00583	clade:A0A0K3ASV9	0	False	False	
+PF00583	clade:A0A0K3AVV8	2	False	False	
+PF00583	clade:Q9VMG0	14	False	False	
+PF00583	clade:Q6Z1Y6	47	False	False	
+PF00583	clade:A0A0K3ASB6	0	False	False	
+PF00583	clade:Q5U9F2	70	False	False	
+PF00583	clade:F0IWS9	11	False	False	
+PF00583	clade:Q9C666	125	False	False	
+PF00583	clade:Q7X9V3	170	False	False	
+PF00583	clade:B2J5S7	89	False	False	
+PF00583	clade:A0A073CJL4	0	False	False	
+PF00583	clade:Q3MDW3	0	False	False	
+PF00583	clade:Q39IA1	0	False	False	
+PF00583	clade:A0A099UHI2	0	False	False	
+PF00583	clade:P80969	0	False	False	
+PF00583	clade:Q9SMB8	4	False	False	
+PF00583	clade:A0AAU8CHM5	0	False	False	
+PF00583	clade:Q9QXT3	0	False	False	
+PF00583	clade:Q9UHE5	191	False	False	
+PF00583	clade:Q9JIY7	0	False	False	
+PF00583	clade:A0ABR2VP34	1	False	False	
+PF00120	clade:P78061	244	False	False	
+PF00120	clade:I3R584	6	False	False	
+PF00120	clade:Q9RDS6	800	False	True	
+PF00120	clade:Q9KZC7	322	False	False	
+PF00120	clade:A0A090RTN3	0	False	False	
+PF00120	clade:A0A024HPU7	0	False	False	
+PF00120	clade:A0A085G9T0	0	False	False	
+PF00120	clade:A0A090DU11	0	False	False	
+PF00120	clade:A9ZPH9	298	False	False	
+PF00120	clade:F5RH07	0	False	False	
+PF00120	clade:Q936T0	2	False	False	
+PF00120	clade:A0A076FWF4	0	False	False	
+PF00120	clade:A0A076FWE9	3	False	False	
+PF00120	clade:A0A076FWE5	0	False	False	
+PF00120	clade:A0A076FWE2	6	False	False	
+PF00120	clade:A0A076FWD7	0	False	False	
+PF00120	clade:A0A076FWD2	0	False	False	
+PF13302	clade:P0A951	537	False	False	
+PF13302	clade:A0A0M3KKU5	0	False	False	
+PF13302	clade:P0DKR8	0	False	False	
+PF13302	clade:P0A952	0	False	False	
+PF13302	clade:A0A222MYG6	1	False	False	
+PF13302	clade:A0A1C7WQW0	0	False	False	
+PF13302	clade:A0A1X9SU71	4	False	False	
+PF13302	clade:A0A1C7WPC1	0	False	False	
+PF13302	clade:A0A2S2FH79	0	False	False	
+PF13302	clade:A0A0A6VEE3	1	False	False	
+PF13527	clade:Q52424	13	False	False	
+PF13527	clade:A0A5Q2N3I0	2	False	False	
+PF13527	clade:A0A0F8B563	4	False	False	
+PF13527	clade:A0A7W5F5K9	0	False	False	
+PF13527	clade:A0A1B1AT10	0	False	False	
+PF13527	clade:A0A7W4VSQ1	0	False	False	
+PF13527	clade:A0A7W7GHI5	0	False	False	
+PF13527	clade:A0A7W3RNF8	118	False	False	
+PF13523	clade:Q47317	96	False	False	
+PF13523	clade:P20092	0	False	False	
+PF13523	clade:A0A0H3KEY2	0	False	False	
+PF13523	clade:A0A090TAI0	1	False	False	
+PF13523	clade:A0A0H2M073	0	False	False	
+PF13523	clade:R9PKF4	4	False	False	
+PF13523	clade:A0A0N0E3P2	1	False	False	
+PF13523	clade:A0A081FVG2	1	False	False	
+PF13523	clade:A0A085APY7	0	False	False	
+PF13523	clade:B6EP94	2	False	False	
+PF00501	clade:P18204	22	False	False	
+PF00501	clade:A0ABN8GJE2	0	False	False	
+PF00501	clade:A0ABY1UDC9	0	False	False	
+PF00501	clade:A0ABY1UG66	0	False	False	
+PF00501	clade:A2QF28	14	False	False	
+PF00501	clade:P11454	158	False	False	
+PF00501	clade:P10378	564	False	False	
+PF00501	clade:Q8XBV9	0	False	False	
+PF00501	clade:Q8XBV3	0	False	False	
+PF00501	clade:P29698	0	False	False	
+PF00501	clade:A2R6H0	0	False	False	
+PF00501	clade:A0A1R3RGK1	15	False	False	
+PF07478	clade:P0A1F0	0	False	False	
+PF07478	clade:P56191	164	False	False	
+PF07478	clade:A0KKW8	0	False	False	
+PF07478	clade:P07862	468	False	False	
+PF07478	clade:B2I1J3	0	False	False	
+PF07478	clade:B1YSS6	0	False	False	
+PF07478	clade:A3NZL3	0	False	False	
+PF07478	clade:Q9CM00	67	False	False	
+PF07478	clade:P0A6J8	520	False	False	
+PF07478	clade:Q47720	45	False	False	
+PF07478	clade:P29753	0	False	False	
+PF02458	clade:A0A3B6DKZ2	0	False	False	
+PF02458	clade:A9ZPJ6	171	False	False	
+PF02458	clade:O80467	97	False	False	
+PF02458	clade:A0A810VUK9	0	False	False	
+PF02458	clade:A9ZPJ7	0	False	False	
+PF02458	clade:A0A810VNI3	0	False	False	
+PF02458	clade:A0A810VTJ1	0	False	False	
+PF02458	clade:A0A1P8AJ18	0	False	False	
+PF02458	clade:Q9FNP9	83	False	False	
+PF02458	clade:Q8GYW8	0	False	False	
+PF02458	clade:A0ACB7U3K3	0	False	False	
+PF02458	clade:A0ACB7U3E5	0	False	False	
+PF02458	clade:A0ACB7U3M2	0	False	False	
+PF02458	clade:A0ACB7U3H6	0	False	False	
+PF02458	clade:A0ACB7U3H2	1	False	False	
+PF02458	clade:A0ACG4MG23	0	False	False	
+PF02458	clade:A0ACB7U3P2	0	False	False	
+PF02458	clade:A0ABD1HAQ7	0	False	False	
+PF02458	clade:P0DO57	2	False	False	
+PF02458	clade:P0DO56	0	False	False	
+PF02458	clade:A0A2G3D6U1	0	False	False	
+PF02458	clade:Q8LL69	0	False	False	
+PF02458	clade:D2Y3X2	52	False	False	
+PF02458	clade:A1DN11	5	False	False	
+PF02458	clade:Q58VT1	0	False	False	
+PF02458	clade:P0DXK4	0	False	False	
+PF02458	clade:D5HQM4	0	False	False	
+PF02458	clade:D5FPG8	0	False	False	
+PF00881	clade:P9WP79	800	False	True	
+PF00881	clade:A0QTG1	0	False	False	
+PF00881	clade:A0QKC8	0	False	False	
+PF00881	clade:A1KNR4	0	False	False	
+PF00881	clade:A5U7T6	0	False	False	
+PF01071	clade:Q8DXM9	77	False	False	
+PF01071	clade:Q8Y3R3	23	False	False	
+PF01071	clade:A0AMA3	0	False	False	
+PF01071	clade:Q8ZAR2	0	False	False	
+PF01071	clade:Q9X0X7	15	False	False	
+PF01071	clade:O66949	300	False	False	
+PF01071	clade:P12039	755	False	False	
+PF01071	clade:P15640	230	False	False	
+PF01071	clade:A2SQ86	0	False	False	
+PF01071	clade:P65896	0	False	False	
+PF01071	clade:P9WHM9	512	False	False	
+PF04107	clade:Q8ZR41	0	False	False	
+PF04107	clade:P77213	189	False	False	
+PF04107	clade:D4GZN2	279	False	False	
+PF04107	clade:P9WPK9	0	False	False	
+PF04107	clade:P9WPK7	230	False	False	
+PF02955	clade:P04425	800	False	True	
+PF02955	clade:O32463	183	False	False	
+PF02955	clade:A0A482PU20	0	False	False	
+PF02955	clade:B7UHZ4	0	False	False	
+PF00303	clade:P0A884	0	False	False	
+PF00303	clade:P0CI79	57	False	False	
+PF00303	clade:P11044	800	False	True	
+PF00809	clade:P13009	800	False	True	
+PF02569	clade:Q6GDK5	0	False	False	
+PF02569	clade:Q6G456	38	False	False	
+PF02569	clade:Q2FV22	45	False	False	
+PF02569	clade:P9WIL5	340	False	False	
+PF02569	clade:P9WIL4	0	False	False	
+PF02569	clade:P31663	800	False	True	
+PF02569	clade:P65659	0	False	False	
+PF02569	clade:A0R580	63	False	False	
+PF01960	clade:P9WPZ3	689	False	False	
+PF01960	clade:Q9K8V3	178	False	False	
+PF01960	clade:P0DJQ5	0	False	False	
+PF01960	clade:Q8CK24	0	False	False	
+PF01960	clade:Q07908	800	False	True	
+PF01960	clade:A4FXT1	0	False	False	
+PF01960	clade:Q57645	19	False	False	
+PF01960	clade:Q9Z4S1	94	False	False	
+PF00696	clade:E3CZZ2	6	False	False	
+PF00696	clade:G7V707	1	False	False	
+PF01019	clade:P18956	380	False	False	
+PF01019	clade:P54422	54	False	False	
+PF01019	clade:Q05053	0	False	False	
+PF01019	clade:P63186	0	False	False	
+PF01019	clade:P15557	220	False	False	
+PF01019	clade:P74181	2	False	False	
+PF01019	clade:O05218	185	False	False	
+PF01019	clade:P36267	739	False	False	
+PF01812	clade:A0R3H2	242	False	False	
+PF01812	clade:P0AC28	186	False	False	
+PF18030	clade:Q8Q0M5	36	False	False	
+PF18030	clade:Q8TKX5	0	False	False	
+PF18030	clade:A0A7W7B0M6	0	False	False	
+PF18030	clade:A0A7W3SSB7	0	False	False	
+PF18030	clade:A0A7G8PSQ3	0	False	False	
+PF08267	clade:Q8CWX6	271	False	False	
+PF08267	clade:A1T007	0	False	False	
+PF08267	clade:P80877	181	False	False	
+PF08267	clade:A1KTL3	0	False	False	
+PF08267	clade:P25665	800	False	True	
+PF08267	clade:A0AJD5	0	False	False	
+PF08267	clade:A1JIE5	0	False	False	
+PF08267	clade:Q9JZQ2	0	False	False	
+PF00550	clade:P0ADI4	357	False	False	
+PF00550	clade:P0ADI6	0	False	False	
+PF00550	clade:P0ADI5	0	False	False	
+PF01808	clade:P31335	367	False	False	
+PF01808	clade:P31939	800	False	True	
+PF01808	clade:O35567	0	False	False	
+PF01808	clade:Q9CWJ9	0	False	False	
+PF01808	clade:Q0VCK0	0	False	False	
+PF01808	clade:Q5R5C2	0	False	False	
+PF01808	clade:A0A3Q1LXU9	0	False	False	
+PF01808	clade:A0A8L2QB21	0	False	False	
+PF13420	clade:P21861	17	False	False	
+PF13420	clade:A0A086ZP37	0	False	False	
+PF03074	clade:Q9W3K5	114	False	False	
+PF03074	clade:P19468	0	False	False	
+PF03074	clade:P48506	462	False	False	
+PF03074	clade:P97494	102	False	False	
+PF04060	clade:O29871	0	False	False	
+PF04060	clade:Q50539	58	False	False	
+PF04060	clade:Q8PZ09	0	False	False	
+PF04060	clade:Q57576	31	False	False	
+PF04060	clade:Q8PV87	0	False	False	
+PF04060	clade:O27748	0	False	False	

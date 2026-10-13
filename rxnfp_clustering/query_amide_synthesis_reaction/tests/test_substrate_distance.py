@@ -216,6 +216,15 @@ class TestExpansionPlumbing(unittest.TestCase):
     """Offline: the tier/dedup contract, with a fake UniProt."""
 
     def test_first_tier_keeps_the_accession(self):
+        """The SAMPLING path's dedup contract.
+
+        Validated families are now enumerated in full instead of sampled, so
+        there is one query per family and the tier is read from the member's
+        own record - see EnumerationTests / MemberTierTests in
+        test_expand_families.py. This contract still governs the sampling
+        path, which is kept for comparison, so the test names it explicitly
+        rather than relying on the default.
+        """
         def fake_search(query, max_pages=1, **kw):
             if 'reviewed' in query:
                 return [{'Entry': 'P1'}], False, False
@@ -225,7 +234,8 @@ class TestExpansionPlumbing(unittest.TestCase):
                                 'family_substrate_distance': 0.83,
                                 'n_seeds': 2, 'seed_accessions': ['A'],
                                 'self_condensing': True}}
-        frame, report = ef.expand(families, search=fake_search, threads=1)
+        frame, report = ef.expand(families, search=fake_search, threads=1,
+                                  enumerate_all=False)
         self.assertEqual(len(frame), 2)
         tier = dict(zip(frame.Entry, frame.discovery_tier))
         self.assertEqual(tier['P1'], 'reviewed',
