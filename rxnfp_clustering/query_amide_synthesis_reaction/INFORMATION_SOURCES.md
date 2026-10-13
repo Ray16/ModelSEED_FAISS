@@ -114,6 +114,35 @@ O41136  vPAT   viral polyamine acetyltransferase    EC 2.3.1.57
 Cadaverine is one methylene shorter than HMDA. On the acceptor side, this
 pipeline has found everything UniProt knows.
 
+### The donor side closes even harder
+
+The nylon-6,6 donor is adipate, the C6 diacid. Same measurement:
+
+| donor | UniProt entries | of those, EC 2.3 / 6.3 |
+|---|---:|---:|
+| adipate / adipic acid (as written) | 0 | 0 |
+| **hexanedioate** (the ChEBI name) | 2,926 | **1** |
+| pimelate C7, suberate C8, azelate C9, sebacate C10 | 0 | 0 |
+| glutarate (C5) | 4,850 | 7 |
+| succinate (C4) | 341,933 | 38,438 |
+
+And the single adipate hit is a **false positive of the EC filter**:
+`A0A8S9XA86` is a palmitoyltransferase, EC 2.3.1.225 — protein
+*S*-acyltransferase, which forms a **thioester on a cysteine**, not an amide.
+So the honest count is **zero**.
+
+The seven glutarate hits are acylases (EC 2.3.2.2 γ-glutamyltransferase,
+EC 2.3.1.149 PAF acetylhydrolase), six of which this table already holds, and
+they act on a glutaryl group rather than condensing a free diacid.
+
+**So neither nylon-6,6 monomer has a curated amide-forming enzyme anywhere in
+UniProt.** The reachable analogues are cadaverine on the acceptor side (C5,
+three enzymes, all three held) and succinate on the donor side (C4, where
+succinyl transfer is genuinely common — and the table holds the
+Arg-N-succinyltransferases, a lead family). That is the problem stated
+precisely: the chain has to be reached by *two* extrapolations, one methylene
+on the amine and two on the acid.
+
 ## Tried and rejected on precision
 
 **Substrate-name search of the catalytic-activity field.** The largest
