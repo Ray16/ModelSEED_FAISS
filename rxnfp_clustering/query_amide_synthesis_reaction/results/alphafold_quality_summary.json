@@ -1,0 +1,15 @@
+{
+  "shortlist": 301,
+  "queried": 253,
+  "models_found": 253,
+  "network_failures": 0,
+  "no_model": 0,
+  "plddt_mean_median": 94.06,
+  "confident_ge_70": 253,
+  "unusable_lt_50": 0,
+  "thresholds": {
+    "confident": 70.0,
+    "unusable": 50.0
+  },
+  "note": "pLDDT is reported, never ranked on: model confidence is not evidence of catalysis."
+}

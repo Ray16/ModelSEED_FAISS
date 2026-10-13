@@ -254,6 +254,34 @@ synthetase" (EC 6.2.1.-, AMP-binding) — the engineered acid + amine coupling
 class — and P0DJQ7 beta-lactam synthetase, independently the single best
 in-line adenylation geometry in the whole candidate set (2.26 Å).
 
+### Model confidence, and a bench constraint that was never checked
+
+The pipeline resolved an AlphaFold *identifier* for 71% of candidates and said
+nothing about whether the model was usable. That matters for the stated next
+step: cofolding adipate and HMDA against a mean-pLDDT-45 model wastes a slot on
+a shared GPU. `amide_synthesis/model_quality.py` fetches AlphaFold DB's own
+confidence numbers for the shortlist.
+
+The answer is a negative result worth having: **253 of 301 shortlisted
+proteins have a model, median pLDDT 94.1, and not one falls below 50.** There
+is nothing to filter — every shortlisted candidate is a viable cofold target.
+The remaining 48 are the assayed panel, which has NCBI accessions and no
+AlphaFold entry; those fold from sequence.
+
+pLDDT is reported, never ranked on. Model confidence is not evidence of
+catalysis, and controls assert the word does not appear in either the priority
+formula or the shortlist selection — this project has removed five score gates
+and is not adding a sixth.
+
+`shortlist` also claimed "soluble, single-domain-ish, expressible in a standard
+host" from the beginning while only ever checking LENGTH. 704 candidates carry
+a Transmembrane keyword, 2 of them shortlisted, including a membrane-anchored
+fatty-acid amide **hydrolase**. Transmembrane is now a bench exclusion with its
+own recorded reason, exactly like `too_long`. A signal peptide is NOT
+disqualifying — a secreted soluble protein expresses perfectly well, often
+better — so it is recorded and left alone, as is the bare "Membrane" keyword,
+which can mean peripheral association.
+
 ### Two bugs this found, both silent
 
 1. **An evidence tier absent from `TIER_SHARE` got zero shortlist slots, and

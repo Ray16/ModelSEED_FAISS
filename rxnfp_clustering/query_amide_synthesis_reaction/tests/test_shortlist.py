@@ -166,3 +166,38 @@ class UnallocatedTierTests(unittest.TestCase):
         shares = {tier for tier, _ in sl.TIER_SHARE}
         for tier in EVIDENCE_WEIGHT:
             self.assertIn(tier, shares, f'{tier} has no shortlist share')
+
+
+class BenchConstraintTests(unittest.TestCase):
+    """Solubility constraints the module claimed but did not check."""
+
+    def _row(self, keywords, evidence='exact_reaction'):
+        return pd.DataFrame([{
+            'uniprot': 'P00001', 'evidence_strength': evidence,
+            'master_priority': 5.0, 'length': 500, 'sequence': 'M' * 500,
+            'organism': 'E. coli', 'family': 'Fam', 'keywords': keywords,
+        }])
+
+    def test_a_transmembrane_protein_is_excluded(self):
+        out = sl.eligible(self._row('Transmembrane;Membrane'))
+        self.assertEqual(out.excluded_because.iloc[0], 'transmembrane')
+
+    def test_a_signal_peptide_is_recorded_but_not_excluded(self):
+        """A secreted soluble protein expresses fine."""
+        out = sl.eligible(self._row('Signal;Cytoplasm'))
+        self.assertEqual(out.excluded_because.iloc[0], '')
+        self.assertTrue(bool(out.has_signal_peptide.iloc[0]))
+
+    def test_a_peripheral_membrane_keyword_alone_does_not_exclude(self):
+        out = sl.eligible(self._row('Membrane'))
+        self.assertEqual(out.excluded_because.iloc[0], '')
+
+    def test_measured_activity_overrides_the_transmembrane_filter(self):
+        """A protein with a measured titre is a fact, not a prediction."""
+        out = sl.eligible(self._row('Transmembrane', 'measured_activity'))
+        self.assertEqual(out.excluded_because.iloc[0], '')
+
+    def test_a_table_with_no_keywords_column_does_not_raise(self):
+        frame = self._row('').drop(columns=['keywords'])
+        out = sl.eligible(frame)
+        self.assertEqual(out.excluded_because.iloc[0], '')

@@ -16,6 +16,7 @@ the dead ends.
 | **InterPro** | readable family names from Pfam accessions | 1,121 rows that had only `PF…` |
 | **external link table** (`uniprot-msd-links.tsv`) | precomputed UniProt→ModelSEED links | +1,131 candidates; see `MAPPING_REVIEW.md` |
 | **UniProtKB protein names** | proteins NAMED for the target function, which no reaction pivot reaches | 3,488 proteins, 3,469 of them new; fixed a measured 0-of-26 recall hole |
+| **AlphaFold DB API** | model confidence (mean pLDDT + per-band fractions) for shortlisted candidates | 253 of 301; median pLDDT 94.1, none below 50 |
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
 

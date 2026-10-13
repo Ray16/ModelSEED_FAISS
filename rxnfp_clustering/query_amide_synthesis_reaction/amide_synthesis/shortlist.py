@@ -114,8 +114,24 @@ def eligible(table):
     contradicted = _column(
         out, 'annotation_contradicts_chemistry', False).fillna(False)
 
+    # A transmembrane protein is a poor bench target for the same reason a
+    # 3,000-residue one is: it will not express solubly in a standard host.
+    # This module claimed "soluble, single-domain-ish, expressible" from the
+    # start but only ever checked LENGTH, so 2 of 301 shortlisted proteins
+    # carried a Transmembrane keyword - including a membrane-anchored
+    # fatty-acid amide HYDROLASE.
+    #
+    # Only the transmembrane keyword excludes. A signal peptide does not: a
+    # secreted soluble protein expresses perfectly well, often better. The
+    # bare "Membrane" keyword can mean peripheral association, which is not a
+    # solubility problem, so it is left alone too.
+    keywords = _column(out, 'keywords').fillna('').astype(str)
+    transmembrane = keywords.str.contains('Transmembrane', case=False)
+    out['has_signal_peptide'] = keywords.str.contains('Signal', case=False)
+
     reasons = pd.Series('', index=out.index)
     reasons = reasons.mask(sequence.str.len() < 1, 'no_sequence')
+    reasons = reasons.mask(reasons.eq('') & transmembrane, 'transmembrane')
     reasons = reasons.mask(reasons.eq('') & length.isna(), 'no_length')
     reasons = reasons.mask(reasons.eq('') & (length < MIN_LENGTH), 'too_short')
     reasons = reasons.mask(reasons.eq('') & (length > MAX_LENGTH), 'too_long')
