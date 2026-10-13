@@ -135,6 +135,32 @@ The seven glutarate hits are acylases (EC 2.3.2.2 γ-glutamyltransferase,
 EC 2.3.1.149 PAF acetylhydrolase), six of which this table already holds, and
 they act on a glutaryl group rather than condensing a free diacid.
 
+### Why cyanophycin synthetase is not the top candidate
+
+The obvious objection to this shortlist is that cyanophycin synthetase makes
+poly(Asp-Arg) — the closest biological polyamide there is — and sits nowhere
+near the top. 536 are in the table and 535 hold **zero** discriminating
+lines. That was checked rather than defended.
+
+It is not an exclusion problem. The family's reaction IS screened and scored:
+
+```
+rxn46365   ATP + L-aspartate + [L-4-(L-arginin-2-N-yl)aspartate]3
+           <=> ADP + phosphate + 2 H+ + cyanophycin primer-L-aspartate
+           substrate distance 0.5585   acylates_free_diamine = False
+```
+
+The acceptor is a **growing polymer chain**, not a free diamine. Cyanophycin
+synthetase is a polymer *elongase*: it extends a primer it is already holding.
+Nylon-6,6 is an AA/BB condensation of two *free* monomers, so the operation is
+genuinely different, and 0.5585 — amide-forming, iterative, but not on a free
+diamine — is an honest score rather than a penalty.
+
+It remains relevant to **nylon-6-style self-condensation**, which is why one
+member (Q113V7, pocket span 21/15) reaches the near-miss tier on independent
+criteria. If the target ever shifts from the AA/BB diad to a single
+bifunctional monomer, this family moves up sharply.
+
 ### The large N-acyltransferase families: held, or correctly excluded
 
 Succinate is the reachable donor analogue, so the N-succinyl/N-acyl
