@@ -254,6 +254,57 @@ members** carry an annotation contradicting amide formation — it is a hydrolas
 family running a transpeptidation side reaction. A contradicted majority now
 rejects the family outright.
 
+### Two datasets we already had, asked a second question
+
+Twice in this project "we have exhausted the options" turned out to mean "we
+are using a dataset for one question". Both fixes came from re-asking, not
+from a new source.
+
+**Rhea, for annotation instead of retrieval.** Screening all 36,552 Rhea
+reactions as a *retrieval* route yields 3 proteins, because almost nothing in
+Rhea has an enzyme annotated to it — so the route was recorded as dead. But
+Rhea maps reactions to EC numbers, and it is *excellent* at describing
+reactions. Scoring that corpus with our own screen gives, per EC class, the
+best amide chemistry anyone in the class is curated to perform:
+
+| | |
+|---|---:|
+| candidates carrying a full EC | 38,542 |
+| **given a substrate-level ceiling** | **26,410** |
+| ceiling ≥ 0.6 | 13,063 |
+| **EC class beats the protein's own reaction** | **17,510** |
+
+It also repairs a limitation documented as unavoidable — the protein-name route
+carried *no* substrate distance, because nothing knows which reaction those
+proteins run. Where one has an EC it now has a number: "Acid--amine ligase
+YgiC (EC 6.3.1.8)" 0.0 → **0.7384**.
+
+**PDB bound ligands, for substrate evidence instead of cofactor presence.** The
+`pdb` stage recorded whether a structure exists, holds an ATP-like cofactor, or
+has a metal. The `bound_components` column — the identity of everything *else*
+in the pocket — was carried and never read, and it is the only experimental
+substrate evidence here outside the 49-member assayed panel. The 147 distinct
+components are classified with the substrate screen's **own** `_acid_carbons`
+and `_amine_nitrogens`, so a ligand is judged by exactly the criteria a
+substrate is. 18 are a diamine or dicarboxylate, reaching 17 candidates.
+
+The two strongest **corroborate** independently-derived conclusions, which is
+the most useful thing a new evidence source can do:
+
+- **P22188 MurE** bound to **API = 2,6-diaminopimelic acid**, a C7 diacid *and*
+  diamine (13 heavy atoms vs adipate's 10). MurE was already one of three
+  staged cofold targets, chosen on reaction chemistry alone.
+- **P0DJQ7 β-lactam synthetase** bound to its native N²-(carboxyethyl)-L-arginine
+  — independently the best in-line adenylation geometry in the whole set (2.26 Å).
+- **P0AES0** glutathionylspermidine synthetase, 3 free amines — the family the
+  CHAP-label investigation found to be genuine bifunctional amide synthetases.
+
+Neither is folded into `master_priority`. For the ligand column that is a
+judgement worth stating: `has_pdb` already contributes +1.0, so a bonus for a
+bound bifunctional ligand would be consistent and defensible. It is left out
+because changing the ranking is the user's call, not a side effect of adding an
+evidence source.
+
 ### Telling members of one family apart
 
 A protein admitted by family membership inherits its family's score, so every

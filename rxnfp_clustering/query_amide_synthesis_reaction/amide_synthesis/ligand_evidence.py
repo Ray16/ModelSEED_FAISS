@@ -1,0 +1,214 @@
+#!/usr/bin/env python
+"""What has crystallography already seen in each candidate's pocket?
+
+ANOTHER DATASET USED FOR ONE QUESTION. The `pdb` stage retrieves 1,316 entries
+and records, per candidate, whether a structure exists, whether it holds an
+ATP-like cofactor and whether a metal is present. The `bound_components` column
+- the identity of everything else in the pocket - was carried and never read.
+
+That column is experimental substrate evidence, and this project has very
+little of that: outside the 49-member assayed panel, every substrate claim here
+is inferred from a reaction equation. A crystal structure with a diamine or a
+dicarboxylate bound is a direct observation that the pocket accommodates the
+motif nylon-6,6 needs.
+
+So the distinct ligands are fetched once from RCSB, classified with this
+project's OWN chemistry functions - the same `_acid_carbons` and
+`_amine_nitrogens` the substrate screen uses, so a ligand is judged by exactly
+the criteria a substrate is - and joined back per candidate.
+
+Measured 2026-10-13: 147 distinct bound components, 18 of them a diamine or a
+dicarboxylate, reaching 17 candidates. The two strongest corroborate
+independently-derived conclusions rather than adding new ones, which is the
+most useful thing a new evidence source can do:
+
+    P22188  MurE, bound to API = 2,6-DIAMINOPIMELIC ACID - a C7 diacid AND
+            diamine, 13 heavy atoms against adipate's 10. MurE was already one
+            of the three staged cofold targets, chosen on reaction chemistry;
+            this is crystallographic proof its pocket takes the motif.
+    P0AES0  Glutathionylspermidine synthetase, bound to GGA and GSH, three free
+            amines. The same family the CHAP-label investigation found to be
+            genuine bifunctional amide synthetases.
+
+NOT FOLDED INTO THE RANKING, and that is a judgement worth stating rather than
+burying. `has_pdb` already contributes +1.0 to `master_priority`, so a bonus
+for a bound bifunctional ligand would be consistent and defensible - it is an
+experimental observation, not a prediction. It is left out because changing the
+ranking is the user's call, not a side effect of adding an evidence source. The
+column is reported and used as a tie-break; see the README.
+"""
+from __future__ import annotations
+
+import json
+import os
+from concurrent.futures import ThreadPoolExecutor
+
+import pandas as pd
+
+from .http import get_text
+from .paths import CACHE, RES
+
+API = 'https://data.rcsb.org/rest/v1/core/chemcomp/{component}'
+LIGAND_CACHE = CACHE / 'pdb_ligand_chemistry.tsv'
+THREADS = int(os.environ.get('LIGAND_THREADS', 6))
+
+# What the nylon-6,6 bond needs on each side. Two of either makes a monomer
+# that can extend a chain rather than cap it.
+BIFUNCTIONAL_MIN = 2
+
+
+def split_components(value):
+    return [x.strip() for x in str(value or '').replace(',', ';').split(';')
+            if x.strip()]
+
+
+def fetch_component(component, fetch=get_text):
+    """Name and SMILES for one PDB chemical component."""
+    text, _, failed = fetch(API.format(component=component), timeout=40)
+    if failed:
+        return None
+    try:
+        payload = json.loads(text)
+    except Exception:
+        return None
+    name = (payload.get('chem_comp') or {}).get('name')
+    smiles = None
+    for descriptor in payload.get('pdbx_chem_comp_descriptor') or []:
+        kind = descriptor.get('type')
+        if kind == 'SMILES_CANONICAL':
+            smiles = descriptor.get('descriptor')
+            break
+        if kind == 'SMILES' and not smiles:
+            smiles = descriptor.get('descriptor')
+    return {'component': component, 'ligand_name': name, 'smiles': smiles}
+
+
+def classify(rows):
+    """Count acid and amine groups with the SUBSTRATE screen's own functions.
+
+    Using the same predicates as the substrate screen is the point: a ligand
+    is judged by exactly the criteria a substrate is, so the two cannot drift
+    apart. Metals and malformed entries fall through to zeros rather than
+    raising - some PDB components (metal-coordinated cobalamins) are not valid
+    SMILES at all.
+    """
+    from rdkit import Chem
+    from rdkit import RDLogger
+    from .substrate_distance import _acid_carbons, _amine_nitrogens
+    RDLogger.DisableLog('rdApp.*')
+
+    out = []
+    for row in rows:
+        if not row:
+            continue
+        acids = amines = heavy = 0
+        molecule = (Chem.MolFromSmiles(row['smiles'])
+                    if row.get('smiles') else None)
+        if molecule is not None:
+            acids = len(_acid_carbons(molecule))
+            amines = len(_amine_nitrogens(molecule))
+            heavy = molecule.GetNumHeavyAtoms()
+        out.append({**row, 'ligand_acids': acids, 'ligand_amines': amines,
+                    'ligand_heavy_atoms': heavy,
+                    'ligand_bifunctional': (acids >= BIFUNCTIONAL_MIN
+                                            or amines >= BIFUNCTIONAL_MIN)})
+    return pd.DataFrame(out)
+
+
+def ligand_chemistry(components, fetch=get_text, threads=THREADS):
+    """Classified chemistry for every component, cached on disk."""
+    known = (pd.read_csv(LIGAND_CACHE, sep='\t', low_memory=False)
+             if LIGAND_CACHE.exists() else pd.DataFrame())
+    have = set(known.component) if len(known) else set()
+    missing = sorted(set(components) - have)
+    if missing:
+        with ThreadPoolExecutor(max_workers=threads) as pool:
+            rows = list(pool.map(lambda c: fetch_component(c, fetch), missing))
+        fresh = classify(rows)
+        known = (pd.concat([known, fresh], ignore_index=True)
+                 if len(known) else fresh)
+        if len(known):
+            LIGAND_CACHE.parent.mkdir(parents=True, exist_ok=True)
+            known.to_csv(LIGAND_CACHE, sep='\t', index=False)
+    return known
+
+
+def attach(evidence, chemistry):
+    """Per-candidate best bound bifunctional ligand."""
+    if not len(chemistry):
+        return pd.DataFrame(columns=['uniprot'])
+    table = chemistry.set_index('component')
+    bifunctional = set(table[table.ligand_bifunctional.fillna(False)
+                             .astype(bool)].index)
+    rows = []
+    for row in evidence.itertuples():
+        found = [c for c in split_components(
+            getattr(row, 'pdb_bound_components', '')) if c in bifunctional]
+        if not found:
+            rows.append({'uniprot': row.uniprot,
+                         'bound_bifunctional_ligand': None,
+                         'bound_ligand_acids': 0, 'bound_ligand_amines': 0,
+                         'bound_ligand_name': None})
+            continue
+        best = max(found, key=lambda c: (table.loc[c, 'ligand_amines'],
+                                         table.loc[c, 'ligand_acids']))
+        rows.append({
+            'uniprot': row.uniprot,
+            'bound_bifunctional_ligand': ';'.join(sorted(found)),
+            'bound_ligand_acids': int(table.loc[best, 'ligand_acids']),
+            'bound_ligand_amines': int(table.loc[best, 'ligand_amines']),
+            'bound_ligand_name': table.loc[best, 'ligand_name'],
+        })
+    return pd.DataFrame(rows)
+
+
+def main():
+    from .paths import ensure_directories
+    ensure_directories()
+
+    facts = RES / 'pdb_entry_facts.tsv'
+    evidence = RES / 'pdb_evidence.tsv'
+    if not (facts.exists() and evidence.exists()):
+        raise SystemExit('run the pdb stage first; nothing to read')
+
+    entries = pd.read_csv(facts, sep='\t', low_memory=False)
+    components = sorted({c for value in entries.bound_components.dropna()
+                         for c in split_components(value)})
+    print(f'{len(entries):,} PDB entries, {len(components)} distinct bound '
+          'components', flush=True)
+
+    chemistry = ligand_chemistry(components)
+    bifunctional = chemistry[chemistry.ligand_bifunctional.fillna(False)
+                             .astype(bool)]
+    print(f'{len(bifunctional)} are a diamine or a dicarboxylate', flush=True)
+
+    per_candidate = attach(pd.read_csv(evidence, sep='\t', low_memory=False),
+                           chemistry)
+    per_candidate.to_csv(RES / 'ligand_evidence.tsv', sep='\t', index=False)
+
+    hits = per_candidate[per_candidate.bound_bifunctional_ligand.notna()]
+    summary = {
+        'pdb_entries': int(len(entries)),
+        'distinct_components': len(components),
+        'components_resolved': int(chemistry.smiles.notna().sum())
+        if 'smiles' in chemistry else 0,
+        'bifunctional_components': int(len(bifunctional)),
+        'candidates_with_bound_bifunctional_ligand': int(len(hits)),
+        'note': 'Experimental observation of what the pocket holds. Reported '
+                'and usable as a tie-break; deliberately NOT added to '
+                'master_priority - see the module docstring.',
+    }
+    print(json.dumps(summary, indent=2), flush=True)
+    (RES / 'ligand_evidence_summary.json').write_text(
+        json.dumps(summary, indent=2) + '\n')
+
+    if len(hits):
+        print('\nCandidates whose pocket has been seen holding a diamine or '
+              'dicarboxylate:', flush=True)
+        print(hits.sort_values(['bound_ligand_amines', 'bound_ligand_acids'],
+                               ascending=False).to_string(index=False),
+              flush=True)
+
+
+if __name__ == '__main__':
+    main()

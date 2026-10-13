@@ -12,6 +12,7 @@ the dead ends.
 | **UniProtKB** | sequence, organism, lineage, EC, Pfam/InterPro, catalytic activity, GO, keywords, PDB/AlphaFold xrefs, binding/active sites | sequence & organism 100%, family 99.8%, InterPro 99.7%, EC 81.8%, catalytic activity 76.5% |
 | **UniParc** | exact-sequence identity for proteins absent from UniProtKB | 48/49 assayed panel members, which accession matching missed (10/48) |
 | **MetaNetX** `reac_xref` | ModelSEED↔Rhea aliases, plus MetaCyc/KEGG/BiGG sibling pivots | +1,777 reactions the SEED pivot alone cannot reach |
+| **RCSB PDB chemical components** | the IDENTITY of every bound ligand, classified by the substrate screen's own predicates | 147 components, 18 bifunctional, reaching 17 candidates |
 | **RCSB PDB** | method, resolution, bound ligands/metals; downloaded mmCIF for geometry | 179 candidates, 825 entries, 0 lookup failures |
 | **InterPro** | readable family names from Pfam accessions | 1,121 rows that had only `PF…` |
 | **external link table** (`uniprot-msd-links.tsv`) | precomputed UniProt→ModelSEED links | +1,131 candidates; see `MAPPING_REVIEW.md` |

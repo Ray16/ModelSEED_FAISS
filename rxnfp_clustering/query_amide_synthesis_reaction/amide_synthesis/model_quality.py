@@ -157,7 +157,8 @@ def main():
     # stages write. Each sidecar is keyed by accession and optional: a missing
     # one leaves its columns absent rather than failing the stage.
     annotated = short.merge(quality, on='uniprot', how='left')
-    for sidecar in ('curated_properties.tsv', 'ec_substrate_ceiling.tsv'):
+    for sidecar in ('curated_properties.tsv', 'ec_substrate_ceiling.tsv',
+                    'ligand_evidence.tsv'):
         path = RES / sidecar
         if path.exists():
             extra = pd.read_csv(path, sep='\t', low_memory=False)
