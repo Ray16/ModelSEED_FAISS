@@ -64,6 +64,37 @@ produced it.
 | `proxied` | literature-curated, carries an independent geometric score | n/a |
 | `chemistry_neighbour` | borrowed from a reaction with the same proven acylation chemistry; an INFERENCE, weight 0.25 | measured, from the source reaction |
 
+### Annotation coverage
+
+Routes differ in how much they carry, and two delivered only a sequence: the
+1,131 `precomputed_link` candidates (the external table is accession /
+reactions / sequence) and the 48 assayed panel members (NCBI accessions from a
+separate project - the most valuable rows here and the least annotated).
+
+`enrich.py` fetches the full UniProt record for any candidate with a UniProt
+accession and no annotation: 9,074 accessions, **98,296 values filled**.
+
+| field | coverage |
+|---|---:|
+| organism / lineage / keywords | 99.9% |
+| InterPro | 99.7% |
+| Pfam | 99.4% |
+| EC | 81.8% |
+| catalytic activity | 76.5% |
+| AlphaFold model | 69.2% |
+| function | 55.6% |
+| PDB | 0.5% |
+
+The last three are UniProt's own coverage of unreviewed entries, not a
+retrieval gap. The assayed panel resolved 10 of 48 NCBI accessions to UniProt;
+the rest are environmental sequences with no UniProt entry, which is reported
+rather than hidden.
+
+Annotation is only ever ADDED - an existing value always wins - and the stage
+writes `master_candidates_enriched.tsv` rather than overwriting its input,
+because rewriting in place would let a later `master_table` run silently
+discard every enriched value.
+
 `results/shortlist.tsv` + `shortlist.fasta` are the actionable deliverable:
 **292 proteins**, 33 families, 149 organisms, 82 with a PDB entry, 75
 self-condensing, and all 48 assayed proteins with measured titre. A 34k-row

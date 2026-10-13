@@ -185,7 +185,12 @@ def write_fasta(frame, path):
 def main():
     from .paths import ensure_directories
     ensure_directories()
-    table = pd.read_csv(RES / 'master_candidates.tsv', sep='\t', low_memory=False)
+    # Prefer the enriched table when the annotation stage has run; it is a
+    # superset, never a replacement.
+    enriched = RES / 'master_candidates_enriched.tsv'
+    source = enriched if enriched.exists() else RES / 'master_candidates.tsv'
+    table = pd.read_csv(source, sep='\t', low_memory=False)
+    print(f'shortlisting from {source.name}', flush=True)
     screened = eligible(table)
     short = build(table)
 
