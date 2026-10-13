@@ -397,7 +397,10 @@ proteins map to one reaction, so all inherit the same score. `glnA2` sits at
 0.8225 purely because it shares `rxn05123` with PuuA - and its geometric score
 is ~0.
 
-See `MAPPING_REVIEW.md` for the review of the external link table.
+See `MAPPING_REVIEW.md` for the review of the external link table, and
+`INFORMATION_SOURCES.md` for every annotation source used, tried-and-unusable
+(BRENDA needs credentials; SABIO-RK's REST API is dead), deliberately skipped
+as duplicative (KEGG), or blocked on infrastructure.
 
 ## Method
 
