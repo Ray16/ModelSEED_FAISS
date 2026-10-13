@@ -138,6 +138,38 @@ convergence count rewards. A reader who believes the panel should start
 there instead: filter `master_candidates_enriched.tsv` on
 `family == "AMP-binding enzyme"`.
 
+### What the measured data points at instead
+
+Under the panel's reading, the right question is which candidates most
+resemble AS9, AS17 and AS23. Aligned against the 992 ANL/AMP-binding
+candidates in the table:
+
+```
+best identity to a measured active    34.3%   (Q597S4, S. nodosus)
+median                                24.8%
+above 30%                                 4
+above 40%                                 0
+```
+
+So **this table contains no close relative of the proteins that work.**
+34.3% is barely better than the 28–29% template already found for the actives
+themselves. If the panel's reading is right, the correct next step is a BLAST
+of AS9/AS17/AS23 against all of UniProt — which this pipeline does not do, and
+which the panel's owners are better placed to run.
+
+**But the composition of that list is informative.** Among the 25 ANL
+candidates closest to a measured active, **12 came from the protein-name
+route** — the one that simply asks UniProt what an enzyme is *called*. That
+route contributes only 31 of 992 ANL candidates overall, so it is **15×
+enriched** among the nearest neighbours of the proteins that work.
+
+That route was added to fix a recall hole (0 of 26 proteins named "Amide
+synthetase"), and it turns out to be the route best aligned with the only
+ground truth available. Its candidates sit at `master_priority` 1.0 — the
+bottom tier — because they have no mapped reaction, no structure and no
+bound ligand. **The ranking puts them last; the measured data puts them
+first.** `results/anl_similarity_to_actives.tsv` has all 992 ranked.
+
 See **`VERIFICATION.md`** for how the project checks itself — six
 re-runnable tools, each written because a claim had been asserted rather than
 measured, and three of which found the assertion wrong.

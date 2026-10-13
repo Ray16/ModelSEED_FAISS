@@ -1,0 +1,993 @@
+uniprot	gene	organism	evidence	pct_id_to_active	closest_active	priority
+Q597S4	nan	Streptomyces nodosus subsp. as	enzyme_name_match	34.3	AS9	1.0
+A0A075UYU2	AJAP_12390	Amycolatopsis japonica	enzyme_name_match	30.6	AS9	1.0
+A1YAM3	nan	Amycolatopsis orientalis (Noca	enzyme_name_match	30.6	AS9	1.0
+D2TMN3	entE ROD_06031	Citrobacter rodentium (strain 	clade_homolog	30.2	AS9	2.7814
+A0ABC8C1M7	B7C62_33055	Kitasatospora albolonga	enzyme_name_match	29.8	AS23	1.0
+A0A066Z2R5	KCH_04140	Kitasatospora cheerisanensis K	enzyme_name_match	29.8	AS9	1.0
+A0A1I4REL0	SAMN02982985_04278	Rugamonas rubra	clade_homolog	29.7	AS9	2.7814
+I2NAU1	STSU_002295	Streptomyces tsukubensis (stra	enzyme_name_match	29.3	AS23	1.0
+A0ABT8PP84	entE Q0A17_01715	Citrobacter enshiensis	clade_homolog	29.3	AS9	2.7814
+A0A1Q4V9E6	AB852_08605	Streptomyces uncialis	enzyme_name_match	29.3	AS23	1.0
+H5V2P8	entE EH105704_06_01060	Atlantibacter hermannii NBRC 1	clade_homolog	29.1	AS9	2.7814
+E4NJE9	bfmL KSE_73420	Kitasatospora setae (strain AT	enzyme_name_match	29.1	AS9	1.0
+Q8XBV3	entE Z0736 ECs0633	Escherichia coli O157:H7	activity_ec	29.1	AS9	4.5867
+K0K5K7	BN6_48520	Saccharothrix espanaensis (str	enzyme_name_match	29.0	AS23	1.0
+A0ABY2PEL7	E5Z02_15000	Streptomyces rhizosphaericola	enzyme_name_match	29.0	AS23	1.0
+A0ABY2PYH4	DJ535_05025	Citrobacter murliniae	clade_homolog	28.9	AS9	2.7814
+A0ABS1A910	entE I6M80_15190	Citrobacter cronae	clade_homolog	28.9	AS9	2.7814
+A0A9N8CL71	dhbE TML_03621	Citrobacter werkmanii	clade_homolog	28.9	AS9	2.7814
+A0ABY0HUS5	EAJ18_16335	Citrobacter amalonaticus	clade_homolog	28.9	AS9	2.7814
+A0ABX5T694	entE E4Z61_10620	Citrobacter tructae	clade_homolog	28.9	AS9	2.7814
+M9YTX6	bafBII	Streptomyces griseus	enzyme_name_match	28.8	AS23	1.0
+A0A0D0P463	TR51_02125	Kitasatospora griseola (Strept	enzyme_name_match	28.8	AS23	1.0
+P10378	entE b0594 JW0586	Escherichia coli (strain K12)	activity_ec	28.7	AS9	6.0867
+A0ABZ1US81	E7V67_011015	[Empedobacter] haloabium	clade_homolog	28.7	AS9	2.7814
+A0A848MFI3	entE GW590_03505	Rouxiella aceris	clade_homolog	28.7	AS9	2.7814
+A0ABR6TPB4	entE H6P72_01825	Citrobacter braakii	clade_homolog	28.7	AS9	2.7814
+A0A4P6WIA2	entE E1B03_08135	Citrobacter arsenatis	clade_homolog	28.7	AS9	2.7814
+A0A0J8VIE0	entE ACH50_18460	Franconibacter pulveris	clade_homolog	28.5	AS9	2.7814
+A0ABY8G9P0	O1Q98_05320	Dickeya lacustris	clade_homolog	28.5	AS9	2.7814
+A0ABD6M443	entE FCH32_05560	Citrobacter gillenii	clade_homolog	28.5	AS9	2.7814
+A0ABY8RUB5	KZ699_22085	Agrobacterium cucumeris	clade_homolog	28.5	AS9	2.7814
+A0ABR5D6G2	entE RP75_13855	Agrobacterium arsenijevicii	clade_homolog	28.5	AS9	2.7814
+A0A6I3SY12	entE GCM10011572_51080	Pseudoduganella buxea	clade_homolog	28.5	AS9	2.7814
+A0ABV7CPR5	ACFOEE_19280	Pseudoalteromonas fenneropenae	clade_homolog	28.5	AS9	2.7814
+A0ABV1PLL2	ABQG75_08310	Franconibacter daqui	clade_homolog	28.5	AS9	2.7814
+A0ABV6E8D3	ACFFJ3_01800	Serratia aquatilis	clade_homolog	28.5	AS9	2.7814
+A0ABU9FFN6	entE QFI96_023165	Klebsiella lignicola	clade_homolog	28.5	AS9	2.7814
+A0ABS0ZNV2	entE I6M88_04615	Citrobacter sedlakii	clade_homolog	28.5	AS9	2.7814
+A0ABS3EI71	JZX89_12925	Agrobacterium burrii	clade_homolog	28.5	AS9	2.7814
+A0ABX9WXW6	EFS38_03960	Dickeya undicola	clade_homolog	28.5	AS9	2.7814
+A0A845SG59	entE GRH90_13915	Acerihabitans arboris	clade_homolog	28.3	AS9	2.7814
+A0ABY8BKR9	PX653_09460	Pseudoduganella chitinolytica	clade_homolog	28.3	AS9	2.7814
+A0ABY7KUQ3	entE O4000_17265	Citrobacter freundii	clade_homolog	28.3	AS9	2.7814
+A0A6L6IDQ6	entE GJV78_00905	Intestinirhabdus alba	clade_homolog	28.3	AS9	2.7814
+A0A4R0HUW3	E0L21_00920	Kosakonia quasisacchari	clade_homolog	28.3	AS9	2.7814
+A0A2P5GQZ3	entE CHU33_16380	Superficieibacter electus	clade_homolog	28.3	AS9	2.7814
+A0ABZ0GYH2	entE RY846_17780	Citrobacter portucalensis	clade_homolog	28.3	AS9	2.7814
+A0ABX9NM84	D5077_14420	Dickeya dianthicola	clade_homolog	28.3	AS9	2.7814
+A0ABP2BMI1	entE AGR13a_Lc110361	Agrobacterium genomosp. 13 str	clade_homolog	28.3	AS9	2.7814
+A0A4Z0HDJ2	E4099_06190	Streptomyces palmae	enzyme_name_match	28.2	AS23	1.0
+A0A099F4L1	entE IT41_06215	Paracoccus halophilus	clade_homolog	28.1	AS9	2.7814
+A0ABZ0TCP3	SR933_08345	Halomonas elongata (strain ATC	clade_homolog	28.1	AS9	2.7814
+A0A1S8CEA1	entE BMI79_20100	Serratia oryzae	clade_homolog	28.1	AS9	2.7814
+A0A1H3ZSD1	SAMN02982996_01300	Lonsdalea quercina	clade_homolog	28.1	AS9	2.7814
+E1V3P1	entE HELO_2836	Halomonas elongata (strain ATC	clade_homolog	28.1	AS9	2.7814
+A0A6L5E307	entE GBB84_02350	Citrobacter telavivensis	clade_homolog	28.1	AS9	2.7814
+A0AAE9MD39	NHF51_11590	Aeromonas encheleia	clade_homolog	28.1	AS9	2.7814
+A0ABY0JUJ8	BN4901_4141	Citrobacter europaeus	clade_homolog	28.1	AS9	2.7814
+A0ACA8D3X7	entE CI104_07335	Citrobacter farmeri	clade_homolog	28.1	AS9	2.7814
+A0A1S7RUI9	entE AGR3A_Lc140411	Agrobacterium tomkonis CFBP 66	clade_homolog	28.1	AS9	2.7814
+A8AJL3	CKO_02567	Citrobacter koseri (strain ATC	clade_homolog	28.1	AS9	2.7814
+A0A822VC76	entE AGR4A_Lc60189	Agrobacterium tumefaciens str.	clade_homolog	27.9	AS9	2.7814
+A0ABW7PS94	ABU178_03085	Pantoea osteomyelitidis	clade_homolog	27.9	AS9	2.7814
+A0A9J6Q859	entE M8013_00460	Silvania confinis	clade_homolog	27.9	AS9	2.7814
+A0A562NGR6	IQ24_03128	Paracoccus sulfuroxidans	clade_homolog	27.9	AS9	2.7814
+A0A240AK61	dhbE SAMEA4384070_0030	Serratia ficaria	clade_homolog	27.9	AS9	2.7814
+A0ABM6BKR6	entE PL78_09690	Yersinia entomophaga	clade_homolog	27.9	AS9	2.7814
+A0ABW0H561	ACFPPC_00050	Allobosea vestrisii	clade_homolog	27.9	AS9	2.7814
+E0SLE4	cbsE Dda3937_02433	Dickeya dadantii (strain 3937)	clade_homolog	27.9	AS9	2.7814
+A0ABU8DHL9	V8N49_12290	Erwinia aphidicola	clade_homolog	27.9	AS9	2.7814
+A0ABS5GS67	KAT72_13375	Aeromonas popoffii	clade_homolog	27.9	AS9	2.7814
+A0A2X4UZI1	I6G64_19630	Serratia plymuthica	clade_homolog	27.9	AS9	2.7814
+A0ABZ0YYP9	SR882_01885	Guyparkeria halophila	clade_homolog	27.9	AS9	2.7814
+A0ABY3BPN1	EXN23_14850	Agrobacterium salinitolerans	clade_homolog	27.9	AS9	2.7814
+Q8GHC3	cloL	Streptomyces roseochromogenus 	enzyme_name_match	27.7	AS9	1.0
+A0ABU7UFS5	entE V4839_20135	Lelliottia amnigena (Enterobac	clade_homolog	27.7	AS9	2.7814
+A0A9W5B3L4	entE AGR2A_Lc150137	Agrobacterium genomosp. 2 str.	clade_homolog	27.7	AS9	2.7814
+E3G5C2	Entcl_3201	Enterobacter lignolyticus (str	clade_homolog	27.7	AS9	2.7814
+Q9EZ79	entE	Brucella abortus	clade_homolog	27.7	AS9	2.7814
+A0ABV0HBK2	ABH309_22300	Chromobacterium piscinae	clade_homolog	27.7	AS9	2.7814
+A0ABS7F9T4	KIF53_04325	Chromobacterium subtsugae	clade_homolog	27.7	AS9	2.7814
+A0ABX7UST6	entE HC231_13135	Brenneria izadpanahii	clade_homolog	27.7	AS9	2.7814
+D4E3D3	entE HMPREF0758_2683	Serratia odorifera DSM 4582	clade_homolog	27.7	AS9	2.7814
+A0AAW7B5F5	P8A28_11120	Brucella inopinata	clade_homolog	27.7	AS9	2.7814
+A0A4V1LT09	CS022_08615	Veronia nyctiphanis	clade_homolog	27.7	AS9	2.7814
+A0A2R4CAE8	entE C9I28_13370	Pseudoduganella armeniaca	clade_homolog	27.7	AS9	2.7814
+A0A4R3YUV9	EDC52_10675	Biostraticola tofi	clade_homolog	27.7	AS9	2.7814
+A0A1M7MV68	SAMN05444272_3570	Roseibium suaedae	clade_homolog	27.6	AS17	2.7814
+A0A8I0T689	entE PPEP_a3144	Pseudoalteromonas peptidolytic	clade_homolog	27.6	AS17	2.7814
+A0A8I2HA49	R5H13_00740	Pseudoalteromonas maricaloris	clade_homolog	27.5	AS9	2.7814
+A0ABU4E3J5	R4P48_09330	Atlantibacter subterraneus	clade_homolog	27.5	AS9	2.7814
+C7LGL9	entE BMI_II15	Brucella microti (strain BCCN 	clade_homolog	27.5	AS9	2.7814
+A0AA92X8Q8	D4100_12495	Serratia inhibens	clade_homolog	27.5	AS9	2.7814
+Q2YL95	BAB2_0014	Brucella abortus (strain 2308)	clade_homolog	27.5	AS9	2.7814
+A9MDD4	BCAN_B0017	Brucella canis (strain ATCC 23	clade_homolog	27.5	AS9	2.7814
+A0ABD5LPG2	GGE40_003607	Agrobacterium radiobacter	clade_homolog	27.5	AS9	2.7814
+A0A2P8VPB8	entE C7G83_01250	Siccibacter turicensis	clade_homolog	27.5	AS9	2.7814
+A0ABN0HMT2	entE C241_09976	Bradyrhizobium lupini HPC(L)	clade_homolog	27.5	AS9	2.7814
+A0A917F4R0	basE GCM10007301_06880	Azorhizobium oxalatiphilum	clade_homolog	27.5	AS23	2.7814
+A0A1D7YF69	BFF78_27285	Streptomyces fodineus	enzyme_name_match	27.5	AS9	1.0
+A0ABV0CN46	VA599_17665	Chromobacterium indicum	clade_homolog	27.5	AS9	2.7814
+A0ABY9PMQ3	RFB13_19675	Serratia fonticola	clade_homolog	27.5	AS9	2.7814
+Q8YDU6	BMEII0078	Brucella melitensis biotype 1 	clade_homolog	27.5	AS9	2.7814
+Q8GR99	agbE	Agrobacterium tumefaciens	clade_homolog	27.5	AS9	2.7814
+A0A7L5BPZ3	entE G3A56_23860	Rhizobium oryzihabitans	clade_homolog	27.5	AS9	2.7814
+A0AA44EKZ9	entE FOB26_13305	Agrobacterium pusense	clade_homolog	27.5	AS9	2.7814
+A0A4P8YIJ1	entE FEM41_12945	Jejuibacter calystegiae	clade_homolog	27.5	AS9	2.7814
+W0L5A8	entE Z042_04155	Chania multitudinisentens RB-2	clade_homolog	27.3	AS9	2.7814
+A0ABS5B7I2	J8657_02200	Dickeya oryzae	clade_homolog	27.3	AS9	2.7814
+A0ABS4DV91	J2Z17_000980	Heterorhizobium halophytocola	clade_homolog	27.3	AS9	2.7814
+A0AAD3NW99	entE GCM10017635_04020	Paracoccus kondratievae	clade_homolog	27.3	AS9	2.7814
+A0A9X8JM17	CLR69_13375	Pectobacterium zantedeschiae	clade_homolog	27.3	AS9	2.7814
+A0A1C3EJZ3	A8L45_10060	Veronia pacifica	clade_homolog	27.3	AS9	2.7814
+A0A1C4AF32	GA0061071_1039	Kosakonia oryzendophytica	clade_homolog	27.3	AS9	2.7814
+A0ABZ3B1W4	entE AAEY27_15855	Kosakonia calanthes	clade_homolog	27.3	AS9	2.7814
+A0A1H7PDR5	SAMN04515666_103448	Allobosea lupini	clade_homolog	27.3	AS9	2.7814
+A0A0F4JZ84	VR44_02165	Streptomyces katrae	enzyme_name_match	27.3	AS9	1.0
+A0ABY5CTE6	KFQ06_01480	Serratia entomophila	clade_homolog	27.3	AS9	2.7814
+A0ABV0FA01	ABGV49_02665	Chromobacterium vaccinii	clade_homolog	27.3	AS9	2.7814
+A0ABX9S3P9	C7387_2218	Yokenella regensburgei	clade_homolog	27.3	AS9	2.7814
+A0A934JY59	I8J31_16825	Marinomonas transparens	clade_homolog	27.3	AS17	2.7814
+A0ABM9Z7P6	BAIG_00097	Brucella ceti M644/93/1	clade_homolog	27.3	AS9	2.7814
+A0ABM9S8T2	irp5 ERS137967_01605	Yersinia nurmii	clade_homolog	27.3	AS9	2.7814
+A0A8K0V3W1	JJB97_04975	Tenebrionibacter intestinalis	clade_homolog	27.3	AS9	2.7814
+A0A9J6Q2N2	entE M8014_16600	Silvania hatchlandensis	clade_homolog	27.3	AS9	2.7814
+A0AAC8VRN3	dhbE NCTC9529_02940	Cronobacter universalis NCTC 9	clade_homolog	27.3	AS9	2.7814
+A0A368YVB0	DFP89_11193	Paracoccus lutimaris	clade_homolog	27.3	AS9	2.7814
+A0A4P8QKL4	EH207_01805	Brenneria rubrifaciens	clade_homolog	27.3	AS9	2.7814
+A0ABM9ZPP8	BAHG_01984	Brucella pinnipedialis (strain	clade_homolog	27.3	AS9	2.7814
+A0A248KC00	entE LFZ56_15715	Salmonella bongori serovar 66:	clade_homolog	27.3	AS9	2.7814
+A0ABV4AEV5	AB5I84_04230	Isoalcanivorax beigongshangi	clade_homolog	27.3	AS9	2.7814
+A0ABV4A3A3	entE AB7Z85_05535	Pseudenterobacter timonensis	clade_homolog	27.3	AS9	2.7814
+A0ABS0TYX8	JEQ07_22390	Serratia proteamaculans	clade_homolog	27.3	AS9	2.7814
+A0ABR7A5X6	H8K43_11265	Cognatundibacterium curvum	clade_homolog	27.3	AS9	2.7814
+A0A949Q3R2	JZ788_05325	Tenebrionicola larvae	clade_homolog	27.3	AS9	2.7814
+A0A502GMS3	EAH77_06160	Ewingella americana	clade_homolog	27.3	AS9	2.7814
+A0ABW7LLX2	ACHFJ0_13900	Paracoccus broussonetiae subsp	clade_homolog	27.2	AS17	2.7814
+A0ACN3QBA7	entE FT643_05290	Ketobacter nezhaii	clade_homolog	27.1	AS9	2.7814
+A0ABU6I9Q1	entE VOF76_18900	Leclercia adecarboxylata	clade_homolog	27.1	AS9	2.7814
+A0A518X9A7	D8B20_02080	Candidatus Pantoea soli	clade_homolog	27.1	AS9	2.7814
+A0A3R7SDU8	A7A09_000590	Paracoccus methylarcula	clade_homolog	27.1	AS9	2.7814
+A0ABU9V0B9	entE AAIG39_00715	Phytobacter palmae	clade_homolog	27.1	AS9	2.7814
+A0A1S8YHX6	entE BTJ39_17600	Izhakiella australiensis	clade_homolog	27.1	AS9	2.7814
+A0A4U3F8W6	IFT93_14630	Erwinia persicina	clade_homolog	27.1	AS9	2.7814
+N9GEM6	F927_03283	Acinetobacter haemolyticus CIP	clade_homolog	27.1	AS17	2.7814
+A0A7U8K773	BANG_02918	Brucella neotomae 5K33	clade_homolog	27.1	AS9	2.7814
+A0ABP2XPR7	entE O166_23040	Pseudogulbenkiania ferrooxidan	clade_homolog	27.1	AS9	2.7814
+Q3Z4J9	entE SSON_0545	Shigella sonnei (strain Ss046)	clade_homolog	27.1	AS9	2.7814
+A0ABM6IBF3	entE B0E33_28970	Roseibium algicola	clade_homolog	27.1	AS23	2.7814
+A0ACE3V7G1	B3286c2_0780	Brucella vulpis	clade_homolog	27.1	AS9	2.7814
+A0ABY8E3G2	entE OM418_05630	Enterobacter quasiroggenkampii	clade_homolog	27.1	AS9	2.7814
+A0ABQ1FU01	entE GCM10011328_00970	Hafnia psychrotolerans	clade_homolog	27.1	AS9	2.7814
+A0A2K8QP71	entE CVE23_15120	Dickeya fangzhongdai	clade_homolog	26.9	AS9	2.7814
+A0ABX3KA76	entE BZG73_06870	Salinivibrio siamensis	clade_homolog	26.9	AS9	2.7814
+A0A2T0VWY5	CLV80_1088	Yoonia maritima	clade_homolog	26.9	AS9	2.7814
+A9ML33	SARI_02340	Salmonella arizonae (strain AT	clade_homolog	26.9	AS9	2.7814
+A0AAJ2RX15	entE SIK69_02425	Scandinavium lactucae	clade_homolog	26.9	AS9	2.7814
+A0A250B508	entE AWC35_18970	Gibbsiella quercinecans	clade_homolog	26.9	AS9	2.7814
+A0ABX0RER0	entE F3J40_13580	Candidatus Pantoea multigeneri	clade_homolog	26.9	AS9	2.7814
+A0A1V9DNL0	entE B2J69_04845	Pantoea latae	clade_homolog	26.9	AS9	2.7814
+A0A7G2JS31	entE CR62_12260	Serratia grimesii	clade_homolog	26.9	AS9	2.7814
+A0AB34CGQ7	entE F3I20_14810	Candidatus Pantoea gossypiicol	clade_homolog	26.9	AS9	2.7814
+A0ABT2K9R6	MU516_10385	Paracoccus maritimus	clade_homolog	26.9	AS9	2.7814
+A0AAD0SJT3	entE CKQ53_17110	Lonsdalea britannica	clade_homolog	26.9	AS9	2.7814
+A0A1C9ZPS9	nan	Streptomyces sp. SANK 60404	enzyme_name_match	26.9	AS9	1.0
+A0A1C4BL70	GA0061070_100840	Kosakonia oryziphila	clade_homolog	26.9	AS9	2.7814
+A0A448SHZ1	I5U13_06705	Serratia rubidaea (Serratia ma	clade_homolog	26.9	AS9	2.7814
+A0ABS0LXT6	I5U16_08085	Serratia surfactantfaciens	clade_homolog	26.9	AS9	2.7814
+A0A1G5EHC1	SAMN02927935_01175	Serratia nematodiphila	clade_homolog	26.9	AS9	2.7814
+A0A1I0DSL8	SAMN04489858_104282	Paracoccus homiensis	clade_homolog	26.8	AS17	2.7814
+A0A2J7Z6R9	SMF913_11993	Streptomyces malaysiensis	enzyme_name_match	26.8	AS23	1.0
+A0A1G5Q7R9	SAMN02982990_01071	Photorhabdus luminescens (Xeno	clade_homolog	26.7	AS9	2.7814
+A0A348HEP2	ZBT109_1334	Zymobacter palmae	clade_homolog	26.7	AS9	2.7814
+A0ABR4W832	DJ58_4250	Yersinia frederiksenii ATCC 33	clade_homolog	26.7	AS9	2.7814
+A0ABX9DFD5	entE BYZ73_11550	Rhodovulum viride	clade_homolog	26.7	AS9	2.7814
+A0A0L0GVH8	entE GM31_21280	Trabulsiella odontotermitis	clade_homolog	26.7	AS9	2.7814
+A0A0H3NAG6	entE SL1344_0584	Salmonella typhimurium (strain	clade_homolog	26.7	AS9	2.7814
+A0A1H9D1X9	SAMN05216522_101103	Rosenbergiella nectarea	clade_homolog	26.7	AS9	2.7814
+A0A1I4XCX5	SAMN05216516_10465	Izhakiella capsodis	clade_homolog	26.7	AS9	2.7814
+A0A0E1RWL5	cocJ CIMG_03172	Coccidioides immitis (strain R	enzyme_name_match	26.7	AS9	3.5287
+A0ABV0HH65	entE VSR74_07135	Pseudocitrobacter cyperus	clade_homolog	26.7	AS9	2.7814
+A0ABV0IS84	ABI908_07570	Chromobacterium phragmitis	clade_homolog	26.7	AS9	2.7814
+A0ABS1ADF4	basE I6M64_01270	Acinetobacter lactucae	clade_homolog	26.7	AS17	2.7814
+V5TX03	entE AUM46_10060	Cronobacter malonaticus	clade_homolog	26.7	AS9	2.7814
+A0ABX3C7S1	entE BI344_13030	Chromobacterium sphagni	clade_homolog	26.7	AS9	2.7814
+D2BSP5	Dd586_2818	Dickeya zeae (strain Ech586) (	clade_homolog	26.7	AS9	2.7814
+F0KJT7	basE BDGL_001869	Acinetobacter pittii (strain P	clade_homolog	26.7	AS17	2.7814
+A0ABS5SWZ8	entE HH682_09295	Rosenbergiella gaditana	clade_homolog	26.7	AS9	2.7814
+Q7N3I7	entE plu2729	Photorhabdus laumondii subsp. 	clade_homolog	26.7	AS9	2.7814
+Q7NXZ2	entE CV_1484	Chromobacterium violaceum (str	clade_homolog	26.7	AS9	2.7814
+A0A076EDV6	entE	Acinetobacter baumannii	clade_homolog	26.7	AS17	2.7814
+A0A0A8VMF7	irp5 NCTC10476_02682	Yersinia ruckeri	clade_homolog	26.7	AS9	2.7814
+A0A4R3VS48	EDC54_102212	Samsonia erythrinae	clade_homolog	26.7	AS9	2.7814
+A0A5Q2TA15	entE GHC21_15700	Kluyvera intermedia (Enterobac	clade_homolog	26.7	AS9	2.7814
+A0ABV4E8I2	AB6T85_11885	Erwinia aeris	clade_homolog	26.7	AS9	2.7814
+A0ACC8S2V5	entE BH713_15065	Enterobacter kobei	clade_homolog	26.7	AS9	2.7814
+A0A6I6EWA5	entE GK011_13075	Erwinia sorbitola	clade_homolog	26.7	AS9	2.7814
+A0AAQ0KMW3	ATH84_100884	Paracoccus versutus (Thiobacil	clade_homolog	26.7	AS9	2.7814
+A0A2S5DGZ8	entE C2I19_09380	Chromobacterium alticapitis	clade_homolog	26.7	AS9	2.7814
+A0A8E2VHS7	C8N38_11119	Rhodovulum kholense	clade_homolog	26.7	AS9	2.7814
+Q8ZR32	entE STM0596	Salmonella typhimurium (strain	clade_homolog	26.7	AS9	2.7814
+A0A1W2ASV6	SAMN06297251_10532	Fulvimarina manganoxydans	clade_homolog	26.7	AS9	2.7814
+A0A0F6AY84	entE STM14_0694	Salmonella typhimurium (strain	clade_homolog	26.7	AS9	2.7814
+A0A089YM21	entE LT40_08455	Pseudomonas rhizosphaerae	clade_homolog	26.7	AS9	2.7814
+A0A090V1P2	entE EV102420_12_02480	Pseudescherichia vulneris NBRC	clade_homolog	26.7	AS9	2.7814
+A0ABY2ZZC8	entE FK492_10750	Pantoea dispersa	clade_homolog	26.7	AS9	2.7814
+A0ACG2ZMD3	entE QAA82_006150	Enterobacter hormaechei	clade_homolog	26.7	AS9	2.7814
+A0ABX9P0X6	D5396_13110	Rahnella inusitata	clade_homolog	26.6	AS9	2.7814
+A0A085A0T6	GTGU_03328	Trabulsiella guamensis ATCC 49	clade_homolog	26.6	AS9	2.7814
+A0ACC5PSA2	IFT41_16835	Enterobacter agglomerans (Erwi	clade_homolog	26.6	AS9	2.7814
+A0ABX6EGU1	entE F7D13_07215	Methylocystis rosea	clade_homolog	26.6	AS9	2.7814
+A0AB33FPS9	DMW51_15370	Serratia marcescens	clade_homolog	26.6	AS9	2.7814
+A0A2S9IBJ8	entE CQW29_11820	Pantoea coffeiphila	clade_homolog	26.6	AS9	2.7814
+A0ABW8QN37	ACJBEI_17265	Serratia sarumanii	clade_homolog	26.6	AS9	2.7814
+A1B4N1	Pden_2386	Paracoccus denitrificans (stra	clade_homolog	26.6	AS9	2.7814
+A0ABU3EFZ2	RM190_14895	Paracoccus broussonetiae	clade_homolog	26.6	AS9	2.7814
+A0ABU2HQA6	RGQ15_05095	Paracoccus aurantius	clade_homolog	26.6	AS9	2.7814
+A0ABT8LV00	QO199_21110	Serratia bockelmannii	clade_homolog	26.6	AS9	2.7814
+A0A1I3C8A7	SAMN04488021_1299	Paracoccus aminovorans	clade_homolog	26.6	AS9	2.7814
+A0A0J5L312	entF ABW06_09810	Pluralibacter gergoviae (Enter	clade_homolog	26.6	AS9	2.7814
+A0A521DSE4	SAMN06265221_10956	Paracoccus laeviglucosivorans	clade_homolog	26.6	AS9	2.7814
+A0A2T7ATY4	entE FZI19_00690	Cronobacter muytjensii	clade_homolog	26.6	AS9	2.7814
+A0A202B3R7	entE CBW21_20285	Chromobacterium violaceum	clade_homolog	26.6	AS9	2.7814
+A0A9J9GEW4	Ent638_1126	Enterobacter sp. (strain 638)	clade_homolog	26.6	AS9	2.7814
+A0ABX7D704	I6I38_06140	Serratia liquefaciens	clade_homolog	26.6	AS9	2.7814
+Q8Z8L1	entE t2272	Salmonella typhi	clade_homolog	26.6	AS9	2.7814
+A0A0F5VHM4	entE KY46_01970	Photobacterium halotolerans	clade_homolog	26.6	AS9	2.7814
+A0A1I6Y7E8	SAMN05192562_101381	Kosakonia arachidis	clade_homolog	26.6	AS23	2.7814
+A0ABZ2RHC5	WG219_00395	Ectopseudomonas mendocina (Pse	clade_homolog	26.6	AS9	2.7814
+A0A143HSM6	entE A3224_14755	Microbulbifer thermotolerans	clade_homolog	26.6	AS9	2.7814
+A0A0G4JZI1	BN1221_03836	Brenneria goodwinii	clade_homolog	26.6	AS9	2.7814
+A0ABX7JHE8	JWJ88_09350	Paracoccus methylovorus	clade_homolog	26.5	AS17	2.7814
+A0ABX0B0K6	GPY42_03430	Photorhabdus kayaii	clade_homolog	26.5	AS17	2.7814
+A0A2N9X7W8	entE BHC54_04275	Snodgrassella alvi	clade_homolog	26.5	AS17	2.7814
+A0ABY3LFZ6	D9O29_11295	Pantoea vagans	clade_homolog	26.4	AS9	2.7814
+A0ABZ3B323	entF AAEY27_15890	Kosakonia calanthes	clade_homolog	26.4	AS23	2.7814
+A0AAW3HH60	entE SG71_10595	Enterobacter chengduensis	clade_homolog	26.4	AS9	2.7814
+A0A1C0U9V4	entE Ppb6_00073	Photorhabdus australis subsp. 	clade_homolog	26.4	AS9	2.7814
+A0A0H3CM14	entE ECL_03107	Enterobacter cloacae subsp. cl	clade_homolog	26.4	AS9	2.7814
+A0ABV1PEC1	ABRQ07_18145	Pectobacterium polonicum	clade_homolog	26.4	AS9	2.7814
+A0ABV3UHT6	AB4M04_13865	Serratia quinivorans	clade_homolog	26.4	AS9	2.7814
+A0A022PIM9	BA1DRAFT_02652	Photorhabdus aegyptia	clade_homolog	26.4	AS9	2.7814
+Q6LG99	S0514 PBPRB1823	Photobacterium profundum (stra	clade_homolog	26.4	AS9	2.7814
+V5Z464	cbsE EPIR_0346	Erwinia piriflorinigrans CFBP 	clade_homolog	26.4	AS9	2.7814
+A0ABX6GQN4	entE FO014_17295	Serratia rhizosphaerae	clade_homolog	26.4	AS9	2.7814
+A0A239Q1V7	SAMN05444959_1187	Paracoccus seriniphilus	clade_homolog	26.4	AS17	2.7814
+A0ABU3ZML6	R2X38_20325	Photobacterium rosenbergii	clade_homolog	26.4	AS9	2.7814
+A0A6L6JA81	entE GL286_07560	Paracoccus aestuariivivens	clade_homolog	26.4	AS9	2.7814
+Q52V69	nan	Streptomyces aizunensis	enzyme_name_match	26.4	AS9	1.0
+C6CCK2	Dd703_3074	Musicola paradisiaca (strain E	clade_homolog	26.4	AS9	2.7814
+A0ACH2UW30	entE AAHF05_05625	Enterobacter adelaidei	clade_homolog	26.4	AS9	2.7814
+A0A5C1DDL4	entE FYK34_02645	Chromobacterium paludis	clade_homolog	26.4	AS23	2.7814
+A0ABN7BZ10	entE TCT1_04880	Xenorhabdus taiwanensis	clade_homolog	26.3	AS17	2.7814
+A0ABX6CI08	entE FQU82_02792	Acinetobacter baumannii (strai	clade_homolog	26.3	AS17	2.7814
+A0A2D0IYP8	BDE27_0201	Xenorhabdus ehlersii	clade_homolog	26.3	AS17	2.7814
+A0ACD7FFV9	entE SP68_21605	Klebsiella variicola	clade_homolog	26.2	AS9	2.7814
+A0ABV7R434	ACFOMH_07655	Paracoccus mangrovi	clade_homolog	26.2	AS9	2.7814
+A0A5J5G377	entE FJU30_08745	Affinibrenneria salicis	clade_homolog	26.2	AS9	2.7814
+N8ZQ03	F960_02257	Acinetobacter gerneri DSM 1496	clade_homolog	26.2	AS23	2.7814
+I2B7J0	entE EBL_c13920	Shimwellia blattae (strain ATC	clade_homolog	26.2	AS9	2.7814
+A0A9X2ELP5	MO867_09290	Microbulbifer okhotskensis	clade_homolog	26.2	AS9	2.7814
+A0ABU9ML60	AABB92_14465	Pantoea brenneri	clade_homolog	26.2	AS9	2.7814
+Q6D9Y5	entE ECA0478	Pectobacterium atrosepticum (s	clade_homolog	26.2	AS9	2.7814
+A0A0J1H7L0	entE ABT57_17510	Photobacterium ganghwense	clade_homolog	26.2	AS9	2.7814
+A0ABX9Z3I3	DMB85_009710	Pectobacterium aquaticum	clade_homolog	26.2	AS9	2.7814
+A0ABX8W1V3	entE FGI21_21210	Dickeya zeae	clade_homolog	26.2	AS9	2.7814
+A0A2H5F427	entE CX676_10990	Paracoccus zhejiangensis	clade_homolog	26.2	AS9	2.7814
+A0A506VCZ2	entE FKM52_08830	Mixta tenebrionis	clade_homolog	26.2	AS9	2.7814
+A0A433NIK8	H4F48_08955	Pectobacterium brasiliense	clade_homolog	26.2	AS9	2.7814
+A0A2U1TV19	entE B4923_08510	Brenneria roseae subsp. americ	clade_homolog	26.2	AS9	2.7814
+A0A319DTY9	BO78DRAFT_423723	Aspergillus sclerotiicarbonari	clade_homolog	26.2	AS9	2.7814
+A0ABT3XAL5	entE OTG14_01600	Enterobacter pseudoroggenkampi	clade_homolog	26.2	AS9	2.7814
+A0ABT0KII0	KAJ71_22825	Serratia silvae	clade_homolog	26.2	AS9	2.7814
+A0A2D0L400	Xkoz_03138	Xenorhabdus kozodoii	clade_homolog	26.2	AS9	2.7814
+A0ABX0VKE2	entE E2L00_08125	Cedecea colo	clade_homolog	26.2	AS9	2.7814
+A0A2D0KAW4	Xsto_03842	Xenorhabdus stockiae	clade_homolog	26.2	AS9	2.7814
+A0ABT4ZAK7	PAF17_02570	Paracoccus onchidii	clade_homolog	26.2	AS9	2.7814
+A0AAW8HD08	entE RBJ67_16080	Enterobacter soli	clade_homolog	26.2	AS9	2.7814
+A0AB35RPB1	R0H02_16360	Phytobacter ursingii	clade_homolog	26.2	AS9	2.7814
+A0AAN0KIN9	amoE PEC302110_34760	Pectobacterium araliae	clade_homolog	26.2	AS9	2.7814
+A0ABY9S7C5	RHD99_18415	Buttiauxella selenatireducens	clade_homolog	26.2	AS9	2.7814
+A0ABY5USJ3	N0H69_06395	Yersinia alsatica	clade_homolog	26.2	AS9	2.7814
+C6C324	Dd703_1489	Musicola paradisiaca (strain E	clade_homolog	26.2	AS9	2.7814
+C6CQI7	Dd1591_1317	Dickeya chrysanthemi (strain E	clade_homolog	26.2	AS9	2.7814
+A0ACH1Z2V1	U1R68_18710	Pectobacterium colocasium	clade_homolog	26.2	AS9	2.7814
+A0ABQ0H5Y2	basE PPNSA23_42720	Phyllobacterium phragmitis	clade_homolog	26.2	AS9	2.7814
+A0ABR9Q6M3	entE IM311_10480	Enterobacter pasteurii	clade_homolog	26.2	AS9	2.7814
+A0A1Q5TTD1	Xedl_01741	Xenorhabdus eapokensis	clade_homolog	26.1	AS17	2.7814
+E9CKD0	entE SSYM_0483	Serratia symbiotica str. Tucso	clade_homolog	26.0	AS9	2.7814
+A0ABX9ERQ7	entE AU492_04825	Lonsdalea populi	clade_homolog	26.0	AS9	2.7814
+A0A2S3UMY5	CLV41_11069	Roseibium marinum	clade_homolog	26.0	AS23	2.7814
+A0ACD7FFX4	entF SP68_21570	Klebsiella variicola	clade_homolog	26.0	AS23	2.7814
+A0ABP1WFX1	BN134_4045	Cronobacter dublinensis 1210	clade_homolog	26.0	AS23	2.7814
+A0ABS7S111	entE ITX56_14510	Leclercia barmai	clade_homolog	26.0	AS9	2.7814
+A0ABR9EGE8	entE PAUR_a4392	Pseudoalteromonas aurantia 208	clade_homolog	26.0	AS17	2.7814
+A0A9X9BXZ0	Q6237_20815	Serratia ureilytica	clade_homolog	26.0	AS9	2.7814
+A0ABU9PCZ5	entE AAGT82_01375	Enterobacter quasihormaechei	clade_homolog	26.0	AS9	2.7814
+A0A317Q8Q4	DES37_101343	Mangrovibacter plantisponsor	clade_homolog	26.0	AS9	2.7814
+A0A223UEU1	dhbE SAMEA3538468_0106	Klebsiella quasivariicola	clade_homolog	26.0	AS9	2.7814
+A0ABX4SBJ7	entE A0G03_06570	Pectobacterium peruviense	clade_homolog	26.0	AS9	2.7814
+A0ABW8GW74	ACIPUH_12440	Pectobacterium jejuense	clade_homolog	26.0	AS9	2.7814
+A0ABW8GCU6	ACIPUP_15200	Pectobacterium actinidiae	clade_homolog	26.0	AS9	2.7814
+A0ABU5D0K7	entE PYW49_07525	Enterobacter chinensis	clade_homolog	26.0	AS9	2.7814
+A0ABU7XDH2	V3H18_00660	Methylocystis borbori	clade_homolog	26.0	AS9	2.7814
+A0A1C4BL11	GA0061070_100847	Kosakonia oryziphila	clade_homolog	26.0	AS23	2.7814
+A0AAP9KN26	Q3404_04185	Pantoea phytobeneficialis	clade_homolog	26.0	AS9	2.7814
+A0A807LI46	entE BWI95_11750	Kosakonia cowanii JCM 10956 = 	clade_homolog	26.0	AS9	2.7814
+A0ABX3XFN1	entE AU512_11240	Lonsdalea iberica	clade_homolog	26.0	AS9	2.7814
+A0ABX3U842	entE B2M27_24740	Kluyvera intermedia (Enterobac	clade_homolog	26.0	AS9	2.7814
+A0A6L6J1S3	entE GL284_16495	Paracoccus shanxieyensis	clade_homolog	26.0	AS9	2.7814
+A0AAI8IZ97	entF DKC11_06570	Klebsiella quasipneumoniae	clade_homolog	26.0	AS23	2.7814
+A0A1Q5U2R9	Xentx_01916	Xenorhabdus thuongxuanensis	clade_homolog	25.9	AS17	2.7814
+C9XXI4	entE Ctu_30460	Cronobacter turicensis (strain	clade_homolog	25.8	AS17	2.7814
+A7MKY4	ESA_00797	Cronobacter sakazakii (strain 	clade_homolog	25.8	AS9	2.7814
+A6T641	entE KPN_00612	Klebsiella pneumoniae subsp. p	clade_homolog	25.8	AS9	2.7814
+A0ABT1VGT1	NQH49_02500	Pantoea trifolii	clade_homolog	25.8	AS9	2.7814
+A0A3M9XMB6	D1O30_04530	Methylocystis hirsuta	clade_homolog	25.8	AS9	2.7814
+A0A2P8VR49	entF C7G83_01215	Siccibacter turicensis	clade_homolog	25.8	AS9	2.7814
+A0ACN3MVY6	AAE045_20935	Dryocola clanedunensis	clade_homolog	25.8	AS9	2.7814
+A0ACD8BNR2	entE THOKLE011_39870	Klebsiella michiganensis	clade_homolog	25.8	AS9	2.7814
+A0A9Q2ETT8	IG609_002520	Pectobacterium quasiaquaticum	clade_homolog	25.8	AS9	2.7814
+A0ABV0HGI0	entF VSR74_07180	Pseudocitrobacter cyperus	clade_homolog	25.8	AS9	2.7814
+A0A3A5K1U5	D6029_06180	Buttiauxella izardii	clade_homolog	25.8	AS9	2.7814
+A0ABR5YUB5	entE A3466_16200	Enterobacter genomosp. S	clade_homolog	25.8	AS9	2.7814
+A0ABN0QAP0	entF EDP2_3715	Enterobacter cloacae S611	clade_homolog	25.8	AS23	2.7814
+A0ABU7UFS2	entF V4839_20170	Lelliottia amnigena (Enterobac	clade_homolog	25.8	AS23	2.7814
+A0ABY3P3H2	entF FZO59_09545	Lelliottia nimipressuralis	clade_homolog	25.8	AS23	2.7814
+A0ABV4JC97	entE QVM81_06140	Enterobacter rongchengensis	clade_homolog	25.8	AS9	2.7814
+A0A4R6MCL3	DFP79_1320	Marinomonas balearica	clade_homolog	25.8	AS23	2.7814
+A6T634	entF KPN_00605	Klebsiella pneumoniae subsp. p	clade_homolog	25.8	AS23	2.7814
+A0A0H3GL78	KPHS_14400	Klebsiella pneumoniae subsp. p	clade_homolog	25.8	AS23	2.7814
+A0ABZ2E485	entE LM286_19810	Klebsiella ornithinolytica (Ra	clade_homolog	25.8	AS9	2.7814
+A0ABU5LXQ4	entE U5E74_02520	Klebsiella planticola (Raoulte	clade_homolog	25.8	AS9	2.7814
+A0A0H3GJV2	KPHS_14470	Klebsiella pneumoniae subsp. p	clade_homolog	25.8	AS9	2.7814
+A0A6P1Q179	entE C7M51_02070	Mixta intestinalis	clade_homolog	25.8	AS9	2.7814
+A0A9X2W7K8	MUA00_07375	Dryocola boscaweniae	clade_homolog	25.8	AS9	2.7814
+A0AAJ5UDL2	entF OR613_19425	Klebsiella electrica	clade_homolog	25.8	AS9	2.7814
+A0AB35X529	entE V4836_11115	Kluyvera ascorbata	clade_homolog	25.8	AS9	2.7814
+A0ABV4A1T4	entF AB7Z85_01960	Pseudenterobacter timonensis	clade_homolog	25.8	AS23	2.7814
+A0A5C6RUK0	entE FQV27_16670	Paracoccus aurantiacus	clade_homolog	25.8	AS9	2.7814
+A0A1I3XG55	SAMN05518863_10565	Candidatus Pantoea symbiotica	clade_homolog	25.8	AS9	2.7814
+A0A0D5YGP3	basE ABUW_1180	Acinetobacter baumannii	clade_homolog	25.7	AS17	2.7814
+A0A7U3Y8A8	entE AB57_2810	Acinetobacter baumannii (strai	clade_homolog	25.7	AS17	2.7814
+A0A3D9UIB4	BDD26_2503	Xenorhabdus cabanillasii	clade_homolog	25.7	AS17	2.7814
+A0A329WYF5	GPY48_17945	Photorhabdus bodei	clade_homolog	25.7	AS17	2.7814
+A0ABY7SIL8	JHX87_10045	Paracoccus fistulariae	clade_homolog	25.7	AS17	2.7814
+A0ABV4P2V6	ACCI49_15545	Microbulbifer epialgicus	clade_homolog	25.6	AS23	2.7814
+A0A0H3HXU4	W5S_0580	Pectobacterium parmentieri	clade_homolog	25.6	AS9	2.7814
+A0A0H3FTA1	entE EAE_13655	Klebsiella aerogenes (strain A	clade_homolog	25.6	AS9	2.7814
+A0ABT2RG99	M8318_19780	Leclercia tamurae	clade_homolog	25.6	AS9	2.7814
+A0ABX5A2R2	entE C3712_11365	Lelliottia aquatilis	clade_homolog	25.6	AS9	2.7814
+A0ABX0RXZ2	entE F3J37_25190	Candidatus Pantoea communis	clade_homolog	25.6	AS23	2.7814
+A0AB73NH98	entE CBW52_17255	Yersinia kristensenii	clade_homolog	25.6	AS9	2.7814
+A0AAX2EM71	SAMN03159428_00496	Kosakonia radicincitans	clade_homolog	25.6	AS9	2.7814
+A0ABT6E9Q6	entE OXR69_009305	Klebsiella huaxiensis	clade_homolog	25.6	AS9	2.7814
+A0AAP9IEM9	ACIPSN_10425	Pectobacterium parvum	clade_homolog	25.6	AS9	2.7814
+A0A2S8Q1U3	entE C6H66_11140	Photorhabdus hindustanensis	clade_homolog	25.6	AS9	2.7814
+A0A2T3J8W9	entE C9J12_23820	Photobacterium frigidiphilum	clade_homolog	25.6	AS9	2.7814
+A0ABT0MT08	MFP26_09545	Brenneria tiliae	clade_homolog	25.6	AS9	2.7814
+A0ACG2ZMG2	entF QAA82_006115	Enterobacter hormaechei	clade_homolog	25.6	AS9	2.7814
+A0A807LK22	entF BWI95_11715	Kosakonia cowanii JCM 10956 = 	clade_homolog	25.6	AS23	2.7814
+K8A0A0	entE AFK62_14475	Cronobacter condimenti 1330	clade_homolog	25.6	AS9	2.7814
+A0ABX4VGG6	entE C1167_05140	Enterobacter bugandensis	clade_homolog	25.6	AS9	2.7814
+A0A1Y2SJK3	Xbed_02958	Xenorhabdus beddingii	clade_homolog	25.6	AS9	2.7814
+C6DJV6	PC1_0463	Pectobacterium carotovorum sub	clade_homolog	25.6	AS9	2.7814
+A0ACC8S308	entF BH713_15105	Enterobacter kobei	clade_homolog	25.6	AS9	2.7814
+A0ABW1Q3P8	entE ACFPZP_18385	Citrobacter bitternis	clade_homolog	25.6	AS9	2.7814
+A0A7X5QA97	entE C5469_00365	Photorhabdus cinerea	clade_homolog	25.6	AS9	2.7814
+A0A7X5QKI4	entE C5470_05270	Photorhabdus stackebrandtii	clade_homolog	25.6	AS9	2.7814
+A0AAW5GF49	EXT50_10195	Pectobacterium polaris	clade_homolog	25.6	AS9	2.7814
+A0ABR4VTF2	entE KU75_04900	Pectobacterium odoriferum	clade_homolog	25.6	AS9	2.7814
+A0A0C5VKK1	YC6258_02768	Gynuella sunshinyii YC6258	clade_homolog	25.6	AS23	2.7814
+A0A0F7LKI1	entE VY86_02565	Photorhabdus thracensis	clade_homolog	25.6	AS9	2.7814
+A0A4R0GA87	entE VPX56_06340	Enterobacter wuhouensis	clade_homolog	25.6	AS9	2.7814
+W3V3X3	PTE_04187	Photorhabdus khanii NC19	clade_homolog	25.6	AS9	2.7814
+Q8KR80	phbE	Photorhabdus luminescens (Xeno	clade_homolog	25.6	AS9	2.7814
+A0A0X4ETC5	entE AWI28_13160	Enterobacter genomosp. O	clade_homolog	25.6	AS9	2.7814
+A0ABY0AX87	EKN94_04725	Enterobacter quasimori	clade_homolog	25.6	AS9	2.7814
+A0A2U1TQY9	entE DDT56_18545	Brenneria corticis	clade_homolog	25.6	AS9	2.7814
+A0ABX8LZ60	entE B0X70_13885	Photorhabdus akhurstii	clade_homolog	25.6	AS9	2.7814
+A0A088DBN1	colD1	Streptomyces aureus	enzyme_name_match	25.5	AS23	1.0
+A0ABX9G1N8	DFQ50_102448	Pseudocitrobacter faecalis	clade_homolog	25.4	AS9	2.7814
+A0A1B7I109	M979_0228	Buttiauxella noackiae ATCC 516	clade_homolog	25.4	AS9	2.7814
+A0ACH4E2K4	entF ACNKHP_20595	Shigella boydii	clade_homolog	25.4	AS9	2.7814
+A0A2X4TVG6	entF NCTC7307_03994	Salmonella enterica subsp. ari	clade_homolog	25.4	AS9	2.7814
+A0ABX6DR38	entF GHC21_15735	Kluyvera intermedia (Enterobac	clade_homolog	25.4	AS17	2.7814
+A0ABX4SSD6	entE PZBJ_09490	Pantoea endophytica	clade_homolog	25.4	AS9	2.7814
+A8AJM1	CKO_02575	Citrobacter koseri (strain ATC	clade_homolog	25.4	AS23	2.7814
+A0ABY6V5P1	entE SB6411_00560	Klebsiella spallanzanii	clade_homolog	25.4	AS9	2.7814
+A0ACG2L5B7	QNM16_25160	Pseudoalteromonas umbrosa	clade_homolog	25.4	AS9	2.7814
+B2TTE5	entF SbBS512_E0488	Shigella boydii serotype 18 (s	clade_homolog	25.4	AS9	2.7814
+A0ABM6URA2	entE DA391_07295	Yersinia massiliensis	clade_homolog	25.4	AS9	2.7814
+A0ACD7TYR2	entE KP1_1558	Klebsiella pneumoniae subsp. p	clade_homolog	25.4	AS9	2.7814
+A9ML41	SARI_02348	Salmonella arizonae (strain AT	clade_homolog	25.4	AS9	2.7814
+A0AA94KNC8	entF AWR26_18325	Kosakonia oryzae	clade_homolog	25.4	AS23	2.7814
+A0ABD7KE54	dhbE SAMEA2273443_0019	Enterobacter roggenkampii	clade_homolog	25.4	AS9	2.7814
+A0A248KBD7	entF LFZ56_15755	Salmonella bongori serovar 66:	clade_homolog	25.4	AS9	2.7814
+A0ABU9P0R5	entE AAFL32_08700	Klebsiella grimontii	clade_homolog	25.4	AS9	2.7814
+A0A1B8YEA4	entE Phpb_03453	Photorhabdus namnaonensis	clade_homolog	25.4	AS9	2.7814
+A0A1C4AFD0	GA0061071_10318	Kosakonia oryzendophytica	clade_homolog	25.4	AS23	2.7814
+A0ABW1VX06	ACFP9W_02090	Tatumella terrea	clade_homolog	25.4	AS9	2.7814
+A0ABR6RZ57	entE HII27_22275	Kluyvera sichuanensis	clade_homolog	25.4	AS9	2.7814
+A0ABY6WZK2	entF SAMEA3538468_0107	Klebsiella quasivariicola	clade_homolog	25.4	AS23	2.7814
+A0ABY3P4S2	entE FZO59_09510	Lelliottia nimipressuralis	clade_homolog	25.4	AS9	2.7814
+A0ABM5RNR9	entE LH22_19835	Pantoea rwandensis	clade_homolog	25.4	AS9	2.7814
+A0A0M8QIN0	ADK41_25835	Streptomyces caelestis	enzyme_name_match	25.3	AS23	1.0
+Q8ZR37	entF STM0588	Salmonella typhimurium (strain	clade_homolog	25.2	AS23	2.7814
+A0A1B7JHF5	M989_03967	Kluyvera georgiana ATCC 51603	clade_homolog	25.2	AS23	2.7814
+A0A161ZVT5	entE N475_18670	Pseudoalteromonas luteoviolace	clade_homolog	25.2	AS9	2.7814
+A0A9J9GF58	Ent638_1119	Enterobacter sp. (strain 638)	clade_homolog	25.2	AS23	2.7814
+A0AA40X0G7	entE BS639_19630	Rouxiella silvae	clade_homolog	25.2	AS9	2.7814
+Q2PC79	nan	Streptomyces rubradiris (Strep	enzyme_name_match	25.2	AS9	1.0
+F2JZU0	Marme_2829	Marinomonas mediterranea (stra	clade_homolog	25.2	AS23	2.7814
+A0ABU5D0Q5	entF PYW49_07560	Enterobacter chinensis	clade_homolog	25.2	AS23	2.7814
+A0A2U1UP67	EH206_19915	Brenneria nigrifluens DSM 3017	clade_homolog	25.2	AS9	2.7814
+Q8Z8L5	entF t2280	Salmonella typhi	clade_homolog	25.2	AS23	2.7814
+A0A366I2T0	DES54_11921	Brenneria salicis ATCC 15712 =	clade_homolog	25.2	AS9	2.7814
+A0A1Y6IW79	SBX37_09265	Vibrio mangrovi	clade_homolog	25.2	AS17	2.7814
+A0AAP4D6L4	entF QQF32_17960	Lelliottia wanjuensis	clade_homolog	25.2	AS23	2.7814
+A0ABT5CIM4	entF PIK62_01705	Klebsiella pasteurii	clade_homolog	25.2	AS23	2.7814
+A0ABN6DF53	entE ERHA53_05190	Erwinia rhapontici (Pectobacte	clade_homolog	25.2	AS9	2.7814
+A0ACD7TYQ2	entF KP1_1550	Klebsiella pneumoniae subsp. p	clade_homolog	25.2	AS23	2.7814
+A0A068R1J6	entE XPG1_1081	Xenorhabdus poinarii G6	clade_homolog	25.2	AS9	2.7814
+A0A4R0HSX7	entF E0L21_00885	Kosakonia quasisacchari	clade_homolog	25.2	AS23	2.7814
+A0A0F6AY76	entF STM14_0686	Salmonella typhimurium (strain	clade_homolog	25.2	AS23	2.7814
+A0ABZ0MNG8	entF Q8Y70_17310	Kosakonia sacchari	clade_homolog	25.2	AS9	2.7814
+A0ABY6JJC3	KFZ77_05145	Siccibacter colletis	clade_homolog	25.2	AS9	2.7814
+A0A2T7AZV5	FZI19_11400	Cronobacter muytjensii	clade_homolog	25.2	AS9	2.7814
+Q32IY5	entF SDY_0515	Shigella dysenteriae serotype 	clade_homolog	25.2	AS9	2.7814
+A0A5R9LLB0	entE FE839_06500	Klebsiella indica	clade_homolog	25.2	AS9	2.7814
+A0A5B0WNS7	entE AM629_07720	Photorhabdus heterorhabditis	clade_homolog	25.2	AS17	2.7814
+A0A0T9NF48	irp5 ERS008472_00346	Yersinia thracica	clade_homolog	25.0	AS17	2.7814
+A0A0H3HDJ7	entF KOX_13905	Klebsiella michiganensis (stra	clade_homolog	25.0	AS23	2.7814
+A0A0H3NDZ7	entF SL1344_0576	Salmonella typhimurium (strain	clade_homolog	25.0	AS23	2.7814
+A0A0J5FQQ1	entE AB204_13185	Xenorhabdus khoisanae	clade_homolog	25.0	AS17	2.7814
+K0K6T1	BN6_50260	Saccharothrix espanaensis (str	enzyme_name_match	25.0	AS9	1.0
+A0ABZ2DQL9	entF LM286_19850	Klebsiella ornithinolytica (Ra	clade_homolog	25.0	AS23	2.7814
+A0ABR8TDV5	entF H9644_12715	Escherichia whittamii	clade_homolog	25.0	AS23	2.7814
+A0ABR9Q6M2	entF IM311_10445	Enterobacter pasteurii	clade_homolog	25.0	AS9	2.7814
+A0ABY7HPT4	O1V66_19210	Rouxiella chamberiensis	clade_homolog	25.0	AS9	2.7814
+A0ABM7FJK7	SGFS_077470	Streptomyces graminofaciens	enzyme_name_match	25.0	AS23	1.0
+A0AAI8NN01	DKC11_06535	Klebsiella quasipneumoniae	clade_homolog	25.0	AS9	2.7814
+W1RPR0	entE D104_13835	Marinomonas profundimaris	clade_homolog	25.0	AS23	2.7814
+A0ABU6E4V1	entF MXM28_16295	Enterobacter vonholyi	clade_homolog	25.0	AS9	2.7814
+A0A1V4CU67	VT50_0236180	Streptomyces antioxidans	enzyme_name_match	25.0	AS23	1.0
+A0A1Y2SDY6	Xvie_01516	Xenorhabdus vietnamensis	clade_homolog	25.0	AS17	2.7814
+B7UKN0	entF E2348C_0488	Escherichia coli O127:H6 (stra	clade_homolog	25.0	AS9	2.7814
+C5BUB7	entE TERTU_4060	Teredinibacter turnerae (strai	clade_homolog	25.0	AS9	2.7814
+A0AAW8HCE0	entF RBJ67_16040	Enterobacter soli	clade_homolog	25.0	AS23	2.7814
+A0ABU6JPH7	VSX58_08460	Brenneria populi	clade_homolog	25.0	AS9	2.7814
+A0ABU6KQ99	entF QAA55_006825	Enterobacter asburiae	clade_homolog	25.0	AS23	2.7814
+A0ABV0KZC6	ABKW32_08815	Marinomonas primoryensis	clade_homolog	25.0	AS23	2.7814
+A0ABX7AB50	JI723_12790	Providencia manganoxydans	clade_homolog	25.0	AS23	2.7814
+A0A9J6QFU1	entF M8013_00640	Silvania confinis	clade_homolog	25.0	AS23	2.7814
+A0ABU9NYX2	entF AAFL32_08665	Klebsiella grimontii	clade_homolog	25.0	AS23	2.7814
+A0ABU6EMY6	entF NGC28_08200	Enterobacter huaxiensis	clade_homolog	25.0	AS23	2.7814
+A0ABU6I9G4	entF VOF76_18935	Leclercia adecarboxylata	clade_homolog	25.0	AS23	2.7814
+A0ABT5WGJ6	M3I01_007455	Marinomonas maritima	clade_homolog	25.0	AS23	2.7814
+A0ABT3VV02	entF OSH03_06375	Enterobacter nematophilus	clade_homolog	25.0	AS23	2.7814
+A0AAX3LDZ7	entE PHA72_06495	Enterobacter ludwigii	clade_homolog	25.0	AS23	2.7814
+A0AAU7J3Y8	entF F0320_05330	Enterobacter dykesii	clade_homolog	25.0	AS23	2.7814
+A0ABM5SLU2	CH54_3172	Yersinia rochesterensis	clade_homolog	25.0	AS17	2.7814
+A0A3N5DQ46	EHN07_05015	Buttiauxella warmboldiae	clade_homolog	25.0	AS9	2.7814
+A0A421DPH2	entE BIY29_08800	Brenneria alni	clade_homolog	25.0	AS9	2.7814
+A0ABY3S462	entF G163CM_22520	Pseudocitrobacter corydidari	clade_homolog	25.0	AS9	2.7814
+A0ABY0AX67	entF EKN94_04685	Enterobacter quasimori	clade_homolog	25.0	AS9	2.7814
+A0ABX9S470	C7387_2225	Yokenella regensburgei	clade_homolog	25.0	AS9	2.7814
+A0A1B7IVQ5	M975_0511	Buttiauxella brennerae ATCC 51	clade_homolog	25.0	AS9	2.7814
+A0ABV1ZDG4	entF ABMC12_08535	Enterobacter intestinihominis	clade_homolog	25.0	AS23	2.7814
+A0ABW1VLT6	ACFP73_03875	Tatumella punctata	clade_homolog	25.0	AS9	2.7814
+A0A090V3M9	entF EV102420_12_02400	Pseudescherichia vulneris NBRC	clade_homolog	24.9	AS23	2.7814
+A0ACD4AJL8	entF KU660_18100	Klebsiella africana	clade_homolog	24.9	AS23	2.7814
+A0ABX8KRT8	entF I6L58_06450	Enterobacter cancerogenus	clade_homolog	24.9	AS23	2.7814
+A0AA96M796	entF ACE3KR_06755	Enterobacter chuandaensis	clade_homolog	24.9	AS23	2.7814
+A0ABZ1DLZ0	entF VPX56_06305	Enterobacter wuhouensis	clade_homolog	24.9	AS23	2.7814
+A0A0X4ET90	entF AWI28_13125	Enterobacter genomosp. O	clade_homolog	24.9	AS23	2.7814
+A0A2T2Y702	entF C8256_04050	Kluyvera genomosp. 2	clade_homolog	24.9	AS23	2.7814
+P29698	entF SF0498 S0504	Shigella flexneri	activity_ec	24.9	AS23	4.5867
+A0ABT2RG78	entF M8318_19815	Leclercia tamurae	clade_homolog	24.9	AS23	2.7814
+B7L8G9	entF EC55989_0578	Escherichia coli (strain 55989	clade_homolog	24.9	AS23	2.7814
+A0ABU9PBL9	entF AAGT82_01340	Enterobacter quasihormaechei	clade_homolog	24.9	AS23	2.7814
+A0ABZ0GXR3	entF RY846_17820	Citrobacter portucalensis	clade_homolog	24.9	AS23	2.7814
+A7ZIX0	entF EcE24377A_0606	Escherichia coli O139:H28 (str	clade_homolog	24.9	AS23	2.7814
+A0ABR5YUG1	entF A3466_16235	Enterobacter genomosp. S	clade_homolog	24.9	AS23	2.7814
+A0A9J6Q4H2	entF M8014_16565	Silvania hatchlandensis	clade_homolog	24.9	AS23	2.7814
+A0ABX5A129	entF C3712_11400	Lelliottia aquatilis	clade_homolog	24.9	AS23	2.7814
+D3K2Y9	entF	Escherichia coli	clade_homolog	24.9	AS23	2.7814
+Q8XBV9	entF Z0727 ECs0625	Escherichia coli O157:H7	activity_ec	24.9	AS23	4.5867
+A0ACH2USE1	entF AAHF05_05590	Enterobacter adelaidei	clade_homolog	24.9	AS23	2.7814
+C7BNH3	phbE entE PAU_00893	Photorhabdus asymbiotica subsp	clade_homolog	24.8	AS9	2.7814
+A0ACC5RNR7	JJL49_13690	Enterobacter agglomerans (Erwi	clade_homolog	24.8	AS9	2.7814
+A0A2G0Q7Y6	entE A9255_12815	Xenorhabdus hominickii	clade_homolog	24.8	AS9	2.7814
+A0A0J8VRR4	entF ACH50_01730	Franconibacter pulveris	clade_homolog	24.8	AS9	2.7814
+A0ABV1PNY6	ABQG75_12395	Franconibacter daqui	clade_homolog	24.8	AS9	2.7814
+A0AAP4D426	entE QQF32_17060	Lelliottia wanjuensis	clade_homolog	24.8	AS9	2.7814
+A0AAW3HIT6	entF SG71_10560	Enterobacter chengduensis	clade_homolog	24.8	AS9	2.7814
+A0ABM9F3D1	FBBNIHIM_00310	Pseudocitrobacter vendiensis	clade_homolog	24.8	AS9	2.7814
+A0ABD6LZX4	entF FCH32_05520	Citrobacter gillenii	clade_homolog	24.8	AS9	2.7814
+A0ABS0U9R9	H8A87_16415	Xenorhabdus lircayensis	clade_homolog	24.8	AS17	2.7814
+A0ABU1C491	entF KJE03_13300	Escherichia marmotae	clade_homolog	24.8	AS9	2.7814
+A0ABX9SM15	BDD30_2510	Photorhabdus asymbiotica	clade_homolog	24.8	AS9	2.7814
+A0ABY8E9H2	entF OM418_05595	Enterobacter quasiroggenkampii	clade_homolog	24.8	AS9	2.7814
+A0A6L9Y5W3	entE F9B74_03110	Pelistega ratti	clade_homolog	24.7	AS23	2.7814
+A0ABW1Q2D0	entF ACFPZP_18420	Citrobacter bitternis	clade_homolog	24.7	AS23	2.7814
+A0ABN6LTB6	entF PDTA9734_39640	Phytobacter diazotrophicus	clade_homolog	24.7	AS23	2.7814
+A0ABX0VKG5	E2L00_08160	Cedecea colo	clade_homolog	24.7	AS23	2.7814
+A0ACD8BNW4	entF THOKLE011_39950	Klebsiella michiganensis	clade_homolog	24.7	AS23	2.7814
+Q3Z4K7	entF SSON_0537	Shigella sonnei (strain Ss046)	clade_homolog	24.7	AS23	2.7814
+A0A2T2Y6Z5	entE C8256_04015	Kluyvera genomosp. 2	clade_homolog	24.7	AS23	2.7814
+A0ABX9F662	entF DP181_09365	Enterobacter kobei	clade_homolog	24.7	AS23	2.7814
+A0A0H3CNA3	entF ECL_03114	Enterobacter cloacae subsp. cl	clade_homolog	24.7	AS23	2.7814
+A0AAP2BP85	entF J7S78_28925	Klebsiella oxytoca	clade_homolog	24.7	AS23	2.7814
+A0ABT6EB32	entF OXR69_009265	Klebsiella huaxiensis	clade_homolog	24.7	AS23	2.7814
+A0ABX4VGG2	entF C1167_05175	Enterobacter bugandensis	clade_homolog	24.7	AS23	2.7814
+P11454	entF b0586 JW0578	Escherichia coli (strain K12)	activity_ec	24.7	AS23	6.0867
+A0ABV4JE93	entF QVM81_06105	Enterobacter rongchengensis	clade_homolog	24.6	AS9	2.7814
+A0ABS1A6Y8	entF I6M80_15150	Citrobacter cronae	clade_homolog	24.6	AS9	2.7814
+A0A317WVH3	BO94DRAFT_584371	Aspergillus sclerotioniger CBS	clade_homolog	24.6	AS9	2.7814
+A0ABY9XGA7	QL112_017895	Xenorhabdus griffiniae	clade_homolog	24.6	AS17	2.7814
+A0ABX7IQC5	JSY38_03045	Marinomonas foliarum	clade_homolog	24.6	AS9	2.7814
+A0ABM8N107	entF TML_03629	Citrobacter werkmanii	clade_homolog	24.6	AS9	2.7814
+A0ABT1B539	entF LOD26_06485	Citrobacter meridianamericanus	clade_homolog	24.6	AS9	2.7814
+A0ABX5T6Z0	entF E4Z61_10660	Citrobacter tructae	clade_homolog	24.5	AS23	2.7814
+A0ABS6GIZ1	entF KQV47_21805	Enterobacter sichuanensis	clade_homolog	24.5	AS23	2.7814
+A0A6L6IJF0	entF GJV78_00865	Intestinirhabdus alba	clade_homolog	24.5	AS23	2.7814
+A0ABT8PQ26	entF Q0A17_01755	Citrobacter enshiensis	clade_homolog	24.5	AS23	2.7814
+A0ABU1DWN8	entF RGV86_18985	Escherichia ruysiae	clade_homolog	24.5	AS23	2.7814
+A0ABY7KVA3	entF O4000_17305	Citrobacter freundii	clade_homolog	24.5	AS23	2.7814
+A0A0H3EG19	entF NRG857_02655	Escherichia coli O83:H1 (strai	clade_homolog	24.5	AS23	2.7814
+A0A0H3FXR4	entF EAE_13615	Klebsiella aerogenes (strain A	clade_homolog	24.5	AS23	2.7814
+A0A6G9RRL9	entF GY169_17240	Kluyvera genomosp. 3	clade_homolog	24.5	AS23	2.7814
+A0A0H2V5R2	entF c0673	Escherichia coli O6:H1 (strain	clade_homolog	24.5	AS23	2.7814
+A0ABT3X753	entF OTG14_01565	Enterobacter pseudoroggenkampi	clade_homolog	24.5	AS23	2.7814
+A0ABM5VA99	entF AFK62_05635	Cronobacter condimenti 1330	clade_homolog	24.5	AS23	2.7814
+A0ABU9FDU3	entF QFI96_023130	Klebsiella lignicola	clade_homolog	24.5	AS23	2.7814
+A0ABY6V710	entF SB6411_00568	Klebsiella spallanzanii	clade_homolog	24.5	AS23	2.7814
+A0ABY0JU96	BN4901_4148	Citrobacter europaeus	clade_homolog	24.4	AS9	2.7814
+A0ABX2W292	M976_04407	Buttiauxella ferragutiae ATCC 	clade_homolog	24.4	AS17	2.7814
+A0ABX5HPR7	entF C7B09_01345	Escherichia albertii	clade_homolog	24.4	AS9	2.7814
+B7MEZ8	entF ECS88_0625	Escherichia coli O45:K1 (strai	clade_homolog	24.4	AS9	2.7814
+A0A1X0WE53	entE BS640_12620	Rouxiella badensis	clade_homolog	24.4	AS9	2.7814
+A0A0H2YXG5	entF APECO1_1463	Escherichia coli O1:K1 / APEC	clade_homolog	24.4	AS9	2.7814
+A0A366JHE8	DFP80_101259	Marinomonas rhizomae	clade_homolog	24.4	AS9	2.7814
+A0ABR6TPB7	entF H6P72_01790	Citrobacter braakii	clade_homolog	24.4	AS9	2.7814
+A0A085A0S9	entF GTGU_03321	Trabulsiella guamensis ATCC 49	clade_homolog	24.3	AS23	2.7814
+A0ABU5LX60	entF U5E74_02555	Klebsiella planticola (Raoulte	clade_homolog	24.3	AS23	2.7814
+A0ABT5LDT0	PSI23_08025	Xenorhabdus yunnanensis	clade_homolog	24.3	AS17	2.7814
+A0A9X3AAM8	MUA00_07410	Dryocola boscaweniae	clade_homolog	24.3	AS23	2.7814
+H5V2Q7	entF EH105704_06_01160	Atlantibacter hermannii NBRC 1	clade_homolog	24.3	AS23	2.7814
+A0ABS7RXH7	entF ITX56_14545	Leclercia barmai	clade_homolog	24.3	AS23	2.7814
+A0ABV3NWL7	AB1E22_14710	Buttiauxella gaviniae	clade_homolog	24.2	AS9	2.7814
+A0AB35RRS3	entF R0H02_16315	Phytobacter ursingii	clade_homolog	24.2	AS9	2.7814
+B7LLL4	entF EFER_2508	Escherichia fergusonii (strain	clade_homolog	24.2	AS9	2.7814
+A0A4V1A9X8	entF E1B03_08095	Citrobacter arsenatis	clade_homolog	24.2	AS9	2.7814
+A0ABX3U925	entF B2M27_24690	Kluyvera intermedia (Enterobac	clade_homolog	24.1	AS23	2.7814
+A0ABX8K599	entF I6L54_18915	Citrobacter pasteurii	clade_homolog	24.1	AS23	2.7814
+A0A2P5GQZ0	entF CHU33_16335	Superficieibacter electus	clade_homolog	24.1	AS23	2.7814
+A0ABS0ZN80	entF I6M88_04580	Citrobacter sedlakii	clade_homolog	24.1	AS23	2.7814
+D2TMM6	entF ROD_05961	Citrobacter rodentium (strain 	clade_homolog	24.1	AS23	2.7814
+A0ABR6RZE3	entF HII27_22240	Kluyvera sichuanensis	clade_homolog	24.1	AS23	2.7814
+A0AAX3LG62	entF PHA72_06460	Enterobacter ludwigii	clade_homolog	24.1	AS17	2.7814
+A0AB35X741	entF V4836_11150	Kluyvera ascorbata	clade_homolog	24.1	AS23	2.7814
+A0A6L5E2N8	entF GBB84_02390	Citrobacter telavivensis	clade_homolog	24.0	AS9	2.7814
+A0ABY0HST4	entF EAJ18_16295	Citrobacter amalonaticus	clade_homolog	24.0	AS9	2.7814
+A0ABT5LSP6	PSI14_11450	Xenorhabdus anantnagensis	clade_homolog	23.9	AS17	2.7814
+A0A1I4XEZ3	SAMN05216516_10472	Izhakiella capsodis	clade_homolog	23.9	AS23	2.7814
+A0A5R9LL78	entF FE839_06540	Klebsiella indica	clade_homolog	23.9	AS23	2.7814
+A0ABY2PYM3	entF DJ535_04980	Citrobacter murliniae	clade_homolog	23.9	AS23	2.7814
+A0ABU4QIF2	entF SIK69_02505	Scandinavium lactucae	clade_homolog	23.9	AS23	2.7814
+A0ABM8MKA9	entF GHA_03014	Citrobacter youngae	clade_homolog	23.9	AS23	2.7814
+A0ABD7KES6	entF SAMEA2273443_0020	Enterobacter roggenkampii	clade_homolog	23.9	AS23	2.7814
+A0ACA8D400	entF CI104_07295	Citrobacter farmeri	clade_homolog	23.8	AS9	2.7814
+A0ABT2E6S4	entF MUU47_21215	Scandinavium hiltneri	clade_homolog	23.8	AS9	2.7814
+A0ABX8JVJ6	entF KQ929_15200	Leclercia pneumoniae	clade_homolog	23.7	AS23	2.7814
+A0ABX4IPX1	entF BK796_10030	Kosakonia pseudosacchari	clade_homolog	23.6	AS9	2.7814
+A0A8H6ABA7	ETB97_009023	Petromyces alliaceus (Aspergil	clade_homolog	23.6	AS9	2.7814
+A0A4R6E7L5	EC847_11447	Scandinavium goeteborgense	clade_homolog	23.5	AS23	2.7814
+A0A1S8YIM2	entF BTJ39_17635	Izhakiella australiensis	clade_homolog	23.5	AS23	2.7814
+A0A7Z8ZDW0	entF NCTC9997_04636	Klebsiella terrigena (Raoultel	clade_homolog	23.5	AS23	2.7814
+E3G5C9	Entcl_3208	Enterobacter lignolyticus (str	clade_homolog	23.4	AS9	2.7814
+A0A2I2GAW5	P170DRAFT_404719	Aspergillus steynii IBT 23096	clade_homolog	23.4	AS9	2.7814
+A0A2I7UGF5	nan	Aspergillus carbonarius	clade_homolog	23.3	AS9	2.7814
+A0ABX7AB40	JI723_12780	Providencia manganoxydans	clade_homolog	23.3	AS17	2.7814
+A0A1R3RGK1	otaB OTAnrps ASPCADRAF	Aspergillus carbonarius (strai	name_match	23.3	AS9	3.505
+A0A8B0SXY7	otaB	Aspergillus westerdijkiae	clade_homolog	23.1	AS23	2.7814
+A0ACG3LXS9	V5290_16630	Psychromonas arctica	clade_homolog	23.1	AS17	2.7814
+G7YYS2	CLF_113536	Clonorchis sinensis (Chinese l	clade_homolog	23.0	AS23	2.7814
+A0A0N0RZ37	ACN38_g5119	Penicillium nordicum	clade_homolog	22.8	AS17	2.7814
+A0A2I7UGH0	nan	Penicillium nordicum	clade_homolog	22.8	AS17	2.7814
+A0A2J7Z1M8	SMF913_10205	Streptomyces malaysiensis	enzyme_name_match	22.7	AS23	1.0
+A0A2I7UGH6	nan	Aspergillus westerdijkiae	clade_homolog	22.7	AS9	2.7814
+A0A0G2URK3	Proq01g022790	Penicillium roqueforti	enzyme_name_match	22.6	AS17	1.0
+A0ABU0UGN8	QE408_001223	Agrobacterium larrymoorei	clade_homolog	22.5	AS9	2.7814
+C4JF78	uncG UREG_02300	Uncinocarpus reesii (strain UA	enzyme_name_match	22.4	AS9	3.5386
+A0A8B0SYH5	otaB	Aspergillus westerdijkiae	clade_homolog	22.3	AS9	2.7814
+M5BC24	hca2	Streptomyces hygroscopicus	enzyme_name_match	22.2	AS23	1.0
+A0A8B0SWX9	otaB	Aspergillus westerdijkiae	clade_homolog	21.9	AS9	2.7814
+A0A4Q9I1L9	EYS09_00365	Streptomyces kasugaensis	enzyme_name_match	21.9	AS23	1.0
+A0A3F3PWI5	BDQ94DRAFT_172343	Aspergillus welwitschiae	clade_homolog	20.3	AS23	2.7814
+A2R6H0	otaB ota2 An15g07910	Aspergillus niger (strain ATCC	name_match	19.0	AS17	3.005
+A0A2I7UGG9	nan	Aspergillus niger	clade_homolog	19.0	AS17	2.7814
+A0A6L9UKD7	GR212_36595	Martinezella lusitana	clade_homolog	17.1	AS17	-0.2186
+J7JWR5	iaaL	Pseudomonas savastanoi pv. gly	clade_homolog	16.1	AS17	2.7814
+A0ACD7TYS2	entB KP1_1559	Klebsiella pneumoniae subsp. p	clade_homolog	15.2	AS17	2.5867
+A0A377Z6V8	entB NCTC5050_05839	Klebsiella pneumoniae subsp. o	clade_homolog	15.2	AS17	2.5867
+A0A0H3GPR5	KPHS_14480	Klebsiella pneumoniae subsp. p	clade_homolog	15.2	AS17	2.5867
+A6T642	entB KPN_00613	Klebsiella pneumoniae subsp. p	clade_homolog	15.2	AS17	2.5867
+A0A502GMZ6	EAH77_06165	Ewingella americana	clade_homolog	14.4	AS17	-1.1375
+A0ABS0ZN53	I6M88_04620	Citrobacter sedlakii	clade_homolog	14.0	AS17	-1.1375
+B7LLK5	entB EFER_2499	Escherichia fergusonii (strain	clade_homolog	14.0	AS17	2.5867
+A0A0H3EG92	NRG857_02700	Escherichia coli O83:H1 (strai	clade_homolog	14.0	AS17	2.5867
+A0ABR8TDN3	entB H9644_12670	Escherichia whittamii	clade_homolog	14.0	AS17	2.5867
+W1DNP3	nan	Klebsiella pneumoniae IS43	clade_homolog	14.0	AS17	2.5867
+D3K2Z8	entB A2J79_002893 A5U3	Escherichia coli	clade_homolog	14.0	AS17	2.5867
+B7UKN8	entB E2348C_0497	Escherichia coli O127:H6 (stra	clade_homolog	14.0	AS17	2.5867
+B7MF07	entB ECS88_0634	Escherichia coli O45:K1 (strai	clade_homolog	14.0	AS17	2.5867
+Q3Z4J8	entB SSON_0546	Shigella sonnei (strain Ss046)	clade_homolog	14.0	AS17	2.5867
+Q32IX4	entB SDY_0526	Shigella dysenteriae serotype 	clade_homolog	14.0	AS17	2.5867
+A7ZIX9	entB EcE24377A_0615	Escherichia coli O139:H28 (str	clade_homolog	14.0	AS17	2.5867
+B2TTF4	entB SbBS512_E0497	Shigella boydii serotype 18 (s	clade_homolog	14.0	AS17	2.5867
+B7L8H8	entB EC55989_0587	Escherichia coli (strain 55989	clade_homolog	14.0	AS17	2.5867
+A0ABU1DWL7	entB RGV86_19030	Escherichia ruysiae	clade_homolog	14.0	AS17	2.5867
+A0A0H2V551	entB c0682	Escherichia coli O6:H1 (strain	clade_homolog	14.0	AS17	2.5867
+A0A0H2YWZ9	entB APECO1_1454	Escherichia coli O1:K1 / APEC	clade_homolog	14.0	AS17	2.5867
+A0A2B7MIA6	entB KJE03_13255	Escherichia marmotae	clade_homolog	13.7	AS17	2.5867
+A0ABX3TWC9	BS639_19635	Rouxiella silvae	clade_homolog	13.5	AS17	-1.1375
+B2MU82	iaaL	Pseudomonas savastanoi pv. sav	clade_homolog	13.0	AS23	2.7814
+A0A6A6DD43	K469DRAFT_683361	Zopfia rhizophila CBS 207.26	clade_homolog	12.9	AS17	2.7814
+A2QF28	An02g13080	Aspergillus niger (strain ATCC	activity_ec	12.0	AS9	3.8999
+V5Z339	cbsB EPIR_0345	Erwinia piriflorinigrans CFBP 	clade_homolog	12.0	AS17	-1.1375
+A0A370PRH7	M752DRAFT_317763	Aspergillus phoenicis ATCC 131	clade_homolog	12.0	AS9	2.7814
+A0A401KFM9	AAWM_00904	Aspergillus awamori (Black koj	clade_homolog	12.0	AS9	2.7814
+A0A317V1Q4	BO83DRAFT_88379	Aspergillus eucalypticola (str	clade_homolog	11.9	AS9	2.7814
+A0ACD1I9C1	BO79DRAFT_269898	Aspergillus costaricaensis CBS	clade_homolog	11.8	AS9	2.7814
+A0A319B957	BO88DRAFT_463238	Aspergillus vadensis (strain C	clade_homolog	11.6	AS9	2.7814
+A0A8G1QRA7	BO85DRAFT_454259	Aspergillus piperis CBS 112811	clade_homolog	11.6	AS9	2.7814
+A0A3F3PRY5	BDQ94DRAFT_182218	Aspergillus welwitschiae	clade_homolog	11.5	AS9	2.7814
+A0A318YPP0	BO87DRAFT_433661	Aspergillus neoniger (strain C	clade_homolog	11.5	AS9	2.7814
+A0A7R7W0F2	AKAW2_11081A	Aspergillus kawachii (White ko	clade_homolog	11.5	AS9	2.7814
+A0A1L9N8V0	ASPTUDRAFT_169845	Aspergillus tubingensis (strai	clade_homolog	11.3	AS9	2.7814
+A0A1S8CFG2	BMI79_20105	Serratia oryzae	clade_homolog	11.3	AS17	-1.1375
+A0ACC1QUE4	NLG97_g5350	Lecanicillium saksenae	clade_homolog	11.2	AS17	2.7814
+A0ABQ1FTJ2	GCM10011328_00980	Hafnia psychrotolerans	clade_homolog	11.1	AS17	-1.1375
+A0A1L9UVF5	ASPBRDRAFT_37880	Aspergillus brasiliensis (stra	clade_homolog	10.6	AS9	2.7814
+A0A1X0WEA5	BS640_12625	Rouxiella badensis	clade_homolog	10.5	AS17	-1.1375
+A0ACE2UBF1	PSOS111911_18180	Pseudoalteromonas ostreae	clade_homolog	10.4	AS23	-1.1375
+A0ABX2T0P1	HZY85_08565	Gemelliphila palaticanis	clade_homolog	10.4	AS17	1.8625
+A0ABN8GJE2	ddaG PAECIP111891_0298	Paenibacillus allorhizoplanae	activity_ec	10.3	AS9	4.5449
+A0ABU9U007	WNY63_06535	Pseudoalteromonas neustonica	clade_homolog	9.4	AS9	-1.1375
+A0A949V375	JZ788_05320	Tenebrionicola larvae	clade_homolog	9.2	AS23	-1.1375
+A0A8K0XYL8	JJB97_04970	Tenebrionibacter intestinalis	clade_homolog	9.2	AS23	-1.1375
+A0ABY2W069	CWC20_05665	Pseudoalteromonas aurantia	clade_homolog	9.0	AS9	-1.1375
+A0A5S3XJZ4	CWB97_00170	Pseudoalteromonas citrea	clade_homolog	9.0	AS9	-1.1375
+A0ABR5TCM1	WS72_01320	Burkholderia savannae	clade_homolog	8.9	AS9	-1.1375
+A0ACN3QB70	FT643_05285	Ketobacter nezhaii	clade_homolog	8.7	AS23	1.8625
+A0A365PRE4	KQ248_15225	Stutzerimonas zhaodongensis	clade_homolog	8.6	AS23	-1.1375
+W1RPA6	D104_13830	Marinomonas profundimaris	clade_homolog	8.5	AS23	-1.1375
+A0ABX7IQB8	JSY38_03040	Marinomonas foliarum	clade_homolog	8.5	AS23	-1.1375
+A0AAP4D7L9	QQF32_17065	Lelliottia wanjuensis	clade_homolog	8.5	AS9	-1.1375
+A0ABX0VKB7	E2L00_08120	Cedecea colo	clade_homolog	8.4	AS17	-1.1375
+A0A3N5DMB6	EHN07_05020	Buttiauxella warmboldiae	clade_homolog	8.1	AS17	-1.1375
+A0A9J9GEW7	Ent638_1127	Enterobacter sp. (strain 638)	clade_homolog	8.1	AS9	2.5867
+A0ABY3P368	FZO59_09505	Lelliottia nimipressuralis	clade_homolog	8.1	AS9	2.5867
+A0ABU7UGS2	V4839_20130	Lelliottia amnigena (Enterobac	clade_homolog	8.1	AS9	-1.1375
+A0A0J1JZP4	ABT57_17515	Photobacterium ganghwense	clade_homolog	7.9	AS23	-1.1375
+A0A3M9XMI8	D1O30_04535	Methylocystis hirsuta	clade_homolog	7.8	AS23	-1.1375
+A0A1B4FIB1	WS70_01275	Burkholderia mayonis	clade_homolog	7.8	AS9	-1.1375
+A0ABX2W2C6	M976_04406	Buttiauxella ferragutiae ATCC 	clade_homolog	7.7	AS17	-1.1375
+A0ABT3X9W5	OTG14_01605	Enterobacter pseudoroggenkampi	clade_homolog	7.7	AS17	2.5867
+A0ABV3NWJ7	AB1E22_14715	Buttiauxella gaviniae	clade_homolog	7.7	AS17	-1.1375
+A0A3A5JVY3	D6029_06175	Buttiauxella izardii	clade_homolog	7.7	AS17	-1.1375
+F6CU82	Mar181_2163	Marinomonas posidonica (strain	clade_homolog	7.7	AS23	-1.1375
+A0A2M8H463	CUC44_20610	Aeromonas lusitana	clade_homolog	7.5	AS23	-1.1375
+A0ABU6E4X6	MXM28_16335	Enterobacter vonholyi	clade_homolog	7.4	AS17	2.5867
+A0A085GIG0	entB GBAG_0944	Buttiauxella agrestis ATCC 333	clade_homolog	7.4	AS17	-1.1375
+A0ACH2USR5	AAHF05_05630	Enterobacter adelaidei	clade_homolog	7.4	AS17	-1.1375
+A0ABY8E3G4	OM418_05635	Enterobacter quasiroggenkampii	clade_homolog	7.4	AS17	2.5867
+A0ABV6E8D2	ACFFJ3_01805	Serratia aquatilis	clade_homolog	7.4	AS23	-1.1375
+A0A2U9I9N6	entB	Klebsiella aerogenes (Enteroba	clade_homolog	7.3	AS17	1.8625
+A0ABX3KA72	BZG73_06875	Salinivibrio siamensis	clade_homolog	7.3	AS23	-1.1375
+A0A2T7ATV6	FZI19_00685	Cronobacter muytjensii	clade_homolog	7.3	AS23	-1.1375
+A0A1B7I114	M979_0229	Buttiauxella noackiae ATCC 516	clade_homolog	7.3	AS17	-1.1375
+A0ABR9EJB3	entB PAUR_a4393	Pseudoalteromonas aurantia 208	clade_homolog	7.3	AS9	-1.1375
+A0ABX6EIN8	F7D13_07210	Methylocystis rosea	clade_homolog	7.1	AS23	-1.1375
+N9VFK5	G114_18451	Aeromonas diversa CDC 2478-85	clade_homolog	7.1	AS17	-1.1375
+A0A428LRW6	NGC28_08160	Enterobacter huaxiensis	clade_homolog	7.0	AS9	2.5867
+A0ABV1ZD30	ABMC12_08575	Enterobacter intestinihominis	clade_homolog	7.0	AS9	-1.1375
+A0AAJ6MMH5	DP181_09325	Enterobacter kobei	clade_homolog	7.0	AS9	2.5867
+A0ABR9Q6X2	IM311_10485	Enterobacter pasteurii	clade_homolog	7.0	AS9	-1.1375
+A0ABS7RXL6	ITX56_14505	Leclercia barmai	clade_homolog	7.0	AS9	-1.1375
+A0ABT3VY70	OSH03_06335	Enterobacter nematophilus	clade_homolog	7.0	AS9	-1.1375
+A0ABY9S7M8	RHD99_18410	Buttiauxella selenatireducens	clade_homolog	7.0	AS17	-1.1375
+A0AAU7J4S1	F0320_05370	Enterobacter dykesii	clade_homolog	7.0	AS9	-1.1375
+A0AA96RV41	ACE3KR_06715	Enterobacter chuandaensis	clade_homolog	7.0	AS9	2.5867
+A0ABR5YUW5	A3466_16195	Enterobacter genomosp. S	clade_homolog	7.0	AS9	-1.1375
+A0ABD7KE53	entB SAMEA2273443_0019	Enterobacter roggenkampii	clade_homolog	7.0	AS9	-1.1375
+A0AB38P8A6	I6L58_06410	Enterobacter cancerogenus	clade_homolog	7.0	AS9	2.5867
+A0ABY0AX94	EKN94_04730	Enterobacter quasimori	clade_homolog	7.0	AS9	2.5867
+A0ABV4JC75	QVM81_06145	Enterobacter rongchengensis	clade_homolog	7.0	AS9	2.5867
+A0A0X4ETA9	AWI28_13165	Enterobacter genomosp. O	clade_homolog	7.0	AS9	2.5867
+A0ABZ1DJC3	VPX56_06345	Enterobacter wuhouensis	clade_homolog	7.0	AS9	2.5867
+A0AAX3LDW6	PHA72_06500	Enterobacter ludwigii	clade_homolog	7.0	AS9	-1.1375
+A0ABX4VGG4	C1167_05135	Enterobacter bugandensis	clade_homolog	7.0	AS9	-1.1375
+A0ACG2ZMH7	QAA82_006155	Enterobacter hormaechei	clade_homolog	7.0	AS9	-1.1375
+A0ABU9PEB6	AAGT82_01380	Enterobacter quasihormaechei	clade_homolog	7.0	AS9	-1.1375
+A0ABT5WDJ8	M3I01_007460	Marinomonas maritima	clade_homolog	6.9	AS23	-1.1375
+A0ABM5VEM5	AFK62_14470	Cronobacter condimenti 1330	clade_homolog	6.9	AS23	-1.1375
+A0ABS5B7P6	J8657_02195	Dickeya oryzae	clade_homolog	6.9	AS9	-1.1375
+A0ABV0KZE3	ABKW32_08810	Marinomonas primoryensis	clade_homolog	6.9	AS23	-1.1375
+A0A8D4C679	SAMN05660875_104436	Stutzerimonas balearica DSM 60	clade_homolog	6.9	AS23	-1.1375
+A0A014PU47	BG55_17255	Erwinia mallotivora	clade_homolog	6.8	AS9	2.7814
+A0ABV3N1C0	ABW286_10370	Erwinia papayae	clade_homolog	6.8	AS9	-0.2186
+A0A9J6QD55	M8013_00465	Silvania confinis	clade_homolog	6.7	AS9	2.5867
+A0ABX9G1C8	DFQ50_102438	Pseudocitrobacter faecalis	clade_homolog	6.7	AS9	-1.1375
+A0ABX8JU32	KQ929_15140	Leclercia pneumoniae	clade_homolog	6.7	AS9	-1.1375
+A0ABY3S4Y1	entB G163CM_22420	Pseudocitrobacter corydidari	clade_homolog	6.7	AS9	2.5867
+A0AB36F8M3	QAA55_006865	Enterobacter asburiae	clade_homolog	6.7	AS9	-1.1375
+A0A9J6Q4I0	M8014_16605	Silvania hatchlandensis	clade_homolog	6.7	AS9	2.5867
+A0ABU5D0T3	PYW49_07520	Enterobacter chinensis	clade_homolog	6.7	AS9	2.5867
+A7MKY5	ESA_00798	Cronobacter sakazakii (strain 	clade_homolog	6.6	AS23	-1.1375
+A0A1B7IVR6	M975_0512	Buttiauxella brennerae ATCC 51	clade_homolog	6.6	AS9	-1.1375
+A0AAC8VRT1	entB NCTC9529_02939	Cronobacter universalis NCTC 9	clade_homolog	6.6	AS23	-1.1375
+A0ABS8JCD7	FUU20_23635	Serratia montpellierensis	clade_homolog	6.6	AS17	-1.1375
+A0A9X2W7F7	MUA00_07370	Dryocola boscaweniae	clade_homolog	6.6	AS9	-1.1375
+A0ABP9QFH9	entB GCM10025770_09610	Viridibacterium curvum	clade_homolog	6.6	AS17	-1.1375
+V5TWD5	AUM46_10065	Cronobacter malonaticus	clade_homolog	6.6	AS23	-1.1375
+A0ABR9BN65	IFO68_09380	Photobacterium arenosum	clade_homolog	6.6	AS23	-1.1375
+A0ABV7CQ50	ACFOEE_19285	Pseudoalteromonas fenneropenae	clade_homolog	6.4	AS23	-1.1375
+A0ABX6DR13	GHC21_15695	Kluyvera intermedia (Enterobac	clade_homolog	6.3	AS9	-1.1375
+A0A1B7JGF8	M989_03975	Kluyvera georgiana ATCC 51603	clade_homolog	6.3	AS9	-1.1375
+A0AAW8HA00	RBJ67_16085	Enterobacter soli	clade_homolog	6.3	AS9	-1.1375
+A0ACN3MVQ1	AAE045_20930	Dryocola clanedunensis	clade_homolog	6.3	AS9	1.8625
+A0ABR6RZ65	HII27_22280	Kluyvera sichuanensis	clade_homolog	6.3	AS9	-1.1375
+A0A6G9RNN0	GY169_17195	Kluyvera genomosp. 3	clade_homolog	6.3	AS9	-1.1375
+A0A2T2Y700	C8256_04010	Kluyvera genomosp. 2	clade_homolog	6.3	AS9	-1.1375
+A0AB35X7Z7	V4836_11110	Kluyvera ascorbata	clade_homolog	6.3	AS9	-1.1375
+C9XXI3	entB Ctu_30450	Cronobacter turicensis (strain	clade_homolog	6.2	AS23	-1.1375
+A0A366D1B6	DFP76_103144	Marinomonas aquiplantarum	clade_homolog	6.0	AS17	-1.1375
+A0ABS5T352	HGT73_00310	Rosenbergiella australiboreali	clade_homolog	6.0	AS17	-1.1375
+A0ABW7PTN8	ABU178_03080	Pantoea osteomyelitidis	clade_homolog	6.0	AS17	-1.1375
+A0A0C5V5U2	YC6258_02767	Gynuella sunshinyii YC6258	clade_homolog	5.9	AS9	-1.1375
+A0A2T3J8V6	C9J12_23815	Photobacterium frigidiphilum	clade_homolog	5.9	AS17	-1.1375
+A0A2T3L6X7	C9J47_14635	Photobacterium indicum	clade_homolog	5.9	AS17	-1.1375
+Q6LGA0	BRA0014 PBPRB1822	Photobacterium profundum (stra	clade_homolog	5.9	AS17	-1.1375
+A0A2D0KB86	Xsto_03841	Xenorhabdus stockiae	clade_homolog	5.8	AS9	-1.1375
+C5BUB8	dhbB TERTU_4061	Teredinibacter turnerae (strai	clade_homolog	5.8	AS23	-1.1375
+A0A972FPZ8	HC757_02230	Shewanella salipaludis	clade_homolog	5.8	AS9	-1.1375
+A0A345Z9M6	iaaL	Pseudomonas syringae pv. actin	clade_homolog	5.7	AS17	2.7814
+A0ABT2E7C9	MUU47_21170	Scandinavium hiltneri	clade_homolog	5.7	AS17	-1.1375
+A0A4R6E7M4	EC847_11457	Scandinavium goeteborgense	clade_homolog	5.7	AS17	-1.1375
+A0AAJ2S0P5	SIK69_02420	Scandinavium lactucae	clade_homolog	5.7	AS17	2.5867
+A0A2R4NMW7	DA391_07300	Yersinia massiliensis	clade_homolog	5.7	AS17	-1.1375
+C6CCK3	Dd703_3075	Musicola paradisiaca (strain E	clade_homolog	5.7	AS17	-1.1375
+A0AB73P1W6	CBW52_17260	Yersinia kristensenii	clade_homolog	5.6	AS17	-1.1375
+A0A386HHU0	CH54_3173	Yersinia rochesterensis	clade_homolog	5.6	AS17	-1.1375
+A0A0U5KYZ4	entB EM595_0482	Duffyella gerundensis	clade_homolog	5.6	AS9	-1.1375
+A0ABR4W8C4	entB DJ58_4249	Yersinia frederiksenii ATCC 33	clade_homolog	5.6	AS17	-1.1375
+A0A857F8N8	F0T03_18490	Yersinia canariae	clade_homolog	5.6	AS17	-1.1375
+A0ABU8DIQ1	V8N49_12295	Erwinia aphidicola	clade_homolog	5.6	AS17	-1.1375
+A0A0T9NES2	entB ERS008472_00347	Yersinia thracica	clade_homolog	5.6	AS17	-1.1375
+A0A0H3I9V3	W5S_3879	Pectobacterium parmentieri	clade_homolog	5.6	AS9	-1.1375
+A0ABY5USW3	N0H69_06400	Yersinia alsatica	clade_homolog	5.6	AS17	-1.1375
+A0ACH3GWQ5	ACID6J_20495	Methylosinus sporium	clade_homolog	5.5	AS17	-1.1375
+A0ABU3ZMU1	R2X38_20330	Photobacterium rosenbergii	clade_homolog	5.5	AS17	-1.1375
+A0A4P8QK42	EH207_01810	Brenneria rubrifaciens	clade_homolog	5.5	AS17	-1.1375
+A0A1Y2SK56	Xbed_02957	Xenorhabdus beddingii	clade_homolog	5.4	AS17	-1.1375
+A0A345Z9M4	iaaL	Pseudomonas syringae pv. actin	clade_homolog	5.4	AS17	2.7814
+A0A345Z9M3	iaaL	Pseudomonas syringae pv. actin	clade_homolog	5.4	AS17	2.7814
+B2MU83	iaaL	Pseudomonas savastanoi pv. sav	clade_homolog	5.4	AS23	2.7814
+A0ABY0JU89	BN4901_4140	Citrobacter europaeus	clade_homolog	5.3	AS9	-1.1375
+A0ABY2Q0M7	DJ535_05030	Citrobacter murliniae	clade_homolog	5.3	AS17	-1.1375
+A0A7I6Y9L9	RY846_17775	Citrobacter portucalensis	clade_homolog	5.3	AS9	-1.1375
+P18204	iaaL	Pseudomonas savastanoi (Pseudo	exact_reaction	5.3	AS23	5.8999
+A0ABR6TPC3	H6P72_01830	Citrobacter braakii	clade_homolog	5.3	AS9	-1.1375
+A0A0P9Y928	iaaL ALP42_01026 CC205	Pseudomonas savastanoi pv. ner	clade_homolog	5.3	AS23	2.7814
+A0A4P6WNQ1	E1B03_08140	Citrobacter arsenatis	clade_homolog	5.3	AS9	-1.1375
+A0ABX5R4V9	D5F51_19175	Yersinia hibernica	clade_homolog	5.3	AS17	-1.1375
+A0AAI9QJU6	O4000_17260	Citrobacter freundii	clade_homolog	5.3	AS9	-1.1375
+C6CQI6	Dd1591_1316	Dickeya chrysanthemi (strain E	clade_homolog	5.2	AS9	-1.1375
+A0A2D0L4C3	Xkoz_03137	Xenorhabdus kozodoii	clade_homolog	5.1	AS17	-1.1375
+A0A2D0KCB2	Xish_00156	Xenorhabdus ishibashii	clade_homolog	5.1	AS17	-1.1375
+A0AA40P1Z1	ACDH53_23995	Pseudomonas tremae	clade_homolog	5.1	AS9	-0.2186
+A0ABY1UG66	iaaL CFBP3846_P500037	Pseudomonas syringae pv. avii	activity_ec	5.1	AS9	3.8999
+A0A366JHG4	DFP80_101260	Marinomonas rhizomae	clade_homolog	5.1	AS17	-1.1375
+A0ABR5JMH6	OX90_15620	Pseudomonas coronafaciens pv. 	clade_homolog	5.1	AS9	2.7814
+A0A6I3SZE4	basF GCM10011572_43330	Pseudoduganella buxea	clade_homolog	4.9	AS9	-1.1375
+A0ABT0KJQ6	KAJ71_22820	Serratia silvae	clade_homolog	4.9	AS23	-1.1375
+A0A9P0U1J2	entB J7S78_28880	Klebsiella oxytoca	clade_homolog	4.9	AS17	-1.1375
+A0A1B7KYQ3	A9B99_16535	Mangrovibacter phragmitis	clade_homolog	4.9	AS17	-1.1375
+A0A7Z8ZED2	entB NCTC9997_04626	Klebsiella terrigena (Raoultel	clade_homolog	4.9	AS17	-1.1375
+A0A9Q9S4V5	entB PIK62_01665	Klebsiella pasteurii	clade_homolog	4.9	AS17	-1.1375
+A0ABM6IBF7	B0E33_28965	Roseibium algicola	clade_homolog	4.9	AS9	-1.1375
+A0AAJ5QQM0	OR613_19385	Klebsiella electrica	clade_homolog	4.9	AS17	2.5867
+D2TMN4	entB ROD_06041	Citrobacter rodentium (strain 	clade_homolog	4.9	AS9	-1.1375
+A0A0H3FQ23	EAE_13660	Klebsiella aerogenes (strain A	clade_homolog	4.9	AS17	2.5867
+A0AAE7EGL0	RFB13_19670	Serratia fonticola	clade_homolog	4.9	AS23	-1.1375
+A0A2C5TVA1	entB U5E74_02515	Klebsiella planticola (Raoulte	clade_homolog	4.9	AS17	2.5867
+A0A2N4VQW4	DKC11_06530	Klebsiella quasipneumoniae	clade_homolog	4.9	AS17	2.5867
+A0A317Q704	DES37_101342	Mangrovibacter plantisponsor	clade_homolog	4.9	AS17	-1.1375
+A0ACD7FFT5	SP68_21610	Klebsiella variicola	clade_homolog	4.9	AS17	2.5867
+A0ACD4AJM9	entB KU660_18060	Klebsiella africana	clade_homolog	4.9	AS17	2.5867
+A0A223UER7	entB SAMEA3538468_0106	Klebsiella quasivariicola	clade_homolog	4.9	AS17	2.5867
+A0A5R9LLS9	FE839_06495	Klebsiella indica	clade_homolog	4.9	AS17	-1.1375
+A0A564GRD1	entB OXR69_009310	Klebsiella huaxiensis	clade_homolog	4.9	AS17	-1.1375
+A0ABY6V7U5	entB SB6411_00559	Klebsiella spallanzanii	clade_homolog	4.9	AS17	-1.1375
+A0A0H3H5A9	KOX_13960	Klebsiella michiganensis (stra	clade_homolog	4.9	AS17	-1.1375
+A9ML32	SARI_02339	Salmonella arizonae (strain AT	clade_homolog	4.9	AS9	2.5867
+A0A285B0T0	entB AAFL32_08705	Klebsiella grimontii	clade_homolog	4.9	AS17	-1.1375
+A0A2S3UMZ6	CLV41_11068	Roseibium marinum	clade_homolog	4.9	AS9	-1.1375
+A0A2X4WIL8	entB NCTC7307_03981	Salmonella enterica subsp. ari	clade_homolog	4.9	AS9	2.5867
+A0A4P1B119	LM286_19805	Klebsiella ornithinolytica (Ra	clade_homolog	4.9	AS17	2.5867
+A0ACD8BN79	THOKLE011_39860	Klebsiella michiganensis	clade_homolog	4.9	AS17	-1.1375
+A0A0M6YAC7	entB LAL4801_05133	Roseibium aggregatum	clade_homolog	4.9	AS9	-1.1375
+A0ABV4PTL3	ACDH57_10925	Pseudomonas ficuserectae	clade_homolog	4.8	AS17	2.7814
+A0A1M4THE8	SAMN02745753_00291	Marinomonas polaris DSM 16579	clade_homolog	4.8	AS23	-1.1375
+D0U5A3	nan	Pseudomonas sp. J465	clade_homolog	4.8	AS9	-1.1375
+A0A068R3S8	entB XPG1_1080	Xenorhabdus poinarii G6	clade_homolog	4.8	AS17	-1.1375
+A0A0Q0B0T0	RA271_25235	Pseudomonas syringae pv. taget	clade_homolog	4.8	AS17	-0.2186
+A0ABX4Z2C0	BKM26_04900	Pseudomonas avellanae pv. mors	clade_homolog	4.8	AS17	2.7814
+A0A0P9U1Z4	ALO64_02252	Pseudomonas meliae	clade_homolog	4.8	AS17	2.7814
+A0ABY1UDC9	iaaL CFBP3846_05036	Pseudomonas syringae pv. avii	activity_ec	4.8	AS17	3.8999
+A0ABS1XIV6	JHZ66_21860	Pseudomonas cannabina pv. alis	clade_homolog	4.8	AS17	-0.2186
+Q88AL8	iaaL PSPTO_0371	Pseudomonas syringae pv. tomat	clade_homolog	4.8	AS17	2.7814
+A0ACC8S2X3	BH713_15060	Enterobacter kobei	clade_homolog	4.6	AS9	-1.1375
+A0A4R3YQF1	EDC52_10676	Biostraticola tofi	clade_homolog	4.6	AS9	-1.1375
+A0ABU9FDW3	QFI96_023170	Klebsiella lignicola	clade_homolog	4.6	AS17	-1.1375
+A0A3N6SPG8	EB241_04590	Erwinia psidii	clade_homolog	4.6	AS17	2.7814
+A0ABW9GQC8	amoB ACEUDJ_05795	Aeromonas bivalvium	clade_homolog	4.6	AS9	-1.1375
+A0ABV4E876	AB6T85_11890	Erwinia aeris	clade_homolog	4.6	AS9	-1.1375
+A0ABX6NUC8	E4188_16835	Aeromonas media	clade_homolog	4.6	AS9	-1.1375
+A0A6L6IDD0	GJV78_00910	Intestinirhabdus alba	clade_homolog	4.6	AS9	-1.1375
+A0KL40	AHA_2477	Aeromonas hydrophila subsp. hy	clade_homolog	4.6	AS9	-1.1375
+A0A855EN95	VOF76_18895	Leclercia adecarboxylata	clade_homolog	4.6	AS17	-1.1375
+A0ABW7CH31	AB3U87_03975	Erwinia plantamica	clade_homolog	4.6	AS9	-1.1375
+A0A0H3CL95	ECL_03106	Enterobacter cloacae subsp. cl	clade_homolog	4.6	AS17	2.5867
+A0AAW3HIW1	SG71_10600	Enterobacter chengduensis	clade_homolog	4.6	AS17	-1.1375
+A0ABT2RGG6	M8318_19775	Leclercia tamurae	clade_homolog	4.6	AS17	2.5867
+A8AJL2	CKO_02566	Citrobacter koseri (strain ATC	clade_homolog	4.6	AS17	2.5867
+A0A1H9D217	SAMN05216522_101102	Rosenbergiella nectarea	clade_homolog	4.6	AS17	-1.1375
+A0ABS5SX84	HH682_09300	Rosenbergiella gaditana	clade_homolog	4.6	AS17	-1.1375
+A0A845SMJ5	GRH90_13920	Acerihabitans arboris	clade_homolog	4.6	AS9	-1.1375
+A0ABX8W2B4	FGI21_21205	Dickeya zeae	clade_homolog	4.5	AS17	-1.1375
+A0A2S9IBI7	CQW29_11815	Pantoea coffeiphila	clade_homolog	4.5	AS17	-1.1375
+A0ABX9X096	EFS38_03965	Dickeya undicola	clade_homolog	4.5	AS17	-1.1375
+A0A2K8QNV0	CVE23_15125	Dickeya fangzhongdai	clade_homolog	4.5	AS17	-1.1375
+A0A562IYL5	LX59_01463	Azomonas agilis	clade_homolog	4.5	AS9	-1.1375
+D2BSP6	Dd586_2819	Dickeya zeae (strain Ech586) (	clade_homolog	4.5	AS17	-1.1375
+A0ABP1W7Z4	BN134_1402	Cronobacter dublinensis 1210	clade_homolog	4.5	AS17	-1.1375
+A0ABV4P1T7	ACCI49_15540	Microbulbifer epialgicus	clade_homolog	4.4	AS17	-1.1375
+A0A085U3B8	entB NCTC10476_02683	Yersinia ruckeri	clade_homolog	4.4	AS17	-1.1375
+A0AAE9MDY4	NHF51_11585	Aeromonas encheleia	clade_homolog	4.3	AS17	-1.1375
+E3G5C1	Entcl_3200	Enterobacter lignolyticus (str	clade_homolog	4.2	AS17	-1.1375
+A0ABX5A112	C3712_11360	Lelliottia aquatilis	clade_homolog	4.2	AS17	-1.1375
+A0ABX4IR01	BK796_10090	Kosakonia pseudosacchari	clade_homolog	4.2	AS9	-1.1375
+A0A0L0GWG0	GM31_21275	Trabulsiella odontotermitis	clade_homolog	4.2	AS17	-1.1375
+A0ACC5RNP2	JJL49_13685	Enterobacter agglomerans (Erwi	clade_homolog	4.2	AS17	-1.1375
+A0ABX9V885	EA795_05355	Stutzerimonas nitrititolerans	clade_homolog	4.2	AS23	-1.1375
+A0ABW8QN42	ACJBEI_17260	Serratia sarumanii	clade_homolog	4.2	AS17	-1.1375
+A0A1G5EHX5	SAMN02927935_01174	Serratia nematodiphila	clade_homolog	4.2	AS17	-1.1375
+A0ABS6GKV4	KQV47_21845	Enterobacter sichuanensis	clade_homolog	4.2	AS17	-1.1375
+A0A4U3F6P8	IFT93_14635	Erwinia persicina	clade_homolog	4.2	AS17	-1.1375
+A0A3S4YS98	I5U13_06710	Serratia rubidaea (Serratia ma	clade_homolog	4.2	AS9	-1.1375
+A0ABY7HPE2	O1V66_19215	Rouxiella chamberiensis	clade_homolog	4.2	AS17	-1.1375
+A0ABT8LV24	QO199_21105	Serratia bockelmannii	clade_homolog	4.2	AS17	-1.1375
+A0ABS8WH04	K6Y31_19690	Motilimonas cestriensis	clade_homolog	4.2	AS17	-1.1375
+A0A1I4REL9	SAMN02982985_04279	Rugamonas rubra	clade_homolog	4.2	AS17	-1.1375
+A0A0J5LYH5	ABW06_09855	Pluralibacter gergoviae (Enter	clade_homolog	4.2	AS17	-1.1375
+A0A6I6EM85	GK011_13080	Erwinia sorbitola	clade_homolog	4.2	AS17	-1.1375
+A0A240AIX9	entB SAMEA4384070_0030	Serratia ficaria	clade_homolog	4.2	AS17	-1.1375
+A0A2P5GR04	CHU33_16385	Superficieibacter electus	clade_homolog	4.2	AS17	-1.1375
+A0ABX5T5I6	E4Z61_10615	Citrobacter tructae	clade_homolog	4.2	AS17	2.5867
+A0ABY5CSY2	KFQ06_01485	Serratia entomophila	clade_homolog	4.2	AS17	-1.1375
+A0ABV0HJ69	VSR74_07130	Pseudocitrobacter cyperus	clade_homolog	4.2	AS17	-1.1375
+W0LA97	Z042_04150	Chania multitudinisentens RB-2	clade_homolog	4.2	AS17	-1.1375
+A0AAW6XB08	P9921_18120	Serratia nevei	clade_homolog	4.2	AS17	-1.1375
+A0ABM7MVL3	ERHA53_05180	Erwinia rhapontici (Pectobacte	clade_homolog	4.2	AS17	-1.1375
+A0ABN8T5A1	acpA FBBNIHIM_00360	Pseudocitrobacter vendiensis	clade_homolog	4.2	AS17	-1.1375
+A0ABS0LY06	I5U16_08090	Serratia surfactantfaciens	clade_homolog	4.2	AS17	-1.1375
+A0A0U5P4V6	DMW51_15375	Serratia marcescens	clade_homolog	4.2	AS17	-1.1375
+A0ABU0VPS3	Q6237_20820	Serratia ureilytica	clade_homolog	4.2	AS17	-1.1375
+A0ABX9NZ41	D5396_13115	Rahnella inusitata	clade_homolog	4.2	AS23	-1.1375
+A0ABX9S3Q0	C7387_2217	Yokenella regensburgei	clade_homolog	4.2	AS17	-1.1375
+A0ABX0RCW9	F3J40_13585	Candidatus Pantoea multigeneri	clade_homolog	4.2	AS17	-1.1375
+A0ACH1Z320	U1R68_18705	Pectobacterium colocasium	clade_homolog	4.1	AS17	-1.1375
+E0SLE5	cbsB Dda3937_02432	Dickeya dadantii (strain 3937)	clade_homolog	4.1	AS17	-1.1375
+C6DJV7	PC1_0464	Pectobacterium carotovorum sub	clade_homolog	4.1	AS17	-1.1375
+A0ABS7VFC3	LA374_15855	Aeromonas schubertii	clade_homolog	4.1	AS23	-1.1375
+A0ABU7XCC5	V3H18_00665	Methylocystis borbori	clade_homolog	4.1	AS17	-1.1375
+A0ABU9M775	AAGW23_09795	Stutzerimonas chloritidismutan	clade_homolog	4.1	AS23	-1.1375
+A0ABU8JU92	WCT63_01370	Pectobacterium versatile	clade_homolog	4.1	AS17	-1.1375
+A0ABV1PEB1	ABRQ07_18140	Pectobacterium polonicum	clade_homolog	4.1	AS17	-1.1375
+A0A7V8IFZ8	OI69_17975	Pectobacterium fontis	clade_homolog	4.1	AS17	-1.1375
+A0ABW8GW79	ACIPUH_12445	Pectobacterium jejuense	clade_homolog	4.1	AS17	-1.1375
+A0ABW8GCS1	ACIPUP_15195	Pectobacterium actinidiae	clade_homolog	4.1	AS17	-1.1375
+A0A9Q2ES96	IG609_002525	Pectobacterium quasiaquaticum	clade_homolog	4.1	AS17	-1.1375
+A0A9X2ES19	MO867_09295	Microbulbifer okhotskensis	clade_homolog	4.1	AS17	-1.1375
+A0A9X8JL69	CLR69_13370	Pectobacterium zantedeschiae	clade_homolog	4.1	AS17	-1.1375
+A0A8E2QHX5	CXK95_00590	Stutzerimonas degradans	clade_homolog	4.1	AS23	-1.1375
+A0ABX4S995	A0G03_06565	Pectobacterium peruviense	clade_homolog	4.1	AS17	-1.1375
+N9VFK2	G114_18491	Aeromonas diversa CDC 2478-85	clade_homolog	4.1	AS23	-1.1375
+A0ABU4EJT4	RUJ08_19525	Dickeya solani	clade_homolog	4.1	AS17	-1.1375
+A0ABR4VTE9	KU75_04905	Pectobacterium odoriferum	clade_homolog	4.1	AS17	-1.1375
+A0A5B8I8L1	Dpoa569_0001087	Dickeya poaceiphila	clade_homolog	4.1	AS17	-1.1375
+A0A4R3VTT8	EDC54_102213	Samsonia erythrinae	clade_homolog	4.1	AS17	-1.1375
+A0ABR5ZDX5	H2Y56_11730	Pectobacterium aroidearum	clade_homolog	4.1	AS17	-1.1375
+A0A426J763	DMB85_009715	Pectobacterium aquaticum	clade_homolog	4.1	AS17	-1.1375
+A0A3S0YDI7	H4F48_08960	Pectobacterium brasiliense	clade_homolog	4.1	AS17	-1.1375
+A0A3M2HHS5	EA797_15215	Stutzerimonas zhaodongensis	clade_homolog	4.1	AS23	-1.1375
+A0AAP9IEH8	ACIPSN_10430	Pectobacterium parvum	clade_homolog	4.1	AS17	-1.1375
+A0AAN0KJX1	entB PEC302110_34750	Pectobacterium araliae	clade_homolog	4.1	AS17	-1.1375
+A0ABX9NM25	D5077_14425	Dickeya dianthicola	clade_homolog	4.1	AS17	-1.1375
+A0ABX6KYM8	E2566_02865	Pectobacterium punjabense	clade_homolog	4.1	AS17	-1.1375
+Q6D9Y4	entB entG ECA0479	Pectobacterium atrosepticum (s	clade_homolog	4.1	AS17	-1.1375
+A0AAW5GE37	EXT50_10200	Pectobacterium polaris	clade_homolog	4.1	AS17	-1.1375
+A0AAW7JUA8	entB ERS137967_01604	Yersinia nurmii	clade_homolog	4.1	AS17	-1.1375
+A0ABN4PXV7	PL78_09685	Yersinia entomophaga	clade_homolog	4.1	AS17	-1.1375
+A0ABR4UZU2	JV35_11945	Pectobacterium betavasculorum	clade_homolog	4.1	AS17	-1.1375
+A0A9N8CIY4	entB TML_03620	Citrobacter werkmanii	clade_homolog	3.9	AS17	-1.1375
+A0ABV4A456	AB7Z85_05540	Pseudenterobacter timonensis	clade_homolog	3.9	AS17	-1.1375
+A0A1C4AF16	GA0061071_1038	Kosakonia oryzendophytica	clade_homolog	3.9	AS17	2.5867
+A0ABT1B7I5	LOD26_06530	Citrobacter meridianamericanus	clade_homolog	3.9	AS17	-1.1375
+A0ABV3UHT9	AB4M04_13860	Serratia quinivorans	clade_homolog	3.9	AS17	-1.1375
+A0ACA8D3W7	CI104_07340	Citrobacter farmeri	clade_homolog	3.9	AS17	-1.1375
+A0ABU9UZB8	AAIG39_00710	Phytobacter palmae	clade_homolog	3.9	AS17	2.5867
+A0ABW1Q3T5	ACFPZP_18380	Citrobacter bitternis	clade_homolog	3.9	AS17	2.5867
+A0ABX3U8C7	B2M27_24745	Kluyvera intermedia (Enterobac	clade_homolog	3.9	AS17	2.5867
+A0AA93BZ61	D4100_12490	Serratia inhibens	clade_homolog	3.9	AS17	-1.1375
+A0ABX5HMQ5	C7B09_01300	Escherichia albertii	clade_homolog	3.9	AS17	2.5867
+Q8Z8L0	entB t2271	Salmonella typhi	clade_homolog	3.9	AS9	2.5867
+A0A4P8YPD0	FEM41_12950	Jejuibacter calystegiae	clade_homolog	3.9	AS17	-1.1375
+A0A4R0HYV4	E0L21_00925	Kosakonia quasisacchari	clade_homolog	3.9	AS17	2.5867
+A0A379YKC6	I6I38_06145	Serratia liquefaciens	clade_homolog	3.9	AS17	-1.1375
+A0ABD6LZZ8	FCH32_05565	Citrobacter gillenii	clade_homolog	3.9	AS17	2.5867
+A0ABN6LTI3	PDTA9734_39560	Phytobacter diazotrophicus	clade_homolog	3.9	AS17	2.5867
+A0ABS0U094	JEQ07_22385	Serratia proteamaculans	clade_homolog	3.9	AS17	-1.1375
+A0A6L5E4Y2	GBB84_02345	Citrobacter telavivensis	clade_homolog	3.9	AS17	-1.1375
+A0A7G2JQA2	CR62_12255	Serratia grimesii	clade_homolog	3.9	AS17	-1.1375
+A0A2X4V7R4	I6G64_19635	Serratia plymuthica	clade_homolog	3.9	AS17	-1.1375
+A0ABN7GNJ7	entB GHA_03022	Citrobacter youngae	clade_homolog	3.9	AS17	-1.1375
+A0ABS1A6Z8	I6M80_15195	Citrobacter cronae	clade_homolog	3.9	AS17	-1.1375
+A0ABT8PPF7	Q0A17_01710	Citrobacter enshiensis	clade_homolog	3.9	AS17	-1.1375
+A0ABY0HSE7	EAJ18_16340	Citrobacter amalonaticus	clade_homolog	3.9	AS17	-1.1375
+A0A2I5TJ63	Ser39006_010825	Prodigiosinella confusarubida 	clade_homolog	3.8	AS17	-1.1375
+A0ABX6GQN0	FO014_17300	Serratia rhizosphaerae	clade_homolog	3.8	AS17	-1.1375
+A0A1X3RPF9	AU512_11245	Lonsdalea iberica	clade_homolog	3.8	AS17	-1.1375
+A0ABV1PLL1	ABQG75_08305	Franconibacter daqui	clade_homolog	3.8	AS17	-1.1375
+A0A3N0UT57	AU492_04820	Lonsdalea populi	clade_homolog	3.8	AS17	-1.1375
+A0AAW3EGP6	KU73_13570	Pectobacterium wasabiae	clade_homolog	3.8	AS17	-1.1375
+A0A1H3ZTA8	SAMN02982996_01301	Lonsdalea quercina	clade_homolog	3.8	AS17	-1.1375
+A0AAD0SII1	CKQ53_17115	Lonsdalea britannica	clade_homolog	3.8	AS17	-1.1375
+A0A6N6K649	I6L54_18875	Citrobacter pasteurii	clade_homolog	3.8	AS17	-1.1375
+A0A0J8VJH9	ACH50_18455	Franconibacter pulveris	clade_homolog	3.8	AS17	-1.1375
+A0ABU9Z3I5	ABDB84_17720	Uliginosibacterium sediminicol	clade_homolog	3.7	AS17	-1.1375
+F2JZ73	Marme_2828	Marinomonas mediterranea (stra	clade_homolog	3.7	AS9	-1.1375
+A0A1S8YHX2	BTJ39_17595	Izhakiella australiensis	clade_homolog	3.5	AS17	-1.1375
+A0A1I4XCT2	SAMN05216516_10464	Izhakiella capsodis	clade_homolog	3.5	AS17	-1.1375
+A0A1I6Y7Z5	SAMN05192562_101389	Kosakonia arachidis	clade_homolog	3.5	AS17	-1.1375
+A0A1Y0LEQ7	A7K99_01155	Tatumella citrea (Pantoea citr	clade_homolog	3.5	AS17	-1.1375
+A0ABP2ZQZ2	entB EDP2_4004	Enterobacter cloacae S611	clade_homolog	3.5	AS17	-1.1375
+D4E3D4	entB HMPREF0758_2684	Serratia odorifera DSM 4582	clade_homolog	3.5	AS17	-1.1375
+A0A248KBA5	LFZ56_15710	Salmonella bongori serovar 66:	clade_homolog	3.5	AS17	2.5867
+A0A807LEE7	BWI95_11755	Kosakonia cowanii JCM 10956 = 	clade_homolog	3.5	AS17	-1.1375
+A0A0H3N8S6	entB SL1344_0585	Salmonella typhimurium (strain	clade_homolog	3.5	AS17	2.5867
+A0ABZ0MMQ8	Q8Y70_17270	Kosakonia sacchari	clade_homolog	3.5	AS17	2.5867
+A0ABZ3B1Y0	AAEY27_15850	Kosakonia calanthes	clade_homolog	3.5	AS17	-1.1375
+A0ABW1VMC5	ACFP73_03870	Tatumella punctata	clade_homolog	3.5	AS17	-1.1375
+Q8ZR31	entB STM0597	Salmonella typhimurium (strain	clade_homolog	3.5	AS17	2.5867
+A0A090VU67	entB EV102420_12_02490	Pseudescherichia vulneris NBRC	clade_homolog	3.5	AS17	-1.1375
+A0A0F6AY85	entB STM14_0695	Salmonella typhimurium (strain	clade_homolog	3.5	AS17	2.5867
+A0AB35RVP0	R0H02_16365	Phytobacter ursingii	clade_homolog	3.5	AS17	2.5867
+A0AA94H139	AWR26_18285	Kosakonia oryzae	clade_homolog	3.5	AS17	2.5867
+A0A1C4BKK3	GA0061070_100839	Kosakonia oryziphila	clade_homolog	3.5	AS17	-1.1375
+A0A095TNQ2	HA49_03625	Tatumella morbirosei	clade_homolog	3.5	AS17	-1.1375
+A0AAX2EM63	SAMN03159428_00504	Kosakonia radicincitans	clade_homolog	3.5	AS17	2.5867
+A0ABT7Q7E3	OB962_00410	Aeromonas piscicola	clade_homolog	3.3	AS17	-1.1375
+R1GYG9	G113_19593	Aeromonas molluscorum 848	clade_homolog	3.3	AS17	-1.1375
+A0ABS4B150	J8I01_01495	Aeromonas sanarellii	clade_homolog	3.3	AS23	-1.1375
+A0ABS5GS63	KAT72_13370	Aeromonas popoffii	clade_homolog	3.3	AS17	-1.1375
+A0ABW0YF74	ACFPVW_18880	Aeromonas eucrenophila	clade_homolog	3.3	AS17	-1.1375
+A0A5F0K940	DRM93_13610	Aeromonas taiwanensis	clade_homolog	3.3	AS17	-1.1375
+T0R0C2	entB Asalp_28540	Aeromonas salmonicida subsp. p	clade_homolog	3.3	AS17	-1.1375
+K1JDT6	HMPREF1171_01535	Aeromonas dhakensis	clade_homolog	3.2	AS23	-1.1375
+I2B7J1	entB EBL_c13930	Shimwellia blattae (strain ATC	clade_homolog	3.1	AS17	-1.1375
+A0A4R6MC52	DFP79_1321	Marinomonas balearica	clade_homolog	3.0	AS17	-1.1375
+A0AAV4YHA0	amoB VCX44_11430	Aeromonas caviae (Aeromonas pu	clade_homolog	3.0	AS17	-1.1375
+A0ABT7PTC3	amoB OB935_00465	Aeromonas bestiarum	clade_homolog	2.9	AS17	-1.1375
+A0ACH3EH40	amoB ACFWHB_12890	Aeromonas mytilicola subsp. aq	clade_homolog	2.9	AS17	-1.1375
+A0ABX0D5U8	G4923_10830	Aeromonas rivipollensis	clade_homolog	2.9	AS17	-1.1375
+A0A2U1SMR2	C5689_15835	Methylosinus sporium	clade_homolog	2.8	AS17	-1.1375
+A0A4T1ZVK4	D8779_18590	Pseudomonas leptonychotis	clade_homolog	2.8	AS23	-1.1375
+A0A1H5I4W4	SAMN05421553_4566	Pseudomonas anguilliseptica	clade_homolog	2.7	AS23	-1.1375
+A0A084ZZ17	entB GTGU_03330	Trabulsiella guamensis ATCC 49	clade_homolog	2.5	AS17	-1.1375
