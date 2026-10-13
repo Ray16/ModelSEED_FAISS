@@ -95,6 +95,48 @@ MACROMOLECULE_STEMS = (
     'acyl-carrier', 'trna', 'ribosom', 'peptidoglyc', 'polymer', 'enzyme',
     'subunit', 'domain', 'oligo', 'glycogen', 'starch', 'cellulos')
 
+# A POLYMER acceptor is not the same thing as a PROTEIN acceptor, and
+# collapsing them cost the most relevant enzyme class in the database.
+#
+# The macromolecular screen exists to refuse reactions that acylate a folded
+# protein or a carrier: you cannot offer HMDA to an enzyme whose acceptor is a
+# protein lysine. That is right for LysW carrier protein and protein-L-lysine.
+# But it also refused every enzyme whose acceptor is its own GROWING POLYAMIDE,
+# which is precisely what a nylon polymerase is:
+#
+#   cyanophycin synthetase (rxn19007, rxn46344)  poly(Asp-Arg) biopolymer,
+#       iteratively extended by ATP-dependent amide bonds - the closest
+#       biological analogue to nylon polycondensation in the database
+#   poly-gamma-glutamyl elongation (rxn58922, rxn58972)
+#   coenzyme F420 polyglutamate ligases CofE/CofF (rxn16237, rxn24598,
+#       rxn24604 and the F420-4..7 series) - iterative glutamylation
+#
+# 36 of the 231 macromolecular-flagged reactions score >= 0.6 on substrate
+# distance, and the ones above are the top of that list. They are now admitted
+# as a distinct, labelled class rather than discarded: the acceptor is a
+# polyamide being extended, not a protein being decorated.
+POLYMER_ACCEPTOR_TERMS = (
+    'cyanophycin', 'polyglutam', 'poly-gamma-glutam', 'polygamma-glutam',
+    'poly(gamma-glutam', 'polyamide', 'poly-l-glutam', 'glutamyl-l-glutamate',
+    'f420-', 'polyaspart', 'poly-beta-', 'multi-l-glutam')
+# If any of these appear, the acceptor really is a protein or an assembly and
+# the reaction stays excluded whatever else it matches.
+TRUE_MACROMOLECULE_TERMS = (
+    'protei', 'carrier', 'bccp', 'lysw', 'pup', 'trna', 'ribosom',
+    'peptidoglyc', 'enzyme', 'subunit', 'domain', 'apo-', 'holo-')
+
+
+def _mask_cofactors(text):
+    """Stop "coenzyme" matching the "enzyme" stem.
+
+    A pre-existing false positive in the original screen: the stem `enzyme`
+    is a substring of `coenzyme`, so every coenzyme-bearing reaction looked
+    macromolecular - which silently excluded the coenzyme F420 polyglutamate
+    ligases, among the most nylon-relevant chemistry in the database.
+    """
+    return (text.replace('coenzyme', 'cofactorterm')
+                .replace('co-enzyme', 'cofactorterm'))
+
 
 def _screen_block(reactions):
     """Worker: (free amines on the ACTUAL acceptor, substrate distance).
@@ -146,15 +188,34 @@ def load_reaction_metadata():
     return names, ecs, definitions, compounds, aliases
 
 
+def is_polymer_elongation(definition, compound_ids, cpd_names):
+    """True when the macromolecular partner is a POLYAMIDE being extended.
+
+    Distinguishes a nylon-relevant polymerase (cyanophycin synthetase, a
+    polyglutamate ligase) from protein acylation (a carrier protein, a
+    protein lysine). Protein evidence always wins: a reaction naming both a
+    polymer and a carrier protein stays excluded.
+    """
+    text = (definition or '').lower()
+    for cpd in compound_ids:
+        text += ' ' + cpd_names.get(cpd, '').lower()
+    text = _mask_cofactors(text)
+    if any(term in text for term in TRUE_MACROMOLECULE_TERMS):
+        return False
+    return any(term in text for term in POLYMER_ACCEPTOR_TERMS)
+
+
 def is_macromolecular(definition, compound_ids, cpd_names, cpd_formulas):
     """Compound-level evidence first, then truncation-tolerant name stems."""
     for cpd in compound_ids:
         formula = cpd_formulas.get(cpd, '')
         if 'R' in formula and not formula.startswith(('Ru', 'Rb', 'Rh', 'Re')):
             return True
-        if any(stem in cpd_names.get(cpd, '').lower() for stem in MACROMOLECULE_STEMS):
+        name = _mask_cofactors(cpd_names.get(cpd, '').lower())
+        if any(stem in name for stem in MACROMOLECULE_STEMS):
             return True
-    return any(stem in (definition or '').lower() for stem in MACROMOLECULE_STEMS)
+    return any(stem in _mask_cofactors((definition or '').lower())
+               for stem in MACROMOLECULE_STEMS)
 
 
 def main():
@@ -182,11 +243,17 @@ def main():
     distance = np.array([d for _, d, _ in screened], float)
     iterative = np.array([i for _, _, i in screened], bool)
     macro = np.zeros(len(full), bool)
+    polymer = np.zeros(len(full), bool)
     for i, rxn_id in enumerate(full.rxn_id):
         if acylates[i]:
             macro[i] = is_macromolecular(definitions.get(rxn_id, ''),
                                          compounds.get(rxn_id, []),
                                          cpd_names, cpd_formulas)
+            if macro[i]:
+                # A polyamide being extended is not a protein being decorated.
+                polymer[i] = is_polymer_elongation(definitions.get(rxn_id, ''),
+                                                   compounds.get(rxn_id, []),
+                                                   cpd_names)
 
     # Documented balance policy: a reaction whose heavy atoms do not balance is
     # not a trustworthy basis for an experimental candidate, so it is excluded
@@ -194,11 +261,15 @@ def main():
     balanced = full.heavy_balanced.to_numpy(dtype=bool)
     if 'proton_fixable' in full.columns:
         balanced &= full.proton_fixable.to_numpy(dtype=bool)
-    eligible = acylates & (~macro) & (amines >= 1) & balanced
+    # Polymer-elongating reactions are macromolecular AND admitted: their
+    # acceptor is a growing polyamide, which is the target chemistry.
+    eligible = acylates & (~macro | polymer) & (amines >= 1) & balanced
     summary = {
         'n_reactions': int(len(full)),
         'acylates_a_free_amine': int(acylates.sum()),
         'of_those_macromolecular_substrate': int((acylates & macro).sum()),
+        'of_those_polymer_elongation_readmitted': int(
+            (acylates & macro & polymer).sum()),
         'of_those_on_a_free_diamine_donor': int((acylates & ~macro & (amines >= 2)).sum()),
         'of_those_excluded_as_unbalanced': int((acylates & ~macro & (amines >= 1)
                                                 & ~balanced).sum()),
@@ -245,6 +316,7 @@ def main():
                               else 'substrate_distance'),
                 'substrate_distance': round(float(distance[ref]), 4),
                 'self_condensation': bool(iterative[ref]),
+                'polymer_elongation': bool(polymer[ref]),
                 'cosine_similarity': round(float(sims[ref]), 4),
                 'rxn_id': rec.rxn_id,
                 'reaction_name': names.get(rec.rxn_id, ''),
