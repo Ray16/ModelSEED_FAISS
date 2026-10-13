@@ -96,6 +96,48 @@ nylon-6,10 really does make sebacate outscore adipate. Recorded because a reader
 rediscover it, and because it shows what the ranking is and is not sensitive
 to.
 
+## The biggest risk to this shortlist, stated plainly
+
+The 49-member assayed panel contains the only proteins anywhere with measured
+activity on the nylon-6,6 diad. Aligned against the 28 converged candidates:
+
+```
+highest identity to any measured active      8.3%   (folC / murE)
+median                                       3.8%
+```
+
+That is noise. For comparison, the three strong producers align to a real
+template — `Q47NR5`, 2,3-dihydroxybenzoate-AMP ligase — at **28–29%**, so
+they can be placed; our candidates simply are not near them.
+
+**So this pipeline's top candidates occupy different sequence space from
+everything demonstrated to work.** Two readings, and the honest answer needs
+both:
+
+- *The panel is not a sample of what works.* It is 49 **ANL/adenylate-forming**
+  proteins the upstream project selected, three of which produce weakly
+  (1–9 µg/ml). It shows that ANL can do this, not that only ANL can. Our
+  candidates were reached by chemistry — a proven acylation of a free amine,
+  a diacid donor, a diamine acceptor — and are a genuinely independent
+  hypothesis.
+- *Or the panel is right and we are looking in the wrong place.* If
+  adenylate-forming chemistry is what this reaction needs, Mur ligases,
+  glutamine synthetases and ATP-grasp enzymes are the wrong families, however
+  well their substrates score.
+
+Nothing here resolves that, and it is also why
+`tools/validate_against_activity.py` cannot validate the ranking: the panel
+does not overlap the candidates even in sequence space, let alone in measured
+activity. **An assay round is the only thing that distinguishes an
+independent hypothesis from a wrong one.**
+
+AMP-binding/ANL candidates *are* in the table — 996 under PF00501, a lead
+family — they simply do not reach three independent lines, because they lack
+the crystallographic ligand and cofactor-bound structure evidence the
+convergence count rewards. A reader who believes the panel should start
+there instead: filter `master_candidates_enriched.tsv` on
+`family == "AMP-binding enzyme"`.
+
 See **`VERIFICATION.md`** for how the project checks itself — six
 re-runnable tools, each written because a claim had been asserted rather than
 measured, and three of which found the assertion wrong.
