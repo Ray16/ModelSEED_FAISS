@@ -201,7 +201,7 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **39,659 candidates** - 28,255 with a curated
+Current totals: **40,725 candidates** - 28,255 with a curated
 catalytic-activity statement, 28,146 with an AlphaFold model, 261 with a PDB
 entry, 889 self-condensing, 36 carrying an independent geometric score.
 
@@ -244,7 +244,7 @@ superfamily label loudly instead of ingesting it.
 
 | | before | after |
 |---|---:|---:|
-| total candidates | 36,190 | **39,659** |
+| total candidates | 36,190 | **40,725** |
 | shortlist | 289 | **301** |
 | shortlist families | 40 | **43** |
 | shortlist organisms | 211 | **220** |

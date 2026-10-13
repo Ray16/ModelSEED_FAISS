@@ -1,13 +1,13 @@
 {
-  "candidates_considered": 39659,
+  "candidates_considered": 40725,
   "excluded": {
-    "": 30114,
-    "too_short": 5239,
+    "": 31022,
+    "too_short": 5306,
     "annotation_contradicts_chemistry": 3254,
-    "too_long": 1051,
+    "too_long": 1142,
     "no_sequence": 1
   },
-  "eligible": 30114,
+  "eligible": 31022,
   "shortlisted": 301,
   "distinct_families": 43,
   "distinct_organisms": 220,

@@ -1,9 +1,9 @@
 {
-  "total_candidates": 39659,
+  "total_candidates": 40725,
   "by_route": {
     "clade": 28029,
+    "enzyme_name": 4535,
     "domain": 4453,
-    "enzyme_name": 3469,
     "precomputed_link": 2829,
     "reaction": 816,
     "assayed": 49,
@@ -11,8 +11,8 @@
   },
   "by_evidence": {
     "clade_homolog": 28029,
+    "enzyme_name_match": 4535,
     "family_homolog": 4453,
-    "enzyme_name_match": 3469,
     "precomputed_rhea_or_go": 2829,
     "exact_reaction": 509,
     "activity_ec": 251,
@@ -23,9 +23,9 @@
   },
   "reviewed": 1473,
   "with_pdb": 210,
-  "with_alphafold": 25311,
+  "with_alphafold": 25909,
   "with_catalytic_activity": 25444,
-  "with_sequence": 39658,
+  "with_sequence": 40724,
   "with_structural_score": 36,
   "self_condensing": 889,
   "annotation_contradicts_chemistry": 3311

@@ -77,6 +77,20 @@ NAMES = (
      'EC 6.3.1.- systematic name for carboxylate + amine -> amide'),
     ('beta-lactam synthetase',
      'intramolecular amide closure by an ANL-family adenylating enzyme'),
+    # Dipeptide-forming ligases, added after the EC audit (tools/recall_audit.py)
+    # found EC 6.3.2.28 at 0 of 11 and "L-amino acid ligase" at 8 of 96. Two
+    # free amino acids condense to a product that keeps a free amine AND a free
+    # carboxyl, so the chemistry is polycondensation-capable: the screen scores
+    # beta-Ala + Gly at 0.475, against 0.0 for any terminal amide.
+    ('amino acid ligase',
+     'dipeptide from two free amino acids; subsumes the L- and D- spellings'),
+    ('alanine-anticapsin ligase',
+     'BacD, the bacilysin dipeptide ligase; EC 6.3.2.28 had 0 of 11'),
+    ('dipeptide synthetase', 'the -synthetase spelling'),
+    ('dipeptide ligase', 'the -ligase spelling'),
+    ('poly-gamma-glutamate synthase',
+     'makes a genuine POLYAMIDE, poly-gamma-glutamate, and the table held 0 '
+     'of 803 - a family absent rather than merely undersampled'),
 )
 
 # Tested and deliberately NOT used. Recorded so they are not retried: the
@@ -99,7 +113,26 @@ REJECTED = (
      'ALREADY captured by activity_ec and family_homolog. Adding ~3,800 '
      'near-identical orthologs would inflate the candidate count without '
      'adding one new family'),
+    ('tubulin--tyrosine ligase', 15158,
+     'the acceptor is tubulin, a PROTEIN; the polymer/protein screen refuses '
+     'macromolecular acceptors, and it exceeds the sanity ceiling anyway'),
+    ('glutathionylspermidine synthase', 5926,
+     'on-chemistry - a polyamine acceptor, the closest thing to HMDA - but '
+     'PF03738 is already a validated enriched family, so this would add '
+     '~5,800 orthologs of a family we have. Same test as cyanophycin'),
+    ('carnosine synthase', 552,
+     'on-chemistry (beta-Ala + His) but already 296 of 552 covered; the '
+     'family is not the gap'),
 )
+
+# THE ADMISSION TEST, now that it has decided several cases. A name earns a
+# place if it adds a FAMILY the table lacks - not if it merely multiplies
+# orthologs of one already present. The shortlist caps any family at 12
+# members, so 5,800 further orthologs of a covered family cannot change the
+# deliverable; they would only inflate the headline count. This is why
+# poly-gamma-glutamate synthase is in (0 of 803 held) while
+# glutathionylspermidine synthase, carnosine synthase and cyanophycin
+# synthetase are out despite all three being genuinely on-chemistry.
 
 # A curated name should never match a superfamily. If one does, the curation is
 # wrong and that must be visible, not absorbed.
