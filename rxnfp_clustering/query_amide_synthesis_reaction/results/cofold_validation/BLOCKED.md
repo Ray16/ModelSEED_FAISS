@@ -53,6 +53,25 @@ Before the fix this printed nothing and exited 1 on attempt 1. It now waits
 through the `gpu_reserve` gate for up to ~30 minutes and exits 9 cleanly if
 no card frees — which costs nothing and takes no GPU from anyone.
 
+### Outcome of that run: clean timeout, node saturated
+
+It polled all 60 attempts and stopped:
+
+```
+[boltz2-fast] waiting for 1 free GPU(s) on lambda13 (attempt 60)
+[boltz2-fast] no free GPU on lambda13 after waiting
+```
+
+All eight H100s stayed at 45-100% utilisation with 44-59 GB resident for the
+full 30 minutes — other users' work, continuously. No card was taken, no
+output was produced, and `out/` does not exist.
+
+**This is the correct result and it needs nobody.** The technical blocker is
+gone; what remains is ordinary queueing on a shared node. Re-running the
+command at the top of this file is the whole of the remaining action, and it
+is worth doing whenever lambda13 has a quiet card — `gpu_reserve list | grep
+lambda13` shows free slots when there are any.
+
 ## Original record, superseded above
 
 
