@@ -1,0 +1,17 @@
+signal	families	constant_pct
+substrate_distance_own_rhea	100	78.0
+curated_bifunctional_ligand	14	71.4
+struct_S	11	54.5
+acylates_free_diamine	15	53.3
+sabio_has_kinetics	157	52.9
+substrate_distance_inherited	131	52.7
+room_for_adipate	57	52.6
+substrate_distance_measured	80	51.2
+acid_span	100	47.0
+master_priority	251	39.8
+amine_span	63	39.7
+self_condensation	32	37.5
+room_for_hmda	29	34.5
+n_discriminating_lines	56	16.1
+any_bifunctional_ligand	19	5.3
+length	251	0.0

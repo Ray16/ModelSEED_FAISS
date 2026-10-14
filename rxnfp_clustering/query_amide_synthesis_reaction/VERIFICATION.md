@@ -1,6 +1,6 @@
 # How this project checks itself
 
-Ten re-runnable tools, each written because a claim had been asserted rather
+Eleven re-runnable tools, each written because a claim had been asserted rather
 than measured — and in four cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
 the command shown. One further check is not a tool but a guard inside a stage,
@@ -13,6 +13,7 @@ described with the others below: it refuses to run on a superseded input.
 | what the evidence supports, uncapped | `tools/qualified_set.py` | **84** at ≥ 2 independent lines; 44 invisible to the bench shortlist |
 | measured substrate walks | `tools/substrate_walk.py` | donors: 3 enzymes, none reaches C6. acceptors: **0 free-diamine walks** |
 | measured acceptor chemistry | `tools/acceptor_cohort.py` | 3 ECs, 1,751 candidates, 168 with room for both monomers (family-level cut) |
+| is a signal per-protein or inherited | `tools/signal_granularity.py` | axes **35-55%** family-constant, not family-determined |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |
@@ -41,6 +42,24 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **`signal_granularity`** exists because the same mistake had been made
+  four times: a signal treated as per-protein evidence that turned out to
+  be inherited — the pocket ligand restating the curated reaction, the
+  adipate span inherited from a family structure, kinetics attached by EC,
+  and `substrate_distance_inherited`, which says so in its own name. Each
+  was caught by hand, after the claim. This measures it for every signal at
+  once.
+  - It also caught its own first answer. Measured naively,
+    `acylates_free_diamine` looked 96.8% constant within families, which
+    would have meant the most discriminating axis in the convergence count
+    was really a family property. That number is an artifact: a signal
+    absent from a family is trivially constant there, so a rare signal
+    scores high purely by being rare. Measured only over families that
+    carry it, it is **53.3%**, and the convergence count itself varies
+    within families 84% of the time. The axes are partially
+    family-correlated, which is expected of real chemistry, and not
+    family-determined. The alarm was mine, and measuring it properly is
+    what dismissed it.
 - **`acceptor_cohort`** exists because `substrate_walk` asked for too much.
   Requiring TWO rungs of a chain-length series demanded demonstrated chain
   tolerance on top of the target chemistry, when a single measured parameter
