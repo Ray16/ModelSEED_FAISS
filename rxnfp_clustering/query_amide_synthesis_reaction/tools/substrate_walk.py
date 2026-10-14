@@ -67,7 +67,30 @@ DIACID = {
     7: ['Pimelate'],
     8: ['Suberate'],
 }
-SERIES = {'omega-amino acid donor': OMEGA_AMINO, 'linear dicarboxylate': DIACID}
+# The ACCEPTOR side, which is what HMDA actually is. The donor series above
+# asks whether an enzyme tolerates a longer acid; this asks whether it
+# tolerates a longer free diamine, and that is the question nylon-6,6 turns
+# on. Exact names again, for the reasons in the docstring.
+FREE_DIAMINE = {
+    2: ['Ethylenediamine', '1,2-Diaminoethane'],
+    3: ['1,3-Diaminopropane', 'Propane-1,3-diamine'],
+    4: ['Putrescine', '1,4-Diaminobutane', 'Butane-1,4-diamine'],
+    5: ['Cadaverine', '1,5-Diaminopentane', 'Pentane-1,5-diamine'],
+    6: ['Hexamethylenediamine', '1,6-Diaminohexane',
+        'Hexane-1,6-diamine'],
+}
+# Polyamines are longer acceptors with free primary amines at both ends;
+# counted by the carbons between those termini.
+POLYAMINE = {
+    7: ['Spermidine'],
+    10: ['Spermine'],
+}
+SERIES = {
+    'omega-amino acid donor': OMEGA_AMINO,
+    'linear dicarboxylate': DIACID,
+    'free diamine acceptor': FREE_DIAMINE,
+    'polyamine acceptor': POLYAMINE,
+}
 # The target: nylon-6,6 needs C6 on both sides; nylon-6 needs a C6 omega-amino
 # acid. Anything measured at C5 or beyond is one step away.
 TARGET_CARBONS = 6
@@ -267,6 +290,47 @@ def main():
                     f'| {"yes" if row.has_pdb else "no"} '
                     f'| {"yes" if row.prokaryote else "**no**"} |')
             lines.append('')
+
+    lines += [
+        '## The acceptor side, and one near-miss worth not repeating', '',
+        'HMDA is an **acceptor**, so the donor series above is the less '
+        'relevant half. On the acceptor side: **no enzyme anywhere in the '
+        '11,445 parameters has measured kinetics on two rungs of the free '
+        'diamine series** - not ethylenediamine, 1,3-diaminopropane, '
+        'putrescine, cadaverine or HMDA. That is the fifth independent '
+        'source to reproduce this project\'s central finding, and the first '
+        'to do it with measured kinetics rather than annotation.', '',
+        'The one acceptor-side walk is **EC 2.3.1.57, diamine '
+        'N-acetyltransferase (SSAT)**, measured on spermidine and spermine. '
+        'It is the best acceptor lead here and better than carnosine '
+        'synthase on every practical axis: Km on spermidine 50-130 uM '
+        '(a substrate Km, not an inhibition constant), kcat/Km 3.75e5 '
+        'M^-1 s^-1, and of 1,567 candidates held **913 are prokaryotic**, '
+        'against 0 of 326 for carnosine synthase. The representatives below '
+        'include `P21340` (B. subtilis paiA, 172 aa) and `Q9HL57` '
+        '(T. acidophilum paiA, 161 aa), both reviewed with solved '
+        'structures. It scores 0.6367 on substrate distance, below the 0.75 '
+        'floor, so no axis in this project sees it; 2 of the 1,567 are '
+        'shortlisted.', '',
+        'Two caveats that stop this being a recommendation. It is '
+        '**CoA-dependent acyl transfer, not ATP-dependent ligation** - a '
+        'route to the nylon bond via adipoyl-CoA rather than free adipate, '
+        'which is a different process decision. And its native acceptors '
+        'are longer branched polyamines, not a simple C6 diamine; nothing '
+        'has been measured on putrescine or HMDA, so acceptance of a short '
+        'unbranched diamine is untested.', '',
+        '**The near-miss, recorded so the next reader does not spend the '
+        'same hour on it.** EC 2.3.1.87 (aralkylamine N-acetyltransferase) '
+        'appears in the data with an acyl series running acetyl, propanoyl, '
+        'pentanoyl and **hexanoyl** - C2 to C6, apparently a chain walk '
+        'reaching exactly adipoyl length. It is not one. Every value is a '
+        '**Ki**, and the species are `CoA-S-acyl tryptamine` bisubstrate '
+        'analogues: transition-state mimics built by medicinal chemists to '
+        'inhibit the enzyme, not substrates it turns over. What the series '
+        'does show is that the acyl channel ACCOMMODATES a C6 chain '
+        '(Ki 6.5 uM at hexanoyl against 0.048 uM at acetyl, ~135x weaker '
+        'binding) - a pocket-capacity fact, not a catalytic one, and on an '
+        'aromatic monoamine acceptor rather than a diamine.', '']
 
     (RES / 'SUBSTRATE_WALK.md').write_text('\n'.join(lines) + '\n')
 

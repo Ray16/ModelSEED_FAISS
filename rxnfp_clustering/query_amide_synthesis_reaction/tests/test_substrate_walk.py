@@ -127,3 +127,31 @@ class TestRepresentatives(unittest.TestCase):
         master = self._master(2, ec=['6.3.2.1', '6.3.2.11'])
         out = sw.representatives(master, '6.3.2.1', limit=5)
         self.assertEqual(list(out.uniprot), ['P0'])
+
+
+class TestAcceptorSeries(unittest.TestCase):
+    """HMDA is an acceptor, so the diamine series is the relevant half."""
+
+    def test_hmda_spellings_are_all_recognised(self):
+        for name in ('Hexamethylenediamine', '1,6-Diaminohexane',
+                     'Hexane-1,6-diamine'):
+            self.assertIn(name, sw.FREE_DIAMINE[6])
+
+    def test_diamine_series_is_ordered_by_carbons(self):
+        self.assertEqual(sorted(sw.FREE_DIAMINE), [2, 3, 4, 5, 6])
+
+    def test_putrescine_and_cadaverine_are_the_c4_c5_rungs(self):
+        self.assertIn('Putrescine', sw.FREE_DIAMINE[4])
+        self.assertIn('Cadaverine', sw.FREE_DIAMINE[5])
+
+    def test_glycated_cadaverine_is_not_the_c5_rung(self):
+        """`Ribulosecadaverine` is an adduct on a kinase, not cadaverine."""
+        self.assertNotIn('Ribulosecadaverine', sw.FREE_DIAMINE[5])
+        out = sw.walks(_kin([
+            ('2.7.1.172', 'kinase', 'Ribulosecadaverine', 'Km', 340, 'uM',
+             None)]), sw.FREE_DIAMINE)
+        self.assertTrue(out.empty)
+
+    def test_acceptor_series_are_registered(self):
+        self.assertIn('free diamine acceptor', sw.SERIES)
+        self.assertIn('polyamine acceptor', sw.SERIES)
