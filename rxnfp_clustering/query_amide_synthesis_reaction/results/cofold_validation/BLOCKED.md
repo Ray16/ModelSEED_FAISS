@@ -1,4 +1,48 @@
-# Cofold validation: staged, attempted, blocked on lambda13 node state
+# Cofold validation: staged; the driver blocker is GONE, the node is busy
+
+## STATUS 2026-10-13, re-tested — root is no longer required
+
+Everything below was written when `nvidia-smi` on lambda13 failed with a
+kernel/NVML version mismatch, and it concluded that a root driver reload was
+needed. **That is no longer true.** Re-tested:
+
+```
+$ ssh lambda13 nvidia-smi --query-gpu=index,name,utilization.gpu,memory.used ...
+0, NVIDIA H100 NVL, 60 %, 48167 MiB
+...
+7, NVIDIA H100 NVL, 100 %, 48009 MiB
+rc=0
+```
+
+NVML enumerates all eight H100s. The mismatch was transient node state, not
+something needing an administrator. The third "blocked" verdict in this
+project to dissolve on re-testing, after SABIO-RK being called dead and the
+BRENDA-credentials claim.
+
+**What actually blocks the run now is ordinary contention**: all eight GPUs
+are at 60-100% utilisation with 44-59 GB resident, and `gpu_reserve list`
+reports zero free slots on lambda13. House rules forbid piling onto an
+occupied card, so nothing was launched. This resolves itself without anyone
+doing anything — it needs a free GPU, not an intervention.
+
+**`fold.sh` has been fixed so the wait works.** It is written to poll for up
+to ~30 minutes, but line 44 assigned from a pipeline under `set -euo
+pipefail`, so a failing `pick` — precisely the no-free-GPU case the loop
+exists for — aborted the script on attempt 1. Verified:
+
+```
+$ bash -c 'set -euo pipefail; idxs=$(false | tr "\n" " "); echo SURVIVED'
+rc=1                                    # dies, never retries
+$ bash -c 'set -euo pipefail; idxs=$(false | tr "\n" " ") || idxs=""; echo SURVIVED'
+SURVIVED                                 # retries as designed
+```
+
+`|| idxs=""` added, backup at `fold.sh.bak-20261013`, syntax checked. The
+staged command below now runs as written and will wait for a card rather
+than failing immediately.
+
+## Original record, superseded above
+
 
 Date: 2026-10-13
 
