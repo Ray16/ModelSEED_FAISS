@@ -1,6 +1,6 @@
 # How this project checks itself
 
-Eight re-runnable tools, each written because a claim had been asserted rather
+Nine re-runnable tools, each written because a claim had been asserted rather
 than measured — and in four cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
 the command shown. One further check is not a tool but a guard inside a stage,
@@ -11,6 +11,7 @@ described with the others below: it refuses to run on a superseded input.
 | nothing computed then dropped | `tools/audit_columns.py` | **no column empty**, 52/52 populated |
 | every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
 | what the evidence supports, uncapped | `tools/qualified_set.py` | **79** at ≥ 2 independent lines; 40 invisible to the bench shortlist |
+| measured substrate walks | `tools/substrate_walk.py` | 3 enzymes on ≥ 2 rungs; none reaches C6 |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |
@@ -39,6 +40,19 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **`substrate_walk`** asks what no scoring axis here can: which enzymes have
+  published kinetics on more than one rung of a chain-length series. Every
+  chemistry score asks how much a native substrate RESEMBLES adipate + HMDA,
+  which is blind to an enzyme whose native substrate is distant but whose
+  activity has been walked toward C6. Three enzymes qualify, two of them EC
+  6.3.2.x amide ligases. It also demonstrates why the rung count alone must
+  not be read as the result: PanC has the longest walk (C2,C3,C4,C5) and the
+  values refute the obvious reading of it - glycine at C2 is 0.6 M^-1 s^-1
+  against C4 at 0.81 and C5 at 0.42, so everything that is not beta-alanine
+  sits on the same non-specific floor whether SHORTER or longer. The flat
+  C4-C5 segment is background, not tolerance extending along the chain, and
+  PanC is evidence of specificity rather than flexibility. I had written the
+  opposite before reading the C2 row.
 - **`qualified_set`** exists because the project only ever shipped an answer
   to "which 250 should the bench test", and the question being asked was
   "how many candidates does the evidence support". The shortlist caps per
