@@ -1,0 +1,310 @@
+uniprot	matched_ec	gene	organism	length	prokaryote	is_reviewed	has_pdb	pdb	alphafold	substrate_distance_measured	master_priority
+P0AES0	6.3.1.8	gss gsp b2988 JW2956	Escherichia coli (strain K12)	619.0	True	True	True	2IO7;2IO8;2IO9;2IOA;2IOB;3A2Y;3A2Z;3A30;3O98;	P0AES0;	0.7384	7.7152
+P0A951	2.3.1.57	speG b1584 JW1576	Escherichia coli (strain K12)	186.0	True	True	True	4R9M;6CY6;	P0A951;	0.5113	7.0339
+Q9KL03	2.3.1.57	speG VC_A0947	Vibrio cholerae serotype O1 (strain ATCC 39315 / El Tor Inaba N16961)	173.0	True	True	True	4JJX;4JLY;4MHD;4MI4;4MJ8;4NCZ;4R57;4R87;4YGO;5CNP;5UG4;6CX8;6DAU;6E1X;7KWH;7KWJ;7KWQ;7KWX;7KX2;7KX3;	Q9KL03;	0.5113	7.0339
+P21340	2.3.1.57	paiA BSU32150	Bacillus subtilis (strain 168)	172.0	True	True	True	1TIQ;	P21340;	0.555	6.165
+Q9HL57	2.3.1.57	paiA Ta0374	Thermoplasma acidophilum (strain ATCC 25905 / DSM 1728 / JCM 9062 / NBRC 15155 / AMRC-C165)	161.0	True	True	True	3F0A;3FIX;3K9U;3NE7;	Q9HL57;	0.555	6.165
+Q96F10	2.3.1.57	SAT2 SSAT2	Homo sapiens (Human)	170.0	False	True	True	2BEI;2Q4V;	Q96F10;	0.6367	7.4101
+Q92831	2.3.1.57	KAT2B PCAF	Homo sapiens (Human)	832.0	False	True	True	1CM0;1JM4;1N72;1WUG;1WUM;1ZS5;2RNW;2RNX;3GG3;4NSQ;5FDZ;5FE0;5FE1;5FE2;5FE3;5FE4;5FE5;5FE6;5FE7;5FE8;5FE9;5LVQ;5LVR;5MKX;6J3O;	Q92831;	0.5113	7.1722
+Q9JHD1	2.3.1.57	Kat2b Pcaf	Mus musculus (Mouse)	813.0	False	True	True	5ML0;	Q9JHD1;	0.5113	7.1722
+P21673	2.3.1.57	SAT1 SAT	Homo sapiens (Human)	171.0	False	True	True	2B3U;2B3V;2B4B;2B4D;2B58;2B5G;2F5I;2FXF;2G3T;2JEV;	P21673;	0.5113	7.0339
+P48026	2.3.1.57	Sat1 Sat	Mus musculus (Mouse)	171.0	False	True	True	3BJ7;3BJ8;	P48026;	0.5113	7.0339
+Q5CPU3	2.3.1.57	SSAT cgd4_4000	Cryptosporidium parvum (strain Iowa II)	152.0	False	True	True	6YUG;	Q5CPU3;	0.555	4.165
+O41136	2.3.1.57	A654L	Paramecium bursaria Chlorella virus 1 (PBCV-1)	197.0	False	True	True	3QB8;		0.555	7.2151
+P0AES1	6.3.1.8	gss gsp SF3035 S3236	Shigella flexneri	619.0	True	True	False		P0AES1;	0.7384	6.2152
+O60993	6.3.1.9	TRS	Crithidia fasciculata	652.0	False	True	False		O60993;	0.7384	6.7152
+P90518	6.3.1.8	GSP	Crithidia fasciculata	719.0	False	True	False		P90518;	0.7384	6.7152
+Q9GT49	6.3.1.9	TRS TryS Tc00.1047053509099.50 Tc00.1047053509319.90	Trypanosoma cruzi (strain CL Brener)	647.0	False	True	False		Q9GT49;	0.7384	6.7152
+Q1LUC3	2.3.1.57	kat2b	Danio rerio (Zebrafish) (Brachydanio rerio)	796.0	False	True	False		Q1LUC3;	0.0	3.6722
+A0A0M3KKU5	2.3.1.57		Escherichia coli LY180	170.0	True	False	True	3WR7;	A0A0M3KKU5;	0.5113	6.0339
+A0A437SL45	2.3.1.57	BM74_11955	Bacillus thuringiensis	171.0	True	False	True	6VFM;	A0A437SL45;	0.0	4.0339
+A0A5P8YIA2	2.3.1.57	speG YPO2830	Yersinia pestis	181.0	True	False	True	5WIF;6D72;	A0A5P8YIA2;	0.0	4.0339
+Q83B40	2.3.1.57	speG CBU_1678	Coxiella burnetii (strain RSA 493 / Nine Mile phase I)	170.0	True	False	True	3TTH;	Q83B40;	0.0	3.8965
+A0A084ZP18	6.3.1.8	gsp GTGU_04214	Trabulsiella guamensis ATCC 49490	623.0	True	False	False		A0A084ZP18;	0.7384	5.2152
+A0A085JCS5	6.3.1.8	gsp GTPT_2461	Tatumella ptyseos ATCC 33301	626.0	True	False	False		A0A085JCS5;	0.7384	5.2152
+A0A089Q039	6.3.1.8	JT31_15700	Cedecea neteri	620.0	True	False	False		A0A089Q039;	0.7384	5.2152
+A0A7D4ABJ6	6.3.1.9	ACTIVE_7860	Actinomadura verrucosospora	385.0	True	False	False		A0A7D4ABJ6;	0.7211	4.1633
+C6DIS0	6.3.1.9	PC1_0311	Pectobacterium carotovorum subsp. carotovorum (strain PC1)	386.0	True	False	False		C6DIS0;	0.7211	4.1633
+C9Y0C1	6.3.1.9	ygiC Ctu_35150	Cronobacter turicensis (strain DSM 18703 / CCUG 55852 / LMG 23827 / z3032)	386.0	True	False	False		C9Y0C1;	0.7211	4.1633
+D4E0R7	6.3.1.9	orfa HMPREF0758_1949	Serratia odorifera DSM 4582	386.0	True	False	False		D4E0R7;	0.7211	4.1633
+E1SWH4	6.3.1.9	Fbal_2253	Ferrimonas balearica (strain DSM 9799 / CCM 4581 / KCTC 23876 / PAT)	388.0	True	False	False		E1SWH4;	0.7211	4.1633
+F4CKA0	6.3.1.9	Psed_0171	Pseudonocardia dioxanivorans (strain ATCC 55486 / DSM 44775 / JCM 13855 / CB1190)	388.0	True	False	False		F4CKA0;	0.7211	4.1633
+A0A095TAM0	6.3.1.8	HA49_11005	Tatumella morbirosei	625.0	True	False	False		A0A095TAM0;	0.0	3.2152
+A0A097R6J7	6.3.1.8	AT03_19415	Hafnia alvei FB1	625.0	True	False	False		A0A097R6J7;	0.0	3.2152
+A0A0D7LGP7	6.3.1.8	gss O4000_03850	Citrobacter freundii	619.0	True	False	False		A0A0D7LGP7;	0.0	3.2152
+A0A0F6B6Q8	6.3.1.8	gsp STM14_3802	Salmonella typhimurium (strain 14028s / SGSC 2262)	618.0	True	False	False		A0A0F6B6Q8;	0.0	3.2152
+A0A0G4JQI7	6.3.1.8	BN1221_00545c	Brenneria goodwinii	623.0	True	False	False		A0A0G4JQI7;	0.0	3.2152
+A0A0H2VCD6	6.3.1.8	gsp c3725	Escherichia coli O6:H1 (strain CFT073 / ATCC 700928 / UPEC)	620.0	True	False	False		A0A0H2VCD6;	0.0	3.2152
+A0A0H2Z2U2	6.3.1.8	gsp APECO1_3433	Escherichia coli O1:K1 / APEC	620.0	True	False	False		A0A0H2Z2U2;	0.0	3.2152
+A0A0H3CTC1	6.3.1.8	ECL_04317	Enterobacter cloacae subsp. cloacae (strain ATCC 13047 / DSM 30054 / NBRC 13535 / NCTC 10005 / WDCM 00083 / NCDC 279-56)	620.0	True	False	False		A0A0H3CTC1;	0.0	3.2152
+A0A0H3ENL6	6.3.1.8	NRG857_14830	Escherichia coli O83:H1 (strain NRG 857C / AIEC)	619.0	True	False	False		A0A0H3ENL6;	0.0	3.2152
+A0A0H3FLD5	6.3.1.8	EAE_03450	Klebsiella aerogenes (strain ATCC 13048 / DSM 30053 / CCUG 1429 / JCM 1235 / KCTC 2190 / NBRC 13534 / NCIMB 10102 / NCTC 10006 / CDC 819-56) (Enterobacter aerogenes)	621.0	True	False	False		A0A0H3FLD5;	0.0	3.2152
+A0A0H3NFY5	6.3.1.8	gsp SL1344_3113	Salmonella typhimurium (strain SL1344)	618.0	True	False	False		A0A0H3NFY5;	0.0	3.2152
+A0A0J5L0Q4	6.3.1.8	ABW06_19105	Pluralibacter gergoviae (Enterobacter gergoviae)	619.0	True	False	False		A0A0J5L0Q4;	0.0	3.2152
+A0A0L0GR58	6.3.1.8	GM31_01900	Trabulsiella odontotermitis	623.0	True	False	False		A0A0L0GR58;	0.0	3.2152
+A0A0N0Z8P6	6.3.1.8	M992_1310	Moellerella wisconsensis ATCC 35017	628.0	True	False	False		A0A0N0Z8P6;	0.0	3.2152
+A0A0X4EHT1	6.3.1.8	AWI28_21670	Enterobacter genomosp. O	620.0	True	False	False		A0A0X4EHT1;	0.0	3.2152
+A0A1B7K6N2	6.3.1.8	M989_00827	Kluyvera georgiana ATCC 51603	621.0	True	False	False		A0A1B7K6N2;	0.0	3.2152
+A0A1B7L8G1	6.3.1.8	A9B99_02825	Mangrovibacter phragmitis	625.0	True	False	False		A0A1B7L8G1;	0.0	3.2152
+A0A1Y0LI56	6.3.1.8	A7K99_07995	Tatumella citrea (Pantoea citrea)	625.0	True	False	False		A0A1Y0LI56;	0.0	3.2152
+A0A1Y6GFP9	6.3.1.8	gss LM286_03500	Klebsiella ornithinolytica (Raoultella ornithinolytica)	623.0	True	False	False		A0A1Y6GFP9;	0.0	3.2152
+A0A1Y6KX09	6.3.1.8	gss PAQU9191_00918	Photobacterium aquimaris	627.0	True	False	False		A0A1Y6KX09;	0.0	3.2152
+A0A1Y6M511	6.3.1.8	gss PMAL9190_00129	Photobacterium malacitanum	627.0	True	False	False		A0A1Y6M511;	0.0	3.2152
+A0A1Y6MA47	6.3.1.8	gss PAND9192_00920	Photobacterium andalusiense	627.0	True	False	False		A0A1Y6MA47;	0.0	3.2152
+A0A223U653	6.3.1.8	gsp_1 SAMEA3538468_01761	Klebsiella quasivariicola	621.0	True	False	False		A0A223U653;	0.0	3.2152
+A0A248K6R0	6.3.1.8	LFZ56_03650	Salmonella bongori serovar 66:z41:- str. SA19983605	619.0	True	False	False		A0A248K6R0;	0.0	3.2152
+A0A250AXI7	6.3.1.8	AWC35_03140	Gibbsiella quercinecans	623.0	True	False	False		A0A250AXI7;	0.0	3.2152
+A0A2A2MAV9	6.3.1.8	CJD50_14785	Hafnia paralvei	625.0	True	False	False		A0A2A2MAV9;	0.0	3.2152
+A0A2B7M4Q1	6.3.1.8	gss KJE03_07825	Escherichia marmotae	619.0	True	False	False		A0A2B7M4Q1;	0.0	3.2152
+A0A2C6DVB4	6.3.1.8	CRN84_24615	Budvicia aquatica	626.0	True	False	False		A0A2C6DVB4;	0.0	3.2152
+A0A2N4UTS0	6.3.1.8	CIK00_08335	Photobacterium carnosum	626.0	True	False	False		A0A2N4UTS0;	0.0	3.2152
+A0A2P5GND2	6.3.1.8	CHU33_15060	Superficieibacter electus	620.0	True	False	False		A0A2P5GND2;	0.0	3.2152
+A0A2T2XY21	6.3.1.8	C8256_19735	Kluyvera genomosp. 2	621.0	True	False	False		A0A2T2XY21;	0.0	3.2152
+A0A2T3JNT8	6.3.1.8	CTM96_05550	Photobacterium phosphoreum	627.0	True	False	False		A0A2T3JNT8;	0.0	3.2152
+A0A2U1TR42	6.3.1.8	DDT56_18410	Brenneria corticis	632.0	True	False	False		A0A2U1TR42;	0.0	3.2152
+A0A2U1TZM9	6.3.1.8	B4923_02130	Brenneria roseae subsp. americana	623.0	True	False	False		A0A2U1TZM9;	0.0	3.2152
+A0A2X4T1P2	6.3.1.8	gsp_3 NCTC7307_00854	Salmonella enterica subsp. arizonae	618.0	True	False	False		A0A2X4T1P2;	0.0	3.2152
+A0A2X4UY08	6.3.1.8	gsp_2 NCTC12151_03225	Leminorella richardii	624.0	True	False	False		A0A2X4UY08;	0.0	3.2152
+A0A317Q5C9	6.3.1.8	DES37_102417	Mangrovibacter plantisponsor	625.0	True	False	False		A0A317Q5C9;	0.0	3.2152
+A0A370R288	6.3.1.8	C8D90_102525	Enterobacillus tribolii	624.0	True	False	False		A0A370R288;	0.0	3.2152
+A0A3Q9JHB6	6.3.1.8	DM558_01575	Entomomonas moraniae	626.0	True	False	False		A0A3Q9JHB6;	0.0	3.2152
+A0A4P6WRS7	6.3.1.8	E1B03_22250	Citrobacter arsenatis	620.0	True	False	False		A0A4P6WRS7;	0.0	3.2152
+A0A4P8YJ11	6.3.1.8	FEM41_08605	Jejuibacter calystegiae	625.0	True	False	False		A0A4P8YJ11;	0.0	3.2152
+A0A5R9LDK4	6.3.1.8	FE839_20055	Klebsiella indica	625.0	True	False	False		A0A5R9LDK4;	0.0	3.2152
+A0A680P676	6.3.1.8	C7B09_04305	Escherichia albertii	619.0	True	False	False		A0A680P676;	0.0	3.2152
+A0A6G9RGF9	6.3.1.8	gss GY169_03850	Kluyvera genomosp. 3	621.0	True	False	False		A0A6G9RGF9;	0.0	3.2152
+A0A6L5EF47	6.3.1.8	GBB84_24725	Citrobacter telavivensis	619.0	True	False	False		A0A6L5EF47;	0.0	3.2152
+A0A6L6IJE1	6.3.1.8	GJV78_10590	Intestinirhabdus alba	618.0	True	False	False		A0A6L6IJE1;	0.0	3.2152
+A0A7Z9CPN3	6.3.1.8	gsp_2 NCTC9997_01046	Klebsiella terrigena (Raoultella terrigena)	623.0	True	False	False		A0A7Z9CPN3;	0.0	3.2152
+A0A8G1ZZH0	6.3.1.8	gss U5E74_19405	Klebsiella planticola (Raoultella planticola)	623.0	True	False	False		A0A8G1ZZH0;	0.0	3.2152
+A0A8K0V2K7	6.3.1.8	gss JJB97_09930	Tenebrionibacter intestinalis	623.0	True	False	False		A0A8K0V2K7;	0.0	3.2152
+A0A949Q3V0	6.3.1.8	gss JZ788_11850	Tenebrionicola larvae	623.0	True	False	False		A0A949Q3V0;	0.0	3.2152
+A0A9J9KZQ5	6.3.1.8	Ent638_3393	Enterobacter sp. (strain 638)	620.0	True	False	False		A0A9J9KZQ5;	0.0	3.2152
+A0A9N8CSD5	6.3.1.8	gsp_2 TML_00770	Citrobacter werkmanii	620.0	True	False	False		A0A9N8CSD5;	0.0	3.2152
+A0A9X4GDM6	6.3.1.8	gss RY846_03815	Citrobacter portucalensis	619.0	True	False	False		A0A9X4GDM6;	0.0	3.2152
+A0AA44LDL0	6.3.1.8	gss H6P72_07315	Citrobacter braakii	620.0	True	False	False		A0AA44LDL0;	0.0	3.2152
+A0AA91IQQ5	6.3.1.8	M993_00978	Obesumbacterium proteus ATCC 12841	625.0	True	False	False		A0AA91IQQ5;	0.0	3.2152
+A0AA96RSM7	6.3.1.8	gss ACE3KR_13310	Enterobacter chuandaensis	620.0	True	False	False		A0AA96RSM7;	0.0	3.2152
+A0AAI8NL81	6.3.1.8	DKC11_17825	Klebsiella quasipneumoniae	621.0	True	False	False		A0AAI8NL81;	0.0	3.2152
+A0AAJ2S1Q7	6.3.1.8	gss SIK69_10735	Scandinavium lactucae	621.0	True	False	False		A0AAJ2S1Q7;	0.0	3.2152
+A0AAJ5UFF5	6.3.1.8	gss OR613_03205	Klebsiella electrica	623.0	True	False	False		A0AAJ5UFF5;	0.0	3.2152
+A0AAJ6ISW8	6.3.1.8	DP181_12370	Enterobacter kobei	620.0	True	False	False		A0AAJ6ISW8;	0.0	3.2152
+A0AAP4FU13	6.3.1.8	gss QQF32_05810	Lelliottia wanjuensis	621.0	True	False	False		A0AAP4FU13;	0.0	3.2152
+A0AAQ0XQV1	6.3.1.8	gss QAA55_020335	Enterobacter asburiae	621.0	True	False	False		A0AAQ0XQV1;	0.0	3.2152
+A0AAU7J031	6.3.1.8	gss F0320_18070	Enterobacter dykesii	620.0	True	False	False		A0AAU7J031;	0.0	3.2152
+A0AAV5N3N6	6.3.1.8	SOASR030_28270	Leminorella grimontii	624.0	True	False	False		A0AAV5N3N6;	0.0	3.2152
+A0AAW3HGT4	6.3.1.8	SG71_14040	Enterobacter chengduensis	621.0	True	False	False		A0AAW3HGT4;	0.0	3.2152
+A0AAW8H945	6.3.1.8	gss RBJ67_12565	Enterobacter soli	620.0	True	False	False		A0AAW8H945;	0.0	3.2152
+A0AAX0YUN9	6.3.1.8	C0W53_14150	Photobacterium kishitanii	627.0	True	False	False		A0AAX0YUN9;	0.0	3.2152
+A0AAX3L896	6.3.1.8	gss PHA72_21095	Enterobacter ludwigii	620.0	True	False	False		A0AAX3L896;	0.0	3.2152
+A0AB35XBP7	6.3.1.8	gss V4836_21790	Kluyvera ascorbata	621.0	True	False	False		A0AB35XBP7;	0.0	3.2152
+A0ABD4K436	6.3.1.8	FZO59_01550	Lelliottia nimipressuralis	623.0	True	False	False		A0ABD4K436;	0.0	3.2152
+A0ABD6M4R2	6.3.1.8	FCH32_15315	Citrobacter gillenii	620.0	True	False	False		A0ABD6M4R2;	0.0	3.2152
+A0ABD7KMH3	6.3.1.8	gsp_2 SAMEA2273443_03052	Enterobacter roggenkampii	620.0	True	False	False		A0ABD7KMH3;	0.0	3.2152
+A6TDZ1	6.3.1.8	gss KPN_03416	Klebsiella pneumoniae subsp. pneumoniae (strain ATCC 700721 / MGH 78578)	621.0	True	False	False		A6TDZ1;	0.0	3.2152
+A7ZRM3	6.3.1.8	gsp EcE24377A_3455	Escherichia coli O139:H28 (strain E24377A / ETEC)	619.0	True	False	False		A7ZRM3;	0.0	3.2152
+A8APM2	6.3.1.8	CKO_04379	Citrobacter koseri (strain ATCC BAA-895 / CDC 4225-83 / SGSC4696)	620.0	True	False	False		A8APM2;	0.0	3.2152
+B2U192	6.3.1.8	gsp SbBS512_E3415	Shigella boydii serotype 18 (strain CDC 3083-94 / BS512)	619.0	True	False	False		B2U192;	0.0	3.2152
+B6XHN3	6.3.1.8	PROVALCAL_02871	Providencia alcalifaciens DSM 30120	631.0	True	False	False		B6XHN3;	0.0	3.2152
+B7LGD4	6.3.1.8	gss EC55989_3404	Escherichia coli (strain 55989 / EAEC)	619.0	True	False	False		B7LGD4;	0.0	3.2152
+B7LPV8	6.3.1.8	gss EFER_2930	Escherichia fergusonii (strain ATCC 35469 / DSM 13698 / CCUG 18766 / IAM 14443 / JCM 21226 / LMG 7866 / NBRC 102419 / NCTC 12128 / CDC 0568-73)	619.0	True	False	False		B7LPV8;	0.0	3.2152
+B7MA53	6.3.1.8	gss ECS88_3370	Escherichia coli O45:K1 (strain S88 / ExPEC)	619.0	True	False	False		B7MA53;	0.0	3.2152
+B7UIP1	6.3.1.8	gsp E2348C_3275	Escherichia coli O127:H6 (strain E2348/69 / EPEC)	619.0	True	False	False		B7UIP1;	0.0	3.2152
+D1NYR8	6.3.1.8	PROVRUST_04888	Providencia rustigianii DSM 4541	630.0	True	False	False		D1NYR8;	0.0	3.2152
+D2TQW1	6.3.1.8	gsp ROD_35371	Citrobacter rodentium (strain ICC168) (Citrobacter freundii biotype 4280)	619.0	True	False	False		D2TQW1;	0.0	3.2152
+E3G3F4	6.3.1.8	Entcl_0756	Enterobacter lignolyticus (strain SCF1)	619.0	True	False	False		E3G3F4;	0.0	3.2152
+I2B8R0	6.3.1.8	EBL_c18200	Shimwellia blattae (strain ATCC 29907 / DSM 4481 / JCM 1650 / NBRC 105725 / CDC 9005-74) (Escherichia blattae)	626.0	True	False	False		I2B8R0;	0.0	3.2152
+J7U4U7	6.3.1.8	MU9_3160	Morganella morganii subsp. morganii KT	630.0	True	False	False		J7U4U7;	0.0	3.2152
+K8WZW2	6.3.1.8	OOA_05506	Providencia burhodogranariea DSM 19968	629.0	True	False	False		K8WZW2;	0.0	3.2152
+Q32C54	6.3.1.8	gsp SDY_3085	Shigella dysenteriae serotype 1 (strain Sd197)	619.0	True	False	False		Q32C54;	0.0	3.2152
+Q3YXP5	6.3.1.8	gsp SSON_3133	Shigella sonnei (strain Ss046)	619.0	True	False	False		Q3YXP5;	0.0	3.2152
+Q7CPT1	6.3.1.8	gsp STM3139	Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720)	618.0	True	False	False		Q7CPT1;	0.0	3.2152
+Q8XBW3	6.3.1.8	gss ECs_3873	Escherichia coli O157:H7	619.0	True	False	False		Q8XBW3;	0.0	3.2152
+Q8XEX4	6.3.1.8	gsp t3060	Salmonella typhi	618.0	True	False	False		Q8XEX4;	0.0	3.2152
+W1DDF7	6.3.1.8		Klebsiella pneumoniae IS43	621.0	True	False	False		W1DDF7;	0.0	3.2152
+A0A085GKT6	6.3.1.8	GBAG_0321	Buttiauxella agrestis ATCC 33320	395.0	True	False	False		A0A085GKT6;	0.0	2.5506
+A0A085J9E6	6.3.1.8	GTPT_3367	Tatumella ptyseos ATCC 33301	386.0	True	False	False		A0A085J9E6;	0.0	2.5506
+A0A094JG50	6.3.1.8	HR45_06835	Shewanella mangrovi	625.0	True	False	False		A0A094JG50;	0.0	2.5506
+A0A0A6RKH3	6.3.1.8	THIOM_005669	Candidatus Thiomargarita nelsonii	406.0	True	False	False		A0A0A6RKH3;	0.0	2.5506
+A0A0C5VP88	6.3.1.8	YC6258_00018	Gynuella sunshinyii YC6258	388.0	True	False	False		A0A0C5VP88;	0.0	2.5506
+A0A0N1EYC5	6.3.1.8	ADS77_07785	Pseudoalteromonas porphyrae	631.0	True	False	False		A0A0N1EYC5;	0.0	2.5506
+A0A198FJR7	6.3.1.8	M983_2388	Proteus myxofaciens ATCC 19692	625.0	True	False	False		A0A198FJR7;	0.0	2.5506
+A0A1B7JZ03	6.3.1.8	M998_1317	Providencia heimbachae ATCC 35613	387.0	True	False	False		A0A1B7JZ03;	0.0	2.5506
+A0A840R7N2	6.3.1.8	HNQ57_003184	Zhongshania antarctica	631.0	True	False	False		A0A840R7N2;	0.0	2.5506
+A0AAJ3HV00	6.3.1.8	M997_1104	Proteus hauseri ATCC 700826	625.0	True	False	False		A0AAJ3HV00;	0.0	2.5506
+B4EUC1	6.3.1.8	gsp PMI0183	Proteus mirabilis (strain HI4320)	625.0	True	False	False		B4EUC1;	0.0	2.5506
+E6L0B3	6.3.1.8	gsp2 HMPREF9064_1845	Aggregatibacter segnis ATCC 33393	631.0	True	False	False		E6L0B3;	0.0	2.5506
+I3DFE7	6.3.1.8	gsp HMPREF1052_1412	Pasteurella bettyae CCUG 2042	630.0	True	False	False		I3DFE7;	0.0	2.5506
+K4KMR5	6.3.1.8	M5M_11030	Simiduia agarivorans (strain DSM 21679 / JCM 13881 / BCRC 17597 / SA1)	630.0	True	False	False		K4KMR5;	0.0	2.5506
+K8WDT5	6.3.1.8	OO7_11624	Providencia sneebia DSM 19967	628.0	True	False	False		K8WDT5;	0.0	2.5506
+W1RW67	6.3.1.8	D104_11805	Marinomonas profundimaris	633.0	True	False	False		W1RW67;	0.0	2.5506
+A0A1I4YT69	2.3.1.57	SAMN05421579_10328	Xenorhabdus japonica	231.0	True	False	False		A0A1I4YT69;	0.0	2.5339
+E5Y9Z6	2.3.1.57	HMPREF0179_03014	Bilophila wadsworthia (strain 3_1_6)	205.0	True	False	False		E5Y9Z6;	0.0	2.5339
+E7RWJ3	2.3.1.57	speG HMPREF0551_1055	Lautropia mirabilis ATCC 51599	214.0	True	False	False		E7RWJ3;	0.0	2.5339
+A0A143WUL8	2.3.1.57	speG MHIR_DE00253	Candidatus Doolittlea endobia	201.0	True	False	False		A0A143WUL8;	0.0	2.0737
+A0AAU8MM24	2.3.1.57	speG V2J18_06525	Lysobacter firmicutimachus	205.0	True	False	False		A0AAU8MM24;	0.0	2.0737
+A0A6M5Z6W0	6.3.1.8	FTUN_8601	Frigoriglobus tundricola	380.0	True	False	False		A0A6M5Z6W0;	0.0	1.0
+A0AAE8L969	6.3.1.8	MCBMB27_03782	Methylobacterium phyllosphaerae	386.0	True	False	False		A0AAE8L969;	0.0	1.0
+A0ABM9FDX8	6.3.1.8	FBBNIHIM_20230	Pseudocitrobacter vendiensis	617.0	True	False	False			0.0	3.2152
+A0ABN7GLK8	6.3.1.8	gsp_1 GHA_01567	Citrobacter youngae	620.0	True	False	False			0.0	3.2152
+A0ABP7KRK8	6.3.1.8	gss GCM10022405_09640	Gibbsiella dentisursi	623.0	True	False	False			0.0	3.2152
+A0ABQ5LGJ9	6.3.1.8	SOASR032_12820	Pragia fontium	625.0	True	False	False			0.0	3.2152
+A0ABR5YLQ4	6.3.1.8	A3466_03945	Enterobacter genomosp. S	620.0	True	False	False			0.0	3.2152
+A0ABR6RUG5	6.3.1.8	gss HII27_13500	Kluyvera sichuanensis	621.0	True	False	False			0.0	3.2152
+A0ABR8TAR3	6.3.1.8	gss H9644_07455	Escherichia whittamii	619.0	True	False	False			0.0	3.2152
+A0ABR9Q370	6.3.1.8	gss IM311_04225	Enterobacter pasteurii	620.0	True	False	False			0.0	3.2152
+A0ABS0ZRV8	6.3.1.8	gss I6M88_11290	Citrobacter sedlakii	619.0	True	False	False			0.0	3.2152
+A0ABS1AAG2	6.3.1.8	gss I6M80_21585	Citrobacter cronae	620.0	True	False	False			0.0	3.2152
+A0ABS6DKQ1	6.3.1.8	gss KC222_17455	Cedecea davisae	621.0	True	False	False			0.0	3.2152
+A0ABS6GG44	6.3.1.8	gss KQV47_15340	Enterobacter sichuanensis	621.0	True	False	False			0.0	3.2152
+A0ABT0MSZ4	6.3.1.8	gss MFP26_09660	Brenneria tiliae	632.0	True	False	False			0.0	3.2152
+A0ABT1BCK7	6.3.1.8	gss LOD26_20130	Citrobacter meridianamericanus	620.0	True	False	False			0.0	3.2152
+A0ABT3VZA8	6.3.1.8	gss OSH03_11125	Enterobacter nematophilus	620.0	True	False	False			0.0	3.2152
+A0ABT3XJ03	6.3.1.8	gss OTG14_19010	Enterobacter pseudoroggenkampii	620.0	True	False	False			0.0	3.2152
+A0ABT8PV94	6.3.1.8	gss Q0A17_12685	Citrobacter enshiensis	619.0	True	False	False			0.0	3.2152
+A0ABU1DS10	6.3.1.8	gss RGV86_09115	Escherichia ruysiae	619.0	True	False	False			0.0	3.2152
+A0ABU5D5C2	6.3.1.8	gss PYW49_10845	Enterobacter chinensis	620.0	True	False	False			0.0	3.2152
+A0ABU6E2J6	6.3.1.8	gss MXM28_11230	Enterobacter vonholyi	620.0	True	False	False			0.0	3.2152
+A0ABU6ESF2	6.3.1.8	gss NGC28_16315	Enterobacter huaxiensis	620.0	True	False	False			0.0	3.2152
+A0ABU6JU07	6.3.1.8	gss VSX58_16905	Brenneria populi	623.0	True	False	False			0.0	3.2152
+A0ABU6L4E0	6.3.1.8	gss VXS06_06645	Photobacterium toruni	626.0	True	False	False			0.0	3.2152
+A0ABU6LHY3	6.3.1.8	gss VXS00_09720	Photobacterium piscicola	626.0	True	False	False			0.0	3.2152
+A0ABU7U904	6.3.1.8	gss V4839_08070	Lelliottia amnigena (Enterobacter amnigenus)	620.0	True	False	False			0.0	3.2152
+A0ABU8Z7H3	6.3.1.8	gss QFI66_014045	Klebsiella scottii	623.0	True	False	False			0.0	3.2152
+A0ABU9F7S6	6.3.1.8	gss QFI96_012195	Klebsiella lignicola	623.0	True	False	False			0.0	3.2152
+A0ABU9PM19	6.3.1.8	gss AAGT82_18600	Enterobacter quasihormaechei	620.0	True	False	False			0.0	3.2152
+A0ABV0HRU5	6.3.1.8	gss VSR74_21035	Pseudocitrobacter cyperus	617.0	True	False	False			0.0	3.2152
+A0ABV1ZH68	6.3.1.8	gss ABMC12_15215	Enterobacter intestinihominis	620.0	True	False	False			0.0	3.2152
+A0ABV4A3U3	6.3.1.8	gss AB7Z85_04380	Pseudenterobacter timonensis	620.0	True	False	False			0.0	3.2152
+A0ABW1VPE4	6.3.1.8	gss ACFP73_12605	Tatumella punctata	625.0	True	False	False			0.0	3.2152
+A0ABX2W4H2	6.3.1.8	M976_03649	Buttiauxella ferragutiae ATCC 51602	625.0	True	False	False			0.0	3.2152
+A0ABX4VLU2	6.3.1.8	C1167_15365	Enterobacter bugandensis	620.0	True	False	False			0.0	3.2152
+A0ABX5A6V4	6.3.1.8	C3712_04275	Lelliottia aquatilis	621.0	True	False	False			0.0	3.2152
+A0ABX5GVY5	6.3.1.8	C9J52_04455	Photobacterium iliopiscarium	626.0	True	False	False			0.0	3.2152
+A0ABX5GZ08	6.3.1.8	C0W27_21125	Photobacterium angustum	626.0	True	False	False			0.0	3.2152
+A0ABX5T9F2	6.3.1.8	E4Z61_20710	Citrobacter tructae	620.0	True	False	False			0.0	3.2152
+A0ABX6DK36	6.3.1.8	GHC21_03505	Kluyvera intermedia (Enterobacter intermedius)	621.0	True	False	False			0.0	3.2152
+A0ABX7UWQ7	6.3.1.8	gss HC231_18740	Brenneria izadpanahii	623.0	True	False	False			0.0	3.2152
+A0ABX8JZ25	6.3.1.8	gss KQ929_03030	Leclercia pneumoniae	620.0	True	False	False			0.0	3.2152
+A0ABX8KAB5	6.3.1.8	gss I6L54_04930	Citrobacter pasteurii	620.0	True	False	False			0.0	3.2152
+A0ABX8KIY2	6.3.1.8	gss I6L58_16450	Enterobacter cancerogenus	620.0	True	False	False			0.0	3.2152
+A0ABX9AJP1	6.3.1.8	gss K6K13_18935	Symbiopectobacterium purcellii	626.0	True	False	False			0.0	3.2152
+A0ABX9FRR8	6.3.1.8	DFQ50_109275	Pseudocitrobacter faecalis	617.0	True	False	False			0.0	3.2152
+A0ABX9S0F6	6.3.1.8	C7387_2745	Yokenella regensburgei	623.0	True	False	False			0.0	3.2152
+A0ABY0AN48	6.3.1.8	EKN94_20440	Enterobacter quasimori	620.0	True	False	False			0.0	3.2152
+A0ABY0HU84	6.3.1.8	EAJ18_14210	Citrobacter amalonaticus	619.0	True	False	False			0.0	3.2152
+A0ABY0JQS6	6.3.1.8	BN4901_2924	Citrobacter europaeus	619.0	True	False	False			0.0	3.2152
+A0ABY2PZD3	6.3.1.8	DJ535_00885	Citrobacter murliniae	619.0	True	False	False			0.0	3.2152
+A0ABY2SH68	6.3.1.8	FCN80_17480	Martelella alba	618.0	True	False	False			0.0	3.2152
+A0ABY3SD27	6.3.1.8	gss G163CM_43150	Pseudocitrobacter corydidari	617.0	True	False	False			0.0	3.2152
+A0ABY8E1B8	6.3.1.8	gss OM418_18590	Enterobacter quasiroggenkampii	620.0	True	False	False			0.0	3.2152
+A0ABY8GHP0	6.3.1.8	gss MAY91_02355	Edwardsiella ictaluri	624.0	True	False	False			0.0	3.2152
+A0ABY8SDF8	6.3.1.8	gss MQ095_15325	Edwardsiella anguillarum	624.0	True	False	False			0.0	3.2152
+A0ABZ0N5T9	6.3.1.8	gss QS795_008450	Providencia zhijiangensis	624.0	True	False	False			0.0	3.2152
+A0ABZ1DE45	6.3.1.8	gss VPX56_19165	Enterobacter wuhouensis	620.0	True	False	False			0.0	3.2152
+A0AC61TM63	6.3.1.8	gss DCL27_03830	Edwardsiella tarda ATCC 15947 = NBRC 105688	625.0	True	False	False			0.0	3.2152
+A0ACA8D2B7	6.3.1.8	CI104_04065	Citrobacter farmeri	619.0	True	False	False			0.0	3.2152
+A0ACD3Y643	6.3.1.8	gss MNY70_11980	Moellerella wisconsensis	628.0	True	False	False			0.0	3.2152
+A0ACD4AQA1	6.3.1.8	gss KU660_03575	Klebsiella africana	621.0	True	False	False			0.0	3.2152
+A0ACD7FAD5	6.3.1.8	SP68_11160	Klebsiella variicola	621.0	True	False	False			0.0	3.2152
+A0ACD7U6U7	6.3.1.8	gss KP1_4691	Klebsiella pneumoniae subsp. pneumoniae NTUH-K2044	621.0	True	False	False			0.0	3.2152
+A0ACG2GG16	6.3.1.8	M2263_000735	Providencia alcalifaciens	629.0	True	False	False			0.0	3.2152
+A0ACG2ZUW8	6.3.1.8	gss QAA82_019895	Enterobacter hormaechei	620.0	True	False	False			0.0	3.2152
+A0ACH2UMT0	6.3.1.8	gss AAHF05_18980	Enterobacter adelaidei	620.0	True	False	False			0.0	3.2152
+A0ACH4E5Z8	6.3.1.8	gss ACNKHP_07910	Shigella boydii	619.0	True	False	False			0.0	3.2152
+A0ABN0EUG3	6.3.1.8	gsp HMPREF1119_0794	Haemophilus parainfluenzae HK2019	629.0	True	False	False			0.0	2.5506
+A0ABP2P3J6	6.3.1.8	gsp HMPREF1050_1802	Haemophilus parahaemolyticus HK385	630.0	True	False	False			0.0	2.5506
+A0ABN8KS84	2.3.1.57	paiA BACCIP111895_02509	Neobacillus rhizosphaerae	212.0	True	False	False			0.0	2.3965
+A0A088RWC8	6.3.1.9	TRYS LPMP_271850	Leishmania panamensis	652.0	False	False	False		A0A088RWC8;	0.0	2.5506
+A0A1G4I551	6.3.1.9	TEOVI_000038700	Trypanosoma equiperdum	627.0	False	False	False		A0A1G4I551;	0.0	2.5506
+A0A3Q8IGF4	6.3.1.9	LdCL_270024900	Leishmania donovani	652.0	False	False	False		A0A3Q8IGF4;	0.0	2.5506
+A0A3Q8IRG9	6.3.1.9	LdCL_360052300	Leishmania donovani	749.0	False	False	False		A0A3Q8IRG9;	0.0	2.5506
+A0A3R7LYC7	6.3.1.8	TraAM80_04363	Trypanosoma rangeli	644.0	False	False	False		A0A3R7LYC7;	0.0	2.5506
+A0A422QAS6	6.3.1.8	Tco025E_00726	Trypanosoma conorhini	644.0	False	False	False		A0A422QAS6;	0.0	2.5506
+A4HFW1	6.3.1.9	LBRM_27_2010	Leishmania braziliensis	652.0	False	False	False		A4HFW1;	0.0	2.5506
+A4I1T8	6.3.1.8	GSP LINJ_25_2500	Leishmania infantum	719.0	False	False	False		A4I1T8;	0.0	2.5506
+A4I2Z3	6.3.1.9	TRYS LINJ_27_1770	Leishmania infantum	652.0	False	False	False		A4I2Z3;	0.0	2.5506
+E9AXX3	6.3.1.8	LMXM_25_2380	Leishmania mexicana (strain MHOM/GT/2001/U1103)	719.0	False	False	False		E9AXX3;	0.0	2.5506
+E9AZ89	6.3.1.9	LMXM_27_1870	Leishmania mexicana (strain MHOM/GT/2001/U1103)	652.0	False	False	False		E9AZ89;	0.0	2.5506
+Q586P2	6.3.1.9	30M24.395 Tb927.2.4370	Trypanosoma brucei brucei (strain 927/4 GUTat10.1)	627.0	False	False	False		Q586P2;	0.0	2.5506
+Q8IEX1	6.3.1.9	tryS	Trypanosoma brucei	627.0	False	False	False		Q8IEX1;	0.0	2.5506
+Q8IFU8	6.3.1.9	tryS CGC20_32435 LDHU3_27.2730	Leishmania donovani	652.0	False	False	False		Q8IFU8;	0.0	2.5506
+A0A3M0K4Y6	2.3.1.57	DUI87_15796	Hirundo rustica rustica	215.0	False	False	False		A0A3M0K4Y6;	0.0	2.5339
+A0A553MVK2	2.3.1.57	DNTS_003288	Danionella cerebrum	371.0	False	False	False		A0A553MVK2;	0.0	2.5339
+A0A673K153	2.3.1.57	LOC107725150	Sinocyclocheilus rhinocerous	203.0	False	False	False		A0A673K153;	0.0	2.5339
+A0A6P7JJU5	2.3.1.57	LOC114445939	Parambassis ranga (Indian glassy fish)	213.0	False	False	False		A0A6P7JJU5;	0.0	2.5339
+A0A7K4PY11	2.3.1.57	Sat1 MELMEL_R08935	Melospiza melodia (Song sparrow) (Fringilla melodia)	200.0	False	False	False		A0A7K4PY11;	0.0	2.5339
+A0A7K4UVA3	2.3.1.57	Sat1 EMBFUC_R07241	Emberiza fucata	200.0	False	False	False		A0A7K4UVA3;	0.0	2.5339
+A0A7K4Y340	2.3.1.57	Sat1 REGSAT_R13354	Regulus satrapa (Golden-crowned kinglet)	200.0	False	False	False		A0A7K4Y340;	0.0	2.5339
+A0A7K4YIB8	2.3.1.57	Sat1 BUCABY_R08465	Bucorvus abyssinicus (Northern ground-hornbill) (Abyssinian ground-hornbill)	200.0	False	False	False		A0A7K4YIB8;	0.0	2.5339
+A0A7K5BW56	2.3.1.57	Sat1 MOTALB_R06452	Motacilla alba (White wagtail) (Pied wagtail)	200.0	False	False	False		A0A7K5BW56;	0.0	2.5339
+A0A7K5KSF0	2.3.1.57	Sat1 VIRALT_R07038	Vireo altiloquus (Black-whiskered vireo) (Muscicapa altiloqua)	200.0	False	False	False		A0A7K5KSF0;	0.0	2.5339
+A0A7K5QE84	2.3.1.57	Sat1 PRUHIM_R13844	Prunella himalayana	200.0	False	False	False		A0A7K5QE84;	0.0	2.5339
+A0A7K6DKZ4	2.3.1.57	Sat1 ORISOL_R05126	Origma solitaria	200.0	False	False	False		A0A7K6DKZ4;	0.0	2.5339
+A0A7K6KCK7	2.3.1.57	Sat1 OREARF_R13661	Oreocharis arfaki (tit berrypecker)	200.0	False	False	False		A0A7K6KCK7;	0.0	2.5339
+A0A7K6L099	2.3.1.57	Sat1 FALFRO_R08261	Falcunculus frontatus (Eastern shriketit)	200.0	False	False	False		A0A7K6L099;	0.0	2.5339
+A0A7K6M759	2.3.1.57	Sat1 PANBIA_R09898	Panurus biarmicus (Bearded tit)	200.0	False	False	False		A0A7K6M759;	0.0	2.5339
+A0A7K6Q886	2.3.1.57	Sat1 CLIRUF_R13761	Climacteris rufus (rufous treecreeper)	200.0	False	False	False		A0A7K6Q886;	0.0	2.5339
+A0A7K6VMN9	2.3.1.57	Sat1 NOTCIN_R00170	Notiomystis cincta	200.0	False	False	False		A0A7K6VMN9;	0.0	2.5339
+A0A7K6XMU5	2.3.1.57	Sat1 PROCAF_R04851	Promerops cafer (Cape sugarbird)	200.0	False	False	False		A0A7K6XMU5;	0.0	2.5339
+A0A7K7GXB5	2.3.1.57	Sat1 ERIRUB_R07893	Erithacus rubecula (European robin)	200.0	False	False	False		A0A7K7GXB5;	0.0	2.5339
+A0A7K7IR86	2.3.1.57	Sat1 LOXCUR_R13366	Loxia curvirostra (Red crossbill)	200.0	False	False	False		A0A7K7IR86;	0.0	2.5339
+A0A7K7M1J1	2.3.1.57	Sat1 BRAATR_R11921	Brachypodius melanocephalos (black-headed bulbul)	200.0	False	False	False		A0A7K7M1J1;	0.0	2.5339
+A0A7K7NMJ4	2.3.1.57	Sat1 HALALB_R13955	Haliaeetus albicilla (White-tailed sea-eagle) (Falco albicilla)	200.0	False	False	False		A0A7K7NMJ4;	0.0	2.5339
+A0A7K7Q8J2	2.3.1.57	Sat1 POEATR_R10974	Poecile atricapillus (Black-capped chickadee) (Parus atricapillus)	200.0	False	False	False		A0A7K7Q8J2;	0.0	2.5339
+A0A7K7SYU2	2.3.1.57	Sat1 SAPAEN_R06674	Sapayoa aenigma (broad-billed sapayoa)	200.0	False	False	False		A0A7K7SYU2;	0.0	2.5339
+A0A7K7XBN4	2.3.1.57	Sat1 MOHOCH_R00798	Mohoua ochrocephala	200.0	False	False	False		A0A7K7XBN4;	0.0	2.5339
+A0A7K8HCV4	2.3.1.57	Sat1 ALERUF_R11810	Aleadryas rufinucha (rufous-naped whistler)	200.0	False	False	False		A0A7K8HCV4;	0.0	2.5339
+A0A7K8LZW8	2.3.1.57	Sat1 PTILEU_R10668	Ptilorrhoa leucosticta	200.0	False	False	False		A0A7K8LZW8;	0.0	2.5339
+A0A7K8RFH2	2.3.1.57	Sat1 RHOROS_R06459	Rhodinocichla rosea	200.0	False	False	False		A0A7K8RFH2;	0.0	2.5339
+A0A7K8T933	2.3.1.57	Sat1 NYCBRA_R12753	Nyctibius bracteatus (Rufous potoo)	200.0	False	False	False		A0A7K8T933;	0.0	2.5339
+A0A7K9JVE5	2.3.1.57	Sat1 DICEXI_R09592	Dicaeum eximium	200.0	False	False	False		A0A7K9JVE5;	0.0	2.5339
+A0A7L0BHT1	2.3.1.57	Sat1 SPITYR_R14074	Spizaetus tyrannus (black hawk-eagle)	200.0	False	False	False		A0A7L0BHT1;	0.0	2.5339
+A0A7L0E674	2.3.1.57	Sat1 TROMEL_R00516	Trogon melanurus (Black-tailed trogon)	200.0	False	False	False		A0A7L0E674;	0.0	2.5339
+A0A7L0FK21	2.3.1.57	Sat1 CORCON_R14409	Corythaixoides concolor (Grey go-away-bird)	200.0	False	False	False		A0A7L0FK21;	0.0	2.5339
+A0A7L0KWS4	2.3.1.57	Sat1 SYLVIR_R07574	Sylvietta virens (Green crombec)	200.0	False	False	False		A0A7L0KWS4;	0.0	2.5339
+A0A7L0RIC4	2.3.1.57	Sat1 GLABRA_R03608	Glaucidium brasilianum (Ferruginous pygmy-owl)	200.0	False	False	False		A0A7L0RIC4;	0.0	2.5339
+A0A7L1E653	2.3.1.57	Sat1 OENOEN_R04993	Oenanthe oenanthe (Northern wheatear)	200.0	False	False	False		A0A7L1E653;	0.0	2.5339
+A0A7L1GG23	2.3.1.57	Sat1 INDMAC_R12387	Indicator maculatus (spotted honeyguide)	200.0	False	False	False		A0A7L1GG23;	0.0	2.5339
+A0A7L2RCM0	2.3.1.57	Sat1 NEOCOR_R05941	Neodrepanis coruscans (wattled asity)	200.0	False	False	False		A0A7L2RCM0;	0.0	2.5339
+A0A7L2UMI2	2.3.1.57	Sat1 BALREX_R09777	Balaeniceps rex (Shoebill)	200.0	False	False	False		A0A7L2UMI2;	0.0	2.5339
+A0A7L2VHW3	2.3.1.57	Sat1 BRALEP_R09144	Brachypteracias leptosomus (short-legged ground-roller)	200.0	False	False	False		A0A7L2VHW3;	0.0	2.5339
+A0A7L3A5L3	2.3.1.57	Sat1 PRUFUL_R10428	Prunella fulvescens (Brown accentor)	200.0	False	False	False		A0A7L3A5L3;	0.0	2.5339
+A0A7L3CJW1	2.3.1.57	Sat1 PELURI_R04864	Pelecanoides urinatrix (Common diving petrel) (Procellaria urinatrix)	200.0	False	False	False		A0A7L3CJW1;	0.0	2.5339
+A0A7L3ED85	2.3.1.57	Sat1 CHAFRE_R08688	Chaetops frenatus (Rufous rock-jumper)	200.0	False	False	False		A0A7L3ED85;	0.0	2.5339
+A0A7L3I7W3	2.3.1.57	Sat1 PARPUN_R02688	Pardalotus punctatus (spotted pardalote)	200.0	False	False	False		A0A7L3I7W3;	0.0	2.5339
+A0A7L3KNL4	2.3.1.57	Sat1 DRYBRU_R07168	Drymodes brunneopygia	200.0	False	False	False		A0A7L3KNL4;	0.0	2.5339
+A0A7L3PC87	2.3.1.57	Sat1 XIPELE_R03280	Xiphorhynchus elegans (elegant woodcreeper)	200.0	False	False	False		A0A7L3PC87;	0.0	2.5339
+A0A7L3PZC4	2.3.1.57	Sat1 CETCET_R04954	Cettia cetti	200.0	False	False	False		A0A7L3PZC4;	0.0	2.5339
+A0A7L3YC47	2.3.1.57	Sat1 CALBOR_R08548	Calonectris borealis (Cory's shearwater)	200.0	False	False	False		A0A7L3YC47;	0.0	2.5339
+A0A7L4KST7	2.3.1.57	Sat1 CALWIL_R07027	Callaeas wilsoni (North Island kokako)	201.0	False	False	False		A0A7L4KST7;	0.0	2.5339
+A0A7L4NFA8	2.3.1.57	Sat1 CEYCYA_R11352	Ceyx cyanopectus (Indigo-banded kingfisher)	200.0	False	False	False		A0A7L4NFA8;	0.0	2.5339
+A0A850UF97	2.3.1.57	Sat1 CHLHAR_R04483	Chloropsis hardwickii	200.0	False	False	False		A0A850UF97;	0.0	2.5339
+A0A850ZNH1	2.3.1.57	Sat1 TICMUR_R05885	Tichodroma muraria	200.0	False	False	False		A0A850ZNH1;	0.0	2.5339
+A0A851B7X3	2.3.1.57	Sat1 PICGYM_R02810	Picathartes gymnocephalus (White-necked rockfowl)	200.0	False	False	False		A0A851B7X3;	0.0	2.5339
+A0A851KVK0	2.3.1.57	Sat1 VIDCHA_R05342	Vidua chalybeata (Village indigobird)	200.0	False	False	False		A0A851KVK0;	0.0	2.5339
+A0A851L921	2.3.1.57	Sat1 CORCRI_R06600	Corythaeola cristata (Great blue turaco)	200.0	False	False	False		A0A851L921;	0.0	2.5339
+A0A851R5Q9	2.3.1.57	Sat1 CERCOR_R11137	Tychaedon coryphoeus (Karoo scrub-robin) (Erythropygia coryphaeus)	200.0	False	False	False		A0A851R5Q9;	0.0	2.5339
+A0A851S027	2.3.1.57	Sat1 CERFAM_R07464	Certhia familiaris (Eurasian treecreeper)	200.0	False	False	False		A0A851S027;	0.0	2.5339
+A0A851V380	2.3.1.57	Sat1 COPSEC_R14146	Copsychus sechellarum	200.0	False	False	False		A0A851V380;	0.0	2.5339
+A0A851Y7M9	2.3.1.57	Sat1 EOLROS_R09580	Eolophus roseicapilla (Galah cockatoo) (Cacatua roseicapilla)	200.0	False	False	False		A0A851Y7M9;	0.0	2.5339
+A0A852A8V7	2.3.1.57	Sat1 CALORN_R00654	Calcarius ornatus (Chestnut-collared longspur)	200.0	False	False	False		A0A852A8V7;	0.0	2.5339
+A0A852BF40	2.3.1.57	Sat1 CHLCYA_R09186	Chloropsis cyanopogon	200.0	False	False	False		A0A852BF40;	0.0	2.5339
+A0A852H9Y9	2.3.1.57	Sat1 NICCHL_R09053	Nicator chloris	200.0	False	False	False		A0A852H9Y9;	0.0	2.5339
+A0A852IXY6	2.3.1.57	Sat1 TRILEU_R10974	Tricholaema leucomelas (pied barbet)	200.0	False	False	False		A0A852IXY6;	0.0	2.5339
+A0A852MKD3	2.3.1.57	Sat1 PTEMEL_R12633	Pteruthius melanotis	200.0	False	False	False		A0A852MKD3;	0.0	2.5339
+A0A852P8B4	2.3.1.57	Sat1 ATRCLA_R01801	Atrichornis clamosus	200.0	False	False	False		A0A852P8B4;	0.0	2.5339
+A0A8C7CKY6	2.3.1.57	SAT1	Oncorhynchus kisutch (Coho salmon) (Salmo kisutch)	241.0	False	False	False		A0A8C7CKY6;	0.0	2.5339
+A0A8C7F1A9	2.3.1.57	SAT1	Oncorhynchus kisutch (Coho salmon) (Salmo kisutch)	205.0	False	False	False		A0A8C7F1A9;	0.0	2.5339
+A0A8C8DAG9	2.3.1.57	sat1a.2	Oncorhynchus tshawytscha (Chinook salmon) (Salmo tshawytscha)	228.0	False	False	False		A0A8C8DAG9;	0.0	2.5339
+A0A8C9D883	2.3.1.57		Panthera leo (Lion)	233.0	False	False	False		A0A8C9D883;	0.0	2.5339
+A0A8C9DI41	2.3.1.57	SAT1	Prolemur simus (Greater bamboo lemur) (Hapalemur simus)	202.0	False	False	False		A0A8C9DI41;	0.0	2.5339
+A0A8K1D4V3	2.3.1.57	HGM15179_010673 HGM15179_022473	Zosterops borbonicus	211.0	False	False	False		A0A8K1D4V3;	0.0	2.5339
+A0A8T2N2L2	2.3.1.57	JZ751_016584	Albula glossodonta (roundjaw bonefish)	243.0	False	False	False		A0A8T2N2L2;	0.0	2.5339
+A0A9D3QAX9	2.3.1.57	MATL_G00048220	Megalops atlanticus (Tarpon) (Clupea gigantea)	206.0	False	False	False		A0A9D3QAX9;	0.0	2.5339
+A0AA47N920	2.3.1.57	SAT1_0 N1851_003035	Merluccius polli (Benguela hake) (Merluccius cadenati)	359.0	False	False	False		A0AA47N920;	0.0	2.5339
+A0AAV7NQU0	2.3.1.57	NDU88_005220	Pleurodeles waltl (Iberian ribbed newt)	756.0	False	False	False		A0AAV7NQU0;	0.0	2.5339
+A0AAY5ELV9	2.3.1.57	SAT1	Electrophorus electricus (Electric eel) (Gymnotus electricus)	201.0	False	False	False		A0AAY5ELV9;	0.0	2.5339
+Q7TP41	2.3.1.57	Sat1 Sat	Rattus norvegicus (Rat)	210.0	False	False	False		Q7TP41;	0.0	2.5339
+A0ACM8Q2L3	6.3.1.9	TRYS LMJF_27_1870	Leishmania major	652.0	False	False	False			0.0	2.5506
+A0A0G2JT13	2.3.1.57	Sat1	Rattus norvegicus (Rat)	210.0	False	False	False			0.0	2.5339

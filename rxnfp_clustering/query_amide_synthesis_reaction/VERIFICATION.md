@@ -1,6 +1,6 @@
 # How this project checks itself
 
-Nine re-runnable tools, each written because a claim had been asserted rather
+Ten re-runnable tools, each written because a claim had been asserted rather
 than measured — and in four cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
 the command shown. One further check is not a tool but a guard inside a stage,
@@ -12,6 +12,7 @@ described with the others below: it refuses to run on a superseded input.
 | every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
 | what the evidence supports, uncapped | `tools/qualified_set.py` | **79** at ≥ 2 independent lines; 40 invisible to the bench shortlist |
 | measured substrate walks | `tools/substrate_walk.py` | donors: 3 enzymes, none reaches C6. acceptors: **0 free-diamine walks** |
+| measured acceptor chemistry | `tools/acceptor_cohort.py` | 3 ECs, **309** bench-eligible candidates, 205 prokaryotic |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |
@@ -40,6 +41,15 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **`acceptor_cohort`** exists because `substrate_walk` asked for too much.
+  Requiring TWO rungs of a chain-length series demanded demonstrated chain
+  tolerance on top of the target chemistry, when a single measured parameter
+  for acylating a free primary amine on an aliphatic polyamine already is
+  that chemistry. Relaxing it found 3 ECs of 273 - still selective - and two
+  of the three are EC 6.3 ATP-dependent ligases, answering the mechanism
+  objection against the CoA-dependent group. It surfaced `P0AES0`, already
+  converged on three lines with nine crystal structures, which was absent
+  from the assay round.
 - **`substrate_walk`** asks what no scoring axis here can: which enzymes have
   published kinetics on more than one rung of a chain-length series. Every
   chemistry score asks how much a native substrate RESEMBLES adipate + HMDA,

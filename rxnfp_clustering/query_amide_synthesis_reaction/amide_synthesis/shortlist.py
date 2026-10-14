@@ -137,8 +137,29 @@ def eligible(table):
     reasons = reasons.mask(sequence.str.len() < 1, 'no_sequence')
     reasons = reasons.mask(reasons.eq('') & transmembrane, 'transmembrane')
     reasons = reasons.mask(reasons.eq('') & length.isna(), 'no_length')
-    reasons = reasons.mask(reasons.eq('') & (length < MIN_LENGTH), 'too_short')
-    reasons = reasons.mask(reasons.eq('') & (length > MAX_LENGTH), 'too_long')
+    # A SOLVED STRUCTURE OVERRIDES THE LENGTH HEURISTIC, both ends. The
+    # length bounds are a proxy for "expressible in a standard host"; a
+    # crystal structure is direct evidence of the thing the proxy
+    # estimates, because somebody expressed, purified and crystallised the
+    # protein. Direct evidence beats a proxy, which is the same rule this
+    # function already applies when measured activity overrides every
+    # predicted objection.
+    #
+    # It is a narrow exemption, not a relaxation: 48 candidates are
+    # excluded as too_short while holding a structure, and they include the
+    # GNAT acetyltransferases of EC 2.3.1.57 - 161-172 residues, with up to
+    # four structures each - which are the acceptor chemistry's best
+    # expressible representatives. The bound itself is unchanged for
+    # everything without one.
+    # `.notna()` is wrong here: this column holds '' as often as NaN, and
+    # an empty string is not a structure. The existing bench-filter fixture
+    # caught exactly that.
+    solved = (_column(out, 'pdb').fillna('').astype(str).str.strip()
+              .ne('').fillna(False))
+    reasons = reasons.mask(
+        reasons.eq('') & (length < MIN_LENGTH) & ~solved, 'too_short')
+    reasons = reasons.mask(
+        reasons.eq('') & (length > MAX_LENGTH) & ~solved, 'too_long')
     reasons = reasons.mask(
         reasons.eq('') & contradicted.astype(bool),
         'annotation_contradicts_chemistry')

@@ -1,19 +1,19 @@
 {
   "candidates_considered": 55125,
   "excluded": {
-    "": 32750,
-    "family_judged_reject": 8422,
-    "too_short": 7954,
+    "": 32798,
+    "family_judged_reject": 8426,
+    "too_short": 7906,
     "annotation_contradicts_chemistry": 3380,
     "transmembrane": 1238,
-    "too_long": 1150,
-    "family_prose_contradicts_chemistry": 230,
+    "too_long": 1143,
+    "family_prose_contradicts_chemistry": 233,
     "no_sequence": 1
   },
-  "eligible": 32750,
+  "eligible": 32798,
   "shortlisted": 316,
-  "distinct_families": 46,
-  "distinct_organisms": 218,
+  "distinct_families": 42,
+  "distinct_organisms": 217,
   "by_evidence": {
     "exact_reaction": 88,
     "measured_activity": 48,
@@ -28,9 +28,9 @@
     "reaction_name_match": 3
   },
   "with_measured_activity": 48,
-  "with_pdb": 98,
-  "with_experimental_structure": 98,
-  "with_cofactor_bound_structure": 37,
+  "with_pdb": 104,
+  "with_experimental_structure": 104,
+  "with_cofactor_bound_structure": 35,
   "self_condensing": 83,
   "caps": {
     "family": 12,

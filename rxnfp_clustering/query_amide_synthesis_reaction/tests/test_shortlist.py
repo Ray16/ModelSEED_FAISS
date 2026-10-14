@@ -305,3 +305,51 @@ class TestChooseSource(unittest.TestCase):
     def test_master_alone_is_used(self):
         self._write(self.master, 1000)
         self.assertEqual(sl.choose_source(self.dir), self.master)
+
+
+class TestStructureOverridesLength(unittest.TestCase):
+    """A solved structure is proof of the thing MIN_LENGTH only estimates.
+
+    The length bounds proxy for "expressible in a standard host". If a
+    crystal structure exists, somebody expressed, purified and crystallised
+    the protein, so the proxy is answered directly. This kept the EC
+    2.3.1.57 GNAT acetyltransferases (161-172 aa, up to four structures
+    each) out of every deliverable while they sat in the assay round.
+    """
+
+    def frame(self, length, pdb):
+        return pd.DataFrame({
+            'uniprot': ['P1'],
+            'sequence': ['M' * max(int(length), 1)],
+            'length': [length],
+            'keywords': [''],
+            'pdb': [pdb],
+            'evidence_strength': ['exact_reaction'],
+        })
+
+    def reason(self, length, pdb):
+        return sl.eligible(self.frame(length, pdb)).excluded_because.iloc[0]
+
+    def test_short_without_a_structure_is_still_excluded(self):
+        self.assertEqual(self.reason(161, None), 'too_short')
+
+    def test_short_with_a_structure_is_admitted(self):
+        self.assertEqual(self.reason(161, '3F0A;3FIX;'), '')
+
+    def test_long_with_a_structure_is_admitted(self):
+        self.assertEqual(self.reason(1500, '1ABC;'), '')
+
+    def test_long_without_a_structure_is_still_excluded(self):
+        self.assertEqual(self.reason(1500, None), 'too_long')
+
+    def test_a_structure_does_not_rescue_a_missing_sequence(self):
+        frame = self.frame(161, '3F0A;')
+        frame['sequence'] = ['']
+        self.assertEqual(
+            sl.eligible(frame).excluded_because.iloc[0], 'no_sequence')
+
+    def test_a_structure_does_not_rescue_transmembrane(self):
+        frame = self.frame(161, '3F0A;')
+        frame['keywords'] = ['Transmembrane']
+        self.assertEqual(
+            sl.eligible(frame).excluded_because.iloc[0], 'transmembrane')

@@ -72,6 +72,14 @@ dependent amide ligases, the same bond-forming chemistry as the nylon diad:
 | **P21340** paiA BSU32150 | Bacillus subtilis (strain 168) | 172 | EC 2.3.1.57; reviewed; structure 1TIQ; bacterial, trivially expressible |
 | **Q9HL57** paiA Ta0374 | Thermoplasma acidophilum | 161 | EC 2.3.1.57; reviewed; **four** structures (3F0A/3FIX/3K9U/3NE7); thermophilic archaeon |
 
+The three named here are a slice, not the pool. `ACCEPTOR_COHORT.md` ranks
+all **309** bench-eligible candidates in these ECs, 205 of them prokaryotic;
+the next two picks after these are `P0A951` (*E. coli* speG, 186 aa) and
+`Q9KL03` (*V. cholerae* speG, 173 aa), both reviewed with solved structures.
+`P0A951` is attractive for a reason beyond its own merits: same host as
+`P0AES0`, so the ATP-dependent and CoA-dependent mechanisms can be compared
+in one background.
+
 **P0AES0 is the strongest single candidate this project has produced and it
 was missing from this page.** It was already in the converged 17 on three
 independent lines — a proven free-diamine acylation, a bifunctional ligand
