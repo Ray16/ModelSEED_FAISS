@@ -208,6 +208,42 @@ of `master_priority` and the convergence count for exactly the reason curated
 ATP binding was rejected as an axis — a property every member of a class
 shares cannot discriminate within it.
 
+### SABIO-RK as a RETRIEVAL route, tested and rejected
+
+It is a valuable annotation source (above) and the obvious next question is
+whether it is also a way to FIND proteins: its kinetic records carry UniProt
+accessions, so every one is a protein somebody measured doing a specific
+chemistry. Measured against the candidate set:
+
+```
+distinct accessions in the 11,445 parameters          550
+  already held                                        106
+  not held                                            444
+of those 444, the ones that matter:
+  measured on a FREE POLYAMINE ACCEPTOR                 0   <- all 4 held
+  in an amide-forming EC (6.3.*, 2.3.2.*)              38
+    of which ammonia-acceptor ligases                  33   glutamine
+                                                            synthetase 16,
+                                                            carbamoyl-P
+                                                            synthase 12,
+                                                            cyclo-ligases 5
+    genuinely relevant                                  5
+```
+
+The five are two gamma-glutamyltransferases, two D-alanine--D-alanine
+ligases and one jasmonoyl-amino-acid ligase — and we already hold **1,565**,
+**1,371** and 1 candidates in those ECs respectively. So the chemistry is
+covered many times over; these are individual proteins no route happened to
+admit, not a gap in coverage.
+
+The 33 are ammonia-acceptor ligases, which acylate NH3 rather than a
+diamine. They are correctly absent: the screen wants a free amine on a
+carbon chain, and ammonia is the degenerate case of that.
+
+**Zero new proteins of relevance.** This is the sixth independent source to
+say the retrieval side is saturated, and the first to say it from measured
+kinetics.
+
 ## The acceptor side, measured against UniProt directly
 
 The nylon-6,6 acceptor is hexane-1,6-diamine. Asking UniProt how many enzymes
