@@ -1,6 +1,6 @@
 # How this project checks itself
 
-Seven re-runnable tools, each written because a claim had been asserted rather
+Eight re-runnable tools, each written because a claim had been asserted rather
 than measured — and in four cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
 the command shown. One further check is not a tool but a guard inside a stage,
@@ -10,6 +10,7 @@ described with the others below: it refuses to run on a superseded input.
 |---|---|---|
 | nothing computed then dropped | `tools/audit_columns.py` | **no column empty**, 52/52 populated |
 | every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
+| what the evidence supports, uncapped | `tools/qualified_set.py` | **79** at ≥ 2 independent lines; 40 invisible to the bench shortlist |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |
@@ -38,6 +39,14 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **`qualified_set`** exists because the project only ever shipped an answer
+  to "which 250 should the bench test", and the question being asked was
+  "how many candidates does the evidence support". The shortlist caps per
+  family, clade and genus - right for a bench round, wrong for counting -
+  and 40 proteins carrying two independent lines appeared in no deliverable
+  because a sibling from the same family already held a slot. Writing it
+  forced the correction below: the first measurement said 1,817, which is
+  what the bar gives before correlated axes are collapsed.
 - **The convergence count itself was inflated by a correlated axis, and the
   correction cut it from 28 to 17.** `bifunctional_ligand_in_the_pocket` and
   `own_reaction_chemistry` were counted as independent lines. For 1,753 of the
