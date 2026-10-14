@@ -1,16 +1,16 @@
 # Candidates with independent evidence, uncapped
 
-**82** candidates carry at least 2 DISCRIMINATING lines of evidence and pass bench eligibility. **42** of them are not on the 250-slot bench shortlist, which caps per family, clade and genus so that one cluster of orthologs does not spend a whole round on one question. That cap is right for choosing a bench round and wrong for counting what the evidence supports, so this file applies the bar and not the cap.
+**84** candidates carry at least 2 DISCRIMINATING lines of evidence and pass bench eligibility. **44** of them are not on the 250-slot bench shortlist, which caps per family, clade and genus so that one cluster of orthologs does not spend a whole round on one question. That cap is right for choosing a bench round and wrong for counting what the evidence supports, so this file applies the bar and not the cap.
 
 Two lines means two methods that fail differently agree. Nothing here is validated against nylon-6,6 activity, and with three measured positives nothing can be.
 
 **Read the off-shortlist rows as an ortholog tail, not as new chemistry.** They are overwhelmingly additional members of families the shortlist already represents, which is exactly what the diversity caps are for; what they offer is more targets inside a family that already looks good, not a new hypothesis. The gene breakdown below says which families, so that is checkable rather than a claim.
 
-Off-shortlist by gene: `murE` x10, `astA` x6, `ddaG` x5, `pylC` x2, `murE_1` x2, `speG`, `gss`, `purC`, `?`, `iaaL`.
+Off-shortlist by gene: `murE` x10, `astA` x6, `ddaG` x5, `speG` x3, `murE_1` x2, `pylC` x2, `gss`, `purC`, `?`, `iaaL`.
 
 - 17 at 3 or more lines (the converged set)
 - families represented: 28
-- organisms represented: 61
+- organisms represented: 63
 
 | # | protein | gene | organism | lines | evidence | distance | on shortlist |
 |---:|---|---|---|---:|---|---:|---|
@@ -72,27 +72,29 @@ Off-shortlist by gene: `murE` x10, `astA` x6, `ddaG` x5, `pylC` x2, `murE_1` x2,
 | 56 | `P0AES1` | gss | Shigella flexneri | 2 | acylates_a_free_diamine, lead_family_verdict, bifunctional_ligand_in_the_pocket | 0.738 | **no** |
 | 57 | `A0A0M3KKU5` |  | Escherichia coli LY180 | 2 | acylates_a_free_diamine, lead_family_verdict, bifunctional_ligand_in_the_pocket | 0.511 | **no** |
 | 58 | `P18204` | iaaL | Pseudomonas savastanoi (Pseudomonas sy | 2 | acylates_a_free_diamine, lead_family_verdict, independent_geometric_score | 0.633 | **no** |
-| 59 | `P0A884` | thyA | Escherichia coli (strain K12) | 2 | acylates_a_free_diamine, bifunctional_ligand_in_the_pocket | 0.570 | **no** |
-| 60 | `P0CI79` | thyA1 | Bacillus subtilis (strain 168) | 2 | acylates_a_free_diamine, bifunctional_ligand_in_the_pocket | 0.570 | **no** |
-| 61 | `Q5H614` | ddlA | Xanthomonas oryzae pv. oryzae (strain  | 2 | own_reaction_chemistry, lead_family_verdict, adenylation_competent_structure | 0.869 | yes |
-| 62 | `G7CMG5` | murE | Mycolicibacterium thermoresistibile (s | 2 | own_reaction_chemistry, lead_family_verdict, adenylation_competent_structure | 0.764 | **no** |
-| 63 | `A0A024HPU7` | puuA | Pseudomonas knackmussii (strain DSM 69 | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
-| 64 | `A0A085G9T0` | GEAM_2303 | Ewingella americana (strain ATCC 33852 | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
-| 65 | `A0A090DU11` | MPL3356_310153 | Mesorhizobium plurifarium | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
-| 66 | `A0A090RTN3` | JCM19235_6102 | Vibrio maritimus | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
-| 67 | `A0A2D0LF49` | ddaG | Xenorhabdus kozodoii | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
-| 68 | `A0A916NK15` | ddaG | Paenibacillus solanacearum | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
-| 69 | `A0ABN7TT27` | ddaG | Paenibacillus allorhizosphaerae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
-| 70 | `A0ABN8GJE2` | ddaG | Paenibacillus allorhizoplanae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
-| 71 | `A0ABY9XIW6` | ddaG | Xenorhabdus griffiniae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
-| 72 | `P32477` | GSH1 | Saccharomyces cerevisiae (strain ATCC  | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.642 | **no** |
-| 73 | `A0A150HGB9` | murE_3 | Microbacterium laevaniformans | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 74 | `A0A2S9YL87` | murE_1 | Enhygromyxa salina | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 75 | `A0A2X4W351` | murE_1 | Lederbergia lenta (Bacillus lentus) | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 76 | `A0A517YHC3` | ETAA8_47270 | Anatilimnocola aggregata | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 77 | `A0A518C8G2` | Pan97_25500 | Bremerella volcania | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 78 | `A0A5B9P7B8` | murE | Mariniblastus fucicola | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 79 | `A0A5C5V6T3` | Enr8_16300 | Blastopirellula retiformator | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
-| 80 | `A0A5P8YIK0` | dedC | Yersinia pestis | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.562 | yes |
-| 81 | `P0DJQ7` | bls | Streptomyces clavuligerus | 2 | bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.000 | **no** |
-| 82 | `P41320` |  | Squalus acanthias (Spiny dogfish) | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, independent_geometric_score | 0.000 | yes |
+| 59 | `P0A952` | speG | Escherichia coli O157:H7 | 2 | acylates_a_free_diamine, lead_family_verdict, bifunctional_ligand_in_the_pocket | 0.511 | **no** |
+| 60 | `P0DKR8` | speG | Wigglesworthia glossinidia brevipalpis | 2 | acylates_a_free_diamine, lead_family_verdict, bifunctional_ligand_in_the_pocket | 0.511 | **no** |
+| 61 | `P0A884` | thyA | Escherichia coli (strain K12) | 2 | acylates_a_free_diamine, bifunctional_ligand_in_the_pocket | 0.570 | **no** |
+| 62 | `P0CI79` | thyA1 | Bacillus subtilis (strain 168) | 2 | acylates_a_free_diamine, bifunctional_ligand_in_the_pocket | 0.570 | **no** |
+| 63 | `Q5H614` | ddlA | Xanthomonas oryzae pv. oryzae (strain  | 2 | own_reaction_chemistry, lead_family_verdict, adenylation_competent_structure | 0.869 | yes |
+| 64 | `G7CMG5` | murE | Mycolicibacterium thermoresistibile (s | 2 | own_reaction_chemistry, lead_family_verdict, adenylation_competent_structure | 0.764 | **no** |
+| 65 | `A0A024HPU7` | puuA | Pseudomonas knackmussii (strain DSM 69 | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
+| 66 | `A0A085G9T0` | GEAM_2303 | Ewingella americana (strain ATCC 33852 | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
+| 67 | `A0A090DU11` | MPL3356_310153 | Mesorhizobium plurifarium | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
+| 68 | `A0A090RTN3` | JCM19235_6102 | Vibrio maritimus | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.857 | **no** |
+| 69 | `A0A2D0LF49` | ddaG | Xenorhabdus kozodoii | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
+| 70 | `A0A916NK15` | ddaG | Paenibacillus solanacearum | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
+| 71 | `A0ABN7TT27` | ddaG | Paenibacillus allorhizosphaerae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
+| 72 | `A0ABN8GJE2` | ddaG | Paenibacillus allorhizoplanae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
+| 73 | `A0ABY9XIW6` | ddaG | Xenorhabdus griffiniae | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.848 | **no** |
+| 74 | `P32477` | GSH1 | Saccharomyces cerevisiae (strain ATCC  | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.642 | **no** |
+| 75 | `A0A150HGB9` | murE_3 | Microbacterium laevaniformans | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 76 | `A0A2S9YL87` | murE_1 | Enhygromyxa salina | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 77 | `A0A2X4W351` | murE_1 | Lederbergia lenta (Bacillus lentus) | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 78 | `A0A517YHC3` | ETAA8_47270 | Anatilimnocola aggregata | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 79 | `A0A518C8G2` | Pan97_25500 | Bremerella volcania | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 80 | `A0A5B9P7B8` | murE | Mariniblastus fucicola | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 81 | `A0A5C5V6T3` | Enr8_16300 | Blastopirellula retiformator | 2 | acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict | 0.784 | **no** |
+| 82 | `A0A5P8YIK0` | dedC | Yersinia pestis | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.562 | yes |
+| 83 | `P0DJQ7` | bls | Streptomyces clavuligerus | 2 | bifunctional_ligand_in_the_pocket, adenylation_competent_structure | 0.000 | **no** |
+| 84 | `P41320` |  | Squalus acanthias (Spiny dogfish) | 2 | lead_family_verdict, bifunctional_ligand_in_the_pocket, independent_geometric_score | 0.000 | yes |

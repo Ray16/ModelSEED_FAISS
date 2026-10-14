@@ -1,19 +1,19 @@
 {
   "candidates_considered": 55125,
   "excluded": {
-    "": 32798,
-    "family_judged_reject": 8426,
-    "too_short": 7906,
-    "annotation_contradicts_chemistry": 3380,
+    "": 38877,
+    "family_judged_reject": 9950,
+    "annotation_contradicts_chemistry": 3438,
     "transmembrane": 1238,
     "too_long": 1143,
-    "family_prose_contradicts_chemistry": 233,
+    "family_prose_contradicts_chemistry": 242,
+    "too_short": 236,
     "no_sequence": 1
   },
-  "eligible": 32798,
-  "shortlisted": 316,
-  "distinct_families": 42,
-  "distinct_organisms": 217,
+  "eligible": 38877,
+  "shortlisted": 317,
+  "distinct_families": 41,
+  "distinct_organisms": 218,
   "by_evidence": {
     "exact_reaction": 88,
     "measured_activity": 48,
@@ -25,13 +25,13 @@
     "enzyme_name_match": 12,
     "name_match": 12,
     "literature_curated": 12,
-    "reaction_name_match": 3
+    "reaction_name_match": 4
   },
   "with_measured_activity": 48,
-  "with_pdb": 104,
-  "with_experimental_structure": 104,
+  "with_pdb": 103,
+  "with_experimental_structure": 103,
   "with_cofactor_bound_structure": 35,
-  "self_condensing": 83,
+  "self_condensing": 84,
   "caps": {
     "family": 12,
     "clade": 3,

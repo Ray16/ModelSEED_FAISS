@@ -10,9 +10,9 @@ described with the others below: it refuses to run on a superseded input.
 |---|---|---|
 | nothing computed then dropped | `tools/audit_columns.py` | **no column empty**, 52/52 populated |
 | every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
-| what the evidence supports, uncapped | `tools/qualified_set.py` | **79** at ≥ 2 independent lines; 40 invisible to the bench shortlist |
+| what the evidence supports, uncapped | `tools/qualified_set.py` | **84** at ≥ 2 independent lines; 44 invisible to the bench shortlist |
 | measured substrate walks | `tools/substrate_walk.py` | donors: 3 enzymes, none reaches C6. acceptors: **0 free-diamine walks** |
-| measured acceptor chemistry | `tools/acceptor_cohort.py` | 3 ECs, **309** bench-eligible candidates, 205 prokaryotic |
+| measured acceptor chemistry | `tools/acceptor_cohort.py` | 3 ECs, **1,751** bench-eligible candidates, 1,104 prokaryotic |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |

@@ -14,7 +14,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from tools import acceptor_cohort as ac   # noqa: E402
+from amide_synthesis import shortlist as sl   # noqa: E402
+from tools import acceptor_cohort as ac      # noqa: E402
 
 
 def _kin(rows):
@@ -61,7 +62,8 @@ class TestCohort(unittest.TestCase):
             'organism': ['E. coli'] * 3,
             'lineage': ['Bacteria; X'] * 3,
             'sequence': ['M' * 400] * 3,
-            'length': [619.0, 186.0, 400.0],
+            # Below the floor, whatever the floor currently is.
+            'length': [619.0, float(sl.MIN_LENGTH - 1), 400.0],
             'keywords': [''] * 3,
             'pdb': ['2IO7;', '1ABC;', None],
             'alphafold': [None] * 3,
@@ -78,7 +80,7 @@ class TestCohort(unittest.TestCase):
         self.assertEqual(sorted(out.uniprot), ['P1', 'P2'])
 
     def test_short_member_with_a_structure_survives(self):
-        """186 aa is under the 200 floor; the structure is the exemption."""
+        """Under the floor; the solved structure is the exemption."""
         out = ac.cohort(self._master(), ['2.3.1.57'])
         self.assertEqual(list(out.uniprot), ['P2'])
 

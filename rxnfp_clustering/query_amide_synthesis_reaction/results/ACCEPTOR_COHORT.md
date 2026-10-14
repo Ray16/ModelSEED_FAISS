@@ -8,9 +8,9 @@ HMDA is an **acceptor**. These are the candidates whose EC has at least one *mea
 | 6.3.1.8 | glutathionylspermidine synthase | 1 | Spermidine |
 | 6.3.1.9 | trypanothione synthase | 11 | Spermidine |
 
-**309 candidates**, 205 of them prokaryotic and of expressible length, against **15** on the bench shortlist.
+**1,751 candidates**, 1,104 of them prokaryotic and of expressible length, against **15** on the bench shortlist.
 
-Two things a reader should hold onto. The evidence is **per EC**, so every member earns it equally and this cannot rank within a class — which is why it is a cohort file and not an evidence axis, the same objection that keeps curated ATP binding out of the convergence count. And the members are largely orthologs of one another: treat this as three chemistries with deep membership, not as 309 independent leads.
+Two things a reader should hold onto. The evidence is **per EC**, so every member earns it equally and this cannot rank within a class — which is why it is a cohort file and not an evidence axis, the same objection that keeps curated ATP binding out of the convergence count. And the members are largely orthologs of one another: treat this as three chemistries with deep membership, not as 1,751 independent leads.
 
 Ki values are excluded when selecting the ECs. A Ki says a molecule binds, which for a bisubstrate analogue says nothing about turnover — see the EC 2.3.1.87 near-miss in `SUBSTRATE_WALK.md`.
 
@@ -31,15 +31,15 @@ Full ranking in `ACCEPTOR_COHORT.tsv`; the first 25 follow.
 | `Q5CPU3` | 2.3.1.57 | SSAT | Cryptosporidium parvum (strain Iow | 152 | yes | yes | no |
 | `O41136` | 2.3.1.57 | A654L | Paramecium bursaria Chlorella viru | 197 | yes | yes | no |
 | `P0AES1` | 6.3.1.8 | gss | Shigella flexneri | 619 | yes | no | yes |
+| `P39909` | 2.3.1.57 | bltD | Bacillus subtilis (strain 168) | 152 | yes | no | yes |
+| `D4FZ53` | 2.3.1.57 | bltD | Bacillus subtilis subsp. natto (st | 152 | yes | no | yes |
+| `P0A952` | 2.3.1.57 | speG | Escherichia coli O157:H7 | 186 | yes | no | yes |
+| `P0DKR8` | 2.3.1.57 | speG | Wigglesworthia glossinidia brevipa | 174 | yes | no | yes |
 | `O60993` | 6.3.1.9 | TRS | Crithidia fasciculata | 652 | yes | no | no |
 | `P90518` | 6.3.1.8 | GSP | Crithidia fasciculata | 719 | yes | no | no |
 | `Q9GT49` | 6.3.1.9 | TRS | Trypanosoma cruzi (strain CL Brene | 647 | yes | no | no |
+| `Q6P8J2` | 2.3.1.57 | Sat2 | Mus musculus (Mouse) | 170 | yes | no | no |
+| `Q7PCJ8` | 2.3.1.57 | SAT2 | Bos taurus (Bovine) | 170 | yes | no | no |
+| `Q7PCJ9` | 2.3.1.57 | SAT2 | Sus scrofa (Pig) | 170 | yes | no | no |
 | `Q1LUC3` | 2.3.1.57 | kat2b | Danio rerio (Zebrafish) (Brachydan | 796 | yes | no | no |
-| `A0A0M3KKU5` | 2.3.1.57 |  | Escherichia coli LY180 | 170 | no | yes | yes |
-| `A0A437SL45` | 2.3.1.57 | BM74_11955 | Bacillus thuringiensis | 171 | no | yes | yes |
-| `A0A5P8YIA2` | 2.3.1.57 | speG | Yersinia pestis | 181 | no | yes | yes |
-| `Q83B40` | 2.3.1.57 | speG | Coxiella burnetii (strain RSA 493  | 170 | no | yes | yes |
-| `A0A084ZP18` | 6.3.1.8 | gsp | Trabulsiella guamensis ATCC 49490 | 623 | no | no | yes |
-| `A0A085JCS5` | 6.3.1.8 | gsp | Tatumella ptyseos ATCC 33301 | 626 | no | no | yes |
-| `A0A089Q039` | 6.3.1.8 | JT31_15700 | Cedecea neteri | 620 | no | no | yes |
-| `A0A7D4ABJ6` | 6.3.1.9 | ACTIVE_7860 | Actinomadura verrucosospora | 385 | no | no | yes |
+| `P49431` | 2.3.1.57 | Sat1 | Mus saxicola (Elliot's brown spiny | 171 | yes | no | no |

@@ -36,7 +36,29 @@ from .paths import RES
 
 TARGET = int(os.environ.get('SHORTLIST_SIZE', 250))
 # Soluble, single-domain-ish, expressible in a standard host.
-MIN_LENGTH = int(os.environ.get('SHORTLIST_MIN_LENGTH', 200))
+#
+# THE FLOOR WAS 200 AND THAT WAS MEASURABLY THE WRONG PLACE. Its stated
+# purpose is expressibility, but a 170-residue single-domain protein is
+# MORE expressible than a 600-residue one, not less, so a floor cannot be
+# measuring what the comment claims. Nor was it excluding fragments: of
+# 55,125 candidates exactly ONE is flagged `(Fragment)`.
+#
+# What it was doing is visible in the length histogram. There is a dense
+# mode at 170-179 (2,885 candidates) and 200 cuts through its descending
+# shoulder - 925 candidates in the 190-199 bin against 364 in 200-209. It
+# sliced a coherent population of small single-domain enzymes, most of them
+# GNAT-fold acyltransferases, which is the family holding the measured
+# acceptor chemistry. This project defended its 0.75 chemistry floor on the
+# grounds that it sat in a REAL gap in a discrete distribution; by the same
+# standard 200 does not, and 120 does - 39 candidates in 120-129, 162 below
+# 100 across the whole tail.
+#
+# Measured effect of the move: bench-eligible 41,457 -> 49,069, the
+# acceptor cohort 309 -> 1,751 (prokaryotic 205 -> 1,104), and the
+# evidence-backed QUALIFIED set 82 -> 84. It matters enormously for the
+# cohort and almost not at all for the converged work, because there
+# evidence binds rather than length.
+MIN_LENGTH = int(os.environ.get('SHORTLIST_MIN_LENGTH', 120))
 MAX_LENGTH = int(os.environ.get('SHORTLIST_MAX_LENGTH', 1200))
 # Diversity caps: one cluster of orthologs answers one question.
 MAX_PER_FAMILY = int(os.environ.get('SHORTLIST_MAX_PER_FAMILY', 12))

@@ -330,26 +330,32 @@ class TestStructureOverridesLength(unittest.TestCase):
     def reason(self, length, pdb):
         return sl.eligible(self.frame(length, pdb)).excluded_because.iloc[0]
 
+    # Expressed relative to the bounds, not as literals: these were
+    # written with 161 aa as "short", which stopped testing anything when
+    # the floor moved from 200 to 120.
+    SHORT = sl.MIN_LENGTH - 1
+    LONG = sl.MAX_LENGTH + 1
+
     def test_short_without_a_structure_is_still_excluded(self):
-        self.assertEqual(self.reason(161, None), 'too_short')
+        self.assertEqual(self.reason(self.SHORT, None), 'too_short')
 
     def test_short_with_a_structure_is_admitted(self):
-        self.assertEqual(self.reason(161, '3F0A;3FIX;'), '')
+        self.assertEqual(self.reason(self.SHORT, '3F0A;3FIX;'), '')
 
     def test_long_with_a_structure_is_admitted(self):
-        self.assertEqual(self.reason(1500, '1ABC;'), '')
+        self.assertEqual(self.reason(self.LONG, '1ABC;'), '')
 
     def test_long_without_a_structure_is_still_excluded(self):
-        self.assertEqual(self.reason(1500, None), 'too_long')
+        self.assertEqual(self.reason(self.LONG, None), 'too_long')
 
     def test_a_structure_does_not_rescue_a_missing_sequence(self):
-        frame = self.frame(161, '3F0A;')
+        frame = self.frame(self.SHORT, '3F0A;')
         frame['sequence'] = ['']
         self.assertEqual(
             sl.eligible(frame).excluded_because.iloc[0], 'no_sequence')
 
     def test_a_structure_does_not_rescue_transmembrane(self):
-        frame = self.frame(161, '3F0A;')
+        frame = self.frame(self.SHORT, '3F0A;')
         frame['keywords'] = ['Transmembrane']
         self.assertEqual(
             sl.eligible(frame).excluded_because.iloc[0], 'transmembrane')

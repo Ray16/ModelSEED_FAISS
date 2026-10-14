@@ -25,15 +25,18 @@ within the class - the same objection that kept curated ATP binding out of
 the convergence count and keeps `sabio_*` out of `master_priority`. What it
 can do is define a cohort, which is what this writes.
 
-THE HONEST SHAPE OF THE COHORT. 1,776 candidates carry one of the three ECs;
-309 survive bench eligibility and 205 of those are prokaryotic, against 15 on
-the bench shortlist. The gap is almost entirely length - EC 2.3.1.57's GNAT
-acetyltransferases are 150-200 residues, below the 200-residue floor, and
-only those with a solved structure are exempted from it. They are also mostly
-orthologs of each other: the evidence is per EC, so read this as three
-chemistries with deep membership, not 309 independent leads. The full ranking
-ships as TSV so the number taken is the reader's decision; the table below is
-a readable slice.
+THE HONEST SHAPE OF THE COHORT. 1,776 candidates carry one of the three ECs
+and 1,751 survive bench eligibility, 1,104 of them prokaryotic, against 15 on
+the bench shortlist. That near-total survival is recent: the bench length
+floor used to sit at 200 residues and excluded 1,479 of them, because EC
+2.3.1.57's GNAT acetyltransferases run 150-200 residues. The floor was
+measured against the length histogram, found to be cutting through a dense
+mode at 170-179 rather than sitting in a gap, and moved to 120.
+
+They are mostly orthologs of each other: the evidence is per EC, so read
+this as three chemistries with deep membership, not 1,751 independent
+leads. The full ranking ships as TSV so the number taken is the reader's
+decision; the table below is a readable slice.
 
 Usage:
     python tools/acceptor_cohort.py     # writes results/ACCEPTOR_COHORT.{tsv,md}
