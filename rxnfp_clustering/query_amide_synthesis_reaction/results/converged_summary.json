@@ -16,6 +16,8 @@
     "4": 3
   },
   "converged_at_or_above_3": 17,
+  "converged_distinct_genes": 14,
+  "converged_distinct_folds": 9,
   "weak_axes_excluded_from_the_headline": [
     "lead_family_verdict"
   ],

@@ -224,6 +224,13 @@ def axes(table, lead):
     })
 
 
+def _symbols(frame):
+    """Gene symbol per row, for counting distinct chemistries."""
+    if 'gene' not in frame.columns:
+        return pd.Series(dtype=str)
+    return frame.gene.fillna('?').astype(str).str.split().str[0]
+
+
 def main():
     from .paths import ensure_directories
     ensure_directories()
@@ -280,6 +287,16 @@ def main():
             int(k): int(v) for k, v in
             table.n_discriminating_lines.value_counts().items()},
         'converged_at_or_above_%d' % MIN_LINES: int(len(converged)),
+        # A protein count overstates how many INDEPENDENT chemistries are
+        # converged, because several of the axes are partially
+        # family-correlated - `substrate_distance_own_rhea`, behind
+        # `own_reaction_chemistry`, is constant within 78% of the families
+        # that carry it (`tools/signal_granularity.py`). Four of the 17 are
+        # murE. So the honest headline is a count of distinct chemistries
+        # alongside the count of proteins.
+        'converged_distinct_genes': int(_symbols(converged).nunique()),
+        'converged_distinct_folds': int(
+            converged.pfam.nunique() if 'pfam' in converged.columns else 0),
         'weak_axes_excluded_from_the_headline': list(WEAK_AXES),
         'axis_totals': {c: int(found[c].sum()) for c in found.columns},
         'note': 'Convergence of methods that fail differently - a reason to '
@@ -294,8 +311,14 @@ def main():
             'n_independent_lines', 'best_substrate_distance',
             'evidence_lines']
     show = [c for c in show if c in converged.columns]
+    genes = int(_symbols(converged).nunique())
+    folds = int(converged.pfam.nunique()) if 'pfam' in converged.columns \
+        else 0
     print(f'\n{len(converged)} candidates on >= {MIN_LINES} DISCRIMINATING '
-          f'lines (family membership excluded; see WEAK_AXES):', flush=True)
+          f'lines (family membership excluded; see WEAK_AXES)', flush=True)
+    print(f'  = {genes} distinct gene symbols across {folds} folds; '
+          'several axes are partly family-correlated, so the protein count '
+          'overstates independent chemistries', flush=True)
     print(converged.head(20)[show].to_string(index=False), flush=True)
 
 

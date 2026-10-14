@@ -12,6 +12,12 @@ can say which. Spreading the round across all three is the honest hedge.
 | **B** | sequence identity to a measured producer | PF00501;PF13193 (ANL) | 505–524 aa |
 | **C** | measured kinetics on the acceptor chemistry | PF05257;PF03738 and PF00583 (GNAT) | 161–619 aa |
 
+Group A is drawn from the converged set, which is **17 proteins but only
+14 distinct gene symbols across 9 folds** — four of them are murE. Several
+convergence axes are partly family-correlated, so a protein count
+overstates how many independent chemistries converged; the four below were
+chosen to be four different ones.
+
 ## A. Chemistry hypothesis — four independent lines of evidence
 
 Reached by substrate chemistry: a proven acylation of a free amine, a diacid

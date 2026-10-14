@@ -246,3 +246,25 @@ class TestLigandRestatingItsOwnReaction(unittest.TestCase):
         self.assertTrue(
             bool(found.bifunctional_ligand_in_the_pocket.iloc[0]),
             'with the chemistry line absent there is nothing to double-count')
+
+
+class TestDistinctChemistryCount(unittest.TestCase):
+    """A protein count overstates how many chemistries are converged.
+
+    Four of the 17 converged proteins are murE. Several axes are partly
+    family-correlated - `substrate_distance_own_rhea` is constant within
+    78% of the families that carry it - so same-family members agreeing is
+    not four independent results.
+    """
+
+    def test_symbols_take_the_first_token(self):
+        frame = pd.DataFrame({'gene': ['murE Rv2158c MTCY270.10',
+                                       'murE b0085 JW0083', 'pylC Mbar']})
+        self.assertEqual(sorted(set(cv._symbols(frame))), ['murE', 'pylC'])
+
+    def test_missing_gene_does_not_collapse_everything(self):
+        frame = pd.DataFrame({'gene': [None, None, 'gss x']})
+        self.assertEqual(cv._symbols(frame).nunique(), 2)
+
+    def test_absent_column_is_empty_not_an_error(self):
+        self.assertTrue(cv._symbols(pd.DataFrame({'x': [1]})).empty)
