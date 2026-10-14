@@ -73,8 +73,11 @@ dependent amide ligases, the same bond-forming chemistry as the nylon diad:
 | **Q9HL57** paiA Ta0374 | Thermoplasma acidophilum | 161 | EC 2.3.1.57; reviewed; **four** structures (3F0A/3FIX/3K9U/3NE7); thermophilic archaeon |
 
 The three named here are a slice, not the pool. `ACCEPTOR_COHORT.md` ranks
-all **1,751** bench-eligible candidates in these ECs, 1,104 of them
-prokaryotic;
+all **1,751** bench-eligible candidates in these ECs, of which **168 have
+pocket room for both monomers** — every one an ATP-dependent ligase, not
+one a GNAT acetyltransferase, since an acetyl-sized pocket cannot hold a C6
+diacid. `P0AES0` ranks first among them on that per-protein test rather
+than on my choosing;
 the next two picks after these are `P0A951` (*E. coli* speG, 186 aa) and
 `Q9KL03` (*V. cholerae* speG, 173 aa), both reviewed with solved structures.
 `P0A951` is attractive for a reason beyond its own merits: same host as

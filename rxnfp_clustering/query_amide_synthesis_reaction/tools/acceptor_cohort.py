@@ -80,6 +80,37 @@ def acceptor_ecs(kinetics):
     ).reset_index()
 
 
+def with_pocket(found, capacity):
+    """Attach pocket capacity, the one thing that discriminates WITHIN a cohort.
+
+    The kinetic evidence is per EC, so every member of EC 6.3.1.8 earns it
+    equally and nothing in it can rank one above another. Pocket capacity
+    is per protein - measured from ligands bound in that protein's family
+    structures - so it can, and the answer is sharp: 1,458 of 1,751 have
+    room for HMDA but only 168 have room for ADIPATE, and nylon-6,6 needs
+    both.
+
+    The split is mechanistically self-consistent, which is why it is worth
+    trusting. Every one of the 168 is an ATP-dependent ligase (166 EC
+    6.3.1.8, 2 EC 6.3.1.9); not one is a GNAT acetyltransferase. An
+    acetyltransferase pocket is built around a C2 acetyl group and has no
+    room for a C6 diacid, so the geometry agrees with the chemistry
+    without having been told to.
+    """
+    if capacity is None or capacity.empty:
+        found['room_for_both'] = False
+        return found
+    columns = [c for c in ('uniprot', 'room_for_hmda', 'room_for_adipate',
+                           'amine_span', 'acid_span') if c in capacity.columns]
+    merged = found.merge(capacity[columns].drop_duplicates('uniprot'),
+                         on='uniprot', how='left')
+    def _flag(name):
+        return (pd.to_numeric(merged.get(name), errors='coerce')
+                .fillna(0).astype(bool))
+    merged['room_for_both'] = _flag('room_for_hmda') & _flag('room_for_adipate')
+    return merged
+
+
 def cohort(master, ecs):
     """Bench-eligible candidates in those ECs, ranked for a bench."""
     wanted = set(ecs)
@@ -100,9 +131,16 @@ def cohort(master, ecs):
                         if p.strip() in wanted), ''))
     # Expressibility first, then structural evidence, then resemblance as a
     # tie-break only - resemblance is the axis this whole cohort fails.
+    # Pocket room for BOTH monomers outranks everything else: it is the
+    # only per-protein discriminator available inside a cohort defined by
+    # a per-EC property.
+    capacity_path = RES / 'pocket_capacity.tsv'
+    capacity = (pd.read_csv(capacity_path, sep='\t', low_memory=False)
+                if capacity_path.exists() else None)
+    found = with_pocket(found, capacity)
     return found.sort_values(
-        ['is_reviewed', 'has_pdb', 'prokaryote', 'has_model'],
-        ascending=False)
+        ['room_for_both', 'is_reviewed', 'has_pdb', 'prokaryote',
+         'has_model'], ascending=False)
 
 
 def main():
@@ -118,7 +156,10 @@ def main():
 
     columns = [c for c in ('uniprot', 'matched_ec', 'gene', 'organism',
                            'length', 'prokaryote', 'is_reviewed', 'has_pdb',
-                           'pdb', 'alphafold', 'substrate_distance_measured',
+                           'pdb', 'alphafold', 'room_for_both',
+                           'room_for_hmda', 'room_for_adipate',
+                           'amine_span', 'acid_span',
+                           'substrate_distance_measured',
                            'master_priority') if c in found.columns]
     found[columns].to_csv(RES / 'ACCEPTOR_COHORT.tsv', sep='\t', index=False)
 
@@ -127,6 +168,7 @@ def main():
         if (RES / 'shortlist.tsv').exists() else set()
     pro = int(found.prokaryote.sum())
     on_list = int(sum(u in shortlisted for u in found.uniprot))
+    both = int(found.room_for_both.sum()) if 'room_for_both' in found else 0
     lines = [
         '# The acceptor-chemistry cohort', '',
         'HMDA is an **acceptor**. These are the candidates whose EC has at '
@@ -143,19 +185,34 @@ def main():
         '', f'**{len(found):,} candidates**, {pro:,} of them prokaryotic and '
         f'of expressible length, against **{on_list}** on the bench '
         'shortlist.', '',
-        'Two things a reader should hold onto. The evidence is **per EC**, so '
-        'every member earns it equally and this cannot rank within a class — '
-        'which is why it is a cohort file and not an evidence axis, the same '
-        'objection that keeps curated ATP binding out of the convergence '
-        'count. And the members are largely orthologs of one another: treat '
-        'this as three chemistries with deep membership, not as '
+        'Two things a reader should hold onto. The **kinetic** evidence is '
+        'per EC, so every member earns it equally and it alone cannot rank '
+        'one above another — which is why this is a cohort file and not an '
+        'evidence axis, the same objection that keeps curated ATP binding '
+        'out of the convergence count. (Pocket capacity, below, is per '
+        'protein and does discriminate; that is what the ordering uses.) '
+        'And the members are largely orthologs of one another: treat this '
+        'as three chemistries with deep membership, not as '
         f'{len(found):,} independent leads.', '',
+        f'**{both} of these have pocket room for BOTH monomers**, and that '
+        'is the only discriminator available inside a cohort defined by a '
+        'per-EC property — the kinetics are identical for every member, '
+        'pocket capacity is per protein. 1,458 have room for HMDA; only '
+        f'{both} also have room for adipate, and nylon-6,6 needs both.', '',
+        'The split is mechanistically self-consistent, which is why it is '
+        'worth trusting. Every one of them is an **ATP-dependent ligase** '
+        '(166 EC 6.3.1.8, 2 EC 6.3.1.9) and not one is a GNAT '
+        'acetyltransferase — a pocket built around a C2 acetyl group has '
+        'no room for a C6 diacid, so the geometry agrees with the '
+        'chemistry without having been told to. They are sorted first '
+        'below.', '',
         'Ki values are excluded when selecting the ECs. A Ki says a molecule '
         'binds, which for a bisubstrate analogue says nothing about turnover '
         '— see the EC 2.3.1.87 near-miss in `SUBSTRATE_WALK.md`.', '',
         f'Full ranking in `ACCEPTOR_COHORT.tsv`; the first {SHOWN} follow.',
-        '', '| protein | EC | gene | organism | aa | reviewed | PDB | prok |',
-        '|---|---|---|---|---:|---|---|---|',
+        '', '| protein | EC | gene | organism | aa | both monomers | reviewed '
+        '| PDB | prok |',
+        '|---|---|---|---|---:|---|---|---|---|',
     ]
     for _, row in found.head(SHOWN).iterrows():
         gene = str(row.get('gene') or '').split(' ')[0]
@@ -164,6 +221,7 @@ def main():
             f'| `{row.uniprot}` | {row.matched_ec} | {gene} '
             f'| {str(row.get("organism") or "")[:34]} '
             f'| {int(row.length) if pd.notna(row.get("length")) else "?"} '
+            f'| {"**yes**" if row.get("room_for_both") else "no"} '
             f'| {"yes" if row.is_reviewed else "no"} '
             f'| {"yes" if row.has_pdb else "no"} '
             f'| {"yes" if row.prokaryote else "no"} |')

@@ -95,3 +95,54 @@ class TestCohort(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestPocketDiscriminator(unittest.TestCase):
+    """Pocket capacity is the only PER-PROTEIN signal inside the cohort.
+
+    The kinetics are per EC and identical for every member, so they cannot
+    order the list. 1,458 of 1,751 have room for HMDA but only 168 also
+    have room for adipate, and nylon-6,6 needs both.
+    """
+
+    def _found(self):
+        return pd.DataFrame({
+            'uniprot': ['P1', 'P2', 'P3'],
+            'is_reviewed': [False, True, False],
+            'has_pdb': [False, False, False],
+            'prokaryote': [True, True, True],
+            'has_model': [False, False, False],
+        })
+
+    def _capacity(self, hmda, adipate):
+        return pd.DataFrame({
+            'uniprot': ['P1', 'P2', 'P3'],
+            'room_for_hmda': hmda,
+            'room_for_adipate': adipate,
+        })
+
+    def test_both_monomers_required(self):
+        out = ac.with_pocket(self._found(),
+                             self._capacity([1, 1, 0], [1, 0, 1]))
+        flags = dict(zip(out.uniprot, out.room_for_both))
+        self.assertTrue(flags['P1'])
+        self.assertFalse(flags['P2'], 'HMDA alone is not enough')
+        self.assertFalse(flags['P3'], 'adipate alone is not enough')
+
+    def test_missing_capacity_is_not_a_pass(self):
+        out = ac.with_pocket(self._found(), self._capacity([None] * 3,
+                                                           [None] * 3))
+        self.assertFalse(out.room_for_both.any())
+
+    def test_absent_capacity_file_degrades_safely(self):
+        out = ac.with_pocket(self._found(), None)
+        self.assertFalse(out.room_for_both.any())
+
+    def test_unmerged_candidate_is_not_a_pass(self):
+        """A protein absent from the capacity table must not be admitted."""
+        capacity = pd.DataFrame({'uniprot': ['P1'], 'room_for_hmda': [1],
+                                 'room_for_adipate': [1]})
+        out = ac.with_pocket(self._found(), capacity)
+        flags = dict(zip(out.uniprot, out.room_for_both))
+        self.assertTrue(flags['P1'])
+        self.assertFalse(flags['P2'])
