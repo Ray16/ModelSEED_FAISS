@@ -37,9 +37,21 @@ $ bash -c 'set -euo pipefail; idxs=$(false | tr "\n" " ") || idxs=""; echo SURVI
 SURVIVED                                 # retries as designed
 ```
 
-`|| idxs=""` added, backup at `fold.sh.bak-20261013`, syntax checked. The
-staged command below now runs as written and will wait for a card rather
-than failing immediately.
+`|| idxs=""` added, backup at `fold.sh.bak-20261013`, syntax checked.
+
+**Confirmed in production, not just in a shell demo.** The 12-input run was
+launched and is now polling as designed:
+
+```
+[boltz2-fast] waiting for 1 free GPU(s) on lambda13 (attempt 1)
+[boltz2-fast] waiting for 1 free GPU(s) on lambda13 (attempt 2)
+[boltz2-fast] waiting for 1 free GPU(s) on lambda13 (attempt 3)
+[boltz2-fast] waiting for 1 free GPU(s) on lambda13 (attempt 4)
+```
+
+Before the fix this printed nothing and exited 1 on attempt 1. It now waits
+through the `gpu_reserve` gate for up to ~30 minutes and exits 9 cleanly if
+no card frees — which costs nothing and takes no GPU from anyone.
 
 ## Original record, superseded above
 
