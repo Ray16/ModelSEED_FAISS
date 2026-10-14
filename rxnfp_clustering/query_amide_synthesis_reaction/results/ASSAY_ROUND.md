@@ -75,9 +75,11 @@ dependent amide ligases, the same bond-forming chemistry as the nylon diad:
 The three named here are a slice, not the pool. `ACCEPTOR_COHORT.md` ranks
 all **1,751** bench-eligible candidates in these ECs, of which **168 have
 pocket room for both monomers** — every one an ATP-dependent ligase, not
-one a GNAT acetyltransferase, since an acetyl-sized pocket cannot hold a C6
-diacid. `P0AES0` ranks first among them on that per-protein test rather
-than on my choosing;
+one a GNAT acetyltransferase. That cut is family-inherited rather than
+per-protein, and the GNATs fail it on an `acid_span` of 0 that may mean
+"no acid-bearing ligand crystallised" as easily as "no acid subsite", so
+it supports the mechanism rather than independently confirming it.
+`P0AES0` sorts to the top of that set;
 the next two picks after these are `P0A951` (*E. coli* speG, 186 aa) and
 `Q9KL03` (*V. cholerae* speG, 173 aa), both reviewed with solved structures.
 `P0A951` is attractive for a reason beyond its own merits: same host as

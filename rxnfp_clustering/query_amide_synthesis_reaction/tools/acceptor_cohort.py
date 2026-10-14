@@ -81,21 +81,34 @@ def acceptor_ecs(kinetics):
 
 
 def with_pocket(found, capacity):
-    """Attach pocket capacity, the one thing that discriminates WITHIN a cohort.
+    """Attach pocket capacity: 168 of 1,751 have room for both monomers.
 
-    The kinetic evidence is per EC, so every member of EC 6.3.1.8 earns it
-    equally and nothing in it can rank one above another. Pocket capacity
-    is per protein - measured from ligands bound in that protein's family
-    structures - so it can, and the answer is sharp: 1,458 of 1,751 have
-    room for HMDA but only 168 have room for ADIPATE, and nylon-6,6 needs
-    both.
+    1,458 have room for HMDA; only 168 also have room for ADIPATE, and
+    nylon-6,6 needs both. Every one of the 168 is an ATP-dependent ligase
+    (166 EC 6.3.1.8, 2 EC 6.3.1.9) and not one is a GNAT
+    acetyltransferase.
 
-    The split is mechanistically self-consistent, which is why it is worth
-    trusting. Every one of the 168 is an ATP-dependent ligase (166 EC
-    6.3.1.8, 2 EC 6.3.1.9); not one is a GNAT acetyltransferase. An
-    acetyltransferase pocket is built around a C2 acetyl group and has no
-    room for a C6 diacid, so the geometry agrees with the chemistry
-    without having been told to.
+    TWO THINGS I FIRST CLAIMED ABOUT THIS AND HAD TO WALK BACK, both
+    checked by looking at the spans rather than the booleans.
+
+    It is NOT a per-protein discriminator, which is how it was first
+    described. All 166 passing members of EC 6.3.1.8 carry the SAME spans
+    - amine 19, acid 9 - because the span is inherited from a ligand bound
+    in the family's structures, not measured on each protein. It separates
+    families, and so mostly separates ECs: 0% of EC 2.3.1.57 passes, 87%
+    of 6.3.1.8, 11% of 6.3.1.9. The only within-EC split is 24 of 190 in
+    6.3.1.8, and those 24 have spans of ZERO - no data, not a small pocket.
+
+    And the GNAT exclusion is weaker evidence than it looks. Those 1,542
+    proteins do have real amine-side data (spans 3, 5, 8, 12), but
+    `acid_span` is 0 for every single one. That is CONSISTENT with a
+    CoA-dependent acetyltransferase having no free-acid subsite - its
+    donor arrives as a thioester - but it is not proof of one, because it
+    is equally consistent with no acid-bearing ligand ever having been
+    crystallised in that family. Absence of a measurement is being read as
+    absence of a pocket. The conclusion survives on the mechanism; it is
+    not independently confirmed by the geometry, which is what I first
+    wrote.
     """
     if capacity is None or capacity.empty:
         found['room_for_both'] = False
@@ -189,23 +202,37 @@ def main():
         'per EC, so every member earns it equally and it alone cannot rank '
         'one above another — which is why this is a cohort file and not an '
         'evidence axis, the same objection that keeps curated ATP binding '
-        'out of the convergence count. (Pocket capacity, below, is per '
-        'protein and does discriminate; that is what the ordering uses.) '
-        'And the members are largely orthologs of one another: treat this '
+        'out of the convergence count. Pocket capacity, below, cuts the '
+        'cohort hard and is what the ordering uses, but it turns out to '
+        'be family-inherited rather than per-protein, so it mostly '
+        'separates ECs too. And the members are largely orthologs of one '
+        'another: treat this '
         'as three chemistries with deep membership, not as '
         f'{len(found):,} independent leads.', '',
-        f'**{both} of these have pocket room for BOTH monomers**, and that '
-        'is the only discriminator available inside a cohort defined by a '
-        'per-EC property — the kinetics are identical for every member, '
-        'pocket capacity is per protein. 1,458 have room for HMDA; only '
-        f'{both} also have room for adipate, and nylon-6,6 needs both.', '',
-        'The split is mechanistically self-consistent, which is why it is '
-        'worth trusting. Every one of them is an **ATP-dependent ligase** '
-        '(166 EC 6.3.1.8, 2 EC 6.3.1.9) and not one is a GNAT '
-        'acetyltransferase — a pocket built around a C2 acetyl group has '
-        'no room for a C6 diacid, so the geometry agrees with the '
-        'chemistry without having been told to. They are sorted first '
-        'below.', '',
+        f'**{both} of these have pocket room for BOTH monomers.** 1,458 '
+        f'have room for HMDA; only {both} also have room for adipate, and '
+        'nylon-6,6 needs both. This is the sharpest cut available on the '
+        'cohort, and the two paragraphs after it say exactly how much '
+        'weight it will bear — less than it first appears.', '',
+        'Every one of them is an **ATP-dependent ligase** (166 EC 6.3.1.8, '
+        '2 EC 6.3.1.9) and not one is a GNAT acetyltransferase. Read that '
+        'carefully, because it is weaker than it looks: the GNATs have '
+        'real amine-side spans (3, 5, 8, 12) but `acid_span` is **0 for '
+        'all 1,542**, and absence of a measurement is not absence of a '
+        'pocket. It is consistent with a CoA-dependent acetyltransferase '
+        'having no free-acid subsite — its donor arrives as a thioester — '
+        'but no acid-bearing ligand may simply have been crystallised in '
+        'that family. The conclusion rests on the mechanism; the geometry '
+        'does not independently confirm it.', '',
+        'Nor is this a per-protein signal, though it is computed per '
+        'protein. All 166 passing members of EC 6.3.1.8 carry identical '
+        'spans (amine 19, acid 9) because the span is inherited from a '
+        'ligand bound in the family\'s structures. It separates families, '
+        'hence mostly ECs — 0% of 2.3.1.57, 87% of 6.3.1.8, 11% of '
+        '6.3.1.9 — and the 24 that fail inside 6.3.1.8 have spans of zero, '
+        'which is missing data rather than a small pocket. They are sorted '
+        'first below regardless, since a family-level reason is still a '
+        'reason.', '',
         'Ki values are excluded when selecting the ECs. A Ki says a molecule '
         'binds, which for a bisubstrate analogue says nothing about turnover '
         '— see the EC 2.3.1.87 near-miss in `SUBSTRATE_WALK.md`.', '',
