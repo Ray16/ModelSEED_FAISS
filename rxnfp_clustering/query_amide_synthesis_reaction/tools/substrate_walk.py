@@ -101,6 +101,50 @@ def walks(kinetics, series):
     return out.sort_values(['n_rungs', 'longest'], ascending=False)
 
 
+# How many representatives to name per walk-EC. The point is a handful a
+# bench can act on, not the whole class: EC 6.3.2.1 alone holds 1,390
+# candidates, and admitting them wholesale is the mass-expansion this
+# project refuses everywhere else.
+PER_EC = 6
+
+
+def representatives(master, ec, limit=PER_EC):
+    """The best handful of candidates in a walk-EC, with the rule explicit.
+
+    Ranked on expressibility and evidence a bench can use rather than on
+    `master_priority`, which is tuned for substrate resemblance - the very
+    axis these proteins fail. Reviewed entries first (curated, so the EC
+    assignment is trustworthy), then a solved structure, then an AlphaFold
+    model, then substrate distance as the tie-break.
+    """
+    def _col(name, default=None):
+        if name in master.columns:
+            return master[name]
+        return pd.Series([default] * len(master), index=master.index)
+
+    rows = _col('ec', '').fillna('').astype(str).str.split(';').apply(
+        lambda parts: ec in [p.strip() for p in parts])
+    found = master[rows].copy()
+    if found.empty:
+        return found
+    reviewed = _col('reviewed', '').fillna('').astype(str).str.lower()
+    found['is_reviewed'] = reviewed[rows].str.startswith('reviewed')
+    found['has_pdb'] = _col('pdb')[rows].notna()
+    found['has_model'] = _col('alphafold')[rows].notna()
+    lineage = _col('lineage', '').fillna('').astype(str)
+    found['prokaryote'] = lineage[rows].str.contains('Bacteria|Archaea',
+                                                     case=False)
+    found['distance'] = pd.to_numeric(
+        _col('substrate_distance_measured', 0.0)[rows],
+        errors='coerce').fillna(0.0)
+    # A protein nobody can express is not a representative.
+    length = pd.to_numeric(_col('length', None)[rows], errors='coerce')
+    found = found[length.between(100, 1200, inclusive='both').fillna(False)]
+    return found.sort_values(
+        ['is_reviewed', 'has_pdb', 'has_model', 'distance'],
+        ascending=False).head(limit)
+
+
 def main():
     path = RES / 'sabio_kinetics.tsv'
     if not path.exists():
@@ -161,12 +205,69 @@ def main():
                       'specific for C3; it is a four-rung walk that '
                       'demonstrates specificity, not flexibility, and it is '
                       'not evidence that C6 would work.', '',
-                      'Carnosine synthase is the better lead on this axis '
+                      'Carnosine synthase is the better lead ON THIS AXIS '
                       'even with fewer rungs: C3 Km 1.49-1.8 mM against C4 '
                       'Km 8.8 mM is a five-fold degradation, not five '
                       'orders of magnitude. No kcat is published for it, so '
                       'catalytic efficiency cannot be compared and this is '
-                      'a Km argument only.', '']
+                      'a Km argument only.', '',
+                      'It is worse on every other axis a bench cares about, '
+                      'and the trade-off should be read whole. **All 326 '
+                      'carnosine synthases held here are eukaryotic** - '
+                      'there is not one bacterial or archaeal member - and '
+                      'they run 827-951 residues. PanC is 283-309 residues, '
+                      'bacterial, reviewed, and has solved structures. So '
+                      'the enzyme with the better substrate tolerance is '
+                      'the harder expression target by a wide margin, and '
+                      'the one that is trivial to express is the one whose '
+                      'walk shows specificity rather than flexibility.', '']
+    # Who, concretely, a bench could order. Named per walk-EC rather than
+    # merged into the converged set: this is a DIFFERENT axis - measured
+    # chain-series kinetics - and folding it in would imply agreement
+    # between methods that have not agreed.
+    master_path = RES / 'master_candidates_enriched.tsv'
+    if master_path.exists():
+        master = pd.read_csv(master_path, sep='\t', low_memory=False)
+        walk_ecs = []
+        for series in SERIES.values():
+            found = walks(kinetics, series)
+            if not found.empty:
+                walk_ecs += list(found[found.n_rungs >= 2].ec)
+        lines += ['## Candidates in these ECs', '',
+                  'All three walk-ECs are near-invisible in the existing '
+                  'deliverables: 1,720 candidates between them, 8 on the '
+                  'bench shortlist, **0 in QUALIFIED.md** - because every '
+                  'evidence axis scores substrate RESEMBLANCE, which is '
+                  'exactly what these proteins fail (carnosine synthase '
+                  '0.667 and PanC 0.425, against a 0.75 floor).',
+                  '',
+                  f'Listing the best {PER_EC} per EC rather than the class: '
+                  'EC 6.3.2.1 alone holds 1,390 candidates and admitting '
+                  'them wholesale is the mass-expansion refused everywhere '
+                  'else here. Ranked on what a bench needs - reviewed, then '
+                  'a solved structure, then a model, then substrate '
+                  'distance - not on `master_priority`, which is tuned for '
+                  'the resemblance axis these proteins fail.', '']
+        for ec in dict.fromkeys(walk_ecs):
+            chosen = representatives(master, ec)
+            if chosen.empty:
+                continue
+            lines += [f'### EC {ec}', '',
+                      '| protein | gene | organism | len | reviewed | PDB '
+                      '| prokaryote |',
+                      '|---|---|---|---:|---|---|---|']
+            for _, row in chosen.iterrows():
+                gene = str(row.get('gene') or '').split(' ')[0]
+                gene = '' if gene == 'nan' else gene
+                lines.append(
+                    f'| `{row.uniprot}` | {gene} '
+                    f'| {str(row.get("organism") or "")[:36]} '
+                    f'| {int(row.length) if pd.notna(row.get("length")) else "?"} '
+                    f'| {"yes" if row.is_reviewed else "no"} '
+                    f'| {"yes" if row.has_pdb else "no"} '
+                    f'| {"yes" if row.prokaryote else "**no**"} |')
+            lines.append('')
+
     (RES / 'SUBSTRATE_WALK.md').write_text('\n'.join(lines) + '\n')
 
     for label, series in SERIES.items():

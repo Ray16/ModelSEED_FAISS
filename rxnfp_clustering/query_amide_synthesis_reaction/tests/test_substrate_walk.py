@@ -79,3 +79,51 @@ class TestExactNamesNotRegexes(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestRepresentatives(unittest.TestCase):
+    """A handful a bench can order, not the whole EC class."""
+
+    def _master(self, n=20, **over):
+        base = {
+            'uniprot': [f'P{i}' for i in range(n)],
+            'gene': ['panC'] * n,
+            'organism': ['E. coli'] * n,
+            'lineage': ['Bacteria; Proteobacteria'] * n,
+            'ec': ['6.3.2.1'] * n,
+            'length': [283] * n,
+            'reviewed': ['reviewed'] * n,
+            'pdb': [None] * n,
+            'alphafold': [None] * n,
+            'substrate_distance_measured': [0.4] * n,
+        }
+        base.update(over)
+        return pd.DataFrame(base)
+
+    def test_capped_per_ec(self):
+        out = sw.representatives(self._master(20), '6.3.2.1')
+        self.assertEqual(len(out), sw.PER_EC)
+
+    def test_unexpressible_lengths_excluded(self):
+        master = self._master(3, length=[283, 40, 3000])
+        out = sw.representatives(master, '6.3.2.1')
+        self.assertEqual(list(out.uniprot), ['P0'])
+
+    def test_reviewed_and_structure_rank_first(self):
+        master = self._master(3, reviewed=['', 'reviewed', 'reviewed'],
+                              pdb=[None, None, '1ABC'])
+        out = sw.representatives(master, '6.3.2.1', limit=3)
+        self.assertEqual(list(out.uniprot)[:2], ['P2', 'P1'])
+
+    def test_domain_of_life_is_recorded(self):
+        """All 326 carnosine synthases are eukaryotic; that must be visible."""
+        master = self._master(2, lineage=['Bacteria; X', 'Eukaryota; Metazoa'])
+        out = sw.representatives(master, '6.3.2.1', limit=2)
+        flags = dict(zip(out.uniprot, out.prokaryote))
+        self.assertTrue(flags['P0'])
+        self.assertFalse(flags['P1'])
+
+    def test_other_ecs_are_not_pulled_in(self):
+        master = self._master(2, ec=['6.3.2.1', '6.3.2.11'])
+        out = sw.representatives(master, '6.3.2.1', limit=5)
+        self.assertEqual(list(out.uniprot), ['P0'])
