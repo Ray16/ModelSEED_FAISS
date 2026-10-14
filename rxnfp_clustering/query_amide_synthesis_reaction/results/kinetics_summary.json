@@ -1,0 +1,16 @@
+{
+  "ecs_queried": 273,
+  "ecs_with_kinetics": 136,
+  "ecs_failed": [],
+  "kinetic_parameters": 11445,
+  "candidates_covered": 31034,
+  "candidates_total": 55125,
+  "by_parameter": {
+    "Km": 4910,
+    "Vmax": 2335,
+    "kcat": 2089,
+    "kcat/Km": 1292,
+    "Ki": 819
+  },
+  "note": "Kinetics attach to an EC, not to a protein. Reported, never folded into master_priority or the convergence count: a property every member of a class shares cannot discriminate within it."
+}

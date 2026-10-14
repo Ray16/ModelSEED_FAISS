@@ -51,6 +51,8 @@ STAGES = (
     Stage('kegg', 'kegg_orthologs',
           'resolve unresolved reactions through KEGG orthology (network)',
           True),
+    Stage('kinetics', 'kinetics',
+          'measured Km/kcat by EC from SABIO-RK (network)', True),
     Stage('ecsub', 'ec_substrate',
           'substrate distance from each protein\'s own Rhea reaction (network)',
           True),

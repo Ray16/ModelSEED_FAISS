@@ -130,15 +130,17 @@ BRENDA_EMAIL / BRENDA_PASSWORD
 
 Neither is configured in this environment, and registering an account is tied
 to a person's identity, so it is not something to do on the user's behalf.
-**This is the single highest-value unblock available** — if credentials are
-provided, kinetics and substrate-specificity annotation can be added for every
-candidate carrying an EC number.
+It was called **the single highest-value unblock available** on the grounds
+that no credential-free route to kinetics existed. That is no longer true:
+SABIO-RK provides EC-level kinetics for 27,690 candidates without
+credentials (below). BRENDA would still add per-protein depth and remains
+worth having, but it is no longer the thing standing between this project
+and kinetics.
 
 Four sources have now been tested for kinetics, so this is a measured
 conclusion rather than an assumption: UniProt's own `kinetics` field works and
-yields 194 proteins (in use, above); BRENDA needs credentials; SABIO-RK's REST
-endpoint is dead; ChEMBL covers 1 of 253. There is no credential-free route to
-kinetics at the scale of the ~31,000 EC-bearing candidates.
+yields 194 proteins (in use, above); BRENDA needs credentials; **SABIO-RK
+works and was wrongly written off** — see below; ChEMBL covers 1 of 253.
 
 **ChEMBL** — the other credential-free bioactivity database, and the last
 untested route to kinetics. Measured on the 253 shortlisted proteins carrying a
@@ -155,15 +157,56 @@ coverage is P07862 (D-alanine--D-alanine ligase), which is there because it is
 a well-studied antibiotic target rather than because it is an amide synthetase.
 Not usable.
 
-**SABIO-RK** — the obvious credential-free alternative for kinetic data. Its
-documented REST endpoint no longer serves data:
+**SABIO-RK — recorded here as dead, and that was wrong.** The observation
+was right: the documented REST endpoint returns 1,182 bytes of HTML,
+identical for every EC queried.
 
 ```
 http://sabiork.h-its.org/sabioRestWebServices/kineticLaws?q=ECNumber:"6.3.2.17"
   -> 1182 bytes of HTML (a landing page), identical for every EC queried
 ```
 
-Not a transient failure — the same response for four different ECs.
+The conclusion drawn from it was not. Those 1,182 bytes are a **single-page
+application shell** (`<base href="/ui/">`), served for every unmatched path —
+including paths that have never existed, which is the tell: a made-up
+endpoint returns the same bytes. SABIO-RK was rewritten, not retired, and
+"identical for every EC" is what a SPA fallback looks like, not what a dead
+service looks like.
+
+The rebuilt service documents its own export API inside that bundle:
+
+```
+/export-api/sabio/kinlaw-entry/json?q=<solr>&page=<n>&pageSize=<n>
+  q = Solr query, so ECNumber:6.3.2.17 filters properly
+      -> total_count 17, against 77,028 unfiltered
+  pageSize honoured to at least 1000; Link headers carry rel="next"
+  no credentials; only kinlaw-entry is exported, other entities 404
+```
+
+Measured against our candidates, which carry just **273 distinct complete
+EC numbers** between 40,628 EC-bearing proteins — so coverage costs one
+cheap request each:
+
+```
+ECs queried                                   273
+ECs with kinetics in SABIO-RK                 136
+kinetic parameters pulled                  11,445   Km 4,910 - Vmax 2,335
+                                                    kcat 2,089 - kcat/Km 1,292
+                                                    Ki 819
+candidates whose EC is covered             31,034   of 55,125 (56.3%)
+  for comparison, UniProt's `kinetics` field    189 proteins
+```
+
+**This is the source recorded above as "the single highest-value unblock
+available" and as requiring BRENDA credentials. It requires none.** BRENDA
+would still add per-protein depth, but the EC-level kinetics gap is closed.
+
+The caveat is real and is why this never enters the ranking: kinetics attach
+to an **EC**, not to a protein. A Km measured on one family member describes
+the chemistry, not our candidate. It is reported as `sabio_*` and is kept out
+of `master_priority` and the convergence count for exactly the reason curated
+ATP binding was rejected as an axis — a property every member of a class
+shares cannot discriminate within it.
 
 ## The acceptor side, measured against UniProt directly
 
