@@ -3,19 +3,19 @@
   "by_line_count": {
     "1": 40458,
     "0": 10140,
-    "2": 2708,
-    "3": 1791,
-    "4": 24,
-    "5": 4
+    "2": 4447,
+    "3": 63,
+    "4": 14,
+    "5": 3
   },
   "by_discriminating_line_count": {
     "0": 49030,
-    "1": 4272,
-    "2": 1795,
-    "3": 24,
-    "4": 4
+    "1": 6011,
+    "2": 67,
+    "3": 14,
+    "4": 3
   },
-  "converged_at_or_above_3": 28,
+  "converged_at_or_above_3": 17,
   "weak_axes_excluded_from_the_headline": [
     "lead_family_verdict"
   ],
@@ -24,7 +24,7 @@
     "acylates_a_free_diamine": 189,
     "own_reaction_chemistry": 3862,
     "lead_family_verdict": 43413,
-    "bifunctional_ligand_in_the_pocket": 3757,
+    "bifunctional_ligand_in_the_pocket": 2006,
     "adenylation_competent_structure": 57,
     "independent_geometric_score": 36
   },

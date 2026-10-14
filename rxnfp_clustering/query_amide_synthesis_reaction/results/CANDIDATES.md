@@ -1,51 +1,12 @@
 # Candidates worth a bench slot
 
-35 proteins, each supported by at least 0 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
+24 proteins, each supported by at least 0 independent observations that are not merely family membership. Ordered by how many lines agree, then by substrate distance.
 
 Entries marked a NEAR MISS did not reach the convergence threshold and are included on a separate, stated criterion: two independent lines plus demonstrated room for both monomers. The threshold was not moved to accommodate them.
 
 **None of these has been assayed on nylon-6,6.** Convergence means several methods that fail differently happen to agree, which is a reason to spend a bench slot and not evidence that the enzyme works. With three measured positives in the reference panel, no ranking here can be validated.
 
 ---
-
-## Q9RDS6 — Gamma-glutamylpolyamine synthetase GlnA2 (EC 6.3.1.-)
-
-**Organism** Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)  
-**Gene** `glnA2 SCO2241`  
-**Length** 453.0 aa  
-
-**Why it is here** — 4 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket, independent_geometric_score
-
-**Resolved**
-
-- substrate distance **0.873** (own_curated_reaction)
-- AlphaFold pLDDT **92.7**
-- measured K_M **0.13 mM**
-- curated ligand `CHEBI:29985`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- spans 17 between amines, against HMDA's 6 — **room for the acceptor**
-- widest acid span 3, short of adipate's 4
-
-**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
-
-- `cadaverine` — C5 diamine - ONE methylene short of HMDA
-- `putrescine` — C4 diamine
-- `spermidine` — triamine
-- `spermine` — tetraamine
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=putrescine + L-glutamate + ATP = gamma-L-glutamylputrescine + ADP + phosphate + H(+); Xref=Rhea:RHEA:13633, ChEBI:CHEBI:15378, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:58731, ChEBI:CHEBI:326268, ChEBI:CHEBI:456216; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13634; Evidence=; CATALYTIC ACTIVITY: Reaction=spermine + L-glut
-
-**Function** FUNCTION: Involved in the catabolism of polyamines. Catalyzes the ATP-dependent gamma-glutamylation of polyamines. Substrates include putrescine, cadaverine, spermidine and spermine, with a preference for short-chain polyamine putrescine (PubMed:35409114). No complementation of the L-glutamine auxotrophy of an E.coli glnA mutant (PubMed:16932908). Together with GlnA3, enables survival of S.coelico
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 Mg(2+) ions per subunit.
-
-**Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
-
-**Biotechnology** BIOTECHNOLOGY: This protein has some activity with cysteine and hence may be useful in biotechnical applications as gamma-glutamylation of cysteine strongly increases its solubility in water, which is critical for its usage in medications. .
-
-**Literature** [12000953](https://pubmed.ncbi.nlm.nih.gov/12000953/), [16932908](https://pubmed.ncbi.nlm.nih.gov/16932908/), [28487688](https://pubmed.ncbi.nlm.nih.gov/28487688/), [35409114](https://pubmed.ncbi.nlm.nih.gov/35409114/)
 
 ## Q81RQ8 — Citryl-spermidine/3,4-dihydroxybenzoyl-citryl-spermidine:spermidine ligase (EC 6.3.2.-) (Petrobactin biosynthesis protei
 
@@ -159,18 +120,19 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Literature** [16980466](https://pubmed.ncbi.nlm.nih.gov/16980466/), [22985965](https://pubmed.ncbi.nlm.nih.gov/22985965/)
 
-## Q9KZC7 — Gamma-glutamylpolyamine synthetase GlnA3 (EC 6.3.1.-)
+## Q9RDS6 — Gamma-glutamylpolyamine synthetase GlnA2 (EC 6.3.1.-)
 
 **Organism** Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)  
-**Gene** `glnA3 SCO6962`  
-**Length** 466.0 aa  
+**Gene** `glnA2 SCO2241`  
+**Length** 453.0 aa  
 
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
+**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, independent_geometric_score
 
 **Resolved**
 
 - substrate distance **0.873** (own_curated_reaction)
-- AlphaFold pLDDT **96.0**
+- AlphaFold pLDDT **92.7**
+- measured K_M **0.13 mM**
 - curated ligand `CHEBI:29985`
 
 **Pocket capacity** (from ligands it is curated to handle; room, not competence)
@@ -185,13 +147,15 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 - `spermidine` — triamine
 - `spermine` — tetraamine
 
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=spermine + L-glutamate + ATP = gamma-L-glutamylspermine + ADP + phosphate + H(+); Xref=Rhea:RHEA:73895, ChEBI:CHEBI:15378, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:45725, ChEBI:CHEBI:193052, ChEBI:CHEBI:456216; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:73896; Evidence=; CATALYTIC ACTIVITY: Reaction=spermidine + L-glutam
+**Catalytic activity** CATALYTIC ACTIVITY: Reaction=putrescine + L-glutamate + ATP = gamma-L-glutamylputrescine + ADP + phosphate + H(+); Xref=Rhea:RHEA:13633, ChEBI:CHEBI:15378, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:58731, ChEBI:CHEBI:326268, ChEBI:CHEBI:456216; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13634; Evidence=; CATALYTIC ACTIVITY: Reaction=spermine + L-glut
 
-**Function** FUNCTION: Involved in the catabolism of polyamines. Catalyzes the ATP-dependent gamma-glutamylation of polyamines. Substrates include putrescine, cadaverine, spermidine and spermine, with a preference for long-chain polyamines spermidine and spermine (PubMed:28487688, PubMed:35409114). Is not able to compensate for the loss of glutamine synthetases (GSs) (PubMed:28487688). No complementation of th
+**Function** FUNCTION: Involved in the catabolism of polyamines. Catalyzes the ATP-dependent gamma-glutamylation of polyamines. Substrates include putrescine, cadaverine, spermidine and spermine, with a preference for short-chain polyamine putrescine (PubMed:35409114). No complementation of the L-glutamine auxotrophy of an E.coli glnA mutant (PubMed:16932908). Together with GlnA3, enables survival of S.coelico
 
 **Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 Mg(2+) ions per subunit.
 
 **Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
+
+**Biotechnology** BIOTECHNOLOGY: This protein has some activity with cysteine and hence may be useful in biotechnical applications as gamma-glutamylation of cysteine strongly increases its solubility in water, which is critical for its usage in medications. .
 
 **Literature** [12000953](https://pubmed.ncbi.nlm.nih.gov/12000953/), [16932908](https://pubmed.ncbi.nlm.nih.gov/16932908/), [28487688](https://pubmed.ncbi.nlm.nih.gov/28487688/), [35409114](https://pubmed.ncbi.nlm.nih.gov/35409114/)
 
@@ -234,42 +198,6 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 - 47: R->K: 9% relative activity.
 
 **Literature** [25888466](https://pubmed.ncbi.nlm.nih.gov/25888466/), [35988643](https://pubmed.ncbi.nlm.nih.gov/35988643/)
-
-## I3R584 — Gamma-glutamylputrescine synthetase (Gamma-Glu-Put synthetase) (EC 6.3.1.11) (Glutamate--putrescine ligase)
-
-**Organism** Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177   
-**Gene** `glnA2 HFX_1688 BM92_00670 C439_02042 E6P`  
-**Length** 446.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.857** (own_modelseed_reaction)
-- its EC class reaches 0.857
-- AlphaFold pLDDT **94.6**
-- curated ligand `CHEBI:29985`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- spans 9 between amines, against HMDA's 6 — **room for the acceptor**
-- widest acid span 3, short of adipate's 4
-
-**Native acceptor is a free di/polyamine** — the acceptor-side question for nylon-6,6
-
-- `putrescine` — C4 diamine
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=putrescine + L-glutamate + ATP = gamma-L-glutamylputrescine + ADP + phosphate + H(+); Xref=Rhea:RHEA:13633, ChEBI:CHEBI:15378, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:58731, ChEBI:CHEBI:326268, ChEBI:CHEBI:456216; EC=6.3.1.11; Evidence=; PhysiologicalDirection=left-to-right; Xref=Rhea:RHEA:13634; Evidence=
-
-**Function** FUNCTION: Involved in the breakdown of putrescine via the biosynthesis of gamma-L-glutamylputrescine. Not required for glutamine synthesis (PubMed:34439822). Is not able to compensate for the loss of glutamine synthetase (PubMed:32296946). .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 Mg(2+) ions per subunit.
-
-**Family (UniProt)** SIMILARITY: Belongs to the glutamine synthetase family. .
-
-**BRENDA** `6.3.1.11;` — an entry exists; the API needs credentials this project does not have
-
-**Literature** [22843593](https://pubmed.ncbi.nlm.nih.gov/22843593/), [25393412](https://pubmed.ncbi.nlm.nih.gov/25393412/), [32296946](https://pubmed.ncbi.nlm.nih.gov/32296946/), [34439822](https://pubmed.ncbi.nlm.nih.gov/34439822/)
 
 ## P78061 — Gamma-glutamylputrescine synthetase PuuA (Gamma-Glu-Put synthetase) (EC 6.3.1.11) (Glutamate--putrescine ligase)
 
@@ -426,85 +354,6 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
-## I6Y0R5 — Dihydrofolate synthase/folylpolyglutamate synthase (DHFS / FPGS) (EC 6.3.2.12) (EC 6.3.2.17) (Folylpoly-gamma-glutamate 
-
-**Organism** Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv)  
-**Gene** `folC Rv2447c`  
-**Length** 487.0 aa  
-
-**Why it is here** — 3 independent lines: own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure
-
-**Resolved**
-
-- substrate distance **0.803** (own_modelseed_reaction)
-- its EC class reaches 0.382
-- AlphaFold pLDDT **92.5**
-- structure `2VOS` at 2.0 Å
-- in-line adenylation geometry 6.12 Å
-- curated ligand `CHEBI:17839`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 3, short of HMDA's 6
-- widest acid span 3, short of adipate's 4
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=7,8-dihydropteroate + L-glutamate + ATP = 7,8-dihydrofolate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23584, ChEBI:CHEBI:15378, ChEBI:CHEBI:17839, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57451, ChEBI:CHEBI:456216; EC=6.3.2.12; Evidence=; CATALYTIC ACTIVITY: Reaction=(6S)-5,6,7,8-tetrahydrofolyl-(gamma-L-Glu)(n) + L-glutamate + ATP = (6S)-5,6
-
-**Function** FUNCTION: Catalyzes the addition of a glutamate residue to dihydropteroate (7,8-dihydropteroate or H2Pte) to form dihydrofolate (7,8-dihydrofolate monoglutamate or H2Pte-Glu) (PubMed:23118010). Also catalyzes successive additions of L-glutamate to tetrahydrofolate, leading to folylpolyglutamate derivatives (By similarity). .; FUNCTION: Is involved in the bioactivation of the antituberculous drug p
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 Mg(2+) ions per subunit.
-
-**Family (UniProt)** SIMILARITY: Belongs to the folylpolyglutamate synthase family. .
-
-**Note** MISCELLANEOUS: Mutations within this gene in the H2Pte binding pocket are responsible for PAS resistance in M.tuberculosis clinical isolates and laboratory strains. FolC-linked PAS resistance is mediated by altered substrate specificity that results in the failure to generate levels of H2PtePAS-Glu that are necessary to inhibit DHFR (DfrA); therefore, a blockage of PAS bioactivation causes PAS res
-
-**BRENDA** `6.3.2.12;` — an entry exists; the API needs credentials this project does not have
-
-**Literature** [9634230](https://pubmed.ncbi.nlm.nih.gov/9634230/), [12657046](https://pubmed.ncbi.nlm.nih.gov/12657046/), [16754987](https://pubmed.ncbi.nlm.nih.gov/16754987/), [21969609](https://pubmed.ncbi.nlm.nih.gov/21969609/), [23779105](https://pubmed.ncbi.nlm.nih.gov/23779105/), [23118010](https://pubmed.ncbi.nlm.nih.gov/23118010/), [24366731](https://pubmed.ncbi.nlm.nih.gov/24366731/), [18566510](https://pubmed.ncbi.nlm.nih.gov/18566510/)
-
-## P08192 — Dihydrofolate synthase/folylpolyglutamate synthase (DHFS / FPGS) (EC 6.3.2.12) (EC 6.3.2.17) (Folylpoly-gamma-glutamate 
-
-**Organism** Escherichia coli (strain K12)  
-**Gene** `folC dedC b2315 JW2312`  
-**Length** 422.0 aa  
-
-**Why it is here** — 3 independent lines: own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure
-
-**Resolved**
-
-- substrate distance **0.803** (own_modelseed_reaction)
-- its EC class reaches 0.382
-- AlphaFold pLDDT **95.7**
-- structure `1W78` at 1.82 Å
-- in-line adenylation geometry 6.13 Å
-- measured K_M **0.0006 mM**
-- curated ligand `CHEBI:17839`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 3, short of HMDA's 6
-- widest acid span 3, short of adipate's 4
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=7,8-dihydropteroate + L-glutamate + ATP = 7,8-dihydrofolate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23584, ChEBI:CHEBI:15378, ChEBI:CHEBI:17839, ChEBI:CHEBI:29985, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57451, ChEBI:CHEBI:456216; EC=6.3.2.12; Evidence=; CATALYTIC ACTIVITY: Reaction=(6S)-5,6,7,8-tetrahydrofolyl-(gamma-L-Glu)(n) + L-glutamate + ATP = (6S)-5,6
-
-**Function** FUNCTION: Functions in two distinct reactions of the de novo folate biosynthetic pathway. Catalyzes the addition of a glutamate residue to dihydropteroate (7,8-dihydropteroate or H2Pte) to form dihydrofolate (7,8-dihydrofolate monoglutamate or H2Pte-Glu). Also catalyzes successive additions of L-glutamate to tetrahydrofolate or 10-formyltetrahydrofolate or 5,10-methylenetetrahydrofolate, leading t
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=; Note=Binds 2 Mg(2+) ions per subunit.
-
-**Family (UniProt)** SIMILARITY: Belongs to the folylpolyglutamate synthase family. .
-
-**Note** MISCELLANEOUS: Mutant studies have shown that dihydrofolate synthase and folylpolyglutamate synthetase activities are catalyzed by a single catalytic site. .
-
-**Mutagenesis** (residue-level functional data)
-
-- 122: T->H,W: Causes large decrease in affinity for both THF and DHP.
-- 154: D->A: Severely impairs activity with THF as substrate, even more so than with DHP. Both substrates show a reduced affinity, but the catalytic rate with THF
-- 155: A->H: Causes large decrease in affinity for both THF and DHP.
-
-**BRENDA** `6.3.2.17;` — an entry exists; the API needs credentials this project does not have
-
-**Literature** [3040739](https://pubmed.ncbi.nlm.nih.gov/3040739/), [3040734](https://pubmed.ncbi.nlm.nih.gov/3040734/), [9205837](https://pubmed.ncbi.nlm.nih.gov/9205837/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [2985605](https://pubmed.ncbi.nlm.nih.gov/2985605/), [1989505](https://pubmed.ncbi.nlm.nih.gov/1989505/), [18232714](https://pubmed.ncbi.nlm.nih.gov/18232714/)
-
 ## A0A0F7RJ52 — Spermidine-citrate ligase (EC 6.3.2.-) (Petrobactin biosynthesis protein AsbA)
 
 **Organism** Bacillus anthracis  
@@ -646,221 +495,6 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have
 
 **Literature** [2692800](https://pubmed.ncbi.nlm.nih.gov/2692800/), [1630901](https://pubmed.ncbi.nlm.nih.gov/1630901/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [9166795](https://pubmed.ncbi.nlm.nih.gov/9166795/), [2198024](https://pubmed.ncbi.nlm.nih.gov/2198024/), [2269304](https://pubmed.ncbi.nlm.nih.gov/2269304/), [3905407](https://pubmed.ncbi.nlm.nih.gov/3905407/)
-
-## Q819Q0 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Bacillus cereus (strain ATCC 14579 / DSM 31 / CCUG 7414 / JCM 2152 / NBRC 15305 / NCIMB 93  
-**Gene** `murE BC_3914`  
-**Length** 491.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- AlphaFold pLDDT **95.6**
-- measured K_M **0.13 mM**
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-**Literature** [12721630](https://pubmed.ncbi.nlm.nih.gov/12721630/), [4967958](https://pubmed.ncbi.nlm.nih.gov/4967958/)
-
-## A0QF47 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Mycobacterium avium (strain 104)  
-**Gene** `murE MAV_2331`  
-**Length** 520.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-## A1BJY3 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Chlorobium phaeobacteroides (strain DSM 266 / SMG 266 / 2430)  
-**Gene** `murE Cpha266_2726`  
-**Length** 512.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-## A1WC11 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Acidovorax sp. (strain JS42)  
-**Gene** `murE Ajs_3675`  
-**Length** 501.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-## A2C0L8 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Prochlorococcus marinus (strain NATL1A)  
-**Gene** `murE NATL1_04641`  
-**Length** 509.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-**Literature** [18159947](https://pubmed.ncbi.nlm.nih.gov/18159947/)
-
-## A3MY85 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Actinobacillus pleuropneumoniae serotype 5b (strain L20)  
-**Gene** `murE APL_0013`  
-**Length** 500.0 aa  
-
-**Why it is here** — 3 independent lines: acylates_a_free_diamine, own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket
-
-**Resolved**
-
-- substrate distance **0.764** (own_modelseed_reaction)
-- its EC class reaches 0.764
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-**Literature** [18065534](https://pubmed.ncbi.nlm.nih.gov/18065534/)
-
-## G7CMG5 — UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--2,6-diaminopimelate ligase (EC 6.3.2.13) (Meso-A2pm-adding enzyme) (Meso-diam
-
-**Organism** Mycolicibacterium thermoresistibile (strain ATCC 19527 / DSM 44167 / CIP 105390 / JCM 6362  
-**Gene** `murE KEK_21058`  
-**Length** 506.0 aa  
-
-**Why it is here** — 3 independent lines: own_reaction_chemistry, lead_family_verdict, bifunctional_ligand_in_the_pocket, adenylation_competent_structure
-
-**Resolved**
-
-- substrate distance **0.764** (own_curated_reaction)
-- its EC class reaches 0.764
-- structure `8G6P` at 1.45 Å
-- in-line adenylation geometry 6.44 Å
-- curated ligand `CHEBI:57791`
-
-**Pocket capacity** (from ligands it is curated to handle; room, not competence)
-
-- widest amine span 5, short of HMDA's 6
-- spans 10 between acids, against adipate's 4 — **room for the donor**
-
-**Catalytic activity** CATALYTIC ACTIVITY: Reaction=UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-D-glutamate + meso-2,6-diaminopimelate + ATP = UDP-N-acetyl-alpha-D-muramoyl-L-alanyl-gamma-D-glutamyl-meso-2,6-diaminopimelate + ADP + phosphate + H(+); Xref=Rhea:RHEA:23676, ChEBI:CHEBI:15378, ChEBI:CHEBI:30616, ChEBI:CHEBI:43474, ChEBI:CHEBI:57791, ChEBI:CHEBI:83900, ChEBI:CHEBI:83905, ChEBI:CHEBI:456216; EC=6.3.2.13; Evidence=
-
-**Function** FUNCTION: Catalyzes the addition of meso-diaminopimelic acid to the nucleotide precursor UDP-N-acetylmuramoyl-L-alanyl-D-glutamate (UMAG) in the biosynthesis of bacterial cell-wall peptidoglycan. .
-
-**Cofactor** COFACTOR: Name=Mg(2+); Xref=ChEBI:CHEBI:18420; Evidence=
-
-**Location** SUBCELLULAR LOCATION: Cytoplasm .
-
-**Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
-
-**Literature** [36944394](https://pubmed.ncbi.nlm.nih.gov/36944394/)
 
 ## Q2G1N1 — Staphyloferrin B synthase (EC 6.3.2.56) (Staphyloferrin B biosynthesis protein SbnC)
 
@@ -1053,7 +687,6 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Resolved**
 
 - its EC class reaches 0.738
-- curated ligand `CHEBI:57834;CHEBI:57835;CHEBI:57925`
 
 **Pocket capacity** (from ligands it is curated to handle; room, not competence)
 

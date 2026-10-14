@@ -38,6 +38,23 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **The convergence count itself was inflated by a correlated axis, and the
+  correction cut it from 28 to 17.** `bifunctional_ligand_in_the_pocket` and
+  `own_reaction_chemistry` were counted as independent lines. For 1,753 of the
+  1,754 candidates carrying exactly that pair, the curated binding-site ligand
+  is a participant in the protein's *own* curated reaction — the same ChEBI id
+  appears verbatim in its catalytic-activity line. UniProt curates "binds
+  UDP-MurNAc-L-Ala-D-Glu" and "catalyses a reaction consuming
+  UDP-MurNAc-L-Ala-D-Glu" from one piece of knowledge, and the count treated
+  it as two. The ≥2-line set falls from **1,823 to 84** and the headline from
+  **28 to 17**. This module's own docstring already demanded that a new axis
+  be checked against the others; the check made when this axis was added was
+  crystallographic-vs-curated, which is a different correlation from the one
+  that mattered. Two cases are deliberately preserved: a *crystallographic*
+  ligand is an observation rather than a restatement (which is why MurE
+  P9WJL3 is untouched — UAG really is in the density), and a curated ligand
+  the protein's reaction does not involve is a genuinely separate claim. All
+  four group-A assay recommendations survive the correction.
 - **`audit_coverage`** found that *every* per-protein analysis had stopped one
   route short. The `actives` route added 822 homologs of the measured
   producers; `pocket_capacity`, `ligand_evidence`, `curated_properties` and

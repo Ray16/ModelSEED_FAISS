@@ -40,6 +40,7 @@ not evidence the enzyme works.
 from __future__ import annotations
 
 import json
+import re
 
 import pandas as pd
 
@@ -106,8 +107,11 @@ REJECTED_AXES = {
 }
 
 SIDECARS = (
+    # `curated_bifunctional_ligand` is needed to tell a curated ligand that
+    # merely restates the curated reaction from a crystallographic one.
     ('ligand_evidence.tsv', ['bound_bifunctional_ligand',
-                             'any_bifunctional_ligand']),
+                             'any_bifunctional_ligand',
+                             'curated_bifunctional_ligand']),
     ('pdb_evidence.tsv', ['pdb_has_atp_like']),
     ('adenylation_geometry.tsv', ['d_nuc_P']),
 )
@@ -136,6 +140,47 @@ def lead_signatures(evaluation):
             for s in str(getattr(row, 'signatures', '')).split(';') if s.strip()}
 
 
+CHEBI_ID = re.compile(r'CHEBI:\d+')
+
+
+def ligand_restates_own_reaction(table):
+    """Is the "ligand in the pocket" just the protein's own reaction again?
+
+    MEASURED, and it is nearly total: of 1,754 candidates whose two
+    discriminating lines were `own_reaction_chemistry` and
+    `bifunctional_ligand_in_the_pocket`, **1,753** carry a curated
+    binding-site ligand whose ChEBI id appears verbatim in their own
+    catalytic-activity line. UniProt curates "binds UDP-MurNAc-L-Ala-D-Glu"
+    and "catalyses a reaction consuming UDP-MurNAc-L-Ala-D-Glu" from the same
+    knowledge; counting both is counting one fact twice. Collapsing it takes
+    the headline from 28 candidates at >= 3 lines to 17, and the >= 2 set from
+    1,823 to 84.
+
+    Two cases are deliberately NOT collapsed:
+
+    - a CRYSTALLOGRAPHIC ligand. Someone solved a structure and saw the
+      molecule; that is an observation, not a restatement of the annotation,
+      so `bound_bifunctional_ligand` always keeps its line. This is why MurE
+      P9WJL3 is unaffected - it really does have UAG in the density.
+    - a curated ligand the protein's own reaction does NOT involve. The
+      pocket then holds something the annotated chemistry does not explain,
+      which is a genuinely separate claim.
+
+    And the collapse only applies where BOTH lines would otherwise fire,
+    since the defect is double-counting rather than the ligand evidence
+    itself being invalid.
+    """
+    curated = _series(table, 'curated_bifunctional_ligand').fillna('')
+    crystallographic = _series(table, 'bound_bifunctional_ligand').notna()
+    activity = _series(table, 'catalytic_activity').fillna('').astype(str)
+    restates = pd.Series(
+        [bool(ids) and any(i in text for i in ids)
+         for ids, text in zip(curated.astype(str).map(CHEBI_ID.findall),
+                              activity)],
+        index=table.index)
+    return restates & ~crystallographic
+
+
 def axes(table, lead):
     """One column per independent line of evidence."""
     signatures = (_series(table, 'pfam', '').fillna('').astype(str) + ';'
@@ -143,6 +188,10 @@ def axes(table, lead):
     cofactor = (_series(table, 'pdb_has_atp_like', False)
                 .fillna(False).astype(bool))
     geometry = _series(table, 'd_nuc_P').notna()
+    own_chemistry = (
+        _num(table, 'substrate_distance_measured').combine(
+            _num(table, 'substrate_distance_own_rhea'), max)
+        >= CHEMISTRY_FLOOR)
     return pd.DataFrame({
         'measured_nylon_activity':
             _series(table, 'evidence_strength', '').eq('measured_activity'),
@@ -153,19 +202,22 @@ def axes(table, lead):
         'acylates_a_free_diamine':
             pd.to_numeric(_series(table, 'acylates_free_diamine', False),
                           errors='coerce').fillna(0).astype(bool),
-        'own_reaction_chemistry':
-            _num(table, 'substrate_distance_measured').combine(
-                _num(table, 'substrate_distance_own_rhea'), max)
-            >= CHEMISTRY_FLOOR,
+        'own_reaction_chemistry': own_chemistry,
         'lead_family_verdict':
             signatures.map(lambda v: any(a in v for a in lead)),
         # Crystallographic OR curated: one claim about what the pocket holds,
         # from two partially correlated sources. Falls back to the
         # crystallographic column alone if the merged flag is absent.
+        #
+        # MINUS the case where the curated ligand simply restates the curated
+        # reaction - see `ligand_restates_own_reaction`. That correlation was
+        # missed when this axis was added: the check made at the time was
+        # crystallographic-vs-curated, not ligand-vs-own-reaction.
         'bifunctional_ligand_in_the_pocket':
             (_series(table, 'any_bifunctional_ligand', False)
              .fillna(False).astype(bool)
-             | _series(table, 'bound_bifunctional_ligand').notna()),
+             | _series(table, 'bound_bifunctional_ligand').notna())
+            & ~(ligand_restates_own_reaction(table) & own_chemistry),
         # ONE observation: the geometry is measured from these structures.
         'adenylation_competent_structure': cofactor | geometry,
         'independent_geometric_score': _series(table, 'struct_S').notna(),

@@ -103,11 +103,11 @@ to.
 ## The biggest risk to this shortlist, stated plainly
 
 The 49-member assayed panel contains the only proteins anywhere with measured
-activity on the nylon-6,6 diad. Aligned against the 28 converged candidates:
+activity on the nylon-6,6 diad. Aligned against the 17 converged candidates:
 
 ```
-highest identity to any measured active      8.3%   (folC / murE)
-median                                       3.8%
+highest identity to any measured active      8.3%   (murE)
+median                                       3.7%
 ```
 
 That is noise. For comparison, the three strong producers align to a real

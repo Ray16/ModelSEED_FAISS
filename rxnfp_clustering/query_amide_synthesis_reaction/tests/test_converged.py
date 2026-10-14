@@ -193,3 +193,56 @@ class PublishedCountsTests(unittest.TestCase):
         source = Path(dossier.__file__).read_text()
         self.assertIn("'evidence_lines.tsv'", source)
         self.assertNotIn('cv.axes', source)
+
+
+class TestLigandRestatingItsOwnReaction(unittest.TestCase):
+    """A curated pocket ligand must not re-count the curated reaction.
+
+    MEASURED: of 1,754 candidates whose two discriminating lines were
+    `own_reaction_chemistry` and `bifunctional_ligand_in_the_pocket`, 1,753
+    carried a curated binding-site ligand whose ChEBI id appears verbatim in
+    their own catalytic-activity line. Collapsing it took the headline from
+    28 candidates at >= 3 lines to 17.
+    """
+
+    def frame(self, **over):
+        row = {
+            'uniprot': ['P1'],
+            'curated_bifunctional_ligand': ['CHEBI:57791'],
+            'bound_bifunctional_ligand': [None],
+            'catalytic_activity': ['a reaction consuming CHEBI:57791 ...'],
+        }
+        row.update({k: [v] for k, v in over.items()})
+        return pd.DataFrame(row)
+
+    def test_curated_ligand_named_in_the_reaction_is_redundant(self):
+        out = cv.ligand_restates_own_reaction(self.frame())
+        self.assertTrue(bool(out.iloc[0]))
+
+    def test_crystallographic_ligand_is_always_independent(self):
+        """Someone saw the molecule; that is an observation, not annotation."""
+        out = cv.ligand_restates_own_reaction(
+            self.frame(bound_bifunctional_ligand='UAG'))
+        self.assertFalse(bool(out.iloc[0]))
+
+    def test_ligand_absent_from_the_reaction_stays_independent(self):
+        out = cv.ligand_restates_own_reaction(
+            self.frame(catalytic_activity='a reaction with CHEBI:99999'))
+        self.assertFalse(bool(out.iloc[0]))
+
+    def test_no_curated_ligand_is_not_redundant(self):
+        out = cv.ligand_restates_own_reaction(
+            self.frame(curated_bifunctional_ligand=None))
+        self.assertFalse(bool(out.iloc[0]))
+
+    def test_collapse_only_applies_when_both_lines_would_fire(self):
+        """The defect is double-counting, not the ligand evidence itself."""
+        table = self.frame()
+        table['substrate_distance_measured'] = [0.0]
+        table['substrate_distance_own_rhea'] = [0.0]
+        table['any_bifunctional_ligand'] = [True]
+        found = cv.axes(table, set())
+        self.assertFalse(bool(found.own_reaction_chemistry.iloc[0]))
+        self.assertTrue(
+            bool(found.bifunctional_ligand_in_the_pocket.iloc[0]),
+            'with the chemistry line absent there is nothing to double-count')
