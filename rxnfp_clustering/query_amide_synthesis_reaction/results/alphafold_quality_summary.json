@@ -1,11 +1,11 @@
 {
-  "shortlist": 301,
-  "queried": 253,
-  "models_found": 253,
-  "network_failures": 0,
-  "no_model": 0,
-  "plddt_mean_median": 94.06,
-  "confident_ge_70": 247,
+  "shortlist": 316,
+  "queried": 268,
+  "models_found": 265,
+  "network_failures": 3,
+  "no_model": 3,
+  "plddt_mean_median": 93.88,
+  "confident_ge_70": 259,
   "unusable_lt_50": 0,
   "thresholds": {
     "confident": 70.0,

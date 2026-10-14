@@ -1,16 +1,16 @@
 {
   "candidates_considered": 55021,
   "excluded": {
-    "": 32660,
+    "": 32661,
     "family_judged_reject": 8409,
     "too_short": 7954,
     "annotation_contradicts_chemistry": 3380,
     "transmembrane": 1238,
     "too_long": 1148,
-    "family_prose_contradicts_chemistry": 231,
+    "family_prose_contradicts_chemistry": 230,
     "no_sequence": 1
   },
-  "eligible": 32660,
+  "eligible": 32661,
   "shortlisted": 316,
   "distinct_families": 46,
   "distinct_organisms": 218,

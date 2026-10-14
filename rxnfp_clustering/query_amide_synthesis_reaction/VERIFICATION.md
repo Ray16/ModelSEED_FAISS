@@ -1,7 +1,7 @@
 # How this project checks itself
 
-Six re-runnable tools, each written because a claim had been asserted rather
-than measured — and in three cases because the assertion turned out to be
+Seven re-runnable tools, each written because a claim had been asserted rather
+than measured — and in four cases because the assertion turned out to be
 wrong. Results below are from 2026-10-13 and every one reproduces by running
 the command shown. One further check is not a tool but a guard inside a stage,
 described with the others below: it refuses to run on a superseded input.
@@ -9,6 +9,7 @@ described with the others below: it refuses to run on a superseded input.
 | check | command | current result |
 |---|---|---|
 | nothing computed then dropped | `tools/audit_columns.py` | **no column empty**, 52/52 populated |
+| every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
 | retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 153 with no enzyme |
@@ -37,6 +38,26 @@ wrong.
   discarded at the de-duplicating merge: `acylates_free_diamine`, now the most
   discriminating axis in the convergence count, and `borrowed_from_rxn`, at
   0 of 54,199.
+- **`audit_coverage`** found that *every* per-protein analysis had stopped one
+  route short. The `actives` route added 822 homologs of the measured
+  producers; `pocket_capacity`, `ligand_evidence`, `curated_properties` and
+  `ec_substrate_ceiling` had all been written before it existed, so each
+  covered 0 of the 822 while reporting tens of thousands of healthy rows. The
+  consequence was not cosmetic: those are the structural and EC axes, so the
+  measured-data hypothesis sat at one evidence line per protein partly **by
+  construction**, because the analyses that could have given it a second line
+  had never been run on it. `ec_substrate` needed a code fix as well as a
+  re-run — it assembles annotations from a hardcoded list of route files, to
+  avoid a circular dependency with `master_table`, and that list had fallen
+  one route behind. The two lists are now checked against each other.
+  - Writing the tool also demonstrated its own thesis. The first draft used a
+    coverage share alone and flagged `member_similarity` at 84% as a missed
+    route; it is a within-family tie-break with nothing to say about a
+    protein admitted by its own reaction. A share cannot distinguish "missed
+    a route" from "scoped by design", so each scoped stage now declares its
+    scope and is checked for completeness *inside* it — the stronger claim:
+    `member_similarity` must cover all 46,254 family-route candidates, and
+    does.
 - **The stale-input guard in `shortlist`** was added after the stage read an
   enriched table one generation behind the master it was built from. `enrich`
   needs UniProt, so `--offline` drops it; re-running `master` alone leaves the

@@ -14,7 +14,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import ec_substrate as es   # noqa: E402
+from amide_synthesis import ec_substrate as es          # noqa: E402
+from amide_synthesis import ec_substrate, master_table  # noqa: E402
 
 
 def mapping(rows):
@@ -194,3 +195,31 @@ class OwnReactionTests(unittest.TestCase):
         best, _ = es.own_reaction_distance(
             [None, '', float('nan')], self._scores([(1, 0.5)]))
         self.assertEqual(best, [None, None, None])
+
+
+class TestEveryRouteIsAnnotated(unittest.TestCase):
+    """`ec_substrate` must assemble annotations from EVERY protein route.
+
+    It deliberately reads the route files rather than `master_candidates.tsv`,
+    to avoid a circular dependency with `master_table`. The cost of that is a
+    second hardcoded list of routes, which fell one behind: the `actives`
+    route was added and its 822 proteins silently received no EC ceiling and
+    no own-reaction distance, while the stage reported a healthy 54,199 and
+    every file involved looked complete.
+
+    The two lists are independent by design, so this checks them against each
+    other rather than merging them.
+    """
+
+    def test_master_route_files_all_have_an_annotation_source(self):
+        annotated = {name for name, _ in ec_substrate.SOURCES}
+        missing = set(master_table.ROUTE_FILES) - annotated
+        self.assertEqual(
+            missing, set(),
+            'routes carried by master_table but never annotated by '
+            'ec_substrate, so their proteins get no EC ceiling: '
+            f'{sorted(missing)}')
+
+    def test_sources_are_unique(self):
+        names = [name for name, _ in ec_substrate.SOURCES]
+        self.assertEqual(len(names), len(set(names)))

@@ -80,6 +80,20 @@ DISQUALIFYING = (
     'ribosomal protein', 'elongation factor')
 # A bifunctional enzyme naming both is not a contradiction.
 QUALIFYING = ('synthetase', 'synthase', 'ligase', 'transferase')
+
+# Every route file carrying PROTEINS, beyond the reaction route and the
+# family expansion which are loaded separately. A module constant rather
+# than an inline tuple so `ec_substrate`, which must assemble annotations
+# from the same routes without reading this module's output, can be checked
+# against it: that list fell one route behind and 822 proteins silently got
+# no EC ceiling. See `tests/test_ec_substrate.py`.
+ROUTE_FILES = (
+    'precomputed_link_candidates.tsv',
+    'reference_actives.tsv',
+    'chemistry_neighbour_candidates.tsv',
+    'enzyme_name_candidates.tsv',
+    'active_homolog_candidates.tsv',
+)
 CONTRADICTION_PENALTY = 3.0
 
 # TESTED AND REJECTED: applying DISQUALIFYING to the `family` field as well.
@@ -463,10 +477,7 @@ def main():
             own_frame = sidecar[wanted]
 
     extras = []
-    for name in ('precomputed_link_candidates.tsv', 'reference_actives.tsv',
-                 'chemistry_neighbour_candidates.tsv',
-                 'enzyme_name_candidates.tsv',
-                 'active_homolog_candidates.tsv'):
+    for name in ROUTE_FILES:
         path = RES / name
         if path.exists():
             extras.append(pd.read_csv(path, sep='\t', low_memory=False))

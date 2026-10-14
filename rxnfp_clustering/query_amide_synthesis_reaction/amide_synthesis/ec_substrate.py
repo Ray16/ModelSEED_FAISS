@@ -154,6 +154,18 @@ def own_reaction_distance(statements, scores):
     return best, cited
 
 
+SOURCES = (
+    ('enzymes_uniprot.tsv', 'uniprot'),
+    ('family_expansion.tsv', 'Entry'),
+    ('precomputed_link_candidates.tsv', 'uniprot'),
+    ('enzyme_name_candidates.tsv', 'uniprot'),
+    ('reference_actives.tsv', 'uniprot'),
+    ('chemistry_neighbour_candidates.tsv', 'uniprot'),
+    ('candidates_ranked.tsv', 'uniprot'),
+    ('active_homolog_candidates.tsv', 'uniprot'),
+)
+
+
 def candidate_annotations():
     """(uniprot, ec, catalytic_activity) for every candidate, from the ROUTES.
 
@@ -169,15 +181,15 @@ def candidate_annotations():
     joins the column.
     """
     frames = []
-    sources = (
-        ('enzymes_uniprot.tsv', 'uniprot'),
-        ('family_expansion.tsv', 'Entry'),
-        ('precomputed_link_candidates.tsv', 'uniprot'),
-        ('enzyme_name_candidates.tsv', 'uniprot'),
-        ('reference_actives.tsv', 'uniprot'),
-        ('chemistry_neighbour_candidates.tsv', 'uniprot'),
-        ('candidates_ranked.tsv', 'uniprot'),
-    )
+    # EVERY route file must be listed. The list is explicit rather than a
+    # glob because the argument above is about a precise dependency, but an
+    # explicit list has one failure mode: add a route, forget this. That
+    # happened - `active_homolog_candidates.tsv` was missing and its 822
+    # proteins silently had no EC ceiling and no own-reaction distance, while
+    # the stage reported a healthy 54,199. `tests/test_ec_substrate.py` pins
+    # the list against the routes the pipeline declares, and
+    # `tools/audit_coverage.py` catches it from the other end.
+    sources = SOURCES
     for name, key in sources:
         path = RES / name
         if not path.exists():

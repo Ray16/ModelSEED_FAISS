@@ -1070,6 +1070,29 @@ array; `_corpus.py` verifies both on load, so reordered-but-same-shape data
 cannot slip through. Corpus and embeddings are published atomically. The t-SNE
 cache is keyed by corpus hash plus query SMILES, not row count.
 
+### Artifacts going stale, which is its own defect class
+
+Two bugs here were neither a wrong computation nor a dropped column, but a
+correct computation on a **superseded input**, and both were silent:
+
+- Adding the `actives` route left *every* per-protein analysis one route
+  behind. `pocket_capacity`, `ligand_evidence`, `curated_properties` and
+  `ec_substrate_ceiling` had all been written before the route existed, so
+  each covered 0 of its 822 proteins while reporting tens of thousands of
+  healthy rows. `ec_substrate` also needed a code fix: it assembles
+  annotations from a hardcoded list of route files — deliberately, to avoid a
+  circular dependency with `master_table` — and the list had fallen behind.
+  `ROUTE_FILES` and `ec_substrate.SOURCES` are now checked against each other.
+- `shortlist` prefers `master_candidates_enriched.tsv`, but `enrich` needs
+  UniProt and so is dropped by `--offline`. Re-running `master` alone left the
+  enriched copy a generation behind and the shortlist silently rebuilt from
+  superseded flags.
+
+Both have the same shape and the same danger: the number does not move, and a
+number that does not move reads as a measurement. `tools/audit_coverage.py`
+checks every analysis against the current candidate set, and `shortlist`
+compares mtimes and fails rather than choosing.
+
 ## Caveats
 
 - Screen 1 proves the amine→amide linkage by reconstruction, but it is still a
