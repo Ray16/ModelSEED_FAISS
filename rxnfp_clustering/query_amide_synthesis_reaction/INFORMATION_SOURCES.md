@@ -22,6 +22,39 @@ the dead ends.
 | **Rhea bulk SMILES + `rhea2ec`** | EC-class substrate ceiling: the best amide chemistry anyone in an EC class is curated to perform | 26,410 of 38,542 EC-bearing candidates; 13,063 at ≥0.6 |
 | **assayed panel** (read-only, separate project) | **measured** nylon-6,6 L1 titre | 49 proteins, 3 strong producers |
 | **geometric proxy** (read-only, separate project) | independent adenylation-geometry score | 36 candidates |
+| **KEGG orthology** (`rest.kegg.jp`, no credentials) | reaction→KO→EC, a reaction→enzyme bridge that does **not** pass through UniProt's reaction annotation | 10 of 175 unresolved reaction records resolved; +104 candidates |
+
+### KEGG orthology: what it fixed, and what it measurably did not
+
+Every other route pivots through UniProt — a reaction's Rhea id, its EC, or
+its name — so a reaction carrying none of those is recorded as having no
+enzyme. KEGG assigns orthology groups to reactions directly, and a KO carries
+both an EC and the genes realising it, so it does not fail where UniProt
+fails. Of the 175 unresolved reaction records, 24 carry a KEGG `R` alias and
+**10 of those have a KO**: three are carnosine synthase (EC 6.3.2.11), which
+ligates β-alanine onto the free α-amino group of histidine — ATP-dependent
+acylation of a free amine, the target chemistry — and two are agmatine
+coumaroyltransferase (EC 2.3.1.64), which acylates a free amine on a
+diamine-like acceptor. ModelSEED simply left the EC field empty for them.
+
+**It is not a new retrieval channel, and that is measured rather than
+assumed.** Across all 91 screened reactions that have a KO, the route reaches
+89 distinct ECs, of which exactly **3** are absent from the candidate set
+already held — a peptidase, alanine racemase, and an acid–thiol ligase, none
+of which forms an amide. We already hold 287 of the 326 carnosine synthases.
+What was missing was the **link** from a reaction to the enzymes that perform
+it, not the enzymes. So this corrects a reported recall number and adds the
+tail of two relevant EC classes; it does not reach chemistry that was absent.
+
+Two probes here needed positive controls before they could be believed. A
+UniProt EC query returned 0 for all 13 complete ECs among the unresolved
+reactions, which looks like a broken query until `ec:6.3.2.4` returns 22,325 —
+the zeros are real, and `enzyme.expasy.org` confirms them independently: all
+13 are valid current EC numbers with **zero DR lines**, true orphan activities
+with no sequenced gene. A KEGG `link/genes/ec:` probe returned 0 for the
+controls too, because that endpoint does not accept an EC; the KO counts it
+was cross-checked against are the valid ones. (`rest.expasy.org` has no DNS
+from this host; `enzyme.expasy.org` does.)
 
 ## A structural template for the measured actives
 

@@ -93,6 +93,7 @@ ROUTE_FILES = (
     'chemistry_neighbour_candidates.tsv',
     'enzyme_name_candidates.tsv',
     'active_homolog_candidates.tsv',
+    'kegg_ortholog_candidates.tsv',
 )
 CONTRADICTION_PENALTY = 3.0
 

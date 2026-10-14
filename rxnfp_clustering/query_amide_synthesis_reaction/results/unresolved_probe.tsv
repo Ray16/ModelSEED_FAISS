@@ -11,7 +11,6 @@ rxn59882	0.3528	no_identifier_name_tried	0
 rxn24632	0.7192	no_identifier_no_name	0
 rxn01264	0.425	no_identifier_name_tried	0
 rxn03523	0.5631	no_identifier_no_name	0
-rxn03941	0.0	no_identifier_name_tried	0
 rxn11780	0.425	no_identifier_name_tried	0
 rxn23200	0.0	no_identifier_name_tried	0
 rxn24153	0.425	no_identifier_no_name	0
@@ -71,7 +70,6 @@ rxn10425	0.425	no_identifier_name_tried	0
 rxn19370	0.8817	identifier_but_uniprot_empty	0
 rxn19715	0.4064	identifier_but_uniprot_empty	0
 rxn26012	0.4862	no_identifier_name_tried	0
-rxn39388	0.435	no_identifier_name_tried	0
 rxn40926	0.3792	no_identifier_name_tried	0
 rxn40928	0.5872	no_identifier_name_tried	0
 rxn41113	0.425	identifier_but_uniprot_empty	0
@@ -107,8 +105,6 @@ rxn25095	0.0	no_identifier_name_tried	0
 rxn25096	0.0	identifier_but_uniprot_empty	0
 rxn25097	0.0	no_identifier_name_tried	0
 rxn25453	0.0	no_identifier_name_tried	0
-rxn40476	0.3054	no_identifier_name_tried	0
-rxn40477	0.2883	no_identifier_name_tried	0
 rxn41700	0.0	identifier_but_uniprot_empty	0
 rxn42919	0.3462	no_identifier_name_tried	0
 rxn43654	0.0	no_identifier_name_tried	0
@@ -146,9 +142,6 @@ rxn59553	0.4	no_identifier_name_tried	0
 rxn59571	0.0	no_identifier_name_tried	0
 rxn60050	0.0	no_identifier_name_tried	0
 rxn60457	0.0	no_identifier_name_tried	0
-rxn16116	0.53	no_identifier_name_tried	0
 rxn60293	0.0	no_identifier_name_tried	0
-rxn16117	0.515	no_identifier_name_tried	0
 rxn57020	0.475	no_identifier_name_tried	0
 rxn59921	0.0	no_identifier_name_tried	0
-rxn03942	0.0	no_identifier_name_tried	0

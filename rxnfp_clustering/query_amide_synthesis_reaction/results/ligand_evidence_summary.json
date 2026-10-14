@@ -1,7 +1,7 @@
 {
-  "pdb_entries": 1316,
-  "distinct_components": 147,
-  "components_resolved": 153,
+  "pdb_entries": 1319,
+  "distinct_components": 148,
+  "components_resolved": 155,
   "bifunctional_components": 18,
   "candidates_with_bound_bifunctional_ligand": 17,
   "candidates_with_curated_bifunctional_ligand": 3745,

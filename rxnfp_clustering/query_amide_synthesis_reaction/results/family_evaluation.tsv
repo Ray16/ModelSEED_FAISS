@@ -1,6 +1,6 @@
 family	signatures	all_signature_names	n_signatures	n_seeds	donor_acids	acceptor_amines	aa_bb_pair	self_condensing	retains_acid	retains_amine	donor_heavy_atoms	best_substrate_distance	example_reaction	members_in_table	members_contradicted	members_with_pdb	verdict	reason
-ATP-grasp domain	IPR003806;PF02655;PF13535	3	3	20	2	2	False	True	True	True	5	0.8686	(2R,3R)-3-methylornithyl-N6-lysine synthase	826	75	4	lead	self-condensing bifunctional monomer (nylon-6 style)
-ATP-grasp fold	IPR011761	1	1	109	3	2	False	True	True	True	5	0.8686	L-amino acid ligase (L-glycine-L-glycine)	9160	189	38	lead	self-condensing bifunctional monomer (nylon-6 style)
+ATP-grasp domain	IPR003806;PF02655;PF13535	3	3	20	2	2	False	True	True	True	5	0.8686	(2R,3R)-3-methylornithyl-N6-lysine synthase	832	75	4	lead	self-condensing bifunctional monomer (nylon-6 style)
+ATP-grasp fold	IPR011761	1	1	109	3	2	False	True	True	True	5	0.8686	L-amino acid ligase (L-glycine-L-glycine)	9196	189	38	lead	self-condensing bifunctional monomer (nylon-6 style)
 ATP-grasp fold, subdomain 1	IPR013815	1	1	58	2	1	False	True	True	True	5	0.8686	L-amino acid ligase (L-glycine-L-glycine)	6139	77	29	lead	self-condensing bifunctional monomer (nylon-6 style)
 D-alanine--D-alanine ligase	IPR000291;IPR005905;IPR011095;IPR011127;PF01820;PF07478	6	6	11	2	1	False	True	True	True	6	0.8686	D-alanine:D-alanine ligase (ADP-forming)	1551	1	9	lead	self-condensing bifunctional monomer (nylon-6 style)
 L-amino acid ligase C-terminal domain 2	IPR040570;PF18603	2	2	6	1	1	False	True	True	True	5	0.8686	L-amino acid ligase (L-glycine-L-glycine)	512	38	1	lead	self-condensing bifunctional monomer (nylon-6 style)
@@ -11,7 +11,7 @@ Glutamine synthetase type I	IPR004809;PF03951	2	2	1	2	2	True	False	True	True	10	
 Glutamine synthetase, N-terminal domain	IPR008147;IPR036651	2	2	11	2	2	True	False	True	True	10	0.8567	glutamate putrescine ligase	1667	0	1	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 Glutamine synthetase, catalytic domain	IPR008146;IPR027303;PF00120	3	3	17	2	2	True	False	True	True	10	0.8567	glutamate putrescine ligase	1695	0	1	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 Glutamine synthetase/guanido kinase, catalytic domain	IPR014746	1	1	31	2	2	True	False	True	True	10	0.8567	glutamate putrescine ligase	3912	0	9	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
-AMP-binding enzyme	IPR000873;IPR020845;PF00501	3	3	12	2	2	True	False	True	True	8	0.8483	nan	1815	0	6	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
+AMP-binding enzyme	IPR000873;IPR020845;PF00501	3	3	12	2	2	True	False	True	True	8	0.8483	nan	1818	0	7	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 ANL, N-terminal domain	IPR042099	1	1	14	2	2	True	False	True	True	8	0.8483	nan	1948	1	3	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 Fumarate--(S)-2,3- diaminopropanoate ligase	IPR048223	1	1	3	2	2	True	False	True	True	8	0.8483	nan	6	0	0	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 Fumarate--diaminopropanoate ligase C-terminal domain	IPR060135;PF27279	2	2	6	2	2	True	False	True	True	8	0.8483	nan	127	0	0	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
@@ -37,7 +37,7 @@ Acetyltransferase (GNAT) domain	IPR019432;PF13302;PF13420;PF13523;PF13527	5	5	10
 Carbamoyl phosphate synthase, ATP-binding domain	IPR005479	1	1	8	2	1	False	True	True	True	53	0.7439	CofF protein	410	41	0	lead	self-condensing bifunctional monomer (nylon-6 style)
 Glutathionylspermidine Synthetase/Amidase	IPR007921;IPR038765;IPR051705;PF05257	4	4	8	2	3	True	False	True	True	20	0.7384	gamma-L-glutamyl-L-cysteinyl-glycine:spermidine ligase (ADP-forming)	481	59	2	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
 Glutathionylspermidine synthase preATP-grasp	IPR005494;PF03738	2	2	14	2	3	True	False	True	True	20	0.7384	gamma-L-glutamyl-L-cysteinyl-glycine:spermidine ligase (ADP-forming)	644	21	4	lead	diacid donor + diamine acceptor, the nylon-6,6 pairing
-Carnosine synthase 1	IPR031046;IPR041472;PF15632;PF18130	4	4	9	1	2	False	False	True	True	6	0.6667	L-lysine:beta-alanine ligase (AMP-forming)	523	37	1	lead	bifunctional on one side (donor acids 1, acceptor amines 2)
+Carnosine synthase 1	IPR031046;IPR041472;PF15632;PF18130	4	4	9	1	2	False	False	True	True	6	0.6667	L-lysine:beta-alanine ligase (AMP-forming)	551	37	1	lead	bifunctional on one side (donor acids 1, acceptor amines 2)
 Lysine Acetyltransferase	IPR053013;IPR055100;PF22998	3	3	3	1	2	False	False	True	True	10	0.6667	LYSACET-RXN.c	310	7	0	lead	bifunctional on one side (donor acids 1, acceptor amines 2)
 Pyrrolysine biosynthesis protein PylC	IPR023890;IPR048764;PF21360	3	3	3	1	2	False	False	True	True	10	0.6667	(2R,3R)-3-methylornithyl-N6-lysine synthase	357	2	2	lead	bifunctional on one side (donor acids 1, acceptor amines 2)
 Bacterial Acetyltransferase	IPR050832	1	1	20	1	5	False	False	True	True	8	0.665	L-2,4-diaminobutyrate acetyltransferase	1302	12	3	lead	bifunctional on one side (donor acids 1, acceptor amines 5)
@@ -52,7 +52,7 @@ Phosphoribosylglycinamide synthetase, ATP-grasp (A) domain	IPR020561;PF01071	2	2
 RyR and IP3R Homology associated	IPR013662;IPR015925;PF08454	3	3	1	1	2	False	False	True	True	13	0.6333	Indoleacetate:L-lysine ligase (ADP-forming)	1	0	0	lead	bifunctional on one side (donor acids 1, acceptor amines 2)
 Glutathione synthase	IPR004887;IPR005615;IPR014042;IPR014049;IPR014709;IPR037013;PF03199;PF03917	8	8	8	2	1	False	False	True	True	16	0.6	nan	363	2	7	lead	bifunctional on one side (donor acids 2, acceptor amines 1)
 Glutathione synthetase, prokaryotic	IPR004215;IPR004218;IPR006284;PF02951;PF02955	5	5	4	2	1	False	False	True	True	16	0.6	gamma-L-glutamyl-L-cysteine:glycine ligase (ADP-forming)	1020	0	1	lead	bifunctional on one side (donor acids 2, acceptor amines 1)
-Transferase family	IPR023213;IPR050317;IPR050898;PF02458	4	4	33	1	3	False	False	True	True	12	0.5217	Caffeoyl-CoA:putrescine N-(3,4-dihydroxycinnamoyl)transferase	648	0	15	lead	bifunctional on one side (donor acids 1, acceptor amines 3)
+Transferase family	IPR023213;IPR050317;IPR050898;PF02458	4	4	33	1	3	False	False	True	True	12	0.5217	Caffeoyl-CoA:putrescine N-(3,4-dihydroxycinnamoyl)transferase	713	0	16	lead	bifunctional on one side (donor acids 1, acceptor amines 3)
 5-formyltetrahydrofolate cyclo-ligase	IPR002698;IPR024185;IPR037171;PF01812	4	4	2	1	2	False	False	True	True	34	0.57	RXN-11127.c	427	0	0	watch	bifunctional but the donor scaffold is 34 heavy atoms against adipate's 10
 Methionine Synthase/Corrinoid	IPR003726;IPR003759;IPR004223;IPR006158;IPR011822;IPR033706;IPR036589;IPR036594;IPR036724;IPR037010;IPR050554;PF02310;PF02574;PF02607;PF02965	15	15	1	1	2	False	False	True	True	34	0.57	RXN-11127.c	800	0	1	watch	bifunctional but the donor scaffold is 34 heavy atoms against adipate's 10
 Thymidylate synthase	IPR000398;IPR020940;IPR023451;IPR036926;IPR045097;PF00303	6	6	3	1	2	False	False	True	True	34	0.57	RXN-11127.c	858	0	2	watch	bifunctional but the donor scaffold is 34 heavy atoms against adipate's 10
@@ -79,7 +79,7 @@ Methylenetetrahydrofolate reductase	IPR003171;IPR004620;IPR029041;PF02219	4	4	1	
 Acetyltransferase (GNAT) family	IPR050276	1	1	10	1	5	False	False	False	True	4	0.555	acetyl-CoA:putrescine N-acetyltransferase	719	6	2	reject	product cannot react again (terminal amide)
 N-terminal and lysine N-acetyltransferase	IPR051556	1	1	1	1	2	False	False	False	True	4	0.555	acetyl-CoA:putrescine N-acetyltransferase	155	17	1	reject	product cannot react again (terminal amide)
 Secondary metabolite acyltransferase	IPR051283	1	1	2	1	2	False	False	False	True	13	0.5217	Caffeoyl-CoA:putrescine N-(3,4-dihydroxycinnamoyl)transferase	5	0	0	reject	product cannot react again (terminal amide)
-Plant secondary metabolite acyltransferase	IPR051504	1	1	1	1	2	False	False	False	True	12	0.5157	13405	83	0	0	reject	product cannot react again (terminal amide)
+Plant secondary metabolite acyltransferase	IPR051504	1	1	1	1	2	False	False	False	True	12	0.5157	13405	94	0	0	reject	product cannot react again (terminal amide)
 Histone acetyltransferase GCN5	IPR001487;IPR009464;IPR016376;IPR018359;IPR036427;IPR037800;PF00439;PF06466	8	8	2	1	3	False	False	False	True	4	0.5113	Spermidine acetyltransferase (N8)	518	0	5	reject	product cannot react again (terminal amide)
 Spermine/spermidine acetyltransferase, N-terminal	IPR027455	1	1	2	1	4	False	False	False	True	4	0.5113	SPERMACTRAN-RXN.c	319	0	1	reject	product cannot react again (terminal amide)
 DNA-binding protein Dps, conserved site	IPR023188	1	1	1	3	1	False	False	True	False	23	0.4816	citrate:N6-acetyl-N6-hydroxy-L-lysine ligase (ADP-forming)	1	0	0	reject	product cannot react again (terminal amide)
@@ -87,14 +87,14 @@ Cytidyltransferase-like domain	IPR004821	1	1	2	1	1	False	False	True	False	10	0.4
 Glycine N-acyltransferase	IPR010313;IPR013652;IPR015938;PF06021;PF08444	5	5	13	1	1	False	False	True	False	10	0.425	phenylacetyl-CoA:glycine N-phenylacetyltransferase	402	1	1	reject	product cannot react again (terminal amide)
 Pantoate-beta-alanine ligase	IPR003721;IPR042176;PF02569	3	3	8	1	1	False	False	True	False	10	0.425	(R)-Pantoate:beta-alanine ligase (AMP-forming)	1390	0	8	reject	product cannot react again (terminal amide)
 Protein-glutamine gamma-glutamyltransferase	IPR020916;PF20085	2	2	1	1	1	False	False	True	False	10	0.425	phenylacetyl-CoA:glycine N-phenylacetyltransferase	1	0	0	reject	product cannot react again (terminal amide)
-ATP-dependent AMP-binding enzyme	IPR011963;IPR025110;IPR050237;PF13193	4	4	2	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	1621	0	5	reject	product cannot react again (terminal amide)
+ATP-dependent AMP-binding enzyme	IPR011963;IPR025110;IPR050237;PF13193	4	4	2	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	1624	0	6	reject	product cannot react again (terminal amide)
 Alpha/Beta hydrolase fold	IPR029058	1	1	12	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	177	1	1	reject	product cannot react again (terminal amide)
 H2C2 zinc finger	IPR015416;PF09337	2	2	1	1	1	False	False	True	False	9	0.4107	nan	1	0	0	reject	product cannot react again (terminal amide)
 Isochorismatase	IPR000868;IPR016291;IPR036380;IPR050272;PF00857	5	5	3	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	356	281	1	reject	product cannot react again (terminal amide)
 Mitochondrial N-acetyltransferase	IPR052742	1	1	3	1	1	False	False	True	False	9	0.4107	nan	39	0	1	reject	product cannot react again (terminal amide)
 N-acetyltransferase, camello-type	IPR050769	1	1	15	1	1	False	False	True	False	9	0.4107	Acetyl-CoA:L-aspartate N-acetyltransferase	566	1	0	reject	product cannot react again (terminal amide)
-Phosphopantetheine attachment site	IPR009081;IPR036736;PF00550	3	3	8	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	549	281	3	reject	product cannot react again (terminal amide)
-Thioesterase	IPR001031;IPR001242;IPR006162;IPR010071;IPR020806;IPR045851;PF00668;PF00975	8	8	7	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	1730	2	6	reject	product cannot react again (terminal amide)
+Phosphopantetheine attachment site	IPR009081;IPR036736;PF00550	3	3	8	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	552	281	4	reject	product cannot react again (terminal amide)
+Thioesterase	IPR001031;IPR001242;IPR006162;IPR010071;IPR020806;IPR045851;PF00668;PF00975	8	8	7	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	1733	2	7	reject	product cannot react again (terminal amide)
 Thioesterase TesA-like, C-terminal domain	IPR020802	1	1	2	1	1	False	False	True	False	11	0.4107	2,3-Dihydroxybenzoate:L-serine ligase	157	0	1	reject	product cannot react again (terminal amide)
 o-Succinylbenzoate synthase/NAAAR	IPR010197;IPR013341;IPR013342;IPR029017;IPR036849;PF02746;PF13378	7	7	1	1	1	False	False	True	False	9	0.4107	Acetyl-CoA:L-leucine N-acetyltransferase	3	2	1	reject	product cannot react again (terminal amide)
 AICARFT/IMPCHase bienzyme	IPR002695;IPR011607;IPR016193;IPR024050;IPR024051;IPR036914;PF01808;PF02142	8	8	8	1	2	False	False	True	True	32	0.4064	Formate:dihydrofolate ligase (ADP-forming)	1264	1225	3	reject	1225 of 1264 members are annotated as a non-amide-forming activity

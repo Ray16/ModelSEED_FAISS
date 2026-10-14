@@ -162,12 +162,12 @@ BLAST was run — against all of UniProtKB, not just this table:
 best identity from this table      30.6%
 best identity from BLAST           65.3%   (A0A7Y0L7E5, S. harzensis)
 hits at >= 45% identity               57
-of the 150 hits, already in our 54,199:  0
+of the 150, in the annotation-derived set:  0
 
 deep search (all 3 producers, 1,000 alignments, E < 1e-10):
   distinct hits                    2,952
   at >= 45% identity                 259
-  already in our 54,199                0
+  already annotation-derived          0
   of the 259, with amide evidence      0
 ```
 
@@ -352,9 +352,9 @@ clade homologs are spread thinly, so a global cap spent the list on homologs
 and admitted only 3 of 215 `exact_reaction` proteins. Every exclusion is
 written to `excluded_because` rather than dropped silently.
 
-Current totals: **54,199 candidates** - 28,255 with a curated
-catalytic-activity statement, 28,146 with an AlphaFold model, 261 with a PDB
-entry, 889 self-condensing, 36 carrying an independent geometric score.
+Current totals: **55,125 candidates** - 38,375 with a curated
+catalytic-activity statement, 38,556 with an AlphaFold model, 291 with a PDB
+entry, 1,934 self-condensing, 36 carrying an independent geometric score.
 
 Measured and inherited distances are kept in separate columns and are not
 interchangeable.
@@ -565,6 +565,11 @@ superfamily label loudly instead of ingesting it.
 | shortlist families | 40 | **50** |
 | shortlist organisms | 211 | 202 |
 
+Those are the figures **as they stood when this route landed**, which is what
+a before/after is for; they are deliberately not refreshed, since restating
+them against today's totals would measure every later route as well. Current
+totals are above (55,125 candidates, 316 shortlisted over 46 families).
+
 The route's best finds are `cocJ`/`uncG`, UniProt-named "Amide-bond
 synthetase" (EC 6.2.1.-, AMP-binding) — the engineered acid + amine coupling
 class — and P0DJQ7 beta-lactam synthetase, independently the single best
@@ -760,9 +765,13 @@ periplasmic, substrate, maltose, DNA, penicillin — is still demoted.
 
 ### Where recall stops — re-probed after every change
 
-Of 480 admitted reactions, 308 resolve to a protein by direct annotation and
-19 more carry an enzyme borrowed from a chemically equivalent reaction,
-leaving **153 with no enzyme at all**. The unresolved
+Of 480 admitted reactions, 308 resolve to a protein by direct annotation, 19
+more carry an enzyme borrowed from a chemically equivalent reaction, and 7 are
+resolved through KEGG orthology — a bridge that does not pass through
+UniProt's reaction annotation at all — leaving **146 with no enzyme at all**.
+That last figure was 153 until the KEGG route was added; it is counted by
+`probe_unresolved` rather than maintained by hand, so it cannot drift from the
+route list again. The unresolved
 count is **not** a quality measure on its own: it rose 91 -> 168 when the
 substrate-distance gate was removed, purely because 214 previously *excluded*
 reactions became admitted ones. So it is re-probed rather than tracked.

@@ -22,7 +22,8 @@ against an OOD floor of 0.5041 and were refused by a stage that re-litigated
 an admission already decided upstream.
 
 Measured 2026-10-13, current pipeline (480 screened, 308 directly resolved,
-19 holding a borrowed association, 153 with no enzyme at all):
+19 holding a borrowed association, 7 resolved through KEGG orthology, 146
+with no enzyme at all):
 
       0  identifier present, UniProt returns hits   <- nothing is being lost
      15  identifier present, UniProt returns zero
@@ -65,18 +66,26 @@ DIRECT = ('enzymes_uniprot.tsv', 'precomputed_link_candidates.tsv')
 # proven to do the same acylation. A real association, but a weaker claim, so
 # it is counted separately rather than folded into either total.
 BORROWED = ('chemistry_neighbour_candidates.tsv',)
+# Resolved through KEGG orthology rather than any UniProt pivot. KEGG assigns
+# the ortholog group to the REACTION, so this is a genuine reaction->enzyme
+# link and a stronger claim than a borrowed one - but it reaches the enzymes
+# through an EC the ortholog declares rather than through an annotation on
+# the protein, so it is counted separately rather than folded into DIRECT.
+ORTHOLOG = ('kegg_ortholog_links.tsv',)
 
 
 def unresolved(hits=None):
     """Reactions with no enzyme at all, plus the two weaker categories.
 
-    Returns (frame, screened, directly_resolved, borrowed_only).
+    Returns (frame, screened, directly_resolved, borrowed_only,
+    ortholog_only).
 
     The borrowed category was previously ignored, so 19 reactions that DO
     carry an enzyme - attached by the neighbour route from a chemically
     equivalent reaction - were reported as unresolved. "172 unresolved" was
     therefore an overstatement of "no enzyme anywhere": the honest figure is
-    153, with 19 more holding a borrowed association.
+    153, with 19 more holding a borrowed association. The KEGG orthology
+    route later resolved 7 of those 153, giving the current 146.
     """
     hits = (pd.read_csv(RES / 'amide_forming_neighbours.tsv', sep='\t')
             if hits is None else hits).drop_duplicates('rxn_id')
@@ -93,8 +102,11 @@ def unresolved(hits=None):
 
     direct = gather(DIRECT)
     borrowed = gather(BORROWED) - direct
-    pending = hits[~hits.rxn_id.isin(direct | borrowed)]
-    return pending, len(hits), len(direct), len(hits[hits.rxn_id.isin(borrowed)])
+    ortholog = gather(ORTHOLOG) - direct - borrowed
+    pending = hits[~hits.rxn_id.isin(direct | borrowed | ortholog)]
+    return (pending, len(hits), len(direct),
+            len(hits[hits.rxn_id.isin(borrowed)]),
+            len(hits[hits.rxn_id.isin(ortholog)]))
 
 
 def classify(row, aliases, seed_map, foreign_map, client=search):
@@ -123,9 +135,10 @@ def classify(row, aliases, seed_map, foreign_map, client=search):
 
 
 def main():
-    pending, screened, resolved, borrowed = unresolved()
+    pending, screened, resolved, borrowed, ortholog = unresolved()
     print(f'screened {screened}  directly resolved {resolved}  '
           f'borrowed association {borrowed}  '
+          f'KEGG ortholog {ortholog}  '
           f'no enzyme at all {len(pending)}\n')
     if pending.empty:
         print('nothing unresolved')

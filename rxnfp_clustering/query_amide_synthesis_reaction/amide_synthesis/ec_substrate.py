@@ -163,6 +163,7 @@ SOURCES = (
     ('chemistry_neighbour_candidates.tsv', 'uniprot'),
     ('candidates_ranked.tsv', 'uniprot'),
     ('active_homolog_candidates.tsv', 'uniprot'),
+    ('kegg_ortholog_candidates.tsv', 'uniprot'),
 )
 
 

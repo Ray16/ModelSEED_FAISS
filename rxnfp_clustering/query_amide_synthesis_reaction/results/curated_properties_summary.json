@@ -1,6 +1,6 @@
 {
-  "queried": 54972,
-  "records_retrieved": 54972,
+  "queried": 55076,
+  "records_retrieved": 55076,
   "failed_batches": 0,
   "with_measured_kinetics": 194,
   "with_measured_kinetics_reviewed": 194,
@@ -11,9 +11,9 @@
     "ph_optimum": 0.2,
     "temperature_optimum": 0.1,
     "activity_regulation": 0.3,
-    "subcellular_location": 35.1,
-    "domain_architecture": 78.9,
-    "sequence_similarities": 74.9
+    "subcellular_location": 35.0,
+    "domain_architecture": 78.8,
+    "sequence_similarities": 74.8
   },
   "note": "Curated properties are REPORTED, not ranked on. Kinetics is a partial substitute for BRENDA: ~230 proteins here against the ~31,000 EC-bearing candidates BRENDA would cover."
 }

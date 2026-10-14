@@ -1142,6 +1142,9 @@ pdb_id	method	resolution_a	bound_components	has_atp_like	atp_like_ligand	has_met
 7WAE	ELECTRON MICROSCOPY	2.64	AGS;ARG;MG	True	AGS	True	False
 7WAF	ELECTRON MICROSCOPY	2.52	AGS;ARG;MG	True	AGS	True	False
 7WGR	ELECTRON MICROSCOPY	2.92	CA;MG;TPP	False		True	False
+7X0E	X-RAY DIFFRACTION	2.1		False		False	False
+7X0F	X-RAY DIFFRACTION	2.2	PNS	False		False	False
+7X17	X-RAY DIFFRACTION	2.5	868	False		False	False
 7XEZ	SOLUTION NMR		ZN	False		True	False
 7XFG	SOLUTION NMR		ZN	False		True	False
 7ZHC	X-RAY DIFFRACTION	1.819		False		False	False

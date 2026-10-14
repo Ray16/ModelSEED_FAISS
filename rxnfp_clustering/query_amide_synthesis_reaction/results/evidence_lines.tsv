@@ -2645,6 +2645,7 @@ Q8ZKE6	1	0	lead_family_verdict
 Q91XT9	0	0	
 Q936T0	2	1	lead_family_verdict+independent_geometric_score
 Q99487	0	0	
+Q9I1H0	1	0	lead_family_verdict
 Q9JHE3	0	0	
 Q9LDF2	0	0	
 Q9LJK3	0	0	
@@ -5761,6 +5762,57 @@ Q9PEV9	0	0
 P0ADT6	1	0	lead_family_verdict
 P0ADT7	1	0	lead_family_verdict
 P44940	1	0	lead_family_verdict
+A0A3B5ZQE2	1	0	lead_family_verdict
+A0A3B6KKA5	1	0	lead_family_verdict
+A0A3B6KL55	1	0	lead_family_verdict
+A0A3B6KMU2	1	0	lead_family_verdict
+A0A3B6KMZ0	1	0	lead_family_verdict
+A0A3B6LQ71	1	0	lead_family_verdict
+A0A3B6LRG0	1	0	lead_family_verdict
+A0A3B6LRG4	1	0	lead_family_verdict
+A0A3B6LRP9	1	0	lead_family_verdict
+A0A3B6MTN7	1	0	lead_family_verdict
+A0A3B6MUQ9	1	0	lead_family_verdict
+A0A3B6MWA7	1	0	lead_family_verdict
+A0A3B6MXD8	1	0	lead_family_verdict
+A0A452XYL1	1	0	lead_family_verdict
+A0A453LC33	1	0	lead_family_verdict
+A0A453LHP6	1	0	lead_family_verdict
+A0A453LHQ8	1	0	lead_family_verdict
+A0A453LHU8	1	0	lead_family_verdict
+A0A8I6WFA5	1	0	lead_family_verdict
+A0A8I6WRE3	1	0	lead_family_verdict
+A0A8I6XRD5	1	0	lead_family_verdict
+A0A8I7BF34	1	0	lead_family_verdict
+A0A8R7QIM7	1	0	lead_family_verdict
+A0A9R0TV42	1	0	lead_family_verdict
+A0A9R0TV56	1	0	lead_family_verdict
+A0A9R0TW85	1	0	lead_family_verdict
+A0A9R0TY95	1	0	lead_family_verdict
+A0A9R0WQW1	1	0	lead_family_verdict
+A0A9R0WRX9	1	0	lead_family_verdict
+A0A9R0XEN0	1	0	lead_family_verdict
+A0A9R0XEN4	1	0	lead_family_verdict
+A0A9R0XET1	1	0	lead_family_verdict
+A0A9R1ANW3	1	0	lead_family_verdict
+A0AAD8RWL8	1	0	lead_family_verdict
+A0AAD8RXG4	1	0	lead_family_verdict
+A0AAD8RY19	1	0	lead_family_verdict
+A0AAD8X4X9	1	0	lead_family_verdict
+A0ACD5WP96	1	0	lead_family_verdict
+A0ACD5XCX8	1	0	lead_family_verdict
+A0ACD5XFL4	1	0	lead_family_verdict
+A0ACD5XV45	1	0	lead_family_verdict
+A0ACD5XZ52	1	0	lead_family_verdict
+A0ACD5YD31	1	0	lead_family_verdict
+A0ACD5YFE6	1	0	lead_family_verdict
+A9ZPK3	1	0	lead_family_verdict
+A9ZPK8	1	0	lead_family_verdict
+A9ZPK9	1	0	lead_family_verdict
+F2CW81	1	0	lead_family_verdict
+F2E7S0	1	0	lead_family_verdict
+I1ISE5	1	0	lead_family_verdict
+I1ISE6	1	0	lead_family_verdict
 Q9FCP2	0	0	
 C4JF78	1	0	lead_family_verdict
 P49431	1	0	lead_family_verdict
@@ -6112,6 +6164,8 @@ B1J3L3	1	0	lead_family_verdict
 A0A1R3RGJ2	0	0	
 A0A1R3RGK1	1	0	lead_family_verdict
 A0A494BAY7	0	0	
+D9XF47	1	0	lead_family_verdict
+D9XF49	1	0	lead_family_verdict
 P0DJQ7	2	2	bifunctional_ligand_in_the_pocket+adenylation_competent_structure
 P14654	2	1	lead_family_verdict+independent_geometric_score
 Q44249	2	1	lead_family_verdict+independent_geometric_score
@@ -7026,6 +7080,26 @@ Q8RC54	1	0	lead_family_verdict
 Q8X612	1	0	lead_family_verdict
 Q8Z334	1	0	lead_family_verdict
 Q9KF52	1	0	lead_family_verdict
+A0A1A6H3E8	1	0	lead_family_verdict
+A0A7K5Z748	1	0	lead_family_verdict
+A0A7K6SKK0	1	0	lead_family_verdict
+A0A7K7NBD8	1	0	lead_family_verdict
+A0A7K8JAD5	1	0	lead_family_verdict
+A0A7K8TJ18	1	0	lead_family_verdict
+A0A7K9MBI2	1	0	lead_family_verdict
+A0A7K9YZI7	1	0	lead_family_verdict
+A0A7L0EVL3	1	0	lead_family_verdict
+A0A7L0H932	1	0	lead_family_verdict
+A0A7L0Q2R8	1	0	lead_family_verdict
+A0A7L0TJP4	1	0	lead_family_verdict
+A0A7L1L448	1	0	lead_family_verdict
+A0A7L3BG53	1	0	lead_family_verdict
+A0A7L3FUS4	1	0	lead_family_verdict
+A0A7L3WVL4	1	0	lead_family_verdict
+A0AA41T2K6	1	0	lead_family_verdict
+A0ACF8NUR8	1	0	lead_family_verdict
+A5PJL9	1	0	lead_family_verdict
+H9F591	1	0	lead_family_verdict
 A0A1D6F7V1	1	0	lead_family_verdict
 A0A286ZRS0	1	0	lead_family_verdict
 A0A2R8Y430	1	0	lead_family_verdict
@@ -45956,6 +46030,14 @@ A0A2A2IA11	1	0	lead_family_verdict
 A0A2A9HAM1	1	0	lead_family_verdict
 A0A2G1QNK2	1	0	lead_family_verdict
 A0A2G5P9J1	1	0	lead_family_verdict
+A0A2I0ALR8	1	0	lead_family_verdict
+A0A2I0ALV7	1	0	lead_family_verdict
+A0A2I0BF53	1	0	lead_family_verdict
+A0A2I0BF55	1	0	lead_family_verdict
+A0A2I0BF68	1	0	lead_family_verdict
+A0A2I0BF73	1	0	lead_family_verdict
+A0A2I0BF80	1	0	lead_family_verdict
+A0A2I0BF85	1	0	lead_family_verdict
 A0A2K4Y976	1	0	lead_family_verdict
 A0A2K8N688	1	0	lead_family_verdict
 A0A2N5GKI0	1	0	lead_family_verdict
@@ -46110,6 +46192,14 @@ A0A6I2M7I1	1	0	lead_family_verdict
 A0A6I3JD88	1	0	lead_family_verdict
 A0A6I8LS99	1	0	lead_family_verdict
 A0A6J5I0Y6	1	0	lead_family_verdict
+A0A6J8AHJ4	1	0	lead_family_verdict
+A0A6J8AK17	1	0	lead_family_verdict
+A0A6J8B5R1	1	0	lead_family_verdict
+A0A6J8BFL8	1	0	lead_family_verdict
+A0A6J8BY33	1	0	lead_family_verdict
+A0A6J8C450	1	0	lead_family_verdict
+A0A6J8CQL1	1	0	lead_family_verdict
+A0A6J8EVR9	1	0	lead_family_verdict
 A0A6L3VR24	1	0	lead_family_verdict
 A0A6L7F0E5	1	0	lead_family_verdict
 A0A6M5Z164	1	0	lead_family_verdict
@@ -46180,6 +46270,7 @@ A0A7Y9LD34	0	0
 A0A7Y9RV66	1	0	lead_family_verdict
 A0A7Y9YFH1	1	0	lead_family_verdict
 A0A7Z0EP45	1	0	lead_family_verdict
+A0A812BXB1	1	0	lead_family_verdict
 A0A838AD29	1	0	lead_family_verdict
 A0A838XGQ9	1	0	lead_family_verdict
 A0A839PZY2	1	0	lead_family_verdict
@@ -46204,11 +46295,21 @@ A0A852VZY9	1	0	lead_family_verdict
 A0A852WDM3	1	0	lead_family_verdict
 A0A853BV99	1	0	lead_family_verdict
 A0A853C5X4	1	0	lead_family_verdict
+A0A8B6BVP6	1	0	lead_family_verdict
+A0A8B6BVU3	1	0	lead_family_verdict
+A0A8B6CWS5	1	0	lead_family_verdict
+A0A8B6FDZ4	1	0	lead_family_verdict
+A0A8B6GBM5	1	0	lead_family_verdict
 A0A8D6Q175	1	0	lead_family_verdict
 A0A8E2LC71	1	0	lead_family_verdict
 A0A8H2JF71	1	0	lead_family_verdict
 A0A8I0KMW3	1	0	lead_family_verdict
 A0A8J8GIQ0	1	0	lead_family_verdict
+A0A8S3TWD3	1	0	lead_family_verdict
+A0A8S3TZ28	1	0	lead_family_verdict
+A0A8S3V0B4	1	0	lead_family_verdict
+A0A8S3V0E3	1	0	lead_family_verdict
+A0A8S3VC67	1	0	lead_family_verdict
 A0A917BGV4	1	0	lead_family_verdict
 A0A917PRI4	1	0	lead_family_verdict
 A0A917W2P0	1	0	lead_family_verdict
@@ -46281,6 +46382,8 @@ A0AAX2ZU25	1	0	lead_family_verdict
 A0AAX3YML7	1	0	lead_family_verdict
 A0AAX3YS57	1	0	lead_family_verdict
 A0AB38R851	1	0	lead_family_verdict
+A0ABD1FV58	1	0	lead_family_verdict
+A0ABD1FV64	1	0	lead_family_verdict
 A0ABD6CKU8	1	0	lead_family_verdict
 A0ABD6DV80	1	0	lead_family_verdict
 A0ABM5MEH1	1	0	lead_family_verdict
@@ -46548,6 +46651,7 @@ A0ABZ1I8V8	1	0	lead_family_verdict
 A0ABZ2NBU6	1	0	lead_family_verdict
 A0ABZ2ZP56	1	0	lead_family_verdict
 A0ACA8Z5W8	1	0	lead_family_verdict
+A0ACB7V850	1	0	lead_family_verdict
 A0ACC6IMB2	1	0	lead_family_verdict
 A0ACC6MEC6	1	0	lead_family_verdict
 A0ACC6S6P3	1	0	lead_family_verdict

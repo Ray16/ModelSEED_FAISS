@@ -1,0 +1,14 @@
+{
+  "unresolved_reactions": 175,
+  "with_a_kegg_alias": 24,
+  "resolved_by_an_ortholog": 10,
+  "distinct_kos": 8,
+  "ecs_expanded": [
+    "2.3.1.64",
+    "6.2.1.67",
+    "6.3.2.11"
+  ],
+  "candidates": 428,
+  "failed_batches": 0,
+  "note": "An annotation fix, not a new retrieval channel. Across all screened reactions with a KO this route reaches 89 ECs, of which 3 are new to the candidate set and none forms an amide. What was missing was the LINK from a reaction to the enzymes that perform it, not the enzymes."
+}

@@ -48,6 +48,9 @@ STAGES = (
     # ec_substrate.candidate_annotations.
     Stage('actives', 'active_homologs',
           'candidates reached from the MEASURED actives (network)', True),
+    Stage('kegg', 'kegg_orthologs',
+          'resolve unresolved reactions through KEGG orthology (network)',
+          True),
     Stage('ecsub', 'ec_substrate',
           'substrate distance from each protein\'s own Rhea reaction (network)',
           True),

@@ -4508,6 +4508,7 @@ A0A1A6C6A4		False						"DOMAIN 4..313; /note=""Cobalamin-independent methionine 
 A0A1A6GEK0		False						"DOMAIN 1..191; /note=""Glycine N-acyltransferase N-terminal""; /evidence=""ECO:0000259|Pfam:PF06021""; DOMAIN 194..281; /note=""Glycine N-acyltransferase C-terminal""; /evidence=""ECO:0000259|Pfam:PF08444"""	SIMILARITY: Belongs to the glycine N-acyltransferase family. {ECO:0000256|RuleBase:RU368002}.	False
 A0A1A6GQZ9		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..146; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A1A6GZN8		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 143..280; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
+A0A1A6H3E8		False						"DOMAIN 737..941; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A1A6HDC6		False					SUBCELLULAR LOCATION: Mitochondrion {ECO:0000256|ARBA:ARBA00004173}.	"DOMAIN 3..205; /note=""Glycine N-acyltransferase N-terminal""; /evidence=""ECO:0000259|Pfam:PF06021""; DOMAIN 207..295; /note=""Glycine N-acyltransferase C-terminal""; /evidence=""ECO:0000259|Pfam:PF08444"""	SIMILARITY: Belongs to the glycine N-acyltransferase family. {ECO:0000256|ARBA:ARBA00009110, ECO:0000256|RuleBase:RU368002}.	False
 A0A1A6TLH8		False						"DOMAIN 124..310; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the prokaryotic GSH synthase family. {ECO:0000256|HAMAP-Rule:MF_00162}.	False
 A0A1A6TWN1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..162; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -10285,6 +10286,14 @@ A0A2H9U780		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF
 A0A2H9U7F2		False						"DOMAIN 2..99; /note=""Mur ligase N-terminal catalytic""; /evidence=""ECO:0000259|Pfam:PF01225""; DOMAIN 108..292; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 314..440; /note=""Mur ligase C-terminal""; /evidence=""ECO:0000259|Pfam:PF02875"""	SIMILARITY: Belongs to the MurCDEF family. Mpl subfamily. {ECO:0000256|HAMAP-Rule:MF_02020}.	False
 A0A2H9U7K1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_00158}.		SIMILARITY: Belongs to the pantothenate synthetase family. {ECO:0000256|ARBA:ARBA00009256, ECO:0000256|HAMAP-Rule:MF_00158}.	False
 A0A2H9U9S1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_01105}.	"DOMAIN 295..434; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. ArgA subfamily. {ECO:0000256|ARBA:ARBA00009145, ECO:0000256|HAMAP-Rule:MF_01105}.	False
+A0A2I0ALR8		False								False
+A0A2I0ALV7		False								False
+A0A2I0BF53		False								False
+A0A2I0BF55		False								False
+A0A2I0BF68		False								False
+A0A2I0BF73		False								False
+A0A2I0BF80		False								False
+A0A2I0BF85		False								False
 A0A2I0CN62		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_01105}.	"DOMAIN 286..425; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. ArgA subfamily. {ECO:0000256|ARBA:ARBA00009145, ECO:0000256|HAMAP-Rule:MF_01105}.	False
 A0A2I0MVH1		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A2I0QQF6		False						"DOMAIN 107..313; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the GARS family. {ECO:0000256|ARBA:ARBA00038345, ECO:0000256|HAMAP-Rule:MF_00138}.	False
@@ -13618,6 +13627,7 @@ A0A3B5LK04		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0A3B5MNP5		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 4..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A3B5Q5V3		False						"DOMAIN 66..106; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|Pfam:PF00583"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A3B5RFH8		False						"DOMAIN 3..161; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A3B5ZQE2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6B5X1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6B786		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6CE06		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
@@ -13627,9 +13637,21 @@ A0A3B6CJ39		False							SIMILARITY: Belongs to the plant acyltransferase family.
 A0A3B6DKZ2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6DKZ6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6DLI8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6KKA5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6KL21		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 23..166; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0A3B6KL55		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6KMU2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6KMZ0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6LMI6		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 21..164; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0A3B6LQ71		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6LRG0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6LRG4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6LRP9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6MTN7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6MTZ1		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 14..157; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0A3B6MUQ9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6MWA7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A3B6MXD8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6NUK0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6PRQ7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A3B6QMN6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
@@ -15287,12 +15309,17 @@ A0A452S5P9		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0A452SH41		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123, ECO:0000256|PIRNR:PIRNR003048}.	"DOMAIN 503..656; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 745..815; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607, ECO:0000256|PIRNR:PIRNR003048}.	False
 A0A452SIR3		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..87; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A452SPY0		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A452XYL1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453D3T5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453D3X7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453D3Z4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453D3Z8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453D465		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453L4E0		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 14..157; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0A453LC33		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A453LHP6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A453LHQ8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A453LHU8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453PZK4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A453S3N6		False						"DOMAIN 61..198; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A453S4P8		False						"DOMAIN 59..196; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
@@ -19861,7 +19888,15 @@ A0A6J5I0Y6		False						"DOMAIN 26..402; /note=""AMP-dependent synthetase/ligase"
 A0A6J5K2S3		False						"DOMAIN 3..168; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A6J7ZQ13		False						"DOMAIN 224..480; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: In the C-terminal section; belongs to the MurCDEF family. {ECO:0000256|ARBA:ARBA00009060}.	False
 A0A6J7ZQN9		False						"DOMAIN 133..317; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the prokaryotic GSH synthase family. {ECO:0000256|HAMAP-Rule:MF_00162}.	False
+A0A6J8AHJ4		False						"DOMAIN 612..816; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A6J8AK17		False						"DOMAIN 636..840; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A6J8B5R1		False						"DOMAIN 408..613; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A6J8BFL8		False								False
+A0A6J8BY33		False						"DOMAIN 133..321; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A6J8C450		False						"DOMAIN 658..853; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A6J8CQL1		False						"DOMAIN 152..351; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A6J8D7B1		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 469..617; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 706..776; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
+A0A6J8EVR9		False						"DOMAIN 550..754; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A6L2PM96		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A6L2PQL5		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A6L3SVG2		False						"DOMAIN 10..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
@@ -21353,6 +21388,7 @@ A0A7K5XE28		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7K5Y6U1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 20..163; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
 A0A7K5YTQ3		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K5YX23		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
+A0A7K5Z748		False						"DOMAIN 529..730; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K6A3S4		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K6A977		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..172; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K6AJ54		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 20..163; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
@@ -21400,6 +21436,7 @@ A0A7K6R3P7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7K6RAM2		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7K6RDT3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..172; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K6SCX8		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
+A0A7K6SKK0		False						"DOMAIN 574..775; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K6SMC2		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K6SS87		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K6TMQ2		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -21443,6 +21480,7 @@ A0A7K7M408		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule
 A0A7K7MC40		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K7MNC4		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K7N8Z0		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A7K7NBD8		False						"DOMAIN 628..829; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K7NMJ4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K7P3P7		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K7PEZ2		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
@@ -21492,6 +21530,7 @@ A0A7K8I3Z6		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA
 A0A7K8INK9		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K8IRY5		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K8J2K8		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 1..89; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A7K8JAD5		False						"DOMAIN 544..745; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K8JHL5		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K8JPU9		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K8JZC7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -21512,6 +21551,7 @@ A0A7K8RZI6		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7K8STN1		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K8T906		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K8T933		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A7K8TJ18		False						"DOMAIN 521..722; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K8TQP4		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..98; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K8UJM2		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7K8ULH5		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -21551,6 +21591,7 @@ A0A7K9KNX8		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7K9LH47		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7K9LN72		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K9M8I1		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
+A0A7K9MBI2		False						"DOMAIN 324..543; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K9MF08		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7K9MSR8		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7K9N4Z6		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 1..131; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -21574,6 +21615,7 @@ A0A7K9WX63		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7K9XR17		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7K9XWP1		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7K9Y7S6		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..149; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
+A0A7K9YZI7		False						"DOMAIN 354..555; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7K9ZC29		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7K9ZX24		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0AR45		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -21589,10 +21631,12 @@ A0A7L0DYE1		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA
 A0A7L0DZS1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 20..163; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
 A0A7L0E3C1		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L0E674		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A7L0EVL3		False						"DOMAIN 516..717; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L0FK21		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L0G4Q7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0GIJ0		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L0GM71		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 53..199; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A7L0H932		False						"DOMAIN 544..745; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L0I226		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L0I2L2		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L0J0F6		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..140; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
@@ -21609,6 +21653,7 @@ A0A7L0N8J0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0A7L0NEV0		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0PT85		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L0PYU7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A7L0Q2R8		False						"DOMAIN 574..775; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L0Q720		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 3..169; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L0QIH8		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0R1Q2		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..140; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
@@ -21617,6 +21662,7 @@ A0A7L0RMC7		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA
 A0A7L0S1K4		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L0SB57		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0T4Z8		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A7L0TJP4		False						"DOMAIN 544..745; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L0U5W8		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L0UIQ6		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L0V0V0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 36..177; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -21661,6 +21707,7 @@ A0A7L1JCB2		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule
 A0A7L1JRY2		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L1JTS0		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L1KDQ3		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
+A0A7L1L448		False						"DOMAIN 528..729; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L1LB76		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L1LB92		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L1LHH4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 36..182; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -21744,6 +21791,7 @@ A0A7L2ZI25		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7L3A5L3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..199; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L3AJH6		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L3ANX2		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 20..163; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
+A0A7L3BG53		False						"DOMAIN 544..745; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L3BHV5		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 402..550; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 639..709; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L3CJW1		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L3CQJ3		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
@@ -21753,6 +21801,7 @@ A0A7L3EIS3		False							SIMILARITY: Belongs to the glutamate--cysteine ligase ty
 A0A7L3ETG5		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L3F2T4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..172; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L3FFD6		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A7L3FUS4		False						"DOMAIN 535..736; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L3FVS9		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..141; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L3HNK6		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 1..103; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0A7L3I205		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -21783,6 +21832,7 @@ A0A7L3V6S8		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0A7L3VH91		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L3VLC7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A7L3WAM0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 5..172; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
+A0A7L3WVL4		False						"DOMAIN 519..720; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A7L3X519		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 401..549; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 638..708; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A7L3XAN7		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..148; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A7L3YC47		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 54..200; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -23039,6 +23089,7 @@ A0A811ZLH0		False						"DOMAIN 9..174; /note=""N-acetyltransferase""; /evidence=
 A0A811ZUR1		False						"DOMAIN 69..220; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A812BI04		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 552..700; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 788..858; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A812BK01		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 514..662; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 750..820; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
+A0A812BXB1		False								False
 A0A813RE18		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A813U859		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A813UI84		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -23815,8 +23866,13 @@ A0A8B4TW25		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0A8B4TX71		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_00208, ECO:0000256|RuleBase:RU004135}.	"DOMAIN 25..102; /note=""Mur ligase N-terminal catalytic""; /evidence=""ECO:0000259|Pfam:PF01225""; DOMAIN 114..318; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 341..467; /note=""Mur ligase C-terminal""; /evidence=""ECO:0000259|Pfam:PF02875"""	SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. {ECO:0000256|ARBA:ARBA00005898, ECO:0000256|HAMAP-Rule:MF_00208}.	False
 A0A8B4U113		False						"DOMAIN 35..129; /note=""GS beta-grasp""; /evidence=""ECO:0000259|PROSITE:PS51986""; DOMAIN 136..473; /note=""GS catalytic""; /evidence=""ECO:0000259|PROSITE:PS51987"""	SIMILARITY: Belongs to the glutamine synthetase family. {ECO:0000256|PROSITE-ProRule:PRU01330, ECO:0000256|RuleBase:RU000384}.	False
 A0A8B5VJJ3		False						"DOMAIN 494..697; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the glutamate--cysteine ligase type 1 family. Type 1 subfamily. {ECO:0000256|ARBA:ARBA00008772}.; SIMILARITY: In the N-terminal section; belongs to the glutamate--cysteine ligase type 1 family. Type 2 subfamily. {ECO:0000256|HAMAP-Rule:MF_00782}.	False
+A0A8B6BVP6		False						"DOMAIN 643..847; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8B6BVU3		False						"DOMAIN 643..847; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8B6CWS5		False						"DOMAIN 141..329; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A8B6DU61		False					SUBCELLULAR LOCATION: Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 479..627; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
 A0A8B6DVA3		False					SUBCELLULAR LOCATION: Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 478..626; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
+A0A8B6FDZ4		False						"DOMAIN 491..695; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975""; DOMAIN 1468..1672; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8B6GBM5		False						"DOMAIN 140..345; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A8B6X117		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_00008}.	"DOMAIN 2..264; /note=""Thymidylate synthase/dCMP hydroxymethylase""; /evidence=""ECO:0000259|Pfam:PF00303"""	SIMILARITY: Belongs to the thymidylate synthase family. Bacterial-type ThyA subfamily. {ECO:0000256|HAMAP-Rule:MF_00008}.	False
 A0A8B6X3L6		False						"DOMAIN 2..168; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A8B6XAY9		False						"DOMAIN 33..116; /note=""GS beta-grasp""; /evidence=""ECO:0000259|PROSITE:PS51986""; DOMAIN 122..463; /note=""GS catalytic""; /evidence=""ECO:0000259|PROSITE:PS51987"""	SIMILARITY: Belongs to the glutamine synthetase family. {ECO:0000256|PROSITE-ProRule:PRU01330, ECO:0000256|RuleBase:RU000384}.	False
@@ -24841,15 +24897,19 @@ A0A8I6A9U5		False						"DOMAIN 62..247; /note=""ATP-grasp""; /evidence=""ECO:000
 A0A8I6AYD3		False						"DOMAIN 254..352; /note=""Glutathione synthase substrate-binding""; /evidence=""ECO:0000259|Pfam:PF03199"""	SIMILARITY: Belongs to the eukaryotic GSH synthase family. {ECO:0000256|ARBA:ARBA00010385, ECO:0000256|PIRNR:PIRNR001558}.	False
 A0A8I6RDP3		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..145; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8I6TL51		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+A0A8I6WFA5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A8I6WRE3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6WTI0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6X0Y5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6X989		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6XDE5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6XFY1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A8I6XRD5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6XRF6		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 22..165; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
 A0A8I6Y8S7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8I6Z5N2		False						"DOMAIN 59..196; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A8I7BCQ1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A8I7BF34		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8J0PE07		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..144; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8J0Q569		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..144; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8J0QC61		False						"DOMAIN 15..163; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
@@ -25213,6 +25273,7 @@ A0A8R1W505		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA
 A0A8R1WIJ7		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0A8R2HNV9		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8R7PKS0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A8R7QIM7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8R7QST7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8R7TMJ6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A8R7TN03		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
@@ -25246,7 +25307,12 @@ A0A8S2B0U9		False							SIMILARITY: Belongs to the plant acyltransferase family.
 A0A8S2BIT3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_01105}.	"DOMAIN 286..425; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. ArgA subfamily. {ECO:0000256|ARBA:ARBA00009145, ECO:0000256|HAMAP-Rule:MF_01105}.	False
 A0A8S3QYI0		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..146; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8S3QZG9		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..147; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
+A0A8S3TWD3		False						"DOMAIN 133..321; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8S3TZ28		False						"DOMAIN 128..333; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0A8S3UI83		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123}.	"DOMAIN 400..548; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 637..707; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607}.	False
+A0A8S3V0B4		False						"DOMAIN 643..847; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8S3V0E3		False						"DOMAIN 16..220; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
+A0A8S3VC67		False								False
 A0A8S3ZQ63		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..145; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8S4AB13		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..146; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0A8S4APV4		False						"DOMAIN 3..164; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -26986,15 +27052,25 @@ A0A9R0NZG5		False								False
 A0A9R0P1Q8		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496, ECO:0000256|HAMAP-Rule:MF_01106}.		SIMILARITY: Belongs to the ArgJ family. {ECO:0000256|ARBA:ARBA00006774, ECO:0000256|HAMAP-Rule:MF_01106}.	False
 A0A9R0P293		False						"DOMAIN 8..141; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A9R0TS26		False						"DOMAIN 23..142; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+A0A9R0TV42		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0TV56		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0TW85		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0TY95		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A9R0UBK0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_00208, ECO:0000256|RuleBase:RU004135}.	"DOMAIN 41..116; /note=""Mur ligase N-terminal catalytic""; /evidence=""ECO:0000259|Pfam:PF01225""; DOMAIN 131..329; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 351..482; /note=""Mur ligase C-terminal""; /evidence=""ECO:0000259|Pfam:PF02875"""	SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. {ECO:0000256|ARBA:ARBA00005898, ECO:0000256|HAMAP-Rule:MF_00208}.	False
+A0A9R0WQW1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0WRX9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A9R0XBS5		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 21..164; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
 A0A9R0XBX7		False						"DOMAIN 21..140; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+A0A9R0XEN0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0XEN4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0A9R0XET1		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A9R0XWB2		False					SUBCELLULAR LOCATION: Plastid, chloroplast {ECO:0000256|ARBA:ARBA00004229}.	"DOMAIN 257..357; /note=""Glutathione synthase substrate-binding""; /evidence=""ECO:0000259|Pfam:PF03199"""	SIMILARITY: Belongs to the eukaryotic GSH synthase family. {ECO:0000256|ARBA:ARBA00010385, ECO:0000256|PIRNR:PIRNR001558}.	False
 A0A9R0XWB4		False					SUBCELLULAR LOCATION: Plastid, chloroplast {ECO:0000256|ARBA:ARBA00004229}.	"DOMAIN 247..347; /note=""Glutathione synthase substrate-binding""; /evidence=""ECO:0000259|Pfam:PF03199"""	SIMILARITY: Belongs to the eukaryotic GSH synthase family. {ECO:0000256|ARBA:ARBA00010385, ECO:0000256|PIRNR:PIRNR001558}.	False
 A0A9R0Y9X6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A9R0YSE7		False							SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|RuleBase:RU365086}.	False
 A0A9R0ZER9		False						"DOMAIN 59..196; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0A9R1A2R8		False						"DOMAIN 59..196; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+A0A9R1ANW3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0A9R1D6B5		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 2 family. YbdK subfamily. {ECO:0000256|HAMAP-Rule:MF_01609}.	False
 A0A9R1D6H6		False						"DOMAIN 9..218; /note=""Coenzyme F420:L-glutamate ligase-like""; /evidence=""ECO:0000259|Pfam:PF01996"""	SIMILARITY: Belongs to the CofE family. {ECO:0000256|HAMAP-Rule:MF_01258}.	False
 A0A9R1P5L5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
@@ -27726,6 +27802,7 @@ A0AA41QE02		False						"DOMAIN 22..69; /note=""Acyltransferase MbtK/IucB-like co
 A0AA41R1F4		False						"DOMAIN 1..59; /note=""4Fe-4S""; /evidence=""ECO:0000259|PROSITE:PS51656"""		False
 A0AA41R5H9		False						"DOMAIN 115..265; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 334..577; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0AA41SPU5		False						"DOMAIN 59..195; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+A0AA41T2K6		False						"DOMAIN 624..835; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0AA41T2Z1		False						"DOMAIN 62..220; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0AA41T9C0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 4..170; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0AA41U9S0		False						"DOMAIN 140..347; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
@@ -28322,7 +28399,11 @@ A0AAD8JCJ8		False						"DOMAIN 62..141; /note=""ATP-grasp fold ATP-dependent car
 A0AAD8L0C5		False						"DOMAIN 58..195; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0AAD8LXF7		False						"DOMAIN 11..104; /note=""DUF8798""; /evidence=""ECO:0000259|Pfam:PF31065"""		False
 A0AAD8RU62		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 22..165; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0AAD8RWL8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0AAD8RXG4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0AAD8RY19		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0AAD8WZX2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0AAD8X4X9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0AAD8ZPS6		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..145; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 A0AAD9APL7		False					SUBCELLULAR LOCATION: Mitochondrion matrix {ECO:0000256|HAMAP-Rule:MF_03124}.	"DOMAIN 350..600; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the ArgJ family. {ECO:0000256|ARBA:ARBA00006774, ECO:0000256|HAMAP-Rule:MF_03124}.	False
 A0AAD9BGX1		False						"DOMAIN 3..164; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -30136,6 +30217,8 @@ A0ABD1ASV4		False								False
 A0ABD1B5V2		False						"DOMAIN 111..257; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNAT subfamily. {ECO:0000256|ARBA:ARBA00009342}.	False
 A0ABD1B680		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ABD1BXK1		False						"DOMAIN 99..342; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 386..525; /note=""Dihydrofolate synthetase C-terminal""; /evidence=""ECO:0000259|Pfam:PF27239"""	SIMILARITY: Belongs to the folylpolyglutamate synthase family. {ECO:0000256|ARBA:ARBA00008276}.	False
+A0ABD1FV58		False								False
+A0ABD1FV64		False								False
 A0ABD1HAQ7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ABD1IXE8		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 117..271; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
 A0ABD1IZH5		False						"DOMAIN 21..156; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
@@ -44908,6 +44991,7 @@ A0ACB7U3H6		False							SIMILARITY: Belongs to the plant acyltransferase family.
 A0ACB7U3K3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACB7U3M2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACB7U3P2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0ACB7V850		False								False
 A0ACB7XL55		False						"DOMAIN 70..204; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 A0ACB8EYE7		False						"DOMAIN 258..377; /note=""Histidine N-acetyltransferase C-terminal""; /evidence=""ECO:0000259|Pfam:PF24066"""		False
 A0ACB8FHM6		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 4..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
@@ -45311,9 +45395,16 @@ A0ACD5UXE0		False							SIMILARITY: Belongs to the plant acyltransferase family.
 A0ACD5V2I3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5V935		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5W660		False					SUBCELLULAR LOCATION: Plastid, chloroplast {ECO:0000256|ARBA:ARBA00004229}.	"DOMAIN 257..357; /note=""Glutathione synthase substrate-binding""; /evidence=""ECO:0000259|Pfam:PF03199"""	SIMILARITY: Belongs to the eukaryotic GSH synthase family. {ECO:0000256|ARBA:ARBA00010385, ECO:0000256|PIRNR:PIRNR001558}.	False
+A0ACD5WP96		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5WV68		False						"DOMAIN 58..195; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+A0ACD5XCX8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0ACD5XFL4		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5XMQ1		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 22..165; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0ACD5XV45		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0ACD5XZ52		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5Y3X4		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 22..165; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
+A0ACD5YD31		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A0ACD5YFE6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5YGQ1		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 22..165; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
 A0ACD5YQQ6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A0ACD5ZWE0		False						"DOMAIN 59..195; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
@@ -45633,6 +45724,7 @@ A0ACF8JEQ4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA0000
 A0ACF8JZE5		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 4..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0ACF8K546		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}.	"DOMAIN 4..171; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0ACF8NN64		False					SUBCELLULAR LOCATION: Endosome membrane {ECO:0000256|ARBA:ARBA00004481}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004481}. Golgi apparatus membrane {ECO:0000256|ARBA:ARBA00004395}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004395}.	"DOMAIN 39..184; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048, ECO:0000256|RuleBase:RU365086}.	False
+A0ACF8NUR8		False						"DOMAIN 639..843; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A0ACF8P9T7		False						"DOMAIN 4..169; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False
 A0ACF8PG91		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
 A0ACF8PVQ6		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496}. Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004389}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004389}. Microsome membrane {ECO:0000256|ARBA:ARBA00004111}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004111}. Mitochondrion membrane {ECO:0000256|ARBA:ARBA00004304}; Single-pass membrane protein {ECO:0000256|ARBA:ARBA00004304}.	"DOMAIN 1..115; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the NAT8 family. {ECO:0000256|ARBA:ARBA00093466}.	False
@@ -47413,6 +47505,7 @@ A5N1C9		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_000
 A5N4I2		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_00046}.		SIMILARITY: Belongs to the MurCDEF family. {ECO:0000255|HAMAP-Rule:MF_00046}.	False
 A5N4I5		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_01631}.		SIMILARITY: In the N-terminal section; belongs to the N-acetylglucosamine-1-phosphate uridyltransferase family. {ECO:0000255|HAMAP-Rule:MF_01631}.; SIMILARITY: In the C-terminal section; belongs to the transferase hexapeptide repeat family. {ECO:0000255|HAMAP-Rule:MF_01631}.	False
 A5N4L3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_00639}.		SIMILARITY: Belongs to the MurCDEF family. {ECO:0000255|HAMAP-Rule:MF_00639}.	False
+A5PJL9		False						"DOMAIN 194..398; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 A5TZF9		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 2 family. YbdK subfamily. {ECO:0000255|HAMAP-Rule:MF_01609}.	False
 A5U0G0		False						"DOMAIN 107..312; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the GARS family. {ECO:0000256|ARBA:ARBA00038345, ECO:0000256|HAMAP-Rule:MF_00138}.	False
 A5U0G8		False							SIMILARITY: Belongs to the SAICAR synthetase family. {ECO:0000255|HAMAP-Rule:MF_00137}.	False
@@ -48258,8 +48351,11 @@ A9ZPJ7		False		BIOPHYSICOCHEMICAL PROPERTIES:  pH dependence: Optimum pH is 7.5.
 A9ZPJ8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A9ZPK0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A9ZPK2		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A9ZPK3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A9ZPK5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A9ZPK7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A9ZPK8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+A9ZPK9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 A9ZPL0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 B0B8Y4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_00639}.		SIMILARITY: Belongs to the MurCDEF family. {ECO:0000255|HAMAP-Rule:MF_00639}.	False
 B0BAL3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_00639}.		SIMILARITY: Belongs to the MurCDEF family. {ECO:0000255|HAMAP-Rule:MF_00639}.	False
@@ -50125,6 +50221,8 @@ D9WYD2		False								False
 D9X8M6		False						"DOMAIN 29..121; /note=""GS beta-grasp""; /evidence=""ECO:0000259|PROSITE:PS51986""; DOMAIN 128..467; /note=""GS catalytic""; /evidence=""ECO:0000259|PROSITE:PS51987"""	SIMILARITY: Belongs to the glutamine synthetase family. {ECO:0000256|ARBA:ARBA00009897, ECO:0000256|PROSITE-ProRule:PRU01330, ECO:0000256|RuleBase:RU000384}.	False
 D9XE14		False						"DOMAIN 23..214; /note=""Coenzyme F420:L-glutamate ligase-like""; /evidence=""ECO:0000259|Pfam:PF01996""; DOMAIN 252..423; /note=""Nitroreductase""; /evidence=""ECO:0000259|Pfam:PF00881"""	SIMILARITY: In the N-terminal section; belongs to the CofE family. {ECO:0000256|HAMAP-Rule:MF_01259}.	False
 D9XF32		False						"DOMAIN 8..169; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+D9XF47		False						"DOMAIN 1006..1081; /note=""Carrier""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU00258"""	SIMILARITY: Belongs to the NRP synthetase family. {ECO:0000305}.	False
+D9XF49		False						"DOMAIN 5..80; /note=""Carrier 1""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU00258""; DOMAIN 1076..1151; /note=""Carrier 2""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU00258"""	SIMILARITY: Belongs to the NRP synthetase family. {ECO:0000305}.	False
 D9XIU2		False						"DOMAIN 8..150; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 D9XN72		False								False
 D9XRW1		False						"DOMAIN 16..152; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 165..310; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. MshD subfamily. {ECO:0000256|HAMAP-Rule:MF_01698}.	False
@@ -50363,12 +50461,14 @@ F2B9V6		False						"DOMAIN 4..166; /note=""N-acetyltransferase""; /evidence=""EC
 F2CPV9		False						"DOMAIN 59..196; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 F2CSQ3		False						"DOMAIN 47..184; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
 F2CUJ7		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+F2CW81		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2D2A3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2DBJ5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2DR65		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2DS56		False					SUBCELLULAR LOCATION: Endoplasmic reticulum membrane {ECO:0000256|ARBA:ARBA00004406}; Peripheral membrane protein {ECO:0000256|ARBA:ARBA00004406}.	"DOMAIN 11..154; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. GNA1 subfamily. {ECO:0000256|ARBA:ARBA00006048}.	False
 F2DXL6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2E0R3		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+F2E7S0		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 F2F7I3		False						"DOMAIN 107..313; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""	SIMILARITY: Belongs to the GARS family. {ECO:0000256|ARBA:ARBA00038345, ECO:0000256|HAMAP-Rule:MF_00138}.	False
 F2F8T3		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496, ECO:0000256|HAMAP-Rule:MF_00046}.	"DOMAIN 4..101; /note=""Mur ligase N-terminal catalytic""; /evidence=""ECO:0000259|Pfam:PF01225""; DOMAIN 106..274; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 298..418; /note=""Mur ligase C-terminal""; /evidence=""ECO:0000259|Pfam:PF02875"""	SIMILARITY: Belongs to the MurCDEF family. {ECO:0000256|HAMAP-Rule:MF_00046}.	False
 F2F8U4		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496, ECO:0000256|HAMAP-Rule:MF_01106}.		SIMILARITY: Belongs to the ArgJ family. {ECO:0000256|ARBA:ARBA00006774, ECO:0000256|HAMAP-Rule:MF_01106}.	False
@@ -50965,6 +51065,7 @@ H8YV65		False						"DOMAIN 5..312; /note=""Cobalamin-independent methionine synt
 H8Z4D0		False						"DOMAIN 148..326; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 H9EQS2		False					SUBCELLULAR LOCATION: Cytoplasm, cytosol {ECO:0000256|ARBA:ARBA00004514}.	"DOMAIN 1..146; /note=""MGS-like""; /evidence=""ECO:0000259|PROSITE:PS51855"""	SIMILARITY: Belongs to the PurH family. {ECO:0000256|ARBA:ARBA00007667}.	False
 H9ETY9		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
+H9F591		False						"DOMAIN 638..842; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 H9FSV8		False					SUBCELLULAR LOCATION: Cytoplasm, cytoskeleton, microtubule organizing center, centrosome {ECO:0000256|ARBA:ARBA00004300}. Nucleus {ECO:0000256|ARBA:ARBA00004123, ECO:0000256|PIRNR:PIRNR003048}.	"DOMAIN 503..656; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186""; DOMAIN 745..815; /note=""Bromo""; /evidence=""ECO:0000259|PROSITE:PS50014"""	SIMILARITY: Belongs to the acetyltransferase family. GCN5 subfamily. {ECO:0000256|ARBA:ARBA00008607, ECO:0000256|PIRNR:PIRNR003048}.	False
 H9H209		False						"DOMAIN 557..765; /note=""ATP-grasp""; /evidence=""ECO:0000259|PROSITE:PS50975"""		False
 H9JDI5		False							SIMILARITY: Belongs to the glutamate--cysteine ligase type 3 family. {ECO:0000256|ARBA:ARBA00008100, ECO:0000256|RuleBase:RU367135}.	False
@@ -51001,6 +51102,8 @@ I1D763		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496
 I1DT97		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|HAMAP-Rule:MF_00158}.		SIMILARITY: Belongs to the pantothenate synthetase family. {ECO:0000256|ARBA:ARBA00009256, ECO:0000256|HAMAP-Rule:MF_00158}.	False
 I1DUJ0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000256|ARBA:ARBA00004496, ECO:0000256|HAMAP-Rule:MF_00046}.	"DOMAIN 17..115; /note=""Mur ligase N-terminal catalytic""; /evidence=""ECO:0000259|Pfam:PF01225""; DOMAIN 120..300; /note=""Mur ligase central""; /evidence=""ECO:0000259|Pfam:PF08245""; DOMAIN 322..457; /note=""Mur ligase C-terminal""; /evidence=""ECO:0000259|Pfam:PF02875"""	SIMILARITY: Belongs to the MurCDEF family. {ECO:0000256|ARBA:ARBA00010416, ECO:0000256|HAMAP-Rule:MF_00046}.	False
 I1I090		False						"DOMAIN 63..199; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""		False
+I1ISE5		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
+I1ISE6		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 I1J311		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 I1PQL8		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
 I1PQL9		False							SIMILARITY: Belongs to the plant acyltransferase family. {ECO:0000256|ARBA:ARBA00009861}.	False
@@ -54137,6 +54240,7 @@ Q9HTZ2		False						"DOMAIN 104..287; /note=""ATP-grasp""; /evidence=""ECO:000025
 Q9HUU7		False						"DOMAIN 3..166; /note=""N-acetyltransferase""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU00532"""		False
 Q9HW02		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_00046}.		SIMILARITY: Belongs to the MurCDEF family. {ECO:0000255|HAMAP-Rule:MF_00046}.	False
 Q9HY63		False							SIMILARITY: In the N-terminal section; belongs to the Fmt family. UDP-L-Ara4N formyltransferase subfamily. {ECO:0000255|HAMAP-Rule:MF_01166}.; SIMILARITY: In the C-terminal section; belongs to the NAD(P)-dependent epimerase/dehydratase family. UDP-glucuronic acid decarboxylase subfamily. {ECO:0000255|HAMAP-Rule:MF_01166}.	False
+Q9I1H0		False						"DOMAIN 734..809; /note=""Carrier""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU00258"""	SIMILARITY: Belongs to the NRP synthetase family. {ECO:0000305}.	False
 Q9I3D2		False						"DOMAIN 2..77; /note=""Lipoyl-binding""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU01066""; DOMAIN 112..149; /note=""Peripheral subunit-binding (PSBD)""; /evidence=""ECO:0000255|PROSITE-ProRule:PRU01170"""	SIMILARITY: Belongs to the 2-oxoacid dehydrogenase family. {ECO:0000305}.	False
 Q9I4K0		False					SUBCELLULAR LOCATION: Cytoplasm {ECO:0000255|HAMAP-Rule:MF_01046}.		SIMILARITY: Belongs to the peptidase C56 family. HchA subfamily. {ECO:0000255|HAMAP-Rule:MF_01046}.	True
 Q9I640		False						"DOMAIN 3..158; /note=""N-acetyltransferase""; /evidence=""ECO:0000259|PROSITE:PS51186"""	SIMILARITY: Belongs to the acetyltransferase family. {ECO:0000256|ARBA:ARBA00008694}.	False

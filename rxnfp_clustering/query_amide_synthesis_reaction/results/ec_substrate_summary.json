@@ -2,11 +2,11 @@
   "rhea_reactions_scored": 36552,
   "rhea_amide_forming": 532,
   "ec_classes_with_amide_chemistry": 196,
-  "candidates_with_a_full_ec": 36381,
-  "candidates_given_a_ceiling": 25021,
-  "ceiling_at_or_above_0.6": 12597,
-  "candidates_citing_a_rhea_reaction": 35758,
-  "with_own_reaction_distance": 26199,
+  "candidates_with_a_full_ec": 36485,
+  "candidates_given_a_ceiling": 25122,
+  "ceiling_at_or_above_0.6": 12636,
+  "candidates_citing_a_rhea_reaction": 35832,
+  "with_own_reaction_distance": 26270,
   "own_reaction_distance_at_or_above_0.6": 12270,
   "note": "A CEILING over an EC class, not the protein's own substrate. Reported and usable as a tie-break; never in master_priority."
 }

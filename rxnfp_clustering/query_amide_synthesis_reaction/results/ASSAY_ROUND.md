@@ -29,8 +29,12 @@ of UniProtKB — not just this project's table — gives:
 | **A0A3E0HG69** | Kutzneria buriramensis | 505 | **51.4** | AS9 |
 | **R4SVL2** | Amycolatopsis keratiniphila | 521 | **50.3** | AS9 |
 
-**None of these 150 hits is among this project's 54,199 candidates, and the
-reason is structural.** They are annotated as long-chain-fatty-acid–CoA
+**Not one of these 150 hits was reachable by any annotation-derived route —
+all 54,199 candidates as the set then stood — and the reason is structural.**
+(They are candidates *now*: the `active_homolog` route was built precisely to
+admit them, and brought in 822 at ≥40% identity. The disjointness below is
+therefore a statement about what annotation can reach, not about the current
+candidate set.) They are annotated as long-chain-fatty-acid–CoA
 ligases (53) and acyl-CoA synthetases (25) — that is, for **thioester**
 chemistry. A reaction-anchored pipeline finds enzymes through the reaction
 they are annotated to catalyse, so it cannot reach one whose annotation
@@ -50,7 +54,7 @@ the sample size precisely because a null result on 150 could be chance:
 deep search, all 3 producers vs UniProtKB  2,952 distinct hits
   >= 45% identity to a measured producer     259
   >= 40%                                     822
-  already among our 54,199                     0
+  already among the 54,199 annotation-derived   0
   of the 259, with an amide-forming
   curated reaction or EC ceiling               0
 ```

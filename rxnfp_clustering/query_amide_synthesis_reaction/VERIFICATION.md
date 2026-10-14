@@ -12,7 +12,7 @@ described with the others below: it refuses to run on a superseded input.
 | every analysis covers every candidate | `tools/audit_coverage.py` | **complete**, after it found 4 stages a route behind |
 | external recall | `tools/recall_audit.py names` | **100%** on every named truth set; 0/4 negative controls |
 | EC-class recall | `tools/recall_audit.py ec` | no actionable gap; every zero verified as correct exclusion |
-| retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 153 with no enzyme |
+| retrieval completeness | `tools/probe_unresolved.py` | **0 actionable losses**; 308 resolved, 19 borrowed, 7 via KEGG orthology, 146 with no enzyme |
 | annotation ceiling | `tools/verify_annotation_ceiling.py` | **0 of 120** blank fields exist upstream |
 | ranking validity | `tools/validate_against_activity.py` | **unvalidatable at n=3**, CI 0.23–0.85 |
 | family chemistry | `run_all.py --only famval` | 54 lead / 16 watch / 33 reject |
