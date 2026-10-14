@@ -1,16 +1,16 @@
-# First assay round: ten proteins, three hypotheses
+# First assay round: eleven proteins, three hypotheses
 
 Three readings of this project's evidence produce disjoint lists — A and B
-share at most 8.3% sequence identity, and C is a different protein fold and
-a third the size of either — so at least two are substantially wrong and
-nothing here can say which. Spreading the round across all three is the
-honest hedge.
+share at most 8.3% sequence identity, and C is built on neither annotation
+similarity nor homology but on measured kinetics for the acceptor
+half-reaction — so at least two are substantially wrong and nothing here
+can say which. Spreading the round across all three is the honest hedge.
 
 | | basis | fold | size |
 |---|---|---|---|
 | **A** | substrate chemistry, from annotation | PF06276 / PF01225 / PF02655 / PF00120 | 363–612 aa |
 | **B** | sequence identity to a measured producer | PF00501;PF13193 (ANL) | 505–524 aa |
-| **C** | measured kinetics on the acceptor chemistry | PF00583 (GNAT) | 161–172 aa |
+| **C** | measured kinetics on the acceptor chemistry | PF05257;PF03738 and PF00583 (GNAT) | 161–619 aa |
 
 ## A. Chemistry hypothesis — four independent lines of evidence
 
@@ -57,14 +57,31 @@ BLAST reaches **65.3%**. Full ranking: `results/blast_actives_ranked.tsv`.
 Groups A and B both reason about the **donor**. HMDA is an **acceptor**, and
 SABIO-RK's 11,445 measured parameters answer the acceptor question directly:
 which enzymes have published kinetics acylating a free primary amine on an
-aliphatic polyamine. Exactly one EC does — **2.3.1.57, diamine
-N-acetyltransferase** — with K_M on spermidine of 50–130 µM, a substrate
-K_M rather than an inhibition constant, and k_cat/K_M 3.75×10⁵ M⁻¹s⁻¹.
+aliphatic polyamine. **Three ECs do**, and two of them are EC 6.3 — ATP-
+dependent amide ligases, the same bond-forming chemistry as the nylon diad:
+
+```
+6.3.1.8  glutathionylspermidine synthase   Km spermidine 7.4 mM    ATP
+6.3.1.9  trypanothione synthase            Km spermidine 92 uM - 1.4 mM  ATP
+2.3.1.57 diamine N-acetyltransferase       Km spermidine 50-130 uM  acetyl-CoA
+```
 
 | protein | organism | aa | why |
 |---|---|---:|---|
+| **P0AES0** gss b2988 | Escherichia coli K12 | 619 | **already converged at 3 lines**; EC 6.3.1.8, ATP-dependent; **nine** structures (2IO7–2IOB, 3A2Y–3A30, 3O98); reviewed; *E. coli* |
 | **P21340** paiA BSU32150 | Bacillus subtilis (strain 168) | 172 | EC 2.3.1.57; reviewed; structure 1TIQ; bacterial, trivially expressible |
 | **Q9HL57** paiA Ta0374 | Thermoplasma acidophilum | 161 | EC 2.3.1.57; reviewed; **four** structures (3F0A/3FIX/3K9U/3NE7); thermophilic archaeon |
+
+**P0AES0 is the strongest single candidate this project has produced and it
+was missing from this page.** It was already in the converged 17 on three
+independent lines — a proven free-diamine acylation, a bifunctional ligand
+in the pocket, a cofactor-bound structure — and the kinetics add a fourth
+kind of evidence from outside the pipeline entirely: measured K_M on
+acylating a free polyamine amine, by ATP-dependent ligation, which is
+mechanistically the nylon bond. It sits at substrate distance 0.7384, just
+under the 0.75 floor. The floor was deliberately not lowered to rescue this
+family; it does not need to be, because the case for this protein now rests
+on measured kinetics rather than on moving a threshold.
 
 Both arrived through this project's own reaction screen and then scored
 **0.555** on substrate distance — the best anything in this EC reaches is
@@ -74,14 +91,19 @@ are in this round because a *measured* K_M on polyamine acylation is
 evidence of a different kind from anything in A or B, not because the
 ranking liked them.
 
-**Two caveats, and they are the reason this is a third of the round rather
-than the whole of it.** This is CoA-dependent acyl transfer, not
-ATP-dependent ligation: it implies a route through adipoyl-CoA rather than
-free adipate, which is a different process decision upstream. And the
-measured acceptors are longer branched polyamines — spermidine and spermine
-— with nothing measured on putrescine or HMDA, so acceptance of a short
-unbranched C6 diamine is untested. What is established is the mechanism and
-the pocket, not the substrate.
+**The caveats, which differ by protein.** For `P21340` and `Q9HL57` the
+chemistry is CoA-dependent acyl transfer rather than ATP-dependent
+ligation, so they imply a route through adipoyl-CoA rather than free
+adipate — a different process decision upstream. `P0AES0` does not carry
+that caveat: EC 6.3.1.8 is an ATP-dependent ligase, which is why it leads
+the group. Carry both mechanisms into the round rather than choosing now;
+they are cheap to run side by side and the assay settles it.
+
+The caveat that applies to **all three** is the substrate. Every measured
+acceptor here is a longer branched polyamine — spermidine, spermine — and
+nothing has been measured on putrescine or HMDA. What is established is
+the mechanism and the pocket, not that a short unbranched C6 diamine is
+accepted.
 
 Also note what is *not* here: **no enzyme anywhere in the 11,445 parameters
 has measured kinetics on two rungs of the free-diamine series** —
@@ -131,7 +153,10 @@ something no further computation can.**
 Group A has mechanistic support and no measured support. Group B has the only
 measured support on the diad and reaches just ~30% identity to it — far
 enough that function is not guaranteed. Group C has measured support for the
-*acceptor half-reaction* and none on the diad, from a different fold.
+*acceptor half-reaction* and none on the diad, from different folds — and
+in `P0AES0` it also has the only protein in the round that is
+simultaneously converged on three pipeline lines and backed by measured
+kinetics for its chemistry.
 
 Running only A tests a hypothesis unconnected to any data. Running only B
 assumes the panel's family is the answer, when the panel is 49 proteins
@@ -140,9 +165,13 @@ pocket and a mechanism on a substrate nobody has measured. Each failure mode
 is different, which is the whole argument for spending the round across
 them.
 
-C is also the cheapest to run: 161 and 172 residues against 363–612 for A
-and ~520 for B, both reviewed, both with solved structures, one of them
-thermophilic. If a round has to be cut, cut it last rather than first.
+Two of C are also the cheapest proteins in the round: `P21340` and
+`Q9HL57` at 172 and 161 residues, against 363–612 for A and ~520 for B,
+both reviewed with solved structures, one thermophilic. `P0AES0` is 619 and
+so no cheaper than group A, but it is *E. coli*, reviewed, and has nine
+structures. If the round has to be cut, cut the two small CoA-dependent
+ones last rather than first — they are nearly free — and do not cut
+`P0AES0` at all.
 
 **Include AS17 or AS9 as a positive control.** If the assay cannot
 distinguish a known producer, nothing below it is interpretable — the same
