@@ -242,7 +242,48 @@ def gather(accessions, search=uniprot.search):
         'BRENDA': 'brenda', 'Organism (ID)': 'taxon_id'})
 
 
-def render(row):
+def kinetics_note(ec, digest):
+    """Measured kinetics for this protein's EC, or '' when none are held.
+
+    SABIO-RK supplies these without credentials, which the BRENDA line in
+    these dossiers used to say was impossible. The values are per EC and
+    not per protein - they describe the chemistry a relative was measured
+    performing - so the line says exactly that rather than presenting them
+    as this protein's own constants.
+    """
+    if digest is None or len(digest) == 0 or not ec or pd.isna(ec):
+        return ''
+    wanted = {part.strip() for part in str(ec).split(';') if part.strip()}
+    rows = digest[digest.ec.astype(str).isin(wanted)]
+    if rows.empty:
+        return ''
+    # A bifunctional protein matches more than one EC and each contributes
+    # its own row, so an unlabelled list reads as two values for the same
+    # constant. Name the EC whenever there is more than one.
+    multiple = rows.ec.astype(str).nunique() > 1
+    shown = []
+    for _, row in rows.sort_values(['ec', 'parameter']).iterrows():
+        value = row.median_si
+        unit = str(row.unit_si or '')
+        if pd.isna(value):
+            continue
+        label = f'EC {row.ec} ' if multiple else ''
+        if unit == 'M':
+            # Molar is unreadable at these magnitudes; uM is what a bench
+            # scientist thinks in.
+            shown.append(f'{label}{row.parameter} median '
+                         f'{value * 1e6:,.0f} uM (n={int(row.n)})')
+        else:
+            shown.append(f'{label}{row.parameter} median {value:.3g} {unit} '
+                         f'(n={int(row.n)})')
+    if not shown:
+        return ''
+    return ('**Measured kinetics for this EC** (SABIO-RK; a property of the '
+            'chemistry, measured on relatives rather than this protein) — '
+            + '; '.join(shown))
+
+
+def render(row, digest=None):
     """One candidate, as markdown."""
     name = _text(row.get('protein_name'), 120) or _text(row.get('gene')) \
         or row['uniprot']
@@ -351,10 +392,17 @@ def render(row):
         lines += ['**Mutagenesis** (residue-level functional data)', '']
         lines += [f'- {m[:160]}' for m in mutations[:8]] + ['']
 
+    note = kinetics_note(row.get('ec'), digest)
+    if note:
+        lines += [note, '']
+
     brenda = _text(row.get('brenda'))
     if brenda:
-        lines += [f'**BRENDA** `{brenda}` — an entry exists; the API needs '
-                  'credentials this project does not have', '']
+        extra = ('' if note else
+                 ' — an entry exists; the API needs credentials this '
+                 'project does not have, and SABIO-RK holds nothing for '
+                 'this EC either')
+        lines += [f'**BRENDA** `{brenda}`{extra}', '']
     pubmed = _text(row.get('pubmed'))
     if pubmed:
         ids = [p for p in pubmed.replace(' ', '').split(';') if p][:8]
@@ -488,7 +536,17 @@ def main():
         'With three measured positives in the reference panel, no ranking '
         'here can be validated.', '',
         '---', '']
-    body = [render(row) for _, row in table.iterrows()]
+    # Measured kinetics by EC, written by the `kinetics` stage. Optional,
+    # so the dossier does not depend on stage order.
+    digest_path = RES / 'kinetics_by_ec.tsv'
+    digest = (pd.read_csv(digest_path, sep='\t', low_memory=False)
+              if digest_path.exists() else None)
+    if digest is not None:
+        covered = sum(bool(kinetics_note(r.get('ec'), digest))
+                      for _, r in table.iterrows())
+        print(f'measured kinetics available for {covered} of {len(table)} '
+              'dossiers', flush=True)
+    body = [render(row, digest) for _, row in table.iterrows()]
     (RES / 'CANDIDATES.md').write_text('\n'.join(header + body) + '\n')
 
     counts = {c: int(table[c].notna().sum()) for c in

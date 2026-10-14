@@ -300,3 +300,53 @@ class AssayPickCoverageTests(unittest.TestCase):
             'evidence_lines': '30.6% identity to AS9, a measured producer',
             'n_discriminating_lines': 0})
         self.assertNotIn('independent lines:', dos.render(row))
+
+
+class TestKineticsNote(unittest.TestCase):
+    """Dossiers used to say kinetics needed credentials. They do not."""
+
+    def digest(self, rows=None):
+        return pd.DataFrame(rows or [
+            {'ec': '6.3.1.8', 'parameter': 'Km', 'n': 3,
+             'median_si': 1.175e-3, 'unit_si': 'M'},
+        ])
+
+    def test_molar_is_rendered_in_micromolar(self):
+        note = dos.kinetics_note('6.3.1.8', self.digest())
+        self.assertIn('1,175 uM', note)
+        self.assertIn('n=3', note)
+
+    def test_non_molar_units_are_left_alone(self):
+        digest = self.digest([{'ec': '6.3.1.8', 'parameter': 'kcat', 'n': 1,
+                               'median_si': 4.2, 'unit_si': 's^(-1)'}])
+        self.assertIn('4.2 s^(-1)', dos.kinetics_note('6.3.1.8', digest))
+
+    def test_bifunctional_protein_labels_each_ec(self):
+        """Two ECs each contribute a Km; unlabelled they read as one."""
+        digest = self.digest([
+            {'ec': '3.5.1.78', 'parameter': 'Km', 'n': 1,
+             'median_si': 5.6e-3, 'unit_si': 'M'},
+            {'ec': '6.3.1.8', 'parameter': 'Km', 'n': 3,
+             'median_si': 1.175e-3, 'unit_si': 'M'},
+        ])
+        note = dos.kinetics_note('3.5.1.78; 6.3.1.8', digest)
+        self.assertIn('EC 3.5.1.78 Km', note)
+        self.assertIn('EC 6.3.1.8 Km', note)
+
+    def test_single_ec_is_not_labelled(self):
+        self.assertNotIn('EC 6.3.1.8 Km',
+                         dos.kinetics_note('6.3.1.8', self.digest()))
+
+    def test_absent_ec_gives_nothing(self):
+        self.assertEqual(dos.kinetics_note('1.1.1.1', self.digest()), '')
+
+    def test_missing_inputs_do_not_raise(self):
+        self.assertEqual(dos.kinetics_note(None, self.digest()), '')
+        self.assertEqual(dos.kinetics_note('6.3.1.8', None), '')
+        self.assertEqual(
+            dos.kinetics_note('6.3.1.8', pd.DataFrame()), '')
+
+    def test_unparseable_median_is_skipped_not_printed(self):
+        digest = self.digest([{'ec': '6.3.1.8', 'parameter': 'Km', 'n': 1,
+                               'median_si': None, 'unit_si': 'M'}])
+        self.assertEqual(dos.kinetics_note('6.3.1.8', digest), '')

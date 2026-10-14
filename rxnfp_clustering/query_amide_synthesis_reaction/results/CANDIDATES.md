@@ -82,7 +82,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Note** MISCELLANEOUS: Was identified as a high-confidence drug target.
 
-**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [9634230](https://pubmed.ncbi.nlm.nih.gov/9634230/), [19099550](https://pubmed.ncbi.nlm.nih.gov/19099550/), [21969609](https://pubmed.ncbi.nlm.nih.gov/21969609/)
 
@@ -116,7 +116,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the PylC family. .
 
-**BRENDA** `6.3.2.59;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.59;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [16980466](https://pubmed.ncbi.nlm.nih.gov/16980466/), [22985965](https://pubmed.ncbi.nlm.nih.gov/22985965/)
 
@@ -264,7 +264,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Function** FUNCTION: Involved in dapdiamide antibiotics biosynthesis. Ligates fumarate and 2,3-diaminopropionate (DAP) to form N-beta-fumaroyl-DAP. Can also form N-succinoyl-DAP from succinate and DAP, with lower efficiency. .
 
-**BRENDA** `6.3.2.46;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.46;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [20945916](https://pubmed.ncbi.nlm.nih.gov/20945916/), [19807062](https://pubmed.ncbi.nlm.nih.gov/19807062/)
 
@@ -320,7 +320,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
 
-**BRENDA** `6.3.2.55;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.55;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
@@ -350,7 +350,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
 
-**BRENDA** `6.3.2.54;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.54;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
@@ -421,7 +421,9 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Note** MISCELLANEOUS: Expression of this protein in E.coli results in 50% incorporation of L-Lys into the peptidoglycan (which normally contains meso-diaminopimelate instead), leading to abnormal morphological changes and subsequent cell lysis. .
 
-**BRENDA** `6.3.2.7;` — an entry exists; the API needs credentials this project does not have
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — Km median 122 uM (n=3); kcat median 9 s^(-1) (n=3)
+
+**BRENDA** `6.3.2.7;`
 
 **Literature** [14114846](https://pubmed.ncbi.nlm.nih.gov/14114846/), [10498701](https://pubmed.ncbi.nlm.nih.gov/10498701/), [14996801](https://pubmed.ncbi.nlm.nih.gov/14996801/), [20659527](https://pubmed.ncbi.nlm.nih.gov/20659527/)
 
@@ -456,6 +458,8 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
 
 **Note** MISCELLANEOUS: The peptidoglycan of T.maritima was shown to contain approximate amounts of both enantiomers of lysine and no diaminopimelate.
+
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — Km median 122 uM (n=3); kcat median 9 s^(-1) (n=3)
 
 **Literature** [10360571](https://pubmed.ncbi.nlm.nih.gov/10360571/), [16595662](https://pubmed.ncbi.nlm.nih.gov/16595662/)
 
@@ -492,7 +496,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the MurCDEF family. MurE subfamily. .
 
-**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.13;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [2692800](https://pubmed.ncbi.nlm.nih.gov/2692800/), [1630901](https://pubmed.ncbi.nlm.nih.gov/1630901/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [9166795](https://pubmed.ncbi.nlm.nih.gov/9166795/), [2198024](https://pubmed.ncbi.nlm.nih.gov/2198024/), [2269304](https://pubmed.ncbi.nlm.nih.gov/2269304/), [3905407](https://pubmed.ncbi.nlm.nih.gov/3905407/)
 
@@ -522,7 +526,7 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: Belongs to the IucA/IucC family. .
 
-**BRENDA** `6.3.2.56;` — an entry exists; the API needs credentials this project does not have
+**BRENDA** `6.3.2.56;` — an entry exists; the API needs credentials this project does not have, and SABIO-RK holds nothing for this EC either
 
 **Literature** [14688077](https://pubmed.ncbi.nlm.nih.gov/14688077/), [19775248](https://pubmed.ncbi.nlm.nih.gov/19775248/)
 
@@ -574,7 +578,9 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 - 391: E->A: 2-fold decrease in GSH affinity, 60-fold decrease in spermidine activity, and 10-fold decrease in synthetase activity.
 - 392: E->A: 33-fold decrease in GSH affinity, 13-fold decrease in spermidine activity, and 6-fold decrease in synthetase activity.
 
-**BRENDA** `3.5.1.78;6.3.1.8;` — an entry exists; the API needs credentials this project does not have
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — EC 3.5.1.78 Km median 5,600 uM (n=1); EC 3.5.1.78 kcat median 5.1 s^(-1) (n=1); EC 3.5.1.78 kcat/Km median 910 M^(-1)*s^(-1) (n=1); EC 6.3.1.8 Km median 1,175 uM (n=3); EC 6.3.1.8 kcat median 4.2 s^(-1) (n=1)
+
+**BRENDA** `3.5.1.78;6.3.1.8;`
 
 **Literature** [7775463](https://pubmed.ncbi.nlm.nih.gov/7775463/), [9278503](https://pubmed.ncbi.nlm.nih.gov/9278503/), [16738553](https://pubmed.ncbi.nlm.nih.gov/16738553/), [9398217](https://pubmed.ncbi.nlm.nih.gov/9398217/), [8999955](https://pubmed.ncbi.nlm.nih.gov/8999955/), [23097746](https://pubmed.ncbi.nlm.nih.gov/23097746/), [17124497](https://pubmed.ncbi.nlm.nih.gov/17124497/), [20530482](https://pubmed.ncbi.nlm.nih.gov/20530482/)
 
@@ -610,7 +616,9 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
-**BRENDA** `6.3.1.8;` — an entry exists; the API needs credentials this project does not have
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — Km median 1,175 uM (n=3); kcat median 4.2 s^(-1) (n=1)
+
+**BRENDA** `6.3.1.8;`
 
 **Literature** [9677355](https://pubmed.ncbi.nlm.nih.gov/9677355/), [1304372](https://pubmed.ncbi.nlm.nih.gov/1304372/)
 
@@ -644,7 +652,9 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
 
-**BRENDA** `6.3.1.9;` — an entry exists; the API needs credentials this project does not have
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — Ki median 613 uM (n=12); Km median 69 uM (n=32); kcat median 1.9 s^(-1) (n=24)
+
+**BRENDA** `6.3.1.9;`
 
 **Literature** [9677355](https://pubmed.ncbi.nlm.nih.gov/9677355/), [1304372](https://pubmed.ncbi.nlm.nih.gov/1304372/), [9115252](https://pubmed.ncbi.nlm.nih.gov/9115252/)
 
@@ -672,7 +682,9 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the MurCDEF family. .
 
-**BRENDA** `6.3.2.29;` — an entry exists; the API needs credentials this project does not have
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — EC 6.3.2.29 Km median 450 uM (n=1); EC 6.3.2.30 Km median 200 uM (n=3)
+
+**BRENDA** `6.3.2.29;`
 
 **Literature** [36042318](https://pubmed.ncbi.nlm.nih.gov/36042318/)
 
@@ -702,6 +714,8 @@ Entries marked a NEAR MISS did not reach the convergence threshold and are inclu
 **Function** FUNCTION: Catalyzes the formation of an amide bond between glutathione (GSH) and spermidine coupled with hydrolysis of ATP; also catalyzes the opposing reaction, i.e. the hydrolysis of glutathionylspermidine (Gsp) back to glutathione and spermidine. May act synergistically with glutaredoxin to regulate the redox environment and defend against oxidative damage. .
 
 **Family (UniProt)** SIMILARITY: In the C-terminal section; belongs to the glutathionylspermidine synthase preATP-grasp family. .
+
+**Measured kinetics for this EC** (SABIO-RK; a property of the chemistry, measured on relatives rather than this protein) — EC 3.5.1.78 Km median 5,600 uM (n=1); EC 3.5.1.78 kcat median 5.1 s^(-1) (n=1); EC 3.5.1.78 kcat/Km median 910 M^(-1)*s^(-1) (n=1); EC 6.3.1.8 Km median 1,175 uM (n=3); EC 6.3.1.8 kcat median 4.2 s^(-1) (n=1)
 
 **Literature** [12384590](https://pubmed.ncbi.nlm.nih.gov/12384590/), [12704152](https://pubmed.ncbi.nlm.nih.gov/12704152/)
 
