@@ -30,6 +30,16 @@ from amide_synthesis.infrastructure.paths import RES
 RUN = RES / 'top10_cofold_step2'
 BD_LOW, BD_HIGH, NEAR_A = 90.0, 120.0, 3.5
 
+# Enzyme/gene name per UniProt accession; always label as "Gene (Accession)".
+GENE = {'P78061': 'PuuA', 'P39641': 'BacD', 'Q9KZC7': 'GlnA3', 'Q9RDS6': 'GlnA2sc',
+        'I3R584': 'GlnA2hf', 'Q9WY79': 'MurE', 'E2JA32': 'DdaG', 'Q2FW70': 'SfnaD',
+        'Q2G1M9': 'SbnE', 'A0A0F7RJ52': 'AsbA', 'Q2G1N1': 'SbnC', 'Q2G1M8': 'SbnF',
+        'Q81RQ8': 'AsbB'}
+
+
+def label(accession):
+    return f'{GENE.get(accession, accession)} ({accession})'
+
 
 def bonded(a, b, cutoff):
     return a.pos.dist(b.pos) <= cutoff
@@ -95,11 +105,16 @@ def summarise(item):
     inv = 1 / d
     near = (d < NEAR_A) & (a >= BD_LOW) & (a <= BD_HIGH)
     row = {
-        'name': name, 'accession': item['accession'], 'route': item['route'],
+        'name': name, 'accession': item['accession'],
+        'enzyme': label(item['accession']), 'route': item['route'],
         'weighted_distance_A': float((d * inv).sum() / inv.sum()),
         'harmonic_distance_A': float(50 / inv.sum()),
         'min_distance_A': float(d.min()), 'median_distance_A': float(np.median(d)),
         'mean_BurgiDunitz_deg': float(a.mean()),
+        # Reachability: an HMDA amine within 3.5 A of the acyl carbon, angle-free.
+        # This is the robust accommodation signal; the Burgi-Dunitz gate below is stricter
+        # and fragile on static cofold poses, so it is reported as secondary.
+        'reachable_fraction_3p5A': float((d < NEAR_A).mean()),
         'near_attack_fraction': float(near.mean()),
         'n_models': 50,
     }
@@ -112,19 +127,24 @@ def main():
     for item in manifest['inputs']:
         row, d, a = summarise(item)
         rows.append(row); poses[row['name']] = (d, a)
-    rows.sort(key=lambda r: (-r['near_attack_fraction'], r['min_distance_A']))
+    rows.sort(key=lambda r: (-r['reachable_fraction_3p5A'], -r['near_attack_fraction'],
+                             r['min_distance_A']))
     with (RUN / 'step2_near_attack.tsv').open('w', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), delimiter='\t')
         writer.writeheader(); writer.writerows(rows)
     summary = {
         'n_enzymes': len(rows),
+        'enzymes_amine_reachable': sum(r['reachable_fraction_3p5A'] > 0 for r in rows),
         'enzymes_with_any_near_attack': sum(r['near_attack_fraction'] > 0 for r in rows),
         'median_min_distance_A': float(np.median([r['min_distance_A'] for r in rows])),
         'interpretation': (
-            'Near-attack fraction = poses with amine-N to carbonyl-C < 3.5 A and '
-            'Burgi-Dunitz angle in [90,120] deg. Measures whether HMDA is sterically '
-            'accommodated for attack, not catalytic rate; step-2 geometry did not rank '
-            'activity on the experimental panel (step-1 adenylation did).'),
+            'Primary accommodation signal = reachable_fraction_3p5A: poses with an HMDA '
+            'amine-N within 3.5 A of the acyl carbonyl-C (distance only). near_attack_fraction '
+            'adds a Burgi-Dunitz angle gate [90,120] deg, which is stricter and fragile on '
+            'static cofold poses. Both are steric feasibility for the C6 diamine, not catalytic '
+            'rate; step-2 geometry did not rank activity on the experimental panel (step-1 did). '
+            'Output lacks hydrogens, so the closest amine-N is used (neutral vs protonated amine '
+            'not distinguishable geometrically).'),
         'enzymes': rows,
     }
     (RUN / 'step2_near_attack.json').write_text(json.dumps(summary, indent=2))
@@ -149,14 +169,13 @@ def figure(rows, poses, path):
     fig, (bar, scat) = plt.subplots(1, 2, figsize=(17, 0.52 * len(rows) + 2.5),
                                     gridspec_kw={'width_ratios': [1, 1.25]})
 
-    order = sorted(rows, key=lambda r: r['near_attack_fraction'])
-    labels = [f"{r['accession']} ({'AMP' if r['route'] == 'acyl_adenylate' else 'acyl-P'})"
-              for r in order]
-    bar.barh(range(len(order)), [r['near_attack_fraction'] for r in order],
+    order = sorted(rows, key=lambda r: r['reachable_fraction_3p5A'])
+    labels = [r['enzyme'] for r in order]
+    bar.barh(range(len(order)), [r['reachable_fraction_3p5A'] for r in order],
              color=[_route_colour(r['route']) for r in order])
     bar.set_yticks(range(len(order))); bar.set_yticklabels(labels)
-    bar.set_xlabel('HMDA near-attack fraction'); bar.set_xlim(0, 1)
-    bar.set_title('Fraction of poses in near-attack')
+    bar.set_xlabel('HMDA amine reachable (<3.5 Å) fraction'); bar.set_xlim(0, 1)
+    bar.set_title('Fraction of poses with amine in reach')
 
     # Near-attack region: d < 3.5 A and Burgi-Dunitz angle in [90, 120] deg.
     scat.axhspan(BD_LOW, BD_HIGH, xmax=(NEAR_A - 2.5) / (9 - 2.5), color='#CCCCCC', alpha=0.5,
@@ -197,7 +216,8 @@ def facet_figure(rows, poses, path):
         ax.axhspan(BD_LOW, BD_HIGH, xmax=(NEAR_A - 2.5) / (9 - 2.5), color='#CCCCCC', alpha=0.5)
         ax.axvline(NEAR_A, color='#888888', ls='--', lw=1.2)
         ax.scatter(d, a, s=30, alpha=0.6, color=_route_colour(r['route']), edgecolor='none')
-        ax.set_title(f"{r['accession']}  ({r['near_attack_fraction']*100:.0f}%)", fontsize=18)
+        ax.set_title(f"{r['enzyme']}  reach {r['reachable_fraction_3p5A']*100:.0f}%",
+                     fontsize=16)
         ax.set_xlim(2.5, 9); ax.set_ylim(0, 180)
     for ax in axes[len(rows):]:
         ax.axis('off')

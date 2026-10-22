@@ -70,14 +70,24 @@ well adipate is positioned for adenylylation/phosphorylation, and is the geometr
 discriminated active amide synthetases on the experimental panel. It says nothing on
 its own about amide-bond formation.
 
-**Step 2 tests amine accommodation, not activity.** The step-2 cofolds place the
-activated acyl intermediate (acyl-adenylate + 1 Mg, or acyl-phosphate + ADP + 2 Mg,
+**Step 2 tests conditional amine accommodation, not activity.** The step-2 cofolds place
+the activated acyl intermediate (acyl-adenylate + 1 Mg, or acyl-phosphate + ADP + 2 Mg,
 per the enzyme's mechanism) with HMDA carrying one neutral nucleophilic amine, to ask
-whether the C6 diamine can reach a near-attack geometry — relevant because native
-amine-role substrates here span ammonia-sized to large polyamines. Five of thirteen
-enzymes present an amine for near-attack. This is a steric-accommodation readout, not
-an activity ranking: step-2 intermediate-state geometry was non-predictive of measured
-activity on the experimental panel.
+whether the C6 diamine can reach the activated carbonyl — relevant because native
+amine-role substrates here span ammonia-sized to large polyamines. The primary readout
+is reachability (fraction of poses with an HMDA amine within 3.5 Å of the acyl carbon);
+the Bürgi–Dunitz angle gate [90,120]° is reported as a stricter, more fragile secondary
+metric. GlnA3 (Q9KZC7) is the only enzyme strong on both half-reactions.
+
+Three caveats condition this readout. (i) The amine is held by a **forced pocket
+restraint** (`force: true`, the amine within 10 Å of ~20 residues derived from that
+enzyme's own step-1 adipate pose); without it a small flexible diamine strands on the
+surface, but it also means accommodation is measured *given* HMDA is localized to the
+acid pocket, and the per-enzyme restraint shells differ. (ii) The output has no
+hydrogens, so the closest amine nitrogen is used — the neutral vs protonated amine
+cannot be told apart geometrically. (iii) Step-2 intermediate-state geometry was
+non-predictive of measured activity on the experimental panel, so this is a feasibility
+screen, not a ranking; step-1 adenylation geometry carried the activity signal.
 
 **Boltz-2 gives geometry, not affinity, on a non-native substrate.** A favourable pose
 is not evidence that adipate/HMDA binds or turns over. Composition and geometric
