@@ -45,6 +45,24 @@ Pool definition: `pool.tsv` (status column distinguishes the three increments).
   fresh `--out` dir per run, and verify MSA query==sequence before folding. The 86 set
   was verified clean; the 25 are being regenerated in `msa_hard/`.
 
+## Step-1 ranking metric + transferability (important)
+
+- **Metric:** candidate-workflow rule from the manuscript — distance-filter to poses
+  <4 Å, report the mean in-line attack angle among them, mark <5 retained poses
+  *inconclusive*. Verified on the SfaB assay panel the proximity-weighted attack angle
+  A (and this engaged-angle view) beats near-attack fraction for surfacing hits
+  (3-active AUROC 0.94 and all 3 top yielders in the top-10, vs 0.70 / 1-of-3). So we
+  do NOT rank by near-attack fraction; it is a context column.
+- **Transferability caveat:** that validation is within the **ANL/adenylating
+  superfamily** (SfaB homologs, Pα). Our expanded pool is **mostly glutamine-synthetase
+  superfamily** (GS; acyl-phosphate, Pγ) — a different fold and mechanism. The proxy's
+  calibration does NOT transfer across superfamilies. Therefore:
+  - Rank **within family** (GS vs GS, NIS vs NIS); never a cross-family leaderboard.
+  - Treat the GS-heavy results as **hypothesis generation**, not validated prediction,
+    pending in-family activity validation (GS enzymes with measured amide synthesis).
+- `step1_pool_ranking.{tsv,png}`: within-family ranking of the 41 conclusive candidates
+  (GS 22, NIS 17, BacD 2); 83 inconclusive (adipate rarely within 4 Å).
+
 ## Interpretation guardrails
 - Step-1 (activation) is the validated discriminator; step-2 (accommodation) is a
   steric feasibility screen, not an activity ranking.

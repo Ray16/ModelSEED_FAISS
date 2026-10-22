@@ -38,62 +38,98 @@ def org_short(organism):
     return (parts[0][0] + '.' + parts[1]) if len(parts) >= 2 else (organism or '?')[:12]
 
 
+import numpy as np
+
+# Per-run state dirs that carry per-pose geometry (distance_A, angle_deg) in done.json.
+POSE_RUNS = [EXP / 'campaign', EXP / 'campaign_hard', RES / 'top10_cofold/campaign']
+
+
+def pose_metrics(poses):
+    d = np.array([p['distance_A'] for p in poses], float)
+    a = np.array([p['angle_deg'] for p in poses], float)
+    inv = 1 / d
+    within = d < 4.0
+    return {
+        'weighted_attack_angle_deg': round(float((a * inv).sum() / inv.sum()), 1),  # A
+        'near_attack_fraction': round(float((within & (a > 150)).mean()), 3),
+        'min_distance_A': round(float(d.min()), 2),
+        'n_within_4A': int(within.sum()),
+        # Manuscript candidate workflow: mean in-line angle among poses within 4 A,
+        # reported only when >= 5 are retained; otherwise inconclusive.
+        'mean_angle_within_4A': round(float(a[within].mean()), 1) if within.sum() else 0.0,
+    }
+
+
 def collect():
     pool = {r['accession']: r for r in csv.DictReader((EXP / 'pool.tsv').open(), delimiter='\t')}
     geom = {}
-    # expanded runs
-    for run in ('campaign', 'campaign_hard'):
-        for p in (EXP / run / 'state').glob('*.done.json'):
+    for run in POSE_RUNS:
+        for p in (run / 'state').glob('*.done.json'):
             d = json.loads(p.read_text())
-            geom[d['accession']] = d
-    # reused references
-    if PANEL_GEOM.exists():
-        for r in csv.DictReader(PANEL_GEOM.open(), delimiter='\t'):
-            geom.setdefault(r['accession'], {'A_deg': float(r['A_deg']),
-                'near_attack_fraction': float(r['near_attack_fraction']),
-                'min_distance_A': float(r['min_distance_A']), 'Dh_A': float(r['Dh_A'])})
+            if 'poses' in d:
+                geom.setdefault(d['accession'], pose_metrics(d['poses']))
     rows = []
     for acc, g in geom.items():
         meta = pool.get(acc, {})
         rxn = meta.get('rxn_id', '')
         organism = meta.get('organism', '')
+        conclusive = g['n_within_4A'] >= 5
         rows.append({
             'accession': acc,
             'label': f"{GENE.get(acc, acc)} ({org_short(organism)})",
             'gene': GENE.get(acc, ''), 'rxn_id': rxn, 'struct_family': STRUCT.get(rxn, '?'),
             'organism': organism, 'expression': 'hard' if HARD.search(organism or '') else 'ok',
-            'status': meta.get('status', 'reuse'),
-            'identity_to_ref': meta.get('identity', ''),
-            'near_attack_fraction': round(float(g['near_attack_fraction']), 3),
-            'weighted_attack_angle_deg': round(float(g['A_deg']), 1),
-            'min_distance_A': round(float(g['min_distance_A']), 2),
+            'status': meta.get('status', 'reuse'), 'identity_to_ref': meta.get('identity', ''),
+            'candidate_angle_deg': g['mean_angle_within_4A'] if conclusive else '',
+            'conclusive': conclusive,
+            'weighted_attack_angle_deg': g['weighted_attack_angle_deg'],
+            'near_attack_fraction': g['near_attack_fraction'],
+            'n_within_4A': g['n_within_4A'], 'min_distance_A': g['min_distance_A'],
         })
-    rows.sort(key=lambda r: (-r['near_attack_fraction'], -r['weighted_attack_angle_deg']))
+    # Surface by the candidate-workflow angle (conclusive first, highest mean in-line
+    # angle among engaged poses). A and near-attack kept as context columns.
+    rows.sort(key=lambda r: (not r['conclusive'],
+                             -(r['candidate_angle_deg'] if r['conclusive'] else -1)))
     return rows
 
 
-def figure(rows, path, top=25):
+def figure(rows, path, per_family=10):
+    """Family-stratified: rank conclusive candidates WITHIN each structural family.
+
+    The proxy was validated within one superfamily (ANL/SfaB); cross-family
+    comparison is not calibrated, so families are shown in separate blocks and never
+    on a shared leaderboard.
+    """
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.size': 18, 'savefig.dpi': 300, 'figure.dpi': 300})
-    top_rows = rows[:top][::-1]
-    y = range(len(top_rows))
-    colours = [FAM_COLOUR.get(r['struct_family'], '#888888') for r in top_rows]
-    fig, ax = plt.subplots(figsize=(10, 0.46 * len(top_rows) + 2.2))
-    ax.barh(list(y), [r['near_attack_fraction'] for r in top_rows], color=colours,
-            edgecolor=['black' if r['expression'] == 'hard' else 'none' for r in top_rows],
-            linewidth=1.6)
-    ax.set_yticks(list(y))
-    ax.set_yticklabels([r['label'] for r in top_rows])
-    ax.set_xlabel('Step-1 near-attack fraction (activation)')
-    ax.set_xlim(0, 1)
-    ax.set_title(f'Top {len(top_rows)} activators of {len(rows)} folded candidates')
-    handles = [plt.Rectangle((0, 0), 1, 1, color=c) for c in FAM_COLOUR.values()]
-    handles.append(plt.Line2D([], [], marker='s', ls='', mfc='white', mec='black', mew=1.6,
-                              markersize=13))
-    ax.legend(handles, list(FAM_COLOUR) + ['hard-host (codon-opt)'], loc='lower right',
-              fontsize=13)
+
+    labels, values, colours, edges, sep = [], [], [], [], []
+    for fam in ('GS', 'NIS', 'BacD', 'Mur'):
+        fam_rows = [r for r in rows if r['struct_family'] == fam and r['conclusive']]
+        fam_rows = sorted(fam_rows, key=lambda r: r['candidate_angle_deg'])[-per_family:]
+        if not fam_rows:
+            continue
+        sep.append(len(labels) - 0.5)
+        for r in fam_rows:
+            labels.append(f"[{fam}] {r['label']}")
+            values.append(r['candidate_angle_deg'])
+            colours.append(FAM_COLOUR[fam])
+            edges.append('black' if r['expression'] == 'hard' else 'none')
+    fig, ax = plt.subplots(figsize=(10.5, 0.46 * len(labels) + 2.2))
+    ax.barh(range(len(labels)), values, color=colours, edgecolor=edges, linewidth=1.6)
+    ax.set_yticks(range(len(labels))); ax.set_yticklabels(labels)
+    for s in sep[1:]:
+        ax.axhline(s, color='#cccccc', lw=1)
+    ax.set_xlabel('Mean in-line attack angle among engaged poses (<4Å) (°)')
+    ax.set_xlim(90, 180)
+    ax.set_title('Step-1 candidates ranked WITHIN family\n(proxy validated in ANL only; '
+                 'cross-family not comparable)', fontsize=15)
+    handles = [plt.Rectangle((0, 0), 1, 1, color=FAM_COLOUR[f]) for f in ('GS', 'NIS', 'BacD', 'Mur')]
+    handles.append(plt.Line2D([], [], marker='s', ls='', mfc='white', mec='black', mew=1.6, markersize=13))
+    ax.legend(handles, ['GS', 'NIS', 'BacD', 'Mur', 'hard-host (codon-opt)'],
+              loc='lower right', fontsize=12)
     fig.tight_layout(); fig.savefig(path, bbox_inches='tight'); plt.close(fig)
 
 
@@ -103,12 +139,18 @@ def main():
         w = csv.DictWriter(h, fieldnames=list(rows[0]), delimiter='\t')
         w.writeheader(); w.writerows(rows)
     figure(rows, EXP / 'step1_pool_ranking.png')
-    hits = [r for r in rows if r['near_attack_fraction'] >= 0.3]
-    print(f'folded so far: {len(rows)} candidates')
-    print(f'strong activators (near-attack >= 0.30): {len(hits)}')
-    for r in rows[:12]:
-        print(f"  {r['near_attack_fraction']:.2f}  {r['label']:28s} {r['struct_family']:4s} "
-              f"{r['status']:12s} {'HARD' if r['expression']=='hard' else ''}")
+    conc = [r for r in rows if r['conclusive']]
+    import collections
+    print(f'folded: {len(rows)} candidates; conclusive (>=5 poses <4A): {len(conc)}')
+    print('conclusive by family:', dict(collections.Counter(r['struct_family'] for r in conc)))
+    for fam in ('GS', 'NIS', 'BacD', 'Mur'):
+        fr = sorted([r for r in conc if r['struct_family'] == fam],
+                    key=lambda r: -r['candidate_angle_deg'])[:5]
+        if fr:
+            print(f'  -- {fam} (within-family top) --')
+            for r in fr:
+                print(f"    angle={r['candidate_angle_deg']:5.1f}  na={r['near_attack_fraction']:.2f}  "
+                      f"{r['label']:30s} {r['status']:12s} {'HARD' if r['expression']=='hard' else ''}")
     return 0
 
 
