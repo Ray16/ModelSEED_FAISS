@@ -1,5 +1,7 @@
 # Expanded candidate screen — state of record
 
+> **Where are the files / cofolded structures?** See [LOCATIONS.md](LOCATIONS.md).
+
 Authoritative status of the growing enzyme-candidate pool for adipate + HMDA
 (nylon-6,6 diad). Updated as stages complete. The 10-reaction panel and its 13
 reference enzymes are the baseline; this effort expands the pool within the
