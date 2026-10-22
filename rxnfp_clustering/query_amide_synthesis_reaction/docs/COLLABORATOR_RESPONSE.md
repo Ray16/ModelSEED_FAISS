@@ -52,7 +52,7 @@ The two GlnA2 proteins have 32.5% global sequence identity. Adipate–ATP distan
 
 Complexes contain **protein + ATP + Mg + adipate**, without HMDA or activated intermediate. These are comparative acid-activation models, not proof of amidation, polymerization or correct biological assembly. The BacD model does not establish glycylglycine activity. This reference panel is separate from a larger sequence-diversity panel.
 
-[Model inputs/provenance](../results/top10_cofold/campaign/manifest.json) · [Current coverage](../results/top10_mapping/current_panel_status.json) · [Model output folders](../results/top10_cofold/campaign/outputs).
+[Model inputs/provenance](../results/cofold_step1/manifest.json) · [Current coverage](../results/top10_mapping/current_panel_status.json) · [Model output folders](../results/cofold_step1/outputs).
 
 [Updated cofold geometry plot](../results/top10_cofold/activation_geometry.png) · [Geometry table](../results/top10_cofold/activation_geometry.tsv). Rows follow the reaction panel, not predicted activity. Angle and distance remain structural descriptors.
 

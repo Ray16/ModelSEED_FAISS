@@ -17,9 +17,9 @@ from pathlib import Path
 from amide_synthesis.infrastructure.paths import RES
 from amide_synthesis.evaluation.step2_geometry import GENE, label
 
-STEP1 = RES / 'top10_cofold/campaign/geometry_ranking.tsv'
-STEP2 = RES / 'top10_cofold_step2/step2_near_attack.json'
-OUT = RES / 'top10_cofold_step2'
+STEP1 = RES / 'cofold_step1/geometry_ranking.tsv'
+STEP2 = RES / 'cofold_step2/step2_near_attack.json'
+OUT = RES / 'cofold_step2'
 
 
 def load():
@@ -27,7 +27,9 @@ def load():
     step2 = {r['accession']: r for r in json.loads(STEP2.read_text())['enzymes']}
     rows = []
     for acc, s2 in step2.items():
-        s1 = step1[acc]
+        s1 = step1.get(acc)   # step-2 folder now holds all 124; this view keeps the panel 13
+        if s1 is None:
+            continue
         rows.append({
             'accession': acc, 'gene': GENE.get(acc, acc), 'enzyme': label(acc),
             'route': s2['route'],

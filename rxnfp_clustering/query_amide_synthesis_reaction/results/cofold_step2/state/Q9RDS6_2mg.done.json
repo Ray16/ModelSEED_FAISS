@@ -1,0 +1,8 @@
+{
+  "name": "Q9RDS6_2mg",
+  "accession": "Q9RDS6",
+  "route": "acyl_phosphate",
+  "mg_count": 2,
+  "n_models": 50,
+  "composition_qc": "protein sequence, HMDA, acyl intermediate, Mg and ADP verified"
+}

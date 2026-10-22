@@ -1,0 +1,88 @@
+{
+  "sequence_alignment": {
+    "method": "global BLOSUM62, gap open -10, extension -0.5",
+    "lengths": {
+      "I3R584": 446,
+      "Q9RDS6": 453
+    },
+    "identical_residues": 153,
+    "alignment_columns": 471,
+    "paired_residues": 428,
+    "identity_including_gaps": 0.3248407643312102
+  },
+  "ensembles": {
+    "I3R584": {
+      "gene": "glnA2;HFX_1688",
+      "organism": "Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4)",
+      "models_checked": 50,
+      "weighted_angle_deg": 139.9942856836214,
+      "harmonic_distance_A": 4.861000941760337,
+      "distance_quantiles_min_10_50_90_max": [
+        4.057451786528092,
+        4.404482301058195,
+        4.8982149248451705,
+        5.409687619934741,
+        6.121637526021939
+      ],
+      "angle_quantiles_min_10_50_90_max": [
+        113.33907509168263,
+        125.87883699875384,
+        138.70966193948703,
+        154.80758759874277,
+        165.34076180846276
+      ],
+      "poses_under4A": 0,
+      "poses_under6A": 49,
+      "median_ptm": 0.9563942551612854,
+      "median_ligand_iptm": 0.869026780128479,
+      "msa_rows": 11999,
+      "mg_count": 2,
+      "phosphate": "PG",
+      "reused_from_previous_campaign": false
+    },
+    "Q9RDS6": {
+      "gene": "glnA2;SCO2241",
+      "organism": "Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)",
+      "models_checked": 50,
+      "weighted_angle_deg": 68.881858337011,
+      "harmonic_distance_A": 16.124357488964357,
+      "distance_quantiles_min_10_50_90_max": [
+        5.1712735375340575,
+        15.029255357937144,
+        17.816210462469723,
+        19.621554609593858,
+        20.462742973511645
+      ],
+      "angle_quantiles_min_10_50_90_max": [
+        26.41013566876123,
+        39.52626858065894,
+        61.90338333352632,
+        80.01859483849452,
+        144.85609472859795
+      ],
+      "poses_under4A": 0,
+      "poses_under6A": 1,
+      "median_ptm": 0.9557276964187622,
+      "median_ligand_iptm": 0.8313284814357758,
+      "msa_rows": 16384,
+      "mg_count": 2,
+      "phosphate": "PG",
+      "reused_from_previous_campaign": true
+    }
+  },
+  "settings": {
+    "mode": "exact",
+    "seed": 42,
+    "diffusion_samples": 50,
+    "max_parallel_samples": 41,
+    "recycling_steps": 3,
+    "sampling_steps": 200
+  },
+  "interpretation_limits": [
+    "Shared gene names do not establish orthology or equal substrate specificity.",
+    "Pose separation is within these 50-sample ensembles, not an independent activity experiment.",
+    "Both models are monomeric. Biological assembly and native active-site placement need separate checks.",
+    "A reused older ensemble and a freshly generated ensemble are not a matched implementation/independent-seed replication.",
+    "High global confidence does not establish productive placement of adipate or completed amidation."
+  ]
+}

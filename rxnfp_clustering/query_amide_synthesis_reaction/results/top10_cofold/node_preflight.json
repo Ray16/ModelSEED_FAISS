@@ -1,0 +1,20 @@
+{
+  "host": "lambda13",
+  "python": "/nfs/lambda_stor_01/homes/rzhu/boltz2-venv/bin/python",
+  "ok": true,
+  "errors": [],
+  "online_cpus": 384,
+  "load": 15.01123046875,
+  "affinity": [
+    383
+  ],
+  "available_ram_mib": 978729.35546875,
+  "modules": {
+    "torch": "2.12.0+cu130",
+    "rdkit": "2026.03.2",
+    "boltz.main": "import OK",
+    "boltz2_opt": "0.3.36",
+    "gemmi": "0.6.5",
+    "yaml": "6.0.2"
+  }
+}

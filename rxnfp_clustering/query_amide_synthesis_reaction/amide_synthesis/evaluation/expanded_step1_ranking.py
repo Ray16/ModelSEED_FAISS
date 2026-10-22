@@ -17,8 +17,8 @@ from pathlib import Path
 
 from amide_synthesis.infrastructure.paths import RES
 
-EXP = RES / 'top10_cofold_expanded'
-PANEL_GEOM = RES / 'top10_cofold/campaign/geometry_ranking.tsv'
+EXP = RES / 'top10_cofold_expanded'            # analysis home: pool.tsv, output ranking tsv/png
+PANEL_GEOM = RES / 'cofold_step1/geometry_ranking.tsv'
 
 GENE = {'P78061': 'PuuA', 'P39641': 'BacD', 'Q9KZC7': 'GlnA3', 'Q9RDS6': 'GlnA2sc',
         'I3R584': 'GlnA2hf', 'Q9WY79': 'MurE', 'E2JA32': 'DdaG', 'Q2FW70': 'SfnaD',
@@ -40,8 +40,8 @@ def org_short(organism):
 
 import numpy as np
 
-# Per-run state dirs that carry per-pose geometry (distance_A, angle_deg) in done.json.
-POSE_RUNS = [EXP / 'campaign', EXP / 'campaign_hard', RES / 'top10_cofold/campaign']
+# All step-1 ensembles live in one folder now; done.json carry per-pose geometry.
+POSE_RUNS = [RES / 'cofold_step1']
 
 
 def pose_metrics(poses):

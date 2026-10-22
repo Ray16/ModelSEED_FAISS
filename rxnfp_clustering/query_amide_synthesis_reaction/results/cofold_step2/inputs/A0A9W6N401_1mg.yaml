@@ -1,0 +1,62 @@
+# STEP2 expanded acyl_adenylate mg=1
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: MTTLKKAELRTGSNVRLTGAEARRLAEQAALQNVANCYVREIDAGALVRHRPVGEVAADHLELLLRDQNGALRIEAVALSACGPHRLGRAYIRRAEGQDFVRVDPMTAVIALLHEAYRSFGPERAERLRGCELELLSRVLGSYQSAATCLAAGAGADDDDSFIAAEQSIAFGHWLHPTPKSLQGMTWWQRPAYQPEQGGRFRLTVFAAPSGMVRHASAAAVSAPEIARGFLGADLDRLGLKDGEVPLLMHPLQAEALLLDPDVAALRDRGALRLLGPGGPEVAATSSVRTLWSADRAWMPKFSLPVRITNSVRVNKRHELEAGVAVARLFAKTDWLQRHPRFRVIQDPAWVTLDLPGRAESGFETIFRENPFVAGRDRGVATVAALTAPPLPGGRSRLERLVRDHAAQSGLRVAEAARAWFRAYLDCAIEPPVALYDQLGVALEAHQQNTLLDVTGLLPRAAYYRDSQGFYLSNSHRHALDRLIPEAASIGALYFDDCEIAERFGYYLLVNQAFSVVNRMGHDGLIAETALLDMLAERLERLARETPGVGGAFARAALDRPSIASKANLVTRLLDIDELDADDEAAVYARVDNPLFGRPGVCDFGGDRAVAV
+    msa: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/b3a8aa5946b9623f.csv
+- ligand:
+    id: B
+    smiles: Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)([O-])OC(=O)CCCCC(=O)[O-])[C@@H](O)[C@H]1O
+- ligand:
+    id: C
+    smiles: NCCCCCC[NH3+]
+- ligand:
+    id: D
+    ccd: MG
+constraints:
+- pocket:
+    binder: C
+    contacts:
+    - - A
+      - 173
+    - - A
+      - 174
+    - - A
+      - 175
+    - - A
+      - 176
+    - - A
+      - 308
+    - - A
+      - 309
+    - - A
+      - 310
+    - - A
+      - 311
+    - - A
+      - 313
+    - - A
+      - 444
+    - - A
+      - 446
+    - - A
+      - 449
+    - - A
+      - 466
+    - - A
+      - 506
+    - - A
+      - 507
+    - - A
+      - 511
+    - - A
+      - 566
+    - - A
+      - 568
+    - - A
+      - 578
+    - - A
+      - 588
+    max_distance: 10.0
+    force: true

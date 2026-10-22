@@ -1,0 +1,268 @@
+{
+  "accession": "U6SUS5",
+  "name": "U6SUS5_1mg",
+  "family": "atp_amp_ligase",
+  "phosphate": "PA",
+  "mg_count": 1,
+  "n_models": 50,
+  "assembly_qc": "protein length, ATP atom names, adipate composition and Mg count passed",
+  "A_deg": 121.03703493307029,
+  "Dh_A": 4.7567199455564495,
+  "min_distance_A": 4.092837035602566,
+  "median_distance_A": 4.801296988628691,
+  "nearby_fraction_4A": 0.0,
+  "mean_angle_deg": 120.91113892582098,
+  "near_attack_fraction": 0.0,
+  "poses": [
+    {
+      "model": "U6SUS5_1mg_model_0.pdb",
+      "distance_A": 5.069754333298607,
+      "angle_deg": 111.00764254891679
+    },
+    {
+      "model": "U6SUS5_1mg_model_1.pdb",
+      "distance_A": 4.838801711167755,
+      "angle_deg": 124.57477195579855
+    },
+    {
+      "model": "U6SUS5_1mg_model_10.pdb",
+      "distance_A": 4.725279251007289,
+      "angle_deg": 109.20149150872197
+    },
+    {
+      "model": "U6SUS5_1mg_model_11.pdb",
+      "distance_A": 4.985602170249849,
+      "angle_deg": 128.4200934976283
+    },
+    {
+      "model": "U6SUS5_1mg_model_12.pdb",
+      "distance_A": 4.615271822980744,
+      "angle_deg": 115.93515462481051
+    },
+    {
+      "model": "U6SUS5_1mg_model_13.pdb",
+      "distance_A": 4.93916602272084,
+      "angle_deg": 123.01587674816967
+    },
+    {
+      "model": "U6SUS5_1mg_model_14.pdb",
+      "distance_A": 5.0565919352860575,
+      "angle_deg": 119.52468890898383
+    },
+    {
+      "model": "U6SUS5_1mg_model_15.pdb",
+      "distance_A": 4.843258097603307,
+      "angle_deg": 127.25234727951943
+    },
+    {
+      "model": "U6SUS5_1mg_model_16.pdb",
+      "distance_A": 4.788064118200591,
+      "angle_deg": 116.26874603893319
+    },
+    {
+      "model": "U6SUS5_1mg_model_17.pdb",
+      "distance_A": 4.694424778394047,
+      "angle_deg": 127.39778313631489
+    },
+    {
+      "model": "U6SUS5_1mg_model_18.pdb",
+      "distance_A": 5.555035013391005,
+      "angle_deg": 119.97868939974532
+    },
+    {
+      "model": "U6SUS5_1mg_model_19.pdb",
+      "distance_A": 4.330829597201903,
+      "angle_deg": 126.53247161893898
+    },
+    {
+      "model": "U6SUS5_1mg_model_2.pdb",
+      "distance_A": 4.335854010457456,
+      "angle_deg": 128.27681598519823
+    },
+    {
+      "model": "U6SUS5_1mg_model_20.pdb",
+      "distance_A": 5.555896777298873,
+      "angle_deg": 117.2496903178934
+    },
+    {
+      "model": "U6SUS5_1mg_model_21.pdb",
+      "distance_A": 4.167306204252335,
+      "angle_deg": 109.43705012904317
+    },
+    {
+      "model": "U6SUS5_1mg_model_22.pdb",
+      "distance_A": 4.29960393524799,
+      "angle_deg": 124.09646911854955
+    },
+    {
+      "model": "U6SUS5_1mg_model_23.pdb",
+      "distance_A": 4.902287731253644,
+      "angle_deg": 114.36744664962235
+    },
+    {
+      "model": "U6SUS5_1mg_model_24.pdb",
+      "distance_A": 4.72493745990357,
+      "angle_deg": 120.56103210124161
+    },
+    {
+      "model": "U6SUS5_1mg_model_25.pdb",
+      "distance_A": 5.498286733156065,
+      "angle_deg": 116.97640335704482
+    },
+    {
+      "model": "U6SUS5_1mg_model_26.pdb",
+      "distance_A": 5.112857322476347,
+      "angle_deg": 119.39285225527242
+    },
+    {
+      "model": "U6SUS5_1mg_model_27.pdb",
+      "distance_A": 5.819258114227276,
+      "angle_deg": 108.177011839279
+    },
+    {
+      "model": "U6SUS5_1mg_model_28.pdb",
+      "distance_A": 4.092837035602566,
+      "angle_deg": 122.73869178712752
+    },
+    {
+      "model": "U6SUS5_1mg_model_29.pdb",
+      "distance_A": 5.007660331931469,
+      "angle_deg": 119.87942861643569
+    },
+    {
+      "model": "U6SUS5_1mg_model_3.pdb",
+      "distance_A": 5.121437395887995,
+      "angle_deg": 124.30583283862539
+    },
+    {
+      "model": "U6SUS5_1mg_model_30.pdb",
+      "distance_A": 5.025013830826738,
+      "angle_deg": 125.79880216139782
+    },
+    {
+      "model": "U6SUS5_1mg_model_31.pdb",
+      "distance_A": 4.254834779400959,
+      "angle_deg": 118.63865726417676
+    },
+    {
+      "model": "U6SUS5_1mg_model_32.pdb",
+      "distance_A": 4.850778184992589,
+      "angle_deg": 121.34508576067343
+    },
+    {
+      "model": "U6SUS5_1mg_model_33.pdb",
+      "distance_A": 4.495194990208989,
+      "angle_deg": 125.14459065195575
+    },
+    {
+      "model": "U6SUS5_1mg_model_34.pdb",
+      "distance_A": 4.802149622825178,
+      "angle_deg": 123.67121509257878
+    },
+    {
+      "model": "U6SUS5_1mg_model_35.pdb",
+      "distance_A": 5.046297157322386,
+      "angle_deg": 124.6132661673814
+    },
+    {
+      "model": "U6SUS5_1mg_model_36.pdb",
+      "distance_A": 4.48271502551746,
+      "angle_deg": 121.18241361545707
+    },
+    {
+      "model": "U6SUS5_1mg_model_37.pdb",
+      "distance_A": 4.798539986287496,
+      "angle_deg": 121.92935691996793
+    },
+    {
+      "model": "U6SUS5_1mg_model_38.pdb",
+      "distance_A": 4.752669250010987,
+      "angle_deg": 121.71785218634844
+    },
+    {
+      "model": "U6SUS5_1mg_model_39.pdb",
+      "distance_A": 5.040581514071566,
+      "angle_deg": 110.0830305544426
+    },
+    {
+      "model": "U6SUS5_1mg_model_4.pdb",
+      "distance_A": 4.8528240231848505,
+      "angle_deg": 118.77231777334184
+    },
+    {
+      "model": "U6SUS5_1mg_model_40.pdb",
+      "distance_A": 4.137220564581974,
+      "angle_deg": 124.49560693087018
+    },
+    {
+      "model": "U6SUS5_1mg_model_41.pdb",
+      "distance_A": 4.375739594628548,
+      "angle_deg": 128.03702192210957
+    },
+    {
+      "model": "U6SUS5_1mg_model_42.pdb",
+      "distance_A": 4.576414535419623,
+      "angle_deg": 120.88483937255386
+    },
+    {
+      "model": "U6SUS5_1mg_model_43.pdb",
+      "distance_A": 4.456936840476876,
+      "angle_deg": 119.58483645494955
+    },
+    {
+      "model": "U6SUS5_1mg_model_44.pdb",
+      "distance_A": 5.201797189433667,
+      "angle_deg": 119.9284793880084
+    },
+    {
+      "model": "U6SUS5_1mg_model_45.pdb",
+      "distance_A": 4.5189084965287805,
+      "angle_deg": 115.61374967050482
+    },
+    {
+      "model": "U6SUS5_1mg_model_46.pdb",
+      "distance_A": 4.4307351534480155,
+      "angle_deg": 135.28938556678452
+    },
+    {
+      "model": "U6SUS5_1mg_model_47.pdb",
+      "distance_A": 4.193331611022433,
+      "angle_deg": 118.00865314872809
+    },
+    {
+      "model": "U6SUS5_1mg_model_48.pdb",
+      "distance_A": 4.91096792903395,
+      "angle_deg": 123.24683017415771
+    },
+    {
+      "model": "U6SUS5_1mg_model_49.pdb",
+      "distance_A": 4.208527295860156,
+      "angle_deg": 123.81425342347387
+    },
+    {
+      "model": "U6SUS5_1mg_model_5.pdb",
+      "distance_A": 4.849492756979847,
+      "angle_deg": 123.78620794943639
+    },
+    {
+      "model": "U6SUS5_1mg_model_6.pdb",
+      "distance_A": 5.356254381561802,
+      "angle_deg": 115.74723017546147
+    },
+    {
+      "model": "U6SUS5_1mg_model_7.pdb",
+      "distance_A": 4.800444354432202,
+      "angle_deg": 125.23355363252989
+    },
+    {
+      "model": "U6SUS5_1mg_model_8.pdb",
+      "distance_A": 4.656487624809069,
+      "angle_deg": 122.66168828731335
+    },
+    {
+      "model": "U6SUS5_1mg_model_9.pdb",
+      "distance_A": 5.3089082681847115,
+      "angle_deg": 121.75953978463174
+    }
+  ]
+}

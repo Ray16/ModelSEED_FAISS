@@ -26,16 +26,17 @@ Pool definition: `pool.tsv` (status column distinguishes the three increments).
 2. Mapping → candidates; expansion shortlist `../top10_mapping/expansion_shortlist.tsv`. DONE.
 3. MSAs:
    - 86 expressible → `msa/` (86 CSVs, index.tsv). DONE, verified query==sequence (86/86).
-   - 25 hard-host → `msa_hard/` (fresh dir). IN PROGRESS.
-4. Step-1 cofold (protein + ATP + Mg + adipate; activation geometry):
-   - 86 expressible → `campaign/` on lambda13, gated. RUNNING (see `campaign/state/*.done.json`).
-   - 25 hard-host → `campaign_hard/`. PENDING MSAs.
-   - 13 references → reused folds elsewhere (`pool.tsv:existing_fold`).
+   - 25 hard-host → `msa_hard/` (fresh dir). DONE (25/25).
+4. Step-1 cofold (protein + ATP + Mg + adipate; activation geometry): DONE — all 124
+   folded (86 expressible + 25 hard-host + 13 references), 0 failures.
+   **All step-1 ensembles now live in ONE folder: `../../cofold_step1/`** (previously split
+   across `campaign/`, `campaign_hard/`, `top10_cofold/campaign/`; consolidated 2026-10-22).
 5. Step-1 geometry across all 124. DONE (`step1_pool_ranking.{tsv,png}`; 41 conclusive,
    83 inconclusive because adipate rarely sits within 4 Å).
 6. Step-2 (acyl intermediate + neutral-amine HMDA + Mg [+ADP]; accommodation) for
-   **ALL candidates, not just step-1 survivors** (no funnel). DONE — all 124 folded
-   (13 panel in `../top10_cofold_step2/`, 111 expanded in `step2/`; 0 failures).
+   **ALL candidates, not just step-1 survivors** (no funnel). DONE — all 124 folded,
+   0 failures. **All step-2 ensembles now live in ONE folder: `../../cofold_step2/`**
+   (previously split across `top10_cofold_step2/` and `step2/`; consolidated 2026-10-22).
    Rationale: step-1 and step-2 are independent — BacD activates best (step-1 161°)
    but cannot fit HMDA (step-2 reachable 0.14), while PuuA is a weaker activator yet
    accommodates the amine (step-2 0.44). Funnelling step-2 on step-1 hits would miss

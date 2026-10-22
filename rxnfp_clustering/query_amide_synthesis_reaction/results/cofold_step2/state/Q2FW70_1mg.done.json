@@ -1,0 +1,8 @@
+{
+  "name": "Q2FW70_1mg",
+  "accession": "Q2FW70",
+  "route": "acyl_adenylate",
+  "mg_count": 1,
+  "n_models": 50,
+  "composition_qc": "protein sequence, HMDA, acyl intermediate, Mg verified"
+}

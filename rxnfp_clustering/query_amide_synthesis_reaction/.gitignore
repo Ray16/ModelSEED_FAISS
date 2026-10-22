@@ -17,6 +17,8 @@ results/modelseed_nylon_top10/all_modelseed_scores.tsv
 # Expanded screen: regenerable MSAs and Boltz model outputs (not model-* figures/tables)
 results/top10_cofold_expanded/msa/
 results/top10_cofold_expanded/msa_hard/
-results/top10_cofold_expanded/campaign/outputs/
-results/top10_cofold_expanded/campaign_hard/outputs/
 results/top10_cofold_expanded/*.log
+# Consolidated cofold folders (2026-10-22): the model PDBs are regenerable (GBs),
+# but manifest.json / inputs / state / geometry tables ARE tracked.
+results/cofold_step1/outputs/
+results/cofold_step2/outputs/

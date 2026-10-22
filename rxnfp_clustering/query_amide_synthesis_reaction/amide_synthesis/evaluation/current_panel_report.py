@@ -81,7 +81,7 @@ def main(argv=None):
     reaction_root=PROJECT/'results/modelseed_nylon_top10'
     root=PROJECT/'results/top10_mapping'
     audit=root/'20261020_chemical_panel'
-    campaign=PROJECT/'results/top10_cofold/campaign'
+    campaign=PROJECT/'results/cofold_step1'   # step-1 ensembles consolidated here
     reactions=read_table(reaction_root/'top10_reactions.tsv')
     summary=json.loads((audit/'summary.json').read_text())
     references=read_table(PROJECT/'results/top10_cofold/references.tsv')
@@ -153,7 +153,7 @@ def main(argv=None):
            '<p><a href="../../modelseed_nylon_top10/report.html">Chemical selection and native structures</a> · '
            '<a href="../../modelseed_nylon_top10/chemical_selection_components.svg">Chemical contributions</a> · '
            '<a href="../../modelseed_nylon_top10/original_five_validation.json">Previous-five validation</a> · '
-           '<a href="../../top10_cofold/campaign/manifest.json">Model inputs and reuse provenance</a></p>'
+           '<a href="../../cofold_step1/manifest.json">Model inputs and reuse provenance</a></p>'
            '<p><a href="../../top10_cofold/activation_geometry.png">Updated cofold geometry plot</a> · '
            '<a href="../../top10_cofold/activation_geometry.tsv">Geometry table</a> · '
            '<a href="../representatives95.fasta">95% representatives FASTA</a></p>'
@@ -202,7 +202,7 @@ The reference panel contains **13 proteins**: 12 with matching reaction annotati
 
 Complexes contain **protein + ATP + Mg + adipate**, without HMDA or activated intermediate. These are comparative acid-activation models, not proof of amidation, polymerization or correct biological assembly. The BacD model does not establish glycylglycine activity. This reference panel is separate from a larger sequence-diversity panel.
 
-[Model inputs/provenance](../results/top10_cofold/campaign/manifest.json) · [Current coverage](../results/top10_mapping/current_panel_status.json) · [Model output folders](../results/top10_cofold/campaign/outputs).
+[Model inputs/provenance](../results/cofold_step1/manifest.json) · [Current coverage](../results/top10_mapping/current_panel_status.json) · [Model output folders](../results/cofold_step1/outputs).
 
 [Updated cofold geometry plot](../results/top10_cofold/activation_geometry.png) · [Geometry table](../results/top10_cofold/activation_geometry.tsv). Rows follow the reaction panel, not predicted activity. Angle and distance remain structural descriptors.
 

@@ -47,7 +47,7 @@ Maintained model preparation and submission commands are in `structure_modeling/
 Recheck actual structures and regenerate plots and the response:
 
 ```bash
-python -m amide_synthesis model inspect --run-dir results/top10_cofold/campaign
+python -m amide_synthesis model inspect --run-dir results/cofold_step1
 python -m amide_synthesis evaluate current-panel
 ```
 

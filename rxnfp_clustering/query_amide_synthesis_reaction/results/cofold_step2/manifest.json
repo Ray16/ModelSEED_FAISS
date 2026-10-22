@@ -1,0 +1,2499 @@
+{
+  "scope": "Step-2 aminolysis for expanded pool new candidates",
+  "settings": {
+    "mode": "exact",
+    "seed": 42,
+    "diffusion_samples": 50,
+    "max_parallel_samples": 41,
+    "recycling_steps": 3,
+    "sampling_steps": 200
+  },
+  "expected_models": 5550,
+  "inputs": [
+    {
+      "accession": "A0A085G9T0",
+      "name": "A0A085G9T0_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A085G9T0_2mg.yaml",
+      "input_sha256": "8a1adf5eda68408fc81bbe1d327a0d91b3052d8dadb9fbcb4060c91c364f9697",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/3fc9bc23e329e384.csv",
+      "msa_sha256": "9935453ebcb13fc294050aac32bdece1d3487f903aec1b5f75eabf40f0868131",
+      "sequence": "MQTLILESNSSEVEDFAAHGEEKRSSAFQDEVNQYLERHPLTQHVDVLLTDLNGTFRGKRIPVTTLLKVEKGCYFPASVFAMDILGNVVEEAGLGQELGEPDRICLPVPGTLTPSASDPEHIAQLLLTMLDEDGTPFDVEPRNVLNHLWQTLRQRGLFPVVAVELEFYLLDKQRDAEGYIQPPCNPGTTERSIHTQVYSVDNLDHFADVLSEIDRLALMQGLPADGAVAESSPGQFEINLHHSDNILRACDHALALKRLVRLVAENHGMEATFMAKPYDDYAGSGMHIHISVLDDNGKNLFAGTESEDSALMKRALAGLIELMPASMAILAPNVNAFRRFQPGMYVPTQASWGHNNRTVALRVPCSGAVDHRVEYRVAGADANPYLVVATVLAGMLHGFDNELPLPEPVTGNGLEQEGIPLPIRQSDALAAFDEQGALKKYLGERFSQVYHACKSDELLQFERRVTETEIDWMLRNA",
+      "sequence_sha256": "56c63120386193f4bd559ffbe521709386c418c8f1ee1490eeb38481097e6fc9",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A090RTN3",
+      "name": "A0A090RTN3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A090RTN3_2mg.yaml",
+      "input_sha256": "06a9a05ca10f91782720140d5af18cb2554592352f63be3c549dc88dd8d1e982",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/5219f45e839ffb3f.csv",
+      "msa_sha256": "d2c296aa38f547f5ada39621061720351de737694667d3c9c3a5bc1d0b669d5a",
+      "sequence": "MDTYLQEVKNFRQNWPEIKYVDVIFTDLNATPRGKRIPVDALEKLAKGVALPLSTITLDTKGAVVESAGLGEDLGEPDNLCFPVSGTLLPTAKEGTGQVLLSMMEDDGKTPHRLFIRNIVERMVDTLHARNQFPVVALELEFYLIDKERGENGELQTAINPTKNKRERDTEVYDVDGLDDYADFLSELNAAAADQGLNTAGALAESAPGQFEINFNHSKDVLRVCDEIVFSKRLIKQIAHKHGFDATFMAKPFLEEAGNGQHMHISLINEQGENLFTNNEDDSASPLFFQTMAAMLSQIPDAMALLCPNVNSYRRFVPGAYVPTRADWGENHRGVALRVPISDGKNRRIEHRIAGADVNPYILAAVVLSAVLASDNYTQEQCPPALSENTIDLPTRMSDALTQLDNSELGTYFSQDFIDMYLACKRSELAEFERIITPLEIDWMLHSA",
+      "sequence_sha256": "582387f4c935765795872f3d410959481df76d3dd93f600c7fa722a3c9172b74",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A0P1FIB3",
+      "name": "A0A0P1FIB3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A0P1FIB3_2mg.yaml",
+      "input_sha256": "24a366da540e72e29f448dde1e370c7c0307ffe24c30be05f87ca63b7013a810",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/1d509987aac818e9.csv",
+      "msa_sha256": "1efd8de705ca2986baad9933fdcee6cf5bacf77d168fd7f9dd68eb33e6d7c28d",
+      "sequence": "MDLTHERPGLPGLRFPYGHGLIRRMTMNMKNWLRKHPEVRTIRVAAADLNGQPRGKRIPTRFADKVVEDGTRFPMSVLNLDIWGEDIEDSPLVFESGDRDGVLKPTERGFTPMPWLSSATALLPIWMFREDGRPYEADPRQALRAVLDRYKARGLTPVVAVELEFFLIDDSGRNLQIPISPRSGKRRKAAETLSIRALDSFDSFFTDLYDACEEMDIPADTAISEAGLGQFEINLMHCDDALRAADDAWLFKMLVKGLARSHGFAASFMAKPYEDYAGSGLHTHFSVLDQDGNNIFDDGGPKGTDTLRHAVAGCLNAMADSTLVFAPHWNSYDRMVPGAHAPTGISWAYENRTAAIRIPSGNHKARRIEHRLAGGDVNPYLMLAAILGAALTGIEDGIEPPDPITGNAYALDLPQVPNTWGAAIDAFEQSEIIKRIYSEELIRNFILTKRQELHYMAELTPTERVEIYLDTV",
+      "sequence_sha256": "2bde48c52a3e888c955f95cf70f9ecd66eac41f2ff07180066a6c70faf46c616",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A0U3AYN2",
+      "name": "A0A0U3AYN2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A0U3AYN2_2mg.yaml",
+      "input_sha256": "c4a3437849ce68f23ce4a153b45e33a508cb7f04f3f5b92f4a629c9313bbb6db",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/caa8e03c70673992.csv",
+      "msa_sha256": "f7dc5a10e9c4ec82fcac753c8295b3a70ca9af2cce1d7b2d5f1adf92bf60811c",
+      "sequence": "MELTSFLADHPEIEVFDLVLSDLNGMARGKRVKRDAIRNIVKKGMHIPFSVLALDASGETVEASELGLEIGEPDRICYPDLKTLVVCPWQNQPTAQVLFSMYDEDKQPVMIEPRNQVRQAVSLFTERGMTPVVAVELEFYLVDKERDEKGGIQPPISPKTGKREDSTQCHSMINLDDFAEFLLDVDKYCQQQGVPADTAVSEYAPGQFEINLRHGSDPLLACDHAMMLKRIIHQVAEEHGMQATFMAKPYDDKAGSGLHIHASLVDSDGNNLFAEGEAEDNKLLLHSVAGLLGTMQESTALLCPNINSYRRLQPNLYVPMFVNWGIDNRTVAVRIPAGGPASRRIEHRVAGADANPYIAMATVLYAMYDGIDKKLMPPKPQEGNTFEVDNPCLPMRLTDALTVLRGSKVFNQYFGEDFIKVYAACKEHELEKFEQTVTPKEYEFYLTSL",
+      "sequence_sha256": "a3bafd0ef28794d1ae7ed6ed57b7fc853c8f1753c09589e239a9073628c75dfd",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A110B340",
+      "name": "A0A110B340_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A110B340_2mg.yaml",
+      "input_sha256": "9630f52e32d48a9b4ee7be8377387824ed8cd857df28f144c3dc4585d051cfb3",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/911c99e716187b36.csv",
+      "msa_sha256": "571a1a643a076fce8c7b9cf14dfc280a21f06941b40f6159691e242e11cbabc9",
+      "sequence": "MNEDQIIAYLKENDIQKIKFAFADIDGVLRGKVIHHKKFIDGLQQGYGFCDVVFGWDSSDTCYDNVQLTGWHTGYPDRPCRIDLDTFRTIPWNEDIPFFLGDFKQENGEDLPACSRSLLKKIAKQCDEMGLHPEFAQEFEWFNFRETPQSVQDKGFAAMETLTPGMFGYSILRTSMEDDFYNDLFNLLMEFNVPLEGLHTETGPGVYEAALMHDHVLAAADKAVLFKTATKEIAYKHGIMATFMAKWNENLPGCSGHIHQSLWDKDQNKNLFYSADGEHNMSELHRQYLAGQLYCLPYILPMYAPTINSYKRLVEGAWAPTTVSWGVDNRTTALRVLHPSEGYTRLETRIPGADTNPYLAMAAALASGLYGIKHQLELKIPATKGNGYKDKSNGSLSSNLFDATTLMKDSALPKELFGEAFVEHFTQTRFWECRQYAKSVTDWELKRYFEII",
+      "sequence_sha256": "09d9b1ab1f7279a2b8cfd42101d0949997043b387bb8f0a9cafb1ac2fce365fa",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A128EUD9",
+      "name": "A0A128EUD9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A128EUD9_2mg.yaml",
+      "input_sha256": "2673df82d0046b3f14128ad3ac8d4b5a7efc426d88e96064ab4febb8f8e94b6d",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ee7751c9a3328579.csv",
+      "msa_sha256": "3a31953a417d42375ea84ec8dd2b84e90b8da41e082f16a47aa5e26791aeeb62",
+      "sequence": "MRYQTDREMFVPEDAKLPDSNEAIEFLAKNPDIEFVDLLLLDMNGIVRGKRVEKDKLQKAYEQGIALPISIYGMNIKGTPVEETGLGLEIGESDAICYPVAGSLTRQPWQKRPIAQLMLEMYEDKETPLFADPRMILRRIVRQFKARGLTPVSAYELEFYLIDSKTPGSAPLPPVSPITGKRPENTQVYSLDELDEYAELLTQIIEAAREQGLPADTIVAESAPGQFEINLKHTDDALAACDHSILLKRVIKQVAHDNDLDTTFMAKPYADQAGNGMHLHISLLDDDGNNVFEPQEEGDMTDTLRHALGGMLELMPQYLAIMCPNINSYRRFAPDFYVPNAATWGIENRTTALRIPGDVPAATRIEHRVAGTDANPYLMMAALLASIMYGLDNKIEPSEPVVGNAYDLDNEPLPTNLRDALRELSASEAMRQFLGTDFVDVFVTCKEKELEEFEQHVTALEYDWYLHAF",
+      "sequence_sha256": "aeaafb4412660f3c71298bb4ecd62e91b7bcec73334eca901cc531d2b68fff30",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1C9WB64",
+      "name": "A0A1C9WB64_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1C9WB64_2mg.yaml",
+      "input_sha256": "df741ee2e0639697b3aec00ba04feb4463b39bddb8c17047f3f7bdb8048d48ca",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/e7f1487e36de11b3.csv",
+      "msa_sha256": "fb7274ecd302d39331d3e963897a03c2e98a13e3d237e4e457874aa28afc4699",
+      "sequence": "MSLQQKFSPSPEVLSESQNFLEQNPDLKWVEGFVFDINGIPRGKWLPAESAEKLLGGGLQMPRSAVSLDVWGRDIENSPLVFASGDSDGVCVPVSPLAQAPWHREKTAQLHMQLYEADGSPLYADPRAQLQRVVKRLEDLGYRAVVATELEFYLLREDVDHLARPRPVSDNDAELVPSTDVYDLSELDAQRHFFTDVRTACEAQGIPADSILSECAPGQFEINLLHCDDPLKVADQTLLFKHLLKGVARSHGLRVSTMAKPFGDQAGNGMHVHMSLVDAEGNNVFNDGSDEGSELLRQAAAGMLATANDAMAFFAPHANSYRRFQESSHAPLNLCWGYDNRTTTLRVPASAPAARRIEHRIAGADVNPYLVLAAILSGVCYGLENRLEAPEPVTGDAYQVESEQLVNTWSGALRRFEQSPLWQKYLDPRFIELFLLLKRQELLEIASRVTDVEYQSYLHRV",
+      "sequence_sha256": "ebf646842cea6e103104e7c06c1e5efa0914f34281e949f853204bd15799c24c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 15
+    },
+    {
+      "accession": "A0A1E3H007",
+      "name": "A0A1E3H007_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1E3H007_2mg.yaml",
+      "input_sha256": "f1d1f24267bcdc8f239475e7a4da9fb44ac822a96800f882dc036dc934927e22",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/52080bed4ac2536c.csv",
+      "msa_sha256": "0b781ae4c7c3ab5d6ac0e13b5621a41f8ba3dbd92bdc43679461e982ae1897a6",
+      "sequence": "MASIDAVAPEVRSDPSQSAPRKKTIMTDEQHNDQSRQGLRGVSSLEEARQWLAARGIEDIECVVPDQAGVARGKLMPADKFFASPVMSLPASLFAQTISGEMPDEDDHFQYDPTDGDIMLRPDFSTLAVVPWASDPTAQLIHDAYTRDGRPVEIAPRQLLRRILNLYDRNGWRPVVAPEMEFYLVKPNPDPDYPLEPPVGRSGRPESGRQSYSIQAVNEFDDLFDDIYDFSEAQGLEIDTLIHEEGAAQMEINLRHGDAVQLADQVFLLKRTIREAALKHKMYATFMAKPMSREPGSAMHIHQSVIDEETGRNIFSDAEGNPTKEFFSFIAGQQKYLPAVMCMLAPYVNSYRRLARNTAAPINVHWGYDNRTVGIRVPNSGPQARRVENRVPSSDSNPYLAMAASLACGFIGIENGLSPEDPIEGSARGLPHTLPRGLLEAVALFEETEELADIFGKSFVHTYRAIKQTEYETFMRVISSWEREYLLLSV",
+      "sequence_sha256": "835d715820672ca3262fa1407db02e3ffd9beda0eb8a181b3437cbc30ee6634b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1G4SAN4",
+      "name": "A0A1G4SAN4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1G4SAN4_2mg.yaml",
+      "input_sha256": "b560ae8d1cf11ba366e6ca2bdd40e7e548140f726545745ce71784c4c5839fda",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/2588e55d7e219d59.csv",
+      "msa_sha256": "00b2fee17863318ad6ff95b86789c8528ce51f075527eff73cbcf42068cc6be5",
+      "sequence": "MSTFGKSSAPAKGKSDRSLPLSERVATVEEARAFLDANPHINYFEILFTSMTGVPRGKRLRRHELLPIYEYGRFLPGSILVVDTLGADCEDTGLVWEDGDADRVARPVPGTLVPAPWLGDDVGQVMLSLYELDGTPNDLDPRHVLQHVLDRYKADGLTPVVACELEYYLVDIERGHDGQLMPATGFNTGENPKGIQVYGLPEIEAHGAFFRQLWETADAQNIPLEGAISEFAPGQVELTLKHKPDALRAADDAVMYKRLAKGVALSLGIEATFMAKPWADRAGSGFHVHISVADKDGNNLCASEDPQGSKLLHNMIGGMKDHLADVMGILAPGANSYKRFKANSYAPVGLTWGVNNRTVSLRVTAGPAHTRHVEHRVAGADANPYLVLAAILACAHHGITHKTNPGPAVIGNGYAVAAESGATLPTNWFAAVDYLDKSKVLRDYLGDRFIDMYVKVKRTEQARFFEEITELDYDWYLRNA",
+      "sequence_sha256": "625220dd7f5077b4a109ef617e39e29ba4839935ca22e1f89ae05fc018044037",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1G8QS83",
+      "name": "A0A1G8QS83_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1G8QS83_2mg.yaml",
+      "input_sha256": "82cd105dc96da7e505ed851e6ce9b18b5b47e4eb8d15d6989622ecd94786eb67",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/4fe0edff59fc0776.csv",
+      "msa_sha256": "0ec93384982e097008e5373c814920167441f5985bcb5b7efadc5f44016ddf74",
+      "sequence": "MREAHKQTLNAIIASPSGSTPAEAQTFLDAHPEIEAFDIVLTDANGVGRGKIVRRHELMSIFEGGRHMPISILGLDITGEDVHETGLIWTTGDGDLRAWPIPGTLVPLFGTQPPRGQVLMAMYHLDGQPMSSDPRLALGRQVEILAAKGLHPAGAFELEFFLLANERDADGKVQPAHAVLDGRRSTKTEVYSVDHLHGMEPLFSDIYAAARVQGIPAETVISEYAPGQYELTLNYRKDVMRAADDLVMLKRLVRAQARRHGVTACFMAKPIEKYAGSGMHFHVSLQDKAGNNVFAEASGETWSLPLLRGLGGLIQTMAESMLVFAPHANSWRRFVSQSYAPVAPTWGVNNRSVALRVPAGDAKNRRIEHRPSGVDANPYLVAATVLAGIVKGLDEGLDPGPETTGNGYESAITRTTMPVDWRAAIEAARASTFLKAALGEDLHRTFVAIKQSEYLRVARTVSELDYHLYLHEV",
+      "sequence_sha256": "936708f43e48b633f00809d06ad9e1368c29a899136bb8d8e404ba8ea8a6aec7",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1G9NG73",
+      "name": "A0A1G9NG73_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1G9NG73_2mg.yaml",
+      "input_sha256": "c9c00c2720506c5bd5c969aae2bdecbe44825b56818d239bcfaea05b950c9096",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/bd24257b26bdce0f.csv",
+      "msa_sha256": "73303a3d849cc301ef6515f5a179725182b7c6adcb7abea6740899e5982c9574",
+      "sequence": "MHTGVNNLTTSVSVGKDGTHDSNDKVLPMSVTATAEAEAFLERHPDIDSVDLLISDLNGVMRGKRIPRDNLVKAFSAGINLPASLFALDINGNTIEETGLGLSSGDGDRICRPVEGTLMPCPWLRKGRQGQLLMTMFEADGSGFFADPRQVLQRVLRRFADAGLTPVVAVELEFYLVDRSRDAQGYAQPPCSPATGERASQSQLYSINELDEYADFLEDIQAAAAAQQLPLDTALKECAPGQFEINLTHCDDVLKACDSSVLLKRLIKGVAIQHGFEATFMAKPYGDEAGNGTHVHISLLDAQGHNVFAAEDDSPLGTPALGHAVAGLLALMPASMAIFAPNINSFRRFQPGLYVPMSPTWGYDNRSVAVRIPSGPKAAKRIEHRVAGADVNPYLLLATLLASIDHGLRQQLAPPPPIEGNAYDQCEPSLTNSWQRALALLADDEVLTEALGEQFLHVYLANRQAERDQAMQAVSQLEYDWYLRQV",
+      "sequence_sha256": "d2641307f0180f0e7eddfc04dc325af4396b0e154847a93ba1354d9c51fe8b53",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H3FIV4",
+      "name": "A0A1H3FIV4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H3FIV4_2mg.yaml",
+      "input_sha256": "5f3f441b7ffb583eaa1d613a195732b46c71b036b0c065db3fa74c60a6ae4bfb",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/0641e6bb78a3c665.csv",
+      "msa_sha256": "240afbb58080e740b46d9b01d17ddf6922136891cb4126a8e021a2813fa7cd2c",
+      "sequence": "MSRPPPRSPGPSPVNARGEKKDLTMQFADIQEAHDFLAANPEVRSIELFLIDANGVPRGKLLHREELLAVFESGRPLPSTILGLTINGEDVDETGLVWDVGDADCWTFPLPGSLCLQPWRERPTGQLQVSMHPTLGLPATPADPRHLLARVINGLKGDGYHPVMAVELEFYLLDRERAADGRPLPARQMNGTRPQATQVYGIYELEQLQPFLDDLYDACEAQGLPARTAISEYAPGQVEITLEHRFDALQAIDEGIRYKRLVKGVANRHGLQACFMAKPFADLAGTGMHMHVSLADAEGNNLYASDLSDLEGDGAAGAGTLLRHSIAGMMATLLDSLALFCPNANSFRRFQANSYAPLAKSWGINNRTVSFRVPGGPAKSRHIEHRICGADANPYLAAAAILAGIHHGIRLQLDPGAPIEGNGYAQATEFLPTDWLTALRALEHSSWAREALGEEFLKVFLAIKQAEYRQFMGEVGEQDWRWYLTQA",
+      "sequence_sha256": "03256b3dd708df8d06d3a729208f48fa050c68971a628268970ace138e607ea3",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 15
+    },
+    {
+      "accession": "A0A1H3WR98",
+      "name": "A0A1H3WR98_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H3WR98_2mg.yaml",
+      "input_sha256": "0d03ba8b79db3c172600209f8f389f6ea2d778320552a5ae3ce1fd8bf0113ead",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/8cee7340ff585447.csv",
+      "msa_sha256": "15e4cbe3e75252e732a56be67f5647a70e95420c7a7288f28ba12fd3c30b8af0",
+      "sequence": "MFAARAAAFMAENPDVEIVELVFPDMNAVMRGKWLPARQIEKLAKGSVRMPMSTYNLDIASEDVVAAGIAVDIGDPDGVGWPIPHAFGRCLWAERPTAVALMTMTEPGGAPCVYDPRQVLARVNDRLKAKGLTAVVAPELEFYLVDGETDDFGHARPPLGVGGDRLEASQVYMLDVKSAFSGLLAEIDAAAIALGAPAEAATAEFGPGQFEINLAHVEDPLAAADHAIMLRRAIRGVARKHGVDACFMAKPYGDQSGSGQHFHVSLIDADGRCVFDSGEMAAPNAAMRAAVGGLLETMADATLLFAPHLNSYRRLRPHSYAPWLATWGLDNRNVAVRCPALAGRAARIEHRVAGADANPYLALAGILGGVLRGLETAADPGEPTEGEAQPQARSALPTTWPSAIEAFESSDFIRDTLGAEFARVFAMMKRQEMERLLERVTDVEYDTYLRTI",
+      "sequence_sha256": "d13e4bbe978e5a0713714ede806ff1f94f00536d619c18df8cd6afa9fe595ed8",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H6B059",
+      "name": "A0A1H6B059_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H6B059_2mg.yaml",
+      "input_sha256": "9904f4df96dd69749a4fab0c6b309567e7587096ae5d3b6383d6c0317c6c569e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/0377ba39d231f795.csv",
+      "msa_sha256": "5e6ddbd7b3cf6db02ac54599acbe84e6c041ae950f3790cd614310b2c8de229d",
+      "sequence": "MPETYGNVEVSGGATVETSQLSNSADNIEPLQTSHEKLTIERFIEQHPSVTTLDLILFDMNGVVRGKRVPVSQLNKVLDQGICLPASVFALDICGETVEETGLGFEKGDGDRICRMVASSLTTTPWQENSAQAIVTMYEPITHQPFFADPRHVLEDQLAKFSAKGLNPCVAVELEFYLQDLEPDEAGNPQPPLMPISGERMTQTQVYSLEELDEFKAFLDEVISTCEQQNIPADNITAEYAPGQFEVNLKHTNDVLLACDQAMLLKRVVRAVAKKHGFYANFMAKPYTEYAGNGCHIHISLQDSHGNNVFGENEQLLLNAIAGVLAHLEDSMAIFAPNANSYRRLQPNMFVPLHATWGWDNRTVAVRVPASGIADKRIEHRLSGADVNPYLTVAVLLASILDGLENELTPPAPIEGDASLLELPMLPISWDMSLHEFENSQFMKNSFGEEFCKVYLANKKHEQARFSAQVSPLEYKWYK",
+      "sequence_sha256": "a65c220e333d50ffc2247807f931a934e0f04f8c8205fbe4a5064a5b99a4825f",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1I0QDG5",
+      "name": "A0A1I0QDG5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1I0QDG5_2mg.yaml",
+      "input_sha256": "1a8d41df96b335a397d36935bbc7bb643b3785e8c3141a353eb0e033531765e5",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/fe2a2ed3ecf82d77.csv",
+      "msa_sha256": "32279bd090b5dab2357cc2130f4f3a864dbcea40367c608f0430e8fbaebcb9ab",
+      "sequence": "MTDFLKEYADYCKAHGRPDRLELMLCDINAVLRGKWLPGDDEQKLTDGAVRLPHSTYVPNILGAEVSETGLGIVVGDPDGRIVPIAGSLKPVPWAKGNMAQVQVEMLDPDTGKISELSSRKLLSNMVDRFHDKGWHPVLASELEFYLIQPRQSEDEAPTPPDRSPDAQNYDLEVLERTQDVLDDILEISAIQGIATDTLIAEYGPGQFEVNFHHTDDVMKAADTALLFKRLVRGVARNHGLEATFMAKPYSNFPGNGMHLHASVIDKDGKNIFDDGSGQASEMLRAAVGGALDTMRDLQAIFAPHLNSYRRYRPMSFAPSAPDWGYDNRAAGVRLPEVSGPGARLEHRIAGADVNPYLVITAILGGILHGLETKPDLPLPLDDPNAETAPRLTADWIRAVDRFSQSDIAADIFGERYRDIYAAVRLDEIDQLTNEISQIEYRAYLGRL",
+      "sequence_sha256": "3a4c9a861c072bd9f3ab927562ba1d7dad348b3f64e87f40ba692a2651f85767",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1I5DJ95",
+      "name": "A0A1I5DJ95_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1I5DJ95_2mg.yaml",
+      "input_sha256": "d9873dd340baaa0cfea3a9af22a32f5f0c4770007e9a56eb5494262faeb1e219",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/2456e9dfc4622705.csv",
+      "msa_sha256": "c86f92ae2b98d0d97aa265b9331ae3ff6d2462b42a66907b70eebb9f60f081b8",
+      "sequence": "MLKTEKTNQQTISFKAEAEAFLKAHPDLVKVEMLLPRFCGSLMGKWLPANMLTKLADGAVRLPRSTAALDIWGDDVPAVGIALEKGDPDGVCMPVPGTLCMVPWASEPTAQVLVTMKDLVTGEDCGYDTRGTLARMQQRFSQKGLTPVVATELEFYLIDGETTATGHPQGPMVPGLGERLTGSQVYNMDIIAAFEPVLAEIYQACQIQNIPAETTISEFGPGQFEMNLLHVPSALEAADHCMLFKRVVRNVARKHGLDATFMAKPYAHSAGNGFHIHMSVQDEEGTNIFGGDSDVEANLPLRHAIGGLLKHMRECQILYAPHANSYRRFQPESYAPTTPCWGYDHRAVAIRVPTAKGAAARLEHRVAGADANPYLVIASLLAGALTGFDEAIDPGEPVETLEDVAANKPLTPIWQEAIASFGTSEWAEALFGQDFHVCYTHAREAEERIVSAAITDFECRTYLRMV",
+      "sequence_sha256": "6214c8ad2b6e47bd58d2bc9c86c2590bd1ddb6d4e5e638a3a7fac1945618f760",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1I6TD82",
+      "name": "A0A1I6TD82_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1I6TD82_2mg.yaml",
+      "input_sha256": "e9431a8383ce49cad42a0e67b891bcfcf227a4e841592e7113a1e1e17f5b00d8",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/fc29add085c8d4ca.csv",
+      "msa_sha256": "6f6f4f3e39b84fd35ed8946bc22fc2c51b8f4026f031af8650219e7dd1c962ae",
+      "sequence": "MLRGKSLFLEGSLNLCLRLSAIFLYFDGEKIYALFTLLLRSIFLYFFDLYSDVNNMNMPLYHPASSSTNTLYLESKDADQFLLEVDQYLKQYPATEHIDICLHDLNGHLRGKRIDIKSLKNLSKGCYFPLSVYAMSLEGKVIEESGLGKYIGEPDQLCLPILGSLRPCANQSEKHAQLYLSMKSDNGADCKFEPRNILKRILLSLNQMNYFPVMAGEIEFYLYTQPSHPEHKAEQTQCFDVDAPNRYQTVLENIEIEAKKQNIQITAIVAESSSGQFEINLQHRADILKLCDEIMAIKRIVKQSANIHGLNASFMAKPNMSSAGSGLHFHMSLLNQFQQNICATDELKKPNQRMGQVIAGLLQLMPASMAILAPNINSFRRFQFAHHVPLEANWGVNNRNVAIRLPCADPENCRLEYRVAGADANPYLCISVILIGVLHGLTHDALQLPKASHEMKAHDARTLLPNHQLEALKRFEKNAVLKQYLGADFMQLWVACKKYEYQLVSNTITDLELQWGL",
+      "sequence_sha256": "6adab3ebf2f0e35d0d28ae31f02bb407bed10695d7c3b5c0f9029e2f7cfb4872",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 18
+    },
+    {
+      "accession": "A0A1I7NF67",
+      "name": "A0A1I7NF67_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1I7NF67_2mg.yaml",
+      "input_sha256": "421347f8711b68dbe6efcc682418c54d927e2bef2fb4add7c8420a85cc379393",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/88f9f96520893412.csv",
+      "msa_sha256": "50e1fc0d68ce0c4d335e32622e5349adde0aa1401b6425af8ff6e1a23bf10147",
+      "sequence": "MTDTFITIDEAAAFLDANPTVTWIDIVLFDMNGMARGKRVRRADLVGAVKNGLLLPASVYVLDPRGNSIAETGRLWETGDHDIPFRILAGTLKPVPAGAGTHAQAVMVPVDFCDMCPRAVLRGQVDRLAVAGQTPVVAVELEFYVTRRSPDGHFTLETPPGLSSDPERPMTFQFEEMDTLGPFIDDVYRIAEAQGLPVDAVMQESGPGQFEINLKHSDAMSAALNGVLLKRAVKAAARAHDLEATFMAKPHHDWTGSGMHIHVSLVDSQGKNLFAGEPMAPMFRQAIGGLCQSMPDFMAIWAQSANAYRRYVPESYVPMAAHWGFNNRTVALRIPAGSGPATRIEHRVSGADANPFLVVAAILAGIRHGLTNAIDPGQHAEGNAETLDGASLPTAWVNSLEKFRSSKIVREAFGAPFQDVYYRLKQTERIAFERIVTSLDHAWYAQVA",
+      "sequence_sha256": "ff5459a67331b689b9dc7c626c59825cdc6a7a93d4746e33b01b9d34288a7c9b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1N7K6T7",
+      "name": "A0A1N7K6T7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1N7K6T7_2mg.yaml",
+      "input_sha256": "ce99b27a56cd5088ddc63d45f2f0f79557b9cfe8b855cbb7859e4d49370afb89",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/4072e2eed9be586b.csv",
+      "msa_sha256": "e568971fccd1ffa953c7f470e8dd7ed9ad18993f230f9adc67c3fe5963225936",
+      "sequence": "MSDSRGHTGFDVDSNKPRALQVSPAAPAAEPSGQPPGPGGPEAPFGRSDEMTALLAKYPDTAHVDALFFDLCSLVRGKRYPVLDADKLFEDGMLIPYSAWLLDATGDCSDPGGRGYSDGDPDGVVRPVAGTLAPVPWSPVPSAQVMCSLDEDLDGPVVDPRNVLRRVERQMNRAGMFPVVALELEFYLIDQAERSPDGSPLPPLNPDTKQRDKSNQVYGMTELDDYAEFLRDVESACVAQSVPAYTATSENAPGQFEINLKHTDSAVRAADHAALLANIVERVANMHGFKATFMAKPYVDMAGNGLHIHLSVLDADGNNIFDDGTPQGSPSLRWAIGGLMEAMPESMALFAPNVNAYRRYAPNNYVPVKRAWGVNNRSVAFRIPGGPGTARRLEHRVCGASANPYLALAAVLAGACWGMENKLDPGPAVTGNACEQMDPGVPWTFRAALARLEKAHILPNYLGADYLHLYSETKWAELEKFQAVISPHEYLWYL",
+      "sequence_sha256": "d97dab6862c944da66c591032ea934cbc1cbd0972934a1a3d52dcc69c56f9275",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1R3VCL4",
+      "name": "A0A1R3VCL4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1R3VCL4_2mg.yaml",
+      "input_sha256": "d7c13f14054b4a9d3e243d06a430e89670d3acd78589b77b7c64308332deb0f8",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/382f7a5adbc968f2.csv",
+      "msa_sha256": "4c256cb59f7a91768c3ba2c16fdda5661ff8ae6f73bb36d8b498ecf3644ad7d5",
+      "sequence": "MLNTTTTDAPQMTPTDDPKRWLEQQAIREVECLVPDVNGVLRGKTLPTAKFLKSLEDRALYLPSSAFLVCIDGRYSGSNDEGFGYQDPDMRMVPDVATLCLAPGAEAGKAYVFADAFHMDDRPWMASPRHVLSAVLDLYRQRGWRAVVAPELEFYLTAPNPDPDRPLIAPVGRNGRSESVQHPYDMAALEEFEPVIRRLYDYAAAAGLPLDTLIHESGTAQLEINFLHGEALPLADKVLLFKRLTRQAAQEGGMHATFMAKPIAAQAGSSMHLHMSVVDEAGNTLFAGRDDADTEMFGHFIGGLQKYIPEVMPLFAPNVNSFRRIRPNHSAPANIEWSHDNRSCGLRVPAGGRAARRVENRLPGADANPYLAMAGSLLCGYLGVEEKLSRSPEASGNAYRSKSTLPKTMEEALDRFAACSPVRDLLGEDFVQTYLRVKSVELDLFQSVVTSWERDHLLLKV",
+      "sequence_sha256": "62c03f87e03734beaf33e0862972cfd0fd944362c211ed112c1bd6c806a6d5a3",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1T4XES4",
+      "name": "A0A1T4XES4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1T4XES4_2mg.yaml",
+      "input_sha256": "2fc488342662378528cb8a039cadf1b3f68988f33890c352c36f1dc130a86be7",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/187a33040cabe3ab.csv",
+      "msa_sha256": "1204138a64b49faaf2b47e42d319effc186383064d5a6200f8d0f8f48d7ad2af",
+      "sequence": "MDQLNNNRQTPELDIFITDLNGNQRGKRVPASSTHKILQEGFKMPRSILGLDFWGDDIGGAVLALEDGDSDGVCHIVSTKPVLVPWEAGEHYQMLAMMSHPQGCRLATDPRQLLACVLQRYTDRGLTPVVAAELEFYLLDLASERENRPIPSPLLPESRFARPNPYAMRNLNRFRPILEEIRFACQVQDVPADSIIAEFGDGQFEVNLNHVNDALLAADQAVMFKRIVRNVAHKHAHLASFMAKTYGDESGSGLHIHFSVVDQAGQNIFSNGTEAGSSDLIHAVGGILAAMQGSMLIFAPHLNSWRRLRPRSYAPIAANWGYENRTVSVRIPDSPDAARRIEHRVSGADANPYLVIAAILSAALYGIEHQLNPGAASTGNTYANPQAEQVLPTQWYEAIDSLRQSALMRHLLGDAFVDLFTAIKEQELDKFASHITDAEYETYLGVV",
+      "sequence_sha256": "9dff02c778f74bb725b22d7c651b219258196f58a455967e3713a4306a8511db",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1T5LRE0",
+      "name": "A0A1T5LRE0_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1T5LRE0_2mg.yaml",
+      "input_sha256": "02724bbdf7610fb7abf614876d91e67c80cfea5c3e70bacefbb707c9b63a646d",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/f5acd1bf78bd32fa.csv",
+      "msa_sha256": "f288f593f338b2c9b82573f8ae9137f7c1175c4dd5828f2192a8da0105f5c5a6",
+      "sequence": "MRPSPTADTAAVAAIPVEDAATVQAIDGCEMVDLLLPDMNGLLRGKRITRDALEKVYSDGVCLPMSLIATDITGNTVEETGLGYDIGDEDRICRPVPGSLRAVPWSPRPMAQVLLAMEDADGGMFEANPREVLRRVLARYAERGLTPVVAVELEFYLFDQRPDSDGRPEATINPVTGVRNRSTQVYYMEDLNDYRGFTDAVAAACRAQKIPADTAVAEYAPGQFEVNLKHRDDALQACDDAVYLKRAIKAVAQQQGAMASFMAKPRVDQAGSGMHIHVSVLDREGKNIFASPVDAPAEALKHAIGGLQHNASDCLLLFAPHANSYRRFVLNAFVPLNECWGYNNRTVAMRIPHSNEANTRIEHRIAGADANIYLVTAAVLAGMLEGLEQQRDPGPPITGNAYEQTENRTPFWREAIRDFLASDFIRTQFGARFQHIYGQQKLKEMHSFYAEVSNLEYDWYLRAV",
+      "sequence_sha256": "02a0b8047ca2897663006ac6cc736d7cd7443c3cc7e4f048c45f10f4afc52edf",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1Y5RPD4",
+      "name": "A0A1Y5RPD4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1Y5RPD4_2mg.yaml",
+      "input_sha256": "17aabcc0d4d1729bb3ddaea38d13a43082f0d5c286b186236aa26f2d51a06db0",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/7a03d57abcc03a80.csv",
+      "msa_sha256": "3bb5cb5f2ceb7c4a5deb2831f83a177022d121aeeb5245e7ca1076ef89d4842a",
+      "sequence": "MTQRPGWPDPEAGRRAAEAYLAEHPDLETVELIVVDNNGLLRGKRVGPDRLVSVMSEGMRLPGSIFALDVTGENVTGTGLIWAVGDADHPVLPADGAVRPVPWASFPTAQVLMTMIDDDGTPFHADPRQTLCRVVEHYTEMGLTPVMALELEFYLLDKERGPDGRPQPPRSPHTGRREHAIQVYSLDDLDAFAELWRDISRAARAQDVPADTVVSEYAPGQYEFNLKHVADPVAAADHAVLLKRIIVETAWRHGVEASFMAKPYVELAGSGMHLHMSVLDEQGRNVFDGTGSKADELIAPTLAHAIGGLQKGMPESMAVFVPNVNSFRRLQPGSYAPLAPTWGIDNRTVALRVPSDGGLARRVEHRVAGADANPYLATAAVLAAAHRGITEEIEPSERIAGNAYEQVPPSLPTTWPEALAAYDRGEILPEYFGREHCSVFSACKHFERHKFEAIITDLEYRWYYGCI",
+      "sequence_sha256": "942ad87d1a00f9630564bc40fca12821af6f13c27339a63568a96e9aa23313a6",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1Y6B352",
+      "name": "A0A1Y6B352_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1Y6B352_2mg.yaml",
+      "input_sha256": "c8aea3677371b627866cafd8256c70c892d11473ff14f98fd00304c02c4866b4",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/72c4fa80d0fec85e.csv",
+      "msa_sha256": "596e78caf68b7024f76cb721ab3de13cdfa9475c96540261f4c3b2f64f8de9d7",
+      "sequence": "MPDSEPAPAADLLREAEAFVAKHPEIEAFETLFADLSGVVRGKRYPIEDLKKVAKGGLTFPASVFLLDTQGMSHDPGGKGFSDGDPDVFARMIPETLDPVPWSSMPLAQCLLQFDRGPGRPLELDPRYILKRCVDRLHDLGLRPVVAFELEFYLVDKERTAERGPQPPINPLTRQREAATQVYGMDVIDAYGTILQEIVEACMIQGVPTGAITAEYAPGQFEINLRHVDDPVGAADDCILFKRAVRGVARKHDLQATFMAKPYPERAGSGLHLHVSLLDRDGRNVFDGTLDGGEDLASPTLRHAIGGVLATLPDAMAILAPNVNSFRRFEPNIFVPINRSWGFENRSVALRVPIGDGPSRRIEHRVAGADANPYLALASFLAGIHHGIVNEIDPGPPTEGNAGTAFDPALPMRPRRAIETLAQSKVMDDYLGAGYPTLYAACKEAEYDEFDWLISPQEYEWYL",
+      "sequence_sha256": "3166b148b8ff069eede7023df7467718d20805affd5dbc0430390981947eef02",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1Y6GCA7",
+      "name": "A0A1Y6GCA7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1Y6GCA7_2mg.yaml",
+      "input_sha256": "07ac4055ceb70b386eccf590c1b8f0b78905977f57212dd90e1f316c70432e1c",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/4bd5e15dbfb02921.csv",
+      "msa_sha256": "08448e110f4e991243812ecf608559231328bf58b1afad2ca7ee2f134237374b",
+      "sequence": "MSSETIANEDIVSWLADNPQIEVLHTAVCDLNGIMRGKRIPIDQARRVAENGIRMPLSIVGVDVWGEDIVGNPMVYKSGDIDGICSPTGRGAMPINWTTRPSAMIPLWMFEDARTPFLGDPRQALAHVLRRYAEHGLEPVVATELEFYLVDPNADSATPPISPYTGKRLDSDAILSLDELEDFGEFFRDVYLQCAQQNVPADTAVAENGIGQFEINLLHTDGLKAADDAVLFKRIVKGVARKHNLVATFMAKPYGARSGNGLHVHFSLNDMAGNNVFDDGTESGSEVMHHAVGGLLSGMAETTLLFAPHFNSYRRLRPDTHAPSAVSWGYENRTTAVRIPGGNPKARRIEHRVAGADANPYLVLAGILGAALVGIEDQIKPTKPFKGRAYSERLPKLPADWASAVNAFEDGDMVPRIFDPALHSLFVACKRQEIAGFASQVTDLEFSAYLEVV",
+      "sequence_sha256": "d5a95745f37207cee16bb45684563bb442bdac7062c271906ff4d44a174aa8b6",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A212PW17",
+      "name": "A0A212PW17_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A212PW17_2mg.yaml",
+      "input_sha256": "16ba1dc72b67f108ab78c5b8b53d9bb4179042da19a441e1fe7b8fb7669e68af",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/7a326312221eff55.csv",
+      "msa_sha256": "1093a2fe67c5c3a25659d9ef95ba76beef7b0c9324c71815c321dea48f004bf9",
+      "sequence": "MSQSPSAPLTLESALRELDRHPQAAEIDLLACDLNGILRGKRIPREALGKIFSDGLKMPRSVLCLDIWGHDAHDNGLVWESGDGDGSCKPCGEGLVPVPWSPRPRLQLLTMMQNLDGTPFSCDPRQALAAIVKRFHALGLTPVVASELEFYLMAGDSAGGGQPRPPAAPKSGYALDAPRVYALDELDEFDVVLTAIRDACAAQNLPSEAISVENGRGQFEVNLLHVADPLIAGDHAVMLRRLVRGVARAHDLHGTFMAKPYGDSAGSGLHVHCSLLDKDGRNVFDDGGDAGTDLLRHAIAGMIETMPEAMLMLAPNLNSYRRLLPGQHAPVAASWAYENRTSALRIPASGPKARRFEHRVAGADANPYLVLAAILAGALHGIETKANPPAPVAGNGYADGAAALPLPTTFETAVEAFEQGKILRKYFGEAFMRAFGAVKRQEMEELRRRVTDVEYQTYLGFL",
+      "sequence_sha256": "93be9c8464b6e80e8f414af212e97117b0bcbbcc9920f204553bc6df288d8aff",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A221K6V8",
+      "name": "A0A221K6V8_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A221K6V8_2mg.yaml",
+      "input_sha256": "baf37f874cfdb8a19174b2c8b73d32d7e76b55b7ab01addcd6a009aad08e645f",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/eeb0efd0bac11b8e.csv",
+      "msa_sha256": "d6bc7877960786cd441f4a000262ff4d9e808629a4791564ab5397ea3806b32e",
+      "sequence": "MTPNCRPSTRADLSEATAFLAAYPDVQAIDIVLSDLHGVGRGKIIRRHELESLFTSGRGMPASLFAQDVSGHDVDAAIEVMADGGGDSRCWPVPDTLGFQTATGRGLVLLQIDGADGLPHPLDPRNALLTQIARADTLGFIPMGALELEFYLVDKDRDADGRPQPARAPMTGRRLSGTNCMSVDELDEMAPFFDAVYEGAAALDLPMESLISEYAVGQFELTLHYRDLAGAADDIVRSKRLLRTTARRFGMEACFMSKPFSQSSGSGMHLHLSLTDESGANIFGDQADGHLSTVMLNAIGGIRSSMDASMLVLAPVLNSWRRFAGTIYSPAANTWGTEDRNVALRIPEGSARSRHFEHRVAGVDANPYLVAAITLGAALDGIEADTAPGAEGAGGAGGYPAMPGGWLEAIDRFEGSEVMKTLLGAPLHRILSAVKRGEHEALAVEVTDLEWQLYGTTI",
+      "sequence_sha256": "9bc423b9d106479f47db89b52ad8e687d7a36413b1c2a2abb5c55ee3970f2db9",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A2C9D7I9",
+      "name": "A0A2C9D7I9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A2C9D7I9_2mg.yaml",
+      "input_sha256": "c0f2453e00caac38e89387bd4805d2fa8935cc9bc85cf118e3903c9836306625",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/3009cd622158d6b2.csv",
+      "msa_sha256": "97dad82ff4f8b29ae486b4f2f77a077eabee8d9cae37f9ba797b1392dbd89654",
+      "sequence": "MSTSKIFVGNSSEDAIAWLRDLRIDEVECIVPDMTGMMRGKIIPREDFIRIIRDGLRLPEFVFFQSVTGDGAEDSEVVNPLDRDVRCIPDLTTLRIVPWYDEPTAQVICDAYFAEGSPVDFAPRSVLRRVIDLYAQKGLKPVVAPELEFYLVARNDDPDLPLEKPIGLSGRHESGRQAYGIEHANDFDHVVNLMYDYCEDSRIEIATMAHESGPAQLEMNFRHGDPIELADQTFLFKRTARLAARRHNMVATFMAMPYQDEPGSATHIHQSIVRADNGKNIFSDPDGTDTEALLHYISGLQRYVPKAMSLFCPNVNSYRRIRLESDAPINVHWGRDNRTCGLRVPDSGPESRRVENRVIGADSNPYIAMATTLACGLLGLEEKIMPEPVVDVDAHTLGVSLPSHLHDALMGLKACQPLRDMLGTRFIDAFIEVKLLELQLYNRVISSWEREYLLLNV",
+      "sequence_sha256": "6e3a037864e74aea0f4dae159d80cf7ae5451a7fa750dbdd6e60dffdd197193c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A2T5B3B2",
+      "name": "A0A2T5B3B2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A2T5B3B2_2mg.yaml",
+      "input_sha256": "7750f9918680ce9fcc8c5a611999c08c44b05f1f1368c90f12aea86d38ea6f30",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/8806cbec9c0f6c62.csv",
+      "msa_sha256": "0c3f67686c1c97ed1da972c7515cbf96ea72d0be4d95a17b3efc685fa11dfe1e",
+      "sequence": "MDATMFAGDLDRAEPAGSGSEAAAQRHFFAAICDLNGVLRGKRMPDSKLKSVHKAGIRMPMSSIGVDIWGVDVAGTKLTMESGDLDGICLPTGRPPVSLGWAGCDAPLLPLTMWKEDGSPYFADARHLLAAVLARYSAKGLRPVVATELEFYLLAPEGDPAPAGFRPGTICGDFDNIYSLDELDAASAFLDDVYRTADACGIKVEAAIAESSPRQFEFNLLHLPDALRIADDTILFKQIIKNVARRHGHAASFMAKPRRDWAGSGMHVHFSIIDENGANIFNDGGEKGTDAMRHAVGGLLATMTEMTLAFAPHLNSYRRLRPGGLAPTTVAWGYENRTSAVRIPAGDPAARRIEHRVAGADANPYIVLAAILSAALRGIEERCEPAEPVRNNSHDSDRPAIARDWLQALEWFSASERAKTLLHPEFVHAFVACKEQEQIEFAARISEFELTTYRLSV",
+      "sequence_sha256": "9119349f343430a10a860f28a6682634906ac2796fe3482b7068af019037145d",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A316BYZ7",
+      "name": "A0A316BYZ7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A316BYZ7_2mg.yaml",
+      "input_sha256": "f32befef844af86e7b29ef46388562abcdb3665304137a9ed96c23800f33920e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/370e47971f3b43dd.csv",
+      "msa_sha256": "a32c54eb7b6cda277fa6faf5cd73fce5fd75930eb12113d3f0591521d00efea5",
+      "sequence": "MREITGNTHTGAKTSSLGDTHSPSRLAAEKNRPPKIPPAAVGDKKSKFMSPEHEAEYRAFVEKHPDLEAVEFLLVDPNGVMRGKWAPGDALKKAFQEGVNFPMSLHGLDVWGREVSETGLHIETGDQDGYCRATRGSLSIVPWAKRKTAQVMLQTFSPEGEPFMADSRQVLKRKVAEVNEKGYFPVVAFELEFYLLDPEVEWDDGMPAPVGATAGPDRLRMYGLDDLAEHAALFDMIRDAAQEQELPIDTIIKEAAPGQFEVNLKHRADPLRAADDVIMLQRLVIGCARAHGLTATFMAKPFLEYAGNGMHVHASMLDREGRNIFGGEAGRKKLEAAVAGLLRTMPESLLLFINTWNGFRRITPGSYAPTRAVWGENNRSVALRIPVASDENKRLEHRIAGADANPYLVMSALIQGMVEGIENEEVPPPPIIGNAYDDNGLFLPDDMDEALQLMARSSFVERALGPLMAKVYQDLKRAEILAFWAEITQLERTTYL",
+      "sequence_sha256": "c79c6d2817c24244b58cb52f368ad492af96da7ae0e9bc7be0adc67895e8ed04",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A3D9HKC5",
+      "name": "A0A3D9HKC5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A3D9HKC5_2mg.yaml",
+      "input_sha256": "c7ad8ba43058cf9ea9114a78a4e5f7a0098afaa0fe9541d2373e2b3f3c17d638",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/371ec2f468281bf2.csv",
+      "msa_sha256": "c36c48aadddd883b6420e216d7894b189890c26f0c3d53388a1fb34e3270fb86",
+      "sequence": "MADRINAAEMQEFLDQNPDVTGIDMLIPDANGVMRGKRIGVESAMKLVTEGVRMPFSTYFLDTTGQNCETLPYGTNDGDPDLPVFGVSGTISQVPWATLNTAQIIGTMEEDDGRPFFGDPRNVLRKALEPLSKMGLTPVVAVELEFYLLDTEMTPDGYAQVAQSGITTRRQTMTQCYGMDELYEFEGFIADIARTCRSQNIPADTAVKEYGAGQYEINLHHVGDPLKACDDAMMLKRAIKAVARNHGMVASFMAKPFAETAGCGLHIHVSLVDEDGNNYFAGPTDPETGVPMAATLRHAIGGLQEAMAESMAIFAPNANSYRRLQAGSYAPINTAWGSNNRTVSLRIPHCDERSVRVEHRVAGADANPYLVMAAVLAGIHHGLENEIDPGKPIEGNAYEQIKNDLPVHWHRAINFFRDGKILKPYLGEKFSDAFEGIRRFESAEFNKRIQPLDYEWYMRTV",
+      "sequence_sha256": "a1c5c760800dd87a40795b925e0969f1fcfbbcc4829fbc503993fb351cee4347",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A3M0A898",
+      "name": "A0A3M0A898_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A3M0A898_2mg.yaml",
+      "input_sha256": "784948db27c3e437b07a022edd6a555efc15ea0990e7716211aeab85021e7ed5",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/c8bf77945d7cc631.csv",
+      "msa_sha256": "204439392369d21b8537f9f8537d24a8ff20ea1ca4a757dc73f6a98417c2f7bb",
+      "sequence": "MQLLPELNAFLEANPDVNQFDVILVDLNGILRGKRLDRNAITKLYKSGILMPRSTFASDIEGDTTDGTGLGIRTGDIDCPCLPVANSLKIVPWAHEPSAQVLAYMVDEDGEALRYTSHGVLQNVIDKFKELKLKPIIAPELEFFLLDRQRDEDGRPLPPISPVTGARDKNTQVYGIAELDDYAAFLRDVKAAAVAQNIPADTAIAEYAPGQFEINLHHSDDLIQACNHAIELKRLIKAVALQHDFDATFMPKPFADLSGNGFHMHISLYDEAGNNVFANGEDLGNDTLRHAIGGLSATMEEGMLLAAPGANSYRRFSPECYTPLHPSWGFNNRTVAMRIPAGPDAAKRVECRVAGADANPYIYLASLLSGIYLGITQQLEPGPVTQVNAYKEFEPTLPLTWDAAIQSFEEAKLLPQVLGSEFCHVFLQIKLAERQKFHEFITMQEYDWYLRHA",
+      "sequence_sha256": "054403dad59beaca6318db4446d2844923309cfc7ebdda7d79f1226c8b7384e0",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A3S4MGV1",
+      "name": "A0A3S4MGV1_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A3S4MGV1_2mg.yaml",
+      "input_sha256": "0002cae61ebd1aec7250f99ae21dc24425e4eebd96b8173e14d16288b527cb55",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/14115448ec47bc93.csv",
+      "msa_sha256": "fadd9f8809f4ec0415584c811858f67ab07ca538bc161ee32d275e77c1b4a935",
+      "sequence": "MNSLINHSLVKNIFTLFAFPQVSSNEEVVSQPALIKPAEERTKDFYDEVHRYLQAHPATKHIDIYLNDVNGAFRGKRIAVDSLLSLSSGCYFPQSVYAMDHEGKPFSQAAGNMEFDEPDGLCLPVAGTLRPCAHDPEHNAQLLLTMKQSDGSGYALEPRVVLENVLQKFHYHGLYPVAAPEIEFYLVSKAQQEAPAQGCFYMPVPSDYTAFIEALEQAAADQRLPLSGIVCEAEAGQFELNLKHAKDIVGICESVLALRRLTSIVADKFGYQANFMAKPFSHLAGNGLHFHISLNDSKGENVFASPAEALNEMTQLCLAGMLQTMPAAVAVIAPHVNSFRRLRKNLNEPLFSSWGYNKRSAALRIPCSDDGNRRIEYRLAGADVNPYLAMAAILTGMLYGLENIDSDTLKNSALFAPELPLFQNAAIEEFQQSQYMIESLGEAFSRQWVTHKLSELAWFETIVTQEEAVLSR",
+      "sequence_sha256": "84b6b867cd605866cfd3db144ce52617be26c0c4f1bf0fd77bd20eda11ca9fa7",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A4R1XIK5",
+      "name": "A0A4R1XIK5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R1XIK5_2mg.yaml",
+      "input_sha256": "a3fa40ba7947c963db5d53072f52b8fe52c822b53cd028f2208475a10dd244dc",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/26e7294e6353b9c3.csv",
+      "msa_sha256": "76576fcdb1667b197226dda2bbf38d929a0d5d2d39687893318e705452b6ca55",
+      "sequence": "MNSPNIDFKVHPKTRSYTHSQAQLFLNEVTTYLQHYPETSDVDIFLHDLNGHIRGKRIDINSLKGLSKGCYFPLSVYAMSLDGKVVEEAGIGKHIGEPDQLCTPILGTLQPSALHPTTHAQLFLSMKEEDGSDCPLEPRNILKKILNQFHQADYFPVMTAELEFFLYKATNDDGSQNILPSQCFDLDALDQNQQILEEIKTQAGLQSIEIISIVAESAQGQYELNIQHSRDILKLADQIMALKRIVKQVAQQHQLLASFMAKPSMHQAGSGLHFHMSLLNQQHDNLFSLTPQARLSTTAPIASTSTAEGLSVATDQTAPLLLKALAGLIELMPASMAILAPNINSFRRFKMGNHVPMEANWGSNNRNVAIRLPCSDQQNKRFEYRVAGADANPYLALSIILIGVWHGIHHDLVLPPPSQLMKLNDQRRFLPNNQLDALQLFKNHPILNQYLGSKFVELWYTCKLSEYQTIHNQITSMELKWGI",
+      "sequence_sha256": "02f331047298409bd3a0f46e12f84114e92d3af3aeb6b1865d2c8afea463a53b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A4R3M2B5",
+      "name": "A0A4R3M2B5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R3M2B5_2mg.yaml",
+      "input_sha256": "5c04347a37891d90e5fdf178b64d5c43bf49b3655fd5bda6973b9906be581c51",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/3e3da34dafe5167e.csv",
+      "msa_sha256": "ebc56e8ee2bdda4f828f823bb4e44102a75d2e229a2140ccd9dd95d06fb3f37f",
+      "sequence": "MTDPADEARRFLAEHPDIRQIEAFFTDVSGIARGKVLRREELEAAFSEGRPLPGSIFGLDITGRDVEEAGLLWADGDADRVLRPVPGTLTRAPWRETPSALMLMTAVERDGRPMHADPRQALARVVGRFAEMKLTPVAAIELEFYLVDRAAAQAGRLVPPAGQTGWLQRHLQACHIDDLADFAPLFDDIYAAAETMGLPARTLIAEYAPGQFEVVLRHRADAMRAADDAILLKRLVKGMAERHGLAATFMAKPHAEHSGSGLHVHVSLADAGGANIFAGEHEIAPGPLLHALGGLMATMRESMGILAPNANSWRRFRPGSYAPVGPGWGIDNRTAPLRVTRGRTETRHFEHRVAGADANPYLALAVVLAGMHWGMVNEIDPGLPVTGNGYETIRPDFPAGWTAAIEEAARSAFLADYLGADFLNVFVAVKRAEADRFNALVPDIDLAWYLRTA",
+      "sequence_sha256": "d39fbd09cc2b231d7369c48790524567bd77712cb726dd5f68ccfeb07a281a7a",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 14
+    },
+    {
+      "accession": "A0A4R3ME26",
+      "name": "A0A4R3ME26_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R3ME26_2mg.yaml",
+      "input_sha256": "3c7f81681002b72e5cab0d577e73d7109fd3105773a1a11d51453d52c65b7c89",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/dd35135524f08a01.csv",
+      "msa_sha256": "43b0ecb3f8b61392d76365bd4772aa6f7539464c956b76df4797209fd98e3188",
+      "sequence": "MADPKPRLEPLPQVGEAARFLAANPDIEIVELLLPDTNGVFRGKWVPVGHLEGLFRDGLALAKSVFALDAWGGDVVATGLYHETGDRDGICRPVPGSLRRVPWTARPTAQVMLRMDDEDGSPFFADPRTVLASAVDRLAARGFRPVVAFELEFYLFDDTRPSEVRRGGAPLPVIEGLGPDRTNIYSVSDLRAYGDLFAEIEQAAQAFDVPTDTIISEAAPGQFEINLVHVGDPFAAADQALLLRRIIRQVARRRGLRASFMAKPFADRAGNGMHAHVSLVDGDGRNVFGQRPDGETLLRRAVAGLLDTMHAATLMLVSSYNGFRRLNGAYSPSKALWAENNRYVAVRLPRGSGPARRLEHRVAGADANPQLVLAAILAGIERGLAADLPLPAPVDGDVKAVATEPLPPSMRHALERFERSDWVAEAFGARWRDFYAEIKRQELAGFESYVSPLEYETYL",
+      "sequence_sha256": "d5ffe638754764985ef2a5495c83bffc9f14c3570a7ec248aa3d884c4a0d121c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 7
+    },
+    {
+      "accession": "A0A4R6MLL1",
+      "name": "A0A4R6MLL1_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R6MLL1_2mg.yaml",
+      "input_sha256": "a0563359fd893bcfa664dcab6e45588f0c87bf3f71e9caba6b084ae270077393",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/d82a791413c69ce9.csv",
+      "msa_sha256": "a8bbf1017611cf7e42cba298567d085dae3c56a45789cd07ac6ac11d665e9ecb",
+      "sequence": "MKVSVIEPVNENLPWLEIHDVQYMFYNDKLQRMTMSIVQEGNEFDLFITDLNGNLRGKRIPASGLKGVMTQGVNLPQSVIGFDHWGDDVVENGLVFETGDSDGICLPVHADPITVPWAAEPRDQILAMMYNPDGTPFMCDPRQILNNIVERFKTLGYTPVVATELEFYLLDGDSESKKRPAEPTMTEGSRSTLTQTDCYSIEEMDGLTGFFTDVRNACDEQGIPADTIISELGPGQFEINMNHTSNAVQAADHANLFKRLVKGVARTHGFGATFMAKPYPQKSGNGFHVHFSLIDNDGKNVFDDGTEKGSELLRRAVAGLLNRMSDSMLIFAPHLNSYRRFQLGTHAPTFASWGYENRTVSVRIPESPCVARRIEHRVSGADANPYLVLAAVLGAALYGIEQKLSPPSPIEGDAYALADQHETLPNRWELASESFKDSSFVKDYLGESFVRVFAAAKEQEQSKIFSQISNVEYEAYL",
+      "sequence_sha256": "93dbbbab9fffcc2400f486c2b8eb65e3f9007f8b049a6ce415c45c37d353e810",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 14
+    },
+    {
+      "accession": "A0A4V3DEU6",
+      "name": "A0A4V3DEU6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4V3DEU6_2mg.yaml",
+      "input_sha256": "2ee5719829bc67e93308e7d7011dbfd4a614927138662771a102645976613623",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/b289b7997b9acdcd.csv",
+      "msa_sha256": "3491b904f300440d5c57823c455adb3865098de6f302d9f66f25b22e2283dddd",
+      "sequence": "MAISKAAKTTRGAAEFDAFLKRHPKTQEVDVFVHDLNGFLRGKRFPVAEAKKIWESGVEMPRCLLFLDPTGDDLDPGGRSERLGDPDGTAQPIPGRLAPVPWADQPTAQVLLQMHDPFLDGEPNAGKPSKFCPRAALAGTLAKLQSLGVTPVVAVELEFYLLDTKRGEDGVPLPPRNPLTGLTETSKQPYSMDDLDAYAGFIRQTAAYATAQNIPASAAITEYSPGQFEINLKHEADAVAACDNAVLLKRCIKGSARQMGYQASFMSKPFLNAAGSGMHVHVSLIDKAGKNLFGETGEKGEALLRHAIGGLQATMAESMAIFGANPNASRRYVPGANVPMSTEWGRNNRTVAFRIPAGGPKARRIEHRVAGADANPYLVMAAILAGIAHGLEKRLDPGKEAKTGDFARPADPKIPFKFAPALERLAEAKILPRYIEKECLDLYVDARRVEMEKFQDTISRREYEWYL",
+      "sequence_sha256": "c2e715d350ac39d47d769efe34f84db839dfa5fb65a07bb86a8676b7bfea5a6a",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A562T2K3",
+      "name": "A0A562T2K3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A562T2K3_2mg.yaml",
+      "input_sha256": "3970e5e1e2101127c0b46a1f02bfb2f2778f716b2984059c8cdf2c5ccf096ce7",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/a3b0744363c05fce.csv",
+      "msa_sha256": "8fff25e4f9711aa19d53524a94d66d62c02a36fab7eec01068c49a9849e66af3",
+      "sequence": "MKCANIMSARPEKKAKTRARLKGNILKQFKASMPHMTLEHPAEPGWKDSFEEFLVAHPDLDTLEVVLPDTNGVLRGKWLPGAALPKVFEQGVAFPYSLYGLDVWGREVEDTGLHLETGDKDGVCWPIPETLKIVPWTERKTAQVLLSMYDRDGEPFGIEPRHVLQAMVNKLADRGLAATCAFELEFYLFEESDGDWTEQPKPLFSTHLGPARQNMYALSDLEALMPVVDDLRIACDIQGIPADAAVSEAAPGQFELNLHHRNNAVHAADDVVLLRRLVQGVARKHELKASFMAKPYVEWPGNGMHVHVSMEDVSGNIFSCPDKGWERLGFAINGLLETMPEALLLFTSTFNGFRRMQPGSYAPTSLCWGFDNRSVALRVPASSPDAARVEHRIAGADANPYLALTGILAGMLEGLNSETPPPPPVAGNAYEKKQKRLTPWMDEAIDAFEASERMKEAVGPEMHKVLTEIKREELNEFGREISSLERQTYL",
+      "sequence_sha256": "73afb1a766dff5144b76c499fb5abc24ff6e5edc8aebc745f2aa45087ca59f6e",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A7U7ELP2",
+      "name": "A0A7U7ELP2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A7U7ELP2_2mg.yaml",
+      "input_sha256": "286edb6245ae2d36326757930d8cf6b7f85ef231e4409b8a034f525674a5333d",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ffdc59b1c8b1814f.csv",
+      "msa_sha256": "4c6b804a2f21517ad6ab066eb01dbe47a947904af091c760ec524dcbfe42e887",
+      "sequence": "MIRHDIMTNANRFPDLLSEVRAFRAAHPEVRYVDLISLDIPGHFYGKRYPVEMLEKVAAGSPLKLPQNCVLLGAQGGLHPIGDYCFNDGDPDAPRRLIPGTLKPVRWENQPLGQMLISSDGTEAPIEFEPREVLARVLKRLEARGIRPVVAFELEFYLFDRALKDGLPQFPRDPLTGDEDDQPNMHIERLSRFSDVLHEIVEASREQGVDANVITAELGPGQFEINFAHCDDGLRAADWAALFCRSTRGVALKHGHRASFMSKPYLQAPGSGMHVHVSLYDRQGNNLLDADGQRPLRHAVAGCLDLLPHCMPIFAANHNAYRRYGAMVNAASRASWGFEDRDACIRIPESDGRNLRIEHRLAGADANPYLVLAAILSGMEHGLDSRREPIAPLNEDRTSGIDFPKDMLGAVAAMESHPVVREKLGGEFVFVYCENKRHDHLDFMNEVSAREYRWFL",
+      "sequence_sha256": "e156a0feac9b3106fb91e3f48d341ac62f01be59f9bdf8b32b781d9aca79fc83",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A8G2CJQ4",
+      "name": "A0A8G2CJQ4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A8G2CJQ4_2mg.yaml",
+      "input_sha256": "d18624b9dc095c39e8cf1e89d7c5794a867183845f9175602a0ce924cdf9b561",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/41a233fe3b0850fc.csv",
+      "msa_sha256": "2f132278768ab0692ccd748b322ccd9566de6cdae1a23e297102ddfbb9dba3fe",
+      "sequence": "MTGAVDIVSSHEDRLALLGQSELIEAFIIDVNGVPRGKWLQRDKAGALLGEGIAIPRSAYLLDIWGRDIVEGGIAFDTGDPDGTCIAVPHSVTRMQWAEGHATQALLTMREADGSLFYADPRGVLARVLDRYAAQGLTPSVGVELEFYLVDPNRTGGQRIAPRGADESAWRGWQTDTMGLWEIHDYEPILRDLLRAASSQSIALDTLISENGPGQFEVTLRYAPDAMRIADDAVLFKRAVKQIARKHGLAATFMAKPFGNWAGSGMHVHMSVLDRKGLNIFTGDAEKPSPVLYHALGGLVAAMPDTMLVLAPHANSFRRFAPGTHAPVFGDWGHDNRLSAVRVINAEPRAARIEHRVAGADCNPYLAFAGMLGAMLDGIADRADPGPESIGDKTGAAAPRLPIAWSAATDRFAGSARSAAIFGAAFQGIFAACKRQEIDEFRRRISDVEYDAYLKNA",
+      "sequence_sha256": "a59d55740a3e24781f653757656a0dcdd70575b8f7aadd1f74d98471524b1854",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0AAN0RKW5",
+      "name": "A0AAN0RKW5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0AAN0RKW5_2mg.yaml",
+      "input_sha256": "da34a0a74f95bbf47781e77f5f87129e5939fa2b134e0f0f1fb94ea04a9585bf",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/d088c4a8e743bf19.csv",
+      "msa_sha256": "ab91b3c88d01f02fe064cb49cecf5de1bd2088bd5e6e96d65b9e6b85557fae34",
+      "sequence": "MAEEMSRTRVMFNDMLNLPRGKYVPVDVAAGGKIGFARGAFAVSYDRDLLPVPGCGVYDGLPDMDLILDAERRKGWQAGTEIALGDLHVDGEPFGLCPRSTLKRAIKDWEALGLSPMVGLETEAYIFQRDQDGIWRPYETPGAFVYGTGPENDPRGVMDDIWEAAHHAEIPIESMNGEYDNGQFELTLRFDHALKACDDAFLMKTLAREIALKKGLLLTFMPRPVPDRGGSGLHVNFSFVGKDNQNQIAPNGALSDLGQHCIAGLIHHHEALAGLLAVTVNSYDRLAAGSLAGYWANWAEDHRLVTTRCSTSSPKSARLEHRMADCATSPYQAVAAVLQAARLGVAGNMPLQPAEDLDGLENVRERRHIPSGLDKSLEALDKDVMLRQAVGEAYCDGLLYLKRDEFKRLLNKSVDEIRDFYLPFV",
+      "sequence_sha256": "848625655380755d92e7426e7a21ce112ca0b18e3fbd54c09fa4d03aa149740c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0AAN0RL94",
+      "name": "A0AAN0RL94_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0AAN0RL94_2mg.yaml",
+      "input_sha256": "03cbb6124b88857c7c799c85173daf474bee978e638e21561d5819c53a87a395",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/714e6fd718a8c7aa.csv",
+      "msa_sha256": "83c8441df7872e4b19dbad802f631b635715bf9def2acf75ac1078017d7b1bd3",
+      "sequence": "MSKSLRVAAVDLNGQLRGKRVPKGMSGKQMRMPLSVLNIDVFGADIQESPLVFETGDQDGIMEPAGRDPVPLPWVAGEAELDLRVMHNEDGSPFEGDPRIALSDVLNRYAHHGWQVIAACELEFFLLEDGGNLAPPVNPKTGRRLSGTEILSLRELDGFDHFFNDVSEGAKLMGIGDLTITTEAGVGQFEVTMTHGPALHIADNVILLKELIKGTARNHGMAATFMAKPFSDESGNGLHTHFSVINQAGENIFCSQDKLQSAVAGCLEAFEASTLFFAPYVNSFERFVAGAHAPTSATWGYENRTVAMRIPSGPKAATRIEHRVAGGDANPYLLFAAIFGAALEGIERNSVPPAPIEGNAYEHPAQLPGLLPDLSAAIEGLEAPLLEQFMPPLILENLAATKSQERDLFDKLSDHDALMALIDTA",
+      "sequence_sha256": "94f72dc7418aebc993ae4fc6a7d02d93ffa95cb9a06fc0cb855c10c79ebec6bd",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABD5QAR9",
+      "name": "A0ABD5QAR9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABD5QAR9_2mg.yaml",
+      "input_sha256": "fdffa251b42454f6e47a8a8a993427716b57793b19c22531ca16af180c3add73",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/1efde06de5c1f1bf.csv",
+      "msa_sha256": "67ce8449b759312372b877b0b53d75a3a0225dc4d8fcd2d5bc453c845a13d52f",
+      "sequence": "MPTRNEVIETCDSDDVSLVRLLYVGNDGVPRGRVVDADHIESALDDGINLSSAMQSFNSLDHLAPGGMFGAAGEVRILPDPETFRVLPYADRAAVLLCDLYDLDRTPWDADPRSALSSYLDDLPYETNAAFESEFYFTRTTDDGELIPFDDSVCFGADGMQSANDIALDMTDALKAQGMDIVAYYPEYGPGQQELVVEHAPGLQAADNHILFKQTVKGVASNNGVEATFVPKPFEEAAGSGCHIHLSLWDDGKNVFHDPDSEGRYGLSETARHFIGGILDHAPALVALTAATVTSYKRLRPHMWASAFTCWGQDNREAIVRVPSSQWEEPSDTTRFEFKPADNTANPYLAELGLLAAGMDGVGRELDPGAPVNEDPAEMSATERTDQDIYRLPETLGDALDELEADEVIADAMGETLFQSYLEVKRSQWEEFTGTVTDWEIDEFTRAF",
+      "sequence_sha256": "4658526e88eb3c321b1fdd590ea76329c9efe2604eccb090ea69a71c8493ce6b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABM7MGI2",
+      "name": "A0ABM7MGI2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABM7MGI2_2mg.yaml",
+      "input_sha256": "e6c99e58de91234ad271bf6880f5682126b623beeb015e033f428c496f6b5f25",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/abb11a12c0c0efef.csv",
+      "msa_sha256": "f60195c624884863309e9dbb854833a11f4a5bcc084190e873a889e026453b2b",
+      "sequence": "MPTSVHTPATSAEDFSSSATSSVPKRLNAWFAQHGLRDVECIFPDISGYPRGKLMPAASFLAGGELRICQAIPMQAVTGEYSYNPVFPDSDPDVRLIPEYATVALAPWASVPRAVAVHDCLELDGQLCSFAPRSILKKVLASYAALGLTPVVAPEIEFYLTTANTDPCQALQAPIVRGGRAEVGQSAFSLNMLNELAPFWNEFREACQTLGIRTDTWIHEVGATQYEINLLHGDAVAVADQAFLFKYAAREIALKHGLNAVFLAKPIAGSSGSSMHLHISVVDAQGQNIFSQPDGGESPRFRQFIAGLQALGPELMLLFAPNVNSYRRYVVGSQAPTNLQWGYDNRTTGLRIPASSPAARRVENRVAGADANPYLALAASLAGGLYGLQEQLTPSEPVTGNGYNHAHTLPRSMEAALLALQGSRQAQAILGADFVTGYCAVKELEYQSFLAEISPWERRFLLPQV",
+      "sequence_sha256": "8b0bbd883b7e70acb32d1f70c62a26cf424f864df5be9fbbc8e0c958d845420a",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABM9AA17",
+      "name": "A0ABM9AA17_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABM9AA17_2mg.yaml",
+      "input_sha256": "ad4196530938f465378bf6757763ff604b2915bcdd975dbcac13a5ef765739c3",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/2bf8f137ada5353b.csv",
+      "msa_sha256": "4a291b6277b8b26f485280036c09c54dfbeb0451ad7da142cb06e47bc4b0175d",
+      "sequence": "MQSHHPDQAFAVQFPDVETVDIMLADSNGVLRGKRTPIDQLEKVITEGILLPRSIFGNKITGEAAEATELGDATGDRDYLCQVQAKTLAPCPWQPKTAQLLSHMVEANGSGLRCDPRTVLTDAVTRLDSHGYSAVVAVELEFYLLDVKTDAQGQPQPPISPDSGRRDCETQVYSFEDLNSYGDFLALVQQSAQAQNIPATAAIAEFAPGQFEINLQHINNPVLACEQALLLKRIIKGCAKACGYQATFMAKPYQQLAGSGMHVHISVLDQQGNNIFSPDVSPLITNETINPAMRQALSGLITTMQDSLLAFAPHANSYHRIQPGSFVPINKSWGHNNRTVALRIPLSSPSATRIEYRIGGADANPFVVMACIINGICYGFDHGNLPLPSETELSAYKEQRESIACNWKESVHYFQHSEFIHEYLGAEFQSVYSQIKTEERLDFERHISQLEYDWYQTLA",
+      "sequence_sha256": "1c4b51689f41f652f7b4484f7155ee3decdf7d5d00e6bf3eb0a1b2048abcaf12",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABP9WL28",
+      "name": "A0ABP9WL28_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABP9WL28_2mg.yaml",
+      "input_sha256": "e76ee216ba97e1324f4416c3b72bb7285f323e4ea54291dfedd150b9045cda12",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/4c7fbb81a9b6f5db.csv",
+      "msa_sha256": "f02e68ea97f288d50a01cc8441e3bcc8dd51827d9b73e2b36aca6d3d9c597828",
+      "sequence": "MSQSSPSSWLDNLPAAFQAYRDGRRLDEVECIIPDLNGMSRGKAMPLKKFSPDISLFLPISIFYQTITGQDVEMDIANQWAESDMVLVPDMSTAMAAPWAKQPTLQIIHDLQDFDGKPIFCAPRNILKHVIELYRQRGWKPVVAPELEFYLTKPNIDPNEPIQPPVGRSGRSGTALQSYSMTAVDEYGPVIDNIYDYAEDAGLHIDSVIQEDGAGQVEFNLTHGDPLLLADQVFYFKRIIKEAALNNNMFATFMAKPMRDQPGSAMHVHQSVVDIASGQNIFSDAQGNETDLFRYFIGGTQKHLIEVMPLIAPHVNSYRRFESAANSSAPTNIAWGYDNRATGLRVPHSGAQDRRLENRVIGVDTNPYLSIAASLICGYLGMVNQVAPHAPAEGELSEEQEAESYIPTTFDEALRIFADADEIQQALGEDFCRLFAEVKAEELRQFHREISPWEREHLMLNV",
+      "sequence_sha256": "6df5ddbc1381c836d07c9e26a102bfc9c1791db71faad85544dac459acfe0301",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ACH1R7X3",
+      "name": "A0ACH1R7X3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ACH1R7X3_2mg.yaml",
+      "input_sha256": "298bd1b0e74903b8897d304941aa347bc43a64267d0fb3ac2ee3467576ffd3ac",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/1200dc768f27f2e0.csv",
+      "msa_sha256": "c57c4b9a99534e87e5d67eab687d69b475db56bce6c8bc8a7e9b6e364a27a3bb",
+      "sequence": "MGYENAHTTGIWQEIERTQNFLSLLPAKPKAGTMTNDKTAAGSPRANAPIDAPARIEILLVGMNGDLRGKQVPLEGEKKIWDGSVRLPSSTQSLDIWGDDNDDITGLSISVGDPDGLCIPDRRSLAAMPWAPEGSRQVLATMHEFDGSASFMDPRAILGRMLKRFEDKGLTPVVATELEFYVVEDDWRETGKPRPPAALMYRGEPNGFQLYDMRATDALDGYLQTVRSWAKAMDLPADATTAEFGPGQFEINLLHRPDAMAAADDCIYLKRIAELAAPRFGLKSTCMAKPYAEHAGSGLHVHCSIIDRDGRNILDAKGGEPTKLKSITAGMLQTMRDAQLVFAPFANSYRRFQPGSFAPVDLTWGFGHRGTAIRIPDKDGPAARVEHRVAGADVNPYLLLTAILGGILLGLENDLDPGPVTEPGKDVADARRLTHDFLTAVEEFSASPFIADAFGAAYQKLYGDTKRKEAITFLRTVSDFDYQTYLPRI",
+      "sequence_sha256": "a2423633493556e4b2f9ebaad9f6ebcbce8f1d8b3d1803adab34297c0b34f01c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A4A9Q1",
+      "name": "A4A9Q1_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A4A9Q1_2mg.yaml",
+      "input_sha256": "966e9bc60dcb3b280752f34b22f54ec96a57447e3acc188d8efbfac45cfbadd0",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/2918e58526e6b743.csv",
+      "msa_sha256": "a9942709821de7c0c6e45957d6b81aec36a1d12c6737def536deb4e444be4a4e",
+      "sequence": "MALEVDWFLRAYPRISMIEALLPDSNGVLRGKWLPRNKLAKVYKGELKFPKTALSLDIWGRDVEELVFATGDEDGVCLPVEGSLLPTPWSPNQRHGQLMLTMFRPGGSPYLGDPRQVLKRVVARYHARGWRPVVAAELEFSLIKWDGKHPRHSGEKPYRGEPIGGNLYGLDVLQQNQAMLEQIHRACHLQSLPFDGVVKESAPSQYEINMQHVDNPVLAARQILMMKHAIKEIAQQHGLVASFMPKPFADEAGNGLHVHCSVIDRDGKNVFDDGTEFGTPKLRHAIGGCLQHMADSFAIFAPSFNAYRRFQKGSHAPTTPNWGYENRTVAVRVPAGSSRARRLEHRVAGADANPYLVFAVILAAALDGIERNLTPKAPISGDGYSQLDAEELPIYMQDALRLFGESSFISTALGPEMQRNFGLTKAQELAEFQRHITSLEYHAYVERL",
+      "sequence_sha256": "c44d15c17771d00343eac223b2eb403aa729674494e3a3a0307592635a5e74db",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A4ABK5",
+      "name": "A4ABK5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A4ABK5_2mg.yaml",
+      "input_sha256": "996fc44e09a8e03bf0a623b88dd83756a03cb07929aa5079036a985c355f2eed",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/4531604b9baa7bf2.csv",
+      "msa_sha256": "b6214dae5e0aef3f5a4d74c536718fd63c81a27cedb27dc4fc97afe3ac2fe44c",
+      "sequence": "MLSSGLFLQPPLSPAPRVKTVTEQPQAFLDRHPDVELFEVVLADLSGGLRGKWVTRDKIGTVFADELKLPISALVFDSWGRDVEEWVFLRGDGDGCCVPEPRSLAPMPWGKRPMGQILVSLDHEDGTPNPLDPRRILGNVEARLQERGLQPVVASEMEFFLLHSQRDHLGRPRHTQQDSLGGALNTGQTYGLEAMAEVDEFMHAVRECCELQSLAVDTLIKESAPSQYEINLLHHPDALLAADQALLLKRAIRGIARNYERTATFMAKPFGDLAGNGMHLHCSLQDGEGNNLFDDGTRDGSVLLRQAIAGCMETLPDIMLLLAPTLNSYRRFQRGMHAPLAPCWGYENRTVALRVPAGPLSAMRLEHRVGGADAQPHLAIAALLAGMLYGIEQELEPPPAMEGNAWEQLEPSLPRDWNGALDAFRQSRFVADYLGASFQEVYGLVKQQEIDEFSRHVTPLEYDTNF",
+      "sequence_sha256": "1414bcb7436521e0e30206f4ed0d711de35221bc2bcaec5a770052c4c52d1e08",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A6W8I4",
+      "name": "A6W8I4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A6W8I4_2mg.yaml",
+      "input_sha256": "fa9daf7b925b87cc5c759f37154434daf19a39940ff7959a9f4667d1e208dbb9",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/c8b50503ea20be22.csv",
+      "msa_sha256": "12afd823fb15872c03fd35839f289438f4b88f3206621d2219c740ca7203363f",
+      "sequence": "MLEMVRQRTIRAGPAPADHEEAPVGRTSTDASTGAPLSLQDLRHDITSGRIDTVLVAMTDMQGRLQGKRLTGRFFLDEVLEHGTEGCNYLLGVDVEMNTVDGYEITSWSRGYGDLLLRPDLSTLRRIPWHPATAMVLCDVLQLDDEPVRPSPRQVLRAQLQRLEGHGLRPLVATELEFNLLRVTYEEAHANGYRDLRPASTHNIDYSLLGTGRVEPVLRRIRNEMDGAGLYTESAKGECNLGQQEIGFRYADALTTCDQHSVFKLGAKEIAAQEGMSVTFMAKLDQREGNSCHIHLSLTDLDGSPVFAAGAGSEMAPVMRSFLAGQLAALRELTLLLAPNVNSYKRFADGSFAPTAVAWGYDNRTCALRVVGRGPSLRMENRVPGGDANPYLAVSALIAAGLHGIEEGLELEEVTTGNAYTGGAPRVPTTLLAAAELFAGSALARRAFGDDVVDHYARAAHVELEAFQTAVTDWERARGFERL",
+      "sequence_sha256": "fc868e73d759b9ff06cf29ae851c502714f3e2b031bfb46673ccbc37a7dd128b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "B6IMX3",
+      "name": "B6IMX3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/B6IMX3_2mg.yaml",
+      "input_sha256": "93414f4744c66d313c27e159286f795e035a6a0415d67062239ebc108e218191",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/a0225804a093feec.csv",
+      "msa_sha256": "24f1d025cc325bd96cf18a02519de8987362a267c1bb25c76d1c63fe3a74ab3e",
+      "sequence": "MSSYRIASEIQEFRSRYPDVQAVDVLLPDLCGVFRGKRVPIDELGKVWTDGVAIPGCTFAVDITGETIEETGMSQALGVPDRICLPVAGTLAPVPWAARPLGQVLTSMRGPQGEPFPYAPRSLVETLVGTLAARGLTPVIAVELEFYLIAGGRGAFEPPRPPVSPKNGLPQDRTQVYGLAELEDFEAVLDDITAACRDQAIPAGTAIAEYGPGQYEITLSHRPDALRAADDAVLFKRAVKGVAQRHGFDATFMAKPYRDQASSGMHVHMSVLDRDGRNIFAAEDPAGSEQLRWAIGGLAQTLPAAMALAAPGANSWRRLQPGSYAPTVAAWGVNNRTAALRIPAGPPPSRRVEYRIAGADANPYLVVAGLLAGLLHGLDGRIDPGPPAEGNAYGADAPRLPTGWDAALDLLDGSAVLRRGLGDAFVDTYVITKRAEQRKFAAEVTPLEYGWYLRNA",
+      "sequence_sha256": "aa79c8396d27c08f868c45e7eddbf702f67381006230846cb887163f05cbbe51",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "D0LJE9",
+      "name": "D0LJE9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/D0LJE9_2mg.yaml",
+      "input_sha256": "c9297595f480a22f1d61d4be45d1dbfa0e52d7bedb925eb5f10947d9d40671ac",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/22ec3015617c3b60.csv",
+      "msa_sha256": "397bb80752b97705837a863723a65a4398448b2ca16785297f41054b716d7c51",
+      "sequence": "MDHTDSPSEILADSEKSPEALARELRVQGCRRVKLGITDIDGVLRGKYVSIDKFESMAESGSGFCDCIFGWDVEDQLYDNGSFSGWHKGFPDASYRLDLDTIRVLPYEDGTPFFLAELIPPAGDDFHPVCPRNQLKRVLAQLGEAGFAATLGFEYEFFLFDENPHSVREKGYRDLSPYTPGNFGYSVLRASVSSDLHEDFMDFCETMDMPLEGYHTETGAGVLEAAILHADGLDAADRAVLFKTFSKVYFQRQGLIPTFMAKWSPDFPGQSGHLHISLRDIDSGAPLFHDAQAQGRMSETMQHFVAGQVAYMREMCALVAPTINSYTRLVKGAWAPTAAAWGIDNRTTALRVIPGSAQSTRVEYRLGAADGNPYLVAAAALASGLAGIQEKLTLPEAVAGNAYEIQDGLPKERQLPGTLREAAGLLAESQVARRIFGDAFVEHFVATRLWEAREFERQITDWELARYFEII",
+      "sequence_sha256": "23c645247a7eb4d282ae887223c731c771f9d2bbc8e23f957c92ce967e2c8d0f",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "D7DQ41",
+      "name": "D7DQ41_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/D7DQ41_2mg.yaml",
+      "input_sha256": "95a694e915e4bcd0e34a79b4ab74b9445d66b659072e6b0b3c8fb1c57488f432",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/532fc3e3e5bdb9c0.csv",
+      "msa_sha256": "19bc4c2c4b3e977e4cbff95a519db200e6985a195198f191dfad1893f8295f6b",
+      "sequence": "MSSLKHVAELIKKNKITEVECLFPTINATLRGKLMRAHDFAEGKELRIARAVILQTINGEYCDDHVIGATDNDTILKPDYSTFKILPWQPQRAWVLHDCMNFDGSPSEHAPRNVLKKVLAQYQTLGLQPVVAPEIEFYLFKRDGQEAAGFTPPAMRGGSIELERQMAYSLNSTAEMRDFWQALQAAFDALEIRTDTWLHEMAPNQFEINLLHGNALKLADDVVLFKHTLREIAAQHGLNAVFMAKPLADYDGSSMHLHQSIVDAKGNNIFSDATSNNIGNATPEFYAYIAGLQNYMADLMPLMAPYFNSWRRYALGTQAPVNLQWGHDNRTIGLRVPHSVAAARRVENRFAGSDANPYLAMATSLACGLRGMQEKLKPTAPVDDKDGYEFPREIAIGLESAITQLKQSKSAREMFGNEFIDAFCNVKEIELAHFMYEVSSWDRRYLALQV",
+      "sequence_sha256": "8e343c49a62b4c020e3c7e87312cd1d767ca5d51c520223dea7f9f9bdae352ee",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "E1SVJ9",
+      "name": "E1SVJ9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/E1SVJ9_2mg.yaml",
+      "input_sha256": "4b5d08eaac6a77a2f2c68ad5ca721b5760445541f881149d1c31d94ebe2003ff",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/993e1e9bb0f87ee8.csv",
+      "msa_sha256": "695f42f5afc1b4de08c8768fa1326ed946e2b38023d69e34cd569b577435d364",
+      "sequence": "MGKHLNLVSEQETGLTPAQFIKANPELASIDLLLPDINGVFRGKRMQPEQLDKVLQDGVCLPASVFGLDITGETSEETGLGFTSGDQDRRCALLPHTLALAPWQAKPMAQAMITMLDDDGEPFPAEPRNVLSQQVAALAELGLTACVAVELEFYLVDPKHDQDGMAQAPMSPDGEHRVTATQCYSVDDLDHYSEFLDEVNAVCRVQRIPASNAVAEYAPGQFEINLNHLPDPIAACDQAMLLKRVIRGVAQKHGHKATFMAKPHQTQCGSGMHIHLSLLDNQGKNRFAADHQLLKHAVGGLLEMMPASQLLFAPHANSYRRLQPDMFVPMAPTWGYDNRTVALRIPNGPESDTRIEHRVAGADANPYLVTAAILAGARHGIAQQCQPGDPVEGDANALDLPSLPYRWADALATFQAPSALRAALGDTFCDIYASVKAAEIQRFEQQITPLEMQWYQDTI",
+      "sequence_sha256": "c0b11ebb9d0984d0332bfffdd22b3e46d5a1b4d3b3ceeb65090dd6344b24a957",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "F0JDE4",
+      "name": "F0JDE4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/F0JDE4_2mg.yaml",
+      "input_sha256": "a4c312a7b1154bdd573e34e8a82e164756f94e037e6cf8963f4c1c5db29a3f99",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/6775cbd52f665820.csv",
+      "msa_sha256": "1e61b5b5d6795ac36ec3c38c7bb19b1021c44eaf67d0e1d5fe219e7ea2f03e1d",
+      "sequence": "MSLPKPSSIDSIKKQIRDHDIQFVRFEQADLYGVSRSKTVPVGAFMDYIENGLNFYGGLLGLDIQSMVPKGTGYAEEVAFEDHCTVPDLSTFTVLPWVPNTANITVDPYWYDGRPAMASPRLLLKKILDEFAAMGYICRLGYEFEFYVLDKETRKPVYDGQPIFVTLKNNFDIDYTYDLMRKMDQAGVRIITQNSEHGPGQQEINLYYQDGLPAADTAFLYKMGCKEISLQHGYIATWLTKPFINSSASGSHFHVSLIDKKTGKNAFNAPDGECGLSELARDFLAGMLKHARANTVFTAPTINCYKRYRVNSFAPHTATWGMENRTVGIRLKGCRGESTHFENRLACGGTNPYLLALSTLAAGLEGIRSKPELPDPVLGIAYDDETLPRLPFTLDEAVEAFEQDTDLHAVLDPEFIKLVLAVKKFEVETARAKFADYGTPEFNNRVDPWEWDYYMELL",
+      "sequence_sha256": "59dddd4f2527df6537bacdd74e74e592dd53595b75e5652e181633abbaab853e",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 11
+    },
+    {
+      "accession": "H6SKG7",
+      "name": "H6SKG7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/H6SKG7_2mg.yaml",
+      "input_sha256": "f72a82d8603d7c83a29f0a785d77dbd31ba52fc44738d57e518a22f3c67fbeaa",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/2814e2dd867dcd56.csv",
+      "msa_sha256": "9592c33f27c8b52a9c9f2d5975a9f5dbe2bbab4270d294fbec43aecc5c364bc5",
+      "sequence": "MSVGENNKGAIMLPIGFSPAHVAAFFHRHPDIEILEAFVVDVNGVPRGKWIPRDRAEDVLVSGINLPRSILVLDVWGRDVDRAGLAHGTGDPDGLCLPVEGSLCPMPWVERPMAQVMLTMSDDDGLPFFADSRQLLDRVLDRYRALNLTPVVATELEFYLIDRHRTPLDPVRPPKSEHGRWQAWQTQVLSIAELHDNGPLLSDIADACRAMAVPADSTLRENGPGQFEINLKHVADALAAADHAVMLKRIVRGVAARHGLDATFMAKPYGDHEGSGMHIHFSLLDAEGKPVFAGPPDQANLSLRHAVGGVLKHMGDCMVLFAPHNNSYRRLWLSEHSPTVASWGYDNRNAAVRVVTSSPNASRLENRVPGADVNPYLAIAGLLASAHHGLVAEIEPPPPARPSDPVPDSQRLPVIWERTIERFASSSFIADYLGESFRSVFAATKRQELDEYRLRVTDVEYDAYLRTV",
+      "sequence_sha256": "12d9b2e8fad12c5708c09fc948feb1072c9342030fa6cd3ce6d46a9635625aa0",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "U2ZIR9",
+      "name": "U2ZIR9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/U2ZIR9_2mg.yaml",
+      "input_sha256": "311f9fcf3f55a442752ee3868433dab31390d7e37b0a100222c828b4245851e0",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/f3b2e826d7737da3.csv",
+      "msa_sha256": "dcb2b1c21527908306f24c5425f5d13b3ffcf4372340ad692a81a37993baa47a",
+      "sequence": "MSSQGSSSLAERLTGVAEIECVTPDLNGVPRGKVMTAEGFLEGRRLQLARGVLLQCIMGGYPPARFYGSDDGDLVLSSVPEQVFRLPWSDSPRAMAICDADELDGRSSGLSTRGLLKRVVAAYAEHGWQPVVATELEFFVFERHLDPQRPFLPPLGLDGSRESGCSAFSVSSGNGLRAFFDEVYRCMAALGLPRDTFMHEMGVSQFEINLLHGDPLLVADQTFLFKHLLREIGLKHGLAVVCMAKPLPHTPGSSMHIHQSVVEQGSGRNIFSAEDGEATPAFFHFIGGQQAALADFTLLFAPHVNSYQRLCHPYASPNNACWSYDNRAAGLRIPASGPAARRVENRLPGADANPYLAIAASLAAGLHGLQQQLEPGAPIQGEFEVPAALSLPCTLHAALQRLQGSALARQWFGDEFVGGYCATKSMELMSFLDEITPWERRVLANQV",
+      "sequence_sha256": "dc674e60216c20c7ce052cb76f0d5a15b0dfc4a362c1f854d6fc7dee551b4cee",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H3G5V3",
+      "name": "A0A1H3G5V3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H3G5V3_2mg.yaml",
+      "input_sha256": "cb19a37e30c5411467f0bfa494b2e84bba055a8958f01f19cc88fa404782cfae",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/9667c1b8870c70a7.csv",
+      "msa_sha256": "dfe28b6c1d7eeb553e1bef6139cce5ad924f7607bd7ec494ef84f046046d2400",
+      "sequence": "MIAAADISAEDGWSRSINDFSVLTFNLSSGGAVLHLIIPMFSLAVASPLIIRVFKKACANKKGVIPLKKQTILVIADLGGCPPHHFYRSVAEKYHIVSYVPRPFAISKAHAKFMEEYSVAVIKDTDFLNKIEDFEHPESIYWASGDYDKGEARAALDIINIAKMFAVDAITTNNELFIVPMAKACEELGLRGAGYEAAKRARDKNLMRESFNQAGLTTIESRRVNNVDDFKQAVEEIKLPVVLKPTYLASSLGVTLIDKDCDPVEKFLATEKALEKLAVPKSVTFEAKYILEKYIEGCGKDWRDDEGYGDYVSVEGLMVNGEYVPIVINDKTPLVFPFTETSHITPSTLDHEAKEIIYDTAKKANEALGLNYCATHTEIKLMKDRKTGVIETAARFGGWNIVPQAHTSLGLNFPALLADILINGYSAKLPFDENDHLKQYSANLNLYISDFREQLAGDAKKICFNNITLPSEISSEVTVTSFSQLPPGTEVSCEKGFESLHPVASLDLLSKDARKLKEAIQTIRCQSVLSAYDARKLNGVIQ",
+      "sequence_sha256": "57546b7ae11556f46138f98e84e2f05be204807628577155c5e60000985e165e",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A5C0WIG2",
+      "name": "A0A5C0WIG2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A5C0WIG2_2mg.yaml",
+      "input_sha256": "cc9ce785f4166155ec4b9a66cdf372875f961823a50bff90b78a7f380923c336",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/0a8a0ad4f5b72955.csv",
+      "msa_sha256": "92a663c52dcd3555aa0f353dcc0c7877749fc2229214c6e8bf687ba474c72b46",
+      "sequence": "MSKKTVLVIADLGGCPPHMFYESVAASYHIVSYIPRPFAITKGHAELIEKYSIAVIKDRDYFETHPSFEHPDSIYWAHDDYLKSEEEVVEDLVRVASFFKADAITTNNELFIAPMAKAAERLGLRGAGVKAAEMARDKSQMRAAFNAAGVKAVKTQPVTTLADFQQAIEHIGTPLILKPTYLASSIGVTLFHDKAGSDDLFLNVQSYLQTIPVPNAVTYEAPFVAETYLEGAYEDWYQEDGYSDYVSVEGFVVEGEYIPFVIHDKTPQIGFTETAHITPSILDNEAQQIIIEAAKKANEGLGLENCATHTEIKLMKNRETGLIESAARFAGWNMIPNIKKVFGVDMAKLLIDVLVDGKKAALPKELLSGHTHYIADCHLYPQHFKESGHIPAEATHITIDHIHIPQDALVGDTVIVNKSVPSKGTFVDLSLFEAFNGIVSLELKGSSSQDVAASIRNLQKQAAIHLMDELVKG",
+      "sequence_sha256": "3bff6392579d7b9516286859af3aa243b0c6733cef168d4561e18cfe60b710d4",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABS4JEW8",
+      "name": "A0ABS4JEW8_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABS4JEW8_2mg.yaml",
+      "input_sha256": "ece571132b3eec6223f069a2820fd7d631f5f320e2d35e59a087e5d1075e47f9",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/e757c67f68e47c5a.csv",
+      "msa_sha256": "a00ba7aca1db9d0557db02abc9bc120683607fdc8570606a7bb62a6eb3f38a4b",
+      "sequence": "MKNILLVSDLGGFPPSLESLSAIANVFVYIPRPSAVTNRYMATINRYASGIVKEITASTPDGYDHPDWVTFTGAEAYTLTEEEIVSEIIRYAKGFEVEAIIFGGAENMVLSVAKAAEALDFRSAGIDAARNARNKYTMREKFRQAGVPSPDFRAIYSEEDMLSAVQALGYPLVLKPTYLACSIGVTLIDGSRNPIEVFREVQQDILDNTGDSLLFNEECLFLVEEYMEGCNEDWYADPLYADYVSVEGMMVNGEYRPVAITDKTPMLSSFTETSHIVPSILDEEAQLIIVDACRRANESLGLQNCPTHTEVKLMKDRRVGIIETAARFGGWNIIPQINDVYGLDLTQAWAEVLLYGDSAKLPVSLLQRSDISRCNMRIYLEDNPLDASLHYQYAGYEPIDHFIEHGASVHAELEIPKGTLVSSNPHLNAMSFVSTLDLRGPQARDLAQSVRNIRQGVRLQVSEVESEKVEVNV",
+      "sequence_sha256": "b8a0c44ab7716e688ecf4c9e1996ccb2d9f53af23f98079b8f2390e116017e2b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN3V2X3",
+      "name": "A0ABN3V2X3_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN3V2X3_1mg.yaml",
+      "input_sha256": "51763dbb1f52493b6cc7a7d1d55ef488215c2a54d408faccc984b654a7083818",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/6e927e257a091756.csv",
+      "msa_sha256": "167e6503e74ea7db0de606af5d093a93d7c942ee2abe44ce1e7809d1e6afe798",
+      "sequence": "MTTVQDALRHPRFALVRRRVFRQLLESLLYEEVLEPRVSGDHHVLTGTDAHGRAVTYEFTAARRYGFERVRLGPEPVSRTVGGVTAEADSLRHFVFDLREQLGADDRLTGFARELEATLIKDAMAQHARFQRADVLAGADFDALECLITDGHPYHPAYKSRLGFDFEDNLRWGPEFARPLRVLWLAAHHGIATVSTSESLPASFVADQLGPGPVEAFQQVIRQHGHAPEDYALVPVHPWQWREVLSEVMADELRSGELIVLGEDAAPLRPQQSIRTLSYVDSDRAYLKLSLSIVNTSTSRVLAPHTVANAPRISDWLKRIVAGDPYLNDTHRLVVLGEVAATSVEPREESGPESYGALACIWRDNLKPRLSAEERAVPFNGLISRELDGTPLIDPWVRAHGVEQWVRDLLSVTLPPLVHLLQGHGVALESHAQNMALIHVGGRPARLALRDFHDGVRFSRARLARPELCPELAGTPAHHVNRNSFVETDDLDLVVDYLLDALLFINLGELSLFLADSYGFDEREFWSIARRTVHDYQRRFPELEQRFAEFDVFKPGIGIEKLTTRRLLPDTELRLHVKPNPLADAKED",
+      "sequence_sha256": "78f8be09d2b37255680945d4560c4b6aef76a182398573f4981bf0dec0f9f18c",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABP7MJ38",
+      "name": "A0ABP7MJ38_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABP7MJ38_1mg.yaml",
+      "input_sha256": "833f9a0791adb6c384b4c35d88a39517687ff26da1b45c07b70a0db3084df2f2",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/f64a9cd2350897a4.csv",
+      "msa_sha256": "e844ee91d3aacbc5d42b5a2fd50da8a767359f2bb75ad8f4621485bdb7fdc81f",
+      "sequence": "MKPHNTDLNITAAQPDAFEQRVCRQLVEALLFEQVIDYQFEHGTFRFVMNRTLYQAQGRVASFGRIRLETGSIYYQQDTQKNEATLQQLVADLPTHDAMKQKLSNELQQTIKLCQWNLQHLVKRSSRRALSYLELESALDEGHPYHPCFKARTGFSIEDHARYGPETGNPFQLHWLAIDQNLLQQALPQTNRDFWLTELGAATLIELEQRLLYEVAKTSNQSDRFSFMPIHPWQWQSIGQTLLGELIEKEKIIHLGAAGDFYQATISVRSLVNVTHPEKPNIKLPMNMVNTSSLRTIEPHSVCTAPVISQWLNTLIAKDSFIQSDQRLGLLDEYAGIVLDEHKASALVSDPDWSANIEGQLAVIFRKSLTHETPETLSAIPFPALMTKEQDGKTFVDPWLKQYGIEAWVRRLIDVAVIPVWHLLVHHGIGLEAHGQNMVLLHKEGWPEKVVLRDFHESLEYQKDYLAQPTLAPDFGQLHPNYTTDAGQPAPDNQYFWMDSVEALRELVVDTLFVFNLTEVSHLLSEAHGFAEAEFWHIVDAQLTAYAQEGHTAPERIAAIPLDAPHIQTESLIKKKLSGQRAAEFHHTIPNPLRYSVHHSIPAIHKKEFNHPAEPCLSA",
+      "sequence_sha256": "254f24f282d57b54b9346454133b973bc3462cee3c6140eba047a5878f4227df",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A5M3PME8",
+      "name": "A0A5M3PME8_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A5M3PME8_1mg.yaml",
+      "input_sha256": "91a350b6328bf340855dbf076008ece84a93b5e6a1e481a90d40a6173fbaf2a1",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/dd28b71fc124918d.csv",
+      "msa_sha256": "85b7c6e207f677d0451eb2684ced93582ef1c3553af6878e2eeb59c7a549c3bc",
+      "sequence": "MGPSARAIAEHASFQAFLHCYLHEVDSGQWQAERVRTGDVAGRFVGPWVCELDLGSQSSRLAVDVLYRSAVGRHRYGRVRQWLAARHCWSDIEPFQALCLMVRELYSRSVGMVPELRKLRELEFLHRLTDSYGVMTRCVEHRRADPALSDNRFIASEQSLLFGHATHPTPKSRQGMSAWQQEAYAPELAGRFRLHYFLVRSDGVDEDSDGPLAAHAMAETLLSDGHGSLNLPPDHYLVPAHPLQAQYLQTQPAVMAAIAQGLIQPLGALGPAFSATSSVRTLYSEQSEWMLKFSIPVKVTNSLRVSKRHELKAGVAMSRLIRRTGFADSESRFRIIEDPAYLTVNLPGQRESGFEMIFRNNPFPPSQDGGIVSLAALTQDPLPGRHSRLLGLIEGMALNENRSLSAVARDWFQQYLTCAVAPALRLYDDHGIALEAHQQNSLLDISAGYPRRCFYRDNQGYYLSECRREELLSLCPDLRETPELFYRDAMIRDRFCYYLVVNQLFSVVARLGVDGALPEAQLLRQLRNFLRSLRATLSGPALALVSMVLEDSRLPYKGNLLTRVHDVDELNADLEMAVYTSIANPLYRLDQTEQLPNLASAMTEAGTMAEVGHGVA",
+      "sequence_sha256": "99ae28001f9381e0f4f61b702e3a7edf65b9b8acee399ab4e6600c1b3466433a",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A640VTU0",
+      "name": "A0A640VTU0_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A640VTU0_1mg.yaml",
+      "input_sha256": "2ca24635097b02eaaf9c49ac4505e42833722a86e5a9d2fec048a12386c91429",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/26f375241ba6d3b4.csv",
+      "msa_sha256": "4187b54746d27a1d4cb35cc9b26ce7dedc0e3dcaa74c0e7282be08fac53060a5",
+      "sequence": "MRPPAKQYAPHAPHATVPWWDDKDTPDKQSGTSSPHARAEYATLKAFLNGYMLEVTAGAVIARQGAAPSVLEFDLPQSFARLRVAVRHWSITGPHDFGALYLCNEECGHWQRASVAEVLPMLVRDCFARHGTSDGPKLQELLRRILNSYDQIAKSCAWAEGLPSTPAEFLAAEQSLIFGHWLHPTPKSREGMTDWQAASYAPEFRGRFQLRFFAAHDSIALNGSTGSVSAQDMIRQIPGLDLASFALRPDEHLLPMHPLQAEALCLQPAVQALLACGQLRDLGPSGVPFAATSSVRTVYAPGCPWMFKFSLPVKITNSQRINLHHELEAGVVMARLLNTTGFLNQQPRFGVINDPGFMSLTLPGQRESGFEVIIRENPFERETAPVVTVAALTADPANGGRSMLARLVAKTAARNHMSDGQAAKRWFGAYLGCALHPALALYDKFGIALEAHQQNSLLDVREGFPIRYLFRDNQGYYIADSHIDALAQLEPRVTALKSVCYPEAEIRDRFGYYLILNQVFSVISRLSRDGLATETELLSQLRQALHQARATHRGLAKRFADHLLHAPELTFKGNLLTRVHNVDELRADGEKAIYVHRKNPLVSEAAAPAAAVPHVNA",
+      "sequence_sha256": "ad3339cc67c69ce56bd72af6f444c80f1c5e4a38b4853e2e2ec75df9b595f262",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A8J2YFK3",
+      "name": "A0A8J2YFK3_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A8J2YFK3_1mg.yaml",
+      "input_sha256": "6480183781c6157a0e4e45fbd0bfe1d03f15460ecdb74ca59674591bcc22a412",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ceba3aa628e88627.csv",
+      "msa_sha256": "c25ded302515e19f619b99d08ad0342cf80a0a8125a366e9584d407b136fec52",
+      "sequence": "MTKVKVIAEQATIQSFVNCYLRETGRGEKQRVALTPKKNTDAKTVIKLRLAHQGINIIIPIKYWSPIGRHLFAFPLYYQFEAGYCPLPMDYITLVACMIKELLLDQGRQDSEDELMLRVILSCQNIKLALSHRIKKDSGLTVGSMDFIENEHALIFGHLLHPTPKSRQGMTDEEAMFYAPEFNGSFQLHYFKASTRLIKQASSGAISAADMLKQYLMTDDSISETFKKEHCLSQDDVLIPCHPLQAKYLLTRSNITDLIQRGQLEYLGPHGQPFTATSSIRTVYNKKSPYMFKFSLNLKITNSLRVNKQKELERGIEVGRLLKSSFGDQLFEAHPNFKIIRDPAYLTVKTGEEESGFEVVIRENPFKDDQKQETTLIAGLCQDSLPGQRTRLAHLIAACSKKDERTLEEVCLSWFQHYLNVSLRPMLWLYFQYGIVLEAHQQNAVIQLEDGYPKTFFYRDNQGYYFARSKSDRLKTFLPDISKNSDTICADSIAEERFIYYVIVNQLFGLINAFGSAGLIAEEKLLVLVYEELAACHEQHPESQLLDRLLHAQTLPCKANLLTRLHNMDELVGSLDNQSVYIQMPNPLKEVTRHHDDIHSPTY",
+      "sequence_sha256": "a1a8215cdf5492a5a13ebf19b867caa4a5f935d080534638ad4d959c34e936bc",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A917AXG3",
+      "name": "A0A917AXG3_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A917AXG3_1mg.yaml",
+      "input_sha256": "f6d7ce0459777400e839c87c02ef57b6a2d19bd6ffa8f7eebd662ddea7f9f559",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/44e837000cf5e796.csv",
+      "msa_sha256": "bc689127557951dd7c020ad3c467ef38d8ccc9537e0096b4df098603e6754011",
+      "sequence": "MYQSAKYIAEHATFQAFVNSYIREVSTGTWKERQEWEQEHSFVSILSGEYVLELELPRQEKRFVFEVKYRSKVGRHTFGRCFAYRVQDYTWYEEDKLTVILALIQELHATAKYNGCHELQSHFDELILRLIESYQTMGTYIEKRVKDKDRLYGETSTFIEMEQALLFGHWLHPTPKSRQGMAGWYHESYAPELQGKFQLHYFNISRSLIEESSALAINTSDLIYQSIKGYLPKTLHKQCLIPMHPLQAEWLMQQDHVKKAIQAGLIENIGPLGKFFTATSSLRTVYNEEEEWMYKFSIPVKVTNSLRVTRHHELKAGVVIAKLMDRIHFLENNPSFHIIHDPAYITAVLPGREESGFEVILRSNTFLQGEDKDVSLIAALVQEPLPGVKSRLHQIIETIAQVESRLQEEVSMDWYEQYWKCAIEPLIRLYDEHGIALEAHQQNSVIRLSNGYPGVYYYRDNQGYYLSKAHEQELLMTEPSLEETRELFYDDALIRERFTYYLFMNQLFSIIHRFGADQLVDEQKLIMWSIEQLHVLEKKLKGQGKAFVQMLLTQEELPFKANLLTRFHDVDELEADLEQAVYVTMSNPLVCYRKEEEYEAVVTY",
+      "sequence_sha256": "6fbebf3de2064857099d8922973f51f4a16a6e92cf994ee2e87a63b7c8113364",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A9W6N401",
+      "name": "A0A9W6N401_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A9W6N401_1mg.yaml",
+      "input_sha256": "430e8a4917f9b0a9253f4ad3fa9f48bde40a73ce3cacc4d1237f339e6410a1de",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/b3a8aa5946b9623f.csv",
+      "msa_sha256": "877b256c535d6dbceca9577a9a0169ae9930a871a2897f35f22f88e7ecbdfbf3",
+      "sequence": "MTTLKKAELRTGSNVRLTGAEARRLAEQAALQNVANCYVREIDAGALVRHRPVGEVAADHLELLLRDQNGALRIEAVALSACGPHRLGRAYIRRAEGQDFVRVDPMTAVIALLHEAYRSFGPERAERLRGCELELLSRVLGSYQSAATCLAAGAGADDDDSFIAAEQSIAFGHWLHPTPKSLQGMTWWQRPAYQPEQGGRFRLTVFAAPSGMVRHASAAAVSAPEIARGFLGADLDRLGLKDGEVPLLMHPLQAEALLLDPDVAALRDRGALRLLGPGGPEVAATSSVRTLWSADRAWMPKFSLPVRITNSVRVNKRHELEAGVAVARLFAKTDWLQRHPRFRVIQDPAWVTLDLPGRAESGFETIFRENPFVAGRDRGVATVAALTAPPLPGGRSRLERLVRDHAAQSGLRVAEAARAWFRAYLDCAIEPPVALYDQLGVALEAHQQNTLLDVTGLLPRAAYYRDSQGFYLSNSHRHALDRLIPEAASIGALYFDDCEIAERFGYYLLVNQAFSVVNRMGHDGLIAETALLDMLAERLERLARETPGVGGAFARAALDRPSIASKANLVTRLLDIDELDADDEAAVYARVDNPLFGRPGVCDFGGDRAVAV",
+      "sequence_sha256": "6baca202a9d2d8386f96d8190f08ae41209335768083b78b7c26392e7cb62f36",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0AA37W9M8",
+      "name": "A0AA37W9M8_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0AA37W9M8_1mg.yaml",
+      "input_sha256": "0f33e5fb3ca7e31253dd2b19673e25303bd46383994a623097305a7d1cb2f8ff",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/6ec14ebc0da2eb0c.csv",
+      "msa_sha256": "75148c3704f4e573686aab4cefedb7bd3b6d5130da51936934424787d7848844",
+      "sequence": "MRQSARQIADHASFQAFMNSYLKEVDPGVWHQANHWQQQTDQTLSATSHQVLELKLPSQHITLAVGVSYRSQVGRHTLTEVFQKPLHQFDWQALDFFSAILLLIKELYAPAPGHPQSDQQRKKELELLARLIESQQVMTRYLEQRLDDPKLRNLNFIDSEQSILFGHWLHPTPKSRQGIHDWQHQDYSPELCGEFQLHYFSVDRALIEQGSILSQSAEAILQQILTQQSTAMDTLSLPLSEDRLLIPTHPLQAQWLLHQDYIQQRIASGEIQDIGPLGAKFTPTSSVRTLYSEQLDFMVKLSIPVKVTNSMRINMHHELEAGIVVANLLRTSQFSHKYPRFQTIDDPAYVSVTLPEREESGFELIIRENPFSRCQPNADQLSVISLAALTQDGITEDQPSRLSQLIHQLADNQQKEQQRPIAQVAAQWLEHYWQCAIEPAIRLYDEYGIALEAHQQNSLLDVTDGLPSRYFYRDNQGFYLSNAHKTALLAMEPQLANTPELFYDDEMILNRFSYYLIVNQLFSVINRLGIDQLLPEHQALELCVGWLAILEKQLTGQGKRLVESLLSQRDIAFKGNLLTRIHDVDELQADQELAVYTKIKNPFRAIAFAQGVVTSETDSGQRLDDQGTATAAHTLHLNALISASERGSATHFSDVSETTGGQRESA",
+      "sequence_sha256": "71b432b880c8a21a2bd98beed8c76fa54d23348bc9e4b031da326088d68201ec",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABQ6PDN8",
+      "name": "A0ABQ6PDN8_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABQ6PDN8_1mg.yaml",
+      "input_sha256": "5b082966235116da538b965108e254f7c492c6c8a45367ce9f5711781d7584de",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/5460e9a945290e90.csv",
+      "msa_sha256": "ff0452119503936e95600045ca515162c1b9ebbbdf3f14d1f0595349b28a2ab9",
+      "sequence": "MNKYANRITLKNFLNCYYREFNNYKLFRNNDGSYKFNILLKSIGSSFETNVKISPILKSPIWELPCYLVKQDEKIKLDPLEAVFLISKELESSNVIAFDELLERITNSATNIAQILHYRKHKIDDAFGYENSFITNEQNLIRGHRLQPDPKSREGFSKEEFVQYSPETNGKFQLYYMYISKDILESQSLLEKNTDEIFSDFLKNESIYYKSDKDYQLFAVHPWQAKYLAKHDEIQKYKAQKKIIDIGITGPWFYPTTSVRTVYSPQANIMLKFSLNIAITNSVRTNLAKECNRSLTVHKLYTNHLQTILNNEFPFFKLITDPAYCAIKVNNKIFDPSICIIRNANFNHQDDIACIASLTEPNPFNEATRISSLIQYFSVHNNISTYEAAIYWFETYLTVAITPILWLYSKYGIALEAHQQNLLVKLEHGLPVESYYRDSQGYYYIKDHPELKKANFGDINSLCGESEDFIDHHFCYYFVVNQLLSVIEAITNTGYISEQDLIKITIDFLEGFLEKYKTCDKFIKKILNIDQLPLKANLRTRLSGLDELQAPLTNQSIYVNTNNPFKEVI",
+      "sequence_sha256": "f175b93193c8080c75b37220cadeb4abcd99f1a288f1544f745834b85c1d1a1d",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "H6NMA1",
+      "name": "H6NMA1_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/H6NMA1_1mg.yaml",
+      "input_sha256": "51021284703fb2d769eebf6dde1707df4f9f1ba4298f3edba03e85e62b825b9f",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/e4812aede615d148.csv",
+      "msa_sha256": "4fa651cf7535fa14e3990e445eab2fe0f5de21e574a6511bfb61ba1cb5810745",
+      "sequence": "MNEAYKADIQTTADHMALQSLLNCYLRETESGVWETAEAIALRTEGAEEMASPTGLYLSIPLSRQGITLRCGVRYTSPTGRHLFQFPVYYRTGTEAQWIQGDYLTVTVLLIKELGLTQGKVSEPDELVLRVIQSTRLIQEFVEGRKDDAEALYGTDFTFLDAEQSLLFGHLIHPTPKSRQGVPDGEQARYSPELQGSFPLHYFRAHRSIVAQDSVLESSAEELLLEELRSDPLVDGTWLEEQIAGGEHVLIPVHPLQAQELLRRPGVRAWIAAGLLKDLGEIGSEYYATSSLRTVYRPDSRFMLKFSIPVKVTNSLRVNLFKELERGVEVQRLMGTSVGRVREEYPPFDIVGDPAYLTLRMEGQEESGFELVLRDNPFRGEAAQGATLVAGLVQDPLPGKTSRLSNVIRELAAKEGRTTEEVSRDWFRLYLGMSLKPMVWLYMTHGIALEAHQQNSVVVLQGGYPHKFYYRDNQGYYFCSSTKELLERELPGIGAKSQTVCSDEVADERFRYYLIFNHMFGLINGFGTAGLADERVLLAELREALASFVPMNREPSVFLHTLLHNEKLPCKANLLTRLFNMDELVGSLDTQSVYVEIDNPLVKEVGELDRQGTAEQQLVHG",
+      "sequence_sha256": "20fa019d7b3f8eeeaf256fc53b94fe45e680473aca28eb43522b10d0e3346cae",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A2X4W351",
+      "name": "A0A2X4W351_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A2X4W351_2mg.yaml",
+      "input_sha256": "900af0f8643fca0f31b42b23280b5d4adc353a80b76ffa598f9726799863cd1b",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/bc9b8c16317ba756.csv",
+      "msa_sha256": "ac0bfb9809c071262e65fe2bc0c66429786067df96e4c26d4bb6b54539918d0b",
+      "sequence": "MKLSQLLENVIAYNNFDKSFYDIEVEGVSANSAEIGLNDLFIAISGFQQDGHQYIENAIAAGASAVVGEKEMDLLNIPYIKVSNSRLALAHIAKNFYQTSSKKHTIIGITGTNGKTTTSFMLKHILENVGLSCSLFGTIHNVVNGQKLPSVNTTIDALELHRHLSNCQDDVVIIEVSSHGLSQFRIDGIEFDYCLFTNLDHDHLDYHQDMDEYFSVKSTLFNKLKPEGKGIINSYNSWGERLFRSLQNNGQNIFAMGDAEDNHLQITRYKKNEPGIATIFEGDHQYQLKLKILGIHNVYNAAMAFLTGRKLNIPGEIIIQSLQTFQGVPGRFELIKQPKEATVVIDYAHTSEAFFNCLSTARELGAKRIFHVFGFRGNRDKSKRIGMLNISYELSDKVILTLDDLNQISYEKMVEILHGVNSPSKAVIIPDRTLAIRYAKDEAEDGDWIIITGKGTEKYKQQFFLPTTTDGETIRFLHSID",
+      "sequence_sha256": "fc6cc3470ae834cbf5d476eff06495706b5b5b465c231182d40b4fcc25184a43",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A517YHC3",
+      "name": "A0A517YHC3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A517YHC3_2mg.yaml",
+      "input_sha256": "8a528defe55d321de919cd0206b6a300d8915528b358d2748b22c997f07fd56e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/d0cc103507346660.csv",
+      "msa_sha256": "a17a9a646221259ec5baa5112c367329a51259cd45dbe94fab1396138302c342",
+      "sequence": "MSVTQQRASVSLGNLLPAARLTRGAIMVQSVCTSADRCQPGDLFVGVVTSEGDSHDDAAIAVAKGAVGVLTERLLPLNVPQCIVEDTREELGRVCQALAGNPCDELRTIAVVGTRGKTVTSLLIASMLEAAGEAVGVLSSIGLSDSLEQVITPSATPRAPKLAHWLERMTLAGCQSAVVELSGRALAERRAAGMEFDAVVLTNLKRSEQSWHGSEENFRRANLRSLEMLKPGGFAVFNADDVESEQALSNVDLPVLTFGMISDAQVTATVIERCPSEQTFLLQAGCESIPVRTAIIGDQHVQNCLAATATGLALGMNLATIVRGLEAVKFIPGRLQRIECGQNFNVFVDSARSPEGLAASLRSLRQAGTGRIICVMGCQGGKDKETRPRIGHVLDRCTQLSIITSDNPRHEQPLSIAHDILDGHERPHLTHTIPNRAKAIRFALESARPGDTVLIAGKGDRQGQRIGSGKQSHDDCEVARKWLYEQATPVQTRPQLRIFG",
+      "sequence_sha256": "aa71396a7a40bb32deb4e676a55b26ae52754a9f2969ae8ac162ad54c63785b2",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 16
+    },
+    {
+      "accession": "A0A518C8G2",
+      "name": "A0A518C8G2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A518C8G2_2mg.yaml",
+      "input_sha256": "08bb3c7b00877d55b68522b0d2b06bdd782300cbaa20d9e54c8aa1e442e1b2ed",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ae7d1ef00d0df5eb.csv",
+      "msa_sha256": "f60a5d84e01d93e38cf770a9d0e30aec87cf8f737724477f7e4b6159f27478e5",
+      "sequence": "MSQTITSRVGVSLRSLLPEAKFFGGSDIFAKACCARPEHVLPGEVFIAICEDQEDGHDRVDEAIERGASAVVSEKPLPVSVPVCVVGDSREAYGQLCHALADQPTDRIKVIGVTGTNGKTTTCLLIKAILQKAGAKVGSLTSLGFDNGYDEQSWGHPTPNPAIMADMLSRMQYNGCTHAVIEASSEGLVKQHLAGVQLDVAAFTNIRQNHIELHGSARNYYRAKKKLLKYLRSTGVAIFNGDDSNCVRLLNQAEVPSLSIAVHGVGEITASVVERHKSEQTFMLTAGSQSVPVCTRMIGDHHVYNCLIAAAVCLVYGVDLKTVVRGLESVETLPGRMQRIECGQSYGVFIDQAHTHDGLAVALKTLRRVTHGRLICVLGAHESSDRVNRPLLGRVAERGSDVSLITMSGTGGTSQNEVVHDIIDGFARPAKAHVIPNRKEAIRYALSQAEIGDTVLITGQTTERLVSDRVEQSEPRDCDVTRELLYEMVQEEGTTPTTEAKVIAFPR",
+      "sequence_sha256": "c63c9990089f94497221b5e8c99f76f838f70d514f47c661a37657396d99ebad",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A6S7BZ53",
+      "name": "A0A6S7BZ53_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A6S7BZ53_1mg.yaml",
+      "input_sha256": "d917ae2c0f6bc3384892aae8e08b539c17bd30b7a6febcbe9ceca79ac8fe39c5",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/e49c06d973290f98.csv",
+      "msa_sha256": "81fb71b4e01445d1c6d077740c471dd2db9ec4a310313f3a12f3a9ee03b84087",
+      "sequence": "MSQIAERADVARTHADASRAQGIATASIERMLAQDLLDALWLEDLHGFRGRSQLSRGPGDQAVLAVSLADDATLRWLGSHIQGPRVLRLRAAAPVVLQRSASSASLSVAQTLEALRRAPWWPEPSDRLTQLLTLAQRQMARTFLAQGALLARVAARPRSLAAWEAVCCLRDRPFHPLARAKLWPDFSGDDFDVESGRTVELHWVAATRDALASGTTQEREAQPVATALLDEVEFAALAQRARERGAAASALWLAVHPWQWLHLQRRAPELLMRCVDLGGGLGAALPTASLRTLSITAAERPANDIHLKLSLSVQALGASRVMPPRYLHNGVLAQACLEELRRRDAWLGAHLELCDETQWWALRAGDDRTSLIHESGELACMLRRYPETDGWLLPMAACAAITSDTRLPALDALCADPALRVLAGPPSDAPVERVWRVFGEMARLLIETGLRCFAHGVLPELHGQNVMLRIGIVGMQALVLRDHDTLRVCPAAMGEHGIDPPAYLVDRSTPNTLILDRAETLLAYFQTLAVEVNLYAIIAAIAECYDTDEATGWNIVARTLHETVDTALQGFPHAQRCARQQLFDAPQWPFKQLLAPLAARTSVGTGMPSGLGTIANPLWTAAGVSGASGVSGVSGASSASSASGASAASGTQSR",
+      "sequence_sha256": "a39295f32e7454802b2d55206301255aaca08c52e5ddacc716981092624f8f77",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A6S7AZG2",
+      "name": "A0A6S7AZG2_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A6S7AZG2_1mg.yaml",
+      "input_sha256": "e193fbaf0d0a2130b64d9f83fa0e78f213dbe856429898b4815a665dbe04cec4",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/992b92c1476d9b2d.csv",
+      "msa_sha256": "d4cfed4eb6432481b503bc8b37f76de36b49dcaafa1f522e07c94eadac587517",
+      "sequence": "MKLAEFDALIHSDAYRDAAQRVIRQLLEALLFEDALTHACWADTLLSIEATSRDGETLFYRCEARRTASFGRVRIVSTVRREGPGGAADAVDVALLIAELAPQLRADPEQLARFAAELSATHIKDAQTRTSQSGRLLRGRDYNEIESGLTGAHPYHPSYKSRIGFTLDDNGRYAPECTPGVAPRLLAARRECCRWSVSRDVEDGDPLRLLSGAERAAFDMQLTKRGLRPADYLPLPVHPWQWDAAIEASCHAAFARGELVPIDVLGDRYAPQQSIRTLANADRREAPSLKLAMSLVNTSTSRVLAPHTVRNAAPMSDWLADLAARTDWPEPLVRPVLLREIAGVAYVPRTPIAGQYGALACIWRESVHRHLARGEAALPVTAITHVDADGRPLVADWVEQHGTRAWVRRLVERAWLPVLHLLWRDGAALESHAQNMVLLHRDGLPERIALKDFHDGVRYSRRWLSCAAPALDAPPAEHARVNPNSFIETDDADELRDFTTDALFFVNLAEIAWFFECHFDLEETEFWAIAACVIHDYQARCPELAERFARFDCFAPTMQIELLASRRFMPEIRLRTRAAPNPLAQTVYA",
+      "sequence_sha256": "d31a7c87e66c1deec7b2bfe12f2cdd819a44cecf1eaac00b7b52d8d4fdf09190",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABM9BY12",
+      "name": "A0ABM9BY12_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABM9BY12_1mg.yaml",
+      "input_sha256": "dd328699194c6f9121b266bf89e24efc443ec977fb1c85e96c62fcc7c6b920dd",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/51a8f708131b1659.csv",
+      "msa_sha256": "ebc8ef7d276cad7ff4f5486086d2ceb1fce89255e95bb7f8f0e68d958414d29e",
+      "sequence": "MNMLDLQDSIRSSRYVEVRRRVFRQLLEALIYEEATAADAVPLSSGAVRFTISGRDEAGQEVRYVCEGRRKLSFGRIRLSPEPVRRIQGKQSREADDPARFLDEVYGAMADSPASPEHSERPEQLGGFIREIMQTLLKDAMAPRGQELLLPAEAEYEELEGEISGGHPYHPCYKSRIGFDLSDHAAYGPEFKQRFKLLWIAVRKELVELAVSGSVEYDTWIGEELGAETLQRFNGLLRAEGHAPEHYVYMPLHPWQWRERGAALLFRFIRSGQVVPVGEDEDDYTAQQSIRTLSNRTDKAKANVKLSLSIINTSALRIIRPHHTASAPQLSDWLARIVDDDPYLNEELGLIVLKEIVGLSFRYDCLLPPIRKEAAGALGAIWRESIHKRLVGEEQAVPFTLLCHLDINGRPAIDGWVRQYGLEEWVKELLQVSIRPLIHLLFAHGIAMEAHAQNLLLIHRQGRPARLAIKDLPGGLQICSGPASVRSESNDAEQSSVSNGGGQSCADRGSHSCGSSQSRLEKGFLRSCLAEGMTQARDFFVDAFFHINCAELALFLEAHYGFDETAFWRLAAAVIHEYESSFNTAADDSLGQYDLFAEFVAVGRLATRRLYGEHAASDHFVPNPLFVFNKSKEGGAGNESGTVAI",
+      "sequence_sha256": "92a0a7e102e348787aac77aeacc94325e14c95ac16edadd0ae11588cd780bc2e",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABM9C099",
+      "name": "A0ABM9C099_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABM9C099_1mg.yaml",
+      "input_sha256": "611425a4e90af962273d384e6f127af9c841b9276746fdb69d91327cba984a00",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/f833948d3ca136d6.csv",
+      "msa_sha256": "d1f94e4e5f6ba8b195eecbb491b7e7d1633b9dc3be59781e7878c1e15ad682cb",
+      "sequence": "MELEMEMSRIAAAVGSTRYIAVRRRVFRQLIAALIYEQVIQPEYERLPDGTERFTIYGADEMGRRIRYVCEGARKLSFGRIRLSAKPVCRMAGEEEQEADDLARFLCEVAELLPAAPALLAPFIDEIEQTLLKDAMAEHGRRQYTGTAMLDDCDELEGGVTEGHPYHPCYKSRIGFNLHDNGAYGPEFKGRFKLQWIAVRRELAQVSLSELAYYETWIGQELGPVSLRQFTDRLRAEGKSPEQYLYMPVHPWQWRKQAAALMLGSISSGEIVLLGEGEDEYTAQQSIRTLSNRTNPFKANVKLALGIVNTSSLRTLSGRHVRNGPIVSDRLRAMIESDRYLREERPLILLREIVGISVQAGWLTPSLREDSEGMLGVIWRESIHQKLASGEEAVPYTVLCHLRADGRPWIDDWVQKEGLEVWLSALLSVTLQPLLHLLYAHGVALEAHAQNLLLIHRDGIPCRLAARDFSGGVLLYKATGANADLYPETDRPHEVRDVFHNALFFINLTELTLFLEQHYGYEERAFWQLVASGIDRYCDGHPELAEQFRLHDLFDETAEIGQLAKRRLFGGSGQEDQHVRNVLSIIRTRSEGGEPTDEYAGSAG",
+      "sequence_sha256": "66e90d9abf273d3fd7094a615272b02847118b49065cc07afbe98fb64f95210b",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABM9CPI4",
+      "name": "A0ABM9CPI4_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABM9CPI4_1mg.yaml",
+      "input_sha256": "376f2958b54c01e1ef52604b88efe407fa4f4143da349e5071e3d5f9261e3762",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/89fe7719b8e9a2ec.csv",
+      "msa_sha256": "5472ff1bd8d642fcf0d9f1e1d4926d824170697fbfc24b44770ba0357824e328",
+      "sequence": "MERVLDWDTQLFEAIASEAYVDVRRRIFRQLLESAIFEKIVSVETVQLGKETLFILHGRDADGTPVTYNCRGGRRLTFGRIRLLADSVLRISKEGKKEADSIGQFLQEVIAFSGADPDKLSAFAEELERTFLNDTIAQHARKKSGERLHSRRGYDALETAAMDGHPYHPSYKSRIGFTPQDGLAYGPESGEGIRPYWIAIRREEAAMAISEGLAFHELWRSELGERQLNLFEERLLGEGMNLEQVALLPVHPWQWHNIAGPSLLHELRNRRIIPLGPSQDEYRPQQSIRTLANMSDAAKPYVKLSLSLLNTSSYRHIEPHYAAVAPAISAWLQQLVDSDPYLKHEARVILLKEFAGIGYDPVNRDSSIDKGLMEGALSCVWRERLEPHLLTDEQAAPFHALNALELDGTPFIDPWVQANGLQTWLTRLFETCVLPVVHLLVAHGVALESHAQNMVLIHHNGLPGRVALKDFHEDAMFCRSFLSNPDICPDFGGVHRVFAEAAPFKFFEQENVEPLRYLLLGALYCINLGELAMLLSDKYGYAETDFWALAAGTLEAHLRKFPELASRLEGLDVYAQTTRLEQLTKKRLFVSSEALMHEVPNPLHSASRGLASMNREREENLSC",
+      "sequence_sha256": "a64aaaada71a28f6577166e8857c57e6e97fa9584421eaa386a94b397ccc2418",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN7TT27",
+      "name": "A0ABN7TT27_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN7TT27_1mg.yaml",
+      "input_sha256": "c6466801ad3170d985cbb1e293dabcd9e494d943d162d4a0bdec54a9dc0b72c2",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/d06864f1a3d98370.csv",
+      "msa_sha256": "ebed5edb9d8557f02d167a003d4a42f36931f1d5717552121d14a7ca3375b9e5",
+      "sequence": "MRLPTSLKQTMGRMSQYCPWYLQKLGVGKESDSEDTALESLPLITSSVLETHYYSESNPLAKRDDIHCYRTSGTSSGRRKAIYYSNADEEAYIRIKLDVFRAILGTNSFRTAMADMGTGHAEATAVEVFRQLGMEVESISFRLPIERHIERLAECRPEVLYTMPSILDRILQASANPADYGIRHVILVGEIASPVWIRQAAKRLGLDARQITDTYGSIEIGTIAYFSHEHGRYVLAEGIVAEGIGPERLEEGLEPLGAGDEQVLVLSSAVREAFPALRYVTYDIVRDLRPIWVAGVLRQSFKGIVKRIGPDLKHGEKISIYDIEEVVFHHLSDASVRVKVAGNALVVYVYSPAATAAVMERIRDDVESRIPEIGMMIRARLLGDIRVEQGALEDTLYGSAVKNKKIFYE",
+      "sequence_sha256": "b029d5aaf72d90587c1d44c89f0ec50567449153442f334d06b86c87000bf9e5",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A6S7AUB9",
+      "name": "A0A6S7AUB9_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A6S7AUB9_1mg.yaml",
+      "input_sha256": "6a2dd69903e8ff0bdb11b2cbcd678c2f9e3deca30c5d3e2bf4a6a1f9d5f277ac",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/3124c95170cc429d.csv",
+      "msa_sha256": "244b0f9c28aac7c38a81269afcee134c71b381b7ada72a555397411802d54041",
+      "sequence": "MPISATQHCPPPRDVGHEHRPTGHPTPATKTPCGDALSALERQLIEQYFNTYCRESTRFDPRVTDDTPLMPALRQAVNTWRATGYEAACVEFPHDGSCLCVALEHYSPMGFHRIGPHAALGRRNGITCVLDGPEPLIERIAQALEARLAPADPDRTARFEALMHNSVGRVRHYHAARCDKPGTPFVEAEQSLHFGHVFHVTSKASEGFDENDLEAYAPELGASFQLHYFAVSNRRLDARTIDDAPLPIDTEAMHAACALLGESEYRLLPCHPWQAAHLLRQPSVGALLAARDLISLGPLGELAWPTSSVRTVWLPRQRRFLKLSLDVRITNFVRNNPPEQVARALDASRYIAGLPLQARRSERFEVLLDFGCMALSTGDAALQASTAVIYREGMRDETGLDARVLASVLEDSVEGISPLRRILHDALGPTPSFEGLAIWWNDYLEVTLLPLLGLFACHGVSLEAHLQNAMVAFRNGWPIRGYVRDMEGASISRARATRVEALAPDSPAFYDDEQAWMRFRYYVLVNHIGHFIACVGRTGLCDEAALWRVTAATWARDTRPAVTDLLADLRRRSTLPAKANMLSCFGGLGETPAWIDIPNPLFHQERNP",
+      "sequence_sha256": "ca79d1f5406469b303b588dcb28be5a63d46093f01cfbfe91923807148883a2d",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A8D5ZLL1",
+      "name": "A0A8D5ZLL1_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A8D5ZLL1_1mg.yaml",
+      "input_sha256": "1a0270ab0cbb4282f2b310c242304b17a563b9c7373dc8c86657ff9257f095d7",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/488e321163a42a3a.csv",
+      "msa_sha256": "b06b22ddaa7da15f8993dc88a0d9e2a76928acdefebb4de0988dd3d3c2ee54bd",
+      "sequence": "MTNKPFVMSAEPSADKSMMLAEAATMERLLNAYLRETETFNPTIDPDHPAWMGLPASVREVIHEQGLPMKIELKVTGRTIWGAIRYLSSFGHHRYGSAFWVEEDVKGEAICRRLQNAIEMAGLLLREMAAHHAKSGDGDNRVRLMLDQIHNSVRKTGQYVRSRLQSDRSLWDFTGEERMLAAEQSLVYGHPFHPTPKSAEGFEPDDLSRYAPEMGASFALHYFAADPELVEETLLGYSDETLFPDPVLEAAKRKLAPERQHFKLLPVHPWQAQHVKQWPLVQQLIRTGQLIDLGEQGNRVYPTSSVRTVWDPTHAFIYKLPLDVRITNFVRVNPPEQVQRTVDAGRVLARLNEQIPYAGFTVLLEAGYRTLSLKEATPEERKRLAESLAVIFRENPLFQSDEKFVQASPTVVAALLEQPPSAGEAPIWEAVRLSAKMEQAQPERSHVQKWLKQYLEISLVPILWLFLEHGVSMEAHVQNAMVTIQDGWPVHFYVRDLEGVSISRERVGKNLLSDVAEDSPALYSDREAWHRLKYYVFVNHLGHLIHTLAFHSQLDEVSLWRTVGEVLRDSGLFASSERKPYLMDLLEGKSLPAKANWISCFQKRGETPLYVDIPNPLACVRWN",
+      "sequence_sha256": "27f49be18618e3897468e48cfdcd058f2415e517f0d330e3459a619145177df2",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A8J4H351",
+      "name": "A0A8J4H351_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A8J4H351_1mg.yaml",
+      "input_sha256": "a16b36f13900274837acfc6f4a9c2fffdc61cae40e8a30318057e182c3c5dbb7",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/b6f8ec48dfb69965.csv",
+      "msa_sha256": "e740735bff109e8242e209f3bdcb3fe1cec6e5cb770dac9c1c438d38755422ac",
+      "sequence": "MRIRLEQEDLQASDRIWAGALERAEQEAAARILNCYLLESGRAKEAIDRRTKQLKLALSFREIRLTGELEHVSDMGHHAYRFPLFEEEASGFRRAVTCRKAAELILRELCAAHAAPDAEARRLRLLDQVDNSIAHTAEFLAHAQRSMQLQELPLAAAEQALRCGHPLHPTPKSAEGFDEAALQAYAPELGASFRLHYWAVRKDELAEDWLPGREASIPPDALESASLILGETTESYALLPVHPWQSNYLQVNHGELRAMIGERRVVPLGEAGPLVYPTSSVRTVWSPNQGCFLKLPLHVRITNFIRVNTREQVARTMDAARICAAVRDELETGPAQLLLEYGCRSVRRDSLFAELAVVFRESPPMLLEQGSRWFPAASLMEREPGSGEPLLWRHVFSSAPAGMHDWIARYAQVFLVPILDVFARLGISLEAHVQNSLIRLDPEGMPAACLIRDLEGISIDRRRAAELGWIGELVPADSPVLYGREAAFERLLYYAVTNHMGHVIATVSRHAGLEEQALWRRVRHVLVEAAEIRRDAAPFQTVVASLLEREVLPAKANLTSQFFERGESPSYVTVPNLLWERGTLT",
+      "sequence_sha256": "943468837920c00b700b6ab56cab16ad684c4adcd8f4ff32c35113368a9359af",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN1V8I6",
+      "name": "A0ABN1V8I6_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN1V8I6_1mg.yaml",
+      "input_sha256": "121ea9a252fb1fceafe690dfcf4c663f17a312b9f933e87445c6c0959048c907",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ff0ae4fed1e173a6.csv",
+      "msa_sha256": "f0ff59ab715691955b0ec8ecf8d6eecbdd7c3542e5d0e4858aa07a7a1bb72768",
+      "sequence": "MTVAPRPYPRAQQATIRRLLNAYLRENGFHEIAEGPLTVPLPATGDVLRVTVTYASPTGHHDYADTSPRVIDTVLGELAGRTGFAGARVLRAQIDGSIDRTARYLAQPRQRRERDRADDPHRDSEQSVLFGHPFHPTPKSAEGFSDADVDAFAPELGVSFELPYVGVARRLTLTEGDVTVPADVAASVPDGYVPLPMHPWQARHLRRNPAVRRLAGEGALIDLSAHGEVYPTSSVRTVCDPAAGVAWKLPLHVRITNFVRNTPAEQLRRSADATRAVARLPRYDGFDVTAETGLRTLDPAAVGDDLAAEINAVCRVAPDRQARVLAGLLDEPAVLARHVERSGDVAEWLRRYLRIAQLPLLTAFADHGIAFEAHVQNSLLRLDTDGAPERFLVRDMEGVAICREHAGELPPDSPALHDEEDAWRRLCYHAVTNQLAHVVHAIGRNTASGELPLWTVAAAELRRSAVAERLLESPELPAKANLLSRFTQRGERPHYVRIPNPLWMAAR",
+      "sequence_sha256": "2bbdc271ad6ee0836e25206f11d181a0206fb5c1c989d3848031c927cda347f0",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN3V3C9",
+      "name": "A0ABN3V3C9_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN3V3C9_1mg.yaml",
+      "input_sha256": "34b70c496617cf8af37165ff58899e9eebffa7b6776387a2f2da1e16f3b3b7a1",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/ae851841b546a640.csv",
+      "msa_sha256": "bd14c31ff4c0f107aaf972952fbb664e28155c8e4b5b4e246ab5fd3f61af800e",
+      "sequence": "MKEVLAPSPGSTAPGSTAPRSAATGSAATGSGAPKPAAERVADRRLLNAYLRETGVGDPRVEGDRFRIDLPATGRALTGELTYWSVTGHHDYCDELWLCEGGTATPCGHRELVAALLAELDSTDEASPRRQRLAEQIDNSVRRTTRYLEHVPEPCPSAPRDLTRYAEHSLLTGHPFHPTPKSAEGFSDDDLTAYAPELGASFVLHHLAVAPDLLVEQRVAPGEWTPDDVPGHDGFAVLPVHPWQASYLSRQPAVQELIEAGSLVPLGPGGRTVYPTSSVRTVCDPGFETAWKLPLHVRITNFVRNNPVEHLRRAADASRLVAELRRNWIHEGFEVLLETGFRTIDHPELAADIAVLYRENPFHTGQAAPQVVAGLLEDRPGAGPGLVGHVRTAVGRLTAAGVAEWLRRYLSVSLLPVLALWRQDGLSLEAHVQNSLVHLENGWPTRFYVRDMEGTVASRERLCRNGMVDLVGAASPALYDDAEAWMRFKYYVVTNHLGHLVHVLGRHGEADESALWGVVAAVLRDALPDRYVCDLLAAPDLPAKANLISRFAERGETPVYLTIPNPMREETP",
+      "sequence_sha256": "879427d06334bba797ee8ad65bf57db168117310dbcd0a05852942bf6d12b855",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN8G2K6",
+      "name": "A0ABN8G2K6_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN8G2K6_1mg.yaml",
+      "input_sha256": "c11a0c61f4540b79e84ac07fb155b432d4a3908ab114a8b3d20fc46b1b400073",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/e69fbabb38f041ba.csv",
+      "msa_sha256": "53e41444cb843d3be9e06f8fa711cd7f47b339f38e10242f5aac10a4c16fd2ff",
+      "sequence": "MMDMQEGRNARFIAESEHIGRLLNCYLRERGIPVPEVRAEDDPYAAMPPAILRQLVAEGRLMGIEISTAGVVLIGAAAYISPFGHHKYGQRFWSASLQKPFVYEPLDFEGVVRLIVNEAAAVLSGQEQSSGRIASLLEQIESSMRGMTAYAESRREPRRSLWSLQGAAHTRAAEQSLLFGHPFHPSPKSLSGFADADVGRYAPELGASFPLHYFAAAPGLVREEWLEAPGLLFPAEVTDEAMRLLPMEQRHYRLLPSHPWQAQYLKLQPVVQELLQQGLLVDLGELGEELTATSSIRTVWDFRHPMIYKLPLHVRVTNFIRVNPLEQLKRSVDAGRVLAAVASSIPYSGFHIMLEKGYRTLSLPGDKERSAMLEENFGVIFRQSPIAQSGSDLRQQPHQTQQPQQPQQTGDQEAPAVVASLLERQLSSAHSPLWEAIQAAASARGTAADQALVEQWLERYLSLSLIPLLWLFLERGISMEAHVQNSLVALKEGWPAQFFVRDLEGVSISRSRALEWHPALLVVDSPAYYSDSEAWKRFKYYVLVNHIGHLIHTIAFDGGLDEAALWQIVGKSLSASGFIEQEQHQFYLSDLLNSPTLPAKASLASYFRQLSEKPLYVDIPNPLAAVCVQTAQGGRMR",
+      "sequence_sha256": "253a45bba7b4e465be5856c03cc36d69cf700c5ebdc1470ddcfa921d30e147b5",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A0F5VDL9",
+      "name": "A0A0F5VDL9_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A0F5VDL9_2mg.yaml",
+      "input_sha256": "08b4fd3f3f97f8faff50f70365d2c7647ac5305128604c676de4e7a80a5c5133",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/bba053737c51db2d.csv",
+      "msa_sha256": "6500bcef9746788d38f064b74bff13e42a45a2d2dbba8f55a6e25e96e95a7c11",
+      "sequence": "MNGFKEEVKNFKQQWPEIRFVDLLFTDINATPRGKRIPVEAVEKIEKGVYLPLSTISLSIEGNVVEEAGLGEALGEPDHICYPVPGTLTTTFNPEVGQVMLTMMDESGSQPTDLCIRSVLVNLLEQLHQREQFPVVAIELEFYLLDKNRGTHGAIQPPLNPIHHDREYRSDVYNVENLDDYSEFLRDLNDAAVAQGLNTSGALSESAPGQFEINFNHQQDVVNACDQVILAKRLIRQVAQAHDFDVTFMAKPYADEAGNGKHMHLSVVDKDGRNLFSDQEGEASPFYYQTLAAMLAMMPDSMALLCPNVNSYRRFSASMYTPTHANWGENHRGVALRIPMSDSHNRRIEHRIAGADVNPYVLASVILAGLLASERFTFEQCPPQLADNAVELPLRMPDALIKLASSELMSMYLPQSFISLYLACKQRELADFEKAVTPLEIEWMLHSA",
+      "sequence_sha256": "a0bd4d142662ed1e4b7d7919214db8cdfe153e91dea378e10debb606242ef9a8",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A172YAD6",
+      "name": "A0A172YAD6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A172YAD6_2mg.yaml",
+      "input_sha256": "fc7e44ed7dfc06d22979e85bf87b9eea9feb5b3ce2939c3c560b9d0a2fb530a0",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/9bf3e9b605abdfdd.csv",
+      "msa_sha256": "3178514d49e604302d4b822106e23bf793d07fe1a8f3cc3d7434416d596274e5",
+      "sequence": "MEATSFITDLSAGVRSADGSEERTRYKAAFKSEVDGYLAAHPETAYVDVLLTDLNGIFRGKRLPVDSLPRLAKGCYFPASMFAMDLLGNVVEETGLGQEIGEPDLLCLPLLGTLMPNAHDPARIAQVLLTMVDEQGASHPFEPRNVLAHVWEQLKARGLYPVVAVELEFYLVDRERDAEGALQPPRSPVTSERSEQSQVYSLDNLDDFAEVLSDINQMARQQGLSAEGAVAEASPGQFEINLEHGHDVLKACDDALMLKRLIRQIADQHDLQATFMAKPYGDFAGNGMHIHLSLVDREDYNLFADEEVEDTELLHRALAGMIELMPASMALFAPNVNAFRRFQPGMYVPTRASWGYNNRTVALRIPRSGRRDYRIEHRVAGADANPYLVVAALLAGLLHGLDNALPLDPPIEGNGLDQPGVELPTRQSDALALLEESAPLARYLGEGFLRIYRLCKANELARFERQVTELELDWLLKHA",
+      "sequence_sha256": "e11e6ae5be7c0eaa98b0ed2be85b8c40624733856c6585e797ba7553212d71f1",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1E2RX53",
+      "name": "A0A1E2RX53_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1E2RX53_2mg.yaml",
+      "input_sha256": "3fc41b7bf9896699a9299d2b80a6089f46ca5f0bd5e19b1bdeb60c105652ef4e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/acb0b3c2ae89a324.csv",
+      "msa_sha256": "6aa27ce38d916816b898afe76acdd20bb46ab1d37bd7bcef612f138f29701697",
+      "sequence": "MASDYTDWLAARPEIASLFACLCDLNGTLRGKWLPADQSSKLLGGGIRMPFSTLNVDIWGADIEGSQFVYETGDADGVCTYTGRPLVATDWMTRPGAMALLWMGYEDGAPFLGDPRRALAAICERYAAAGLKPVVAGEFEFYLFDPSGRSPMPPTSPVSGERLNAHNAISISEVQHFEGFLNDVYDYCRDQEIGLDTTISEYGFGQFEVSMKHIDDPLKAADDAILFKHMVRAIARKHGFGATFMAKPYGEDSGSGLHYHVSLLDRDGENVFDDGSLEGSETLQHAVGGLLTTMQECMLTFAPHENSYRRFQPGTHSPASVGWGYENRTAAVRIPGGAGKARRFEHRVAGADANPYLVLASILGGALLGIERKLTPPPPVDGNAYDAELPALPREWGAAIEAFDAGSHVGDIFSPTLQRMLVDCKRQELQRFRQTVTEFEHQTYLEVV",
+      "sequence_sha256": "7958a1f889b6c40c35aa1d6b32eb77a5b9ba337636fabf2331b4d1a6293ee251",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1E2RXG6",
+      "name": "A0A1E2RXG6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1E2RXG6_2mg.yaml",
+      "input_sha256": "da99f31109c058ad7af845a064207dd80d6214803a6ad3bfa996b564cbfcaa5e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/92204676c56a0524.csv",
+      "msa_sha256": "ee7d3f37418c87592081de5506d27ed1fa21c874b48ea918d61ff9e53beec420",
+      "sequence": "MHPETAGLAFGAGRSISWPPGVLPPLHDVCSVTRYTKPDWFDSIPENFNHFRGDKPVEEVQCIIPDMVGMSRGKAMPCEKFSPDTIYYLPDSLFYQTITGEYVEIDQIENQWMEKDIALHPDMSTACAAPWAEDVTLQVICDLKTRSGELVEVAPRNVLKRVISLYKEQGWRPVVAPELEFYLTKPNLDPNEPVEPPIGRTGRSASGRQSFSMVAVDEYGPVIDTIYDFAEAQGLNIDTMIQEGGAGQIELNLLHGDPLLLADEVFYFKRAIREAALKHNIFATFMAKPMRDEPGSAMHIHQSVVDIDTGANIFSDKTGGISSSFLHFIGGSQKHLLDVMPLLAPYANSYRRLNGRMSAPGNVEWSKDNRTTGLRIPICEPEARRVENRIIGIDTNPYLAIAASLAAGYLGMVNKVDPRPEATNEVWREGSVLPDGLAAALASFEVASDIRAVLGERFCTVFAAIKNAELTEFRREISPWEREHLMLNV",
+      "sequence_sha256": "d9a72d58c92302607490be5f66d831c1c0116db4933b09c0f78f44643283eb76",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H2HJM6",
+      "name": "A0A1H2HJM6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H2HJM6_2mg.yaml",
+      "input_sha256": "07cc0ca852ce9ae107784519817dee0f807be93b4bb8d0d30f3ca00cbb895d4d",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/d6308f1265acd8a8.csv",
+      "msa_sha256": "ae3bde98c042922c6f6ebb9c0c9e5ed591332a29e46162fb221b2c74b68a33d2",
+      "sequence": "MIDIFYNQQVNPMQSRAGADHAAAKSAATGATQAEALAAAVAASNPDIATAAAAALRPASVQEAEDFLTANPDIHFIDLLIADMNGIVRGKRIDRSALIKVYEKGISLPASIFALNIQGTTVEETGLGLEIGDADRICLPIPGTLKVEPWQKRPTGQLLMTMYELDRETPFFADPRFVLQQAVDRFQALDLTVVSAFELEFYLIDQENISGRPQPPRSPISGKRPNSVQVYSIDDLDEYAEFLEDVIEAAHEQGIPADAIVAESAPGQFEVNLRHVDDPVQACDFSVLLKRVIKSVAYDHEMDTTFMAKPYYDQAGNGMHVHISLLDKDGKNIFAPDADGNLSDMLRWAIGGMLESLPQYMAFLCPNVNSYRRFSPSFFVPCAPTWGLDNRTVAVRVPTGDPEAMRIENRLAGADANPYLLMAALLSAIHHGISNRIDPPPMTEGNAYDQHEASLPTNLRDALRELEHSPVMQQYIGEEYLDVFVLCKENELAEFEQTISDLEYMWYLHTV",
+      "sequence_sha256": "c358c9f8a43ed8a38b85f7867ea93b729d16942d780b5acf3a71e952172933a8",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H2YFR4",
+      "name": "A0A1H2YFR4_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H2YFR4_2mg.yaml",
+      "input_sha256": "47cde79a6aae5a5cb7226f302eab4dc5b42e567a2d980b403e83f71e0070232b",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/87cec762c07685bb.csv",
+      "msa_sha256": "44d80633d20913bd2bad07537242a0dbf9c6efee47270fbd960d4bedf6c0f380",
+      "sequence": "MSFANDYDAYCQAHGVPDRIELLLCDLNAVLRGKWVPGDGIDKIEKGAIRLPLSTYAPAIMGNEVENTGLGIEFGDPDGILIPIEGTLHPAPWLAGNVAQVLVEMTDMQGNISPQSPRELLRSVWNRFDDKGWRPVVATELEFYILRPRNERDDAPCPPSFSPDAQNYDMELLARREAILNDILSASAAQGLSTDTLIAEYGPGQFEINFHHTDDVLAAAETAILFRRLVRGVVASHGFEATFMAKPYLDHPGNGMHVHASVVDKSGKNIFSPTDEEEISQNLLNAVSGVLGSMRDLQAIFAPHGNSYRRFRPNSFAPATPDWGLDNRAASVRLPETNGPGARLEHRISGADTNPYLAMAAILGGMMHGLENAPELQRPLDDPDCVPAKPLDHDWYSAVDRFASAPIAQDIFGDYRDLYATVKRDEIATIQDPITPAEYTYYLSRM",
+      "sequence_sha256": "72b9674631483c67142ca2f04b6f121f3b7511c11cca2517386bbaa0b8ee0816",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1H5STF7",
+      "name": "A0A1H5STF7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1H5STF7_2mg.yaml",
+      "input_sha256": "d63d460af7482b6cbb169e04f090dba0a4ab29025c37a5a6ba877a228068f73a",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/10922f00c92bd3ce.csv",
+      "msa_sha256": "482c5308f423d01c09daa8103f5491eb0ec775338b81b7393ab0cf33ab28166d",
+      "sequence": "MSNATIKNYLRKNPQIRTIRVAACDLNGQPRGKRVPTRFADKVVEDGTRFPLSVLNLDIWGEDIDDSPLVFESGDRDGVLHPTDRGFIPMPWLEAPTALLPIWMFHENGTPYEGDPRHALRAVIERYKARGLTPCVAMELEFFLIDDSGRKLEIPISPRSGKRRKAAETLSIRALDQFDIFFTDLYDACEAMDIPADTAISEAGLGQFEINLMHGDDALRAADDAWLFKMLVRGLARRHGFAASFMAKPYEDYPGSGMHTHFSVLDEDGNNVFDDGGPKGTDTLRHAVAGCLNAMQDSALVFAPHLNSYDRLVPDAHAPTGLCWAYENRTAAIRIPSGSPAARRIEHRVAGGDVNPYLSLAAILGAALNGIEDGKEPPAPINGNAYAQEMEHMPTDWQTAIDRFEASPEMPRIFSKELIRNFVLTKKQELFYMAELSPTEQVEIYLDTV",
+      "sequence_sha256": "57fcbf9275ec578ff37e632c0d45e545a272d6aaa2bf397e52bb4ff0226bcd49",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1S1H7N7",
+      "name": "A0A1S1H7N7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1S1H7N7_2mg.yaml",
+      "input_sha256": "022a753b3bfd62519e2e563a47755b24675edb0903d074e69248fb47bfffa8aa",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/c45db3e1d3ae8406.csv",
+      "msa_sha256": "88dfff16db666c5e5b8dba3d1d534f6ac5c8b15d96ca576f45930d645b4e5983",
+      "sequence": "MRSFREWIAANGISEVECLVPDMNGVIRGKVWPAQKFLQSVHNGSLRMPSSIFNVTVTGEYADEPSEAASYSDPDVSLHPDPASLCVAPGFKTPTAFVFADAHHKNGDPYEIAPRHVLKKVLAYYEAMSWEVVVAPELEFYLTKVNTDPDLPLEPPAGRSGRAETAPQPYGLEAVTEYEDLIEDIYEQAEAASLHLDTMIHEAGTAQLEINFNHGEPIHLCDQVLVFKRIVRQVALKHGVYATFMAKPMEHQPGSAMHLHISARDRLTGQNLFGEGPDGLSETFRHFVGGLQRYLPECAPLFAPNINSFRRMRPGHAAPINLQWGYDNRSCGLRVPITDLPNTRIENRTPGADANPYLALAASLVCGYIGVRDRIAPAPMVEGNAYLHLRTLPRNLDEALDRFTECPEVIELLGESFVRAFLLIKADELNAYQGVISSWERDHLLLKV",
+      "sequence_sha256": "da4202621b697960250aae23953253fcd63bf6722a4312de5fdfc8c96ca0b97c",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A1S1H9I3",
+      "name": "A0A1S1H9I3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A1S1H9I3_2mg.yaml",
+      "input_sha256": "35b99f91617c4384315ab0d6817e2e450151dd3a8a529374f5250d14a3969454",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/278bad06cdeca25c.csv",
+      "msa_sha256": "93aa63d7d0295f8f8bef2a4d2c30fa00dc54b80e1f498466ad1c0fac8bcebaf1",
+      "sequence": "MNRPPPAGFVADPAELAAFLAAHPQVALFEILYTGLSGVPRGKRVRRHEMAPVYDYGRFLPGSIQVVDITGRDCEETGLVWEDGDADRRARPVPGGIVPAPWLGADVAQVTCSLHELDGTVCALDPRAILQRVIDRFAADGLTPVVACELEFYLIDGRRGRDGAIRLPRGAGMGVEVYGLPQLEEASPFLRDLWAACDAQGIPLEGAISECAPGQLELTLRHRADALRAADDAVAYKRAAKGVARAHGCDATFMAKPWADRAGSGLHLHLSIADAAGTNLFAADDPAGTPMLRHAIGGMLALMAESVAILAPNANSYRRFRPNSYAPTAPNWGINNRTVALRVPAGPAPTRHIEHRVAGADANPYLAVAALLAAAHHGISQGIDPGPPVTGDGYAAAAGAGSRLPGDWFDALRLFDRSAILRDYLGDRTVDMFATVKRTEQERFHEHVTALDYDWYLHNA",
+      "sequence_sha256": "55f8d7c243df93c31b32de38cdbd2f8339aa813311bc11cf6d06499de6ef4e25",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A286IF89",
+      "name": "A0A286IF89_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A286IF89_2mg.yaml",
+      "input_sha256": "23b9134ae9352eaeb086b3ea6ac96fd4801c73eb011191f682fcb3ec61e33f0b",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/3c8f970cdae7219c.csv",
+      "msa_sha256": "889918790dfaa253f8e1552e5021295767fe29c1b2d16fda7f1a9798072236ba",
+      "sequence": "MRESACTENPDNSLPSNEEAERFLAEHPDIESVDFLIPDINGVMRGKWGPTEALAKAGYPGINMPLSIFGLDIWGREVESTGIHIDTGDTDGYCRAIPGRINVAPWSPRPSAQVLMSMYTEAGEPCEYDPRNVLKKLMDRFAEKGLRPVTAFELEFYLVDPNVFQRSGRMGKDLGPGPEQQQMYSLSELRGQSELFAEIRAAAIAQGLPIDTIIKEAAPGQFEVNLKHRDDAMAAADDTVLLRRLITESAHKHGLRATFMAKPFLEWPGNGMHVHASILDKDGNNIFAGEAGDMRLQHAAAGLLQTLKDTLLLYIPGFNGYRRLQPGSYAPTRIAWGRNNRSVVVRVPASDDKARRLEHRMSGADANPYFVLAGVLGGMLEGLENGKLPPPPVEGNAYNVPLPQLSDDMDDAIEDFERSDFIRRLFGPELRRIFAEIKREELKAFDNEITPLERSTYL",
+      "sequence_sha256": "8e8a9501dd70a520de569097511ed478d5ecbf725ecd36a03665b5fcfb77422b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A379JHL5",
+      "name": "A0A379JHL5_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A379JHL5_2mg.yaml",
+      "input_sha256": "4df0f04719c8cc16113dcd3ffc537e7cd218a8554bf2db4c7787765bf106d68c",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/33481bed76dd8aab.csv",
+      "msa_sha256": "f1fc18684c050224d30751a7adb1d998ab5dcd66abc18351474e87aa99170fd3",
+      "sequence": "MRTGMLTVADLVQRVEAGMVDTVLVAMTDMQGRLQGKRCSARYFVEEVLQHATEACDYLLAVDVEMTTVDGYALSSWDTGYGDFVLRPDLDTLRLVPWWPGTALVLCDVERLGDRGEPAGEPVTASPRQVLRAQLDRLAQHGLRAYVGTELEFLVFDDSYEAAQRGGYRELTPANQYNVDYSMLGTARVEPLLRRIRNEMAGAGMYPESAKGECNPGQHEIAFRYDEALVTCDNHSIYKTGAKEIAAQEGRSITFMAKYNEREGSSCHIHISLRTESGEPVFAGDGKGGESALMRHFLAGQLDCLRELTYLLAPNVNSYKRFQTGSFAPTAVAWGRDNRTCALRVVGHGSSLRVENRVPGADVNPYLAVAAIIAAGLHGIEHRLPLEPEFHGNAYRSQRPRVPRTLREAAQLFGDSKVATAAFGADVVRHYRNAAQVELDAFDAAVTDWERIRGFERL",
+      "sequence_sha256": "8bea64fdac9717b7948a29798cc823edfafa0940707de6b69f801599a1829637",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A4R2L0I6",
+      "name": "A0A4R2L0I6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R2L0I6_2mg.yaml",
+      "input_sha256": "edf18bba6a3c20cd2edfbab880486b562fcc39f3bf0a5d4828eabdfd56078be2",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/a6c69521640aa5d8.csv",
+      "msa_sha256": "3a66d9ccedda5276e8f65f264de2e8f4d0da937bba1e2c5dd5b945f25c5ac426",
+      "sequence": "MAIEVDWFLRAHPDVTMIEALLPDCNGILRGKWVPRSKLSKIYGGELKFPRSALSLDIWGRDIEELVFASGDEDGVCRPVEGSLLPTPWSPGEQHGQVMLSMFKPNGDPYLGDPRQVLKKVVARYRARGWKPVVAAELEFSLVEWDGKGPTHSDTHPANRAPVGGNLYGLDILARHQPMLEDIHRACELQDLPFDGVVKESAPSQYEINMLHVDSPALAARQILMMKRLIKGIAAKHGLVASFMPKPFENEAGNGLHVHCSVLDRNNRNIFDDGTPTGTPALLHAIAGCIRYMPDSFAIFAPSFNAFRRFQTGSHAPTSPTWGYENRTVAVRVPAGSSKARRIEHRVAGADANPYLVCAVLLAAALDGIEQRLAPPSPLRGDGYQQSKEPRLPVYMQDALALFGQSDFIRRALGREMQYNFGLTKTQEITEFHRHITTMEYQTYLQQL",
+      "sequence_sha256": "2edbad8bdfd14effab36aeca20b974fa4f9e5b08af02f210e9fe4228574eabe0",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A4R2L843",
+      "name": "A0A4R2L843_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R2L843_2mg.yaml",
+      "input_sha256": "5c26fd3f2072aaed336dd55477de54b1ad542c72141ba30be58730105733c809",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/ca4d8fcb6e384b53.csv",
+      "msa_sha256": "33f2e10726794e8142fc6c329aa95858fd735c4c5f8ace0ffdba4371164b17d0",
+      "sequence": "MTGMNGKAVDVGDFLAAHPDIDMFEVVLPDIAGGLRGKWITRDKLPTLFAGGLKLPVSALAFDSWGRDVDAWVFDSGDGDGYAQPELRTLAPVPWAPGTGQVVISLLEPDRRPCPIDPRTLLSRLMERFAEHGLTPVVATEMEFFLLGPSSDDLGRPAHTQADRVGGALGSGETYGIEAMASQRNFMRAVHEACAAQHLPVDTLIKESAPSQYEINLYHRADALAAADEGMLLQRAIRGVAVANEMRAAFMAKPFGDLAGNGMHLHCSLLDADGRNVFAHKGSPMLRQAVAGCLDTLDQCMLLFAPHLNSYRRFRSGTHAPLAPSWGFENRTVALRVPLDKPSATRIEHRVPGADAQPHLAIAAFLAGILHGIEGQLEPPEPLTGNAYDQLPPTLPRYLPDALALFADSTFIAASFGGDFQRVYTLLKQQELDEYDRHVTPLEYDASL",
+      "sequence_sha256": "b9d1cdc3ff8f69d38baa56e0a8b94683abfb9f5aec768a27a52cd336ee150e12",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 13
+    },
+    {
+      "accession": "A0A4R7NSF7",
+      "name": "A0A4R7NSF7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A4R7NSF7_2mg.yaml",
+      "input_sha256": "f9d77c79d35360911bf69f25e1872595493e8b6aee66f03297832da130f915de",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/cc86b865f42f905a.csv",
+      "msa_sha256": "ee6e8c8702a9556e844c2e22f13a2e73c37cf191445c2bd852c11f106011a286",
+      "sequence": "MAQISQAPFAHSTDAQRTDRPHEEAATDRVDVLCIDMNGIPRGKWVPADQLDKVMEGQVRLPLSTQSLDIWSEDNDALTGLSQSIGDPDGACHADERTLTPLPWAKGHQVLTTLHDLNGTPSFMDPRAMLAAVVERFRRHGWTPVVAIELEFYLLDAEARHALKTMPPAPLCPGGEPRGQQLYELETMDAVAPVLDTIRAFAHAQNIPADTLIAEFGPGQFEVNLWHRPDALAAADDALYFKRLVAQAARHHGLASTFMAKPYTDQAGSGMHLHVSVLDEDGHNIFDRDNGAGHLDAAIGGVMHSLLDGQAIFAPHGNSYRRFQPDSFAPIECTWGCDHRGAAVRVPEWQGAAARLEHRVAGADANPYLVATALLGGILHGLEQRIAPPPAIEDAAHARQRPEHLTHDWLTALDRFAASPAMADIFGTAYRDLYAGIKRHEARELMARVTDVDRQTYLSRL",
+      "sequence_sha256": "ca171e366f4adef7c46ba02d38a4b91068512cb7b00308d8735a44034084f8df",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A561TKZ2",
+      "name": "A0A561TKZ2_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A561TKZ2_2mg.yaml",
+      "input_sha256": "e3db2cb016c18c4db3232b55cff4650bdf8ba419ce79d4ec9c3037b1704f985c",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/93b3e714bcb29aff.csv",
+      "msa_sha256": "755ae970d958d96f970725663bc7ad151533a22bea19b61a04fd660c85d0cef9",
+      "sequence": "MTRTASGNGTVARLAAASVPEPGGRSEKAFSLSDLRNLVKAGAIDTVLLAVPDLQGRLKGKRYDANHFLKRVAHHGAEVCAYVLATDIDMSPADGFALTSWETGYQDLSVQPALSTLSVVPWLPRTVVVLGDAVHHDGTPIDIAPRQILHQQLTRLSRHGLHPKAGIETEFVLYKGTYEDAEQANYQGLRPLTTENLDYALDHDPVSDRFLRRLQRALAGAGMPVEAIKTEAGPGQVEVTFPYGGALTACDRHPLFKHAVRTLGLRAGLAPTFMAAPETGRANGLHLHVSLWSKAISQLNESGSEYGLSQIGQHAIAGLLAGLPELGPFYAPNVNSYKRFTRGSFAPTTFTWGRDNRTCAVRVVGRGEGLHLEIRVPGADANPYLALSAVLAAIDHGLERKLTLGPEATGNAYRAGGIPVPPTLGPALTAFENSVFAQKAFGAGVVEHYARLARLELAHDEHLVTDTERQRWLARA",
+      "sequence_sha256": "88794fee1ba9efe167da6d6c9d98fac1ba8842e62b3636ca267edf35802869a3",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ACN3NSZ7",
+      "name": "A0ACN3NSZ7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ACN3NSZ7_2mg.yaml",
+      "input_sha256": "a1beaa79b86e356108bb26a1a9535f0e5b3b5fd2dbea359765d27f3366668134",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/bf8b7a5807897f20.csv",
+      "msa_sha256": "a7ad1d21b498a1309409a1be21c93330a4a7671cb4a2d85a0268fcff23e9ea8b",
+      "sequence": "MTDTTDIERTIDANDVDLVRLLFVNNSGVPRGRVLDAGDVDAIFEDGANLTKGMQSFNALDALVPGGTFGPIGEVRVVPDPETFRVLPYADRTAVALCNMYELDGTPWDACPRSQLESYLTELADDDLVPAAAFEGEYYLAREPEEGDGLEPFDDSTCFAVEGMDSAHDVILETIDALKAQGLGLSNYYPEYGPGQQELVIEHDEGIAAADNHVLYKATVNAVARQHDLEATFAPQPFDGLPGSGCHVHLSLWRDGENVFADSGGDGAYGLSEFGRQFVAGVLEHAPALVALTAPTVQSYDRLQPGMWASAFTCWGPDNREACVRVPSTNWSDEAGSTRIEYKSCDNTANPYLVQLGLLAAGMDGVERGLDPGEPLERDPSALSEDEREGRGIERLPETLADALDELAEDDVLRDALGETLYESYLEVKRSEWEASVDEDGEWTADYLLRAF",
+      "sequence_sha256": "eedb81692c0d09fa5bc9c3e59efba051007fa64771fd3aa94c41c6f96afdf854",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "D0KXK1",
+      "name": "D0KXK1_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/D0KXK1_2mg.yaml",
+      "input_sha256": "af55cf3cae369fe6f203c586c2951e3e9ed2e244ae0c14df6c78696f27490303",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/1e9fa631df12bf80.csv",
+      "msa_sha256": "f150bc7216774a46ba6132bb27801e132f6a44f99f39d3ff1682a558c344edc4",
+      "sequence": "MIERKDFSHKDMDQWLAAHNVTEIECLVPDLTGVARGKILPREKFTAERAMRLPEAVLGVTVTGESPENRPAYDNVFGFTDKDMVLVPDPGTVRLVPWAVDPTAQVIMDCLFHDGTPVDFAPRNVLRKVTELYKSMGWSPIVAPELEFYLLARNTDPNQPLVPPIGRSGRAETSRQLYSIDAVNEFDPLFEEIYEYCDIMGLELDTLIHEFGAGQMEINFLHDDPMVLADKVFFFKRTLREAALRHNMYATFMAKPMANEPGSAMHIHQSVLDTGTGQNIFSNPDGSESPLFQQYIAGLQKYLPAAMALLAPYVNSYRRIVRGGAAPINIEWGYDNRTVGIRVPHSGPEARRVENRVVGADANPYLAMAVTLACGYLGIVEKLQPSAVTTGSAYDSNYQLPRELSEALRQLDASKPLREVLGDNFIDVYVAVKETEHEEFMRVISPWEREHLLMHV",
+      "sequence_sha256": "4d74fac3923c018698cc2c01a3e092cd73de50af486c8e5923e8be414a233671",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 17
+    },
+    {
+      "accession": "Q1QYC1",
+      "name": "Q1QYC1_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q1QYC1_2mg.yaml",
+      "input_sha256": "71aeffc6291a0edccf9f00c59dd376d3af644dc13e48ed813f212b237e5d7f91",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/06265ac702c77d53.csv",
+      "msa_sha256": "7167f1f7f2f1f85bd289ba419e590237f700346f243ae6cda91f3cacbdbcf425",
+      "sequence": "MRMTTDKKQGKSRELDLFITDLNGNLRGKRLPASGLKKLRKEGLKLPLSVVGFDFWGADVLDNGLVFETGDSDGVCMPVSQEPIPVPWSEAPRDQMLAMMFNPDGTPFGADPRQVLNRMVDRFSAKGLTPVLATELEFYLMDAESESVQRPIPPALADGKGRRLANAEGYSVEEMDGFEAFFADIREACQGQGIGADTIIAEMGPGQFEVNLNHVADPLNAGDQAILFKRLVRGVSRRHGYAATFMAKPYVEESGNGFHTHFSLLDRDGNNVFDDGTEQGSDLLRHAIAGMMQLMPESMLVFAPHLNSYRRFMPGAHAPTHASWGYENRTVALRVPESPNLARRIEHRVAGADANPYLVLASILAGALHGMENALEPDAPVEGDAYAEESPRYPLPCEWQDAIARFEQSEILREYLGEEFVRVYAQAKRQERRRLNERISDVEYEAYLGLL",
+      "sequence_sha256": "8d8981081e2ea27ecc4555098822867799385b4d69b0a2d8e5249a2c64a29eec",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A0W7X1T3",
+      "name": "A0A0W7X1T3_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A0W7X1T3_2mg.yaml",
+      "input_sha256": "9caa5b6e809046defe582977ff0949d4356f552028b3d9ee37834e8b7be41962",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/4d59762f8aface5d.csv",
+      "msa_sha256": "25389803b63a57fbea87b4b75c10b9082e00060d6bda16c63ba6dd81c8efba80",
+      "sequence": "MSKVLLVHAKGGPPLGHVLSRAAARADVHLLALSALPPAVAGPAGRLCASVVTPADALREDADAHREDLVSLIVARARDVGADAVLTFSEYAVVAVAEACAALGLAGAGDAAALARDKRLMRHTWRRHGLPQPEFRPVATETDLYAAARDLPGPLLLKAAWSAGSTAHQIIRSPHEVAGAWARSRAVMAESAQLGYAELHVAEADADFVVEQIVTGSGAGWFDEPGWGDYVSVEGVVADGTFHPVCLSGRMPTVEPFTERASITPALLAGDAQERIVDLARRAVDALGLRDCGTHTEIKLGADGSMWLIETAARFGGAMTVPQIEEVFGLDLVGMLVDQLLRRPVAWPARALTPARAHGAAGSLVVLAVDGRGRAWRDRKVWDFPAASADIPLSRGSRLSVVAESSLADGQVVPVYDPAAGANTMAALCLLSATDARTVLGDFETLVDELPRVLPAARPEEVPA",
+      "sequence_sha256": "20f2ea02c2b4b3519ee477733d5bab4d24c9e393932028c7a67f78d2f0519a7b",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A917JWN1",
+      "name": "A0A917JWN1_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A917JWN1_1mg.yaml",
+      "input_sha256": "56f9c1aabe8e15122a8380232761a4f36b5d52d983706254ed058574e15d73c8",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/385d4afd992ee2f4.csv",
+      "msa_sha256": "de720ab62ff95608be17841de0d62f6d1d882e3e5c4b25b6bbe297a03207729d",
+      "sequence": "MTLDLVPAALTAPGWHTVRRRVFRQLVSSLVYEGALKTRQDGEQYVVDGVDAAGAPVRYSFRAVRRFGFGRVSVVSDVLRDGVQAESVTDFLAEVRGSLDADPALLPGFARELEETLFKDALSEHVRRELAVDLSTADHDVLESAITDGHRYHPTYKSRLGFDAADNLAYGPEFARPVRPVWLAAHRDITEVTASATVAGSYVDDQLGEAAQDFRRRVEQAGADPQDYALVPVHPWQWRQRIARAFADQLRRRQLIVLGEDPHSFLAQQSIRTLACQDDPHRPYLKLSMSIVNTSTSRGLAAHTVHNAPLISDWLHGLVAEDAFLRDEVRPIVLREQLGIAVNPPGGLLQEDTYGALACIWRESLHRYLEPGERAVPFTGLTACQVDGTPLIDPWVREMGAAEWVRRVARVSAVPLVHLLCRHGVALETHAQNALLVHRDGVPTRVALKDFHDGVRFSRRHLAAPQRCPRLAGTPAHHQNRNSFVETDDLGLVTDFLLDAFLFVNLGELGIFLADHYDLAERDFWRLVREELRAYQARFPELAARFALFDVFTPTVEVEKLTTRRLLPDTELRLHTVPNPLAEVD",
+      "sequence_sha256": "317ed7797150dc6b20ca351de3765fc901c662c05cdd59dd882a9abce5799dc4",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A510Y5K6",
+      "name": "A0A510Y5K6_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A510Y5K6_1mg.yaml",
+      "input_sha256": "28135d3b2487fa6941c823c3a7fc75725cf56cc0ce406f04bfd40ec4dea5e14b",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/a54da05d27c70854.csv",
+      "msa_sha256": "402fe150f2a27611432e9db9bccdc0dc68b950de0c66f7a8d4fc4c63c90d48b5",
+      "sequence": "MNFKQKAAEASMQSFINCYLRETGSGAWGEAECRVELSHQKIELILPVKYRSLTHRHIFHFPLCYKTLESGPLLELDLLTAGALLLKELSLEYGDNGGEEEMMQRVLQSFELTEWFLEARKEQKGEIISRYIDSEQALLLGHLLHPTPKSRQGMEREEERNLYSPETGGRFQLHFFRAPSEQIEEASMEKESAAAIVKNELQNAPETEELFKEDYCRLDDGYALLPVHPLQAEALLRKGSIQRKIEQGELAYLGPAGRSFTATSSVRTLYHEQSPYMLKVSIPVKITNSLRVNQKKEMARGVEVEKLMRSRIGKEASQFFPGFEIVRDPAYIALKGEEETGFETIIRQNPFQETMDDQVSLTAGLVHDAYGEGSMLGNLIRSLARAENRSTAEVSRDWFRRYLSISLHPMLWLYMTHGIALEAHQQNSVVRFTGGYPQVFYYRDNQGYYFARSKEAHLKEYVPELNASSDTVCVDDIADERFRYYFFINHLFGLINGFGASELIEEAELLRILREELKDAEKAFGRSSLTESLLEQETIPSKGNLLTRFFDMDELVGSLAEQSVYILISNPLTEKECLQHESPAI",
+      "sequence_sha256": "d1ae2dd25dbd71d39e1d053acea6cae6d58264e000d6fbded34389c5533408cd",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A917B963",
+      "name": "A0A917B963_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A917B963_1mg.yaml",
+      "input_sha256": "db7100f0196a09596b65665517b892cad06f7ec6a7b115a5c6578c88325775ff",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/a34a3f4b0283bea6.csv",
+      "msa_sha256": "8af81daa20bc042a9b7c18730ec5deec0064851300aaa478187d4b5d4bc2a828",
+      "sequence": "MKNYKVLAEEATMQSFFNCYLRETNNFQLTNQSVSNEEGLILETELPGQKVTIAAPVKYWSQTGRHRFDFPLFLKNHQSTVKLDYITLVSTILKELSLENGREGAEDELMLRVILSCQKIRDYLGRRESDADHLLEADFEYIDAEQSLLLGHLMHPTPKSRQGLTEREDHLYSPEYKGEFQLHYFKAKNEVIVQDSSLERSASQEVINQLMAEPAVDNDWLRKTLEHGYSLLPVHPLQAKDMLENKEVKELMEKGDLFYLGPIGSPYKATSSFRTVYNKHSDYMFKFSLPIKITNSLRGNLQKELDRGVEISRLLNTEFGEIVSRNFPSFHIIEDPAYIKLNVKNSKAAYDAVLRQNPYKDKNSNDVSLIAGLCQDHVYERSSRLFSIITHLSQQEGRSTDEVSKDWFEKYLSLSFKPILWLFENYGLALEAHQQNSLVKLSKGYPEAFYYRDNQGYYFSEDKAYKLKQHLSALNKSSDTICTSDVAVERLIYYFFFNHIFGLINSFGSNGLVSEEVLLDVLRKSLQQHNESNPLIHSLLHEDKLPCKANLLTRFHDMDELQGSLETQSVYTLVSNPIVSRVGSYEA",
+      "sequence_sha256": "ec4e58edf0b547fbbd793c57b21dde9f6f1d0b47baf7f9ba8d86367583c52f96",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "U6SUS5",
+      "name": "U6SUS5_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/U6SUS5_1mg.yaml",
+      "input_sha256": "507157ca067befeb6d01508f317512e0d1cc1767c4924da9731be4d8a9347930",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/6bb960f1d9cb682d.csv",
+      "msa_sha256": "c63c6177a4bcb6721f4bcd8459b11740c80e662df13b4d2b56924fba6b0c4816",
+      "sequence": "MIAKQIAEKATIQSFLNCYLRETGKGSLINKSQFNELTNDHLFAHSEVSQVIHTKLAYQNMDLFIPLEYWSLTGRHLFSFPLYYAQNTEQSDLLELDYLTLVSLVIKELTLESGGGSTREQDELMMRVILSCQNIEMFVRERLEEADELTAFDMDFIDAEQALLLGHLLHPTPKSRQGISEWDRAQYSPELRGSFQLHYFRVHRSLVYERSALQHSTTHLIKQKLIDHSDTSSDFKEKYCEKDEYSLIPVHPWQADYLMRKPQVQRAINDGLIENLGKQGAAYEPTSSVRTVYHPNEDYMYKFSLNIKITNSVRANKNMELERGVEVKHLLDTEIGKDLKRRFPNFEVIKDPAFITVKLDGENESGFEVILRENLFKKEEARNATPIAALCQDTVSGPPSRLAAIIQRLAEKEGRSVEAVSIDWFTRYLNRSLKPIFWLYLNHGIALEAHQQNSVIHLKDGYPDRFYYRDNQGYYFSESFYEKLSHVLPGISEKSNTVCSDAIADERLRYYFYFNNILGLINAFGVARLVDESILLETLREAILEIEIPAKSSSMLIESLLYEKTLPCKANLLTRFHDMDELTGSLETQSVYVEIDNPLVRKELVTSEYPRRRV",
+      "sequence_sha256": "8b41f3227c2e0de7c6505cbfd11db0571551038e16f83f5d358b1e06b5cc0d02",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABN3GUQ2",
+      "name": "A0ABN3GUQ2_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABN3GUQ2_1mg.yaml",
+      "input_sha256": "594d72b96ebc8731e1f570b0d2db4263445e72c30e9723db7e02b779a4c90098",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/6bf6ded9c5310aed.csv",
+      "msa_sha256": "22afc82c42928a27db45ec1f98fe7b7e2535ba66b0dde19356638939cae68516",
+      "sequence": "MKEVQARAAARQRLLNALVRETDAEVAAGELRMTLRGAHGTLVAEVCRESEVGHHVYGDGLFRESGGSRARLEHDEFVALVAEELQRRGAPTPPGSAERFRRQVANSEARSARYLARRAGPPPAAPTEITRHAEQSLLLGHPFHPTPKSAEGIADDDLERYAPELEARFRLHYWAVAPEVLLEERIGCGRWIPERVEREARTLLGAAREHFELLPVHPWQADYLRSRAAELIAEGELVPLGPLGDEVYATSSVRTVCDPAFGTAWKLPLHVRITNFVRNNPLEHLRRAVDAGRLVAAADWDHDGFRVLPETGYRAIAPGASGELAADFAVLFRHNPFPGSTTAPRVLAALLEDRLDGTPPPLIEEIARAGPLVPEHVVEWLRCYLRISLGPLLSVFTEQGISFEAHVQNSLLHTEDGWPRTFYVRDMEGTSASGERIPAGVLPTDSPVRYDDVEAWLRLRYHFVTNHLGHLVAVLGRFTPAGERLLWSAVHDFLAHCPGRYAERLRRDPALPAKANLISRFAEHGESPLYVDIPNPIREVNR",
+      "sequence_sha256": "fbbde5a15c4891e212cc00676166c4b43600ef90d938dd00baa108fa5315cdfe",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0ABP9EZE3",
+      "name": "A0ABP9EZE3_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0ABP9EZE3_1mg.yaml",
+      "input_sha256": "d56a29c9e3b57f43c61961da8976cb21c24c674fba1a34df69ae290b1c85ab26",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa_hard/9cec64e0aeb1a25c.csv",
+      "msa_sha256": "4480ed5eaf3a5c606585bf3b04e0a4032991b83cafe8548fe5f1335862576ba8",
+      "sequence": "MVTAGARARAERAARERLVTSLLRELDPPVTRDGDALGLTLPAGTLGVTLLHRSPTGHHRLAEAVTLDGRPATHDEVVTAVLETVGEGEPVDHLAAIVADSVARTARYLDAPAAPTGDRTRDAEQAVRYGHPFHPTPKSAEGLGDDDLTAWAPELGASFVLHHLALRDDVVLADGAPLTPPAAVAPHVPAGWTALPVHPYQARVLARDPTLALLEAEGAARRLGPLGDPVWPTSSVRTVVDTVTGASWKLPLRARLTHFVRTTPPEHARRALDAARVVAHLPALPPGFGVISDLGFATLDPAVGGDRLAADLTVIARAPFPPGSPRVLAAVLEDGPAGEDPPLLADMRAAGDVHAWLRRWLAVSLVPMLHVFGSAGLGFEAHPQNTLVVTDDDGWPTACRVRDLEGAHLRRDRLPAGLPADSPLVYTREEAWQRLRYHAVTNHLALLVAVLGRHTVGEEPLWATVAEVLGEVRDPAARPWAAELRHAPTLPAKAHLRSWAAGRGEDPIYVEVPNPIAAAGWRMPA",
+      "sequence_sha256": "ee99b609d17afda9472cbbe069803efa85f1d4b83e67a80bc3d966d7e367aba1",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 19
+    },
+    {
+      "accession": "I3R584",
+      "name": "I3R584_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/I3R584_2mg.yaml",
+      "input_sha256": "c30c7363e453e13fe7afafa29755ce5d729d57084e80ed2dfb0ebcb7c05275f2",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/37e3347785302c5c.csv",
+      "msa_sha256": "09bc9a0e427363e5533529a18e0ed96520dde76648d9b6679e57200e67076660",
+      "sequence": "MSDTSTVKSQCEDQNIDLIRLLYVTPSGVIQANTVDVSEVDAAVESGVTLSEVIQVYDAFACRNRNSRFDAVGEVHLCPDPETFRPLPYADRAGAMLCNIRTLDGEPWDVDSRSSLQSVERDLRAKGLSPQVAFESEFSLFSRDGDGKINRGDEAGAYRTESIRGTHDAILHIVDALKAQGIDVKKYHPEFSPGKHEIVTGHHTGLEAADEHLLLRETVKSVAEQDGYQATFLPKPFDDGTNGCHINVSLWNGENQFFDPNHGDISETARQFIAGVLDHAPAVLALTAPTVNSYSRLQPRHGAAGYICWGWLNREALIRVPAPAQGREADSTRIEFRGADNTANPYLGLIGLLAAGNDGIERELEPPEPVSVDPCDLTDAQRTAKGIKRLPQTLGEALDALETNEVLREALGPDLFDAYVEVKRNHWKLFTESAGAWQRERLRNLY",
+      "sequence_sha256": "23475fe59bfd0bcb588e3b989cb9a93b8798fbaac8e6e6af9cd115695956a5e2",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q9KZC7",
+      "name": "Q9KZC7_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q9KZC7_2mg.yaml",
+      "input_sha256": "5bc36f6af051d3b37ecb03fdda854d38df99153edac27c2261c136b6e434c0e2",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/bf0aeea88f263119.csv",
+      "msa_sha256": "52be78fce1cb62392e6a74dd12df97a4e53f50f8554b251af7403710ce460f17",
+      "sequence": "MSESDPVPGGRPGEVERATALSGELTGQGVHGVVLAYVDTAGIARVKTVPTAKLAAAAAWGVGMSPVFDTFLADDSIVGTDVLGSPDGDLRLYPDLDRLTMLAAQPGWAWAPVDRITQEGAPHPACGRTVLRRIVAGAAERHGITFRAAVEVEWVVGRGDAGGDAFVPAVSGPAYGAARQVELSDCAADLLAALAAQGVDVEQFHPEYAAGQFEVSVGALGPVAAADHSVLVRQTIRAVSARHGLRVSFAPAVLGQGVGNGGHLHLSAWRDGTNLHAGGTARCGMTAEAESFVAGVLGHLPALTALTAPSPASRLRLRPSQWAGVFTAWGRETREAALRIVTGTAGIRDRAANLEVKPVDLAANPYLALASVIAAGLDGLASSAPLPEEITGDPARLDPAAAAARGVRRLPVTLTESVAAFRTDGVLREALGPVLADAVIAVRLGEAGSVEGLDDDGVAAAYRWKY",
+      "sequence_sha256": "c9f6db2e2be4de42dea5285e1d66d9110be85f5790ac164133762d3f76c806e6",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "P39641",
+      "name": "P39641_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/P39641_2mg.yaml",
+      "input_sha256": "6c5e2c2db655b826989b027a6b63c3963c57ddacd6542856e46b4afeee46e5b1",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/8d8c84b6b4418ca1.csv",
+      "msa_sha256": "48a2e2a58c01da8bb012116c8bf63324d962290cfadb86aa7815c7c51a177dce",
+      "sequence": "MERKTVLVIADLGGCPPHMFYKSAAEKYNLVSFIPRPFAITASHAALIEKYSVAVIKDKDYFKSLADFEHPDSIYWAHEDHNKPEEEVVEQIVKVAEMFGADAITTNNELFIAPMAKACERLGLRGAGVQAAENARDKNKMRDAFNKAGVKSIKNKRVTTLEDFRAALEEIGTPLILKPTYLASSIGVTLITDTETAEDEFNRVNDYLKSINVPKAVTFEAPFIAEEFLQGEYGDWYQTEGYSDYISIEGIMADGEYFPIAIHDKTPQIGFTETSHITPSILDEEAKKKIVEAAKKANEGLGLQNCATHTEIKLMKNREPGLIESAARFAGWNMIPNIKKVFGLDMAQLLLDVLCFGKDADLPDGLLDQEPYYVADCHLYPQHFKQNGQIPETAEDLVIEAIDIPDGLLKGDTEIVSFSAAAPGTSVDLTLFEAFNSIAAFELKGSNSQDVAESIRQIQQHAKLTAKYVLPV",
+      "sequence_sha256": "0d1997b2e08cae29e516b5b2bf27bb7dc9643e033fdfed3e9e1214acfa6ee20a",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "P78061",
+      "name": "P78061_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/P78061_2mg.yaml",
+      "input_sha256": "2b076b741581f30bb376006823ce4ca1bae436ed268b4d3d7d000d5f389e7c72",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/538726bc0feec6e9.csv",
+      "msa_sha256": "0c33439ea0a44d53062d79786f200b328df2aee5475969d641c5fe57398243e2",
+      "sequence": "METNIVEVENFVQQSEERRGSAFTQEVKRYLERYPNTQYVDVLLTDLNGCFRGKRIPVSSLKKLEKGCYFPASVFAMDILGNVVEEAGLGQEMGEPDRTCVPVLGSLTPSAADPEFIGQMLLTMVDEDGAPFDVEPRNVLNRLWQQLRQRGLFPVVAVELEFYLLDRQRDAEGYLQPPCAPGTDDRNTQSQVYSVDNLNHFADVLNDIDELAQLQLIPADGAVAEASPGQFEINLYHTDNVLEACDDALALKRLVRLMAEKHKMHATFMAKPYEEHAGSGMHIHISMQNNRGENVLSDAEGEDSPLLKKMLAGMIDLMPSSMALLAPNVNSYRRFQPGMYVPTQASWGHNNRTVALRIPCGDRHNHRVEYRVAGADANPYLVMAAIFAGILHGLDNELPLQEEVEGNGLEQEGLPFPIRQSDALGEFIENDHLRRYLGERFCHVYHACKNDELLQFERLITETEIEWMLKNA",
+      "sequence_sha256": "e7b5dddde3f08c16c3b92e9ef0c2a668b33db78f5130498a27b6fecc21307691",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q9RDS6",
+      "name": "Q9RDS6_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q9RDS6_2mg.yaml",
+      "input_sha256": "0fb478183b6615418c01e66f8f5e26bc262682b3f742b08c59e5309b9b7c607a",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/f065eff302625854.csv",
+      "msa_sha256": "1c28fa53d718d5360ad0aba68bf6f2b63c635f09ea1f45b43355a92f5ecef762",
+      "sequence": "MDKQQEFVIRTLEERDIRFVRLWFTDVLGFLKSVAVAPAELEQAFDEGIGFDGSAIEGFARVYESDMIAKPDPSTFQVLPWRAEAPGTARMFCDILMPDGSPSFADPRYVLKRALARTSDLGFTFYTHPEIEFFLLKDKPVDGSVPTPADNSGYFDHTPQNIGMDFRRQAITMLESMGISVEFSHHEGAPGQQEIDLRYADALSTADNVMTFRLVMKQVALEQGLQATFMPKPFSEYPGSGMHTHLSLFEGDRNAFYESGAEYQLSKVGRSFIAGLLRHAAEISAVTNQWVNSYKRIWGGTERTAGAGGEAPSYICWGHNNRSALVRVPMYKPGKTGSARVEVRSIDSGANPYLTYAVLLAAGLKGIEEGYELPPGAEDDVWALSDAERRALGIEPLPQNLGEALALMERSDLVAETLGEHVFDFFLRNKRQEWEEYRSQVTAFELRKSLPVL",
+      "sequence_sha256": "1f105190936444fd6a8a4a86fc681bb61ae4b6e8ad9e966dc09d878a5b98ce98",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q9WY79",
+      "name": "Q9WY79_2mg",
+      "route": "acyl_phosphate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q9WY79_2mg.yaml",
+      "input_sha256": "55ede2bd1d43b491d3902bf9e1f499a552927b829f49c843747ec8d38ee34d5f",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/f79b150ae70b177a.csv",
+      "msa_sha256": "236b3c24e5c2478c6e3f891b5291cd912189966dafa20d82b6c6eba6d20ac130",
+      "sequence": "MNISTIVSNLKDLILEVRAPYDLEITGVSNHSSKVKKGDLFICRRGEKFDSHEIIPEVMEKGAVAVVVEREIDLDFPYIQVFDSRYFEAKVASLFFEDPWKDVLTFGVTGTNGKTTTTMMIYHMLTSLGERGSVLTTAVKRILGNSYYDDITTPDAITILSAMKENREGGGKFFALEVSSHALVQQRVEGVRFDVGIFTNISRDHLDFHGTFENYLKAKLHLFDLLKDDGVAVLNESLADAFNRKSRKITFGTSKNADYRLGNIEVSWEGTQFVLETPDGLLKVFTRAIGDFNAYNAAAAIAALHQLGYDPKDLASSLETFTGVEGRFEVVRGAKKIGLNVVVDFAHSPDALEKLLKNVRKISQGRVIVVFGAGGNSDRGKRPMMSEVASKLADVVILTTDDPRGEDPEQIMEDLIKGIDKRKPYLVLFDRREAIETALTIANRGDSVVIAGRGHERYQIIDEEKKVPFQDREVVEEIIRDKLKGRKYAQ",
+      "sequence_sha256": "abb090d33cf028c87d242231053c889447ab72e04170a854db1577e85f9099a9",
+      "mg_count": 2,
+      "intermediate_heavy": [
+        6,
+        0,
+        7,
+        1
+      ],
+      "adp": true,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "E2JA32",
+      "name": "E2JA32_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/E2JA32_1mg.yaml",
+      "input_sha256": "a60950d6572e55a468f27190d2ddc9d687f20b2785ab866de8be4bc949297390",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/eca1c04dec5145d0.csv",
+      "msa_sha256": "f0161768cc8c92f7939641ca184386aecd35cb35e7c2a7e3519cc273eea6630c",
+      "sequence": "MNKGENMNLEMWVQNISATFPWYAQLLRDKQADLSRLESLPLITEELLTQHYYHAENSFPGEHHSYLTSGTTSGKRKRIFYSDNDQRIYLQQRMDIIRDFCGEGHTRACADLGTGHAAATAGEIFQAMGCDVELIDFTRPIEQHIEVLNRFKPDIFFTMPMILDSLIATGKLDFQPKRIILLGDVASLNWQNKVADYFHIQPAQVLDLFGSIEIGSIAFYNHAQKRYQFDSYVRPEVVPVQSLYPGAKYGGDGGILLLTSFAREYFPAVRFVTNDLIEGFAQENVGGRTVYTYQRCLGRFAGEFKHGEKINLSDISDALANNLPYHKYDLADHEGGLVIRIAAKSIPTEVIEAIKHDLLARNPDIAQMISSGLVGDIRIQCVDAQEITGNVSKRRY",
+      "sequence_sha256": "593c16c1f597fcd017624541ce6d4ff683d6b18929c2324d6996da2379817ddf",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q2FW70",
+      "name": "Q2FW70_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q2FW70_1mg.yaml",
+      "input_sha256": "781a95dd02bb72c59e7ca8c7c400cb4948a781a4204de2d7b2e13e7f38c08d32",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/a38a0291101a34a7.csv",
+      "msa_sha256": "cdee8e4611ff55b8dc9c77aaafbf37462bc0041cdc676938c3a270ba7b49a229",
+      "sequence": "MNLNLIFKEQTLKFNKEEQETYLFLQQHNSDWANIFKEMILQGRDKVTQRLVTSMHRENLVKARTQSKKILSRDLIMLDISTTHILEIQFPQAKQTLYAPITGEHAFDRIDVEGPFYIKDDITNTITRVHHPNEILECILIEAPDLKNAASDQFQQDLINSATNMTFAISYQALSMQHDSAPLFNIIENSEDSYLRSEQAVIEGHPLHPGAKLRKGLNALQTFLYSSEFNQPIKLKIVLIHSKLSRTMSLSKDYDTTVHQLFPDLIKQLENEFTPKFNFNDYHIMIVHPWQLDDVLHSDYQAEVDKELIIEAKHTLDYYAGLSFRTLVPKYPAMSPHIKLSTNVHITGEIRTLSEQTTHNGPLMTRILNDILEKDVIFKSYASTIIDEVAGIHFYNEQDEADYQTERSEQLGTLFRKNIYQMIPQEVTPLIPSSLVATYPFNNESPIVTLIKRYQSAASLSDFESSAKSWVETYSKALLGLVIPLVTKYGIALEAHLQNAIATFRKDGLLDTMYIRDFEGLRIDKAQLNEMVYSTSHFHEKSRILTDSKTSVFNKAFYSTVQNHLGELILTISKASNDSNLERHMWYIVRDVLDNIFDQLVLSTHKSNQVNENRINEIKDTMFAPFIDYKCVTTMRLEDEAHHYTYIKVNNPLYRENN",
+      "sequence_sha256": "ea4816dba56c6687b7a35d46e896a77cb135014aff650521927e82596f71566c",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q2G1M9",
+      "name": "Q2G1M9_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q2G1M9_1mg.yaml",
+      "input_sha256": "fd10c1f84526d70e88c53a364fdd2bba8f9aa856e4c26a57ac9956fd08a67a2e",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/29c969e2ff933820.csv",
+      "msa_sha256": "d2611d9ece526e9f910c85b736d788d3c8bc91d74e2bc4a99b8a10abdc4096fb",
+      "sequence": "MQNKELIQHAAYAAIERILNEYFREENLYQVPPQNHQWSIQLSELETLTGEFRYWSAMGHHMYHPEVWLIDGKSKKITTYKEAIARILQHMAQSADNQTAVQQHMAQIMSDIDNSIHRTARYLQSNTIDYVEDRYIVSEQSLYLGHPFHPTPKSASGFSEADLEKYAPECHTSFQLHYLAVHQDVLLTRYVEGKEDQVEKVLYQLADIDISEIPKDFILLPTHPYQINVLRQHPQYMQYSEQGLIKDLGVSGDSVYPTSSVRTVFSKALNIYLKLPIHVKITNFIRTNDLEQIERTIDAAQVIASVKDEVETPHFKLMFEEGYRALLPNPLGQTVEPEMDLLTNSAMIVREGIPNYHADKDIHVLASLFETMPDSPMSKLSQVIEQSGLAPEAWLECYLNRTLLPILKLFSNTGISLEAHVQNTLIELKDGIPDVCFVRDLEGICLSRTIATEKQLVPNVVAASSPVVYAHDEAWHRLKYYVVVNHLGHLVSTIGKATRNEVVLWQLVAHRLMTWKKEYANNAVFVDCVEDLYQTPTIAAKANLMSKLNDCGANPIYTHIPNPICHNKEVSYCESNNS",
+      "sequence_sha256": "f0d873424f2022d4e33ed28dd30494252c56ad13c4a9c3d27b7656fe18e1a54d",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "A0A0F7RJ52",
+      "name": "A0A0F7RJ52_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/A0A0F7RJ52_1mg.yaml",
+      "input_sha256": "1ec648026b947a2342b070066fb3207fc9e007da7be788dd5755be823c51dfdd",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/ba69d633c8d08dac.csv",
+      "msa_sha256": "f67580ff41eefe642514fd95167ce245eb7bcb26657ad8e758f56ae641a2deae",
+      "sequence": "MKHAKQIAEHATIQSFLNCYLRETGSGEWITEDKRIEDIFYHLFQRDTCSTYLCCRLSAQNITLYGEVIYKSPTDRHLFGEQFYYQMGDSNSVMKADYVTVITFLIKEMSINYGEGTNPAELMLRVIRSCQNIEEFTKERKEDTSALYGFHTSFIEAEQSLLFGHLTHPTPKSRQGILEWKSAMYSPELKGECQLHYFRAHKSIVNEKSLLLDSTTVILKEELRNDEMVSKEFISKYCNEDEYSLLPIHPLQAEWLLHQPYVQDWIEQGVLEYIGPTGKCYMATSSLRTLYHPDAKYMLKFSFPVKVTNSMRINKLKELESGLEGKAMLNTAIGEVLEKFPGFDFICDPAFITLNYGTQESGFEVIIRENPFYSEHADDATLIAGLVQDAIPGERTRLSNIIHRLADLESRSCEEVSLEWFRRYMNISLKPMVWMYLQYGVALEAHQQNSVVQLKDGYPVKYYFRDNQGFYFCNSMKEMLNNELAGIGERTGNLYDDYIVDERFRYYLIFNHMFGLINGFGTAGLIREEILLTELRTVLESFLPYNREPSTFLRELLEEDKLACKANLLTRFFDVDELSNPLEQAIYVQVQNPLVREVAVRS",
+      "sequence_sha256": "e7d0515fd7fedb063f8f09ce48875c34d01f31fe71b8a114d65a49a8a95db4a9",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q2G1N1",
+      "name": "Q2G1N1_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q2G1N1_1mg.yaml",
+      "input_sha256": "1f504010be8cfc33acf5b481672a1f8be0d3f25b47024770061de98eba39e2e1",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/15666a324df163c5.csv",
+      "msa_sha256": "620f263a3a298391cc6dfe115db545cfa30f38b4104b3d80d9d60dcb161e7220",
+      "sequence": "MQNHTAVNTAQAIILRDLVDALLFEDIAGIVSNSEITKENGQTLLIYERETQQIKIPVYFSALNMFRYESSQPITIEGRVSKQPLTAAEFWQTIANMNCDLSHEWEVARVEEGLTTAATQLAKQLSELDLASHPFVMSEQFASLKDRPFHPLAKEKRGLREADYQVYQAELNQSFPLMVAAVKKTHMIHGDTANIDELENLTVPIKEQATDMLNDQGLSIDDYVLFPVHPWQYQHILPNVFAKEISEKLVVLLPLKFGDYLSSSSMRSLIDIGAPYNHVKVPFAMQSLGALRLTPTRYMKNGEQAEQLLRQLIEKDEALAKYVMVCDETAWWSYMGQDNDIFKDQLGHLTVQLRKYPEVLAKNDTQQLVSMAALAANDRTLYQMICGKDNISKNDVMTLFEDIAQVFLKVTLSFMQYGALPELHGQNILLSFEDGRVQKCVLRDHDTVRIYKPWLTAHQLSLPKYVVREDTPNTLINEDLETFFAYFQTLAVSVNLYAIIDAIQDLFGVSEHELMSLLKQILKNEVATISWVTTDQLAVRHILFDKQTWPFKQILLPLLYQRDSGGGSMPSGLTTVPNPMVTYD",
+      "sequence_sha256": "d5641351625d9d57c75489b6a0abb5627a7563ecd69eb19722f7543f8476e719",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q2G1M8",
+      "name": "Q2G1M8_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q2G1M8_1mg.yaml",
+      "input_sha256": "4173d7cd08fa8479c458182acd48c46838e227f437d046e75caf5a48910ba3d3",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/c6f6a64f2241c5b1.csv",
+      "msa_sha256": "801e3a2f6bafa02cb821f688b323945ec5b608fe9362075bd85990b7ad5c0eb8",
+      "sequence": "MIVVQTLFIHIYQIQFVITRRYRIVNQTILNRVKTRVMHQLVSSLIYENIVVYKASYQDGVGHFTIEGHDSEYRFTAEKTHSFDRIRITSPIERVVGDEADTTTDYTQLLREVVFTFPKNDEKLEQFIVELLQTELKDTQSMQYRESNPPATPETFNDYEFYAMEGHQYHPSYKSRLGFTLSDNLKFGPDFVPNVKLQWLAIDKDKVETTVSRNVVVNEMLRQQVGDKTYEHFVQQIEASGKHVNDVEMIPVHPWQFEHVIQVDLAEERLNGTVLWLGESDELYHPQQSIRTMSPIDTTKYYLKVPISITNTSTKRVLAPHTIENAAQITDWLKQIQQQDMYLKDELKTVFLGEVLGQSYLNTQLSPYKQTQVYGALGVIWRENIYHMLIDEEDAIPFNALYASDKDGVPFIENWIKQYGSEAWTKQFLAVAIRPMIHMLYYHGIAFESHAQNMMLIHENGWPTRIALKDFHDGVRFKREHLSEAASHLTLKPMPEAHKKVNSNSFIETDDERLVRDFLHDAFFFINIAEIILFIEKQYGIDEELQWQWVKGIIEAYQEAFPELNNYQHFDLFEPTIQVEKLTTRRLLSDSELRIHHVTNPLGVGGINDATTISET",
+      "sequence_sha256": "4a46133c27ea8618adb863a195ccad455b8dafd8b99d1c517e7fed03a58d067f",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    },
+    {
+      "accession": "Q81RQ8",
+      "name": "Q81RQ8_1mg",
+      "route": "acyl_adenylate",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/cofold_step2/inputs/Q81RQ8_1mg.yaml",
+      "input_sha256": "4274e275e2ffad5a42bb733ed674d12fbcf3ee57616b7ea147c187e0c7c43a9f",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/eed1e8246b7f9800.csv",
+      "msa_sha256": "9e9fceb80ef87262609053a74e6b9c1c2a603f503fb958b8bf7fa35a65c6438a",
+      "sequence": "MRMDMYHTKILKAIESEDYISVRRRVLRQLVESLIYEGIITPARIEKEEQILFLIQGLDEDNKSVTYECYGRERITFGRISIDSLIVRVQDGKQEIQSVAQFLEEVFRVVNVEQTKLDSFIHELEQTIFKDTIAQYERCNKLKYTQKSYDELENHLIDGHPYHPSYKARIGFQYRDNFRYGYEFMRPIKLIWIAAHKKNATVGYENEVIYDKILKSEVGERKLEAYKERIHSMGCDPKQYLFIPVHPWQWENFIISNYAEDIQDKGIIYLGESADDYCAQQSMRTLRNVTNPKRPYVKVSLNILNTSTLRTLKPYSVASAPAISNWLSNVVSQDSYLRDESRVILLKEFSSVMYDTNKKATYGSLGCIWRESVHHYLGEQEDAVPFNGLYAKEKDGTPIIDAWLNKYGIENWLRLLIQKAIIPVIHLVVEHGIALESHGQNMILVHKEGLPVRIALKDFHEGLEFYRPFLKEMNKCPDFTKMHKTYANGKMNDFFEMDRIECLQEMVLDALFLFNVGELAFVLADKYEWKEESFWMIVVEEIENHFRKYPHLKDRFESIQLYTPTFYAEQLTKRRLYIDVESLVHEVPNPLYRARQLNIQKSVATGGNYANC",
+      "sequence_sha256": "3246412b10593aeb09d47f8cd1ec3f4bcb45e47c2457515d2d39f72c7212222c",
+      "mg_count": 1,
+      "intermediate_heavy": [
+        16,
+        5,
+        10,
+        1
+      ],
+      "adp": false,
+      "n_pocket_contacts": 20
+    }
+  ],
+  "merged_from": [
+    "top10_cofold_expanded/step2/manifest.json",
+    "top10_cofold_step2/manifest.json"
+  ],
+  "note": "step2 accommodation: consolidated from the historical per-increment runs into one folder"
+}

@@ -1,0 +1,68 @@
+# STEP2 expanded acyl_phosphate mg=2
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: MHTGVNNLTTSVSVGKDGTHDSNDKVLPMSVTATAEAEAFLERHPDIDSVDLLISDLNGVMRGKRIPRDNLVKAFSAGINLPASLFALDINGNTIEETGLGLSSGDGDRICRPVEGTLMPCPWLRKGRQGQLLMTMFEADGSGFFADPRQVLQRVLRRFADAGLTPVVAVELEFYLVDRSRDAQGYAQPPCSPATGERASQSQLYSINELDEYADFLEDIQAAAAAQQLPLDTALKECAPGQFEINLTHCDDVLKACDSSVLLKRLIKGVAIQHGFEATFMAKPYGDEAGNGTHVHISLLDAQGHNVFAAEDDSPLGTPALGHAVAGLLALMPASMAIFAPNINSFRRFQPGLYVPMSPTWGYDNRSVAVRIPSGPKAAKRIEHRVAGADVNPYLLLATLLASIDHGLRQQLAPPPPIEGNAYDQCEPSLTNSWQRALALLADDEVLTEALGEQFLHVYLANRQAERDQAMQAVSQLEYDWYLRQV
+    msa: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/msa/bd24257b26bdce0f.csv
+- ligand:
+    id: B
+    smiles: O=C([O-])CCCCC(=O)OP(=O)([O-])[O-]
+- ligand:
+    id: C
+    smiles: NCCCCCC[NH3+]
+- ligand:
+    id: D
+    ccd: ADP
+- ligand:
+    id: E
+    ccd: MG
+- ligand:
+    id: F
+    ccd: MG
+constraints:
+- pocket:
+    binder: C
+    contacts:
+    - - A
+      - 171
+    - - A
+      - 173
+    - - A
+      - 204
+    - - A
+      - 205
+    - - A
+      - 237
+    - - A
+      - 238
+    - - A
+      - 242
+    - - A
+      - 244
+    - - A
+      - 289
+    - - A
+      - 290
+    - - A
+      - 291
+    - - A
+      - 292
+    - - A
+      - 294
+    - - A
+      - 348
+    - - A
+      - 354
+    - - A
+      - 355
+    - - A
+      - 366
+    - - A
+      - 371
+    - - A
+      - 383
+    - - A
+      - 385
+    max_distance: 10.0
+    force: true

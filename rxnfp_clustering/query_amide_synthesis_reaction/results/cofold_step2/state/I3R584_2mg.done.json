@@ -1,0 +1,8 @@
+{
+  "name": "I3R584_2mg",
+  "accession": "I3R584",
+  "route": "acyl_phosphate",
+  "mg_count": 2,
+  "n_models": 50,
+  "composition_qc": "protein sequence, HMDA, acyl intermediate, Mg and ADP verified"
+}

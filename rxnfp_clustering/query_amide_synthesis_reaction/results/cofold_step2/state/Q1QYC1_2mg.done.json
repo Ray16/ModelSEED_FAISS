@@ -1,0 +1,8 @@
+{
+  "name": "Q1QYC1_2mg",
+  "accession": "Q1QYC1",
+  "route": "acyl_phosphate",
+  "mg_count": 2,
+  "n_models": 50,
+  "composition_qc": "protein sequence, HMDA, acyl intermediate, Mg and ADP verified"
+}

@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/manifest.json": "8ffb908639d21ea2933c4c2d742220a94660c7a3dd2c9f49d7a6f00d4102f0ae",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/references.tsv": "5fbab62521bc189975ab1f89cb287478b8911a5f6d8271ef98d0f19acb8d07c6",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/evaluation/compare_ensembles.py": "888055d74e68f30fced29c5bc0407619cff68860cc8e53283edfa56214337286"
+  },
+  "output_sha256": {
+    "comparison.json": "fb6fbe9cbbfa6ff8b8d0aa2684b7cbee5769098c0dca5bd0beedfd4f222b8ae3",
+    "pose_comparison.png": "895abddb214d6a5c20146c2b8e307f6fc4cc62dbe340db51bf163e3edb4a95e1",
+    "pose_comparison.svg": "5c2a440f6292bdd047bba615e1da928d8925015f4fcad534f538895d0e59791b",
+    "pose_comparison.pdf": "c2e8135ce75fa9bfca058ee4bebd307c7cc3927b5093b99abc240d5cef4d29db"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "U6SUS5_1mg",
+  "accession": "U6SUS5",
+  "route": "acyl_adenylate",
+  "mg_count": 1,
+  "n_models": 50,
+  "composition_qc": "protein sequence, HMDA, acyl intermediate, Mg verified"
+}

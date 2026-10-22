@@ -1,0 +1,45 @@
+{
+  "host": "lambda13",
+  "pid": "3694520",
+  "argv": [
+    "nohup",
+    "taskset",
+    "-c",
+    "383",
+    "env",
+    "OMP_NUM_THREADS=1",
+    "OMP_THREAD_LIMIT=1",
+    "MKL_NUM_THREADS=1",
+    "OPENBLAS_NUM_THREADS=1",
+    "NUMEXPR_NUM_THREADS=1",
+    "/nfs/lambda_stor_01/homes/rzhu/boltz2-venv/bin/python",
+    "-u",
+    "/nfs/lambda_stor_01/homes/rzhu/.agents/skills/batched-msa/scripts/batch_msa.py",
+    "--fasta",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/references.fasta",
+    "--out",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa",
+    "--also-a3m"
+  ],
+  "log": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/batch_msa.log",
+  "preflight": {
+    "host": "lambda13",
+    "python": "/nfs/lambda_stor_01/homes/rzhu/boltz2-venv/bin/python",
+    "ok": true,
+    "errors": [],
+    "online_cpus": 384,
+    "load": 15.01123046875,
+    "affinity": [
+      383
+    ],
+    "available_ram_mib": 978729.35546875,
+    "modules": {
+      "torch": "2.12.0+cu130",
+      "rdkit": "2026.03.2",
+      "boltz.main": "import OK",
+      "boltz2_opt": "0.3.36",
+      "gemmi": "0.6.5",
+      "yaml": "6.0.2"
+    }
+  }
+}

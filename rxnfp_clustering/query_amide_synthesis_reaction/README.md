@@ -9,7 +9,7 @@ The current panel contains **ten chemically selected ModelSEED reactions**. DRFP
 - [Geometry values](results/top10_cofold/activation_geometry.tsv)
 - [Verified structure coverage](results/top10_cofold/final_verification.json)
 - [Per-mapping evidence consolidation (reliability-weighted)](results/top10_mapping/panel_evidence_consolidation.tsv)
-- [Step-2 HMDA near-attack accommodation](results/top10_cofold_step2/step2_near_attack.tsv)
+- [Step-2 HMDA near-attack accommodation](results/cofold_step2/step2_near_attack.tsv)
 
 The ten pools contain **1,064 candidate identifiers**, **1,045 exact sequences** and **834 representatives at 95% identity**. Matching reaction annotations cover 12 reference proteins across nine reactions. Glycylglycine formation has no established exact assignment; BacD/YwfE is an explicitly inferred related-reaction candidate. MurE’s symbolic Rhea participant and missing stereochemistry in citrate-derived entries remain qualified.
 
@@ -28,7 +28,7 @@ This performs an isolated, strictly offline replay from pinned inputs, recomputi
 Recheck all existing structures and regenerate the current plots/Markdown:
 
 ```bash
-python -m amide_synthesis model inspect --run-dir results/top10_cofold/campaign
+python -m amide_synthesis model inspect --run-dir results/cofold_step1
 python -m amide_synthesis evaluate current-panel
 ```
 

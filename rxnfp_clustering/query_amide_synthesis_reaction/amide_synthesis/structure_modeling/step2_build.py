@@ -57,9 +57,9 @@ PANEL = [
 ]
 
 
-def step1_paths(name, where):
-    base = (RES / 'top10_cofold/campaign' if where == 'campaign'
-            else RES / 'boltz2_activation_20261016')
+def step1_paths(name, where=None):
+    # All step-1 ensembles (panel + reused + expanded) now live in one folder.
+    base = RES / 'cofold_step1'
     return base / 'inputs' / f'{name}.yaml', base / 'outputs' / name
 
 
@@ -132,7 +132,7 @@ def build_one(accession, name, where):
 
 
 def main():
-    out = RES / 'top10_cofold_step2'
+    out = RES / 'cofold_step2'
     (out / 'inputs').mkdir(parents=True, exist_ok=True)
     for sub in ('outputs', 'state', 'logs', 'evidence'):
         (out / sub).mkdir(parents=True, exist_ok=True)

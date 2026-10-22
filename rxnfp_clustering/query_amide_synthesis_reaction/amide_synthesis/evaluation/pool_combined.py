@@ -4,9 +4,7 @@ Step-2 was folded for every candidate, not just step-1 survivors, because the tw
 half-reactions are independent (BacD activates adipate best yet cannot fit HMDA; PuuA
 is a weak activator yet accommodates the amine). This joins:
   - step-1 geometry  : results/top10_cofold_expanded/step1_pool_ranking.tsv (all 124)
-  - step-2 geometry  : computed here from BOTH step-2 runs
-        panel 13    -> results/top10_cofold_step2
-        expanded 111-> results/top10_cofold_expanded/step2
+  - step-2 geometry  : computed here from results/cofold_step2 (all 124, one folder)
 
 and renders the joint picture two ways, per the transferability caveat:
   WITHIN-FAMILY (conservative): candidates ranked by the validated step-1 activation
@@ -27,10 +25,9 @@ from pathlib import Path
 from amide_synthesis.infrastructure.paths import RES
 from amide_synthesis.evaluation.step2_geometry import GENE, summarise
 
-EXP = RES / 'top10_cofold_expanded'
+EXP = RES / 'top10_cofold_expanded'     # analysis home for rankings/tables/figures
 STEP1_RANK = EXP / 'step1_pool_ranking.tsv'
-STEP2_PANEL = RES / 'top10_cofold_step2'
-STEP2_EXPANDED = EXP / 'step2'
+STEP2 = RES / 'cofold_step2'            # all 124 step-2 ensembles (one folder)
 OUT = EXP
 
 FAM_COLOUR = {'GS': '#0072B2', 'NIS': '#D55E00', 'Mur': '#009E73', 'BacD': '#CC79A7', '?': '#999999'}
@@ -48,13 +45,12 @@ def build_label(acc, organism):
 
 
 def step2_geometry():
-    """reachable_fraction_3p5A, near_attack, weighted distance per accession, both runs."""
+    """reachable_fraction_3p5A, near_attack, weighted distance per accession (all 124)."""
     out = {}
-    for run in (STEP2_PANEL, STEP2_EXPANDED):
-        manifest = json.loads((run / 'manifest.json').read_text())
-        for item in manifest['inputs']:
-            row, _d, _a = summarise(item, run=run)
-            out[row['accession']] = row
+    manifest = json.loads((STEP2 / 'manifest.json').read_text())
+    for item in manifest['inputs']:
+        row, _d, _a = summarise(item, run=STEP2)
+        out[row['accession']] = row
     return out
 
 

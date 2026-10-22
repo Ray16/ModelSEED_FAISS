@@ -1,0 +1,268 @@
+{
+  "accession": "A0A0U3AYN2",
+  "name": "A0A0U3AYN2_2mg",
+  "family": "atp_adp_ligase",
+  "phosphate": "PG",
+  "mg_count": 2,
+  "n_models": 50,
+  "assembly_qc": "protein length, ATP atom names, adipate composition and Mg count passed",
+  "A_deg": 144.05572081988745,
+  "Dh_A": 4.471847253510088,
+  "min_distance_A": 3.2232353311540862,
+  "median_distance_A": 3.9947384639159957,
+  "nearby_fraction_4A": 0.5,
+  "mean_angle_deg": 142.9290650943983,
+  "near_attack_fraction": 0.12,
+  "poses": [
+    {
+      "model": "A0A0U3AYN2_2mg_model_0.pdb",
+      "distance_A": 3.5352132891807253,
+      "angle_deg": 147.08350803910275
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_1.pdb",
+      "distance_A": 3.6741786837332775,
+      "angle_deg": 146.03305348439866
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_10.pdb",
+      "distance_A": 3.6930277551082655,
+      "angle_deg": 137.16663235696055
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_11.pdb",
+      "distance_A": 7.322635113126968,
+      "angle_deg": 142.05314173293317
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_12.pdb",
+      "distance_A": 3.79101490369004,
+      "angle_deg": 158.5861608492097
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_13.pdb",
+      "distance_A": 4.018947374624355,
+      "angle_deg": 140.20084280545697
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_14.pdb",
+      "distance_A": 3.9804694446760926,
+      "angle_deg": 145.722714477956
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_15.pdb",
+      "distance_A": 3.5803364367053554,
+      "angle_deg": 139.72486587198716
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_16.pdb",
+      "distance_A": 3.7387342778004427,
+      "angle_deg": 140.13094211802516
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_17.pdb",
+      "distance_A": 3.520684876554561,
+      "angle_deg": 142.9076763938059
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_18.pdb",
+      "distance_A": 3.816728704008185,
+      "angle_deg": 143.61532651178493
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_19.pdb",
+      "distance_A": 3.703862848432701,
+      "angle_deg": 163.6929946169522
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_2.pdb",
+      "distance_A": 3.970877610805954,
+      "angle_deg": 162.04749519260687
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_20.pdb",
+      "distance_A": 3.3853676314397525,
+      "angle_deg": 151.5628904972643
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_21.pdb",
+      "distance_A": 3.4966398155943934,
+      "angle_deg": 135.88366021997422
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_22.pdb",
+      "distance_A": 3.8368623900265173,
+      "angle_deg": 156.005485603275
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_23.pdb",
+      "distance_A": 4.249566330815417,
+      "angle_deg": 158.91671220415395
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_24.pdb",
+      "distance_A": 3.865819576752128,
+      "angle_deg": 146.45162308427032
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_25.pdb",
+      "distance_A": 4.009007483155899,
+      "angle_deg": 168.96769952006514
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_26.pdb",
+      "distance_A": 4.661176139130552,
+      "angle_deg": 168.96916810376896
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_27.pdb",
+      "distance_A": 5.159916762894533,
+      "angle_deg": 117.62024953884307
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_28.pdb",
+      "distance_A": 4.244595740468108,
+      "angle_deg": 116.85379905352596
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_29.pdb",
+      "distance_A": 4.520632809684946,
+      "angle_deg": 118.81252112713874
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_3.pdb",
+      "distance_A": 3.8616487411467135,
+      "angle_deg": 143.71546256487798
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_30.pdb",
+      "distance_A": 4.4017990640191655,
+      "angle_deg": 153.5053197333825
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_31.pdb",
+      "distance_A": 3.2232353311540862,
+      "angle_deg": 142.5331852769844
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_32.pdb",
+      "distance_A": 5.1088348965297365,
+      "angle_deg": 133.1935608466388
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_33.pdb",
+      "distance_A": 5.809751199492109,
+      "angle_deg": 159.6007542096257
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_34.pdb",
+      "distance_A": 3.5178449368896296,
+      "angle_deg": 130.36111715715134
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_35.pdb",
+      "distance_A": 4.524922651272615,
+      "angle_deg": 134.0232656211447
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_36.pdb",
+      "distance_A": 4.460344941817841,
+      "angle_deg": 139.2277918571138
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_37.pdb",
+      "distance_A": 3.7281562467257183,
+      "angle_deg": 140.3388370064135
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_38.pdb",
+      "distance_A": 4.17601640322449,
+      "angle_deg": 107.57060481388045
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_39.pdb",
+      "distance_A": 4.439030186876408,
+      "angle_deg": 152.0307634698724
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_4.pdb",
+      "distance_A": 3.3925742438449302,
+      "angle_deg": 139.26900063496197
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_40.pdb",
+      "distance_A": 4.639937176298836,
+      "angle_deg": 127.43053037801002
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_41.pdb",
+      "distance_A": 3.526451757787138,
+      "angle_deg": 145.49782791188076
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_42.pdb",
+      "distance_A": 6.46532427647678,
+      "angle_deg": 167.7449027063355
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_43.pdb",
+      "distance_A": 3.9694289261806905,
+      "angle_deg": 135.28461302663706
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_44.pdb",
+      "distance_A": 7.873000254032766,
+      "angle_deg": 170.8583023650005
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_45.pdb",
+      "distance_A": 26.251561096437673,
+      "angle_deg": 132.70699825483914
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_46.pdb",
+      "distance_A": 29.688395392812996,
+      "angle_deg": 130.52548493802072
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_47.pdb",
+      "distance_A": 29.036327229868448,
+      "angle_deg": 124.93396092083906
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_48.pdb",
+      "distance_A": 30.78060301553561,
+      "angle_deg": 125.32652005167391
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_49.pdb",
+      "distance_A": 30.547870203992947,
+      "angle_deg": 119.92450942729972
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_5.pdb",
+      "distance_A": 3.76101502257037,
+      "angle_deg": 159.38338046858405
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_6.pdb",
+      "distance_A": 4.499132471932783,
+      "angle_deg": 136.79441447373353
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_7.pdb",
+      "distance_A": 3.517340614725847,
+      "angle_deg": 137.2832274257506
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_8.pdb",
+      "distance_A": 4.797223572025802,
+      "angle_deg": 168.75148263554368
+    },
+    {
+      "model": "A0A0U3AYN2_2mg_model_9.pdb",
+      "distance_A": 3.5317945863257667,
+      "angle_deg": 139.6282731402607
+    }
+  ]
+}

@@ -27,7 +27,7 @@ import numpy as np
 
 from amide_synthesis.infrastructure.paths import RES
 
-RUN = RES / 'top10_cofold_step2'
+RUN = RES / 'cofold_step2'   # all 124 step-2 ensembles consolidated here
 BD_LOW, BD_HIGH, NEAR_A = 90.0, 120.0, 3.5
 
 # Enzyme/gene name per UniProt accession; always label as "Gene (Accession)".
