@@ -3,7 +3,7 @@
 import re
 import unittest
 
-from amide_synthesis.master_table import DISQUALIFYING
+from amide_synthesis.candidate_selection.master_table import DISQUALIFYING
 
 
 class TestBindingProteinDisqualifier(unittest.TestCase):

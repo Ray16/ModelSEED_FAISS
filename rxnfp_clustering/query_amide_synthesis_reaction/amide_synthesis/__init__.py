@@ -1,5 +1,7 @@
-"""ModelSEED amide-synthesis discovery tools.
+"""Reaction search → enzyme mapping → selection → structural modeling → evaluation.
 
-Chemistry, retrieval and reporting are separate modules. Importing this package
-does not run a stage or contact a public API.
+Imports never execute a stage or retrieve remote data. Old flat module names
+resolve lazily to their canonical implementations for frozen-run compatibility.
 """
+from ._compat import install as _install_compatibility
+_install_compatibility()

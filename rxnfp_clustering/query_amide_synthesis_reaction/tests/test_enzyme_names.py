@@ -15,8 +15,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import enzyme_names                      # noqa: E402
-from amide_synthesis.master_table import EVIDENCE_WEIGHT, build  # noqa: E402
+from amide_synthesis.enzyme_mapping import enzyme_names
+from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT, build
 
 
 def fake_client(answers, totals):
@@ -292,5 +292,5 @@ class EcContradictionTests(unittest.TestCase):
 
 
 def master_ec(values):
-    from amide_synthesis.master_table import ec_contradicts
+    from amide_synthesis.candidate_selection.master_table import ec_contradicts
     return bool(ec_contradicts(pd.Series(['; '.join(values)])).iloc[0])

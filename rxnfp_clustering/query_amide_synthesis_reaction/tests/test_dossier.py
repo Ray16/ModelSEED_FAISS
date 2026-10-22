@@ -14,7 +14,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import dossier as dos   # noqa: E402
+from amide_synthesis.evaluation import dossier as dos
 
 
 class TextTests(unittest.TestCase):
@@ -215,7 +215,7 @@ class PocketCapacityTests(unittest.TestCase):
 
     def test_capacity_is_not_a_convergence_axis(self):
         """It derives from the same ligand data as the ligand axis."""
-        from amide_synthesis import converged as cv
+        from amide_synthesis.candidate_selection import converged as cv
         found = cv.axes(pd.DataFrame([{'uniprot': 'P1'}]), set())
         for name in found.columns:
             self.assertNotIn('span', name)
@@ -250,7 +250,7 @@ class AccessionPatternTests(unittest.TestCase):
 
     def _match(self, accession):
         import re
-        from amide_synthesis.curated_properties import ACCESSION
+        from amide_synthesis.candidate_selection.curated_properties import ACCESSION
         return bool(re.match(ACCESSION, accession))
 
     def test_o_p_and_q_accessions_match(self):
@@ -263,7 +263,8 @@ class AccessionPatternTests(unittest.TestCase):
 
     def test_the_dossier_imports_the_shared_pattern(self):
         source = Path(dos.__file__).read_text()
-        self.assertIn('from .curated_properties import ACCESSION', source)
+        from amide_synthesis.candidate_selection.curated_properties import ACCESSION
+        self.assertIs(dos.ACCESSION, ACCESSION)
         self.assertNotIn('[A-NR-Z0-9][0-9A-Z]', source)
 
 

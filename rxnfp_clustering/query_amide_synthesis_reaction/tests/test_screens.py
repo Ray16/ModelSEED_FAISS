@@ -2,10 +2,10 @@
 import unittest
 from rdkit import Chem
 
-from amide_synthesis.acylation import acylated_acceptors, count_free_amines
-from amide_synthesis.normalize import normalize_smiles
-from amide_synthesis.enzyme_resolution import product_names
-from scripts.test_screens import REPAIR_CASES, AMINE_CASES, ACYLATION_CASES, PRODUCT_NAME_CASES
+from amide_synthesis.reaction_search.acylation import acylated_acceptors, count_free_amines
+from amide_synthesis.reaction_search.normalize import normalize_smiles
+from amide_synthesis.enzyme_mapping.enzyme_resolution import product_names
+from amide_synthesis.reaction_search.controls import REPAIR_CASES, AMINE_CASES, ACYLATION_CASES, PRODUCT_NAME_CASES
 
 
 class ChemistryControls(unittest.TestCase):

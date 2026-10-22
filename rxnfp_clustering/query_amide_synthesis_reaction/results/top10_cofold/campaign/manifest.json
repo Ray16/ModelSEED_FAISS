@@ -1,0 +1,724 @@
+{
+  "scope": "Monomeric adipate acid activation; no HMDA or activated intermediate",
+  "selection": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/selection.tsv",
+  "selection_sha256": "0a28d864d3f7a0f6c649344f1f0cd84ff1c448412bc061470b71c51530730400",
+  "inputs": [
+    {
+      "accession": "I3R584",
+      "name": "I3R584_2mg",
+      "sequence_length": 446,
+      "sequence_sha256": "23475fe59bfd0bcb588e3b989cb9a93b8798fbaac8e6e6af9cd115695956a5e2",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/I3R584_2mg.yaml",
+      "input_sha256": "8e34a55e7eb4ab674ba87fbfe0611cbe83c804371913a424cdfea8ffb18c211d",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/37e3347785302c5c.csv",
+      "msa_sha256": "09bc9a0e427363e5533529a18e0ed96520dde76648d9b6679e57200e67076660",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "P78061",
+      "name": "P78061_2mg",
+      "sequence_length": 472,
+      "sequence_sha256": "e7b5dddde3f08c16c3b92e9ef0c2a668b33db78f5130498a27b6fecc21307691",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/P78061_2mg.yaml",
+      "input_sha256": "7c4c489f23d1bed62ba7acea322b046a7235f97834232988a8f5b2308d944119",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/538726bc0feec6e9.csv",
+      "msa_sha256": "0c33439ea0a44d53062d79786f200b328df2aee5475969d641c5fe57398243e2",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q9KZC7",
+      "name": "Q9KZC7_2mg",
+      "sequence_length": 466,
+      "sequence_sha256": "c9f6db2e2be4de42dea5285e1d66d9110be85f5790ac164133762d3f76c806e6",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q9KZC7_2mg.yaml",
+      "input_sha256": "92d4b68db74b61b1709c4e33bb0d58056ca2589b29e14a39b67bb91cb6ec0d62",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/bf0aeea88f263119.csv",
+      "msa_sha256": "52be78fce1cb62392e6a74dd12df97a4e53f50f8554b251af7403710ce460f17",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q9RDS6",
+      "name": "Q9RDS6_2mg",
+      "sequence_length": 453,
+      "sequence_sha256": "1f105190936444fd6a8a4a86fc681bb61ae4b6e8ad9e966dc09d878a5b98ce98",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q9RDS6_2mg.yaml",
+      "input_sha256": "d8af78129609c3567745a7bd9c023bd01e725530ec203af8c96e3da38bad8b2a",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/f065eff302625854.csv",
+      "msa_sha256": "1c28fa53d718d5360ad0aba68bf6f2b63c635f09ea1f45b43355a92f5ecef762",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "E2JA32",
+      "name": "E2JA32_1mg",
+      "sequence_length": 396,
+      "sequence_sha256": "593c16c1f597fcd017624541ce6d4ff683d6b18929c2324d6996da2379817ddf",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/E2JA32_1mg.yaml",
+      "input_sha256": "481af1ffc37008af439fdf0f2a0ecb7d125ec57b6c682cf0800a4f963637afbc",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/eca1c04dec5145d0.csv",
+      "msa_sha256": "f0161768cc8c92f7939641ca184386aecd35cb35e7c2a7e3519cc273eea6630c",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q2FW70",
+      "name": "Q2FW70_1mg",
+      "sequence_length": 658,
+      "sequence_sha256": "ea4816dba56c6687b7a35d46e896a77cb135014aff650521927e82596f71566c",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q2FW70_1mg.yaml",
+      "input_sha256": "c77b6b06a354deed77e698bf3ea4caccf27e1e25a5ddda2fb884c68bea6e6798",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/a38a0291101a34a7.csv",
+      "msa_sha256": "cdee8e4611ff55b8dc9c77aaafbf37462bc0041cdc676938c3a270ba7b49a229",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q2G1M9",
+      "name": "Q2G1M9_1mg",
+      "sequence_length": 578,
+      "sequence_sha256": "f0d873424f2022d4e33ed28dd30494252c56ad13c4a9c3d27b7656fe18e1a54d",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q2G1M9_1mg.yaml",
+      "input_sha256": "d6a3ba201eae0158944366d4417efd9343a864f958e490bbdbbd792d43086e92",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/29c969e2ff933820.csv",
+      "msa_sha256": "d2611d9ece526e9f910c85b736d788d3c8bc91d74e2bc4a99b8a10abdc4096fb",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "A0A0F7RJ52",
+      "name": "A0A0F7RJ52_1mg",
+      "sequence_length": 602,
+      "sequence_sha256": "e7d0515fd7fedb063f8f09ce48875c34d01f31fe71b8a114d65a49a8a95db4a9",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/A0A0F7RJ52_1mg.yaml",
+      "input_sha256": "2774807d5b0f652d4b0eb624e9956b8bfc7847580e672abb5735e5d6431b4541",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/ba69d633c8d08dac.csv",
+      "msa_sha256": "f67580ff41eefe642514fd95167ce245eb7bcb26657ad8e758f56ae641a2deae",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q9WY79",
+      "name": "Q9WY79_2mg",
+      "sequence_length": 490,
+      "sequence_sha256": "abb090d33cf028c87d242231053c889447ab72e04170a854db1577e85f9099a9",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q9WY79_2mg.yaml",
+      "input_sha256": "559a04936094617b6742dece7a763a9ee5f0bd5292f1101dea7cf02cc98c32a8",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/f79b150ae70b177a.csv",
+      "msa_sha256": "236b3c24e5c2478c6e3f891b5291cd912189966dafa20d82b6c6eba6d20ac130",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q2G1N1",
+      "name": "Q2G1N1_1mg",
+      "sequence_length": 584,
+      "sequence_sha256": "d5641351625d9d57c75489b6a0abb5627a7563ecd69eb19722f7543f8476e719",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q2G1N1_1mg.yaml",
+      "input_sha256": "cfe08f8d7633234f0c8b4de53bb0ca55819b487f41bd5f5b7544281969a1afdf",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/15666a324df163c5.csv",
+      "msa_sha256": "620f263a3a298391cc6dfe115db545cfa30f38b4104b3d80d9d60dcb161e7220",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q2G1M8",
+      "name": "Q2G1M8_1mg",
+      "sequence_length": 616,
+      "sequence_sha256": "4a46133c27ea8618adb863a195ccad455b8dafd8b99d1c517e7fed03a58d067f",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q2G1M8_1mg.yaml",
+      "input_sha256": "11bf19c7f17e111c51cb47f52deefdb83f1f0c9a76cdffd982d9857823942415",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/c6f6a64f2241c5b1.csv",
+      "msa_sha256": "801e3a2f6bafa02cb821f688b323945ec5b608fe9362075bd85990b7ad5c0eb8",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "Q81RQ8",
+      "name": "Q81RQ8_1mg",
+      "sequence_length": 612,
+      "sequence_sha256": "3246412b10593aeb09d47f8cd1ec3f4bcb45e47c2457515d2d39f72c7212222c",
+      "mg_count": 1,
+      "phosphate": "PA",
+      "leaving_oxygen": "O3A",
+      "mechanism_family": "atp_amp_ligase",
+      "acid_chain": "D",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/Q81RQ8_1mg.yaml",
+      "input_sha256": "fb03d9548fec9391b4f9749ff1a0824730a4fd7dbf83eb1ff2edb2bf89cfb4a3",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/eed1e8246b7f9800.csv",
+      "msa_sha256": "9e9fceb80ef87262609053a74e6b9c1c2a603f503fb958b8bf7fa35a65c6438a",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    },
+    {
+      "accession": "P39641",
+      "name": "P39641_2mg",
+      "sequence_length": 472,
+      "sequence_sha256": "0d1997b2e08cae29e516b5b2bf27bb7dc9643e033fdfed3e9e1214acfa6ee20a",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "mechanism_family": "atp_adp_ligase",
+      "acid_chain": "E",
+      "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign/inputs/P39641_2mg.yaml",
+      "input_sha256": "0e58e8b50792e5eb5a29822a05c84b9f34b86ce7da870ee1d8910ba2d3be7b44",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/8d8c84b6b4418ca1.csv",
+      "msa_sha256": "48a2e2a58c01da8bb012116c8bf63324d962290cfadb86aa7815c7c51a177dce",
+      "metal_assignment_basis": "Comparative acid-activation protocol: 2 Mg for ADP/PG route, 1 Mg for AMP/PA; family-transfer hypothesis, not a universal native metal count"
+    }
+  ],
+  "settings": {
+    "mode": "exact",
+    "seed": 42,
+    "diffusion_samples": 50,
+    "max_parallel_samples": 41,
+    "recycling_steps": 3,
+    "sampling_steps": 200
+  },
+  "expected_models": 650,
+  "reused_models": {
+    "P78061": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "P78061",
+        "name": "P78061_2mg",
+        "gene": "puuA ycjK b1297 JW5201",
+        "family": "Glutamine synthetase, catalytic domain",
+        "mechanism_family": "GS",
+        "phosphate": "PG",
+        "leaving_oxygen": "O3B",
+        "mg_count": 2,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "Two-metal glutamine-synthetase fold; explicit two-Mg annotation for GlnA2 and family transfer for PuuA.",
+        "metal_assignment_certainty": "direct_annotation_or_family_transfer",
+        "metal_sources": [
+          "https://www.uniprot.org/uniprotkb/Q9RDS6/entry",
+          "https://www.rcsb.org/structure/2GLS"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 2,
+          "metal": "MG",
+          "rationale": "Two-metal-assisted phosphoryl transfer (e.g. glutamine-synthetase / ATP-grasp ligases) positions two divalent cations per active site.",
+          "refs": [
+            "mechanism:two-metal-phosphoryl-transfer"
+          ],
+          "keyed_on": "acyl_phosphate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "uniprot_cofactor_single",
+          "metal": "MG"
+        },
+        "sequence_sha256": "e7b5dddde3f08c16c3b92e9ef0c2a668b33db78f5130498a27b6fecc21307691",
+        "sequence_length": 472,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/538726bc0feec6e9.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/P78061_2mg.yaml",
+        "input_sha256": "17b2c1ec3f556d42ac2b81185dc7762872b22e6e64aa489d423e105b2d223d30",
+        "acid_chain": "E",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "0c33439ea0a44d53062d79786f200b328df2aee5475969d641c5fe57398243e2",
+        "msa_sequence_count": 11058
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "0c33439ea0a44d53062d79786f200b328df2aee5475969d641c5fe57398243e2"
+    },
+    "Q9RDS6": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q9RDS6",
+        "name": "Q9RDS6_2mg",
+        "gene": "glnA2 SCO2241",
+        "family": "Glutamine synthetase, catalytic domain",
+        "mechanism_family": "GS",
+        "phosphate": "PG",
+        "leaving_oxygen": "O3B",
+        "mg_count": 2,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "Two-metal glutamine-synthetase fold; explicit two-Mg annotation for GlnA2 and family transfer for PuuA.",
+        "metal_assignment_certainty": "direct_annotation_or_family_transfer",
+        "metal_sources": [
+          "https://www.uniprot.org/uniprotkb/Q9RDS6/entry",
+          "https://www.rcsb.org/structure/2GLS"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 2,
+          "metal": "MG",
+          "rationale": "Two-metal-assisted phosphoryl transfer (e.g. glutamine-synthetase / ATP-grasp ligases) positions two divalent cations per active site.",
+          "refs": [
+            "mechanism:two-metal-phosphoryl-transfer"
+          ],
+          "keyed_on": "acyl_phosphate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 2,
+          "role": "catalytic_metal",
+          "basis": "uniprot_cofactor_note",
+          "metal": "MG"
+        },
+        "sequence_sha256": "1f105190936444fd6a8a4a86fc681bb61ae4b6e8ad9e966dc09d878a5b98ce98",
+        "sequence_length": 453,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/f065eff302625854.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q9RDS6_2mg.yaml",
+        "input_sha256": "674256d059526c9cd624c62c51ef79ceb0a9e8a9476d868182b41c31bb3a5ed4",
+        "acid_chain": "E",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "1c28fa53d718d5360ad0aba68bf6f2b63c635f09ea1f45b43355a92f5ecef762",
+        "msa_sequence_count": 16384
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "1c28fa53d718d5360ad0aba68bf6f2b63c635f09ea1f45b43355a92f5ecef762"
+    },
+    "E2JA32": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "E2JA32",
+        "name": "E2JA32_1mg",
+        "gene": "ddaG",
+        "family": "Fumarate--diaminopropanoate ligase C-terminal domain",
+        "mechanism_family": "DdaG",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "AMP-forming adenylating ligase. One Mg follows the existing family/mechanism modeling policy; the DdaG paper establishes AMP formation but not a metal-count titration.",
+        "metal_assignment_certainty": "family_modeling_hypothesis",
+        "metal_sources": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC2783456/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "593c16c1f597fcd017624541ce6d4ff683d6b18929c2324d6996da2379817ddf",
+        "sequence_length": 396,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/eca1c04dec5145d0.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/E2JA32_1mg.yaml",
+        "input_sha256": "3f81c9af427681451e39a0cb2519ba39ee4cdf7f847764ec00c19ce1f77caff2",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "f0161768cc8c92f7939641ca184386aecd35cb35e7c2a7e3519cc273eea6630c",
+        "msa_sequence_count": 459
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "f0161768cc8c92f7939641ca184386aecd35cb35e7c2a7e3519cc273eea6630c"
+    },
+    "Q2FW70": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q2FW70",
+        "name": "Q2FW70_1mg",
+        "gene": "sfnaD SAOUHSC_02436",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "ea4816dba56c6687b7a35d46e896a77cb135014aff650521927e82596f71566c",
+        "sequence_length": 658,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/a38a0291101a34a7.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q2FW70_1mg.yaml",
+        "input_sha256": "9673a13fd2dc6181a56c571041d558573688ad22f7d60fddfce98bc63dfc7336",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "cdee8e4611ff55b8dc9c77aaafbf37462bc0041cdc676938c3a270ba7b49a229",
+        "msa_sequence_count": 430
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "cdee8e4611ff55b8dc9c77aaafbf37462bc0041cdc676938c3a270ba7b49a229"
+    },
+    "Q2G1M9": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q2G1M9",
+        "name": "Q2G1M9_1mg",
+        "gene": "sbnE SAOUHSC_00079",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "f0d873424f2022d4e33ed28dd30494252c56ad13c4a9c3d27b7656fe18e1a54d",
+        "sequence_length": 578,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/29c969e2ff933820.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q2G1M9_1mg.yaml",
+        "input_sha256": "815432a2f50efc487ae60e2ef1ef885a7112ce208612a0fd6d7f104bd9d1a603",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "d2611d9ece526e9f910c85b736d788d3c8bc91d74e2bc4a99b8a10abdc4096fb",
+        "msa_sequence_count": 1319
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "d2611d9ece526e9f910c85b736d788d3c8bc91d74e2bc4a99b8a10abdc4096fb"
+    },
+    "A0A0F7RJ52": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "A0A0F7RJ52",
+        "name": "A0A0F7RJ52_1mg",
+        "gene": "asbA GBAA_1981",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "e7d0515fd7fedb063f8f09ce48875c34d01f31fe71b8a114d65a49a8a95db4a9",
+        "sequence_length": 602,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/ba69d633c8d08dac.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/A0A0F7RJ52_1mg.yaml",
+        "input_sha256": "6f34210d7a5bbca479f7512909c544a92e361c9262da02d132b572038f0d764a",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "f67580ff41eefe642514fd95167ce245eb7bcb26657ad8e758f56ae641a2deae",
+        "msa_sequence_count": 2686
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "f67580ff41eefe642514fd95167ce245eb7bcb26657ad8e758f56ae641a2deae"
+    },
+    "Q9WY79": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q9WY79",
+        "name": "Q9WY79_2mg",
+        "gene": "murE TM_0237",
+        "family": "Mur ligase, glutamate ligase domain",
+        "mechanism_family": "Mur",
+        "phosphate": "PG",
+        "leaving_oxygen": "O3B",
+        "mg_count": 2,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "Two-metal acyl-phosphate mechanism; same-family MurE ADP/product structure 4C12 contains two Mg ions at the active site.",
+        "metal_assignment_certainty": "family_structural_support",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/4C12",
+          "https://doi.org/10.1074/jbc.M113.508135"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 2,
+          "metal": "MG",
+          "rationale": "Two-metal-assisted phosphoryl transfer (e.g. glutamine-synthetase / ATP-grasp ligases) positions two divalent cations per active site.",
+          "refs": [
+            "mechanism:two-metal-phosphoryl-transfer"
+          ],
+          "keyed_on": "acyl_phosphate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "family_reviewed_modal(xref:pfam-PF08245,n=21)",
+          "metal": "MG"
+        },
+        "sequence_sha256": "abb090d33cf028c87d242231053c889447ab72e04170a854db1577e85f9099a9",
+        "sequence_length": 490,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/f79b150ae70b177a.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q9WY79_2mg.yaml",
+        "input_sha256": "3a42b75e0ac38ad88e7304d4c29ddbbba150b9e12421f54f525bc3a830bc7740",
+        "acid_chain": "E",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "236b3c24e5c2478c6e3f891b5291cd912189966dafa20d82b6c6eba6d20ac130",
+        "msa_sequence_count": 12985
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "236b3c24e5c2478c6e3f891b5291cd912189966dafa20d82b6c6eba6d20ac130"
+    },
+    "Q2G1N1": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q2G1N1",
+        "name": "Q2G1N1_1mg",
+        "gene": "sbnC SAOUHSC_00077",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "d5641351625d9d57c75489b6a0abb5627a7563ecd69eb19722f7543f8476e719",
+        "sequence_length": 584,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/15666a324df163c5.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q2G1N1_1mg.yaml",
+        "input_sha256": "d2833920b017bef31e91413e7407d74661f00b33e59df6979e382192ed1ecf7d",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "620f263a3a298391cc6dfe115db545cfa30f38b4104b3d80d9d60dcb161e7220",
+        "msa_sequence_count": 829
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "620f263a3a298391cc6dfe115db545cfa30f38b4104b3d80d9d60dcb161e7220"
+    },
+    "Q2G1M8": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q2G1M8",
+        "name": "Q2G1M8_1mg",
+        "gene": "sbnF SAOUHSC_00080",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "4a46133c27ea8618adb863a195ccad455b8dafd8b99d1c517e7fed03a58d067f",
+        "sequence_length": 616,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/c6f6a64f2241c5b1.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q2G1M8_1mg.yaml",
+        "input_sha256": "852a6e272e12f0ac7e8baa125b9be6dc4211a470f00ff0f9f25adbe29d99b91a",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "801e3a2f6bafa02cb821f688b323945ec5b608fe9362075bd85990b7ad5c0eb8",
+        "msa_sequence_count": 1866
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "801e3a2f6bafa02cb821f688b323945ec5b608fe9362075bd85990b7ad5c0eb8"
+    },
+    "Q81RQ8": {
+      "source_campaign": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016",
+      "source_item": {
+        "accession": "Q81RQ8",
+        "name": "Q81RQ8_1mg",
+        "gene": "asbB GBAA_1982",
+        "family": "IucA / IucC family",
+        "mechanism_family": "NIS",
+        "phosphate": "PA",
+        "leaving_oxygen": "O3A",
+        "mg_count": 1,
+        "active_sites_modeled": 1,
+        "enzyme_chains": 1,
+        "metal_assignment_basis": "One Mg at the ATP site in the closest characterized AsbB structure. NIS metal occupancy varies: DesD structures also show two. One is the primary hypothesis here, not a proven universal count.",
+        "metal_assignment_certainty": "family_transfer_with_known_variation",
+        "metal_sources": [
+          "https://www.rcsb.org/structure/3TO3",
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9356276/"
+        ],
+        "family_reason_result": {
+          "per_site_metal_count": 1,
+          "metal": "MG",
+          "rationale": "ANL adenylate-forming ligases use a single catalytic Mg2+ that bridges the ATP alpha-phosphate during adenylate formation.",
+          "refs": [
+            "mechanism:ANL-superfamily-single-Mg"
+          ],
+          "keyed_on": "acyl_adenylate"
+        },
+        "uniprot_cross_check": {
+          "ccd": "MG",
+          "count": 1,
+          "role": "catalytic_metal",
+          "basis": "generic_default",
+          "metal": "MG"
+        },
+        "sequence_sha256": "3246412b10593aeb09d47f8cd1ec3f4bcb45e47c2457515d2d39f72c7212222c",
+        "sequence_length": 612,
+        "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/eed1e8246b7f9800.csv",
+        "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/inputs/Q81RQ8_1mg.yaml",
+        "input_sha256": "d569aa05b7e160591ace5397216ec93d705e0d8e5df9564849584db4efa6651b",
+        "acid_chain": "D",
+        "acid_smiles": "[O-]C(=O)CCCCC(=O)[O-]",
+        "msa_sha256": "9e9fceb80ef87262609053a74e6b9c1c2a603f503fb958b8bf7fa35a65c6438a",
+        "msa_sequence_count": 3258
+      },
+      "actual_models_checked": 50,
+      "msa_sha256": "9e9fceb80ef87262609053a74e6b9c1c2a603f503fb958b8bf7fa35a65c6438a"
+    }
+  },
+  "reference_selection": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/reference_selection.json",
+  "producer_code_sha256": {
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/structure_modeling/reference_panel.py": "d695844cde08bf2ce4a248c18f1bb487b2bc28fbd7fcc910b90ed2ad2a2dc0e3",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/structure_modeling/fleet.py": "632aae6583b550bc931649d00aa06b336237af26cfce1b9e4990a894c15f240d",
+    "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/structure_modeling/poses.py": "47d3b00a5229e34a729e235e93091f59077c16b1384bf055b6f6afc9379816fa"
+  }
+}

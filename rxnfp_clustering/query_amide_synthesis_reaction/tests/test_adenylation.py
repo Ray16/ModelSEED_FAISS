@@ -9,7 +9,7 @@ from __future__ import annotations
 import math
 import unittest
 
-from amide_synthesis import adenylation_geometry as ag
+from amide_synthesis.structure_modeling import adenylation_geometry as ag
 
 
 class GeometryMathTests(unittest.TestCase):

@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from amide_synthesis import families, http, uniprot
+from amide_synthesis.infrastructure import families, http, uniprot
 
 
 class UniProtTests(unittest.TestCase):

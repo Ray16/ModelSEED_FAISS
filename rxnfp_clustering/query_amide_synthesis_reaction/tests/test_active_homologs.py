@@ -15,7 +15,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import active_homologs as ah   # noqa: E402
+from amide_synthesis.enzyme_mapping import active_homologs as ah
 
 
 def hits(rows):
@@ -57,22 +57,22 @@ class SelectionTests(unittest.TestCase):
 
 class WeightTests(unittest.TestCase):
     def test_it_ranks_level_with_activity_ec(self):
-        from amide_synthesis.master_table import EVIDENCE_WEIGHT
+        from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT
         self.assertEqual(EVIDENCE_WEIGHT['homolog_of_measured_active'],
                          EVIDENCE_WEIGHT['activity_ec'])
 
     def test_it_cannot_outrank_a_measured_protein(self):
-        from amide_synthesis.master_table import EVIDENCE_WEIGHT
+        from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT
         self.assertLess(EVIDENCE_WEIGHT['homolog_of_measured_active'],
                         EVIDENCE_WEIGHT['measured_activity'])
 
     def test_it_outranks_a_bare_domain_match(self):
-        from amide_synthesis.master_table import EVIDENCE_WEIGHT
+        from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT
         self.assertGreater(EVIDENCE_WEIGHT['homolog_of_measured_active'],
                            EVIDENCE_WEIGHT['family_homolog'])
 
     def test_it_has_a_shortlist_share(self):
-        from amide_synthesis.shortlist import TIER_SHARE
+        from amide_synthesis.candidate_selection.shortlist import TIER_SHARE
         self.assertIn('homolog_of_measured_active',
                       {tier for tier, _ in TIER_SHARE})
 
@@ -106,18 +106,18 @@ class FamilyVerdictExemptionTests(unittest.TestCase):
     """
 
     def test_the_route_is_exempt_from_the_family_verdict(self):
-        from amide_synthesis import shortlist
+        from amide_synthesis.candidate_selection import shortlist
         source = Path(shortlist.__file__).read_text()
         self.assertIn("('reaction', 'active_homolog')", source)
 
     def test_reaction_route_remains_exempt_too(self):
-        from amide_synthesis import shortlist
+        from amide_synthesis.candidate_selection import shortlist
         source = Path(shortlist.__file__).read_text()
         self.assertIn("'reaction'", source)
 
     def test_other_routes_are_still_subject_to_it(self):
         import pandas as pd
-        from amide_synthesis import shortlist as sl
+        from amide_synthesis.candidate_selection import shortlist as sl
         frame = pd.DataFrame([
             {'uniprot': 'P1', 'evidence_strength': 'clade_homolog',
              'master_priority': 5.0, 'length': 500, 'sequence': 'M' * 500,

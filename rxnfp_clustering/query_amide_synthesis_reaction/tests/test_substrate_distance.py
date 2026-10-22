@@ -13,11 +13,10 @@ import unittest
 
 import pandas as pd
 
-from amide_synthesis import substrate_distance as sd
-from amide_synthesis.acylation import acylation_events
-from amide_synthesis.substrate_distance import (describe_event, score_event,
-                                                score_reaction)
-from amide_synthesis import expand_families as ef
+from amide_synthesis.reaction_search import substrate_distance as sd
+from amide_synthesis.reaction_search.acylation import acylation_events
+from amide_synthesis.reaction_search.substrate_distance import describe_event, score_event, score_reaction
+from amide_synthesis.enzyme_mapping import expand_families as ef
 
 # Reaction SMILES, pH-7 convention, matching the corpus.
 NYLON_DIAD = ('O=C([O-])CCCCC(=O)[O-].[NH3+]CCCCCC[NH3+]'
@@ -324,23 +323,23 @@ class BorrowedAssociationTests(unittest.TestCase):
              'chemistry_feature_distance': 0.02}])
 
     def test_the_association_is_attached(self):
-        from amide_synthesis.master_table import attach_borrowed
+        from amide_synthesis.candidate_selection.master_table import attach_borrowed
         out = attach_borrowed(self._table(),
                               self._borrowed()).set_index('uniprot')
         self.assertEqual(out.loc['P1', 'borrowed_from_rxn'], 'rxn21295')
 
     def test_a_protein_without_one_is_left_blank(self):
-        from amide_synthesis.master_table import attach_borrowed
+        from amide_synthesis.candidate_selection.master_table import attach_borrowed
         out = attach_borrowed(self._table(),
                               self._borrowed()).set_index('uniprot')
         self.assertTrue(pd.isna(out.loc['P2', 'borrowed_from_rxn']))
 
     def test_no_rows_are_added_or_lost(self):
-        from amide_synthesis.master_table import attach_borrowed
+        from amide_synthesis.candidate_selection.master_table import attach_borrowed
         out = attach_borrowed(self._table(), self._borrowed())
         self.assertEqual(len(out), 2)
 
     def test_empty_input_is_not_fatal(self):
-        from amide_synthesis.master_table import attach_borrowed
+        from amide_synthesis.candidate_selection.master_table import attach_borrowed
         out = attach_borrowed(self._table(), pd.DataFrame())
         self.assertEqual(len(out), 2)

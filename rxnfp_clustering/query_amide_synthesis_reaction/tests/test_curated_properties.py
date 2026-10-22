@@ -15,7 +15,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import curated_properties as cp   # noqa: E402
+from amide_synthesis.candidate_selection import curated_properties as cp
 
 REAL = ('BIOPHYSICOCHEMICAL PROPERTIES:  Kinetic parameters: KM=0.38 mM for '
         'glyoxal (at pH 7.4 and 37 degrees Celsius) '
@@ -117,7 +117,7 @@ class AccessionTests(unittest.TestCase):
 
 class RankingIsolationTests(unittest.TestCase):
     def test_kinetics_does_not_enter_the_priority(self):
-        from amide_synthesis import master_table
+        from amide_synthesis.candidate_selection import master_table
         source = Path(master_table.__file__).read_text().lower()
         for word in ('km_min_mm', 'kinetics'):
             self.assertNotIn(word, source)

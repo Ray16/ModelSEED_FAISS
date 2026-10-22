@@ -14,7 +14,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import model_quality as mq   # noqa: E402
+from amide_synthesis.structure_modeling import model_quality as mq
 
 PAYLOAD = [{
     'entryId': 'AF-A0KKW8-F1',
@@ -98,12 +98,12 @@ class RankingIsolationTests(unittest.TestCase):
     """Model confidence must not become a score gate - the sixth one."""
 
     def test_plddt_is_not_in_the_priority_formula(self):
-        from amide_synthesis import master_table
+        from amide_synthesis.candidate_selection import master_table
         source = Path(master_table.__file__).read_text()
         self.assertNotIn('plddt', source.lower())
 
     def test_plddt_is_not_used_to_select_the_shortlist(self):
-        from amide_synthesis import shortlist
+        from amide_synthesis.candidate_selection import shortlist
         source = Path(shortlist.__file__).read_text()
         self.assertNotIn('plddt', source.lower())
 

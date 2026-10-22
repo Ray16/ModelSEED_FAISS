@@ -10,7 +10,7 @@ import unittest
 
 import pandas as pd
 
-from amide_synthesis import pdb_evidence as pe
+from amide_synthesis.structure_modeling import pdb_evidence as pe
 
 
 def fake(payload, failed=False):

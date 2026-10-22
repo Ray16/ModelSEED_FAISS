@@ -9,7 +9,7 @@ from __future__ import annotations
 import json
 import unittest
 
-from amide_synthesis import uniparc
+from amide_synthesis.infrastructure import uniparc
 
 
 class Crc64Tests(unittest.TestCase):

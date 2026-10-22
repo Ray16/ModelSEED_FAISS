@@ -17,7 +17,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from tools import signal_granularity as sg   # noqa: E402
+from amide_synthesis.evaluation import signal_granularity as sg   # noqa: E402
 
 
 def _table(groups, values, column='signal'):

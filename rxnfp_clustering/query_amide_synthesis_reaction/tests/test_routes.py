@@ -13,8 +13,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from amide_synthesis import master_table as mt
-from amide_synthesis import precomputed_links as pl
+from amide_synthesis.candidate_selection import master_table as mt
+from amide_synthesis.enzyme_mapping import precomputed_links as pl
 
 
 class TestPrecomputedLinks(unittest.TestCase):
@@ -153,7 +153,7 @@ class TestIdempotence(unittest.TestCase):
     """
 
     def test_proxy_accessions_do_not_depend_on_a_later_stage(self):
-        from amide_synthesis import reference_actives as ra
+        from amide_synthesis.enzyme_mapping import reference_actives as ra
         first = ra.missing_proxy_accessions()
         second = ra.missing_proxy_accessions()
         self.assertEqual(first, second)

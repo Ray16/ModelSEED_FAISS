@@ -1,0 +1,16 @@
+{
+  "default_links": "results/colleague_review_20261017/mapping/uniprot-msd-direct-reviewed.tsv",
+  "sha256": "b8759017070d73742444c0543a2334121ca6944c112484dd3615ca5c75f6e57d",
+  "source": "Current reviewed UniProt reaction-specific Rhea xrefs joined to nonobsolete ModelSEED Rhea aliases",
+  "evidence": "results/colleague_review_20261017/mapping/direct_mapping_evidence.tsv.gz",
+  "experimental_only": "results/colleague_review_20261017/mapping/uniprot-msd-experimental-reviewed.tsv",
+  "original_preserved": "uniprot-msd-links.tsv",
+  "date": "2026-10-19",
+  "note": "Exact reaction and physiological-direction xrefs retain their own evidence; no GO or RHEA-COMP-based reaction links. Reviewed annotations can be inferred; this policy does not certify alias chemistry or catalytic competence.",
+  "evidence_sha256": "4d972ffe1dbaee9d1d3339a353edaa584421fb55b894abf4d9c315ae360f7e18",
+  "experimental_only_sha256": "3f31b8cdd271d6b44593df9eab6da20924e5f65855e430561d48b3ad303fcfb1",
+  "source_snapshot_date": "2026-10-17",
+  "reaction_bridges": "data/reaction_mapping_bridges.json",
+  "reaction_bridges_sha256": "fef32e1ceec03dd582ae7794f7a0dc317234e10dddf72ce408a1d6838d6257d5",
+  "bridge_policy": "Only explicitly approved, hash-pinned bridges with identical full equations; source reaction and chemistry qualifications retained."
+}

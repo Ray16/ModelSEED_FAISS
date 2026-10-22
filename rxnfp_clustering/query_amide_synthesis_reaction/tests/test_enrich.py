@@ -10,7 +10,7 @@ from unittest.mock import Mock
 
 import pandas as pd
 
-from amide_synthesis import enrich
+from amide_synthesis.enzyme_mapping import enrich
 
 
 class BlankDetectionTests(unittest.TestCase):

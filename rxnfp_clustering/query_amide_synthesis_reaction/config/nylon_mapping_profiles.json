@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "scope": "Current five adipate/HMDA monomer-coupling analogues; curated retrieval vocabulary, not reaction-activity proof",
+  "references": {
+    "rhea": "https://www.rhea-db.org/",
+    "local_chemical_evidence": "results/top5_mapping_audit/20261020_mapping_review/chemical_audit.json",
+    "bridge_registry": "data/reaction_mapping_bridges.json"
+  },
+  "alignment": {
+    "identity_min": 0.3,
+    "coverage_each_min": 0.8,
+    "mode": "local",
+    "substitution_matrix": "BLOSUM62",
+    "open_gap_score": -10,
+    "extend_gap_score": -0.5
+  },
+  "reactions": {
+    "rxn05123": {
+      "rhea": [
+        "13633",
+        "13634",
+        "13635",
+        "13636"
+      ],
+      "ec": "6.3.1.11",
+      "genes": [
+        "puuA"
+      ],
+      "name_terms": [
+        "glutamylputrescine",
+        "glutamate--putrescine"
+      ]
+    },
+    "rxn46045": {
+      "rhea": [
+        "44340",
+        "44341",
+        "44342",
+        "44343"
+      ],
+      "ec": "6.3.2.46",
+      "genes": [
+        "ddaG"
+      ],
+      "name_terms": [
+        "fumaroyl-dap",
+        "fumarate--(s)-2,3-diaminopropanoate"
+      ]
+    },
+    "rxn21038": {
+      "rhea": [
+        "63808",
+        "63809",
+        "63810",
+        "63811"
+      ],
+      "ec": "",
+      "genes": [
+        "asbA"
+      ],
+      "name_terms": [
+        "spermidine-citrate ligase",
+        "petrobactin biosynthesis protein asba"
+      ]
+    },
+    "rxn42510": {
+      "rhea": [
+        "59136",
+        "59137",
+        "59138",
+        "59139"
+      ],
+      "ec": "6.3.2.58",
+      "genes": [
+        "sfnaD",
+        "sfaD"
+      ],
+      "name_terms": [
+        "d-ornithine--citrate ligase"
+      ]
+    },
+    "rxn47618": {
+      "rhea": [
+        "59124",
+        "59125",
+        "59126",
+        "59127"
+      ],
+      "ec": "6.3.2.54",
+      "genes": [
+        "sbnE"
+      ],
+      "name_terms": [
+        "diaminopropanoate--citrate ligase",
+        "staphyloferrin b biosynthesis protein sbne"
+      ],
+      "source_reaction": "rxn54616"
+    }
+  }
+}

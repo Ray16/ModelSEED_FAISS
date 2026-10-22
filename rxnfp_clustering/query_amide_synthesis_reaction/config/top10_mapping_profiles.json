@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "alignment": {
+    "identity_min": 0.3,
+    "coverage_each_min": 0.8,
+    "mode": "local",
+    "substitution_matrix": "BLOSUM62",
+    "open_gap_score": -10,
+    "extend_gap_score": -0.5
+  },
+  "reactions": {
+    "rxn05123": {
+      "rhea": [
+        "13633",
+        "13634",
+        "13635",
+        "13636"
+      ],
+      "ec": "6.3.1.11",
+      "genes": [
+        "puuA"
+      ],
+      "name_terms": [
+        "glutamylputrescine",
+        "glutamate--putrescine"
+      ]
+    },
+    "rxn46045": {
+      "rhea": [
+        "44340",
+        "44341",
+        "44342",
+        "44343"
+      ],
+      "ec": "6.3.2.46",
+      "genes": [
+        "ddaG"
+      ],
+      "name_terms": [
+        "fumaroyl-dap",
+        "fumarate--(s)-2,3-diaminopropanoate"
+      ]
+    },
+    "rxn42510": {
+      "rhea": [
+        "59136",
+        "59137",
+        "59138",
+        "59139"
+      ],
+      "ec": "6.3.2.58",
+      "genes": [
+        "sfnaD",
+        "sfaD"
+      ],
+      "name_terms": [
+        "d-ornithine--citrate ligase"
+      ]
+    },
+    "rxn47618": {
+      "rhea": [
+        "59124",
+        "59125",
+        "59126",
+        "59127"
+      ],
+      "ec": "6.3.2.54",
+      "genes": [
+        "sbnE"
+      ],
+      "name_terms": [
+        "diaminopropanoate--citrate ligase",
+        "staphyloferrin b biosynthesis protein sbne"
+      ],
+      "source_reaction": "rxn54616"
+    },
+    "rxn21038": {
+      "rhea": [
+        "63808",
+        "63809",
+        "63810",
+        "63811"
+      ],
+      "ec": "",
+      "genes": [
+        "asbA"
+      ],
+      "name_terms": [
+        "spermidine-citrate ligase",
+        "petrobactin biosynthesis protein asba"
+      ]
+    },
+    "rxn22343": {
+      "rhea": [
+        "25273",
+        "25274",
+        "25275",
+        "25276"
+      ],
+      "ec": "6.3.2.37",
+      "genes": [],
+      "name_terms": [],
+      "alias_source": "ModelSEED/Rhea exact MetaCyc cross-reference",
+      "chemical_status": "reference_structure_symbolic"
+    },
+    "rxn42395": {
+      "rhea": [
+        "59132",
+        "59133",
+        "59134",
+        "59135"
+      ],
+      "ec": "6.3.2.56",
+      "genes": [],
+      "name_terms": [],
+      "alias_source": "ModelSEED/Rhea exact MetaCyc cross-reference",
+      "chemical_status": "compatible_stereochemistry_underspecified"
+    },
+    "rxn45007": {
+      "rhea": [
+        "59128",
+        "59129",
+        "59130",
+        "59131"
+      ],
+      "ec": "6.3.2.55",
+      "genes": [],
+      "name_terms": [],
+      "alias_source": "ModelSEED/Rhea exact MetaCyc cross-reference",
+      "chemical_status": "compatible_stereochemistry_underspecified"
+    },
+    "rxn21036": {
+      "rhea": [
+        "63816",
+        "63817",
+        "63818",
+        "63819"
+      ],
+      "ec": "",
+      "genes": [
+        "asbB"
+      ],
+      "name_terms": [
+        "petrobactin biosynthesis protein asbb",
+        "citryl-spermidine"
+      ],
+      "alias_source": "ModelSEED/Rhea exact MetaCyc cross-reference",
+      "chemical_status": "exact_after_protonation_normalization"
+    },
+    "rxn09897": {
+      "rhea": [],
+      "related_reference_rhea": [
+        "44332",
+        "44333",
+        "44334",
+        "44335"
+      ],
+      "ec": "6.3.2.49",
+      "genes": [
+        "bacD",
+        "ywfE"
+      ],
+      "name_terms": [
+        "l-amino acid ligase",
+        "alanine--anticapsin ligase",
+        "bacilysin synthetase"
+      ],
+      "qualification": "No exact Gly+Gly reaction annotation established. BacD/related L-amino-acid ligases are exploratory candidates, not verified glycylglycine synthases.",
+      "sources": [
+        "https://www.uniprot.org/uniprotkb/P39641/entry",
+        "https://pubmed.ncbi.nlm.nih.gov/16030213/"
+      ]
+    }
+  },
+  "scope": "Chemically selected ten reactions; exact reaction annotation and related-reaction candidate inference remain separate"
+}

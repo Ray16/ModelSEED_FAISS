@@ -9,7 +9,7 @@ import unittest
 
 import pandas as pd
 
-from amide_synthesis import chemistry_neighbours as cn
+from amide_synthesis.enzyme_mapping import chemistry_neighbours as cn
 
 NYLON = ('O=C([O-])CCCCC(=O)[O-].[NH3+]CCCCCC[NH3+]'
          '>>[NH3+]CCCCCCNC(=O)CCCCC(=O)[O-].O')

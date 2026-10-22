@@ -1,0 +1,68 @@
+# STEP 2 aminolysis (2mg acyl-phosphate+ADP): A=protein B=acyl-intermediate C=HMDA(one -NH2 neutral) D=ADP E,F=Mg
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: MERKTVLVIADLGGCPPHMFYKSAAEKYNLVSFIPRPFAITASHAALIEKYSVAVIKDKDYFKSLADFEHPDSIYWAHEDHNKPEEEVVEQIVKVAEMFGADAITTNNELFIAPMAKACERLGLRGAGVQAAENARDKNKMRDAFNKAGVKSIKNKRVTTLEDFRAALEEIGTPLILKPTYLASSIGVTLITDTETAEDEFNRVNDYLKSINVPKAVTFEAPFIAEEFLQGEYGDWYQTEGYSDYISIEGIMADGEYFPIAIHDKTPQIGFTETSHITPSILDEEAKKKIVEAAKKANEGLGLQNCATHTEIKLMKNREPGLIESAARFAGWNMIPNIKKVFGLDMAQLLLDVLCFGKDADLPDGLLDQEPYYVADCHLYPQHFKQNGQIPETAEDLVIEAIDIPDGLLKGDTEIVSFSAAAPGTSVDLTLFEAFNSIAAFELKGSNSQDVAESIRQIQQHAKLTAKYVLPV
+    msa: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/8d8c84b6b4418ca1.csv
+- ligand:
+    id: B
+    smiles: O=C([O-])CCCCC(=O)OP(=O)([O-])[O-]
+- ligand:
+    id: C
+    smiles: NCCCCCC[NH3+]
+- ligand:
+    id: D
+    ccd: ADP
+- ligand:
+    id: E
+    ccd: MG
+- ligand:
+    id: F
+    ccd: MG
+constraints:
+- pocket:
+    binder: C
+    contacts:
+    - - A
+      - 12
+    - - A
+      - 13
+    - - A
+      - 14
+    - - A
+      - 107
+    - - A
+      - 108
+    - - A
+      - 109
+    - - A
+      - 183
+    - - A
+      - 184
+    - - A
+      - 265
+    - - A
+      - 273
+    - - A
+      - 276
+    - - A
+      - 309
+    - - A
+      - 311
+    - - A
+      - 324
+    - - A
+      - 328
+    - - A
+      - 329
+    - - A
+      - 330
+    - - A
+      - 331
+    - - A
+      - 332
+    - - A
+      - 334
+    max_distance: 10.0
+    force: true

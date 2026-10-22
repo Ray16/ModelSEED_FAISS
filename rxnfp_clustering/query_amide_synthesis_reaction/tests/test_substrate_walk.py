@@ -16,7 +16,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from tools import substrate_walk as sw   # noqa: E402
+from amide_synthesis.evaluation import substrate_walk as sw   # noqa: E402
 
 
 def _kin(rows):

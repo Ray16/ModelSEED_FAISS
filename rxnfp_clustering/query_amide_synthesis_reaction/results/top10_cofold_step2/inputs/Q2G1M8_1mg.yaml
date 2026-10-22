@@ -1,0 +1,62 @@
+# STEP 2 aminolysis (1mg acyl-adenylate): A=protein B=acyl-intermediate C=HMDA(one -NH2 neutral) D=Mg
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: MIVVQTLFIHIYQIQFVITRRYRIVNQTILNRVKTRVMHQLVSSLIYENIVVYKASYQDGVGHFTIEGHDSEYRFTAEKTHSFDRIRITSPIERVVGDEADTTTDYTQLLREVVFTFPKNDEKLEQFIVELLQTELKDTQSMQYRESNPPATPETFNDYEFYAMEGHQYHPSYKSRLGFTLSDNLKFGPDFVPNVKLQWLAIDKDKVETTVSRNVVVNEMLRQQVGDKTYEHFVQQIEASGKHVNDVEMIPVHPWQFEHVIQVDLAEERLNGTVLWLGESDELYHPQQSIRTMSPIDTTKYYLKVPISITNTSTKRVLAPHTIENAAQITDWLKQIQQQDMYLKDELKTVFLGEVLGQSYLNTQLSPYKQTQVYGALGVIWRENIYHMLIDEEDAIPFNALYASDKDGVPFIENWIKQYGSEAWTKQFLAVAIRPMIHMLYYHGIAFESHAQNMMLIHENGWPTRIALKDFHDGVRFKREHLSEAASHLTLKPMPEAHKKVNSNSFIETDDERLVRDFLHDAFFFINIAEIILFIEKQYGIDEELQWQWVKGIIEAYQEAFPELNNYQHFDLFEPTIQVEKLTTRRLLSDSELRIHHVTNPLGVGGINDATTISET
+    msa: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/c6f6a64f2241c5b1.csv
+- ligand:
+    id: B
+    smiles: Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)([O-])OC(=O)CCCCC(=O)[O-])[C@@H](O)[C@H]1O
+- ligand:
+    id: C
+    smiles: NCCCCCC[NH3+]
+- ligand:
+    id: D
+    ccd: MG
+constraints:
+- pocket:
+    binder: C
+    contacts:
+    - - A
+      - 167
+    - - A
+      - 170
+    - - A
+      - 312
+    - - A
+      - 314
+    - - A
+      - 316
+    - - A
+      - 448
+    - - A
+      - 449
+    - - A
+      - 450
+    - - A
+      - 452
+    - - A
+      - 453
+    - - A
+      - 470
+    - - A
+      - 521
+    - - A
+      - 522
+    - - A
+      - 523
+    - - A
+      - 525
+    - - A
+      - 526
+    - - A
+      - 579
+    - - A
+      - 580
+    - - A
+      - 582
+    - - A
+      - 585
+    max_distance: 10.0
+    force: true

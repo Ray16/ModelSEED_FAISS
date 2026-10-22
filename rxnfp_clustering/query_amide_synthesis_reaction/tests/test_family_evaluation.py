@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import family_evaluation as ev   # noqa: E402
+from amide_synthesis.candidate_selection import family_evaluation as ev
 
 
 def family(**kw):

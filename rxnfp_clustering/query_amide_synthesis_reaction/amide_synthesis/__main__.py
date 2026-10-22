@@ -1,4 +1,4 @@
-"""Run with ``python -m amide_synthesis`` from the project directory."""
-from .pipeline import main
+"""Scientific workflow CLI: describe, discovery, model, evaluate and report."""
+from .cli import main
 
 raise SystemExit(main())

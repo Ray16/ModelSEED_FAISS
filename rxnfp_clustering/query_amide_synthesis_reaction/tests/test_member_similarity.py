@@ -15,7 +15,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import member_similarity as ms   # noqa: E402
+from amide_synthesis.candidate_selection import member_similarity as ms
 
 
 class SignatureTests(unittest.TestCase):
@@ -143,13 +143,13 @@ class RankingIsolationTests(unittest.TestCase):
     """It may order tied rows. It may not become a score."""
 
     def test_similarity_is_absent_from_the_priority_formula(self):
-        from amide_synthesis import master_table
+        from amide_synthesis.candidate_selection import master_table
         source = Path(master_table.__file__).read_text().lower()
         for word in ('member_similarity', 'kmer_cosine', 'domain_jaccard'):
             self.assertNotIn(word, source)
 
     def test_shortlist_uses_it_only_after_master_priority(self):
-        from amide_synthesis import shortlist
+        from amide_synthesis.candidate_selection import shortlist
         source = Path(shortlist.__file__).read_text()
         self.assertIn("['master_priority', 'member_similarity', 'uniprot']",
                       source)

@@ -14,7 +14,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import ligand_evidence as le   # noqa: E402
+from amide_synthesis.structure_modeling import ligand_evidence as le
 
 
 def response(name, smiles, kind='SMILES_CANONICAL'):
@@ -132,7 +132,7 @@ class AttachTests(unittest.TestCase):
 
 class RankingIsolationTests(unittest.TestCase):
     def test_ligand_evidence_is_absent_from_the_priority_formula(self):
-        from amide_synthesis import master_table
+        from amide_synthesis.candidate_selection import master_table
         source = Path(master_table.__file__).read_text().lower()
         self.assertNotIn('bound_ligand', source)
         self.assertNotIn('bound_bifunctional', source)
@@ -191,7 +191,7 @@ class CuratedBindingSiteTests(unittest.TestCase):
         self.assertIsNone(found[0])
 
     def test_the_compactness_cap_matches_the_family_parsimony_tolerance(self):
-        from amide_synthesis import family_evaluation as fe
+        from amide_synthesis.candidate_selection import family_evaluation as fe
         self.assertEqual(le.MAX_LIGAND_HEAVY_ATOMS,
                          int(fe.ADIPATE_HEAVY_ATOMS * fe.SCAFFOLD_TOLERANCE))
 

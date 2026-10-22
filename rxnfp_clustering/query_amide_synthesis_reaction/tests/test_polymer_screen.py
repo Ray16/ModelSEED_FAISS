@@ -9,8 +9,7 @@ from __future__ import annotations
 
 import unittest
 
-from amide_synthesis.amide_enzymes import (is_macromolecular,
-                                           is_polymer_elongation)
+from amide_synthesis.reaction_search.amide_enzymes import is_macromolecular, is_polymer_elongation
 
 
 class CoenzymeFalsePositiveTests(unittest.TestCase):

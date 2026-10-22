@@ -8,7 +8,9 @@ from unittest.mock import patch
 
 import pandas as pd
 
-from amide_synthesis import candidate_table, fetch_enzymes, native_substrates
+from amide_synthesis.candidate_selection import candidate_table
+from amide_synthesis.enzyme_mapping import fetch_enzymes
+from amide_synthesis.evaluation import native_substrates
 
 
 def screened_hits():
@@ -27,6 +29,8 @@ def enzyme(accession, reaction, route):
                evidence_strength='exact_reaction' if route.startswith('Rhea') else 'activity_ec',
                cosine_similarity=.8, acylates_free_diamine=True,
                is_prokaryote=True, has_pdb=False, family='IucA/IucC', family_all='IucA/IucC')
+    if route.startswith('Rhea'):
+        row['catalytic_activity']='CATALYTIC ACTIVITY: Reaction=test; Xref=Rhea:RHEA:1; Evidence={ECO:0000305};'
     return row
 
 
@@ -64,7 +68,7 @@ class OutputTests(unittest.TestCase):
         with contextlib.redirect_stdout(io.StringIO()):
             result = candidate_table.build_candidate_table(enzymes, screened_hits())
         self.assertEqual(result.uniprot.tolist(), ['A'])
-        self.assertEqual(result.evidence_strength.tolist(), ['exact_reaction'])
+        self.assertEqual(result.evidence_strength.tolist(), ['curated_direct'])
         # 2 exact_reaction + 2 free diamine + 1 prokaryote + 0 pdb
         # + 3 x substrate_distance(0.6). Cosine deliberately contributes
         # nothing: it is cofactor-dominated and ranking on it put AsbA third

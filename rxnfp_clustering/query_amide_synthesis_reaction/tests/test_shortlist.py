@@ -14,8 +14,8 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from amide_synthesis import shortlist as sl
-from amide_synthesis.master_table import EVIDENCE_WEIGHT
+from amide_synthesis.candidate_selection import shortlist as sl
+from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT
 
 
 def candidate(accession, evidence='exact_reaction', priority=5.0,

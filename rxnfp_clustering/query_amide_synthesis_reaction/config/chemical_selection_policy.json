@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "version": "20261020-soft-chemical-resemblance",
+  "purpose": "Rank native reacting-substrate resemblance to adipate/HMDA; not enzyme activity or yield",
+  "weights": {"architecture": 0.35, "retained_ends": 0.10, "spacers": 0.20, "backbone": 0.15, "size": 0.20},
+  "architecture_credits": {"diacid_primary_diamine": 1.0, "ab_self_condensation": 0.8, "aminoacid_acceptor": 0.5, "primary_diamine_acceptor": 0.3, "other": 0.0},
+  "target": {"acid_spacer_carbons": 4, "amine_spacer_carbons": 6, "donor_heavy_atoms": 10, "acceptor_heavy_atoms": 8},
+  "spacer_decay": 2.0,
+  "size_slack": 6.0,
+  "eligibility": "Free-acid/carbon-bound-primary-amine amidation with stoichiometric substrate copies; at least one new amide",
+  "not_excluded": ["monoacid", "monoamine", "omega-amino acid", "AB self-condensation", "aromatic", "cyclic", "large substrate", "multiple amidations", "product without retained ends"],
+  "order": ["chemical_resemblance descending", "DRFP Tanimoto descending", "hybrid cosine descending", "ModelSEED ID ascending"],
+  "rationale": "Reuse the existing substrate-level component weights as transparent chemical judgments, with no hard architecture, ring or aromaticity exclusions and no forced zero score for terminal amides. Carbon spacers count carbon atoms only. No original reaction IDs are pinned."
+}

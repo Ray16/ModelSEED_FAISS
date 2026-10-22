@@ -1,0 +1,62 @@
+# STEP 2 aminolysis (1mg acyl-adenylate): A=protein B=acyl-intermediate C=HMDA(one -NH2 neutral) D=Mg
+version: 1
+sequences:
+- protein:
+    id: A
+    sequence: MNKGENMNLEMWVQNISATFPWYAQLLRDKQADLSRLESLPLITEELLTQHYYHAENSFPGEHHSYLTSGTTSGKRKRIFYSDNDQRIYLQQRMDIIRDFCGEGHTRACADLGTGHAAATAGEIFQAMGCDVELIDFTRPIEQHIEVLNRFKPDIFFTMPMILDSLIATGKLDFQPKRIILLGDVASLNWQNKVADYFHIQPAQVLDLFGSIEIGSIAFYNHAQKRYQFDSYVRPEVVPVQSLYPGAKYGGDGGILLLTSFAREYFPAVRFVTNDLIEGFAQENVGGRTVYTYQRCLGRFAGEFKHGEKINLSDISDALANNLPYHKYDLADHEGGLVIRIAAKSIPTEVIEAIKHDLLARNPDIAQMISSGLVGDIRIQCVDAQEITGNVSKRRY
+    msa: /nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/boltz2_activation_20261016/msa/eca1c04dec5145d0.csv
+- ligand:
+    id: B
+    smiles: Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)([O-])OC(=O)CCCCC(=O)[O-])[C@@H](O)[C@H]1O
+- ligand:
+    id: C
+    smiles: NCCCCCC[NH3+]
+- ligand:
+    id: D
+    ccd: MG
+constraints:
+- pocket:
+    binder: C
+    contacts:
+    - - A
+      - 69
+    - - A
+      - 81
+    - - A
+      - 89
+    - - A
+      - 93
+    - - A
+      - 114
+    - - A
+      - 115
+    - - A
+      - 116
+    - - A
+      - 117
+    - - A
+      - 159
+    - - A
+      - 182
+    - - A
+      - 183
+    - - A
+      - 184
+    - - A
+      - 209
+    - - A
+      - 210
+    - - A
+      - 211
+    - - A
+      - 212
+    - - A
+      - 215
+    - - A
+      - 216
+    - - A
+      - 390
+    - - A
+      - 393
+    max_distance: 10.0
+    force: true

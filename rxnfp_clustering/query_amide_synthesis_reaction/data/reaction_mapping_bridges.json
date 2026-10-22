@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "corpus_file_sha256": "eac5a0756d07ba816324d388b777676b65c35733bdbf880522f1332be18a3dcb",
+  "bridges": [
+    {
+      "target_reaction": "rxn47618",
+      "source_reaction": "rxn54616",
+      "rhea_ids": [
+        "59124",
+        "59125",
+        "59126",
+        "59127"
+      ],
+      "approved": true,
+      "equation_sha256": "c0c68934f029ab9a8904bbf4ec99dbff08340ff9338196b28c2e817de94d751e",
+      "chemical_scope": "Identical full saved ModelSEED reaction SMILES, including cofactors and specified stereo; Rhea/ChEBI product specifies an additional citrate stereocentre absent in both ModelSEED representations. Annotation support is compatible, not stereochemically exhaustive.",
+      "audit_manifest": "results/top5_mapping_audit/20261020_mapping_review/manifest.json",
+      "audit_manifest_sha256": "b55655d3603d698fdc5bbda8f0cfbec5265b7548a9d4e2e3d54e6d1550458406",
+      "cross_reference": "MetaCyc:RXN-19820 -> RHEA:59124, independently retrieved from Rhea",
+      "note": "Source evidence describes RHEA:59124; it is never a new experiment on every ModelSEED variant."
+    }
+  ]
+}

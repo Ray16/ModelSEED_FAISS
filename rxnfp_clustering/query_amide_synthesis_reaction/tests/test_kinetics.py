@@ -12,7 +12,7 @@ import unittest
 
 import pandas as pd
 
-from amide_synthesis import kinetics as kin
+from amide_synthesis.candidate_selection import kinetics as kin
 
 
 def _record(**over):

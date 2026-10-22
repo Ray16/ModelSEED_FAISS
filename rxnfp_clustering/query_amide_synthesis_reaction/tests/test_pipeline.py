@@ -124,7 +124,7 @@ class EcSubstrateOrderingTests(unittest.TestCase):
 
     def test_ecsub_does_not_read_the_master_table(self):
         """Checks the READ expression, not the prose that explains the rule."""
-        from amide_synthesis import ec_substrate
+        from amide_synthesis.candidate_selection import ec_substrate
         source = Path(ec_substrate.__file__).read_text()
         self.assertNotIn("RES / 'master_candidates", source)
         self.assertNotIn('RES / "master_candidates', source)
@@ -145,8 +145,7 @@ class ColumnAuditTests(unittest.TestCase):
     """
 
     def _audit(self, frame):
-        sys.path.insert(0, str(Path(__file__).resolve().parent.parent / 'tools'))
-        import audit_columns
+        from amide_synthesis.evaluation import audit_columns
         return audit_columns.audit(frame, declared=list(frame.columns))
 
     def test_an_empty_column_is_reported(self):

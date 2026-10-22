@@ -1,0 +1,25 @@
+{
+  "host": "lambda13",
+  "pid": 3708698,
+  "process_start": "65610406",
+  "utc_epoch": 1792538764.8220797,
+  "cpu_affinity": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    12,
+    13
+  ],
+  "gpu": 7,
+  "visible_gpu": "7",
+  "threads": {
+    "OMP_NUM_THREADS": "8",
+    "OMP_THREAD_LIMIT": "8",
+    "MKL_NUM_THREADS": "8",
+    "OPENBLAS_NUM_THREADS": "8",
+    "NUMEXPR_NUM_THREADS": "8"
+  }
+}

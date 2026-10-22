@@ -14,8 +14,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import shortlist as sl   # noqa: E402
-from tools import acceptor_cohort as ac      # noqa: E402
+from amide_synthesis.candidate_selection import shortlist as sl
+from amide_synthesis.evaluation import acceptor_cohort as ac      # noqa: E402
 
 
 def _kin(rows):

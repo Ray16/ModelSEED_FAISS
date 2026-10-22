@@ -1,0 +1,15 @@
+# Keep the small, reviewed bridge policy versionable alongside the code.
+!data/
+data/*
+!data/reaction_mapping_bridges.json
+
+__pycache__/
+.pytest_cache/
+*.py[cod]
+
+# Large regenerable data blobs (exceed GitHub's 100MB limit; reproducible from pipeline)
+uniprot-msd-links.tsv
+results/family_expansion.tsv
+results/master_candidates.tsv
+results/master_candidates_enriched.tsv
+results/modelseed_nylon_top10/all_modelseed_scores.tsv

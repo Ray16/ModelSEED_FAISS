@@ -14,8 +14,8 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import ec_substrate as es          # noqa: E402
-from amide_synthesis import ec_substrate, master_table  # noqa: E402
+from amide_synthesis.candidate_selection import ec_substrate as es
+from amide_synthesis.candidate_selection import ec_substrate, master_table
 
 
 def mapping(rows):
@@ -105,7 +105,7 @@ class RankingIsolationTests(unittest.TestCase):
     """
 
     def _build(self, **overrides):
-        from amide_synthesis.master_table import build
+        from amide_synthesis.candidate_selection.master_table import build
         row = {'uniprot': 'P1', 'substrate_distance': 0.3,
                'evidence_strength': 'exact_reaction',
                'protein_name': 'ligase'}

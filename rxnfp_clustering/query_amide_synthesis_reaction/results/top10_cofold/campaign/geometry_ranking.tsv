@@ -1,0 +1,14 @@
+accession	name	family	phosphate	mg_count	n_models	assembly_qc	A_deg	Dh_A	min_distance_A	median_distance_A	nearby_fraction_4A	mean_angle_deg	near_attack_fraction
+P78061	P78061_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	162.57492395751473	4.948641942144505	3.20240097426915	4.911537861926015	0.14	161.9318918241975	0.1
+P39641	P39641_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	162.16578569608876	3.6765307839887207	3.4092359847919003	3.5926892061562072	0.82	162.41409089342704	0.74
+Q9KZC7	Q9KZC7_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	159.15583118363853	3.9062363344205653	3.2509167937675683	3.850394644231171	0.74	159.1068581155962	0.68
+Q2FW70	Q2FW70_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	150.6792914255429	5.634246071659394	3.6105212920020295	6.460587561992517	0.2	150.96951598258383	0.08
+Q81RQ8	Q81RQ8_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	149.29476180108693	4.031329953385357	3.4046242083378306	3.98310975537742	0.52	149.42008124829144	0.28
+Q9WY79	Q9WY79_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	145.87960141565267	6.51085836362457	5.1044466889174185	6.688007102408287	0.0	145.87403222692825	0.0
+I3R584	I3R584_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	139.9942856836214	4.861000941760337	4.057451786528092	4.8982149248451705	0.0	139.79751211566148	0.0
+Q2G1M9	Q2G1M9_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	137.00545637214753	4.207176377811128	3.7999044724834863	4.191264497591071	0.06	136.92451023254628	0.0
+Q2G1N1	Q2G1N1_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	136.12423164457903	4.669246974086329	3.3058774931929946	4.361626218815646	0.38	137.70234315072787	0.0
+Q2G1M8	Q2G1M8_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	124.34178207409217	4.932728934153503	3.699118273318657	5.015167072591586	0.06	123.60970744355679	0.04
+A0A0F7RJ52	A0A0F7RJ52_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	102.85359656971391	4.51090899830914	3.7731775733458393	4.4191171047826225	0.02	104.13674074491303	0.0
+E2JA32	E2JA32_1mg	atp_amp_ligase	PA	1	50	protein length, ATP atom names, adipate composition and Mg count passed	96.15961206142784	4.509692792297928	3.7123163927661125	4.48698280641143	0.06	96.67446961523194	0.0
+Q9RDS6	Q9RDS6_2mg	atp_adp_ligase	PG	2	50	protein length, ATP atom names, adipate composition and Mg count passed	68.881858337011	16.124357488964357	5.1712735375340575	17.816210462469723	0.0	62.56009569421988	0.0

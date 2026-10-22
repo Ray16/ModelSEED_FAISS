@@ -1,0 +1,8 @@
+{
+  "run_dir": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/campaign",
+  "expected_ensembles": 13,
+  "checked_ensembles": 13,
+  "checked_models": 650,
+  "failures": [],
+  "ok": true
+}

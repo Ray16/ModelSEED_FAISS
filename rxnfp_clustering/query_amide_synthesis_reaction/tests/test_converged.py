@@ -15,7 +15,7 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from amide_synthesis import converged as cv   # noqa: E402
+from amide_synthesis.candidate_selection import converged as cv
 
 
 def row(**kw):
@@ -189,7 +189,7 @@ class PublishedCountsTests(unittest.TestCase):
         self.assertIn('n_discriminating_lines', source)
 
     def test_the_dossier_reads_them_rather_than_recomputing(self):
-        from amide_synthesis import dossier
+        from amide_synthesis.evaluation import dossier
         source = Path(dossier.__file__).read_text()
         self.assertIn("'evidence_lines.tsv'", source)
         self.assertNotIn('cv.axes', source)

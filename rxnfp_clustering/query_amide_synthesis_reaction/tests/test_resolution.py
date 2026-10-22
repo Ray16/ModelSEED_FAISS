@@ -5,10 +5,7 @@ from unittest.mock import Mock
 
 import pandas as pd
 
-from amide_synthesis.enzyme_resolution import (
-    enzyme_like_name, evidence_strength,
-    rank_entries, resolve_reaction, select_reactions, product_names,
-)
+from amide_synthesis.enzyme_mapping.enzyme_resolution import enzyme_like_name, evidence_strength, rank_entries, resolve_reaction, select_reactions, product_names
 
 
 def protein(accession, route='EC:6.3.2.1', *, prokaryote=True,

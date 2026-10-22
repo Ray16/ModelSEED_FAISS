@@ -12,7 +12,7 @@ import unittest
 
 import pandas as pd
 
-from amide_synthesis import kegg_orthologs as ko
+from amide_synthesis.enzyme_mapping import kegg_orthologs as ko
 
 
 class TestKeggReactionPattern(unittest.TestCase):
@@ -91,15 +91,15 @@ class TestRouteIsRegistered(unittest.TestCase):
     """
 
     def test_registered_with_master_and_ec_substrate(self):
-        from amide_synthesis import ec_substrate, master_table
+        from amide_synthesis.candidate_selection import ec_substrate, master_table
         self.assertIn('kegg_ortholog_candidates.tsv',
                       master_table.ROUTE_FILES)
         self.assertIn('kegg_ortholog_candidates.tsv',
                       {name for name, _ in ec_substrate.SOURCES})
 
     def test_evidence_tier_has_a_weight_and_a_share(self):
-        from amide_synthesis import shortlist
-        from amide_synthesis.master_table import EVIDENCE_WEIGHT
+        from amide_synthesis.candidate_selection import shortlist
+        from amide_synthesis.candidate_selection.master_table import EVIDENCE_WEIGHT
         # The route reuses `activity_ec` rather than adding a tier.
         self.assertIn('activity_ec', EVIDENCE_WEIGHT)
         self.assertIn('activity_ec', dict(shortlist.TIER_SHARE))
