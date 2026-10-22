@@ -1,0 +1,72 @@
+accession	label	gene	rxn_id	struct_family	organism	expression	status	identity_to_ref	near_attack_fraction	weighted_attack_angle_deg	min_distance_A
+P39641	BacD (B.subtilis)	BacD	rxn09897	BacD	Bacillus subtilis (strain 168)	ok	reuse	1.0	0.74	162.2	3.41
+Q9KZC7	GlnA3 (S.coelicolor)	GlnA3	rxn05123	GS	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	reuse		0.68	159.2	3.25
+Q81RQ8	AsbB (B.anthracis)	AsbB	rxn21036	NIS	Bacillus anthracis	ok	reuse		0.28	149.3	3.4
+A0A4R2L843	A0A4R2L843 (C.halotolerans)		rxn05123	GS	Chromatocurvus halotolerans	hard	new_hardhost	0.34490238611713664	0.26	144.2	3.52
+A0ACN3NSZ7	A0ACN3NSZ7 (N.versutus)		rxn05123	GS	Natrarchaeobius versutus	hard	new_hardhost	0.4688888888888889	0.22	151.3	3.26
+A0A090RTN3	A0A090RTN3 (V.maritimus)		rxn05123	GS	Vibrio maritimus	ok	new	0.4690265486725664	0.18	147.6	3.43
+A0A1C9WB64	A0A1C9WB64 (M.aggregans)		rxn05123	GS	Microbulbifer aggregans	ok	new	0.3632286995515695	0.18	145.7	2.99
+A0A221K6V8	A0A221K6V8 (P.pseudonitzschiae)		rxn05123	GS	Pseudosulfitobacter pseudonitzschiae	ok	new	0.3672566371681416	0.16	147.3	3.14
+A0A1S1H9I3	A0A1S1H9I3 (E.haloaromaticamans)		rxn05123	GS	Edaphosphingomonas haloaromaticamans	hard	new_hardhost	0.3790849673202614	0.14	125.7	3.24
+A0A0U3AYN2	A0A0U3AYN2 (L.alkaliphilum)		rxn05123	GS	Lacimicrobium alkaliphilum	ok	new	0.45617977528089887	0.12	144.1	3.22
+P78061	PuuA (E.coli)	PuuA	rxn05123	GS	Escherichia coli (strain K12)	ok	reuse		0.1	162.6	3.2
+A0A085G9T0	A0A085G9T0 (E.americana)		rxn05123	GS	Ewingella americana (strain ATCC 33852 / DSM 4580 / CCUG 14506 / JCM 5911 / LMG 7869 / NCTC 12157 / CDC 1468-78)	ok	new	0.7457627118644068	0.08	152.2	3.51
+Q2FW70	SfnaD (S.aureus)	SfnaD	rxn42510	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse		0.08	150.7	3.61
+A0A1G4SAN4	A0A1G4SAN4 (A.taihuensis)		rxn05123	GS	Asticcacaulis taihuensis	ok	new	0.389010989010989	0.08	144.4	3.61
+A0A379JHL5	A0A379JHL5 (N.otitidiscaviarum)		rxn05123	GS	Nocardia otitidiscaviarum	hard	new_hardhost	0.32510288065843623	0.08	127.4	3.3
+A0A1Y5RPD4	A0A1Y5RPD4 (O.hippocampi)		rxn05123	GS	Oceanibacterium hippocampi	ok	new	0.42247191011235957	0.06	139.1	3.77
+A0A1E3H007	A0A1E3H007 (M.pamukkalensis)		rxn05123	GS	Methylobrevis pamukkalensis	ok	new	0.34291581108829566	0.06	134.1	3.32
+A0A110B340	A0A110B340 (M.gotjawali)		rxn05123	GS	Mucilaginibacter gotjawali	ok	new	0.3010752688172043	0.06	121.2	3.64
+A0A1H3FIV4	A0A1H3FIV4 (P.kuykendallii)		rxn05123	GS	Pseudomonas kuykendallii	ok	new	0.3812636165577342	0.04	157.7	3.55
+A0A1H3WR98	A0A1H3WR98 (R.cliftonensis)		rxn05123	GS	Rubrimonas cliftonensis	ok	new	0.36542669584245074	0.04	146.7	3.84
+A0A1I7NF67	A0A1I7NF67 (H.facile)		rxn05123	GS	Hyphomicrobium facile	ok	new	0.3901345291479821	0.04	141.9	3.53
+A0A172YAD6	A0A172YAD6 (H.alkalilenta)		rxn05123	GS	Halotalea alkalilenta	hard	new_hardhost	0.6456521739130435	0.04	140.2	3.5
+Q2G1M8	SbnF (S.aureus)	SbnF	rxn45007	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse		0.04	124.3	3.7
+A0A1H6B059	A0A1H6B059 (V.hangzhouensis)		rxn05123	GS	Vibrio hangzhouensis	ok	new	0.44349680170575695	0.02	163.9	3.94
+A0A7U7ELP2	A0A7U7ELP2 (Z.carbonaria)		rxn05123	GS	Zestomonas carbonaria	ok	new	0.3832599118942731	0.02	156.4	3.96
+A0A1T5LRE0	A0A1T5LRE0 (P.indica)		rxn05123	GS	Pseudoxanthomonas indica	ok	new	0.43119266055045874	0.02	149.2	3.82
+A0A1Y6B352	A0A1Y6B352 (T.consotensis)		rxn05123	GS	Tistlia consotensis USBA 355	ok	new	0.417910447761194	0.02	144.0	3.31
+A0A286IF89	A0A286IF89 (P.halophila)		rxn05123	GS	Parahoeflea halophila	hard	new_hardhost	0.3794642857142857	0.02	143.8	3.39
+A0A0P1FIB3	A0A0P1FIB3 (T.gelatinovora)		rxn05123	GS	Thalassovita gelatinovora	ok	new	0.3665158371040724	0.02	142.1	3.95
+A0A1R3VCL4	A0A1R3VCL4 (M.prunaredense)		rxn05123	GS	Mesorhizobium prunaredense	ok	new	0.3530701754385965	0.02	136.7	3.91
+A0A3D9HKC5	A0A3D9HKC5 (A.insulae)		rxn05123	GS	Aestuariispira insulae	ok	new	0.420824295010846	0.02	120.9	3.72
+A0A3M0A898	A0A3M0A898 (U.marinipuniceus)		rxn05123	GS	Umboniibacter marinipuniceus	ok	new	0.4177777777777778	0.0	163.8	4.68
+A0A1I0QDG5	A0A1I0QDG5 (A.sediminilitoris)		rxn05123	GS	Aliiroseovarius sediminilitoris	ok	new	0.3624454148471616	0.0	162.4	4.51
+A0A1T4XES4	A0A1T4XES4 (T.eikelboomii)		rxn05123	GS	Thiothrix eikelboomii	ok	new	0.38	0.0	161.3	5.1
+A0A562T2K3	A0A562T2K3 (R.hamelinense)		rxn05123	GS	Roseibium hamelinense	ok	new	0.38636363636363635	0.0	160.4	4.62
+A0A1H2YFR4	A0A1H2YFR4 (R.halocynthiae)		rxn05123	GS	Ruegeria halocynthiae	hard	new_hardhost	0.3468950749464668	0.0	155.7	5.29
+A0A1I5DJ95	A0A1I5DJ95 (C.marisflavi)		rxn05123	GS	Cohaesibacter marisflavi	ok	new	0.3986784140969163	0.0	154.8	4.7
+A0A4R7NSF7	A0A4R7NSF7 (C.marismortui)		rxn05123	GS	Chromohalobacter marismortui	hard	new_hardhost	0.38073394495412843	0.0	153.8	4.58
+A0A1E2RX53	A0A1E2RX53 (M.halotolerans)		rxn05123	GS	Methyloligella halotolerans	hard	new_hardhost	0.375	0.0	151.6	4.45
+A0A1H5STF7	A0A1H5STF7 (T.halodurans)		rxn05123	GS	Thalassococcus halodurans	hard	new_hardhost	0.3549107142857143	0.0	151.4	4.06
+A0A3S4MGV1	A0A3S4MGV1 (C.lapagei)		rxn05123	GS	Cedecea lapagei	ok	new	0.3974358974358974	0.0	150.1	4.81
+A0A1G9NG73	A0A1G9NG73 (F.pantelleriensis)		rxn05123	GS	Franzmannia pantelleriensis	ok	new	0.48026315789473684	0.0	148.4	4.3
+A0A2C9D7I9	A0A2C9D7I9 (H.diazotrophicus)		rxn05123	GS	Hartmannibacter diazotrophicus	ok	new	0.35	0.0	147.5	4.03
+A0A1Y6GCA7	A0A1Y6GCA7 (D.lucknowensis)		rxn05123	GS	Devosia lucknowensis	ok	new	0.3502202643171806	0.0	146.3	5.54
+Q9WY79	MurE (T.maritima)	MurE	rxn22343	Mur	Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)	hard	reuse		0.0	145.9	5.1
+Q1QYC1	Q1QYC1 (C.israelensis)		rxn05123	GS	Chromohalobacter israelensis (strain ATCC BAA-138 / DSM 3043 / CIP 106854 / NCIMB 13768 / 1H11)	hard	new_hardhost	0.45011600928074247	0.0	143.2	4.84
+D0KXK1	D0KXK1 (H.neapolitanus)		rxn05123	GS	Halothiobacillus neapolitanus (strain ATCC 23641 / DSM 15147 / CIP 104769 / NCIMB 8539 / c2)	hard	new_hardhost	0.3673469387755102	0.0	141.6	3.13
+I3R584	GlnA2hf (H.mediterranei)	GlnA2hf	rxn05123	GS	Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4)	hard	reuse		0.0	140.0	4.06
+A0A0F5VDL9	A0A0F5VDL9 (P.halotolerans)		rxn05123	GS	Photobacterium halotolerans	hard	new_hardhost	0.4780701754385965	0.0	138.8	3.75
+Q2G1M9	SbnE (S.aureus)	SbnE	rxn47618	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse		0.0	137.0	3.8
+A0A1H2HJM6	A0A1H2HJM6 (H.salegens)		rxn05123	GS	Halopseudomonas salegens	hard	new_hardhost	0.44567627494456763	0.0	136.3	4.95
+Q2G1N1	SbnC (S.aureus)	SbnC	rxn42395	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse		0.0	136.1	3.31
+A0A128EUD9	A0A128EUD9 (G.marina)		rxn05123	GS	Grimontia marina	ok	new	0.4470842332613391	0.0	135.1	3.93
+A0A2T5B3B2	A0A2T5B3B2 (M.dimorpha)		rxn05123	GS	Mycoplana dimorpha	ok	new	0.3619489559164733	0.0	133.2	4.13
+A0A4R2L0I6	A0A4R2L0I6 (C.halotolerans)		rxn05123	GS	Chromatocurvus halotolerans	hard	new_hardhost	0.3902439024390244	0.0	132.8	6.43
+A0A1N7K6T7	A0A1N7K6T7 (I.peregrinum)		rxn05123	GS	Insolitispirillum peregrinum	ok	new	0.42350332594235035	0.0	131.4	4.51
+A0A4R6MLL1	A0A4R6MLL1 (M.balearica)		rxn05123	GS	Marinomonas balearica	ok	new	0.38866396761133604	0.0	130.1	4.05
+A0A561TKZ2	A0A561TKZ2 (S.capillispiralis)		rxn05123	GS	Streptomyces capillispiralis	hard	new_hardhost	0.3133047210300429	0.0	118.9	4.65
+A0A1I6TD82	A0A1I6TD82 (A.bohemicus)		rxn05123	GS	Acinetobacter bohemicus	ok	new	0.44372294372294374	0.0	118.7	19.66
+A0A1E2RXG6	A0A1E2RXG6 (M.halotolerans)		rxn05123	GS	Methyloligella halotolerans	hard	new_hardhost	0.34182590233545646	0.0	115.3	4.61
+A0A316BYZ7	A0A316BYZ7 (P.salicylatoxidans)		rxn05123	GS	Pseudaminobacter salicylatoxidans	ok	new	0.39909297052154197	0.0	115.2	5.28
+A0A4R3M2B5	A0A4R3M2B5 (T.gemmatus)		rxn05123	GS	Tepidamorphus gemmatus	ok	new	0.40350877192982454	0.0	115.1	4.37
+A0A1S1H7N7	A0A1S1H7N7 (E.haloaromaticamans)		rxn05123	GS	Edaphosphingomonas haloaromaticamans	hard	new_hardhost	0.34151785714285715	0.0	114.5	3.73
+A0A4R1XIK5	A0A4R1XIK5 (A.calcoaceticus)		rxn05123	GS	Acinetobacter calcoaceticus	ok	new	0.4300847457627119	0.0	111.3	4.25
+A0A0F7RJ52	AsbA (B.anthracis)	AsbA	rxn21038	NIS	Bacillus anthracis	ok	reuse		0.0	102.9	3.77
+A0A4V3DEU6	A0A4V3DEU6 (D.mobilis)		rxn05123	GS	Dongia mobilis	ok	new	0.4043478260869565	0.0	102.5	3.81
+E2JA32	DdaG (E.agglomerans)	DdaG	rxn46045	NIS	Enterobacter agglomerans	ok	reuse		0.0	96.2	3.71
+A0A212PW17	A0A212PW17 (R.acidophilus)		rxn05123	GS	Rhodoblastus acidophilus	ok	new	0.4189189189189189	0.0	74.7	4.92
+Q9RDS6	GlnA2sc (S.coelicolor)	GlnA2sc	rxn05123	GS	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	reuse		0.0	68.9	5.17
+A0A4R3ME26	A0A4R3ME26 (T.gemmatus)		rxn05123	GS	Tepidamorphus gemmatus	ok	new	0.4124168514412417	0.0	62.3	7.51
+A0A1G8QS83	A0A1G8QS83 (M.muleiense)		rxn05123	GS	Mesorhizobium muleiense	ok	new	0.40765765765765766	0.0	52.8	4.07
