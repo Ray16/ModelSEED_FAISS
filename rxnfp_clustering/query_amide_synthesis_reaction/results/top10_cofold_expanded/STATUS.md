@@ -31,15 +31,39 @@ Pool definition: `pool.tsv` (status column distinguishes the three increments).
    - 86 expressible → `campaign/` on lambda13, gated. RUNNING (see `campaign/state/*.done.json`).
    - 25 hard-host → `campaign_hard/`. PENDING MSAs.
    - 13 references → reused folds elsewhere (`pool.tsv:existing_fold`).
-5. Step-1 geometry across all 124. PENDING step-1.
+5. Step-1 geometry across all 124. DONE (`step1_pool_ranking.{tsv,png}`; 41 conclusive,
+   83 inconclusive because adipate rarely sits within 4 Å).
 6. Step-2 (acyl intermediate + neutral-amine HMDA + Mg [+ADP]; accommodation) for
-   **ALL candidates, not just step-1 survivors** (no funnel). PENDING step-1.
-   Rationale: step-1 and step-2 are independent — BacD activates best (step-1 0.74)
-   but cannot fit HMDA (step-2 reachable 0.14), while PuuA is a weak activator
-   (step-1 0.10) yet accommodates the amine (step-2 0.44). Funnelling step-2 on
-   step-1 hits would miss real accommodators. The 13 references already have step-2;
-   step-2 must be built+folded for the 111 new (pocket derived from each one's own
-   step-1 adipate pose), so it waits on step-1 completion.
+   **ALL candidates, not just step-1 survivors** (no funnel). DONE — all 124 folded
+   (13 panel in `../top10_cofold_step2/`, 111 expanded in `step2/`; 0 failures).
+   Rationale: step-1 and step-2 are independent — BacD activates best (step-1 161°)
+   but cannot fit HMDA (step-2 reachable 0.14), while PuuA is a weaker activator yet
+   accommodates the amine (step-2 0.44). Funnelling step-2 on step-1 hits would miss
+   real accommodators.
+7. Combined step-1 + step-2 view across all 124. DONE — `pool_combined.{tsv}`,
+   `pool_combined_within_family.png` (conservative), `pool_combined_cross_family.png`
+   (hypothesis). See "Top candidates" below.
+
+## Top candidates (combined step-1 activation + step-2 accommodation)
+
+Only the **GS family** places candidates in the both-feasible corner (step-1 engaged
+activation angle ≥150° AND step-2 HMDA reach ≥0.3). NIS enzymes activate adipate at
+competitive angles but essentially **cannot** accommodate the C6 diamine (reach ≈ 0);
+BacD activates best of all (161°) but also fails step-2 (0.14). This is the clearest
+cross-family signal: for the nylon-6,6 diad, GS-fold enzymes are the ones where both
+half-reactions look geometrically feasible.
+
+Both-feasible GS candidates (step-1 angle°, step-2 reach):
+- GlnA3 (Q9KZC7)                   159°, 0.74   — known best hit; HARD host
+- PuuA (P78061)                    162°, 0.44   — reference GS
+- A0A4R2L843 (C.halotolerans)      154°, 0.80   — NEW (hard-host)
+- A0A1S1H9I3 (E.haloaromaticamans) 153°, 0.88   — NEW (hard-host)
+- A0AAN0RL94 (P.temperata)         151°, 0.40   — NEW (expressible)
+
+Caveat: step-1 angle is the validated discriminator only *within* a family (ANL/
+adenylating calibration); the cross-family corner is **hypothesis generation**. Step-2
+reach is steric feasibility, not an activity ranking. Decisive next test = GS
+native-substrate positive control (see transferability memory).
 
 ## Known pitfalls (do not repeat)
 - **batched MSA output dirs are per-run.** Writing a 2nd batch into a populated MSA dir

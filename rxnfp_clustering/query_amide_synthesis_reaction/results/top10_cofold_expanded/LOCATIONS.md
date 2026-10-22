@@ -32,13 +32,17 @@ STEP 2 (acyl intermediate + neutral-amine HMDA + Mg [+ADP]; accommodation):
 - Step-1 ranking: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/step1_pool_ranking.{tsv,png}` (within-family)
 - Step-2 panel (original 13): `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_step2/step2_near_attack.{tsv,json}`,
   `step2_pose_clouds.png`, `step1_step2_combined.{tsv,png}`
+- Combined step-1+step-2 across ALL 124: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold_expanded/pool_combined.tsv`,
+  `pool_combined_within_family.png` (conservative), `pool_combined_cross_family.png` (hypothesis)
 - Mapping evidence: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_mapping/panel_evidence_consolidation.{tsv,json,png}`
 - Shortlist: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_mapping/expansion_shortlist.tsv`
 
 ## Code
 - Builders: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/structure_modeling/{campaign,step2_build,step2_build_expanded}.py`
 - Runners (lambda13, gated): `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/structure_modeling/{fleet,step2_fleet}.py`
-- Analysis: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/evaluation/{expanded_step1_ranking,step2_geometry,combined_geometry,evidence_consolidation}.py`
+- Analysis: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/evaluation/{expanded_step1_ranking,step2_geometry,combined_geometry,pool_combined,evidence_consolidation}.py`
+  (`pool_combined.py` = pool-wide step-1+step-2 join over all 124; run with the `modelseed`
+  conda env python, which has gemmi+numpy+matplotlib: `/nfs/lambda_stor_01/homes/rzhu/miniforge3/envs/modelseed/bin/python -m amide_synthesis.evaluation.pool_combined`)
 - Candidate selection: `/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/amide_synthesis/candidate_selection/expansion_shortlist.py`
 
 See STATUS.md for pipeline-stage status and caveats.

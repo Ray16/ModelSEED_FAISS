@@ -92,9 +92,9 @@ def pose_geometry(model):
     return distance, angle
 
 
-def summarise(item):
+def summarise(item, run=RUN):
     name = item['name']
-    out = RUN / 'outputs' / name / 'by_seed' / name / 's42'
+    out = run / 'outputs' / name / 'by_seed' / name / 's42'
     distances, angles = [], []
     for pdb in sorted(out.glob(f'{name}_model_*.pdb')):
         d, a = pose_geometry(gemmi.read_structure(str(pdb))[0])

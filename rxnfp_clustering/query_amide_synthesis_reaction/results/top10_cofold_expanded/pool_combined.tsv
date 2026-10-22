@@ -1,0 +1,125 @@
+accession	enzyme	gene	struct_family	organism	expression	status	route	step1_candidate_angle_deg	step1_conclusive	step1_weighted_angle_deg	step1_near_attack	step1_n_within_4A	step2_amine_reachable	step2_near_attack	step2_weighted_distance_A	step2_min_distance_A
+P78061	PuuA (P78061)	PuuA	GS	Escherichia coli (strain K12)	ok	reuse	acyl_phosphate	162.0	True	162.6	0.1	7	0.44	0.38	3.5396211738863634	3.1393973944054934
+P39641	BacD (P39641)	BacD	BacD	Bacillus subtilis (strain 168)	ok	reuse	acyl_phosphate	160.8	True	162.2	0.74	41	0.14	0.12	4.9207024801949295	2.9583077933169832
+Q9KZC7	GlnA3 (Q9KZC7)	GlnA3	GS	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	reuse	acyl_phosphate	159.2	True	159.2	0.68	37	0.74	0.56	3.2995378565236018	2.930877172451962
+A0A110B340	A0A110B340 (M.gotjawali)		GS	Mucilaginibacter gotjawali	ok	new	acyl_phosphate	157.5	True	121.2	0.06	5	0.16	0.1	3.653407912512846	3.258511623425641
+A0A4R2L843	A0A4R2L843 (C.halotolerans)		GS	Chromatocurvus halotolerans	hard	new_hardhost	acyl_phosphate	153.8	True	144.2	0.26	18	0.8	0.62	3.4133621373795644	2.9943723883311497
+A0A1S1H9I3	A0A1S1H9I3 (E.haloaromaticamans)		GS	Edaphosphingomonas haloaromaticamans	hard	new_hardhost	acyl_phosphate	153.4	True	125.7	0.14	11	0.88	0.78	3.2858427887158235	2.9804125553352514
+A0A6S7BZ53	A0A6S7BZ53 (P.alpina)		NIS	Pararobbsia alpina	ok	new	acyl_adenylate	152.6	True	138.5	0.16	17	0.04	0.0	5.022586280577872	3.3713868066420383
+A0A5C0WIG2	A0A5C0WIG2 (B.safensis)		BacD	Bacillus safensis	ok	new	acyl_phosphate	152.4	True	152.7	0.62	47	0.0	0.0	5.517200094209006	3.6020401163784945
+A0ABM9C099	A0ABM9C099 (P.plantiphilus)		NIS	Paenibacillus plantiphilus	ok	new	acyl_adenylate	151.9	True	151.5	0.52	47	0.0	0.0	8.97961309511569	5.404251659573229
+A0AAN0RL94	A0AAN0RL94 (P.temperata)		GS	Planktomarina temperata RCA23	ok	new	acyl_phosphate	150.6	True	150.7	0.08	11	0.4	0.28	3.5945644485951522	2.5688137340025254
+A0A085G9T0	A0A085G9T0 (E.americana)		GS	Ewingella americana (strain ATCC 33852 / DSM 4580 / CCUG 14506 / JCM 5911 / LMG 7869 / NCTC 12157 / CDC 1468-78)	ok	new	acyl_phosphate	149.6	True	152.2	0.08	7	0.18	0.14	3.805297352830573	2.9982584945264477
+A0A221K6V8	A0A221K6V8 (P.pseudonitzschiae)		GS	Pseudosulfitobacter pseudonitzschiae	ok	new	acyl_phosphate	149.3	True	147.3	0.16	18	0.6	0.48	3.429181837374395	2.8915222634453297
+A0ACN3NSZ7	A0ACN3NSZ7 (N.versutus)		GS	Natrarchaeobius versutus	hard	new_hardhost	acyl_phosphate	149.3	True	151.3	0.22	26	0.58	0.26	3.5177169641142845	3.149550444111031
+Q81RQ8	AsbB (Q81RQ8)	AsbB	NIS	Bacillus anthracis	ok	reuse	acyl_adenylate	149.2	True	149.3	0.28	26	0.0	0.0	6.298721964830966	4.071019773963276
+A0A172YAD6	A0A172YAD6 (H.alkalilenta)		GS	Halotalea alkalilenta	hard	new_hardhost	acyl_phosphate	148.9	True	140.2	0.04	5	0.36	0.1	3.489633541355404	2.7615014032225305
+U2ZIR9	U2ZIR9 (A.alcaligenes)		GS	Aquipseudomonas alcaligenes (strain ATCC 14909 / DSM 50342 / CCUG 1425 / JCM 20561 / NBRC 14159 / NCIMB 9945 / NCTC 10367 / 1577)	ok	new	acyl_phosphate	148.8	True	149.0	0.34	45	0.5	0.36	3.5000461025262677	3.0882527422476276
+A0A090RTN3	A0A090RTN3 (V.maritimus)		GS	Vibrio maritimus	ok	new	acyl_phosphate	148.7	True	147.6	0.18	22	0.4	0.3	3.5041873531474037	2.861133516632875
+Q2FW70	SfnaD (Q2FW70)	SfnaD	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse	acyl_adenylate	148.4	True	150.7	0.08	10	0.0	0.0	5.197159981426677	3.7769391046189766
+A0A1G4SAN4	A0A1G4SAN4 (A.taihuensis)		GS	Asticcacaulis taihuensis	ok	new	acyl_phosphate	147.8	True	144.4	0.08	14	0.94	0.78	3.1608543647849716	2.8290615051638595
+A0A0U3AYN2	A0A0U3AYN2 (L.alkaliphilum)		GS	Lacimicrobium alkaliphilum	ok	new	acyl_phosphate	145.2	True	144.1	0.12	25	0.44	0.22	3.60407317050758	3.1017815848315298
+A0A1Y6B352	A0A1Y6B352 (T.consotensis)		GS	Tistlia consotensis USBA 355	ok	new	acyl_phosphate	144.6	True	144.0	0.02	5	0.64	0.12	3.351534568198939	2.9807217246834705
+A0A1C9WB64	A0A1C9WB64 (M.aggregans)		GS	Microbulbifer aggregans	ok	new	acyl_phosphate	143.6	True	145.7	0.18	29	0.72	0.52	3.4013233956311817	3.0869125352040663
+A0A1I7NF67	A0A1I7NF67 (H.facile)		GS	Hyphomicrobium facile	ok	new	acyl_phosphate	139.1	True	141.9	0.04	10	0.76	0.44	3.223909382046374	2.760927742625656
+A0ABN3GUQ2	A0ABN3GUQ2 (S.halophila)		NIS	Saccharopolyspora halophila	hard	new_hardhost	acyl_adenylate	138.4	True	110.0	0.04	15	0.0	0.0	7.492000174933812	4.234522287106302
+A0ABQ6PDN8	A0ABQ6PDN8 (F.sciaenopsi)		NIS	Francisella sciaenopsi	ok	new	acyl_adenylate	137.9	True	136.8	0.04	36	0.0	0.0	4.942393631066848	3.984130143456661
+A0A1E3H007	A0A1E3H007 (M.pamukkalensis)		GS	Methylobrevis pamukkalensis	ok	new	acyl_phosphate	134.4	True	134.1	0.06	38	0.9	0.48	3.1668850099415056	2.7634024317858596
+D0LJE9	D0LJE9 (H.ochraceum)		GS	Haliangium ochraceum (strain DSM 14365 / JCM 11303 / SMP-2)	ok	new	acyl_phosphate	134.3	True	135.1	0.08	12	0.04	0.02	4.567263771533402	3.116681087310668
+A0ABP9WL28	A0ABP9WL28 (M.aestuariivivens)		GS	Microbulbifer aestuariivivens	ok	new	acyl_phosphate	133.6	True	133.5	0.02	14	0.92	0.6	3.123020648600736	2.7674112451892645
+Q2G1N1	SbnC (Q2G1N1)	SbnC	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse	acyl_adenylate	132.5	True	136.1	0.0	19	0.0	0.0	5.694328206460306	4.327186268234821
+A0A510Y5K6	A0A510Y5K6 (M.halophilus)		NIS	Marinococcus halophilus	hard	new_hardhost	acyl_adenylate	132.4	True	131.6	0.0	31	0.02	0.02	4.61574043756925	3.36892594160216
+A4ABK5	A4ABK5 (C.litoralis)		GS	Congregibacter litoralis KT71	ok	new	acyl_phosphate	132.3	True	129.5	0.08	16	0.04	0.02	4.072315010640419	3.1684186907667367
+A0A8J2YFK3	A0A8J2YFK3 (P.camelliae)		NIS	Pullulanibacillus camelliae	ok	new	acyl_adenylate	131.7	True	131.4	0.0	24	0.14	0.0	4.175180235288289	3.2439008924441572
+A0ABN1V8I6	A0ABN1V8I6 (P.alba)		NIS	Prauserella alba	ok	new	acyl_adenylate	130.3	True	122.3	0.0	6	0.0	0.0	6.790529023138029	4.721885534402544
+A0A917B963	A0A917B963 (H.andaensis)		NIS	Halobacillus andaensis	hard	new_hardhost	acyl_adenylate	128.4	True	128.7	0.0	34	0.02	0.0	5.11563010645911	3.154844211684628
+A0A379JHL5	A0A379JHL5 (N.otitidiscaviarum)		GS	Nocardia otitidiscaviarum	hard	new_hardhost	acyl_phosphate	127.5	True	127.4	0.08	39	0.1	0.06	3.8057595497526804	2.9891170937251696
+A0AA37W9M8	A0AA37W9M8 (L.albus)		NIS	Litoribrevibacter albus	ok	new	acyl_adenylate	126.2	True	127.0	0.0	10	0.04	0.0	4.461930055174858	3.0841760650131507
+A0A8D5ZLL1	A0A8D5ZLL1 (P.abyssicola)		NIS	Polycladomyces abyssicola	ok	new	acyl_adenylate	123.1	True	121.5	0.0	41	0.0	0.0	5.089961101879557	4.5724998633132845
+H6NMA1	H6NMA1 (P.mucilaginosus)		NIS	Paenibacillus mucilaginosus 3016	ok	new	acyl_adenylate	120.0	True	120.3	0.0	12	0.04	0.0	4.559613726782039	2.595743824031948
+A0A917AXG3	A0A917AXG3 (P.taiwanensis)		NIS	Priestia taiwanensis	ok	new	acyl_adenylate	116.3	True	118.3	0.0	17	0.0	0.0	5.728013386524499	3.5888477259421308
+A0ABP9EZE3	A0ABP9EZE3 (A.straminea)		NIS	Actinomycetospora straminea	hard	new_hardhost	acyl_adenylate	111.6	True	112.7	0.0	30	0.0	0.0	5.747034615790893	3.8237563991446946
+A0ABP7MJ38	A0ABP7MJ38 (L.peritrichatus)		NIS	Litoribacillus peritrichatus	ok	new	acyl_adenylate	105.7	True	106.5	0.12	41	0.0	0.0	6.30018666385049	3.704643707564872
+A0A316BYZ7	A0A316BYZ7 (P.salicylatoxidans)		GS	Pseudaminobacter salicylatoxidans	ok	new	acyl_phosphate		False	115.2	0.0	0	0.88	0.78	3.1238057940280477	2.718082044383503
+A0A3M0A898	A0A3M0A898 (U.marinipuniceus)		GS	Umboniibacter marinipuniceus	ok	new	acyl_phosphate		False	163.8	0.0	0	0.0	0.0	3.865440439403906	3.5493293732760263
+A0A3S4MGV1	A0A3S4MGV1 (C.lapagei)		GS	Cedecea lapagei	ok	new	acyl_phosphate		False	150.1	0.0	0	0.44	0.26	3.6195746572614045	2.9635102496870154
+A0A1H6B059	A0A1H6B059 (V.hangzhouensis)		GS	Vibrio hangzhouensis	ok	new	acyl_phosphate		False	163.9	0.02	1	0.92	0.84	3.0943772778287104	2.6521255626383904
+A0ABN8G2K6	A0ABN8G2K6 (P.plantiphilus)		NIS	Paenibacillus plantiphilus	ok	new	acyl_adenylate		False	76.5	0.0	2	0.0	0.0	4.787268915203789	4.331611016700368
+A4A9Q1	A4A9Q1 (C.litoralis)		GS	Congregibacter litoralis KT71	ok	new	acyl_phosphate		False	107.5	0.0	0	0.1	0.04	3.9125175897336577	3.1624694464927248
+A0A1H3WR98	A0A1H3WR98 (R.cliftonensis)		GS	Rubrimonas cliftonensis	ok	new	acyl_phosphate		False	146.7	0.04	4	0.94	0.68	3.1002831229223204	2.800291770512495
+A0A1I0QDG5	A0A1I0QDG5 (A.sediminilitoris)		GS	Aliiroseovarius sediminilitoris	ok	new	acyl_phosphate		False	162.4	0.0	0	0.54	0.4	3.461734673031015	2.875754509689587
+A0A1I5DJ95	A0A1I5DJ95 (C.marisflavi)		GS	Cohaesibacter marisflavi	ok	new	acyl_phosphate		False	154.8	0.0	0	0.6	0.56	3.3309683359794064	2.7131728658528194
+A0A1Y6GCA7	A0A1Y6GCA7 (D.lucknowensis)		GS	Devosia lucknowensis	ok	new	acyl_phosphate		False	146.3	0.0	0	0.18	0.06	3.858133270150646	3.189149886725301
+A0A4R3M2B5	A0A4R3M2B5 (T.gemmatus)		GS	Tepidamorphus gemmatus	ok	new	acyl_phosphate		False	115.1	0.0	0	0.66	0.3	3.410461290772655	2.8094365983235847
+A0A212PW17	A0A212PW17 (R.acidophilus)		GS	Rhodoblastus acidophilus	ok	new	acyl_phosphate		False	74.7	0.0	0	0.78	0.22	3.3728302191369304	3.089969902766045
+A0A0P1FIB3	A0A0P1FIB3 (T.gelatinovora)		GS	Thalassovita gelatinovora	ok	new	acyl_phosphate		False	142.1	0.02	2	0.78	0.54	3.3678257059337677	2.893128756208407
+A0A4R1XIK5	A0A4R1XIK5 (A.calcoaceticus)		GS	Acinetobacter calcoaceticus	ok	new	acyl_phosphate		False	111.3	0.0	0	0.22	0.16	4.01259839392285	2.8291359104857436
+A6W8I4	A6W8I4 (K.radiotolerans)		GS	Kineococcus radiotolerans (strain ATCC BAA-149 / DSM 14245 / SRS30216)	ok	new	acyl_phosphate		False	82.3	0.02	3	0.0	0.0	3.9055120679940263	3.559171532814905
+A0A1T5LRE0	A0A1T5LRE0 (P.indica)		GS	Pseudoxanthomonas indica	ok	new	acyl_phosphate		False	149.2	0.02	1	1.0	0.86	2.982983475705245	2.815411160026187
+A0A128EUD9	A0A128EUD9 (G.marina)		GS	Grimontia marina	ok	new	acyl_phosphate		False	135.1	0.0	1	0.44	0.3	3.5968373864825187	2.9997459892464224
+A0A1I6TD82	A0A1I6TD82 (A.bohemicus)		GS	Acinetobacter bohemicus	ok	new	acyl_phosphate		False	118.7	0.0	0	0.0	0.0	18.83444467186214	17.680330935816784
+A0A4R3ME26	A0A4R3ME26 (T.gemmatus)		GS	Tepidamorphus gemmatus	ok	new	acyl_phosphate		False	62.3	0.0	0	0.0	0.0	14.823703642415756	12.845163837024423
+A0A1Y5RPD4	A0A1Y5RPD4 (O.hippocampi)		GS	Oceanibacterium hippocampi	ok	new	acyl_phosphate		False	139.1	0.06	3	0.82	0.64	3.0986250249548504	2.7616207197948093
+A0A2C9D7I9	A0A2C9D7I9 (H.diazotrophicus)		GS	Hartmannibacter diazotrophicus	ok	new	acyl_phosphate		False	147.5	0.0	0	0.36	0.12	3.615829352868483	3.013909255435538
+A0A4R6MLL1	A0A4R6MLL1 (M.balearica)		GS	Marinomonas balearica	ok	new	acyl_phosphate		False	130.1	0.0	0	0.28	0.26	3.666984779822238	2.9312135712022074
+A0A1G8QS83	A0A1G8QS83 (M.muleiense)		GS	Mesorhizobium muleiense	ok	new	acyl_phosphate		False	52.8	0.0	0	0.8	0.52	3.331394786099529	2.967932950725134
+B6IMX3	B6IMX3 (R.centenum)		GS	Rhodospirillum centenum (strain ATCC 51521 / SW)	ok	new	acyl_phosphate		False	126.3	0.0	1	1.0	0.54	3.1964413358570827	2.9216601445068866
+A0A2T5B3B2	A0A2T5B3B2 (M.dimorpha)		GS	Mycoplana dimorpha	ok	new	acyl_phosphate		False	133.2	0.0	0	0.66	0.34	3.3876871057767275	3.050065573065602
+A0A3D9HKC5	A0A3D9HKC5 (A.insulae)		GS	Aestuariispira insulae	ok	new	acyl_phosphate		False	120.9	0.02	3	0.3	0.22	3.6565712663873935	2.9757630954093095
+A0A1G9NG73	A0A1G9NG73 (F.pantelleriensis)		GS	Franzmannia pantelleriensis	ok	new	acyl_phosphate		False	148.4	0.0	0	0.74	0.5	3.1635345037008795	2.7205337711559485
+A0A1H3FIV4	A0A1H3FIV4 (P.kuykendallii)		GS	Pseudomonas kuykendallii	ok	new	acyl_phosphate		False	157.7	0.04	3	0.98	0.74	3.117491357780054	2.903961604429369
+A0A1N7K6T7	A0A1N7K6T7 (I.peregrinum)		GS	Insolitispirillum peregrinum	ok	new	acyl_phosphate		False	131.4	0.0	0	0.8	0.74	3.3621741669712972	3.021057761778149
+A0A4V3DEU6	A0A4V3DEU6 (D.mobilis)		GS	Dongia mobilis	ok	new	acyl_phosphate		False	102.5	0.0	1	0.46	0.32	3.485158972177495	2.852219661947515
+A0ABN3V3C9	A0ABN3V3C9 (S.taberi)		NIS	Saccharopolyspora taberi	ok	new	acyl_adenylate		False	85.1	0.0	3	0.0	0.0	4.622506692566492	4.052185212943752
+A0A1R3VCL4	A0A1R3VCL4 (M.prunaredense)		GS	Mesorhizobium prunaredense	ok	new	acyl_phosphate		False	136.7	0.02	1	0.38	0.22	3.8637378687448205	2.84894383939031
+D7DQ41	D7DQ41 (M.versatilis)		GS	Methylotenera versatilis (strain 301)	ok	new	acyl_phosphate		False	131.0	0.0	0	0.54	0.3	3.498390756053617	3.027552641986592
+A0A1T4XES4	A0A1T4XES4 (T.eikelboomii)		GS	Thiothrix eikelboomii	ok	new	acyl_phosphate		False	161.3	0.0	0	0.62	0.3	3.451365514715982	2.9145521096731146
+E1SVJ9	E1SVJ9 (F.balearica)		GS	Ferrimonas balearica (strain DSM 9799 / CCM 4581 / KCTC 23876 / PAT)	ok	new	acyl_phosphate		False	110.6	0.0	0	0.9	0.8	3.1746106053921914	2.8290282784023204
+A0A640VTU0	A0A640VTU0 (R.cerasinus)		NIS	Roseobacter cerasinus	ok	new	acyl_adenylate		False	127.6	0.0	4	0.06	0.04	4.054243788495392	3.016864929028146
+A0A7U7ELP2	A0A7U7ELP2 (Z.carbonaria)		GS	Zestomonas carbonaria	ok	new	acyl_phosphate		False	156.4	0.02	1	0.3	0.1	3.731567216399587	3.0244690443117452
+A0A562T2K3	A0A562T2K3 (R.hamelinense)		GS	Roseibium hamelinense	ok	new	acyl_phosphate		False	160.4	0.0	0	0.86	0.6	3.2181731293594065	2.787456726121502
+A0A8G2CJQ4	A0A8G2CJQ4 (A.rubrum)		GS	Acidiphilium rubrum	ok	new	acyl_phosphate		False	149.4	0.04	3	0.44	0.22	3.518794645909599	2.956410999844237
+A0A9W6N401	A0A9W6N401 (M.jiangsuensis)		NIS	Methylopila jiangsuensis	ok	new	acyl_adenylate		False	114.1	0.0	2	0.04	0.0	4.718676349381611	3.3162421503864885
+A0AAN0RKW5	A0AAN0RKW5 (P.temperata)		GS	Planktomarina temperata RCA23	ok	new	acyl_phosphate		False	126.9	0.0	4	0.1	0.02	3.680749091460681	3.263108947001309
+A0ABD5QAR9	A0ABD5QAR9 (S.infecundisoli)		GS	Saliphagus infecundisoli	ok	new	acyl_phosphate		False	162.7	0.0	0	0.96	0.6	3.2902833930310265	3.1120241001637505
+A0A2X4W351	A0A2X4W351 (L.lenta)		Mur	Lederbergia lenta	ok	new	acyl_phosphate		False	151.7	0.0	0	0.0	0.0	4.97946491825615	3.7565597293268214
+A0ABM7MGI2	A0ABM7MGI2 (R.lithotrophicus)		GS	Rhodoferax lithotrophicus	ok	new	acyl_phosphate		False	144.0	0.06	4	0.62	0.36	3.4560126119126804	3.061612973581083
+A0ABM9AA17	A0ABM9AA17 (S.norvegicum)		GS	Sinobacterium norvegicum	ok	new	acyl_phosphate		False	167.8	0.0	0	0.7	0.54	3.3012612736485063	2.761725909644185
+A0A517YHC3	A0A517YHC3 (A.aggregata)		Mur	Anatilimnocola aggregata	ok	new	acyl_phosphate		False	129.5	0.0	0	0.1	0.0	4.54574286506469	3.1200535251819
+A0A518C8G2	A0A518C8G2 (B.volcania)		Mur	Bremerella volcania	ok	new	acyl_phosphate		False	112.9	0.0	2	0.0	0.0	5.201518202820371	3.7394376582582574
+A0ACH1R7X3	A0ACH1R7X3 (S.zoogloeoides)		GS	Shinella zoogloeoides	ok	new	acyl_phosphate		False	154.6	0.02	1	0.1	0.06	3.9703183486531084	3.0347218982964486
+A0A6S7AZG2	A0A6S7AZG2 (P.alpina)		NIS	Pararobbsia alpina	ok	new	acyl_adenylate		False	126.1	0.0	0	0.02	0.02	5.311096787934869	3.277076288400989
+A0ABM9BY12	A0ABM9BY12 (P.plantiphilus)		NIS	Paenibacillus plantiphilus	ok	new	acyl_adenylate		False	139.3	0.0	0	0.0	0.0	7.673961167841477	5.050777860884399
+F0JDE4	F0JDE4 (P.mercurii)		GS	Pseudodesulfovibrio mercurii	ok	new	acyl_phosphate		False	134.2	0.0	1	0.0	0.0	12.745053153100269	9.818395999347349
+A0ABN7TT27	A0ABN7TT27 (P.allorhizosphaerae)		NIS	Paenibacillus allorhizosphaerae	ok	new	acyl_adenylate		False	113.2	0.0	0	0.34	0.0	3.8395118934492305	3.073418943131574
+H6SKG7	H6SKG7 (P.photometricum)		GS	Pararhodospirillum photometricum DSM 122	ok	new	acyl_phosphate		False	126.6	0.0	2	0.04	0.04	4.083347719918568	3.4620193529210663
+A0ABM9CPI4	A0ABM9CPI4 (P.plantiphilus)		NIS	Paenibacillus plantiphilus	ok	new	acyl_adenylate		False	121.4	0.0	4	0.0	0.0	6.245119335738947	3.5243934229878477
+A0A6S7AUB9	A0A6S7AUB9 (P.alpina)		NIS	Pararobbsia alpina	ok	new	acyl_adenylate		False	121.2	0.02	3	0.04	0.02	4.308526262221255	3.443750426497252
+A0A1H3G5V3	A0A1H3G5V3 (E.caseinilytica)		BacD	Evansella caseinilytica	ok	new	acyl_phosphate		False	135.6	0.0	0	0.04	0.0	7.3799885985492395	3.360007886895506
+A0ABS4JEW8	A0ABS4JEW8 (P.shirakamiensis)		BacD	Paenibacillus shirakamiensis	ok	new	acyl_phosphate		False	139.6	0.04	3	0.26	0.04	4.10214419728985	3.0452510569737923
+A0A8J4H351	A0A8J4H351 (X.composti)		NIS	Xylanibacillus composti	ok	new	acyl_adenylate		False	107.9	0.0	4	0.04	0.04	4.6148012803658505	3.4311353805992555
+A0ABN3V2X3	A0ABN3V2X3 (S.taberi)		NIS	Saccharopolyspora taberi	ok	new	acyl_adenylate		False	146.0	0.04	3	0.06	0.0	5.436803495192928	3.2713627129989726
+A0A5M3PME8	A0A5M3PME8 (M.salsuginis)		NIS	Marinobacter salsuginis	ok	new	acyl_adenylate		False	121.5	0.0	1	0.02	0.0	4.527343093053185	3.3792959325871417
+A0A4R7NSF7	A0A4R7NSF7 (C.marismortui)		GS	Chromohalobacter marismortui	hard	new_hardhost	acyl_phosphate		False	153.8	0.0	0	0.22	0.18	3.8914901159714343	2.942841314104449
+Q1QYC1	Q1QYC1 (C.israelensis)		GS	Chromohalobacter israelensis (strain ATCC BAA-138 / DSM 3043 / CIP 106854 / NCIMB 13768 / 1H11)	hard	new_hardhost	acyl_phosphate		False	143.2	0.0	0	0.28	0.16	3.662715972463233	2.9413022626041005
+U6SUS5	U6SUS5 (A.marmarensis)		NIS	Alkalihalophilus marmarensis DSM 21297	hard	new_hardhost	acyl_adenylate		False	121.0	0.0	0	0.16	0.04	4.662729644315648	2.798973025950768
+A0A561TKZ2	A0A561TKZ2 (S.capillispiralis)		GS	Streptomyces capillispiralis	hard	new_hardhost	acyl_phosphate		False	118.9	0.0	0	0.32	0.08	3.797895108864092	3.1290089485330657
+A0A0F5VDL9	A0A0F5VDL9 (P.halotolerans)		GS	Photobacterium halotolerans	hard	new_hardhost	acyl_phosphate		False	138.8	0.0	1	0.48	0.36	3.4690063789115357	2.6928237966862953
+A0A1E2RX53	A0A1E2RX53 (M.halotolerans)		GS	Methyloligella halotolerans	hard	new_hardhost	acyl_phosphate		False	151.6	0.0	0	0.26	0.26	3.697207555037893	3.015574572117228
+A0A1H2YFR4	A0A1H2YFR4 (R.halocynthiae)		GS	Ruegeria halocynthiae	hard	new_hardhost	acyl_phosphate		False	155.7	0.0	0	0.64	0.34	3.380639820555352	2.8345364700423237
+A0A1E2RXG6	A0A1E2RXG6 (M.halotolerans)		GS	Methyloligella halotolerans	hard	new_hardhost	acyl_phosphate		False	115.3	0.0	0	0.46	0.2	3.6094433850315415	2.9232179186642937
+D0KXK1	D0KXK1 (H.neapolitanus)		GS	Halothiobacillus neapolitanus (strain ATCC 23641 / DSM 15147 / CIP 104769 / NCIMB 8539 / c2)	hard	new_hardhost	acyl_phosphate		False	141.6	0.0	4	0.2	0.02	3.832915231123432	2.7584114993959843
+A0A1H2HJM6	A0A1H2HJM6 (H.salegens)		GS	Halopseudomonas salegens	hard	new_hardhost	acyl_phosphate		False	136.3	0.0	0	0.98	0.92	3.1526841775785814	2.8595198897717076
+A0A1S1H7N7	A0A1S1H7N7 (E.haloaromaticamans)		GS	Edaphosphingomonas haloaromaticamans	hard	new_hardhost	acyl_phosphate		False	114.5	0.0	2	0.72	0.1	3.4045423706619533	3.080242847569003
+A0A1H5STF7	A0A1H5STF7 (T.halodurans)		GS	Thalassococcus halodurans	hard	new_hardhost	acyl_phosphate		False	151.4	0.0	0	0.34	0.04	3.6965447928334423	3.0548798667050723
+A0A286IF89	A0A286IF89 (P.halophila)		GS	Parahoeflea halophila	hard	new_hardhost	acyl_phosphate		False	143.8	0.02	3	0.44	0.3	3.605287889666514	2.739539742365494
+A0A4R2L0I6	A0A4R2L0I6 (C.halotolerans)		GS	Chromatocurvus halotolerans	hard	new_hardhost	acyl_phosphate		False	132.8	0.0	0	0.14	0.12	3.977484371930775	3.06828958867966
+A0A0W7X1T3	A0A0W7X1T3 (S.silvensis)		BacD	Streptomyces silvensis	hard	new_hardhost	acyl_phosphate		False	149.0	0.02	2	0.0	0.0	4.389654277480375	3.799779467284911
+A0A917JWN1	A0A917JWN1 (S.thermophila)		NIS	Saccharopolyspora thermophila	hard	new_hardhost	acyl_adenylate		False	129.2	0.0	0	0.04	0.0	4.666458529054015	3.3741397422157844
+Q9RDS6	GlnA2sc (Q9RDS6)	GlnA2sc	GS	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	reuse	acyl_phosphate		False	68.9	0.0	0	0.0	0.0	4.08741519155863	3.71951246805277
+E2JA32	DdaG (E2JA32)	DdaG	NIS	Enterobacter agglomerans	ok	reuse	acyl_adenylate		False	96.2	0.0	3	0.0	0.0	4.946142159411298	3.5425400491737564
+Q2G1M9	SbnE (Q2G1M9)	SbnE	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse	acyl_adenylate		False	137.0	0.0	3	0.0	0.0	4.583879522717557	3.527182161442757
+A0A0F7RJ52	AsbA (A0A0F7RJ52)	AsbA	NIS	Bacillus anthracis	ok	reuse	acyl_adenylate		False	102.9	0.0	1	0.02	0.02	4.83703906251563	3.465849679371568
+Q9WY79	MurE (Q9WY79)	MurE	Mur	Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)	hard	reuse	acyl_phosphate		False	145.9	0.0	0	0.0	0.0	4.767402975134505	3.8899030836256063
+Q2G1M8	SbnF (Q2G1M8)	SbnF	NIS	Staphylococcus aureus (strain NCTC 8325 / PS 47)	ok	reuse	acyl_adenylate		False	124.3	0.04	3	0.0	0.0	6.7225390102831435	3.7180632054875025
+I3R584	GlnA2hf (I3R584)	GlnA2hf	GS	Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4)	hard	reuse	acyl_phosphate		False	140.0	0.0	0	0.44	0.26	3.767034484067378	2.9939246817513623
