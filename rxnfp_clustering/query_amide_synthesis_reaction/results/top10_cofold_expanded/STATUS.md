@@ -30,8 +30,14 @@ Pool definition: `pool.tsv` (status column distinguishes the three increments).
    - 25 hard-host → `campaign_hard/`. PENDING MSAs.
    - 13 references → reused folds elsewhere (`pool.tsv:existing_fold`).
 5. Step-1 geometry across all 124. PENDING step-1.
-6. Step-2 (acyl intermediate + neutral-amine HMDA + Mg [+ADP]; accommodation) only on
-   step-1 survivors. PENDING.
+6. Step-2 (acyl intermediate + neutral-amine HMDA + Mg [+ADP]; accommodation) for
+   **ALL candidates, not just step-1 survivors** (no funnel). PENDING step-1.
+   Rationale: step-1 and step-2 are independent — BacD activates best (step-1 0.74)
+   but cannot fit HMDA (step-2 reachable 0.14), while PuuA is a weak activator
+   (step-1 0.10) yet accommodates the amine (step-2 0.44). Funnelling step-2 on
+   step-1 hits would miss real accommodators. The 13 references already have step-2;
+   step-2 must be built+folded for the 111 new (pocket derived from each one's own
+   step-1 adipate pose), so it waits on step-1 completion.
 
 ## Known pitfalls (do not repeat)
 - **batched MSA output dirs are per-run.** Writing a 2nd batch into a populated MSA dir
