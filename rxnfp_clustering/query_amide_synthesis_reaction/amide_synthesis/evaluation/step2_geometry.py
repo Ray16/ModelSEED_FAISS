@@ -94,7 +94,7 @@ def summarise(item):
         raise ValueError(f'{name}: expected 50 poses, got {d.shape[0]}')
     inv = 1 / d
     near = (d < NEAR_A) & (a >= BD_LOW) & (a <= BD_HIGH)
-    return {
+    row = {
         'name': name, 'accession': item['accession'], 'route': item['route'],
         'weighted_distance_A': float((d * inv).sum() / inv.sum()),
         'harmonic_distance_A': float(50 / inv.sum()),
@@ -103,11 +103,15 @@ def summarise(item):
         'near_attack_fraction': float(near.mean()),
         'n_models': 50,
     }
+    return row, d, a
 
 
 def main():
     manifest = json.loads((RUN / 'manifest.json').read_text())
-    rows = [summarise(item) for item in manifest['inputs']]
+    rows, poses = [], {}
+    for item in manifest['inputs']:
+        row, d, a = summarise(item)
+        rows.append(row); poses[row['name']] = (d, a)
     rows.sort(key=lambda r: (-r['near_attack_fraction'], r['min_distance_A']))
     with (RUN / 'step2_near_attack.tsv').open('w', newline='') as handle:
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]), delimiter='\t')
@@ -124,27 +128,81 @@ def main():
         'enzymes': rows,
     }
     (RUN / 'step2_near_attack.json').write_text(json.dumps(summary, indent=2))
-    figure(rows, RUN / 'step2_near_attack.png')
+    figure(rows, poses, RUN / 'step2_near_attack.png')
+    facet_figure(rows, poses, RUN / 'step2_pose_clouds.png')
     print(json.dumps(summary, indent=2))
     return 0
 
 
-def figure(rows, path):
+def _route_colour(route):
+    return '#0072B2' if route == 'acyl_adenylate' else '#D55E00'
+
+
+def figure(rows, poses, path):
+    """Two panels: per-enzyme near-attack summary, and the full pose distribution."""
+    import matplotlib
+    matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    import numpy as np
+    plt.rcParams.update({'font.size': 18, 'savefig.dpi': 300, 'figure.dpi': 300})
+
+    fig, (bar, scat) = plt.subplots(1, 2, figsize=(17, 0.52 * len(rows) + 2.5),
+                                    gridspec_kw={'width_ratios': [1, 1.25]})
+
+    order = sorted(rows, key=lambda r: r['near_attack_fraction'])
+    labels = [f"{r['accession']} ({'AMP' if r['route'] == 'acyl_adenylate' else 'acyl-P'})"
+              for r in order]
+    bar.barh(range(len(order)), [r['near_attack_fraction'] for r in order],
+             color=[_route_colour(r['route']) for r in order])
+    bar.set_yticks(range(len(order))); bar.set_yticklabels(labels)
+    bar.set_xlabel('HMDA near-attack fraction'); bar.set_xlim(0, 1)
+    bar.set_title('Fraction of poses in near-attack')
+
+    # Near-attack region: d < 3.5 A and Burgi-Dunitz angle in [90, 120] deg.
+    scat.axhspan(BD_LOW, BD_HIGH, xmax=(NEAR_A - 2.5) / (9 - 2.5), color='#CCCCCC', alpha=0.5,
+                 zorder=0)
+    scat.axvline(NEAR_A, color='#888888', ls='--', lw=1.5, zorder=1)
+    for r in rows:
+        d, a = poses[r['name']]
+        scat.scatter(d, a, s=26, alpha=0.5, color=_route_colour(r['route']),
+                     edgecolor='none', zorder=2)
+    for r in rows:  # weighted summary marker per enzyme
+        scat.scatter(r['weighted_distance_A'], r['mean_BurgiDunitz_deg'], s=150, marker='D',
+                     color=_route_colour(r['route']), edgecolor='black', lw=1.2, zorder=3)
+    scat.set_xlabel('Amine N - acyl C distance (Å)')
+    scat.set_ylabel('Bürgi–Dunitz angle N···C=O (°)')
+    scat.set_xlim(2.5, 9); scat.set_ylim(0, 180)
+    scat.set_title('All poses (●) and weighted summary (◆)')
+    handles = [plt.Line2D([], [], marker='o', ls='', color='#0072B2'),
+               plt.Line2D([], [], marker='o', ls='', color='#D55E00'),
+               plt.Rectangle((0, 0), 1, 1, color='#CCCCCC', alpha=0.7)]
+    scat.legend(handles, ['acyl-adenylate', 'acyl-phosphate', 'near-attack region'],
+                loc='upper right', fontsize=14)
+    fig.tight_layout(); fig.savefig(path, bbox_inches='tight'); plt.close(fig)
+
+
+def facet_figure(rows, poses, path):
+    """Small-multiples: each enzyme's 50-pose cloud in the distance-angle plane."""
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
     plt.rcParams.update({'font.size': 18, 'savefig.dpi': 300, 'figure.dpi': 300})
-    order = sorted(rows, key=lambda r: r['near_attack_fraction'])
-    labels = [f"{r['accession']} ({'AMP' if r['route'] == 'acyl_adenylate' else 'P'})" for r in order]
-    values = [r['near_attack_fraction'] for r in order]
-    colours = ['#0072B2' if r['route'] == 'acyl_adenylate' else '#D55E00' for r in order]
-    fig, ax = plt.subplots(figsize=(8.5, 0.55 * len(order) + 2))
-    ax.barh(range(len(order)), values, color=colours)
-    ax.set_yticks(range(len(order))); ax.set_yticklabels(labels)
-    ax.set_xlabel('HMDA near-attack fraction'); ax.set_xlim(0, 1)
-    handles = [plt.Rectangle((0, 0), 1, 1, color='#0072B2'),
-               plt.Rectangle((0, 0), 1, 1, color='#D55E00')]
-    ax.legend(handles, ['acyl-adenylate', 'acyl-phosphate'], loc='lower right')
+    ncol = 4
+    nrow = -(-len(rows) // ncol)
+    fig, axes = plt.subplots(nrow, ncol, figsize=(4.2 * ncol, 3.6 * nrow),
+                             sharex=True, sharey=True)
+    axes = axes.ravel()
+    for ax, r in zip(axes, rows):
+        d, a = poses[r['name']]
+        ax.axhspan(BD_LOW, BD_HIGH, xmax=(NEAR_A - 2.5) / (9 - 2.5), color='#CCCCCC', alpha=0.5)
+        ax.axvline(NEAR_A, color='#888888', ls='--', lw=1.2)
+        ax.scatter(d, a, s=30, alpha=0.6, color=_route_colour(r['route']), edgecolor='none')
+        ax.set_title(f"{r['accession']}  ({r['near_attack_fraction']*100:.0f}%)", fontsize=18)
+        ax.set_xlim(2.5, 9); ax.set_ylim(0, 180)
+    for ax in axes[len(rows):]:
+        ax.axis('off')
+    fig.supxlabel('Amine N - acyl C distance (Å)', fontsize=18)
+    fig.supylabel('Bürgi–Dunitz angle (°)', fontsize=18)
     fig.tight_layout(); fig.savefig(path, bbox_inches='tight'); plt.close(fig)
 
 

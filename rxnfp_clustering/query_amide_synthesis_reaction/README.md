@@ -8,6 +8,8 @@ The current panel contains **ten chemically selected ModelSEED reactions**. DRFP
 - [Cofold geometry plot](results/top10_cofold/activation_geometry.png)
 - [Geometry values](results/top10_cofold/activation_geometry.tsv)
 - [Verified structure coverage](results/top10_cofold/final_verification.json)
+- [Per-mapping evidence consolidation (reliability-weighted)](results/top10_mapping/panel_evidence_consolidation.tsv)
+- [Step-2 HMDA near-attack accommodation](results/top10_cofold_step2/step2_near_attack.tsv)
 
 The ten pools contain **1,064 candidate identifiers**, **1,045 exact sequences** and **834 representatives at 95% identity**. Matching reaction annotations cover 12 reference proteins across nine reactions. Glycylglycine formation has no established exact assignment; BacD/YwfE is an explicitly inferred related-reaction candidate. MurE’s symbolic Rhea participant and missing stereochemistry in citrate-derived entries remain qualified.
 
@@ -46,3 +48,38 @@ python -m amide_synthesis evaluate current-panel
 Paths without a package prefix in this table are relative to `amide_synthesis/`. Configuration, raw responses, sequences, cluster membership, commands and hashes remain available. Inference is never promoted to an exact native-reaction assignment.
 
 Historical five-reaction selections, the separate 50-protein campaign and superseded scripts/reports are retained with provenance. Their outputs must not be presented as results for the current ten-reaction panel. Existing structural campaigns remain active dependencies where their verified models were reused.
+
+## Evidence and limitations
+
+State these plainly wherever the panel or its ranking is presented.
+
+**Mapping is multi-source where possible, and flagged where not.** Every exact
+mapping rests on a UniProt reaction annotation and is corroborated by independent
+axes — primary ECO:0000269 literature, independent curated reaction databases, and
+EC-class agreement. Sources are not equally reliable: Rhea (expert-curated,
+ChEBI-structured) ranks above MetaCyc/KEGG/EcoCyc, above genome-scale models, above
+the MetaNetX aggregator, which is the least reliable and never counts as
+corroboration. All twelve exact mappings are multi-source; `rxn05123` is strongest
+(four curated databases). BacD/YwfE for glycylglycine (`rxn09897`) is
+`inference_only`: it is a well-characterised dipeptide ligase for its *own* reaction
+but has no exact native assignment to the target, and must not be presented as one.
+See the [evidence consolidation](results/top10_mapping/panel_evidence_consolidation.tsv).
+
+**Step 1 models acid activation only.** The activation-geometry ranking describes how
+well adipate is positioned for adenylylation/phosphorylation, and is the geometry that
+discriminated active amide synthetases on the experimental panel. It says nothing on
+its own about amide-bond formation.
+
+**Step 2 tests amine accommodation, not activity.** The step-2 cofolds place the
+activated acyl intermediate (acyl-adenylate + 1 Mg, or acyl-phosphate + ADP + 2 Mg,
+per the enzyme's mechanism) with HMDA carrying one neutral nucleophilic amine, to ask
+whether the C6 diamine can reach a near-attack geometry — relevant because native
+amine-role substrates here span ammonia-sized to large polyamines. Five of thirteen
+enzymes present an amine for near-attack. This is a steric-accommodation readout, not
+an activity ranking: step-2 intermediate-state geometry was non-predictive of measured
+activity on the experimental panel.
+
+**Boltz-2 gives geometry, not affinity, on a non-native substrate.** A favourable pose
+is not evidence that adipate/HMDA binds or turns over. Composition and geometric
+descriptors do not establish native assignment, substrate promiscuity, completed
+amidation, biological assembly or yield; those require experimental testing.
