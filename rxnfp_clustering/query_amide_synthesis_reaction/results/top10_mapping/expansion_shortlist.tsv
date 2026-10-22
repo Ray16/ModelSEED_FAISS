@@ -1,0 +1,835 @@
+rxn_id	accession	organism	expression_tier	identity_to_ref	reference	reviewed	fragment	length	mapping_route
+rxn05123	A0A4U9DBR3	Klebsiella terrigena	easy	0.932	PuuA (P78061)	False	False	473	ec_inferred
+rxn05123	A0A0X4EPR4	Enterobacter genomosp. O	easy	0.919	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	D2TK08	Citrobacter rodentium (strain ICC168)	easy	0.919	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A5P2MAQ3	Citrobacter werkmanii	easy	0.909	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A8B4U113	Klebsiella quasivariicola	easy	0.907	PuuA (P78061)	False	False	473	ec_inferred
+rxn05123	E3G155	Enterobacter lignolyticus (strain SCF1)	easy	0.9	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A1G5LN42	Serratia nematodiphila	easy	0.824	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0ABR4U7E9	Serratia grimesii	easy	0.816	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A1G5J9Y1	Serratia nematodiphila	easy	0.814	PuuA (P78061)	False	False	442	name_and_homology_inferred
+rxn05123	A0A240C636	Serratia ficaria	easy	0.811	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A1I3WZA5	Candidatus Pantoea symbiotica	easy	0.736	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0ABN6DMC6	Erwinia rhapontici	easy	0.736	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A014NMY0	Erwinia mallotivora	easy	0.734	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0ACE3JHK4	Pantoea ananatis LMG 5342	easy	0.734	PuuA (P78061)	False	False	471	ec_inferred
+rxn05123	A0A0A4ADE9	Erwinia typographi	easy	0.732	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A0U3JSK9	Pantoea vagans	easy	0.73	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A1I4X618	Candidatus Pantoea varia	easy	0.73	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A443IBD9	[Pantoea] beijingensis	easy	0.71	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	N9TYM5	Aeromonas diversa CDC 2478-85	easy	0.655	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A240AUW5	Serratia ficaria	easy	0.511	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1G5DPP3	Serratia nematodiphila	easy	0.509	PuuA (P78061)	False	False	456	name_and_homology_inferred
+rxn05123	A0A090RTN3	Vibrio maritimus	easy	0.469	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	U3BGV4	Vibrio proteolyticus NBRC 13287	easy	0.469	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A135I7X2	Enterovibrio coralii	easy	0.467	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1H5TDL1	Vibrio hangzhouensis	easy	0.463	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1I1RR30	Pseudomonas straminea	easy	0.462	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0ABM8ZNI9	Vibrio hippocampi	easy	0.462	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0ACD7V949	Acinetobacter guillouiae	easy	0.462	PuuA (P78061)	False	False	465	name_and_homology_inferred
+rxn05123	A0A1E5C0C2	Enterovibrio norvegicus FF-454	easy	0.461	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1H1UZ79	Pseudomonas oryzae	easy	0.46	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1I1UBW8	Pseudomonas straminea	easy	0.46	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1G7XVY2	Vibrio xiamenensis	easy	0.458	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A240EK40	Vibrio thalassae	easy	0.456	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1H2F2A8	Geopseudomonas guangdongensis	easy	0.455	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1H2HL67	Pseudomonas pohangensis	easy	0.453	PuuA (P78061)	False	False	485	name_and_homology_inferred
+rxn05123	A0A239BB10	Pseudomonas japonica	easy	0.453	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A383RLN8	Pseudomonas reidholzensis	easy	0.453	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	A0ABD7KAS3	Enterobacter roggenkampii	easy	0.453	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0ABY1BNJ4	Pseudomonas cuatrocienegasensis	easy	0.453	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A089YB39	Pseudomonas cremoricolorata	easy	0.452	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A0B2D755	Pseudomonas flexibilis	easy	0.452	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A0A1YLA6	Pseudomonas taeanensis MS-3	easy	0.451	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A0M0HR61	Vibrio nereis	easy	0.451	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0ABX6CH20	Acinetobacter baumannii (strain ATCC 19606 / DSM 30007 / JCM 6841 / CCUG 19606 / CIP 70.34 / NBRC 109757 / NCIMB 12457 / NCTC 12156 / 81)	easy	0.451	PuuA (P78061)	False	False	474	ec_inferred
+rxn05123	C9QEZ4	Vibrio orientalis CIP 102891 = ATCC 33934	easy	0.451	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A1H1XIG6	Pseudomonas oryzae	easy	0.45	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A2U3MX88	Acinetobacter stercoris	easy	0.45	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A239IM01	Pseudomonas segetis	easy	0.449	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0ABR7S6N6	Aquipseudomonas alcaligenes	easy	0.449	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	C9QIP2	Vibrio orientalis CIP 102891 = ATCC 33934	easy	0.449	PuuA (P78061)	False	False	464	ec_inferred
+rxn05123	A0A0Q2QXY4	Vibrio furnissii	easy	0.448	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1G6J6H6	Ectopseudomonas chengduensis	easy	0.447	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1G9GKM0	Pseudomonas indica	easy	0.447	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A240EH46	Vibrio thalassae	easy	0.447	PuuA (P78061)	False	False	464	ec_inferred
+rxn05123	Q88C84	Pseudomonas putida (strain ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440)	easy	0.447	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	A0A024HPU7	Pseudomonas knackmussii (strain DSM 6978 / CCUG 54928 / LMG 23759 / B13)	easy	0.445	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A0J6G8B3	Pseudomonas deceptionensis	easy	0.445	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A066UKS0	Vibrio fortis	easy	0.444	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1I6TD82	Acinetobacter bohemicus	easy	0.444	PuuA (P78061)	False	False	517	name_and_homology_inferred
+rxn05123	A0A395R1N5	Pseudomonas abyssi	easy	0.444	PuuA (P78061)	False	False	473	name_and_homology_inferred
+rxn05123	A0A0F4NF80	Vibrio galatheae	easy	0.443	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1H6B059	Vibrio hangzhouensis	easy	0.443	PuuA (P78061)	False	False	479	name_and_homology_inferred
+rxn05123	A0A1I3G0I2	Pseudomonas guineae	easy	0.443	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0AAN0Y5F7	Vibrio natriegens NBRC 15636 = ATCC 14048 = DSM 759	easy	0.441	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A0M0I5S8	Vibrio hepatarius	easy	0.44	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1G7WX91	Vibrio xiamenensis	easy	0.44	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A2W5EPT8	Pseudomonas kuykendallii	easy	0.44	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A562Q6F9	Pseudomonas duriflava	easy	0.44	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1H3ML88	Acinetobacter kyonggiensis	easy	0.439	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	S3N6N5	Acinetobacter rudis CIP 110305	easy	0.438	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0AAN0Y2A3	Vibrio natriegens NBRC 15636 = ATCC 14048 = DSM 759	easy	0.437	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0ABM9A4M1	Vibrio marisflavi CECT 7928	easy	0.437	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A1H4WPS2	Pseudomonas anguilliseptica	easy	0.436	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	E8LXA5	Vibrio brasiliensis LMG 20546	easy	0.436	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A085VGW8	Pseudomonas syringae	easy	0.434	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1H4Q954	Pseudomonas saponiphila	easy	0.434	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A4R1XIK5	Acinetobacter calcoaceticus	easy	0.43	PuuA (P78061)	False	False	483	name_and_homology_inferred
+rxn05123	A0A4R3JFF6	Varunaivibrio sulfuroxidans	easy	0.425	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	R0E742	Caulobacter vibrioides OR37	easy	0.403	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0AB37Z6R7	Pseudomonas peli	easy	0.391	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1H4V9Q1	Pseudomonas anguilliseptica	easy	0.39	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1I5YJ45	Ectopseudomonas toyotomiensis	easy	0.389	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	S6AQ74	Metapseudomonas resinovorans NBRC 106553	easy	0.389	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A1H2MLB2	Pseudomonas sihuiensis	easy	0.388	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1I1ZKZ6	Pseudomonas straminea	easy	0.388	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1I3Q6H1	Phytopseudomonas argentinensis	easy	0.386	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1I5V252	Pseudomonas borbori	easy	0.386	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1G6I6F5	Ectopseudomonas chengduensis	easy	0.385	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1I3FPV0	Pseudomonas guineae	easy	0.385	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	Q88KW1	Pseudomonas putida (strain ATCC 47054 / DSM 6125 / CFBP 8728 / NCIMB 11950 / KT2440)	easy	0.385	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1H0TYY1	Ectopseudomonas guguanensis	easy	0.384	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A239IM93	Pseudomonas segetis	easy	0.384	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	S6ANU0	Metapseudomonas resinovorans NBRC 106553	easy	0.384	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A1I3JTF9	Phytopseudomonas argentinensis	easy	0.383	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A239MTG8	Pseudomonas delhiensis	easy	0.383	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A0M9GDX2	Pseudomonas asplenii	easy	0.382	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1H1Y3R8	Pseudomonas oryzae	easy	0.382	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A383RRT6	Pseudomonas reidholzensis	easy	0.382	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	A0A1H3FIV4	Pseudomonas kuykendallii	easy	0.381	PuuA (P78061)	False	False	487	name_and_homology_inferred
+rxn05123	A0A1G8FN43	Pseudomonas panipatensis	easy	0.38	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1H0D0W3	Pseudomonas antarctica	easy	0.38	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1H1YCD8	Pseudomonas oryzae	easy	0.38	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	U3BC25	Aquipseudomonas alcaligenes (strain ATCC 14909 / DSM 50342 / CCUG 1425 / JCM 20561 / NBRC 14159 / NCIMB 9945 / NCTC 10367 / 1577)	easy	0.38	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1G7S5S4	Pseudomonas abietaniphila	easy	0.378	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1H0WZS0	Ectopseudomonas guguanensis	easy	0.378	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1H2FCP0	Geopseudomonas guangdongensis	easy	0.376	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1I7BLU5	Pseudovibrio denitrificans	easy	0.376	PuuA (P78061)	False	False	465	name_and_homology_inferred
+rxn05123	A0A165SWV1	Pseudovibrio axinellae	easy	0.375	PuuA (P78061)	False	False	465	ec_inferred
+rxn05123	A0A1H1DTG4	Pseudomonas moorei	easy	0.375	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1H4PZD9	Pseudomonas saponiphila	easy	0.375	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0ABX4PU95	Pseudomonas baetica	easy	0.375	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A0R2ZE91	Pseudomonas trivialis	easy	0.374	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1I5R6H1	Pseudomonas borbori	easy	0.374	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	S6BAZ0	Metapseudomonas resinovorans NBRC 106553	easy	0.374	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	U2ZNY2	Aquipseudomonas alcaligenes (strain ATCC 14909 / DSM 50342 / CCUG 1425 / JCM 20561 / NBRC 14159 / NCIMB 9945 / NCTC 10367 / 1577)	easy	0.374	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1L7NHW2	Pseudomonas putida	easy	0.372	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A383RYM7	Pseudomonas reidholzensis	easy	0.372	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A1H0C2B5	Pseudomonas antarctica	easy	0.371	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	F6AB97	Pseudomonas fulva (strain 12-X)	easy	0.371	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	A0A1I4FE80	Pseudovibrio ascidiaceicola	easy	0.37	PuuA (P78061)	False	False	465	name_and_homology_inferred
+rxn05123	A0A239FPC4	Pseudomonas japonica	easy	0.369	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A383S1G2	Pseudomonas reidholzensis	easy	0.369	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1H2HW44	Pseudomonas pohangensis	easy	0.367	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A380ST99	Pseudomonas wadenswilerensis	easy	0.367	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A380T3T0	Pseudomonas wadenswilerensis	easy	0.367	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A1C2EB64	Pseudomonas graminis	easy	0.366	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A239FMM4	Pseudomonas segetis	easy	0.366	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A380T1S2	Pseudomonas wadenswilerensis	easy	0.366	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0ABM8ZMT2	Vibrio hippocampi	easy	0.362	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	F6AG09	Pseudomonas fulva (strain 12-X)	easy	0.356	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A240EHL0	Vibrio thalassae	easy	0.351	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A2C9EMK7	Pseudomonas protegens (strain DSM 19095 / LMG 27888 / CFBP 6595 / CHA0)	easy	0.349	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	U3BAD5	Vibrio proteolyticus NBRC 13287	easy	0.348	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	S6BK97	Metapseudomonas resinovorans NBRC 106553	easy	0.344	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A380T3H6	Pseudomonas wadenswilerensis	easy	0.336	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A165U283	Pseudovibrio axinellae	easy	0.335	PuuA (P78061)	False	False	466	ec_inferred
+rxn05123	A0A383RXL0	Pseudomonas reidholzensis	easy	0.334	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	T2GAH2	Megalodesulfovibrio gigas (strain ATCC 19364 / DSM 1382 / NCIMB 9332 / VKM B-1759)	easy	0.328	GlnA2sc (Q9RDS6)	False	False	458	name_and_homology_inferred
+rxn05123	U2ZIR9	Aquipseudomonas alcaligenes (strain ATCC 14909 / DSM 50342 / CCUG 1425 / JCM 20561 / NBRC 14159 / NCIMB 9945 / NCTC 10367 / 1577)	easy	0.316	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	F0JDE4	Pseudodesulfovibrio mercurii	easy	0.307	GlnA2sc (Q9RDS6)	False	False	458	name_and_homology_inferred
+rxn05123	P78061	Escherichia coli (strain K12)	easy	0.0	 ()	True	False	472	reaction_annotation
+rxn05123	A0AB38G0C4	Yokenella regensburgei	moderate	0.907	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A0L0GXC7	Trabulsiella odontotermitis	moderate	0.898	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A4R6ECZ2	Scandinavium goeteborgense	moderate	0.894	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A089Q6S0	Cedecea neteri	moderate	0.892	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A1B7HMU2	Buttiauxella noackiae ATCC 51607	moderate	0.877	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A0F0W166	Pluralibacter gergoviae	moderate	0.858	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A0J8Y9K5	Franconibacter pulveris	moderate	0.841	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A097R0K4	Hafnia alvei FB1	moderate	0.839	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0AAC8VPR1	Cronobacter universalis NCTC 9529	moderate	0.831	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	W0LEW4	Chania multitudinisentens RB-25	moderate	0.826	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	W0L4H7	Chania multitudinisentens RB-25	moderate	0.792	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A085G9T0	Ewingella americana (strain ATCC 33852 / DSM 4580 / CCUG 14506 / JCM 5911 / LMG 7869 / NCTC 12157 / CDC 1468-78)	moderate	0.746	PuuA (P78061)	False	False	477	ec_inferred
+rxn05123	A0ABQ1G0G7	Hafnia psychrotolerans	moderate	0.746	PuuA (P78061)	False	False	477	name_and_homology_inferred
+rxn05123	A0A6M8UJ21	Paramixta manurensis	moderate	0.745	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A0U5L744	Duffyella gerundensis	moderate	0.736	PuuA (P78061)	False	False	471	ec_inferred
+rxn05123	A0ABS4P483	Winslowiella toletana	moderate	0.736	PuuA (P78061)	False	False	471	ec_inferred
+rxn05123	A0A0L7T8E9	Winslowiella iniecta	moderate	0.726	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A6P1Q138	Mixta intestinalis	moderate	0.719	PuuA (P78061)	False	False	471	ec_inferred
+rxn05123	A0A1J4QID9	Oceanisphaera psychrotolerans	moderate	0.701	PuuA (P78061)	False	False	469	name_and_homology_inferred
+rxn05123	A0A235CM96	Oceanimonas baumannii	moderate	0.692	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A291HSA8	Zobellella denitrificans	moderate	0.692	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0ABQ1IC51	Oceanisphaera marina	moderate	0.681	PuuA (P78061)	False	False	474	name_and_homology_inferred
+rxn05123	A0A4R1NRG5	Sodalis ligni	moderate	0.674	PuuA (P78061)	False	False	476	name_and_homology_inferred
+rxn05123	W0HWM9	Sodalis praecaptivus	moderate	0.61	PuuA (P78061)	False	False	472	name_and_homology_inferred
+rxn05123	A0A081K9W1	Endozoicomonas elysicola	moderate	0.564	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A081N5A0	Endozoicomonas montiporae	moderate	0.542	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0ABV2SDL7	Endozoicomonas lisbonensis	moderate	0.529	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A1A9EYS4	Marinobacterium aestuarii	moderate	0.501	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A231MW26	Zobellella denitrificans	moderate	0.498	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A1H7QAK9	Colwellia chukchiensis	moderate	0.496	PuuA (P78061)	False	False	456	name_and_homology_inferred
+rxn05123	A0A1J4QGD3	Oceanisphaera psychrotolerans	moderate	0.483	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A1G9NG73	Franzmannia pantelleriensis	moderate	0.48	PuuA (P78061)	False	False	486	name_and_homology_inferred
+rxn05123	A0A099KX19	Colwellia psychrerythraea	moderate	0.478	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A420WVJ9	Kushneria sinocarnis	moderate	0.478	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A1X7AR65	Parendozoicomonas haliclonae	moderate	0.471	PuuA (P78061)	False	False	467	ec_inferred
+rxn05123	A0A1K1U2T4	Marinospirillum alkaliphilum DSM 21637	moderate	0.468	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1M7FT66	Vreelandella subglaciescola	moderate	0.468	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A139SPJ5	Ventosimonas gracilis	moderate	0.467	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A7U7I768	Zestomonas carbonaria	moderate	0.465	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A1E2V9K3	Terasakiispira papahanaumokuakeensis	moderate	0.464	PuuA (P78061)	False	False	469	name_and_homology_inferred
+rxn05123	A0A291HT37	Zobellella denitrificans	moderate	0.464	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0ABD5QAR9	Saliphagus infecundisoli	moderate	0.464	GlnA2hf (I3R584)	False	False	448	ec_inferred
+rxn05123	E1SVJ9	Ferrimonas balearica (strain DSM 9799 / CCM 4581 / KCTC 23876 / PAT)	moderate	0.461	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	E6WUC9	Pseudoxanthomonas suwonensis (strain 11-1)	moderate	0.46	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	C9Y2I2	Cronobacter turicensis (strain DSM 18703 / CCUG 55852 / LMG 23827 / z3032)	moderate	0.457	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A0U3AYN2	Lacimicrobium alkaliphilum	moderate	0.456	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1H5V3D7	Marinobacterium lutimaris	moderate	0.456	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A317MQP8	Plasticicumulans acidivorans	moderate	0.455	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A4R6UUV4	Permianibacter aggregans	moderate	0.452	PuuA (P78061)	False	False	456	name_and_homology_inferred
+rxn05123	A0A1I6HJ95	Marinobacter gudaonensis	moderate	0.451	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A3D9E0K2	Kushneria indalinina DSM 14324	moderate	0.451	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A0J7JCL9	Marinobacter subterrani	moderate	0.45	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A1M5YSZ6	Ferrimonas marina	moderate	0.45	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A0J1HA58	Photobacterium ganghwense	moderate	0.449	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0ABY1W768	Cronobacter universalis NCTC 9529	moderate	0.449	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	B0RRU0	Xanthomonas campestris pv. campestris (strain B100)	moderate	0.448	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	A0A128EUD9	Grimontia marina	moderate	0.447	PuuA (P78061)	False	False	469	ec_inferred
+rxn05123	A0A1I4F1K5	Azotobacter beijerinckii	moderate	0.447	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	B6IMX3	Rhodospirillum centenum (strain ATCC 51521 / SW)	moderate	0.447	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1I1M8T7	Kushneria avicenniae	moderate	0.445	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0ABY0ZMG4	Stutzerimonas xanthomarina	moderate	0.443	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1I0DN55	Marinobacter segnicrescens	moderate	0.442	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A0H2MBY6	Kiloniella spongiae	moderate	0.441	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0ABN4IDW9	Cronobacter condimenti 1330	moderate	0.441	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1I6IDC1	Marinobacter daqiaonensis	moderate	0.44	PuuA (P78061)	False	False	454	name_and_homology_inferred
+rxn05123	A0A562I1R8	Azomonas agilis	moderate	0.44	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A286DGE0	Pseudoxanthomonas wuyuanensis	moderate	0.439	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A0R0AUV4	Stenotrophomonas panacihumi	moderate	0.438	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A0R0CVT2	Pseudoxanthomonas dokdonensis	moderate	0.438	PuuA (P78061)	False	False	450	name_and_homology_inferred
+rxn05123	W9UQ50	Nitrincola nitratireducens	moderate	0.438	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A8D4C8R1	Stutzerimonas balearica DSM 6083	moderate	0.436	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1M6UBC4	Marinobacter antarcticus	moderate	0.435	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A0K0GJQ5	Xanthomonas oryzae pv. oryzae (strain PXO99A)	moderate	0.434	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A0G8WLK7	Xanthomonas perforans	moderate	0.432	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1T5LRE0	Pseudoxanthomonas indica	moderate	0.431	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A1H6AT79	Marinobacterium lutimaris	moderate	0.43	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0ABT3DT88	Xanthomonas sacchari	moderate	0.429	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	A0A6V7DVU3	Xanthomonas hortorum pv. vitians	moderate	0.428	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1Y6H656	Xanthomonas fragariae	moderate	0.427	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	A0A0E3UM68	Pseudoxanthomonas suwonensis	moderate	0.426	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A4R2L5F4	Plasticicumulans lactativorans	moderate	0.425	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1A8TPP0	Marinomonas spartinae	moderate	0.424	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1N7K6T7	Insolitispirillum peregrinum	moderate	0.424	PuuA (P78061)	False	False	494	name_and_homology_inferred
+rxn05123	A0A2S7CPD3	Xanthomonas arboricola pv. corylina	moderate	0.423	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A4R2LCZ7	Plasticicumulans lactativorans	moderate	0.423	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A1N6NCG3	Marinobacterium stanieri	moderate	0.422	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1Y5RPD4	Oceanibacterium hippocampi	moderate	0.422	PuuA (P78061)	False	False	467	ec_inferred
+rxn05123	A0A3D9HKC5	Aestuariispira insulae	moderate	0.421	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A212PW17	Rhodoblastus acidophilus	moderate	0.419	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0ABM9AA17	Sinobacterium norvegicum	moderate	0.419	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	A0A1Y6B352	Tistlia consotensis USBA 355	moderate	0.418	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A286GHF3	Caenispirillum bisanense	moderate	0.418	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A3M0A898	Umboniibacter marinipuniceus	moderate	0.418	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A0K6IL00	Marinomonas fungiae	moderate	0.417	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0AAX2EWK1	Kosakonia radicincitans	moderate	0.416	PuuA (P78061)	False	False	467	name_and_homology_inferred
+rxn05123	A0A4R6RDP4	Oharaeibacter diazotrophicus	moderate	0.413	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A1N7JAI6	Neptunomonas antarctica	moderate	0.412	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A4R3ME26	Tepidamorphus gemmatus	moderate	0.412	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A316CW87	Pseudaminobacter salicylatoxidans	moderate	0.411	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A3E0DTE5	Marinomonas pollencensis	moderate	0.411	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1M5IQ64	Marinomonas polaris DSM 16579	moderate	0.41	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1C4ATP5	Kosakonia oryzendophytica	moderate	0.409	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A1G8QS83	Mesorhizobium muleiense	moderate	0.408	PuuA (P78061)	False	False	473	name_and_homology_inferred
+rxn05123	A0A4R6RI60	Oharaeibacter diazotrophicus	moderate	0.408	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A4R2LTK6	Plasticicumulans lactativorans	moderate	0.407	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A1H9D3S4	Amphritea atlantica	moderate	0.406	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1Y5RBF6	Palleronia marisminoris	moderate	0.406	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A317MRL4	Plasticicumulans acidivorans	moderate	0.406	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A4R3M2B5	Tepidamorphus gemmatus	moderate	0.404	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A4V3DEU6	Dongia mobilis	moderate	0.404	PuuA (P78061)	False	False	467	name_and_homology_inferred
+rxn05123	E8RRL0	Asticcacaulis excentricus (strain ATCC 15261 / DSM 4724 / KCTC 12464 / NCIMB 9791 / VKM B-1370 / CB 48)	moderate	0.404	PuuA (P78061)	False	False	464	ec_inferred
+rxn05123	A0A2N0HKB7	Novosphingobium kunmingense	moderate	0.403	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A8E2WBX6	Rhizobium loti	moderate	0.403	PuuA (P78061)	False	False	468	name_and_homology_inferred
+rxn05123	A0A011U9K2	Aquamicrobium defluvii	moderate	0.402	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1M7ZL17	Pseudoxanthobacter soli DSM 19599	moderate	0.401	PuuA (P78061)	False	False	470	name_and_homology_inferred
+rxn05123	A0A5S9NLF9	Starkeya nomas	moderate	0.401	PuuA (P78061)	False	False	469	ec_inferred
+rxn05123	A0A212PWH1	Rhodoblastus acidophilus	moderate	0.4	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A286G2J6	Caenispirillum bisanense	moderate	0.4	PuuA (P78061)	False	False	456	name_and_homology_inferred
+rxn05123	A0A375A6C4	Dickeya aquatica	moderate	0.4	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0ABY5MMX4	Nitratireductor thuwali	moderate	0.4	PuuA (P78061)	False	False	489	ec_inferred
+rxn05123	A0A1G4TLX6	Ancylobacter rudongensis	moderate	0.399	PuuA (P78061)	False	False	469	name_and_homology_inferred
+rxn05123	A0A1H8AJ19	Palleronia pelagia	moderate	0.399	PuuA (P78061)	False	False	450	name_and_homology_inferred
+rxn05123	A0A1I5DJ95	Cohaesibacter marisflavi	moderate	0.399	PuuA (P78061)	False	False	466	name_and_homology_inferred
+rxn05123	A0A285TAK9	Stappia indica	moderate	0.399	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A316BYZ7	Pseudaminobacter salicylatoxidans	moderate	0.399	PuuA (P78061)	False	False	496	name_and_homology_inferred
+rxn05123	A0A3S4MGV1	Cedecea lapagei	moderate	0.397	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0AAD1G243	Sphingosinicella microcystinivorans	moderate	0.397	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A1C3JRQ1	Marinomonas gallaica	moderate	0.396	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A2T5VF99	Breoghania corrubedonensis	moderate	0.396	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	F4QU38	Asticcacaulis biprosthecium C19	moderate	0.396	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A285U1V6	Rhizobium subbaraonis	moderate	0.395	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A318UY45	Marinomonas alcarazii	moderate	0.394	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A4R2CLB2	Shinella granuli	moderate	0.394	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A4R6XB37	Marinomonas communis	moderate	0.394	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A368YN97	Paracoccus lutimaris	moderate	0.393	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A4R6WJ98	Dongia mobilis	moderate	0.393	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1X7PPL5	Mesorhizobium australicum	moderate	0.392	PuuA (P78061)	False	False	466	name_and_homology_inferred
+rxn05123	A0A285NGF8	Cohaesibacter gelatinilyticus	moderate	0.392	PuuA (P78061)	False	False	466	name_and_homology_inferred
+rxn05123	A0A2R8B075	Pseudoprimorskyibacter insulae	moderate	0.392	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	D7A6A9	Ancylobacter novellus (strain ATCC 8093 / DSM 506 / JCM 20403 / CCM 1077 / IAM 12100 / NBRC 12443 / NCIMB 10456)	moderate	0.392	PuuA (P78061)	False	False	469	ec_inferred
+rxn05123	A0A2C9D3N8	Hartmannibacter diazotrophicus	moderate	0.391	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A1G7FVG2	Limimaricola pyoseonensis	moderate	0.39	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1H4M516	Nitratireductor aquibiodomus	moderate	0.39	PuuA (P78061)	False	False	488	name_and_homology_inferred
+rxn05123	A0A1I7NF67	Hyphomicrobium facile	moderate	0.39	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A4R2D1R9	Shinella granuli	moderate	0.39	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A6I7HNU0	Ciceribacter lividus	moderate	0.39	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A1G4SAN4	Asticcacaulis taihuensis	moderate	0.389	PuuA (P78061)	False	False	480	name_and_homology_inferred
+rxn05123	A0A3P5XHL7	Pseudogemmobacter humi	moderate	0.389	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A4R6MLL1	Marinomonas balearica	moderate	0.389	PuuA (P78061)	False	False	477	name_and_homology_inferred
+rxn05123	A0A561QT17	Neorhizobium alkalisoli	moderate	0.389	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0ABM7D0K6	Shewanella khirikhana	moderate	0.389	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1V0RS40	Roseovarius mucosus	moderate	0.388	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1X6ZC34	Limimaricola soesokkakensis	moderate	0.388	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A2T6B6F3	Gemmobacter caeni	moderate	0.388	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A1C3TZB3	Martinezella lusitana	moderate	0.387	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1I7BI88	Sedimentitalea nanhaiensis	moderate	0.387	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1N7MMU2	Gemmobacter megaterium	moderate	0.387	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A4R3M4Y3	Aquabacter spiritensis	moderate	0.387	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A6I6N0F1	Terricaulis silvestris	moderate	0.387	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A0D0QBD2	Wenxinia marina DSM 24838	moderate	0.386	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1M4VAC1	Kaistia soli DSM 19436	moderate	0.386	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A1M4ZS92	Modicisalibacter ilicicola DSM 19980	moderate	0.386	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A239PR55	Paracoccus seriniphilus	moderate	0.386	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A2R8A8G4	Pontivivens insulae	moderate	0.386	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A562T2K3	Roseibium hamelinense	moderate	0.386	PuuA (P78061)	False	False	490	name_and_homology_inferred
+rxn05123	A0A1E3GXJ2	Methylobrevis pamukkalensis	moderate	0.385	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A1L3I376	Phaeobacter porticola	moderate	0.385	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A2R8AI45	Aliiroseovarius pelagivivens	moderate	0.385	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	K2K324	Celeribacter baekdonensis B30	moderate	0.385	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A081BEU4	Tepidicaulis marinus	moderate	0.384	PuuA (P78061)	False	False	456	name_and_homology_inferred
+rxn05123	A0A1H8A5G4	Pseudorhodobacter antarcticus	moderate	0.384	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A2R8BWG2	Palleronia abyssalis	moderate	0.384	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A2Z2NQE8	Granulosicoccus antarcticus IMCC3135	moderate	0.384	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0ABY3ZMC6	Sulfitobacter dubius	moderate	0.384	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1N7F7I0	Roseovarius nanhaiticus	moderate	0.383	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1Y5R844	Pacificibacter marinus	moderate	0.383	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A7U7ELP2	Zestomonas carbonaria	moderate	0.383	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A068SMW0	Neorhizobium galegae bv. orientalis str. HAMBI 540	moderate	0.382	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A0H5D4J9	Phaeobacter italicus	moderate	0.382	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A0M6ZI94	Roseibium album	moderate	0.382	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A0M7BB41	Jannaschia seosinensis	moderate	0.382	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A1H9WD63	Tranquillimonas rosea	moderate	0.382	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A561R2V2	Neorhizobium alkalisoli	moderate	0.382	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	Q92MV2	Rhizobium meliloti (strain 1021)	moderate	0.382	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1C3UGB6	Martinezella hainanensis	moderate	0.381	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1H8J1K6	Loktanella fryxellensis	moderate	0.381	PuuA (P78061)	False	False	471	name_and_homology_inferred
+rxn05123	A0A1I1MJJ0	Pseudooceanicola nitratireducens	moderate	0.381	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A2C9D2I2	Hartmannibacter diazotrophicus	moderate	0.381	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A2S8S4N7	Albidovulum denitrificans	moderate	0.381	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A2T5BB38	Mycoplana dimorpha	moderate	0.381	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0ACH1RHJ1	Shinella zoogloeoides	moderate	0.381	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A1T4XES4	Thiothrix eikelboomii	moderate	0.38	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1Y6FTK4	Sphingopyxis terrae subsp. ummariensis	moderate	0.38	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A285U7P2	Rhizobium subbaraonis	moderate	0.38	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A2T0RRK0	Aliiruegeria haliotis	moderate	0.38	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A6J5GDK7	Paraburkholderia caffeinitolerans	moderate	0.38	PuuA (P78061)	False	False	465	ec_inferred
+rxn05123	A0A1H3FZW5	Citreimonas salinaria	moderate	0.379	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A285RKM9	Rhodobacter maris	moderate	0.379	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A2T5JP16	Cereibacter azotoformans	moderate	0.379	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A8E2VKR8	Rhodovulum kholense	moderate	0.379	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A4A9Q1	Congregibacter litoralis KT71	moderate	0.379	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1G6UXS5	Ruegeria marina	moderate	0.378	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1M4YRK8	Loktanella atrilutea	moderate	0.378	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A2T6K6C3	Yoonia sediminilitoris	moderate	0.378	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A2Z2NGD0	Granulosicoccus antarcticus IMCC3135	moderate	0.378	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A562P1K8	Mesorhizobium tianshanense	moderate	0.378	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0ABY1P4S0	Roseibium denhamense	moderate	0.378	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1C3V0W0	Martinezella multihospitum	moderate	0.377	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1H2S937	Litoreibacter albidus	moderate	0.377	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A2T5BQT7	Rhodovulum imhoffii	moderate	0.377	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A6J5ASS5	Paraburkholderia sediminicola	moderate	0.377	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A0P1IK65	Ruegeria denitrificans	moderate	0.376	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	A0A1H8M338	Gemmobacter aquatilis	moderate	0.376	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A1H8R9C7	Salinihabitans flavidus	moderate	0.376	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1M7AFC0	Roseibium suaedae	moderate	0.376	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1R3XIW9	Yoonia rosea	moderate	0.376	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A4V2SA98	Rhodovulum euryhalinum	moderate	0.376	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A7U7IBP5	Zestomonas carbonaria	moderate	0.376	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A239GR18	Edaphosphingomonas laterariae	moderate	0.375	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A2R8ACX6	Pontivivens insulae	moderate	0.375	PuuA (P78061)	False	False	465	ec_inferred
+rxn05123	A0A011UTU6	Aquamicrobium defluvii	moderate	0.374	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A1H8G4L0	Rhizobium tibeticum	moderate	0.374	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A285CTR3	Cereibacter ovatus	moderate	0.374	PuuA (P78061)	False	False	464	name_and_homology_inferred
+rxn05123	A0A285UDZ6	Rhizobium subbaraonis	moderate	0.374	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A2V2A3D8	Psychrobacter immobilis	moderate	0.374	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0ACG9A0H6	Tritonibacter mobilis	moderate	0.374	PuuA (P78061)	False	False	439	name_and_homology_inferred
+rxn05123	A0A1C3UUR0	Martinezella miluonensis	moderate	0.373	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A4R3RX83	Rhizobium azibense	moderate	0.373	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A4ABK5	Congregibacter litoralis KT71	moderate	0.373	PuuA (P78061)	False	False	466	name_and_homology_inferred
+rxn05123	A0A497ZPB8	Ruegeria conchae	moderate	0.372	PuuA (P78061)	False	False	439	name_and_homology_inferred
+rxn05123	A0A6J5AQD5	Paraburkholderia sediminicola	moderate	0.372	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A6J5GSK2	Paraburkholderia caffeinitolerans	moderate	0.372	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A0D1EH68	Jannaschia aquimarina	moderate	0.371	PuuA (P78061)	False	False	434	ec_inferred
+rxn05123	A0A132E9I5	Burkholderia pseudomultivorans	moderate	0.371	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1X6YA10	Ruegeria meonggei	moderate	0.371	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A1Y0E9G9	Yoonia vestfoldensis	moderate	0.371	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A1Y5SST7	Roseisalinus antarcticus	moderate	0.371	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A318U1N8	Rhodobacter viridis	moderate	0.371	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A9N8N7Z5	Paraburkholderia domus	moderate	0.371	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A0K6HUJ0	Pannonibacter indicus	moderate	0.37	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1G6SEC8	Ruegeria marina	moderate	0.37	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1I6HF96	Litoreibacter janthinus	moderate	0.37	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1Y0E9E2	Yoonia vestfoldensis	moderate	0.37	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A316GLF5	Roseicyclus mahoneyensis	moderate	0.37	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A7U7ELD2	Zestomonas carbonaria	moderate	0.37	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A8E2WGT1	Rhizobium loti	moderate	0.37	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	H6SKG7	Pararhodospirillum photometricum DSM 122	moderate	0.37	PuuA (P78061)	False	False	468	ec_inferred
+rxn05123	A0A0M6Y6X6	Roseibium aggregatum	moderate	0.369	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A1C3WTF3	Martinezella lusitana	moderate	0.369	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1H0JCQ6	Lutimaribacter pacificus	moderate	0.369	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1H8EJU2	Pseudorhodobacter antarcticus	moderate	0.369	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A2T5BI88	Mycoplana dimorpha	moderate	0.369	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A318SVR0	Pseudoroseicyclus aestuarii	moderate	0.369	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A8D3Y4F0	Stutzerimonas balearica DSM 6083	moderate	0.369	PuuA (P78061)	False	False	463	name_and_homology_inferred
+rxn05123	A0A1H8M7W9	Paracoccus alcaliphilus	moderate	0.368	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1L9NWR4	Planktotalea frisia	moderate	0.368	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1X7P309	Mesorhizobium australicum	moderate	0.368	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A3D9H6S9	Aestuariispira insulae	moderate	0.368	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A418SJ71	Pseudooceanicola algae	moderate	0.368	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A447IKT6	Paracoccus haematequi	moderate	0.368	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A447IS57	Paracoccus haematequi	moderate	0.368	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0AAN0RLF2	Planktomarina temperata RCA23	moderate	0.368	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A5FVY8	Acidiphilium cryptum (strain JF-5)	moderate	0.368	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A0P1FIB3	Thalassovita gelatinovora	moderate	0.367	PuuA (P78061)	False	False	472	ec_inferred
+rxn05123	A0A1G8JWR1	Aliiruegeria lutimaris	moderate	0.367	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A1X7NG47	Mesorhizobium australicum	moderate	0.367	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A221K6V8	Pseudosulfitobacter pseudonitzschiae	moderate	0.367	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A238KDN7	Maliponia aquimaris	moderate	0.367	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A238KL15	Actibacterium lipolyticum	moderate	0.367	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A238LKL5	Flavimaricola marinus	moderate	0.367	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A2P2E707	Candidatus Phycosocius bacilliformis	moderate	0.367	PuuA (P78061)	False	False	466	ec_inferred
+rxn05123	A0A2V4V1L1	Psychrobacter fozii	moderate	0.367	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A4R2D069	Shinella granuli	moderate	0.367	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0ABN7L2C6	Paraburkholderia haematera	moderate	0.367	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0ABY3ZKI5	Sulfitobacter dubius	moderate	0.367	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A090DU11	Mesorhizobium plurifarium	moderate	0.366	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A1N7LU04	Gemmobacter megaterium	moderate	0.366	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1U7D0H6	Salipiger profundus	moderate	0.366	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1Y5TAG3	Falsiruegeria litorea R37	moderate	0.366	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A238KL36	Actibacterium lipolyticum	moderate	0.366	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A238LIP6	Flavimaricola marinus	moderate	0.366	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0AAN4UQ88	Allgaiera indica	moderate	0.366	PuuA (P78061)	False	False	450	name_and_homology_inferred
+rxn05123	A0A1H3WR98	Rubrimonas cliftonensis	moderate	0.365	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A1I0X1V0	Poseidonocella pacifica	moderate	0.365	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1I2Y3E4	Paracoccus aminovorans	moderate	0.365	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1Y5SD63	Pseudoruegeria aquimaris	moderate	0.365	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A238KWA0	Pelagimonas varians	moderate	0.365	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A285CZC0	Cereibacter ovatus	moderate	0.365	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A285TAQ9	Rhodobacter maris	moderate	0.365	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A2R8BFS4	Ascidiaceihabitans donghaensis	moderate	0.365	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A317PTQ9	Hoeflea marina	moderate	0.365	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A521BZ25	Paracoccus laeviglucosivorans	moderate	0.365	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0ABX5JF00	Cereibacter johrii	moderate	0.365	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A0D1ECH3	Jannaschia aquimarina	moderate	0.364	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A0P1FIA7	Thalassovita gelatinovora	moderate	0.364	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1G7JXT6	Salipiger thiooxidans	moderate	0.364	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1H4F4M1	Rubrimonas cliftonensis	moderate	0.364	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1X7BVR8	Roseovarius aestuarii	moderate	0.364	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A238K5F6	Octadecabacter ascidiaceicola	moderate	0.364	PuuA (P78061)	False	False	442	ec_inferred
+rxn05123	A0A2T6BK64	Litoreibacter ponti	moderate	0.364	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0ACH1R7X3	Shinella zoogloeoides	moderate	0.364	PuuA (P78061)	False	False	489	ec_inferred
+rxn05123	F7ZAK0	Roseobacter litoralis (strain ATCC 49566 / DSM 6996 / JCM 21268 / NBRC 15278 / OCh 149)	moderate	0.364	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	N0B399	Hyphomicrobium denitrificans 1NES1	moderate	0.364	PuuA (P78061)	False	False	481	name_and_homology_inferred
+rxn05123	A0A0P1GSJ4	Thalassovita mediterranea	moderate	0.363	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A0P1I4M3	Ruegeria denitrificans	moderate	0.363	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A1C9WB64	Microbulbifer aggregans	moderate	0.363	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A0A1I0E881	Paracoccus homiensis	moderate	0.363	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1M6Y3V6	Roseovarius pacificus	moderate	0.363	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1N7MVM8	Rhodobacter aestuarii	moderate	0.363	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1Y6H5Q6	Xanthomonas fragariae	moderate	0.363	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A0A221JY05	Pseudosulfitobacter pseudonitzschiae	moderate	0.363	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A562NHH4	Paracoccus sulfuroxidans	moderate	0.363	PuuA (P78061)	False	False	431	name_and_homology_inferred
+rxn05123	C8S107	Rhodobacter ferrooxidans	moderate	0.363	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	D7DQ76	Methylotenera versatilis (strain 301)	moderate	0.363	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A0N7M9N5	Shimia thalassica	moderate	0.362	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A1I0QDG5	Aliiroseovarius sediminilitoris	moderate	0.362	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1N7L233	Roseivivax lentus	moderate	0.362	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A239CWE3	Tropicimonas sediminicola	moderate	0.362	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A2S3V3Q9	Roseibium marinum	moderate	0.362	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A2T5B3B2	Mycoplana dimorpha	moderate	0.362	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0ABY1NMQ0	Shimia sagamensis	moderate	0.362	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	F7ZAK2	Roseobacter litoralis (strain ATCC 49566 / DSM 6996 / JCM 21268 / NBRC 15278 / OCh 149)	moderate	0.362	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A099G9S9	Paracoccus sanguinis	moderate	0.361	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A0M6YH70	Jannaschia donghaensis	moderate	0.361	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A0N7LSE1	Shimia marina	moderate	0.361	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A0P1ES74	Shimia marina	moderate	0.361	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A1E7WJ63	Duganella phyllosphaerae	moderate	0.361	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1G9HEA8	Paracoccus chinensis	moderate	0.361	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1I5J5F2	Paracoccus pantotrophus	moderate	0.361	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1Y5S431	Aquimixticola soesokkakensis	moderate	0.361	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A238JAS7	Pelagimonas phthalicica	moderate	0.361	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A2T5HM87	Celeribacter persicus	moderate	0.361	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A368YCK8	Paracoccus lutimaris	moderate	0.361	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A8G2CJQ4	Acidiphilium rubrum	moderate	0.361	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A975WDR7	Marinovum algicola	moderate	0.361	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0ABM9AGI7	Sinobacterium norvegicum	moderate	0.361	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	C8S109	Rhodobacter ferrooxidans	moderate	0.361	PuuA (P78061)	False	False	445	ec_inferred
+rxn05123	A0A0P1G3I9	Tropicibacter naphthalenivorans	moderate	0.36	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1I1JLK6	Tropicimonas isoalkanivorans	moderate	0.36	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A1I6MH54	Yoonia litorea	moderate	0.36	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1L9NWT4	Planktotalea frisia	moderate	0.36	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A2R8B378	Albidovulum aquaemixtae	moderate	0.36	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A4R1YVK3	Rhodovulum steppense	moderate	0.36	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A4R2RER2	Rhodovulum bhavnagarense	moderate	0.36	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0ABP9WL28	Microbulbifer aestuariivivens	moderate	0.36	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1P8UQQ1	Salipiger abyssi	moderate	0.359	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A238JYB1	Ruegeria arenilitoris	moderate	0.359	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A7U7EJK2	Zestomonas carbonaria	moderate	0.359	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	M9R4Y1	Octadecabacter antarcticus 307	moderate	0.359	PuuA (P78061)	False	False	442	name_and_homology_inferred
+rxn05123	M9RGR8	Octadecabacter arcticus 238	moderate	0.359	PuuA (P78061)	False	False	442	name_and_homology_inferred
+rxn05123	A0A081B6K7	Tepidicaulis marinus	moderate	0.358	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A0N7M0R8	Tritonibacter multivorans	moderate	0.358	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A0P1ENS7	Ruegeria atlantica	moderate	0.358	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A0P1IAH0	Shimia thalassica	moderate	0.358	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A0U1NJI9	Nereida ignava	moderate	0.358	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A1E7WJ25	Duganella phyllosphaerae	moderate	0.358	PuuA (P78061)	False	False	445	ec_inferred
+rxn05123	A0A1I4QLP7	Shimia aestuarii	moderate	0.358	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1M5L3V9	Cognatiyoonia sediminum	moderate	0.358	PuuA (P78061)	False	False	429	name_and_homology_inferred
+rxn05123	A0A1Y5TAF2	Falsiruegeria litorea R37	moderate	0.358	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A238KKA7	Maliponia aquimaris	moderate	0.358	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A2R8BG02	Ascidiaceihabitans donghaensis	moderate	0.358	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A2T6B0X2	Allosediminivita pacifica	moderate	0.358	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A521BLS4	Thalassovita litoralis	moderate	0.358	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0AAN0RL94	Planktomarina temperata RCA23	moderate	0.358	PuuA (P78061)	False	False	425	ec_inferred
+rxn05123	A0A0B6S1G1	Burkholderia plantarii	moderate	0.357	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A0D6PHH0	Acidocella aminolytica 101 = DSM 11237	moderate	0.357	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A132E6L5	Burkholderia pseudomultivorans	moderate	0.357	PuuA (P78061)	False	False	445	ec_inferred
+rxn05123	A0A1Y5TKI8	Roseovarius litorisediminis	moderate	0.357	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A2P8FJ96	Shimia abyssi	moderate	0.357	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A316GBE4	Silicimonas algicola	moderate	0.357	PuuA (P78061)	False	False	442	name_and_homology_inferred
+rxn05123	A0A318U469	Rhodobacter viridis	moderate	0.357	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A4R2Q013	Rhodovulum marinum	moderate	0.357	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A0M6XKD5	Jannaschia rubra	moderate	0.356	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1G8RJV7	Salipiger marinus	moderate	0.356	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1H3WKQ4	Microbulbifer marinus	moderate	0.356	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1N6G971	Vannielia litorea	moderate	0.356	PuuA (P78061)	False	False	434	name_and_homology_inferred
+rxn05123	A0A1N7JJX8	Phaeovulum vinaykumarii	moderate	0.356	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1X6Y4T3	Pseudooceanicola marinus	moderate	0.356	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A2R8C515	Falsiruegeria mediterranea M17	moderate	0.356	PuuA (P78061)	False	False	439	ec_inferred
+rxn05123	A0A345D9N3	Ephemeroptericola cinctiostellae	moderate	0.356	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A418SJ78	Pseudooceanicola algae	moderate	0.356	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A4R1NMM0	Shimia isoporae	moderate	0.356	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A6I7HP69	Ciceribacter lividus	moderate	0.356	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	A0A9P1JR85	Azospirillum baldaniorum	moderate	0.356	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0ABT3DT74	Xanthomonas sacchari	moderate	0.356	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	A0ABZ2BPE6	Roseobacter fucihabitans	moderate	0.356	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A0L6CWN4	Roseovarius tolerans	moderate	0.355	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1E7WJ47	Duganella phyllosphaerae	moderate	0.355	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1I3IY15	Celeribacter neptunius	moderate	0.355	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1I6SGL6	Alloyangia pacifica	moderate	0.355	PuuA (P78061)	False	False	447	name_and_homology_inferred
+rxn05123	A0A1X7BVX7	Roseovarius aestuarii	moderate	0.355	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A1Y5RNL4	Pseudooctadecabacter jejudonensis	moderate	0.355	PuuA (P78061)	False	False	442	ec_inferred
+rxn05123	A0A238UVA7	Puniceibacterium sediminis	moderate	0.355	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0ABY1I125	Thalassobacter stenotrophicus DSM 16310	moderate	0.355	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A7HSN4	Parvibaculum lavamentivorans (strain DS-1 / DSM 13023 / NCIMB 13966)	moderate	0.355	PuuA (P78061)	False	False	463	ec_inferred
+rxn05123	A0A1I0Q775	Cognatiyoonia koreensis	moderate	0.354	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1I2BHS2	Roseivivax sediminis	moderate	0.354	PuuA (P78061)	False	False	450	name_and_homology_inferred
+rxn05123	A0A1I6CXP6	Poseidonocella sedimentorum	moderate	0.354	PuuA (P78061)	False	False	437	name_and_homology_inferred
+rxn05123	A0A1X6Y7A7	Roseovarius albus	moderate	0.354	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1X6Y9E8	Roseovarius gaetbuli	moderate	0.354	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1Y5RFF1	Oceanibacterium hippocampi	moderate	0.354	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A1Y5RTK1	Palleronia marisminoris	moderate	0.354	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A1Y5SD93	Pseudoruegeria aquimaris	moderate	0.354	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A238JD56	Pelagimonas phthalicica	moderate	0.354	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A238KW12	Pelagimonas varians	moderate	0.354	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A9X4SCK9	Hydrogenophaga taeniospiralis CCUG 15921	moderate	0.354	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0ABP9WQ90	Microbulbifer aestuariivivens	moderate	0.354	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A0H5D3F0	Phaeobacter italicus	moderate	0.353	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1H2XRI0	Roseicitreum antarcticum	moderate	0.353	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1M4WCH9	Microbulbifer donghaiensis	moderate	0.353	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1R3VCL4	Mesorhizobium prunaredense	moderate	0.353	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A0A221JYB1	Pseudosulfitobacter pseudonitzschiae	moderate	0.353	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A4R3LF24	Tepidimonas ignava	moderate	0.353	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1U9YYU0	Martelella mediterranea DSM 17316	moderate	0.352	PuuA (P78061)	False	False	485	ec_inferred
+rxn05123	A0A2R8BYT4	Palleronia abyssalis	moderate	0.352	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A2R8CQP7	Kushneria phyllosphaerae	moderate	0.352	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0AAX3AA12	Sulfitobacter pontiacus	moderate	0.352	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A0K8NXP2	Piscinibacter sakaiensis	moderate	0.351	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A0N0XJP2	Amantichitinum ursilacus	moderate	0.351	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1W6NXD5	Ketogulonicigenium robustum	moderate	0.351	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0ABF7QID4	Rhizobium leguminosarum bv. trifolii (strain WSM2304)	moderate	0.351	PuuA (P78061)	False	False	478	ec_inferred
+rxn05123	B1XYY7	Leptothrix cholodnii (strain ATCC 51168 / LMG 8142 / SP-6)	moderate	0.351	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	G7ZEI5	Azospirillum lipoferum (strain 4B)	moderate	0.351	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A0K0Y3R6	Octadecabacter temperatus	moderate	0.35	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A1G8UJZ4	Microbulbifer yueqingensis	moderate	0.35	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1H6JEB5	Paracoccus alkenifer	moderate	0.35	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1H7SI74	Jannaschia helgolandensis	moderate	0.35	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1H9L552	Thalassovita taeanensis	moderate	0.35	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A1I3N8B7	Jannaschia pohangensis	moderate	0.35	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1I5KEB2	Tranquillimonas alkanivorans	moderate	0.35	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1X7ATQ8	Parendozoicomonas haliclonae	moderate	0.35	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1Y5S4D8	Aquimixticola soesokkakensis	moderate	0.35	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A1Y5STT4	Roseisalinus antarcticus	moderate	0.35	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A1Y6GCA7	Devosia lucknowensis	moderate	0.35	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A2C9D7I9	Hartmannibacter diazotrophicus	moderate	0.35	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A3P5XV51	Pseudogemmobacter humi	moderate	0.35	PuuA (P78061)	False	False	445	ec_inferred
+rxn05123	A0A554X2P9	Tepidimonas thermarum	moderate	0.35	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0ABN0PNE3	Shewanella decolorationis S12	moderate	0.35	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0A0M6YG01	Jannaschia donghaensis	moderate	0.349	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A1M6VQN7	Roseovarius marisflavi	moderate	0.349	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A2C9D2J1	Hartmannibacter diazotrophicus	moderate	0.349	PuuA (P78061)	False	False	478	ec_inferred
+rxn05123	A0A2R8B3B6	Albidovulum aquaemixtae	moderate	0.349	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A4P6X1F7	Hydrogenophaga pseudoflava	moderate	0.349	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	M9RBS7	Octadecabacter antarcticus 307	moderate	0.349	PuuA (P78061)	False	False	450	name_and_homology_inferred
+rxn05123	A0A0M6XM50	Jannaschia rubra	moderate	0.348	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A0P1G3S1	Tropicibacter naphthalenivorans	moderate	0.348	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A132BTA6	Tritonibacter horizontis	moderate	0.348	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1G7LKU1	Sulfitobacter delicatus	moderate	0.348	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1H8EE79	Gemmobacter aquatilis	moderate	0.348	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A1I2ARC5	Sulfitobacter brevis	moderate	0.348	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1I5FD76	Roseovarius lutimaris	moderate	0.348	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1I7ENA7	Paraburkholderia aspalathi	moderate	0.348	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A2M8WJV8	Yoonia maricola	moderate	0.348	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A2T6AVV7	Gemmobacter caeni	moderate	0.348	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0ABZ2BP08	Roseobacter fucihabitans	moderate	0.348	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	B1KHB5	Shewanella woodyi (strain ATCC 51908 / MS32)	moderate	0.348	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	E8RLS9	Asticcacaulis excentricus (strain ATCC 15261 / DSM 4724 / KCTC 12464 / NCIMB 9791 / VKM B-1370 / CB 48)	moderate	0.348	PuuA (P78061)	False	False	466	ec_inferred
+rxn05123	A0A0K0Y3V4	Octadecabacter temperatus	moderate	0.347	PuuA (P78061)	False	False	442	ec_inferred
+rxn05123	A0A0L0MC12	Candidatus Burkholderia verschuerenii	moderate	0.347	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A0P1H0J5	Tritonibacter multivorans	moderate	0.347	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A0A1L3I389	Phaeobacter porticola	moderate	0.347	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A238IZN0	Boseongicola aestuarii	moderate	0.347	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A2R8AYV5	Pseudoprimorskyibacter insulae	moderate	0.347	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A6S7CAU3	Pararobbsia alpina	moderate	0.347	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	E1SVK0	Ferrimonas balearica (strain DSM 9799 / CCM 4581 / KCTC 23876 / PAT)	moderate	0.347	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A1H0QW65	Sulfitobacter litoralis	moderate	0.346	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1X7A2A8	Roseivivax jejudonensis	moderate	0.346	PuuA (P78061)	False	False	454	ec_inferred
+rxn05123	A0A1Y5RKU6	Pseudoruegeria aquimaris	moderate	0.346	PuuA (P78061)	False	False	466	ec_inferred
+rxn05123	A0A5S9N9Q6	Starkeya nomas	moderate	0.346	PuuA (P78061)	False	False	466	ec_inferred
+rxn05123	A0A6J5DSP5	Paraburkholderia humisilvae	moderate	0.346	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A9N8RUY4	Paraburkholderia saeva	moderate	0.346	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0ACH1R4Z9	Shinella zoogloeoides	moderate	0.346	PuuA (P78061)	False	False	479	ec_inferred
+rxn05123	A0A0M7B7G3	Jannaschia seosinensis	moderate	0.345	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A0P1G7U0	Thalassovita autumnalis	moderate	0.345	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A128EUP2	Grimontia marina	moderate	0.345	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1X7A423	Roseivivax jejudonensis	moderate	0.345	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A521AI08	Ruegeria faecimaris	moderate	0.345	PuuA (P78061)	False	False	439	name_and_homology_inferred
+rxn05123	A0ABM7DPK3	Shewanella khirikhana	moderate	0.345	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A7IGP0	Xanthobacter versatilis	moderate	0.345	PuuA (P78061)	False	False	467	ec_inferred
+rxn05123	B0TVD1	Shewanella halifaxensis (strain HAW-EB4)	moderate	0.345	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	E6WUC7	Pseudoxanthomonas suwonensis (strain 11-1)	moderate	0.345	PuuA (P78061)	False	False	463	ec_inferred
+rxn05123	A0A1I6PKB9	Sulfitobacter marinus	moderate	0.344	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1N7RTG8	Paraburkholderia ribeironis	moderate	0.344	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1X6Y6I7	Pseudooceanicola marinus	moderate	0.344	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A0A1Y5RPQ2	Pseudooctadecabacter jejudonensis	moderate	0.344	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A0A238KKM8	Maliponia aquimaris	moderate	0.344	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A420DJW3	Sulfitobacter guttiformis	moderate	0.344	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A4P6WWD8	Hydrogenophaga pseudoflava	moderate	0.344	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A5FVY0	Acidiphilium cryptum (strain JF-5)	moderate	0.344	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	A0A0M6Y5V3	Roseibium aggregatum	moderate	0.343	PuuA (P78061)	False	False	468	ec_inferred
+rxn05123	A0A0P1E6D8	Ruegeria atlantica	moderate	0.343	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1E3H007	Methylobrevis pamukkalensis	moderate	0.343	PuuA (P78061)	False	False	490	ec_inferred
+rxn05123	A0ABN6D8E7	Rhodoferax lithotrophicus	moderate	0.343	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A8H135	Shewanella pealeana (strain ATCC 700345 / ANG-SQ1)	moderate	0.343	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1C9WBW9	Microbulbifer aggregans	moderate	0.342	PuuA (P78061)	False	False	462	ec_inferred
+rxn05123	A0A1H3N1X4	Jannaschia faecimaris	moderate	0.342	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A1H6TET5	Cribrihabitans marinus	moderate	0.342	PuuA (P78061)	False	False	439	name_and_homology_inferred
+rxn05123	A0A1M6DXZ1	Shimia gijangensis	moderate	0.342	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1N7SG53	Paraburkholderia piptadeniae	moderate	0.342	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1R3WUE4	Yoonia rosea	moderate	0.342	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A1V0RK29	Roseovarius mucosus	moderate	0.342	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A1W2ECT6	Primorskyibacter flagellatus	moderate	0.342	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A6U681	Sinorhizobium medicae (strain WSM419)	moderate	0.342	PuuA (P78061)	False	False	478	ec_inferred
+rxn05123	B9Z0Z7	Pseudogulbenkiania ferrooxidans 2002	moderate	0.342	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	G6Y4M6	Mesorhizobium amorphae CCNWGS0123	moderate	0.342	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	I0HSH7	Rubrivivax gelatinosus (strain NBRC 100245 / IL144)	moderate	0.342	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A059KT39	Sphaerotilus natans subsp. natans DSM 6575	moderate	0.341	PuuA (P78061)	False	False	455	name_and_homology_inferred
+rxn05123	A0A068SKX9	Neorhizobium galegae bv. orientalis str. HAMBI 540	moderate	0.341	PuuA (P78061)	False	False	479	name_and_homology_inferred
+rxn05123	A0A0M7AX59	Roseibium album	moderate	0.341	PuuA (P78061)	False	False	468	ec_inferred
+rxn05123	A0A1H8I8L0	Pseudorhodobacter antarcticus	moderate	0.341	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0ABM7MGI2	Rhodoferax lithotrophicus	moderate	0.341	PuuA (P78061)	False	False	465	name_and_homology_inferred
+rxn05123	A0A1N7G1E5	Roseovarius nanhaiticus	moderate	0.34	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A1S2THL0	Shewanella algae	moderate	0.34	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	D7DK12	Methylotenera versatilis (strain 301)	moderate	0.34	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1I6FZS3	Yoonia tamlensis	moderate	0.339	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A238IXP1	Boseongicola aestuarii	moderate	0.339	PuuA (P78061)	False	False	443	ec_inferred
+rxn05123	A0A4R3L411	Tepidimonas ignava	moderate	0.339	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A554WBP9	Tepidimonas alkaliphilus	moderate	0.339	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A6J5G371	Paraburkholderia caffeinitolerans	moderate	0.339	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	B9Z5A3	Pseudogulbenkiania ferrooxidans 2002	moderate	0.339	PuuA (P78061)	False	False	445	ec_inferred
+rxn05123	A0A4P6WY03	Hydrogenophaga pseudoflava	moderate	0.338	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	A8FS48	Shewanella sediminis (strain HAW-EB3)	moderate	0.338	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	W4HJ41	Roseivivax marinus	moderate	0.338	PuuA (P78061)	False	False	453	name_and_homology_inferred
+rxn05123	A0A9X4S789	Hydrogenophaga taeniospiralis CCUG 15921	moderate	0.337	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0ABN7HZ73	Paraburkholderia hiiakae	moderate	0.337	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0ABY5MM12	Nitratireductor thuwali	moderate	0.337	PuuA (P78061)	False	False	477	ec_inferred
+rxn05123	A0A2Z2NLS1	Granulosicoccus antarcticus IMCC3135	moderate	0.336	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A554X2W1	Tepidimonas taiwanensis	moderate	0.336	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	B9Z5S9	Pseudogulbenkiania ferrooxidans 2002	moderate	0.336	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A0H5BGJ6	Blastochloris viridis	moderate	0.335	PuuA (P78061)	False	False	465	ec_inferred
+rxn05123	A0A6J5EK20	Burkholderia paludis	moderate	0.335	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	F2JXL2	Marinomonas mediterranea (strain ATCC 700492 / JCM 21426 / NBRC 103028 / MMB-1)	moderate	0.335	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	G6YBA7	Mesorhizobium amorphae CCNWGS0123	moderate	0.335	PuuA (P78061)	False	False	478	name_and_homology_inferred
+rxn05123	A6X5Y7	Brucella anthropi (strain ATCC 49188 / DSM 6882 / CCUG 24695 / JCM 21032 / LMG 3331 / NBRC 15819 / NCTC 12168 / Alc 37)	moderate	0.333	PuuA (P78061)	False	False	476	ec_inferred
+rxn05123	B2T4A2	Paraburkholderia phytofirmans (strain DSM 17436 / LMG 22146 / PsJN)	moderate	0.333	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	B9Z280	Pseudogulbenkiania ferrooxidans 2002	moderate	0.333	PuuA (P78061)	False	False	442	ec_inferred
+rxn05123	A0A090FGJ9	Mesorhizobium plurifarium	moderate	0.332	PuuA (P78061)	False	False	477	name_and_homology_inferred
+rxn05123	A0A1M7F5X1	Roseovarius litoreus	moderate	0.332	PuuA (P78061)	False	False	438	name_and_homology_inferred
+rxn05123	A0A554X0A9	Tepidimonas charontis	moderate	0.332	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A1C9WA50	Microbulbifer aggregans	moderate	0.331	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A2R8AIT4	Aliiroseovarius pelagivivens	moderate	0.33	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A554WZ05	Tepidimonas thermarum	moderate	0.33	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A2R8AYI0	Pseudoprimorskyibacter insulae	moderate	0.329	PuuA (P78061)	False	False	453	ec_inferred
+rxn05123	A0A0L6CWZ9	Roseovarius tolerans	moderate	0.328	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0ABN6D3W7	Rhodoferax lithotrophicus	moderate	0.328	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A0P1IK50	Ruegeria denitrificans	moderate	0.327	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A2P2E700	Candidatus Phycosocius bacilliformis	moderate	0.327	PuuA (P78061)	False	False	461	ec_inferred
+rxn05123	A0A6I6MWL7	Terricaulis silvestris	moderate	0.327	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	K4KFY5	Simiduia agarivorans (strain DSM 21679 / JCM 13881 / BCRC 17597 / SA1)	moderate	0.327	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A0P1FZI3	Thalassovita autumnalis	moderate	0.326	PuuA (P78061)	False	False	459	ec_inferred
+rxn05123	A0A0P1GLS7	Thalassovita mediterranea	moderate	0.324	PuuA (P78061)	False	False	463	ec_inferred
+rxn05123	A0A3P5XDL7	Pseudogemmobacter humi	moderate	0.324	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A1X7AIE7	Parendozoicomonas haliclonae	moderate	0.323	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0ABN8ECI9	Sinobacterium norvegicum	moderate	0.322	PuuA (P78061)	False	False	444	ec_inferred
+rxn05123	A0A1C3JRH9	Marinomonas gallaica	moderate	0.321	PuuA (P78061)	False	False	447	ec_inferred
+rxn05123	A0A1H3K955	Lentibacter algarum	moderate	0.319	PuuA (P78061)	False	False	437	name_and_homology_inferred
+rxn05123	A0A3G9GES4	Aquitalea magnusonii	moderate	0.319	PuuA (P78061)	False	False	449	ec_inferred
+rxn05123	A0A1A8TBU1	Marinomonas aquimarina	moderate	0.317	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	A0A1A8TNC0	Marinomonas spartinae	moderate	0.317	PuuA (P78061)	False	False	446	ec_inferred
+rxn05123	D7DQ41	Methylotenera versatilis (strain 301)	moderate	0.317	PuuA (P78061)	False	False	450	ec_inferred
+rxn05123	A6W8I4	Kineococcus radiotolerans (strain ATCC BAA-149 / DSM 14245 / SRS30216)	moderate	0.315	PuuA (P78061)	False	False	483	ec_inferred
+rxn05123	A0A1C9W7I1	Microbulbifer aggregans	moderate	0.313	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	D0LJE9	Haliangium ochraceum (strain DSM 14365 / JCM 11303 / SMP-2)	moderate	0.313	PuuA (P78061)	False	False	471	ec_inferred
+rxn05123	C7QD08	Catenulispora acidiphila (strain DSM 44928 / JCM 14897 / NBRC 102108 / NRRL B-24433 / ID139908)	moderate	0.312	GlnA2sc (Q9RDS6)	False	False	455	ec_inferred
+rxn05123	A0A0S3PZE4	Variibacter gotjawalensis	moderate	0.306	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0AAN0RKW5	Planktomarina temperata RCA23	moderate	0.306	PuuA (P78061)	False	False	425	ec_inferred
+rxn05123	A0A378J6J1	Legionella donaldsonii	moderate	0.304	PuuA (P78061)	False	False	457	ec_inferred
+rxn05123	D3F7T6	Conexibacter woesei (strain DSM 14684 / CCUG 47730 / CIP 108061 / JCM 11494 / NBRC 100937 / ID131577)	moderate	0.303	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	A0A110B340	Mucilaginibacter gotjawali	moderate	0.301	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A1Y5R729	Pseudooctadecabacter jejudonensis	moderate	0.301	PuuA (P78061)	False	False	424	ec_inferred
+rxn05123	A0A172YAD6	Halotalea alkalilenta	hard	0.646	PuuA (P78061)	False	False	479	name_and_homology_inferred
+rxn05123	A0ABD5PWT3	Halorussus aquaticus	hard	0.619	GlnA2hf (I3R584)	False	False	445	ec_inferred
+rxn05123	E1V911	Halomonas elongata (strain ATCC 33173 / DSM 2581 / NBRC 15536 / NCIMB 2198 / 1H9)	hard	0.485	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A1M6XZV4	Halomonas caseinilytica	hard	0.48	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A0F5VDL9	Photobacterium halotolerans	hard	0.478	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A2D0AYF7	Halomonas campaniensis	hard	0.472	PuuA (P78061)	False	False	462	name_and_homology_inferred
+rxn05123	A0A1A6C2Q1	Acidihalobacter prosperus	hard	0.469	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0A1D8ILT5	Acidihalobacter yilgarnensis	hard	0.469	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0ACN3NSZ7	Natrarchaeobius versutus	hard	0.469	GlnA2hf (I3R584)	False	False	452	ec_inferred
+rxn05123	A0A109UM97	Halomonas chromatireducens	hard	0.468	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A2T0VS93	Halomonas ventosae	hard	0.468	PuuA (P78061)	False	False	457	name_and_homology_inferred
+rxn05123	A0A1H2R2G3	Aidingimonas halophila	hard	0.466	PuuA (P78061)	False	False	459	name_and_homology_inferred
+rxn05123	A0A5K1I671	Halomonas lysinitropha	hard	0.464	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0ABR4WRU5	Halomonas halophila	hard	0.463	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1D8K902	Acidihalobacter aeolianus	hard	0.462	PuuA (P78061)	False	False	460	name_and_homology_inferred
+rxn05123	A0ABD6AIA0	Halorubrum rutilum	hard	0.46	GlnA2hf (I3R584)	False	False	450	ec_inferred
+rxn05123	Q1QYC1	Chromohalobacter israelensis (strain ATCC BAA-138 / DSM 3043 / CIP 106854 / NCIMB 13768 / 1H11)	hard	0.45	PuuA (P78061)	False	False	451	name_and_homology_inferred
+rxn05123	A0ABD6D3U7	Haloplanus ruber	hard	0.449	GlnA2hf (I3R584)	False	False	450	ec_inferred
+rxn05123	A0A4R6HUN2	Halomonas ventosae	hard	0.447	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A1H2HJM6	Halopseudomonas salegens	hard	0.446	PuuA (P78061)	False	False	511	name_and_homology_inferred
+rxn05123	A0A1H1YHP6	Halopseudomonas xinjiangensis	hard	0.436	PuuA (P78061)	False	False	474	name_and_homology_inferred
+rxn05123	A0A1H1VRI2	Halopseudomonas litoralis	hard	0.435	PuuA (P78061)	False	False	479	name_and_homology_inferred
+rxn05123	A0A4R7NUC2	Chromohalobacter marismortui	hard	0.432	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	A0A4R2L0I6	Chromatocurvus halotolerans	hard	0.39	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A4R7NSF7	Chromohalobacter marismortui	hard	0.381	PuuA (P78061)	False	False	461	name_and_homology_inferred
+rxn05123	A0A1S1H9I3	Edaphosphingomonas haloaromaticamans	hard	0.379	PuuA (P78061)	False	False	460	ec_inferred
+rxn05123	A0A286IF89	Parahoeflea halophila	hard	0.379	PuuA (P78061)	False	False	458	name_and_homology_inferred
+rxn05123	A0A4R7LJN5	Litoreibacter halocynthiae	hard	0.379	PuuA (P78061)	False	False	444	name_and_homology_inferred
+rxn05123	A0A1E2RX53	Methyloligella halotolerans	hard	0.375	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1H1XSA2	Halopseudomonas xinjiangensis	hard	0.367	PuuA (P78061)	False	False	452	name_and_homology_inferred
+rxn05123	D0KXK1	Halothiobacillus neapolitanus (strain ATCC 23641 / DSM 15147 / CIP 104769 / NCIMB 8539 / c2)	hard	0.367	PuuA (P78061)	False	False	456	ec_inferred
+rxn05123	A0A3B0MCD7	Roseinatronobacter ekhonensis	hard	0.362	PuuA (P78061)	False	False	440	ec_inferred
+rxn05123	A0A1I3MVN8	Celeribacter halophilus	hard	0.36	PuuA (P78061)	False	False	415	name_and_homology_inferred
+rxn05123	A0A2T0X6V1	Hasllibacter halocynthiae	hard	0.36	PuuA (P78061)	False	False	445	name_and_homology_inferred
+rxn05123	A0A1H5STF7	Thalassococcus halodurans	hard	0.355	PuuA (P78061)	False	False	449	name_and_homology_inferred
+rxn05123	S9QZ91	Rubellimicrobium thermophilum DSM 16684	hard	0.353	PuuA (P78061)	False	False	443	name_and_homology_inferred
+rxn05123	A0A3B0MB34	Roseinatronobacter ekhonensis	hard	0.35	PuuA (P78061)	False	False	451	ec_inferred
+rxn05123	A0A120JVT9	Halomonas chromatireducens	hard	0.348	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1X6ZAE4	Roseovarius halotolerans	hard	0.348	PuuA (P78061)	False	False	452	ec_inferred
+rxn05123	A0A543KCC9	Roseinatronobacter monicus	hard	0.348	PuuA (P78061)	False	False	434	name_and_homology_inferred
+rxn05123	A0A1H2YFR4	Ruegeria halocynthiae	hard	0.347	PuuA (P78061)	False	False	446	name_and_homology_inferred
+rxn05123	A0A5K1I6G5	Halomonas lysinitropha	hard	0.346	PuuA (P78061)	False	False	455	ec_inferred
+rxn05123	A0A4R2L843	Chromatocurvus halotolerans	hard	0.345	PuuA (P78061)	False	False	448	name_and_homology_inferred
+rxn05123	A0A1E2RXG6	Methyloligella halotolerans	hard	0.342	PuuA (P78061)	False	False	489	ec_inferred
+rxn05123	A0A1S1H7N7	Edaphosphingomonas haloaromaticamans	hard	0.342	PuuA (P78061)	False	False	448	ec_inferred
+rxn05123	A0A1X6ZA07	Roseovarius halotolerans	hard	0.336	PuuA (P78061)	False	False	438	ec_inferred
+rxn05123	A0A379JHL5	Nocardia otitidiscaviarum	hard	0.325	PuuA (P78061)	False	False	458	ec_inferred
+rxn05123	A0A8D3WN08	Streptomyces pratensis (strain ATCC 33331 / IAF-45CD)	hard	0.321	GlnA2sc (Q9RDS6)	False	False	453	ec_inferred
+rxn05123	A0A561TKZ2	Streptomyces capillispiralis	hard	0.313	PuuA (P78061)	False	False	476	name_and_homology_inferred
+rxn05123	I3R584	Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4)	hard	0.0	 ()	True	False	446	reaction_annotation
+rxn05123	Q9KZC7	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	0.0	 ()	True	False	466	reaction_annotation
+rxn05123	Q9RDS6	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	hard	0.0	 ()	True	False	453	reaction_annotation
+rxn09897	P39641	Bacillus subtilis (strain 168)	easy	1.0	BacD (P39641)	True	False	472	ec_inferred
+rxn46045	E2JA32	Enterobacter agglomerans	easy	0.0	 ()	True	False	396	reaction_annotation
+rxn09897	Q8KWS8	Bacillus amyloliquefaciens	moderate	1.0	Q8KWS8 (Q8KWS8)	True	False	472	ec_inferred
+rxn21038	A0ABU6P834	Bacillus nitratireducens	moderate	0.949	AsbA (A0A0F7RJ52)	False	False	602	name_and_homology_inferred
+rxn21038	A0ABV4RQN4	Bacillus mobilis	moderate	0.947	AsbA (A0A0F7RJ52)	False	False	602	name_and_homology_inferred
+rxn47618	A0A2K4AN05	Staphylococcus schweitzeri	moderate	0.908	SbnE (Q2G1M9)	False	False	574	name_and_homology_inferred
+rxn46045	A0A2D0LF49	Xenorhabdus kozodoii	moderate	0.785	DdaG (E2JA32)	False	False	390	ec_inferred
+rxn46045	A0ABY9XIW6	Xenorhabdus griffiniae	moderate	0.779	DdaG (E2JA32)	False	False	390	ec_inferred
+rxn09897	A0A5C0WIG2	Bacillus safensis	moderate	0.698	BacD (P39641)	False	False	473	ec_inferred
+rxn09897	A0ABR6AXK0	Bacillus aerius	moderate	0.692	BacD (P39641)	False	False	473	ec_inferred
+rxn21038	A0A837KHZ7	Brevibacillus formosus	moderate	0.569	AsbA (A0A0F7RJ52)	False	False	601	name_and_homology_inferred
+rxn21038	H6NMA1	Paenibacillus mucilaginosus 3016	moderate	0.541	AsbA (A0A0F7RJ52)	False	False	621	name_and_homology_inferred
+rxn09897	A0A1H3G5V3	Evansella caseinilytica	moderate	0.506	BacD (P39641)	False	False	542	name_and_homology_inferred
+rxn21038	A0A511V1Y1	Aneurinibacillus danicus	moderate	0.499	AsbA (A0A0F7RJ52)	False	False	602	name_and_homology_inferred
+rxn21038	A0ABQ1PVJ1	Thalassobacillus devorans	moderate	0.469	AsbA (A0A0F7RJ52)	False	False	581	name_and_homology_inferred
+rxn21038	A0A8J2YFK3	Pullulanibacillus camelliae	moderate	0.451	AsbA (A0A0F7RJ52)	False	False	603	name_and_homology_inferred
+rxn21038	A0A917AXG3	Priestia taiwanensis	moderate	0.424	AsbA (A0A0F7RJ52)	False	False	604	name_and_homology_inferred
+rxn09897	A0ABS4JEW8	Paenibacillus shirakamiensis	moderate	0.391	BacD (P39641)	False	False	473	ec_inferred
+rxn21038	A0AA37W9M8	Litoribrevibacter albus	moderate	0.387	AsbA (A0A0F7RJ52)	False	False	666	name_and_homology_inferred
+rxn45007	A0A6S7AZG2	Pararobbsia alpina	moderate	0.376	SbnF (Q2G1M8)	False	False	589	ec_inferred
+rxn21038	A0A510XC93	Bisbaumannia pacifica	moderate	0.375	AsbA (A0A0F7RJ52)	False	False	589	name_and_homology_inferred
+rxn21038	A0A640VTU0	Roseobacter cerasinus	moderate	0.372	AsbA (A0A0F7RJ52)	False	False	617	name_and_homology_inferred
+rxn47618	A0A8J4H351	Xylanibacillus composti	moderate	0.37	SbnE (Q2G1M9)	False	False	585	name_and_homology_inferred
+rxn21038	A0A5M3PME8	Marinobacter salsuginis	moderate	0.363	AsbA (A0A0F7RJ52)	False	False	616	name_and_homology_inferred
+rxn45007	A0ABM9BY12	Paenibacillus plantiphilus	moderate	0.36	SbnF (Q2G1M8)	False	False	645	ec_inferred
+rxn21038	A0A9W6N401	Methylopila jiangsuensis	moderate	0.358	AsbA (A0A0F7RJ52)	False	False	612	name_and_homology_inferred
+rxn46045	A0ABN7TT27	Paenibacillus allorhizosphaerae	moderate	0.358	DdaG (E2JA32)	False	False	409	ec_inferred
+rxn21038	A0A8J2YJT4	Agaricicola taiwanensis	moderate	0.357	AsbA (A0A0F7RJ52)	False	False	594	name_and_homology_inferred
+rxn21038	A0A9W6N7E4	Methylopila turkensis	moderate	0.355	AsbA (A0A0F7RJ52)	False	False	595	name_and_homology_inferred
+rxn47618	A0ABN1V8I6	Prauserella alba	moderate	0.354	SbnE (Q2G1M9)	False	False	507	name_and_homology_inferred
+rxn47618	A0A8D5ZLL1	Polycladomyces abyssicola	moderate	0.353	SbnE (Q2G1M9)	False	False	623	name_and_homology_inferred
+rxn45007	A0ABM9C099	Paenibacillus plantiphilus	moderate	0.343	SbnF (Q2G1M8)	False	False	604	ec_inferred
+rxn46045	A0ABN8GJE2	Paenibacillus allorhizoplanae	moderate	0.343	DdaG (E2JA32)	False	False	397	ec_inferred
+rxn21036	A0ABP7MJ38	Litoribacillus peritrichatus	moderate	0.342	AsbB (Q81RQ8)	False	False	619	name_and_homology_inferred
+rxn46045	A0A916NK15	Paenibacillus solanacearum	moderate	0.336	DdaG (E2JA32)	False	False	408	ec_inferred
+rxn45007	A0ABM9CPI4	Paenibacillus plantiphilus	moderate	0.334	SbnF (Q2G1M8)	False	False	623	ec_inferred
+rxn47618	A0ABN8G2K6	Paenibacillus plantiphilus	moderate	0.329	SbnE (Q2G1M9)	False	False	637	ec_inferred
+rxn22343	A0A2X4W351	Lederbergia lenta	moderate	0.328	MurE (Q9WY79)	False	False	481	ec_inferred
+rxn47618	A0A6S7AUB9	Pararobbsia alpina	moderate	0.321	SbnE (Q2G1M9)	False	False	608	ec_inferred
+rxn21038	A0ABQ6PDN8	Francisella sciaenopsi	moderate	0.32	AsbA (A0A0F7RJ52)	False	False	569	name_and_homology_inferred
+rxn22343	A0A5C5V6T3	Blastopirellula retiformator	moderate	0.318	MurE (Q9WY79)	False	False	507	ec_inferred
+rxn22343	A0A517YHC3	Anatilimnocola aggregata	moderate	0.314	MurE (Q9WY79)	False	False	500	ec_inferred
+rxn22343	A0A518C8G2	Bremerella volcania	moderate	0.303	MurE (Q9WY79)	False	False	507	ec_inferred
+rxn42395	A0A6S7BZ53	Pararobbsia alpina	moderate	0.302	SbnC (Q2G1N1)	False	False	654	ec_inferred
+rxn21036	Q81RQ8	Bacillus anthracis	moderate	0.0	 ()	True	False	612	reaction_annotation
+rxn21038	A0A0F7RJ52	Bacillus anthracis	moderate	0.0	 ()	True	False	602	reaction_annotation
+rxn42395	Q2G1N1	Staphylococcus aureus (strain NCTC 8325 / PS 47)	moderate	0.0	 ()	True	False	584	reaction_annotation
+rxn42510	Q2FW70	Staphylococcus aureus (strain NCTC 8325 / PS 47)	moderate	0.0	 ()	True	False	658	reaction_annotation
+rxn45007	Q2G1M8	Staphylococcus aureus (strain NCTC 8325 / PS 47)	moderate	0.0	 ()	True	False	616	reaction_annotation
+rxn47618	Q2G1M9	Staphylococcus aureus (strain NCTC 8325 / PS 47)	moderate	0.0	 ()	True	False	578	reaction_annotation
+rxn21038	W8FL86	Bacillus cereus	moderate	0.931	AsbA (A0A0F7RJ52)	False	True	497	name_and_homology_inferred
+rxn21038	W8FWG5	Paenibacillus tylopili	moderate	0.922	AsbA (A0A0F7RJ52)	False	True	554	name_and_homology_inferred
+rxn21038	W8FPK1	Bacillus thuringiensis	moderate	0.902	AsbA (A0A0F7RJ52)	False	True	571	name_and_homology_inferred
+rxn21038	W8FKM6	Bacillus mycoides	moderate	0.881	AsbA (A0A0F7RJ52)	False	True	564	name_and_homology_inferred
+rxn21038	W8FL81	Bacillus mycoides	moderate	0.867	AsbA (A0A0F7RJ52)	False	True	571	name_and_homology_inferred
+rxn21038	U6SUS5	Alkalihalophilus marmarensis DSM 21297	hard	0.521	AsbA (A0A0F7RJ52)	False	False	614	name_and_homology_inferred
+rxn21038	A0A510Y5K6	Marinococcus halophilus	hard	0.457	AsbA (A0A0F7RJ52)	False	False	585	name_and_homology_inferred
+rxn21038	A0A511WNG6	Halobacillus faecis	hard	0.445	AsbA (A0A0F7RJ52)	False	False	582	name_and_homology_inferred
+rxn21038	A0A917B963	Halobacillus andaensis	hard	0.432	AsbA (A0A0F7RJ52)	False	False	587	name_and_homology_inferred
+rxn21036	A0ABN3GTP1	Saccharopolyspora halophila	hard	0.404	AsbB (Q81RQ8)	False	False	581	name_and_homology_inferred
+rxn21036	A0A917JWN1	Saccharopolyspora thermophila	hard	0.396	AsbB (Q81RQ8)	False	False	585	name_and_homology_inferred
+rxn21036	A0ABN3V2X3	Saccharopolyspora taberi	hard	0.385	AsbB (Q81RQ8)	False	False	588	name_and_homology_inferred
+rxn47618	A0ABN3V3C9	Saccharopolyspora taberi	hard	0.368	SbnE (Q2G1M9)	False	False	572	name_and_homology_inferred
+rxn47618	A0ABN3GUQ2	Saccharopolyspora halophila	hard	0.35	SbnE (Q2G1M9)	False	False	542	name_and_homology_inferred
+rxn47618	A0A917JXZ7	Saccharopolyspora thermophila	hard	0.347	SbnE (Q2G1M9)	False	False	541	name_and_homology_inferred
+rxn47618	A0ABP9EZE3	Actinomycetospora straminea	hard	0.336	SbnE (Q2G1M9)	False	False	525	name_and_homology_inferred
+rxn09897	A0ABX7TM04	Streptomyces cyanogenus	hard	0.312	BacD (P39641)	False	False	457	ec_inferred
+rxn09897	A0A0D7CJE4	Streptomyces natalensis ATCC 27448	hard	0.308	Q8KWT3 (Q8KWT3)	False	False	457	name_and_homology_inferred
+rxn09897	A0A0W7X1T3	Streptomyces silvensis	hard	0.305	BacD (P39641)	False	False	464	name_and_homology_inferred
+rxn09897	A0A101NQA2	Streptomyces cellostaticus	hard	0.3	BacD (P39641)	False	False	457	name_and_homology_inferred
+rxn22343	Q9WY79	Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)	hard	0.0	 ()	True	False	490	reaction_annotation
