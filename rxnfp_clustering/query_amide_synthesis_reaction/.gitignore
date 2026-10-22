@@ -13,3 +13,10 @@ results/family_expansion.tsv
 results/master_candidates.tsv
 results/master_candidates_enriched.tsv
 results/modelseed_nylon_top10/all_modelseed_scores.tsv
+
+# Expanded screen: regenerable MSAs and Boltz model outputs (not model-* figures/tables)
+results/top10_cofold_expanded/msa/
+results/top10_cofold_expanded/msa_hard/
+results/top10_cofold_expanded/campaign/outputs/
+results/top10_cofold_expanded/campaign_hard/outputs/
+results/top10_cofold_expanded/*.log
