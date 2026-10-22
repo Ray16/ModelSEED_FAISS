@@ -1,0 +1,14 @@
+reaction	accession	enzyme	gene	organism	label	mapping_route	phosphate	status	models	angle_deg	harmonic_distance_A
+rxn05123	I3R584	Gamma-glutamylputrescine synthetase	glnA2;HFX_1688	Haloferax mediterranei (strain ATCC 33500 / DSM 1411 / JCM 8866 / NBRC 14739 / NCIMB 2177 / R-4)	GlnA2 (Haloferax)	reaction_annotation	PG	verified	50	139.9942856836214	4.861000941760337
+rxn05123	P78061	Gamma-glutamylputrescine synthetase PuuA	puuA;ycjK;b1297;JW5201	Escherichia coli (strain K12)	PuuA	reaction_annotation	PG	verified	50	162.57492395751473	4.948641942144505
+rxn05123	Q9KZC7	Gamma-glutamylpolyamine synthetase GlnA3	glnA3;SCO6962	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	GlnA3	reaction_annotation	PG	verified	50	159.15583118363853	3.9062363344205653
+rxn05123	Q9RDS6	Gamma-glutamylpolyamine synthetase GlnA2	glnA2;SCO2241	Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)	GlnA2 (Streptomyces)	reaction_annotation	PG	verified	50	68.881858337011	16.124357488964357
+rxn46045	E2JA32	Fumarate--(S)-2,3-diaminopropanoate ligase	ddaG	Enterobacter agglomerans	DdaG	reaction_annotation	PA	verified	50	96.15961206142784	4.509692792297928
+rxn42510	Q2FW70	D-ornithine--citrate ligase	sfnaD;SAOUHSC_02436	Staphylococcus aureus (strain NCTC 8325 / PS 47)	SfnaD	reaction_annotation	PA	verified	50	150.6792914255429	5.634246071659394
+rxn47618	Q2G1M9	L-2,3-diaminopropanoate--citrate ligase	sbnE;SAOUHSC_00079	Staphylococcus aureus (strain NCTC 8325 / PS 47)	SbnE	reaction_annotation	PA	verified	50	137.00545637214753	4.207176377811128
+rxn21038	A0A0F7RJ52	Spermidine-citrate ligase	asbA;GBAA_1981	Bacillus anthracis	AsbA	reaction_annotation	PA	verified	50	102.85359656971391	4.51090899830914
+rxn22343	Q9WY79	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase	murE;TM_0237	Thermotoga maritima (strain ATCC 43589 / DSM 3109 / JCM 10099 / NBRC 100826 / MSB8)	MurE	reaction_annotation	PG	verified	50	145.87960141565267	6.51085836362457
+rxn42395	Q2G1N1	Staphyloferrin B synthase	sbnC;SAOUHSC_00077	Staphylococcus aureus (strain NCTC 8325 / PS 47)	SbnC	reaction_annotation	PA	verified	50	136.12423164457903	4.669246974086329
+rxn45007	Q2G1M8	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	sbnF;SAOUHSC_00080	Staphylococcus aureus (strain NCTC 8325 / PS 47)	SbnF	reaction_annotation	PA	verified	50	124.34178207409217	4.932728934153503
+rxn21036	Q81RQ8	Citryl-spermidine/3,4-dihydroxybenzoyl-citryl-spermidine:spermidine ligase	asbB;GBAA_1982	Bacillus anthracis	AsbB	reaction_annotation	PA	verified	50	149.29476180108693	4.031329953385357
+rxn09897	P39641	Alanine--anticapsin ligase	bacD;ywfE;BSU37710	Bacillus subtilis (strain 168)	BacD (candidate)	ec_inferred	PG	verified	50	162.16578569608876	3.6765307839887207
