@@ -1,0 +1,60 @@
+{
+  "P78061": {
+    "accession": "P78061",
+    "name": "P78061_2mg_glu",
+    "n_models": 50,
+    "frac_closest_is_gamma": 0.9,
+    "any_O": {
+      "n_models": 50,
+      "weighted_attack_angle_A_deg": 156.7,
+      "near_attack_fraction": 0.0,
+      "n_within_4A": 0,
+      "min_distance_A": 4.09,
+      "conclusive": false,
+      "candidate_angle_deg": null
+    },
+    "gamma_O": {
+      "n_models": 50,
+      "weighted_attack_angle_A_deg": 156.1,
+      "near_attack_fraction": 0.0,
+      "n_within_4A": 0,
+      "min_distance_A": 4.09,
+      "conclusive": false,
+      "candidate_angle_deg": null
+    },
+    "adipate_reference": {
+      "candidate_angle_deg": 162.0,
+      "near_attack_fraction": 0.1,
+      "n_within_4A": 7
+    }
+  },
+  "Q9KZC7": {
+    "accession": "Q9KZC7",
+    "name": "Q9KZC7_2mg_glu",
+    "n_models": 50,
+    "frac_closest_is_gamma": 1.0,
+    "any_O": {
+      "n_models": 50,
+      "weighted_attack_angle_A_deg": 163.1,
+      "near_attack_fraction": 0.02,
+      "n_within_4A": 1,
+      "min_distance_A": 3.92,
+      "conclusive": false,
+      "candidate_angle_deg": 161.0
+    },
+    "gamma_O": {
+      "n_models": 50,
+      "weighted_attack_angle_A_deg": 163.1,
+      "near_attack_fraction": 0.02,
+      "n_within_4A": 1,
+      "min_distance_A": 3.92,
+      "conclusive": false,
+      "candidate_angle_deg": 161.0
+    },
+    "adipate_reference": {
+      "candidate_angle_deg": 159.2,
+      "near_attack_fraction": 0.68,
+      "n_within_4A": 37
+    }
+  }
+}

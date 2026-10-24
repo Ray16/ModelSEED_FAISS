@@ -22,3 +22,7 @@ results/top10_cofold_expanded/*.log
 # but manifest.json / inputs / state / geometry tables ARE tracked.
 results/cofold_step1/outputs/
 results/cofold_step2/outputs/
+
+# GS native-substrate control: model PDBs regenerable (tracked: scripts, tables, figure, manifest, inputs)
+results/control_gs_native/outputs/
+results/control_gs_native/stage/

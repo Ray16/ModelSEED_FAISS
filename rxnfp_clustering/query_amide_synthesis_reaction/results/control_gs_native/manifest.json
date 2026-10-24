@@ -1,0 +1,46 @@
+{
+  "scope": "GS native-substrate positive control: L-glutamate (native acyl donor) on PuuA/GlnA3; tests whether the step-1 in-line attack-angle proxy transfers to the GS fold",
+  "inputs": [
+    {
+      "accession": "P78061",
+      "name": "P78061_2mg_glu",
+      "sequence": "METNIVEVENFVQQSEERRGSAFTQEVKRYLERYPNTQYVDVLLTDLNGCFRGKRIPVSSLKKLEKGCYFPASVFAMDILGNVVEEAGLGQEMGEPDRTCVPVLGSLTPSAADPEFIGQMLLTMVDEDGAPFDVEPRNVLNRLWQQLRQRGLFPVVAVELEFYLLDRQRDAEGYLQPPCAPGTDDRNTQSQVYSVDNLNHFADVLNDIDELAQLQLIPADGAVAEASPGQFEINLYHTDNVLEACDDALALKRLVRLMAEKHKMHATFMAKPYEEHAGSGMHIHISMQNNRGENVLSDAEGEDSPLLKKMLAGMIDLMPSSMALLAPNVNSYRRFQPGMYVPTQASWGHNNRTVALRIPCGDRHNHRVEYRVAGADANPYLVMAAIFAGILHGLDNELPLQEEVEGNGLEQEGLPFPIRQSDALGEFIENDHLRRYLGERFCHVYHACKNDELLQFERLITETEIEWMLKNA",
+      "sequence_length": 472,
+      "sequence_sha256": "e7b5dddde3f08c16c3b92e9ef0c2a668b33db78f5130498a27b6fecc21307691",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "acid_chain": "E",
+      "acid_smiles": "[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/inputs/P78061_2mg_glu.yaml",
+      "input_sha256": "a33d21daa86725400d537e94c26ec866ac87cc87ee724a9417be5fd98720e07f",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/538726bc0feec6e9.csv",
+      "msa_sha256": "0c33439ea0a44d53062d79786f200b328df2aee5475969d641c5fe57398243e2"
+    },
+    {
+      "accession": "Q9KZC7",
+      "name": "Q9KZC7_2mg_glu",
+      "sequence": "MSESDPVPGGRPGEVERATALSGELTGQGVHGVVLAYVDTAGIARVKTVPTAKLAAAAAWGVGMSPVFDTFLADDSIVGTDVLGSPDGDLRLYPDLDRLTMLAAQPGWAWAPVDRITQEGAPHPACGRTVLRRIVAGAAERHGITFRAAVEVEWVVGRGDAGGDAFVPAVSGPAYGAARQVELSDCAADLLAALAAQGVDVEQFHPEYAAGQFEVSVGALGPVAAADHSVLVRQTIRAVSARHGLRVSFAPAVLGQGVGNGGHLHLSAWRDGTNLHAGGTARCGMTAEAESFVAGVLGHLPALTALTAPSPASRLRLRPSQWAGVFTAWGRETREAALRIVTGTAGIRDRAANLEVKPVDLAANPYLALASVIAAGLDGLASSAPLPEEITGDPARLDPAAAAARGVRRLPVTLTESVAAFRTDGVLREALGPVLADAVIAVRLGEAGSVEGLDDDGVAAAYRWKY",
+      "sequence_length": 466,
+      "sequence_sha256": "c9f6db2e2be4de42dea5285e1d66d9110be85f5790ac164133762d3f76c806e6",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "acid_chain": "E",
+      "acid_smiles": "[NH3+][C@@H](CCC(=O)[O-])C(=O)[O-]",
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/inputs/Q9KZC7_2mg_glu.yaml",
+      "input_sha256": "9475896bb0d3dfa092392ef98998e9273031599b05fadda7fc31ec9e8c855a8c",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/bf0aeea88f263119.csv",
+      "msa_sha256": "52be78fce1cb62392e6a74dd12df97a4e53f50f8554b251af7403710ce460f17"
+    }
+  ],
+  "settings": {
+    "mode": "exact",
+    "seed": 42,
+    "diffusion_samples": 50,
+    "max_parallel_samples": 41,
+    "recycling_steps": 3,
+    "sampling_steps": 200
+  },
+  "expected_models": 100
+}
