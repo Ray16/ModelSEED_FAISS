@@ -1,0 +1,97 @@
+{
+  "scope": "GS native-substrate control matrix: enzyme x (+/- native amine putrescine) x seeds 42/1/7; tests whether the native amine co-substrate rescues glutamate engagement and whether the engagement deficit is seed-robust",
+  "inputs": [
+    {
+      "accession": "P78061",
+      "name": "P78061_free",
+      "condition": "free",
+      "acid_chain": "E",
+      "amine": null,
+      "sequence": "METNIVEVENFVQQSEERRGSAFTQEVKRYLERYPNTQYVDVLLTDLNGCFRGKRIPVSSLKKLEKGCYFPASVFAMDILGNVVEEAGLGQEMGEPDRTCVPVLGSLTPSAADPEFIGQMLLTMVDEDGAPFDVEPRNVLNRLWQQLRQRGLFPVVAVELEFYLLDRQRDAEGYLQPPCAPGTDDRNTQSQVYSVDNLNHFADVLNDIDELAQLQLIPADGAVAEASPGQFEINLYHTDNVLEACDDALALKRLVRLMAEKHKMHATFMAKPYEEHAGSGMHIHISMQNNRGENVLSDAEGEDSPLLKKMLAGMIDLMPSSMALLAPNVNSYRRFQPGMYVPTQASWGHNNRTVALRIPCGDRHNHRVEYRVAGADANPYLVMAAIFAGILHGLDNELPLQEEVEGNGLEQEGLPFPIRQSDALGEFIENDHLRRYLGERFCHVYHACKNDELLQFERLITETEIEWMLKNA",
+      "sequence_length": 472,
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/matrix/inputs/P78061_free.yaml",
+      "input_sha256": "02834763f8a6e1cf519c527f8d3fc8ace19c8556eec5666e6c4e2b74a4591967",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/538726bc0feec6e9.csv",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "seeds": [
+        42,
+        1,
+        7
+      ]
+    },
+    {
+      "accession": "P78061",
+      "name": "P78061_put",
+      "condition": "put",
+      "acid_chain": "E",
+      "amine": "putrescine",
+      "sequence": "METNIVEVENFVQQSEERRGSAFTQEVKRYLERYPNTQYVDVLLTDLNGCFRGKRIPVSSLKKLEKGCYFPASVFAMDILGNVVEEAGLGQEMGEPDRTCVPVLGSLTPSAADPEFIGQMLLTMVDEDGAPFDVEPRNVLNRLWQQLRQRGLFPVVAVELEFYLLDRQRDAEGYLQPPCAPGTDDRNTQSQVYSVDNLNHFADVLNDIDELAQLQLIPADGAVAEASPGQFEINLYHTDNVLEACDDALALKRLVRLMAEKHKMHATFMAKPYEEHAGSGMHIHISMQNNRGENVLSDAEGEDSPLLKKMLAGMIDLMPSSMALLAPNVNSYRRFQPGMYVPTQASWGHNNRTVALRIPCGDRHNHRVEYRVAGADANPYLVMAAIFAGILHGLDNELPLQEEVEGNGLEQEGLPFPIRQSDALGEFIENDHLRRYLGERFCHVYHACKNDELLQFERLITETEIEWMLKNA",
+      "sequence_length": 472,
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/matrix/inputs/P78061_put.yaml",
+      "input_sha256": "5bda073af1b0f67d4364f32af4d3ff2b5a9994fcf20db29e1e37566faa83b0a1",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/538726bc0feec6e9.csv",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "seeds": [
+        42,
+        1,
+        7
+      ]
+    },
+    {
+      "accession": "Q9KZC7",
+      "name": "Q9KZC7_free",
+      "condition": "free",
+      "acid_chain": "E",
+      "amine": null,
+      "sequence": "MSESDPVPGGRPGEVERATALSGELTGQGVHGVVLAYVDTAGIARVKTVPTAKLAAAAAWGVGMSPVFDTFLADDSIVGTDVLGSPDGDLRLYPDLDRLTMLAAQPGWAWAPVDRITQEGAPHPACGRTVLRRIVAGAAERHGITFRAAVEVEWVVGRGDAGGDAFVPAVSGPAYGAARQVELSDCAADLLAALAAQGVDVEQFHPEYAAGQFEVSVGALGPVAAADHSVLVRQTIRAVSARHGLRVSFAPAVLGQGVGNGGHLHLSAWRDGTNLHAGGTARCGMTAEAESFVAGVLGHLPALTALTAPSPASRLRLRPSQWAGVFTAWGRETREAALRIVTGTAGIRDRAANLEVKPVDLAANPYLALASVIAAGLDGLASSAPLPEEITGDPARLDPAAAAARGVRRLPVTLTESVAAFRTDGVLREALGPVLADAVIAVRLGEAGSVEGLDDDGVAAAYRWKY",
+      "sequence_length": 466,
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/matrix/inputs/Q9KZC7_free.yaml",
+      "input_sha256": "ab395e63fe246dbea2d8bd0e43fbfc771d12f8d8189897e511f72e6a2f773429",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/bf0aeea88f263119.csv",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "seeds": [
+        42,
+        1,
+        7
+      ]
+    },
+    {
+      "accession": "Q9KZC7",
+      "name": "Q9KZC7_put",
+      "condition": "put",
+      "acid_chain": "E",
+      "amine": "putrescine",
+      "sequence": "MSESDPVPGGRPGEVERATALSGELTGQGVHGVVLAYVDTAGIARVKTVPTAKLAAAAAWGVGMSPVFDTFLADDSIVGTDVLGSPDGDLRLYPDLDRLTMLAAQPGWAWAPVDRITQEGAPHPACGRTVLRRIVAGAAERHGITFRAAVEVEWVVGRGDAGGDAFVPAVSGPAYGAARQVELSDCAADLLAALAAQGVDVEQFHPEYAAGQFEVSVGALGPVAAADHSVLVRQTIRAVSARHGLRVSFAPAVLGQGVGNGGHLHLSAWRDGTNLHAGGTARCGMTAEAESFVAGVLGHLPALTALTAPSPASRLRLRPSQWAGVFTAWGRETREAALRIVTGTAGIRDRAANLEVKPVDLAANPYLALASVIAAGLDGLASSAPLPEEITGDPARLDPAAAAARGVRRLPVTLTESVAAFRTDGVLREALGPVLADAVIAVRLGEAGSVEGLDDDGVAAAYRWKY",
+      "sequence_length": 466,
+      "input": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/control_gs_native/matrix/inputs/Q9KZC7_put.yaml",
+      "input_sha256": "ce9648588a786160fc2a68234822476399d29926daeb34134ba0264d3919f0d3",
+      "msa": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/top10_cofold/msa/bf0aeea88f263119.csv",
+      "mg_count": 2,
+      "phosphate": "PG",
+      "leaving_oxygen": "O3B",
+      "seeds": [
+        42,
+        1,
+        7
+      ]
+    }
+  ],
+  "seeds": [
+    42,
+    1,
+    7
+  ],
+  "settings": {
+    "mode": "stock-exact",
+    "diffusion_samples": 50,
+    "max_parallel_samples": 5,
+    "recycling_steps": 3,
+    "sampling_steps": 200
+  }
+}
