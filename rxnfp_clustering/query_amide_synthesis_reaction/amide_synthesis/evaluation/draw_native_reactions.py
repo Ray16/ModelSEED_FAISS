@@ -23,7 +23,7 @@ from rdkit import Chem, rdBase
 from rdkit.Chem import rdDepictor, rdMolDescriptors
 from rdkit.Chem.Draw import rdMolDraw2D
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 W, PANEL_H = 1400, 330
 INK, MUTED, TEAL = '#183348', '#526574', '#007f86'
 HIGHLIGHT = (0.15, 0.78, 0.70)

@@ -17,7 +17,7 @@ from rdkit.Chem import rdFingerprintGenerator
 
 from amide_synthesis.infrastructure.paths import PROJECT
 from amide_synthesis.reaction_search.encode_and_search import build_queries, featurise
-from nylon_chemical_review import assess
+from amide_synthesis.reaction_search.nylon_chemical_review import assess
 
 METHODS = {
     'drfp_tanimoto': 'DRFP / Tanimoto',
@@ -120,9 +120,9 @@ def main():
     render(reviewed, pd.DataFrame(summaries), policy, out)
     inputs = [source / 'all_amide_scores.tsv', source / 'top100_reactions.tsv',
               PROJECT / 'data/modelseed_master.parquet', matrix_path,
-              PROJECT / 'nylon_chemical_review.py', Path(__file__),
+              PROJECT / 'amide_synthesis/reaction_search/nylon_chemical_review.py', Path(__file__),
               PROJECT / 'amide_synthesis/evaluation/retrieval_comparison_report.py',
-              PROJECT / 'rank_modelseed_nylon.py',
+              PROJECT / 'amide_synthesis/reaction_search/rank_modelseed_nylon.py',
               PROJECT / 'amide_synthesis/reaction_search/encode_and_search.py']
     digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
     (out / 'manifest.json').write_text(json.dumps({

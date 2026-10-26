@@ -1,7 +1,7 @@
 import pandas as pd
 import pytest
 
-from nylon_chemical_review import assess, review
+from amide_synthesis.reaction_search.nylon_chemical_review import assess, review
 from amide_synthesis.reaction_search.chemical_selection import score_features
 
 TARGET = 'O=C(O)CCCCC(=O)O.NCCCCCCN>>O=C(O)CCCCC(=O)NCCCCCCN.O'

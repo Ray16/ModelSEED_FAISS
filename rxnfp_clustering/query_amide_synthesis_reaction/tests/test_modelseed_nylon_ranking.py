@@ -1,6 +1,6 @@
 """Protect route matching and the separation of selection from scoring."""
 import unittest
-from rank_modelseed_nylon import canonical_reaction, organic_group, target_route
+from amide_synthesis.reaction_search.rank_modelseed_nylon import canonical_reaction, organic_group, target_route
 
 
 class ModelseedNylonRankingTests(unittest.TestCase):

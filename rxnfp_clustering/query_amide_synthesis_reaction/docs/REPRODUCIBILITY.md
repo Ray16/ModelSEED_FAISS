@@ -18,13 +18,13 @@ The default [lock](../config/top10_reproduction.lock.json) selects the current t
 |---|---|---|
 | Target queries | `reaction_search/encode_and_search.py` | Balanced adipate/HMDA framings and retained cofactors. |
 | Full mechanistic screen | `reaction_search/amide_enzymes.py` | Reconstruct free-amine acylation and apply substrate/balance rules. |
-| Top-100 retrieval | `rank_modelseed_nylon.py`, `reaction_search/retrieval_policy.py` | DRFP–Tanimoto primary; hybrid cosine and reaction ID for ties. |
-| Chemical selection | `nylon_chemical_review.py`, `reaction_search/chemical_selection.py` | Soft chemical preferences from versioned configuration; no original-ID allowlist. |
+| Top-100 retrieval | `reaction_search/rank_modelseed_nylon.py`, `reaction_search/retrieval_policy.py` | DRFP–Tanimoto primary; hybrid cosine and reaction ID for ties. |
+| Chemical selection | `reaction_search/nylon_chemical_review.py`, `reaction_search/chemical_selection.py` | Soft chemical preferences from versioned configuration; no original-ID allowlist. |
 | Mapping and alignments | `evaluation/top5_mapping_audit.py` | Generic panel engine; replay exact reaction evidence and keep related-reaction candidates separate. |
 | Redundancy | `candidate_selection/sequence_redundancy.py` | Exact duplicates and CD-HIT 99%/95% groups with both-sequence coverage checks. |
 | Exports and checks | `reproduce.py` | Tables/FASTA, figures, commands, environment, hashes and scientific regression comparisons. |
 
-Paths without a root-script name are relative to `amide_synthesis/`. Reaction display explanations and drawing labels never affect selection. The previous five are checked only after selection. Weight sensitivity is a consistency check, not experimental validation.
+Source paths are relative to `amide_synthesis/`. Reaction display explanations and drawing labels never affect selection. The previous five are checked only after selection. Weight sensitivity is a consistency check, not experimental validation.
 
 ## Inputs, environment and failure behavior
 

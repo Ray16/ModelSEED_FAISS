@@ -1,13 +1,8 @@
 """Protect identity validation from accession and namespace collisions."""
-import importlib.util
 import json
-from pathlib import Path
 import unittest
 
-SCRIPT = Path(__file__).resolve().parents[1] / 'audit_native_reactions.py'
-SPEC = importlib.util.spec_from_file_location('native_reaction_audit', SCRIPT)
-audit = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(audit)
+from amide_synthesis.evaluation import audit_native_reactions as audit
 
 
 class NativeReactionAuditTests(unittest.TestCase):

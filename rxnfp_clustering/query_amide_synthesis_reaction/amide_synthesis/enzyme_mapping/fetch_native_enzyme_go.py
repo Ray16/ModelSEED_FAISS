@@ -12,9 +12,9 @@ import html
 import json
 from pathlib import Path
 
-from audit_native_reactions import get_url, sha256, uniprot_entry
+from amide_synthesis.evaluation.audit_native_reactions import get_url, sha256, uniprot_entry
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 ASPECTS = {'F': 'molecular_function', 'P': 'biological_process', 'C': 'cellular_component'}
 NOTES = {
     'SfaB': 'Electronic acid-thiol ligase annotation is broad and does not specify native acid adenylation or demonstrate amidation.',
@@ -116,7 +116,7 @@ def main():
                     scope='UniProtKB GO cross-references for exact accessions, without inferred or homolog-transferred additions',
                     source_records=metadata, failures=failures, success=not failures,
                     input_sha256={str(Path(__file__).resolve()): sha256(__file__),
-                                  str(PROJECT / 'audit_native_reactions.py'): sha256(PROJECT / 'audit_native_reactions.py'),
+                                  str(PROJECT / 'amide_synthesis/evaluation/audit_native_reactions.py'): sha256(PROJECT / 'amide_synthesis/evaluation/audit_native_reactions.py'),
                                   str(reference_path): sha256(reference_path)},
                     output_sha256={p.name: sha256(p) for p in out.iterdir() if p.is_file()})
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')

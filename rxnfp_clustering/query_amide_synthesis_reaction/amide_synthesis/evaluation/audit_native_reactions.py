@@ -21,7 +21,7 @@ import sys
 import time
 from urllib.request import Request, urlopen
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 
 
 def sha256(path):

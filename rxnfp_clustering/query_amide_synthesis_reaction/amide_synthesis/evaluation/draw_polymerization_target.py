@@ -5,6 +5,7 @@ Shows explicit H/OH chain ends and (2n-1) waters for n diacids + n diamines.
 This is a separate polymerization illustration, not a new enzyme activity claim.
 Run in the palm environment; PNG, SVG, PDF and the exact source graphs are saved.
 """
+import argparse
 from collections import Counter
 from datetime import datetime, timezone
 import hashlib
@@ -19,9 +20,9 @@ from rdkit import Chem, rdBase
 from rdkit.Chem import rdDepictor, rdMolDescriptors
 from rdkit.Chem.Draw import rdMolDraw2D
 
-from draw_native_reactions import Canvas, molecule
+from amide_synthesis.evaluation.draw_native_reactions import Canvas, molecule
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 NS = 'http://www.w3.org/2000/svg'
 ACID = 'O=C(O)CCCCC(=O)O'
 AMINE = 'NCCCCCCN'
@@ -77,8 +78,11 @@ def repeat_drawing(canvas, x, y, width, height):
     canvas.text(right + 8, bottom - 5, 'n', 25)
 
 
-def main():
-    out = PROJECT / 'figures/nylon66_polymerization'
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', type=Path, default=PROJECT / 'figures/nylon66_polymerization')
+    args = parser.parse_args(argv)
+    out = args.output
     out.mkdir(parents=True, exist_ok=True)
     if (out / 'manifest.json').exists():
         raise RuntimeError('Output already exists; preserve or explicitly relocate it before regenerating.')
@@ -111,7 +115,7 @@ def main():
     sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
     manifest = dict(created_utc=datetime.now(timezone.utc).isoformat(), rdkit_version=rdBase.rdkitVersion,
                     source_sha256={str(Path(__file__).resolve()): sha(Path(__file__)),
-                                   str(PROJECT / 'draw_native_reactions.py'): sha(PROJECT / 'draw_native_reactions.py')},
+                                   str(PROJECT / 'amide_synthesis/evaluation/draw_native_reactions.py'): sha(PROJECT / 'amide_synthesis/evaluation/draw_native_reactions.py')},
                     output_sha256={p.name: sha(p) for p in out.iterdir() if p.is_file()}, validation_passed=True)
     (out / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n')
     print(out.resolve())

@@ -29,11 +29,11 @@ from rdkit import Chem, rdBase
 from rdkit.Chem import MACCSkeys, rdFingerprintGenerator as fpg
 from rdkit.Chem.MolStandardize import rdMolStandardize
 
-from draw_native_reactions import SCHEMES, Canvas, molecule, validate
+from amide_synthesis.evaluation.draw_native_reactions import SCHEMES, Canvas, molecule, validate
 from amide_synthesis.reaction_search.encode_and_search import load_species
 from amide_synthesis.reaction_search.acylation import count_free_amines
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 UNCHARGER = rdMolStandardize.Uncharger()
 ROW_KEYS = ['DdaG', 'SfaB', 'CphA1_Asp', 'CphA1_Arg', 'McbA', 'PylC']
 ROW_LABELS = ['Nylon target', 'DdaG', 'SfaB', 'CphA1 · Asp', 'CphA1 · Arg', 'McbA', 'PylC']
@@ -241,7 +241,7 @@ def main():
         try:
             env = dict(os.environ, CUDA_VISIBLE_DEVICES='', OMP_NUM_THREADS='2', MKL_NUM_THREADS='2', OPENBLAS_NUM_THREADS='2', TOKENIZERS_PARALLELISM='false')
             with (out / 'rxnfp_worker.log').open('w') as log:
-                subprocess.run([str(args.rxnfp_python), str(PROJECT / 'native_similarity_rxnfp.py'),
+                subprocess.run([str(args.rxnfp_python), str(PROJECT / 'amide_synthesis/infrastructure/legacy_workers/native_similarity_rxnfp.py'),
                                 str(out / 'reaction_inputs.json'), str(out / 'rxnfp_embeddings.npz')],
                                env=env, stdout=log, stderr=subprocess.STDOUT, timeout=180, check=True)
             info = json.loads((out / 'rxnfp_embeddings.npz.json').read_text())
@@ -308,7 +308,7 @@ def main():
         page += '<p><a href="' + html.escape(os.path.relpath(polymer, out)) + '">Polymerization target diagram</a></p>'
     (out / 'report.html').write_text(page)
     reference = PROJECT / 'data/native_reaction_references.json'
-    inputs = [Path(__file__), PROJECT / 'native_similarity_rxnfp.py', PROJECT / 'draw_native_reactions.py',
+    inputs = [Path(__file__), PROJECT / 'amide_synthesis/infrastructure/legacy_workers/native_similarity_rxnfp.py', PROJECT / 'amide_synthesis/evaluation/draw_native_reactions.py',
               reference, PROJECT / 'amide_synthesis/reaction_search/encode_and_search.py',
               PROJECT / 'amide_synthesis/reaction_search/normalize.py']
     if polymer.exists(): inputs.append(polymer)

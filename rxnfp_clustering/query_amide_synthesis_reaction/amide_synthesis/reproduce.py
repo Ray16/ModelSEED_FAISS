@@ -133,7 +133,7 @@ def main(argv=None):
         if a != b:
             raise ValueError('Recomputed eligible reaction set differs from the pinned baseline')
         ranking = output / 'reactions'
-        run('reaction_ranking', [sys.executable, str(PROJECT / 'rank_modelseed_nylon.py'),
+        run('reaction_ranking', [sys.executable, '-m', 'amide_synthesis.reaction_search.rank_modelseed_nylon',
                                 '--output', str(ranking), '--count', str(count), '--selection-policy', selection_policy, '--screen', str(actual_screen),
                                 '--rxnfp-python', lock['rxnfp_python']])
         mapping = output / 'mapping'

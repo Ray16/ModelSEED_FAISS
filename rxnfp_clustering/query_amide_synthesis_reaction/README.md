@@ -38,7 +38,7 @@ python -m amide_synthesis evaluate current-panel
 
 | Phase | Maintained implementation |
 |---|---|
-| Reaction encoding and retrieval | `amide_synthesis/reaction_search/`, `rank_modelseed_nylon.py` |
+| Reaction encoding and retrieval | `amide_synthesis/reaction_search/` (`python -m amide_synthesis rank`) |
 | Soft chemical selection | `reaction_search/chemical_selection.py`, `config/chemical_selection_policy.json` |
 | Reaction/protein evidence and snapshots | `amide_synthesis/enzyme_mapping/`, `evaluation/top5_mapping_audit.py` (supports arbitrary declared panel size) |
 | Sequence redundancy | `candidate_selection/sequence_redundancy.py` |
@@ -46,6 +46,12 @@ python -m amide_synthesis evaluate current-panel
 | Reference consistency, reports and model checks | `amide_synthesis/evaluation/`, `structure_modeling/poses.py` |
 
 Paths without a package prefix in this table are relative to `amide_synthesis/`. Configuration, raw responses, sequences, cluster membership, commands and hashes remain available. Inference is never promoted to an exact native-reaction assignment.
+
+All maintained Python implementations now live in `amide_synthesis/`.
+Use `python -m amide_synthesis --help` for commands and
+[CODE_LAYOUT.md](docs/CODE_LAYOUT.md) for the package layout and utility migration.
+`run_all.py` remains the discovery launcher. Superseded code, reports and
+before-change snapshots are indexed in [archive/README.md](archive/README.md).
 
 Historical five-reaction selections, the separate 50-protein campaign and superseded scripts/reports are retained with provenance. Their outputs must not be presented as results for the current ten-reaction panel. Existing structural campaigns remain active dependencies where their verified models were reused.
 

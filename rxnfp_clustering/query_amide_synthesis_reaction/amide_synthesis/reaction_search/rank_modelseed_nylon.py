@@ -37,10 +37,10 @@ from amide_synthesis.reaction_search.retrieval_policy import PRODUCTION_POLICY, 
 from amide_synthesis.reaction_search.encode_and_search import build_queries, featurise, load_species
 from amide_synthesis.reaction_search.acylation import count_free_amines
 from amide_synthesis.reaction_search.substrate_distance import CARBOXYLIC_ACID
-from nylon_chemical_review import review as chemical_review, render as render_chemical_review
-from draw_top5_native_reactions import generate as draw_shortlisted_native_reactions
+from amide_synthesis.reaction_search.nylon_chemical_review import review as chemical_review, render as render_chemical_review
+from amide_synthesis.evaluation.draw_top5_native_reactions import generate as draw_shortlisted_native_reactions
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 QUERIES = ['atp_amp_ligase', 'atp_adp_ligase', 'coa_aminolysis', 'direct_condensation']
 DESCRIPTIONS = {
     'rxn21314': dict(title='Pre-bisucaberin formation',
@@ -190,7 +190,7 @@ def main(argv=None):
     worker_output.with_name(worker_output.name + '.json').unlink(missing_ok=True)
     env = dict(os.environ, CUDA_VISIBLE_DEVICES='', OMP_NUM_THREADS='2', MKL_NUM_THREADS='2', OPENBLAS_NUM_THREADS='2', TOKENIZERS_PARALLELISM='false')
     with (out / 'rxnfp_worker.log').open('w') as stream:
-        subprocess.run([str(args.rxnfp_python), str(PROJECT / 'native_similarity_rxnfp.py'),
+        subprocess.run([str(args.rxnfp_python), str(PROJECT / 'amide_synthesis/infrastructure/legacy_workers/native_similarity_rxnfp.py'),
                         str(out / 'rxnfp_inputs.json'), str(worker_output), '--models', 'bert_ft', '--allow-missing'],
                        env=env, stdout=stream, stderr=subprocess.STDOUT, check=True, timeout=600)
     info = json.loads((out / 'rxnfp_embeddings.npz.json').read_text())
@@ -284,20 +284,20 @@ def main(argv=None):
         plot_components(curated, out / 'chemical_selection_components')
     resources = Path('/tmp/modelseed_top100_resources.json')
     if resources.exists(): shutil.copy2(resources, out / 'resources.json')
-    input_paths = [Path(__file__), PROJECT / 'native_similarity_rxnfp.py', corpus.CORPUS,
+    input_paths = [Path(__file__), PROJECT / 'amide_synthesis/infrastructure/legacy_workers/native_similarity_rxnfp.py', corpus.CORPUS,
         corpus.EMBEDDING, PROJECT / 'results/corpus_manifest.json', screen_path,
         PROJECT / 'results/queries.tsv', PROJECT / 'mapping_policy.json',
         PROJECT / 'amide_synthesis/reaction_search/corpus.py',
         PROJECT / 'amide_synthesis/reaction_search/retrieval_policy.py',
         PROJECT / 'amide_synthesis/reaction_search/encode_and_search.py',
         PROJECT / 'amide_synthesis/reaction_search/amide_enzymes.py',
-        PROJECT / 'nylon_chemical_review.py',
+        PROJECT / 'amide_synthesis/reaction_search/nylon_chemical_review.py',
         PROJECT / 'amide_synthesis/reaction_search/chemical_selection.py',
         PROJECT / 'config/chemical_selection_policy.json',
         PROJECT / 'amide_synthesis/evaluation/chemical_selection_validation.py',
         PROJECT / 'archive/reproducibility_20261020/results/modelseed_nylon_top100/top5_reactions.tsv',
-        PROJECT / 'draw_top5_native_reactions.py',
-        PROJECT / 'draw_native_reactions.py',
+        PROJECT / 'amide_synthesis/evaluation/draw_top5_native_reactions.py',
+        PROJECT / 'amide_synthesis/evaluation/draw_native_reactions.py',
         PROJECT / 'amide_synthesis/reaction_search/acylation.py',
         PROJECT / 'amide_synthesis/reaction_search/substrate_distance.py']
     manifest = dict(created_utc=now, database_scope='saved local ModelSEED snapshot, not a new live database retrieval',

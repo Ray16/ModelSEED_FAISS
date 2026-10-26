@@ -3,7 +3,7 @@ import hashlib
 import pandas as pd
 import pytest
 
-import nylon_chemical_review as chemistry
+import amide_synthesis.reaction_search.nylon_chemical_review as chemistry
 from amide_synthesis.reproduce import compare_table, verify_hashes
 
 

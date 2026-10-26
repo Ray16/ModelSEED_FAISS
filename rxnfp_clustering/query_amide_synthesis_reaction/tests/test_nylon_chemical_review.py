@@ -1,7 +1,7 @@
 """Check chemical distinctions that whole-reaction fingerprints can obscure."""
 import unittest
 from rdkit import Chem
-from nylon_chemical_review import assess, primary_amines, span
+from amide_synthesis.reaction_search.nylon_chemical_review import assess, primary_amines, span
 
 
 class NylonChemicalReviewTests(unittest.TestCase):

@@ -2,7 +2,7 @@
 import unittest
 import numpy as np
 from drfp import DrfpEncoder
-from compare_native_reactions import build_inputs, reaction, similarity
+from amide_synthesis.evaluation.compare_native_reactions import build_inputs, reaction, similarity
 
 
 class NativeSimilarityTests(unittest.TestCase):

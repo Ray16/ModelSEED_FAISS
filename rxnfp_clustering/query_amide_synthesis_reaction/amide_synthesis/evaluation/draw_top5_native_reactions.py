@@ -19,11 +19,11 @@ import pandas as pd
 from rdkit import Chem, rdBase
 from rdkit.Chem.MolStandardize import rdMolStandardize
 
-from draw_native_reactions import Canvas, composition, molecule, TEAL, MUTED
+from amide_synthesis.evaluation.draw_native_reactions import Canvas, composition, molecule, TEAL, MUTED
 from amide_synthesis.reaction_search.acylation import neutral_key
 from amide_synthesis.reaction_search.encode_and_search import load_species, balance_with_protons
 
-PROJECT = Path(__file__).resolve().parent
+from amide_synthesis.infrastructure.paths import PROJECT
 WIDTH, HEIGHT = 1400, 330
 LABELS = {
     'rxn05123': ('Glutamate–putrescine', 'L-Glutamate', 'Putrescine', 'γ-Glutamylputrescine'),
@@ -68,7 +68,7 @@ def prepare(row, species):
         raise ValueError('More than two distinct organic partners; use the full saved equation')
     product = neutral(organic_right[0])
     # Reconstruct neutral mass balance for the whole organic transformation.
-    from nylon_chemical_review import AMIDE
+    from amide_synthesis.reaction_search.nylon_chemical_review import AMIDE
     count_amides = lambda smi: len(molecule(smi).GetSubstructMatches(AMIDE))
     delta = count_amides(product) - sum(count_amides(reactant) for reactant in map(neutral, organic_left))
     total = Counter()
@@ -143,7 +143,7 @@ def generate(table, out):
     manifest = dict(created_utc=datetime.now(timezone.utc).isoformat(), rdkit_version=rdBase.rdkitVersion,
         rxn_ids=frame.rxn_id.tolist(), full_native_equations_validated=True,
         neutral_organic_condensations_validated=True,
-        input_sha256={str(p.resolve()): digest(p) for p in [table, Path(__file__), PROJECT / 'draw_native_reactions.py']},
+        input_sha256={str(p.resolve()): digest(p) for p in [table, Path(__file__), PROJECT / 'amide_synthesis/evaluation/draw_native_reactions.py']},
         output_sha256={name: digest(out / name) for name in files})
     (out / (stem + '_manifest.json')).write_text(json.dumps(manifest, indent=2) + '\n')
     return files + [stem + '_manifest.json']

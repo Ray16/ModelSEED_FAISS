@@ -33,7 +33,7 @@ def widest_path(mol, pairs):
 
 
 def score_features(row, policy=None):
-    from nylon_chemical_review import primary_amines, acid_carbons
+    from amide_synthesis.reaction_search.nylon_chemical_review import primary_amines, acid_carbons
     policy = policy or load_policy()
     donor, acceptor = [Chem.MolFromSmiles(row[key]) for key in ['reacting_acid_smiles', 'reacting_acceptor_smiles']]
     target = policy['target']

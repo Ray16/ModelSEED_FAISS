@@ -27,3 +27,7 @@ results/cofold_step2/outputs/
 results/control_gs_native/outputs/
 results/control_gs_native/stage/
 results/control_gs_native/matrix/stage/
+
+# Local offline refactor replay; compact verification is versioned separately.
+archive/refactor_20261026/replay/
+archive/refactor_20261026/replay_failed_worker_path/

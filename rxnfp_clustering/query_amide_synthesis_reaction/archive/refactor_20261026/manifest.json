@@ -1,0 +1,204 @@
+{
+  "base_commit": "ffc01c93a999d0f15e11ee823459bbab4a59317e",
+  "moves": {
+    "rank_modelseed_nylon.py": {
+      "destination": "amide_synthesis/reaction_search/rank_modelseed_nylon.py",
+      "sha256_before": "050667707519c40331e4dbf8b591a66ced1bf696ae209e39adf5d812118a8233",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "0c14f1f8acb0effba20577df1a12d5c82f3ce99ec05727dba9b1d86f4edec9c0"
+    },
+    "nylon_chemical_review.py": {
+      "destination": "amide_synthesis/reaction_search/nylon_chemical_review.py",
+      "sha256_before": "84d73a6f4cfd71fa9c80523ff961a2a702c508b381a25291e08e8e955b792d48",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "84d73a6f4cfd71fa9c80523ff961a2a702c508b381a25291e08e8e955b792d48"
+    },
+    "native_similarity_rxnfp.py": {
+      "destination": "amide_synthesis/infrastructure/legacy_workers/native_similarity_rxnfp.py",
+      "sha256_before": "263499109802d6d5c275562f4c5cc5f3bfb4fe84533b5e4649e44f5263c63fcb",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "263499109802d6d5c275562f4c5cc5f3bfb4fe84533b5e4649e44f5263c63fcb"
+    },
+    "audit_native_reactions.py": {
+      "destination": "amide_synthesis/evaluation/audit_native_reactions.py",
+      "sha256_before": "ff10963e03cc31a00b9aa7d0661367b86ac74d2447506dbac318e2b17ddcd134",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "a8b36af90247d7ca4f2a2d6ce2daa773af7521a0f352557e0ccc481f7980e732"
+    },
+    "compare_native_reactions.py": {
+      "destination": "amide_synthesis/evaluation/compare_native_reactions.py",
+      "sha256_before": "d65d37bf67daa98c47694409441e0b6f10d718477070056f3042d0d1b30ba918",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "a3a409b2b1902111cefff6eefdc0f50fd4857d4e13d143f709c1ea86ed63ab09"
+    },
+    "draw_native_reactions.py": {
+      "destination": "amide_synthesis/evaluation/draw_native_reactions.py",
+      "sha256_before": "0e39857166f97f59bdc882cc8382d69b91b798fd54fdd2e110b67b753baedee4",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "3793eb2aa32b179424857929f0c1b6c66273fa5b2ea10d73aa33ab20ef79075e"
+    },
+    "draw_polymerization_target.py": {
+      "destination": "amide_synthesis/evaluation/draw_polymerization_target.py",
+      "sha256_before": "fbbcc7bff35ede328a171b3b6a804ec4120eb429706b8f9a09a47af5ac9598b8",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "1bf6ac6da7265299809fc2f5ce739574b545152b46e98679336ce56df5e5cdd3"
+    },
+    "draw_top5_native_reactions.py": {
+      "destination": "amide_synthesis/evaluation/draw_top5_native_reactions.py",
+      "sha256_before": "b6cf1c514473c1c2e9874383e58e0b76ead5f7311e22a112aeca48580056e2c3",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "c3220f927451fd1fdf5f6022ff6e4d93608598d217c2640b3968448f01ca0791"
+    },
+    "fetch_native_enzyme_go.py": {
+      "destination": "amide_synthesis/enzyme_mapping/fetch_native_enzyme_go.py",
+      "sha256_before": "31c463831eea3f7eb63306d340976d4f42558b00d4615733a4af5da06af7d2d1",
+      "reason": "Maintained implementation moved to scientific phase",
+      "sha256_after": "4d35336e728c5cf03f4b9b312850723522ef9049abe96fbe036b3ee2b5fd623c"
+    },
+    "plot_drfp_score_context.py": {
+      "destination": "archive/refactor_20261026/redundant_code/plot_drfp_score_context.py",
+      "sha256_before": "37e157135c0c1679867e7e704e10763d85442ed2710ce711849b818235c9a9b6",
+      "reason": "Obsolete five-reaction plot",
+      "sha256_after": "37e157135c0c1679867e7e704e10763d85442ed2710ce711849b818235c9a9b6"
+    },
+    "A0A0F5VDL9$\"": {
+      "destination": "archive/refactor_20261026/clutter/A0A0F5VDL9$\"",
+      "sha256_before": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "reason": "Empty accidental shell output",
+      "sha256_after": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "INFORMATION_SOURCES.md": {
+      "destination": "archive/mapping_refactor_20261020/historical_docs/investigations/INFORMATION_SOURCES.md",
+      "sha256_before": "24f1ccf4afb77420b3b86c8495f4dfb1b617307fbb09839b956f8523c44bd002",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "24f1ccf4afb77420b3b86c8495f4dfb1b617307fbb09839b956f8523c44bd002"
+    },
+    "REFACTOR_NOTES.md": {
+      "destination": "archive/refactor_20261019/historical_docs/REFACTOR_NOTES.md",
+      "sha256_before": "316ad8cb31f696da915bbd204e8ceaef8c99376582a4ca3ebe7538d4b9d2f6b2",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "316ad8cb31f696da915bbd204e8ceaef8c99376582a4ca3ebe7538d4b9d2f6b2"
+    },
+    "UNIPROT_MODELSEED_MAPPING_REPORT.md": {
+      "destination": "archive/refactor_20261026/historical_docs/UNIPROT_MODELSEED_MAPPING_REPORT.md",
+      "sha256_before": "f883ec6b650ae0009e20376615efde35f2e0f49b5f2fdec1557a4d5f85db6b0b",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "f883ec6b650ae0009e20376615efde35f2e0f49b5f2fdec1557a4d5f85db6b0b"
+    },
+    "VERIFICATION.md": {
+      "destination": "archive/mapping_refactor_20261020/historical_docs/investigations/VERIFICATION.md",
+      "sha256_before": "fe03920305e4fbfd430871cc23efa93c0984e95efec77ef9d1fcfb6fe033ab11",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "fe03920305e4fbfd430871cc23efa93c0984e95efec77ef9d1fcfb6fe033ab11"
+    },
+    "results/_before_ood_gate/candidates_ranked.tsv": {
+      "destination": "archive/mapping_refactor_20261020/clutter/results/_before_ood_gate/candidates_ranked.tsv",
+      "sha256_before": "e8e13cec54a5cedf4abd28132adc51ddf560b8e37000a2be86d631cdd53ee0ef",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "e8e13cec54a5cedf4abd28132adc51ddf560b8e37000a2be86d631cdd53ee0ef"
+    },
+    "results/_before_ood_gate/enzyme_annotations.tsv": {
+      "destination": "archive/mapping_refactor_20261020/clutter/results/_before_ood_gate/enzyme_annotations.tsv",
+      "sha256_before": "2145247c1e41271bcd8777b7cd4bc4fdddd499f8bc34011e2691e15db7317ccc",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "2145247c1e41271bcd8777b7cd4bc4fdddd499f8bc34011e2691e15db7317ccc"
+    },
+    "results/_before_ood_gate/enzymes.fasta": {
+      "destination": "archive/mapping_refactor_20261020/clutter/results/_before_ood_gate/enzymes.fasta",
+      "sha256_before": "29af3edb11a2656be7fc11c3e154e00e75dbd172b85987ea9c3cfe1c5534ab3f",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "29af3edb11a2656be7fc11c3e154e00e75dbd172b85987ea9c3cfe1c5534ab3f"
+    },
+    "results/_before_ood_gate/enzymes_uniprot.tsv": {
+      "destination": "archive/mapping_refactor_20261020/clutter/results/_before_ood_gate/enzymes_uniprot.tsv",
+      "sha256_before": "ad3aa330605b7745bd5b25d2bc32114674c7c616f115f4e37bbdf6e8386e5d6a",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "ad3aa330605b7745bd5b25d2bc32114674c7c616f115f4e37bbdf6e8386e5d6a"
+    },
+    "results/_before_ood_gate/reactions_without_enzymes.tsv": {
+      "destination": "archive/mapping_refactor_20261020/clutter/results/_before_ood_gate/reactions_without_enzymes.tsv",
+      "sha256_before": "bd7a7222f752eec6aa3cdbcaa5c5acb85291ce205224281b532698223e8619fd",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "bd7a7222f752eec6aa3cdbcaa5c5acb85291ce205224281b532698223e8619fd"
+    },
+    "slides/main.pdf": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/archive/20261016_before_status_update/main.pdf",
+      "sha256_before": "55217b9f146a0326802cd7c1ffc87d55cc71f82fd113740df1530c541c2a7597",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "55217b9f146a0326802cd7c1ffc87d55cc71f82fd113740df1530c541c2a7597"
+    },
+    "slides/main.tex": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/archive/20261016_before_status_update/main.tex",
+      "sha256_before": "a4b264f6f37711fb280b2ebb7ccc3f5a6d1d0e0f86426c55b8f08c2a0fc8b1bb",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "a4b264f6f37711fb280b2ebb7ccc3f5a6d1d0e0f86426c55b8f08c2a0fc8b1bb"
+    },
+    "slides/preview/p01.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p01.png",
+      "sha256_before": "ec26ce70296b9f965b08bbc9a960f6af88aa76b73c04f5b44b44ecb557499c97",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "ec26ce70296b9f965b08bbc9a960f6af88aa76b73c04f5b44b44ecb557499c97"
+    },
+    "slides/preview/p02.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p02.png",
+      "sha256_before": "1435f59a747a654722794897e2293409cb2aa51a80c3b513ac322663dd7bb73e",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "1435f59a747a654722794897e2293409cb2aa51a80c3b513ac322663dd7bb73e"
+    },
+    "slides/preview/p03.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p03.png",
+      "sha256_before": "341140c1baecfb42259168362026aeee66855d7e865ba39d012372260c8101de",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "341140c1baecfb42259168362026aeee66855d7e865ba39d012372260c8101de"
+    },
+    "slides/preview/p04.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p04.png",
+      "sha256_before": "7bd0d5d6ae59326151ad7f5f7355f7634691d055bed36af55a75b5e8b64ca98f",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "7bd0d5d6ae59326151ad7f5f7355f7634691d055bed36af55a75b5e8b64ca98f"
+    },
+    "slides/preview/p05.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p05.png",
+      "sha256_before": "b94a4226a7b56fadbc773499b259394619123e5f37708f691d1a685731191b47",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "b94a4226a7b56fadbc773499b259394619123e5f37708f691d1a685731191b47"
+    },
+    "slides/preview/p06.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p06.png",
+      "sha256_before": "961628758de43fee7222ab0e173ba8a973d1a4134c009f3fb9892ce30c6ce098",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "961628758de43fee7222ab0e173ba8a973d1a4134c009f3fb9892ce30c6ce098"
+    },
+    "slides/preview/p07.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p07.png",
+      "sha256_before": "2fc4269655834c28fac0f7951993e77c013bac815a742dda3dd0988da36ee02a",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "2fc4269655834c28fac0f7951993e77c013bac815a742dda3dd0988da36ee02a"
+    },
+    "slides/preview/p08.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p08.png",
+      "sha256_before": "2746de326e05ccaf942e777bb35051e8da8077725cbd9a73c78eb40301330f4f",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "2746de326e05ccaf942e777bb35051e8da8077725cbd9a73c78eb40301330f4f"
+    },
+    "slides/preview/p09.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p09.png",
+      "sha256_before": "d08bcd33f2e21f0a4215a193a804c7c89a3a261c3cca1e7f11b7d976b6e693d6",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "d08bcd33f2e21f0a4215a193a804c7c89a3a261c3cca1e7f11b7d976b6e693d6"
+    },
+    "slides/preview/p10.png": {
+      "destination": "archive/mapping_refactor_20261020/clutter/slides/preview/p10.png",
+      "sha256_before": "5ef7ef51a397b27cc0ce071992c100a96f3fd888f5ab00beed9480fe4db80153",
+      "reason": "Complete an existing historical-file archival move; exact tracked bytes preserved",
+      "sha256_after": "5ef7ef51a397b27cc0ce071992c100a96f3fd888f5ab00beed9480fe4db80153"
+    },
+    "amide_synthesis/enzyme_mapping/audit_legacy_mapping.py": {
+      "destination": "archive/refactor_20261026/redundant_code/audit_legacy_mapping.py",
+      "sha256_before": "b0538bb40a89b8139bfdc775e27ee203af9dddefb1132b76fa13a90b9a8f1fe4",
+      "sha256_after": "b0538bb40a89b8139bfdc775e27ee203af9dddefb1132b76fa13a90b9a8f1fe4",
+      "reason": "One-off 2026-10-17 sampled legacy mapping audit; no maintained callers. Superseded by evaluation.audit_mapping_robustness and evidence-scoped top5_mapping_audit."
+    }
+  },
+  "preservation": "Scientific policies, pinned source data, frozen campaign inputs and predictions remain at established locations; only maintained implementation paths and imports changed."
+}
