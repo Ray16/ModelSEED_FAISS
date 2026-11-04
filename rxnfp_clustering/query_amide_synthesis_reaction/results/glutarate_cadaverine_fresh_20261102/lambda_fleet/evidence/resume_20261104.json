@@ -1,0 +1,15 @@
+{
+  "status": "resumed_gpu_work_verified",
+  "verified_utc": "2026-11-04T22:09:17.207724+00:00",
+  "reason": "Controller exited on transient 55-second GPU-discovery timeout; workers later reached their normal 12-hour limits",
+  "repair": "Retry transient discovery/observation errors; preserve completed outputs and live ownership",
+  "stage1_complete": 317,
+  "stage2_complete": 317,
+  "total": 570,
+  "active_predictors": 6,
+  "hosts": [
+    "lambda1",
+    "lambda2"
+  ],
+  "regression_test": "tests.test_lambda_controller_recovery: passed"
+}
