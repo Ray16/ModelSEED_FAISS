@@ -1,0 +1,11 @@
+reaction	native_equation	raw_accessions	exact_sequences	clusters95	cofold_sequences	native_annotation_accessions	inferred_or_related_accessions
+rxn05123	(1) ATP[0] + (1) L-Glutamate[0] + (1) Putrescine[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) gamma-L-Glutamylputrescine[0]	606	594	495	495	4	602
+rxn46045	(1) ATP[0] + (1) Fumarate[0] + (1) L-2,3-Diaminopropionate[0] <=> (1) PPi[0] + (1) AMP[0] + (1) H+[0] + (1) N3-fumaramoyl-L-2,3-diaminopropanoate[0]	6	6	6	6	1	5
+rxn22343	(1) ATP[0] + (1) UDP-N-acetylmuramoyl-L-alanyl-D-glutamate[0] + (1) D-Lysine[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) UDP-N-acetylmuramoyl-L-alanyl-gamma-D-glutamyl-D-lysine[0]	6	6	6	6	1	5
+rxn42510	(1) ATP[0] + (1) Citrate[0] + (1) D-Ornithine[0] <=> (1) PPi[0] + (1) AMP[0] + (2) H+[0] + (1) 3-[(2-aminopentan-5-oylcarbamoyl)methyl]-3-hydroxybutanoate[0]	2	2	1	1	1	1
+rxn47618	(1) ATP[0] + (1) Citrate[0] + (1) L-2,3-Diaminopropionate[0] <=> (1) PPi[0] + (1) AMP[0] + (1) H+[0] + (1) 2-({[(2S)-2-amino-2-carboxyethyl]carbamoyl}methyl)-2-hydroxybutanedioate[0]	11	11	11	11	1	10
+rxn21038	(1) ATP[0] + (1) Citrate[0] + (1) Spermidine[0] <=> (1) PPi[0] + (1) AMP[0] + (2) H+[0] + (1) N-citryl-spermidine[0]	33	32	26	21	1	32
+rxn42395	(1) ATP[0] + (1) 2-Oxoglutarate[0] + (1) 2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate[0] <=> (1) PPi[0] + (1) AMP[0] + (2) H+[0] + (1) staphyloferrin B[0]	9	9	9	9	1	8
+rxn45007	(1) ATP[0] + (1) L-2,3-Diaminopropionate[0] + (1) 2-[(2-aminoethylcarbamoyl)methyl]-2-hydroxybutanedioate[0] <=> (1) PPi[0] + (1) AMP[0] + (1) H+[0] + (1) 2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate[0]	10	10	10	10	1	9
+rxn09897	(1) ATP[0] + (2) Glycine[0] <=> (1) ADP[0] + (1) Phosphate[0] + (2) H+[0] + (1) Glycylglycine[0]	11	11	10	11	0	11
+rxn13979	(1) H2O[0] + (3) ATP[0] + (2) L-Alanine[0] + (1) N-Adpt[0] <=> (3) PPi[0] + (3) AMP[0] + (6) H+[0] + (1) N-Acetyldemethylphosphinothricin tripeptide[0]	0	0	0	0	0	0

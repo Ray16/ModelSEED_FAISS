@@ -1,0 +1,22 @@
+{
+  "n_homologs": 48,
+  "n_with_SfaB_control": 49,
+  "excluded_blank": "BL21",
+  "response": "N66L1 product titre in micrograms/mL; not percent molar yield",
+  "zero_mean_titres": 0,
+  "strong_producers": [
+    "AS9",
+    "AS17",
+    "AS23"
+  ],
+  "titre_range": [
+    2.1801063428271377e-05,
+    9.282780879925744
+  ],
+  "shapiro_log_response_p": 1.0768181385876853e-09,
+  "model_response": "log10(titre + 0.01); pseudocount and ridge alpha=1 fixed before analysis",
+  "pose_unit": "50 stochastic predictions per enzyme, not 50 independent experiments",
+  "bootstrap_unit": "enzyme",
+  "bootstrap_replicates": 2000,
+  "model_selection_on_outcomes": false
+}
