@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "candidates": 570,
+  "poses": 57000,
+  "manifest_sha256": "44856f2d2ad19e0399a696364985bc48fdba967e247e3310bad3b19f108bda7e",
+  "step1_engaged_candidates": 223,
+  "step2_pocket_violations": 1,
+  "limits": [
+    "Geometry and confidence do not establish activity on glutarate/cadaverine.",
+    "Step-2 accommodation is conditional on per-enzyme forced pocket restraints.",
+    "No old adipate/HMDA predictions or numerical baseline is merged.",
+    "Across-family activity rankings are not calibrated."
+  ]
+}

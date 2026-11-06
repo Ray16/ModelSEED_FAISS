@@ -1,0 +1,22 @@
+{
+  "created_utc": "2026-11-06T00:53:41.657181+00:00",
+  "candidates": 570,
+  "structures": 57000,
+  "step1_any_near_attack": 274,
+  "step2_any_near_attack": 437,
+  "both_stages_any_near_attack": 217,
+  "excluded_step2_pocket_violations": 1,
+  "source_sha256": {
+    "candidates.tsv": "8f58e6b856b15ba29e2e936d3bc3af54a8e68d2ef19df962207b2ef3db104914",
+    "poses.tsv": "a361854bea1abff48b5cb919ca20fa94c654311b00bd8794b73fec25f46eddf5",
+    "complete.json": "6b91c1ffeb79a856ae210d1b1dbf2b5adddc14b3205074b527aa05eb8ad33f3b"
+  },
+  "generator_sha256": "cbb75ff927537b46b914c58adf1d43ed8f2ce501ae715d807324eb3992a7b7c5",
+  "outputs": {
+    "candidate_plot_data.tsv": "c43c0a85053b65cb7790e62b9e46a9bd19614045c183f9bff9339aaa2033fc88",
+    "completed_geometry.png": "6ac8e5c90a4684221cd18924d0baeb050a2824cf729e20726fd0c5c169e5c78c",
+    "completed_geometry.svg": "320d7fcf1ebafcf82d37ae64ae7fbe5462637a8fb0da6656f03d64cdb75a7e40",
+    "completed_geometry.pdf": "a9ee5d541867e74b6515af8dd2390374726ccb00bad9ffa90420bd858e7eb89a",
+    "report.html": "09dde67fa912cbfd0e4293bceea1d49b5ea814fd640f50c11aa0df61007c460b"
+  }
+}

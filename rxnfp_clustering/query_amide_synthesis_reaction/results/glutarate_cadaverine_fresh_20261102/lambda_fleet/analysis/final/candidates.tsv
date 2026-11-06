@@ -1,0 +1,571 @@
+accession	reaction	family	mg_count	step1_engaged_poses	step1_candidate_angle_deg	step1_weighted_angle_deg	step1_near_attack_fraction	step2_valid_poses	step2_pocket_violations	step2_amine_reachable_fraction	step2_near_attack_fraction	target_activity_status
+A0AA37W9M8	rxn21038	Petrobactin biosynthesis protein AsbA	1	35	134.1791919221077	133.90846009934816	0.02	50	0	0.08	0.06	structure_based_hypothesis
+A0A1H3G5V3	rxn09897	L-amino acid ligase	2	30	148.31396721837368	146.24245925991875	0.3	50	0	0.64	0.08	structure_based_hypothesis
+A0A014NMY0	rxn05123	Gamma-glutamylputrescine synthetase	2	0		149.70779839933508	0.0	50	0	0.56	0.08	structure_based_hypothesis
+A0A024HPU7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		141.5363825578389	0.0	50	0	0.5	0.1	structure_based_hypothesis
+A0A066UKS0	rxn05123	Gamma-glutamylputrescine synthetase	2	12	156.62231965367343	159.52962971699728	0.16	50	0	0.58	0.06	structure_based_hypothesis
+A0A077K9C4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	33	162.72932287195556	159.77339791440355	0.48	50	0	0.84	0.72	structure_based_hypothesis
+A0A081K9W1	rxn05123	Gamma-glutamylputrescine synthetase	2	0		154.08707969696664	0.0	50	0	0.46	0.08	structure_based_hypothesis
+A0A081N5A0	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.32768287918012	0.0	50	0	0.96	0.04	structure_based_hypothesis
+A0A085G9T0	rxn05123	Gamma-glutamyl-putrescine synthetase	2	0		149.91028916426473	0.0	50	0	0.5	0.04	structure_based_hypothesis
+A0A085VGW8	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.7216661785694	0.0	50	0	0.44	0.04	structure_based_hypothesis
+A0A089Q6S0	rxn05123	Gamma-glutamylputrescine synthetase	2	13	139.96425868627196	134.4963693744119	0.06	50	0	0.78	0.32	structure_based_hypothesis
+A0A089YB39	rxn05123	Gamma-glutamylputrescine synthetase	2	0		150.05882137200382	0.0	50	0	0.66	0.34	structure_based_hypothesis
+A0A090DU11	rxn05123	Glutamate--putrescine ligase	2	0		128.13325177016077	0.0	50	0	0.28	0.1	structure_based_hypothesis
+A0A090RTN3	rxn05123	Gamma-glutamyl-putrescine synthetase	2	2		148.31926696233182	0.02	50	0	0.52	0.3	structure_based_hypothesis
+A0A097R0K4	rxn05123	Gamma-glutamylputrescine synthetase	2	4		153.33268486194567	0.04	50	0	0.7	0.34	structure_based_hypothesis
+A0A099KX19	rxn05123	Glutamate--putrescine ligase	2	38	141.77954829414804	141.75294784677	0.16	50	0	0.76	0.0	structure_based_hypothesis
+A0A0A1YLA6	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.41453637068554	0.0	50	0	0.76	0.52	structure_based_hypothesis
+A0A0A4ADE9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		150.81775081661462	0.0	50	0	0.62	0.26	structure_based_hypothesis
+A0A0B2D755	rxn05123	Gamma-glutamylputrescine synthetase	2	0		149.84736941293582	0.0	50	0	0.88	0.66	structure_based_hypothesis
+A0A0B6S1G1	rxn05123	Gamma-glutamylputrescine synthase PuuA	2	2		139.57541669401286	0.0	50	0	0.4	0.0	structure_based_hypothesis
+A0A0D1ECH3	rxn05123	PuuA_1 protein	2	40	130.86944464178018	132.913220954164	0.04	50	0	0.46	0.14	structure_based_hypothesis
+A0A0D1EH68	rxn05123	PuuA_2 protein	2	0		154.3941663470223	0.0	50	0	0.06	0.0	structure_based_hypothesis
+A0A0D7CJE4	rxn09897	L-amino acid ligase	2	10	168.7940331541492	166.41705010932714	0.2	50	0	0.44	0.02	structure_based_hypothesis
+A0A0E3UM68	rxn05123	Gamma-glutamylputrescine synthetase	2	0		157.48808270948498	0.0	50	0	0.76	0.18	structure_based_hypothesis
+A0A0F0W166	rxn05123	Gamma-glutamylputrescine synthetase	2	8	150.97330304267513	150.33725761485766	0.1	50	0	0.66	0.28	structure_based_hypothesis
+A0A0F4NF80	rxn05123	Gamma-glutamylputrescine synthetase	2	0		154.51850034206717	0.0	50	0	0.4	0.08	structure_based_hypothesis
+A0A0F5VDL9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		142.05262299445195	0.0	50	0	0.76	0.38	structure_based_hypothesis
+A0A0F7RJ52	rxn21038	Spermidine-citrate ligase	1	20	112.75736103344343	113.51884210297268	0.0	50	0	0.02	0.0	structure_based_hypothesis
+A0A0G8WLK7	rxn05123	Gamma-glutamylputrescine synthetase	2	3		146.89408592927063	0.02	50	0	0.9	0.18	structure_based_hypothesis
+A0A0H2MBY6	rxn05123	Gamma-glutamylputrescine synthetase	2	2		142.44282407083017	0.0	50	0	0.24	0.04	structure_based_hypothesis
+A0A0H5BGJ6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	7	150.6593079479	144.7806515289089	0.04	50	0	0.64	0.32	structure_based_hypothesis
+A0A0H5D3F0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	31	126.26221049303332	124.65659540461107	0.04	50	0	0.8	0.28	structure_based_hypothesis
+A0A0H5D4J9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.21906151467735	0.0	50	0	0.02	0.0	structure_based_hypothesis
+A0A0J1HA58	rxn05123	Gamma-glutamylputrescine synthetase	2	0		150.13874522914534	0.0	50	0	0.84	0.14	structure_based_hypothesis
+A0A0J8Y9K5	rxn05123	Gamma-glutamylputrescine synthetase	2	0		144.54477914973413	0.0	50	0	0.66	0.24	structure_based_hypothesis
+A0A0K0GJQ5	rxn05123	Gamma-glutamylputrescine synthetase	2	3		146.73787193094358	0.04	50	0	0.8	0.08	structure_based_hypothesis
+A0A0K0Y3R6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		114.57745321760552	0.0	50	0	0.68	0.3	structure_based_hypothesis
+A0A0K0Y3V4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		140.61163797553482	0.0	50	0	0.26	0.0	structure_based_hypothesis
+A0A0K8NXP2	rxn05123	Gamma-glutamyl-putrescine synthetase	2	2		128.30452631511736	0.0	50	0	0.28	0.12	structure_based_hypothesis
+A0A0L0GXC7	rxn05123	Gamma-glutamylputrescine synthetase	2	1		122.35402613799265	0.02	50	0	0.66	0.24	structure_based_hypothesis
+A0A0L0MC12	rxn05123	Gamma-glutamyl-putrescine synthetase	2	1		134.40426280693762	0.02	50	0	0.3	0.0	structure_based_hypothesis
+A0A0L6CWN4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	29	129.62763495226125	131.7400382371384	0.0	50	0	0.24	0.2	structure_based_hypothesis
+A0A0L6CWZ9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.7194846354688	0.0	50	0	0.32	0.06	structure_based_hypothesis
+A0A0L7T8E9	rxn05123	Gamma-glutamylputrescine synthetase	2	1		137.82297265607812	0.0	50	0	0.2	0.02	structure_based_hypothesis
+A0A0M0HR61	rxn05123	Gamma-glutamylputrescine synthetase	2	0		145.99286115164472	0.0	50	0	0.54	0.12	structure_based_hypothesis
+A0A0M0I5S8	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.05918178682282	0.0	50	0	0.46	0.14	structure_based_hypothesis
+A0A0M6XKD5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	7	140.62176524822462	137.0247402013843	0.0	50	0	0.38	0.02	structure_based_hypothesis
+A0A0M6XM50	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	138.09279372512296	134.82383081473318	0.16	50	0	0.86	0.12	structure_based_hypothesis
+A0A0M6Y5V3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		142.30375437299205	0.0	50	0	0.4	0.08	structure_based_hypothesis
+A0A0M6Y6X6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.58542026255708	0.0	50	0	0.92	0.06	structure_based_hypothesis
+A0A0M6YG01	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	24	138.45848029796315	137.72238196864527	0.04	50	0	0.58	0.18	structure_based_hypothesis
+A0A0M6YH70	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		137.54402408144733	0.0	50	0	0.5	0.0	structure_based_hypothesis
+A0A0M6ZI94	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.6473907367757	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A0M7AX59	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	17	141.33704398925474	141.45957281662714	0.12	50	0	0.52	0.22	structure_based_hypothesis
+A0A0M7B7G3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	132.14564226896093	133.19529912451085	0.14	50	0	0.4	0.02	structure_based_hypothesis
+A0A0M7BB41	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		154.77164628207663	0.0	50	0	0.06	0.0	structure_based_hypothesis
+A0A0N0XJP2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	14	136.30742391546937	141.3782664115032	0.04	50	0	0.44	0.02	structure_based_hypothesis
+A0A0N7LSE1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	19	143.95002742030124	138.3166122369673	0.12	50	0	0.86	0.2	structure_based_hypothesis
+A0A0N7M0R8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		131.60514602689534	0.0	50	0	0.24	0.0	structure_based_hypothesis
+A0A0N7M9N5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	24	137.86254454295442	119.12141302959189	0.08	50	0	0.84	0.5	structure_based_hypothesis
+A0A0P1E6D8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	23	136.34961290449465	135.12025081717056	0.02	50	0	0.84	0.66	structure_based_hypothesis
+A0A0P1ENS7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		139.13097959399812	0.0	50	0	0.24	0.0	structure_based_hypothesis
+A0A0P1ES74	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		136.16507318766435	0.0	50	0	0.2	0.04	structure_based_hypothesis
+A0A0P1FIA7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	18	144.40025804882185	141.76646528963533	0.14	50	0	0.6	0.56	structure_based_hypothesis
+A0A0P1FIB3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.71558828243778	0.0	50	0	0.84	0.0	structure_based_hypothesis
+A0A0P1FZI3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		112.09534130750207	0.0	50	0	0.82	0.32	structure_based_hypothesis
+A0A0P1G3I9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.07928619744044	0.0	50	0	0.44	0.16	structure_based_hypothesis
+A0A0P1G3S1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	40	132.00112348141053	129.40531149469874	0.1	50	0	0.34	0.28	structure_based_hypothesis
+A0A0P1G7U0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	134.62391763252435	132.69011710490622	0.06	50	0	0.64	0.1	structure_based_hypothesis
+A0A0P1GLS7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		87.44455455475561	0.0	50	0	0.76	0.06	structure_based_hypothesis
+A0A0P1GSJ4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		135.83253386110812	0.0	50	0	0.48	0.04	structure_based_hypothesis
+A0A0P1H0J5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	27	135.07448826326078	129.74443076547985	0.14	50	0	0.54	0.02	structure_based_hypothesis
+A0A0P1I4M3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.66966584537607	0.0	50	0	0.46	0.02	structure_based_hypothesis
+A0A0P1IAH0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		138.57253847362534	0.04	50	0	0.2	0.0	structure_based_hypothesis
+A0A0P1IK50	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		123.89612383724985	0.0	50	0	0.62	0.38	structure_based_hypothesis
+A0A0P1IK65	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		136.37280135972398	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0A0Q2QXY4	rxn05123	Gamma-glutamylputrescine synthetase	2	1		147.98415994602553	0.02	50	0	0.56	0.2	structure_based_hypothesis
+A0A0R0AUV4	rxn05123	Gamma-glutamylputrescine synthetase	2	1		128.99547305306388	0.0	50	0	0.26	0.04	structure_based_hypothesis
+A0A0R0CVT2	rxn05123	Gamma-glutamylputrescine synthetase	2	3		145.3294531221938	0.02	50	0	0.58	0.08	structure_based_hypothesis
+A0A0S3PZE4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		115.27825109820023	0.0	50	0	0.08	0.04	structure_based_hypothesis
+A0A0U1NJI9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	32	141.55396112496507	138.52083946957967	0.16	50	0	0.76	0.54	structure_based_hypothesis
+A0A0U3AYN2	rxn05123	Gamma-glutamylputrescine synthetase	2	0		139.38743940894182	0.0	50	0	0.3	0.1	structure_based_hypothesis
+A0A0U3JSK9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		147.10525404182593	0.0	50	0	0.64	0.22	structure_based_hypothesis
+A0A0U5L744	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		155.2239615107791	0.0	50	0	0.44	0.18	structure_based_hypothesis
+A0A0W7X1T3	rxn09897	L-amino acid ligase	2	2		148.5104776260824	0.04	50	0	0.0	0.0	structure_based_hypothesis
+A0A0X4EPR4	rxn05123	Gamma-glutamylputrescine synthetase	2	8	159.14026656561578	153.3473363458325	0.14	50	0	0.76	0.24	structure_based_hypothesis
+A0A101NQA2	rxn09897	L-amino acid ligase	2	22	162.12808601440008	159.92600611156988	0.4	50	0	0.14	0.0	structure_based_hypothesis
+A0A109UM97	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.49264743875446	0.0	50	0	0.28	0.02	structure_based_hypothesis
+A0A110B340	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		136.14039334901202	0.04	50	0	0.22	0.1	structure_based_hypothesis
+A0A120JVT9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		75.75302594763582	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A128EUD9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		138.87081817118232	0.02	50	0	0.26	0.08	structure_based_hypothesis
+A0A128EUP2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.52175805092142	0.0	50	0	0.14	0.02	structure_based_hypothesis
+A0A132BTA6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	9	139.90127684843966	112.666909059097	0.04	50	0	0.64	0.24	structure_based_hypothesis
+A0A132E6L5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		114.00971447472591	0.0	50	0	0.28	0.02	structure_based_hypothesis
+A0A132E9I5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		156.71990760616077	0.0	50	0	0.02	0.0	structure_based_hypothesis
+A0A135I7X2	rxn05123	Gamma-glutamylputrescine synthetase	2	1		143.89050616083014	0.02	50	0	0.3	0.1	structure_based_hypothesis
+A0A139SPJ5	rxn05123	Gamma-glutamylputrescine synthetase	2	0		145.7598625680509	0.0	50	0	0.66	0.32	structure_based_hypothesis
+A0A165SWV1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.56128834089023	0.0	50	0	0.32	0.06	structure_based_hypothesis
+A0A165U283	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	22	143.35524580618915	142.90532413075408	0.12	50	0	0.08	0.02	structure_based_hypothesis
+A0A172YAD6	rxn05123	Gamma-glutamylputrescine synthetase	2	1		136.19092485725253	0.0	50	0	0.4	0.04	structure_based_hypothesis
+A0A191YUW2	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.23070346750316	0.0	50	0	0.54	0.26	structure_based_hypothesis
+A0A1A6C2Q1	rxn05123	Gamma-glutamylputrescine synthetase	2	7	151.24111466574067	140.07916604367293	0.1	50	0	0.86	0.46	structure_based_hypothesis
+A0A1A8T8L8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.3729699975834	0.0	50	0	0.2	0.0	structure_based_hypothesis
+A0A1A8TBU1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		139.07376858120455	0.0	50	0	0.04	0.02	structure_based_hypothesis
+A0A1A8TNC0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		134.07914887958182	0.0	50	0	0.3	0.02	structure_based_hypothesis
+A0A1A8TPP0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		155.60625857168074	0.0	50	0	0.2	0.08	structure_based_hypothesis
+A0A1A9EYS4	rxn05123	Gamma-glutamylputrescine synthetase	2	6	143.37656069757602	146.81481205830985	0.02	50	0	0.5	0.08	structure_based_hypothesis
+A0A1B7HMU2	rxn05123	Gamma-glutamyl-putrescine synthetase	2	4		151.088727382313	0.06	50	0	0.74	0.22	structure_based_hypothesis
+A0A1C2EB64	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		141.84985927406592	0.0	50	0	0.82	0.46	structure_based_hypothesis
+A0A1C3JRH9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		135.93872674031928	0.0	50	0	0.04	0.04	structure_based_hypothesis
+A0A1C3JRQ1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.81071843015945	0.0	50	0	0.06	0.02	structure_based_hypothesis
+A0A1C9W7I1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	5	155.107754643417	144.82083939466744	0.08	50	0	0.02	0.02	structure_based_hypothesis
+A0A1C9WA50	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.6437416097368	0.0	50	0	0.14	0.06	structure_based_hypothesis
+A0A1C9WB64	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	41	145.28929660600966	146.0316487502477	0.32	50	0	0.74	0.24	structure_based_hypothesis
+A0A1C9WBW9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	20	123.47899546823075	121.92913620180329	0.02	50	0	0.62	0.14	structure_based_hypothesis
+A0A1D8ILT5	rxn05123	Gamma-glutamylputrescine synthetase	2	3		139.6084515090885	0.02	50	0	0.42	0.26	structure_based_hypothesis
+A0A1D8K902	rxn05123	Gamma-glutamylputrescine synthetase	2	5	146.1560618147149	143.37754148104682	0.02	50	0	0.74	0.4	structure_based_hypothesis
+A0A1E2RX53	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.3037440249858	0.0	50	0	0.16	0.12	structure_based_hypothesis
+A0A1E2RXG6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.28047058916934	0.0	50	0	0.6	0.14	structure_based_hypothesis
+A0A1E2V9K3	rxn05123	Gamma-glutamylputrescine synthetase	2	4		143.27368263551725	0.02	50	0	0.66	0.2	structure_based_hypothesis
+A0A1E3GXJ2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		155.53302521022098	0.02	50	0	0.98	0.28	structure_based_hypothesis
+A0A1E3H007	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	25	135.93526577355922	139.2672098095544	0.04	50	0	0.84	0.06	structure_based_hypothesis
+A0A1E5C0C2	rxn05123	Gamma-glutamylputrescine synthetase	2	2		131.6229817655252	0.0	50	0	0.32	0.18	structure_based_hypothesis
+A0A1E7WJ25	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	16	132.28773243941848	130.7332548243716	0.06	50	0	0.12	0.06	structure_based_hypothesis
+A0A1E7WJ47	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	5	134.0906995635396	138.92074378242194	0.0	50	0	0.88	0.06	structure_based_hypothesis
+A0A1E7WJ63	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	15	131.96683233300877	135.51220205308923	0.02	50	0	0.38	0.12	structure_based_hypothesis
+A0A1H0C2B5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		145.27494215936642	0.0	50	0	0.02	0.02	structure_based_hypothesis
+A0A1H0D0W3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.39259312733336	0.0	50	0	0.84	0.26	structure_based_hypothesis
+A0A1H2WY53	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.48038993418777	0.0	50	0	0.86	0.0	structure_based_hypothesis
+A0A1I5RQV8	rxn05123	Gamma-glutamylputrescine synthetase	2	0		133.26531177531146	0.0	50	0	0.68	0.2	structure_based_hypothesis
+A0A1I7ENA7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		147.28972289001072	0.0	50	0	0.62	0.04	structure_based_hypothesis
+A0A1J4QGD3	rxn05123	Gamma-glutamylputrescine synthetase	2	1		140.00065428840244	0.0	50	0	0.1	0.06	structure_based_hypothesis
+A0A1J4QID9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		143.45265290719746	0.0	50	0	0.5	0.12	structure_based_hypothesis
+A0A1L3I376	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		147.508964575838	0.02	50	0	0.02	0.0	structure_based_hypothesis
+A0A1L3I389	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	16	142.05808033815606	138.57890301494376	0.1	50	0	0.52	0.24	structure_based_hypothesis
+A0A1L7NHW2	rxn05123	Gamma-glutamylputrescine synthetase	2	3		157.34534789627082	0.04	50	0	0.76	0.24	structure_based_hypothesis
+A0A1L9NWR4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		153.812669125863	0.0	50	0	0.14	0.0	structure_based_hypothesis
+A0A1L9NWT4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	133.8421422905416	134.5555607089822	0.06	50	0	0.68	0.4	structure_based_hypothesis
+A0A1N7RTG8	rxn05123	Glutamate--putrescine ligase	2	7	145.17787669681996	140.08170785829213	0.04	50	0	0.78	0.02	structure_based_hypothesis
+A0A1N7SG53	rxn05123	Glutamate--putrescine ligase	2	5	143.33814958932211	147.27182767192645	0.02	50	0	0.36	0.0	structure_based_hypothesis
+A0A1R3V4W4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		92.38677569727312	0.0	50	0	0.24	0.04	structure_based_hypothesis
+A0A1R3VCL4	rxn05123	Glutamate--putrescine ligase	2	0		143.03624475274853	0.0	50	0	0.28	0.24	structure_based_hypothesis
+A0A1S1H7N7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	132.4145183334361	138.2363740117208	0.0	50	0	0.82	0.62	structure_based_hypothesis
+A0A1S1H9I3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	26	159.1242584741888	150.44336855127457	0.46	50	0	0.2	0.04	structure_based_hypothesis
+A0A1S2THL0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.97898108695907	0.0	50	0	0.18	0.02	structure_based_hypothesis
+A0A1U9YYU0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.7647022080741	0.0	50	0	0.82	0.36	structure_based_hypothesis
+A0A1V0RK29	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	38	120.87911209864173	123.4650086779871	0.02	50	0	0.18	0.12	structure_based_hypothesis
+A0A1V0RS40	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		154.2148619008923	0.0	50	0	0.16	0.04	structure_based_hypothesis
+A0A1X6Y4T3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		114.70717803564115	0.0	50	0	0.4	0.0	structure_based_hypothesis
+A0A1X6Y6I7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	44	119.68638131851824	120.03930028464384	0.12	50	0	0.34	0.28	structure_based_hypothesis
+A0A1X6Y7A7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	10	139.93685765561085	142.92307996266766	0.02	50	0	0.62	0.22	structure_based_hypothesis
+A0A1X6Y9D5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.99101701870617	0.0	50	0	0.28	0.06	structure_based_hypothesis
+A0A1X6Y9E8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	30	125.16205568523719	128.7767464509517	0.02	50	0	0.38	0.26	structure_based_hypothesis
+A0A1X6YA10	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.67117712951293	0.0	50	0	0.26	0.0	structure_based_hypothesis
+A0A1X6ZA07	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		147.5237048032965	0.02	50	0	0.02	0.0	structure_based_hypothesis
+A0A1X6ZAE4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	126.05627892349203	125.0853928044112	0.02	50	0	0.28	0.2	structure_based_hypothesis
+A0A1X7A2A8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	27	130.86848698208541	129.3401530042472	0.1	50	0	0.84	0.24	structure_based_hypothesis
+A0A1X7A423	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		155.54556704279068	0.0	50	0	0.64	0.0	structure_based_hypothesis
+A0A1X7AIE7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	152.66162527069548	148.08844466919962	0.08	50	0	0.04	0.0	structure_based_hypothesis
+A0A1X7AR65	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		140.9634087930439	0.0	50	0	0.82	0.4	structure_based_hypothesis
+A0A1X7ATQ8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		57.954323236650445	0.0	50	0	0.12	0.04	structure_based_hypothesis
+A0A1X7BVR8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		148.25333539383956	0.0	50	0	0.24	0.04	structure_based_hypothesis
+A0A1X7BVX7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	15	137.95578263044447	133.2087576524222	0.08	50	0	0.7	0.36	structure_based_hypothesis
+A0A1Y0E9E2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		140.67645946893984	0.0	50	0	0.44	0.0	structure_based_hypothesis
+A0A1Y0E9G9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	16	148.77818367161578	146.28457901240617	0.14	50	0	0.62	0.02	structure_based_hypothesis
+A0A1Y5R729	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		134.97875190261877	0.0	50	0	0.08	0.08	structure_based_hypothesis
+A0A1Y5R844	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		154.13149545132313	0.0	50	0	0.42	0.02	structure_based_hypothesis
+A0A1Y5RBF6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.33963335180837	0.0	50	0	0.4	0.02	structure_based_hypothesis
+A0A1Y5RFF1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.98083932643917	0.0	50	0	0.42	0.06	structure_based_hypothesis
+A0A1Y5RKU6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	11	148.27118632304433	140.9929320561516	0.12	50	0	0.66	0.48	structure_based_hypothesis
+A0A1Y5RNL4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.6526257429764	0.0	50	0	0.24	0.0	structure_based_hypothesis
+A0A1Y5RPD4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		163.16125359591706	0.0	50	0	0.74	0.32	structure_based_hypothesis
+A0A1Y5RPQ2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	14	146.6126547720319	136.5420764870264	0.08	50	0	0.52	0.2	structure_based_hypothesis
+A0A1Y5RTK1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	145.4567390882068	146.7801310594003	0.28	50	0	0.48	0.16	structure_based_hypothesis
+A0A1Y5S431	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		146.50858506004369	0.0	50	0	0.18	0.02	structure_based_hypothesis
+A0A1Y5S4D8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.84079220618378	0.0	50	0	0.74	0.18	structure_based_hypothesis
+A0A1Y5SD63	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		153.52218870516694	0.0	50	0	0.94	0.0	structure_based_hypothesis
+A0A1Y5SD93	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		138.18152701381248	0.0	50	0	0.76	0.34	structure_based_hypothesis
+A0A1Y5SST7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.81537840181795	0.0	50	0	0.48	0.0	structure_based_hypothesis
+A0A1Y5STT4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	7	139.87916825412157	123.62345190951034	0.04	50	0	0.4	0.0	structure_based_hypothesis
+A0A1Y5TAF2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	12	141.31858551848677	139.504441964486	0.1	50	0	0.9	0.4	structure_based_hypothesis
+A0A1Y5TAG3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		125.09050343158718	0.0	50	0	0.22	0.0	structure_based_hypothesis
+A0A1Y5TKI8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	7	141.6685180239961	135.73668875808556	0.02	50	0	0.52	0.36	structure_based_hypothesis
+A0A1Y6H5Q6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		142.62378901076914	0.0	50	0	0.74	0.14	structure_based_hypothesis
+A0A1Y6H656	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.06180245835822	0.0	50	0	0.88	0.36	structure_based_hypothesis
+A0A221JY05	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	39	116.48263286078058	114.3577970531844	0.02	50	0	0.5	0.16	structure_based_hypothesis
+A0A221JYB1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		142.80261097699096	0.0	50	0	0.66	0.16	structure_based_hypothesis
+A0A221K6V8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		148.0611412867833	0.02	50	0	0.26	0.02	structure_based_hypothesis
+A0A231MW26	rxn05123	Gamma-glutamylputrescine synthetase	2	0		150.70947818143327	0.0	50	0	0.12	0.08	structure_based_hypothesis
+A0A238IXP1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.97525729266926	0.0	50	0	0.6	0.06	structure_based_hypothesis
+A0A238IZN0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	13	124.676898249527	116.20216140985784	0.02	50	0	0.6	0.0	structure_based_hypothesis
+A0A238JAS7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		150.76675909657249	0.02	50	0	0.4	0.0	structure_based_hypothesis
+A0A238JD56	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	41	126.21854621651507	121.8387130920912	0.04	50	0	0.46	0.08	structure_based_hypothesis
+A0A238JYB1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	31	125.38472028300652	125.32395120447673	0.02	50	0	0.62	0.26	structure_based_hypothesis
+A0A238K5F6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.36460826917804	0.0	50	0	0.3	0.0	structure_based_hypothesis
+A0A238KDN7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		138.62374994750786	0.0	50	0	0.8	0.1	structure_based_hypothesis
+A0A238KKA7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	36	123.8201834697829	122.37342444377141	0.02	50	0	0.7	0.5	structure_based_hypothesis
+A0A238KKM8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.09561178138526	0.0	50	0	0.36	0.14	structure_based_hypothesis
+A0A238KL15	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		113.22763870006378	0.0	50	0	0.44	0.1	structure_based_hypothesis
+A0A238KL36	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		152.706673930211	0.0	50	0	0.26	0.02	structure_based_hypothesis
+A0A238KW12	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	35	133.62610017525705	131.9211982883042	0.08	50	0	0.74	0.26	structure_based_hypothesis
+A0A238KWA0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.6981829848809	0.0	50	0	0.48	0.0	structure_based_hypothesis
+A0A238LIP6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	17	144.6935483414896	141.89828062989008	0.04	50	0	0.42	0.0	structure_based_hypothesis
+A0A238LKL5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	8	144.82336172246647	133.67301647378662	0.04	50	0	0.78	0.32	structure_based_hypothesis
+A0A240AUW5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.31904079917655	0.0	50	0	0.44	0.1	structure_based_hypothesis
+A0A240BXD6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	9	151.34265658145816	151.64648082423142	0.1	50	0	0.54	0.06	structure_based_hypothesis
+A0A240C636	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		44.547425486101126	0.0	50	0	0.56	0.12	structure_based_hypothesis
+A0A240EH46	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		156.61058683587459	0.0	50	0	0.7	0.56	structure_based_hypothesis
+A0A240EHL0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	136.79135857729187	123.06662413318604	0.04	50	0	0.06	0.0	structure_based_hypothesis
+A0A240EK40	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		145.93911856158525	0.02	50	0	0.6	0.3	structure_based_hypothesis
+A0A291HSA8	rxn05123	Gamma-glutamylputrescine synthetase	2	0		145.94724956108294	0.0	50	0	0.56	0.32	structure_based_hypothesis
+A0A291HT37	rxn05123	Gamma-glutamylputrescine synthetase	2	3		142.66792095753325	0.0	50	0	0.42	0.12	structure_based_hypothesis
+A0A2C9D2I2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		148.26167811128911	0.0	50	0	0.58	0.02	structure_based_hypothesis
+A0A2C9D2J1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	38	136.05110878762343	137.78588547452267	0.04	50	0	0.44	0.02	structure_based_hypothesis
+A0A2C9D3N8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		139.10396486594945	0.0	50	0	1.0	0.04	structure_based_hypothesis
+A0A2C9D7I9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.30822664853844	0.0	50	0	0.2	0.02	structure_based_hypothesis
+A0A2C9EKU1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.8637733210305	0.0	50	0	0.54	0.34	structure_based_hypothesis
+A0A2C9EKX0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		156.9395971697459	0.0	50	0	0.8	0.54	structure_based_hypothesis
+A0A2C9EMK7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		138.03100007302402	0.0	50	0	0.9	0.56	structure_based_hypothesis
+A0A2D0AYF7	rxn05123	Gamma-glutamylputrescine synthetase	2	0		126.15422793821604	0.0	50	0	0.56	0.3	structure_based_hypothesis
+A0A2D0LF49	rxn46045	Fumarate---2,3-diaminopropanoate ligase	1	0		109.09449228088732	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A2K4AMV8	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	4		131.8552361496669	0.06	50	0	0.0	0.0	structure_based_hypothesis
+A0A2K4AN05	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	10	138.32018962048355	134.32567057799747	0.02	50	0	0.04	0.04	structure_based_hypothesis
+A0A2P2E700	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		134.76108940773855	0.0	50	0	0.84	0.76	structure_based_hypothesis
+A0A2P2E707	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	14	143.70230003117632	139.73205805366734	0.08	50	0	0.58	0.06	structure_based_hypothesis
+A0A2P5PKK5	rxn45007	Staphyloferrin B biosynthesis protein SbnF	1	0		125.2418099853569	0.0	50	0	0.14	0.02	structure_based_hypothesis
+A0A2R8A8G4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.93078474538078	0.0	50	0	0.28	0.1	structure_based_hypothesis
+A0A2R8ACX6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		148.84386980946647	0.02	50	0	0.44	0.08	structure_based_hypothesis
+A0A2R8AI45	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		156.66356208428343	0.0	50	0	0.6	0.02	structure_based_hypothesis
+A0A2R8AIT4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		127.16375702370432	0.0	50	0	0.82	0.62	structure_based_hypothesis
+A0A2R8AYI0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	18	132.69938560618917	121.933108310057	0.02	50	0	0.32	0.24	structure_based_hypothesis
+A0A2R8AYV5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		157.5075935637595	0.0	50	0	0.34	0.08	structure_based_hypothesis
+A0A2R8B075	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.87034383571466	0.0	50	0	0.22	0.04	structure_based_hypothesis
+A0A2R8B378	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		141.2499088338338	0.0	50	0	0.86	0.0	structure_based_hypothesis
+A0A2R8B3B6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.0937562105917	0.0	50	0	0.38	0.02	structure_based_hypothesis
+A0A2R8BFS4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	21	142.3422516085437	144.25970687777485	0.06	50	0	0.46	0.4	structure_based_hypothesis
+A0A2R8BG02	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	15	142.3497343868235	134.27609933302458	0.1	50	0	0.04	0.02	structure_based_hypothesis
+A0A2R8BWG2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.83664620805172	0.0	50	0	0.32	0.04	structure_based_hypothesis
+A0A2R8BYT4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	20	136.4687877726171	137.32979793484307	0.08	50	0	0.32	0.14	structure_based_hypothesis
+A0A2R8C515	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		139.37442128677375	0.0	50	0	0.12	0.02	structure_based_hypothesis
+A0A2R8CQD6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		149.73398551490584	0.0	50	0	0.64	0.36	structure_based_hypothesis
+A0A2R8CQP7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		156.61040600117354	0.06	50	0	0.18	0.02	structure_based_hypothesis
+A0A2S5R6N9	rxn22343	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase	2	0		154.11836832381192	0.0	50	0	0.04	0.02	structure_based_hypothesis
+A0A2S7CPD3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		136.3474681918835	0.02	50	0	0.6	0.1	structure_based_hypothesis
+A0A2U3MX88	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.36301779220327	0.0	50	0	0.36	0.08	structure_based_hypothesis
+A0A2X4W351	rxn22343	UDP-N-acetylmuramoylalanyl-D-glutamate--2, 6-diaminopimelate ligase	2	0		149.68435940677375	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A2Z2NGD0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		158.22674295563098	0.0	50	0	0.18	0.02	structure_based_hypothesis
+A0A2Z2NLS1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		140.27232840521756	0.0	50	0	0.36	0.2	structure_based_hypothesis
+A0A2Z2NQE8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		152.3803467507049	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0A345D9N3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	5	140.7043514695639	146.87441039291383	0.04	50	0	0.4	0.0	structure_based_hypothesis
+A0A375A6C4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.50184081710185	0.0	50	0	0.4	0.1	structure_based_hypothesis
+A0A378J6J1	rxn05123	Glutamine synthetase	2	1		145.53957317130187	0.02	50	0	0.32	0.14	structure_based_hypothesis
+A0A379ADS2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		152.71871740458008	0.0	50	0	0.4	0.2	structure_based_hypothesis
+A0A379JHL5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	32	122.86042540183934	124.78817734508581	0.04	50	0	0.0	0.0	structure_based_hypothesis
+A0A380SS55	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		151.36461034995156	0.0	50	0	0.72	0.16	structure_based_hypothesis
+A0A380ST99	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		146.31476418816285	0.04	50	0	0.6	0.34	structure_based_hypothesis
+A0A380T1S2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.915199369696	0.0	50	0	0.24	0.08	structure_based_hypothesis
+A0A380T3H6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		117.75473504181001	0.0	50	0	0.9	0.34	structure_based_hypothesis
+A0A380T3T0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		153.3603202406358	0.0	50	0	0.62	0.28	structure_based_hypothesis
+A0A383RLN8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.72548941421817	0.0	50	0	0.94	0.54	structure_based_hypothesis
+A0A383RRT6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.54146581492324	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0A383RXL0	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		129.2957598590768	0.0	50	0	0.9	0.54	structure_based_hypothesis
+A0A383RYM7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		158.12386474923733	0.02	50	0	0.78	0.36	structure_based_hypothesis
+A0A383S1G2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		146.07056231904747	0.0	50	0	0.8	0.44	structure_based_hypothesis
+A0A395R1N5	rxn05123	Gamma-glutamylputrescine synthetase	2	0		141.0058032837147	0.0	50	0	0.64	0.14	structure_based_hypothesis
+A0A3B0MB34	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	2		134.0886067941116	0.02	50	0	0.6	0.4	structure_based_hypothesis
+A0A3B0MCD7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		116.92715226294665	0.0	50	0	0.56	0.02	structure_based_hypothesis
+A0A3G9GES4	rxn05123	Gamma-glutamyl-putrescine synthetase	2	15	135.72673255986314	137.70470427009408	0.0	50	0	0.28	0.18	structure_based_hypothesis
+A0A3P5XDL7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		137.30153833743947	0.0	50	0	0.2	0.0	structure_based_hypothesis
+A0A3P5XHL7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		128.5614372948784	0.0	50	0	0.54	0.26	structure_based_hypothesis
+A0A3P5XV51	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		155.81629807222967	0.0	50	0	0.54	0.08	structure_based_hypothesis
+A0A3S4MGV1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		148.42944605076733	0.0	50	0	0.28	0.04	structure_based_hypothesis
+A0A418SJ71	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		132.90726493111222	0.0	50	0	0.28	0.0	structure_based_hypothesis
+A0A418SJ78	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	116.91193887004393	111.87656312746981	0.0	50	0	0.22	0.14	structure_based_hypothesis
+A0A443IBD9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		141.3976450937735	0.0	50	0	0.32	0.1	structure_based_hypothesis
+A0A447IKT6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	146.13862075353495	137.91588608269183	0.06	50	0	0.34	0.04	structure_based_hypothesis
+A0A447IS57	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.9166483468766	0.0	50	0	0.42	0.06	structure_based_hypothesis
+A0A4P6WWD8	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		155.2068852915732	0.0	50	0	0.74	0.1	structure_based_hypothesis
+A0A4P6WY03	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	11	128.89294313505934	131.4977910947728	0.02	50	0	0.42	0.12	structure_based_hypothesis
+A0A4P6X1F7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	32	136.6018890751812	136.79754845386833	0.02	50	0	0.12	0.0	structure_based_hypothesis
+A0A4R3L411	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	5	148.20893636648518	150.66790388996176	0.06	50	0	0.48	0.38	structure_based_hypothesis
+A0A4R3LF24	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	2		128.1018297083752	0.0	50	0	0.4	0.16	structure_based_hypothesis
+A0A4U9DBR3	rxn05123	Gamma-glutamyl-putrescine synthetase	2	4		149.63965973822178	0.08	50	0	0.78	0.2	structure_based_hypothesis
+A0A510XC93	rxn21038	Petrobactin biosynthesis protein AsbA	1	35	130.6724846929783	130.2490687621609	0.04	50	0	0.16	0.04	structure_based_hypothesis
+A0A510Y5K6	rxn21038	Petrobactin biosynthesis protein AsbA	1	39	143.7154705310285	143.3760984031693	0.1	50	0	0.04	0.0	structure_based_hypothesis
+A0A511V1Y1	rxn21038	Petrobactin biosynthesis protein AsbA	1	24	129.17055640729765	129.25558172148672	0.0	50	0	0.1	0.04	structure_based_hypothesis
+A0A511WNG6	rxn21038	Petrobactin biosynthesis protein AsbA	1	25	125.49721033195459	123.72347422537024	0.02	50	0	0.12	0.06	structure_based_hypothesis
+A0A517YHC3	rxn22343	MurE-like ligase	2	0		124.53411835124983	0.0	50	0	0.04	0.0	structure_based_hypothesis
+A0A518C8G2	rxn22343	MurE-like ligase	2	22	94.3294182960104	98.1833072757957	0.02	50	0	0.04	0.0	structure_based_hypothesis
+A0A554WBP9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	3		153.81302403601225	0.06	50	0	0.26	0.12	structure_based_hypothesis
+A0A554WZ05	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	140.51866139804858	146.53348486768868	0.02	50	0	0.64	0.22	structure_based_hypothesis
+A0A554X0A9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		144.95314070320654	0.0	50	0	0.76	0.14	structure_based_hypothesis
+A0A554X2P9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	13	133.68275040320606	133.97820597765397	0.02	50	0	0.18	0.04	structure_based_hypothesis
+A0A554X2W1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	5	131.86411161814465	142.71446456715117	0.04	50	0	0.74	0.16	structure_based_hypothesis
+A0A5C5V6T3	rxn22343	MurE-like ligase	2	1		74.92559852449419	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0A5K1I671	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		139.3149919543918	0.0	50	0	0.62	0.02	structure_based_hypothesis
+A0A5K1I6G5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	35	140.68983724021194	139.9174067090774	0.24	50	0	0.0	0.0	structure_based_hypothesis
+A0A5M3PME8	rxn21038	Petrobactin biosynthesis protein AsbA	1	16	130.3865512511071	129.53035175113698	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A5P2MAQ3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	7	159.45796062055658	155.95992638563087	0.14	50	0	0.64	0.16	structure_based_hypothesis
+A0A5S9N9Q6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	12	139.84976794430497	132.4705399672586	0.02	50	0	0.06	0.0	structure_based_hypothesis
+A0A5S9NLF9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		145.88913682002146	0.0	50	0	0.82	0.04	structure_based_hypothesis
+A0A640VTU0	rxn21038	Petrobactin biosynthesis protein AsbA	1	16	136.6896548012301	136.40061489199	0.0	50	0	0.04	0.02	structure_based_hypothesis
+A0A6I6MWL7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	9	137.38614086144088	128.63966762331307	0.04	50	0	0.82	0.02	structure_based_hypothesis
+A0A6I6N0F1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		155.3029438372695	0.02	50	0	0.52	0.14	structure_based_hypothesis
+A0A6J5AQD5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		158.8803873024768	0.0	50	0	0.04	0.0	structure_based_hypothesis
+A0A6J5ASS5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.38147195682885	0.0	50	0	0.9	0.16	structure_based_hypothesis
+A0A6J5DSP5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	2		145.17097127704298	0.0	50	0	0.44	0.0	structure_based_hypothesis
+A0A6J5G371	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	12	146.91691655769822	146.25352265708517	0.12	50	0	0.6	0.02	structure_based_hypothesis
+A0A6J5GDK7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	2		148.2575646527682	0.02	50	0	0.62	0.14	structure_based_hypothesis
+A0A6J5GSK2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		153.25727458349394	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0A6P1Q138	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		158.96992718254583	0.0	50	0	0.46	0.22	structure_based_hypothesis
+A0A6S7AUB9	rxn47618	L-2,3-diaminopropanoate--citrate ligase	1	5	150.49712751142297	123.96354235422959	0.06	50	0	0.1	0.02	structure_based_hypothesis
+A0A6S7AZG2	rxn45007	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	1	0		133.6520758416232	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0A6S7BZ53	rxn42395	Staphyloferrin B synthase	1	5	157.429082638172	127.84738831518015	0.08	50	0	0.02	0.0	structure_based_hypothesis
+A0A6S7CAU3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	2		74.84210665478562	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0A6V7DVU3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		138.54964505309894	0.0	50	0	0.56	0.02	structure_based_hypothesis
+A0A7U7EJK2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		145.05153781884056	0.0	50	0	0.08	0.04	structure_based_hypothesis
+A0A7U7ELD2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		148.55594719407378	0.04	50	0	0.9	0.34	structure_based_hypothesis
+A0A7U7ELP2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.71127874245724	0.0	50	0	0.06	0.02	structure_based_hypothesis
+A0A7U7I768	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.8704184585587	0.0	50	0	0.8	0.6	structure_based_hypothesis
+A0A7U7IBP5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		155.21068603002692	0.0	50	0	0.88	0.58	structure_based_hypothesis
+A0A837KHZ7	rxn21038	Petrobactin biosynthesis protein AsbA	1	33	135.09825791160912	133.9116044806074	0.04	50	0	0.22	0.04	structure_based_hypothesis
+A0A8B4U113	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	9	158.76437620195944	156.3773729520629	0.16	50	0	0.88	0.36	structure_based_hypothesis
+A0A8D3WN08	rxn05123	Glutamate--putrescine ligase	2	0		148.87266603648425	0.0	50	0	0.02	0.0	structure_based_hypothesis
+A0A8D5ZLL1	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	37	145.44710647890386	142.7694374912073	0.28	50	0	0.04	0.02	structure_based_hypothesis
+A0A8H9BYJ2	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	19	149.22547699533715	148.88146120337674	0.2	50	0	0.0	0.0	structure_based_hypothesis
+A0A8J2YFK3	rxn21038	Petrobactin biosynthesis protein AsbA	1	18	138.99115981774565	139.4569113991507	0.0	50	0	0.3	0.04	structure_based_hypothesis
+A0A8J2YJT4	rxn21038	Petrobactin biosynthesis protein AsbA	1	4		139.61350782591825	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0A8J4H351	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	24	125.84410142424635	124.35005085527447	0.02	50	0	0.02	0.02	structure_based_hypothesis
+A0A8S2B2Y4	rxn05123	Glutamate-putrescine ligase	2	0		146.78095232137773	0.0	50	0	0.74	0.26	structure_based_hypothesis
+A0A916NK15	rxn46045	Fumarate--(S)-2,3-diaminopropanoate ligase	1	0		117.39686303140529	0.0	50	0	0.44	0.0	structure_based_hypothesis
+A0A917AXG3	rxn21038	Petrobactin biosynthesis protein AsbA	1	21	136.74569073594327	138.19592753223742	0.02	49	1	0.02040816326530612	0.0	structure_based_hypothesis
+A0A917B963	rxn21038	Petrobactin biosynthesis protein AsbA	1	38	141.6152349205371	139.19906592234275	0.18	50	0	0.06	0.02	structure_based_hypothesis
+A0A917JX19	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	20	148.8008634225195	147.33651898831758	0.14	50	0	0.46	0.3	structure_based_hypothesis
+A0A917JXZ7	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	26	128.64881327610112	127.0697861748604	0.02	50	0	0.02	0.02	structure_based_hypothesis
+A0A9N8N7Z5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.14665224752582	0.0	50	0	0.2	0.0	structure_based_hypothesis
+A0A9N8RUY4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	18	140.68213594238745	144.03766232516443	0.12	50	0	0.9	0.2	structure_based_hypothesis
+A0A9P1JR85	rxn05123	Gamma-Glu-putrescine synthase	2	0		137.6234045134026	0.0	50	0	0.54	0.02	structure_based_hypothesis
+A0A9W6N401	rxn21038	Petrobactin biosynthesis protein AsbA	1	3		126.17310304721268	0.02	50	0	0.08	0.0	structure_based_hypothesis
+A0A9W6N7E4	rxn21038	Petrobactin biosynthesis protein AsbA	1	3		132.57662903505246	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0A9X4QYX5	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	4		151.75721868930708	0.04	50	0	0.04	0.02	structure_based_hypothesis
+A0A9X4QZL6	rxn45007	Staphyloferrin B biosynthesis protein SbnF	1	2		125.97206093628192	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0AAC8VPR1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	140.71518167905953	149.108821825914	0.02	50	0	0.74	0.18	structure_based_hypothesis
+A0AAJ5NBZ2	rxn05123	Gamma-glutamylputrescine synthetase PuuA,glutamine synthetase,Predicted metal-dependent hydrolase of the TIM-barrel fold,glutamine synthetase, type I,Glutamine synthetase, catalytic domain	2	2		141.4327049842314	0.02	50	0	0.2	0.0	structure_based_hypothesis
+A0AAN0RKW5	rxn05123	Gamma-glutamylputrescine synthase PuuA	2	0		131.00745014557165	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0AAN0RL94	rxn05123	Gamma-glutamylputrescine synthase PuuA	2	0		146.16463374776376	0.0	50	0	0.78	0.06	structure_based_hypothesis
+A0AAN0RLF2	rxn05123	Gamma-glutamylputrescine synthase PuuA	2	9	152.13617800070386	147.77107873234317	0.08	50	0	0.88	0.54	structure_based_hypothesis
+A0AAN0Y2A3	rxn05123	Gamma-glutamylputrescine synthetase	2	5	154.20936195451756	156.1580923333767	0.06	50	0	0.62	0.02	structure_based_hypothesis
+A0AAN0Y5F7	rxn05123	Gamma-glutamylputrescine synthetase	2	1		155.39167148071982	0.02	50	0	0.36	0.26	structure_based_hypothesis
+A0AAX3AA12	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	28	144.85434103109577	142.15896994239932	0.22	50	0	0.26	0.18	structure_based_hypothesis
+A0ABD5PWT3	rxn05123	Gamma-glutamylputrescine synthetase	2	3		152.57137423310084	0.06	50	0	0.62	0.2	structure_based_hypothesis
+A0ABD5QAR9	rxn05123	Gamma-glutamylputrescine synthetase	2	1		160.2535534793558	0.02	50	0	0.98	0.56	structure_based_hypothesis
+A0ABD6AIA0	rxn05123	Gamma-glutamylputrescine synthetase	2	0		155.40797925381045	0.0	50	0	0.6	0.26	structure_based_hypothesis
+A0ABD6D3U7	rxn05123	Gamma-glutamylputrescine synthetase	2	0		162.2581158835631	0.0	50	0	1.0	0.84	structure_based_hypothesis
+A0ABD7KAS3	rxn05123	Gamma-glutamylputrescine synthetase	2	0		97.43609247901945	0.0	50	0	0.24	0.08	structure_based_hypothesis
+A0ABF7QID4	rxn05123	Glutamate--putrescine ligase	2	0		153.03377802359387	0.0	50	0	0.64	0.06	structure_based_hypothesis
+A0ABM7D0K6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		142.08702371262814	0.08	50	0	0.76	0.22	structure_based_hypothesis
+A0ABM7DPK3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.25826518523345	0.0	50	0	0.3	0.02	structure_based_hypothesis
+A0ABM7MGI2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		142.98266563355082	0.02	50	0	0.44	0.24	structure_based_hypothesis
+A0ABM8ZMT2	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		24.00353429016524	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABM8ZNI9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		152.68790073568354	0.0	50	0	0.5	0.0	structure_based_hypothesis
+A0ABM9A4M1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		143.55448136183912	0.0	50	0	0.64	0.08	structure_based_hypothesis
+A0ABM9AA17	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		160.74508371282747	0.0	50	0	0.6	0.1	structure_based_hypothesis
+A0ABM9AGI7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		128.0129146478591	0.02	50	0	0.2	0.18	structure_based_hypothesis
+A0ABM9BY12	rxn45007	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	1	0		148.26434641695872	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABM9C099	rxn45007	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	1	24	157.28274723313183	159.58467750944283	0.36	50	0	0.0	0.0	structure_based_hypothesis
+A0ABM9CPI4	rxn45007	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	1	3		135.9919277212715	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0ABN1B647	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	13	147.85443244273145	126.05468394383526	0.08	50	0	0.4	0.18	structure_based_hypothesis
+A0ABN1TA36	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	42	158.2154892924203	158.38647200038736	0.74	50	0	0.92	0.5	structure_based_hypothesis
+A0ABN1V8I6	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	14	139.2489079371343	128.938156687389	0.04	50	0	0.06	0.02	structure_based_hypothesis
+A0ABN1WFL6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	36	141.1105321429628	140.1040731734261	0.16	50	0	0.78	0.08	structure_based_hypothesis
+A0ABN1XSZ5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	44	146.2569061808236	146.3792129290999	0.42	50	0	0.52	0.16	structure_based_hypothesis
+A0ABN2G3N3	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	16	159.99549569819789	154.38538877990194	0.3	50	0	0.82	0.1	structure_based_hypothesis
+A0ABN2WIP0	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	49	152.19375528769373	151.71268512581761	0.66	50	0	0.24	0.06	structure_based_hypothesis
+A0ABN3BSP9	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	46	151.31135232736878	151.48172254660037	0.48	50	0	0.96	0.12	structure_based_hypothesis
+A0ABN3DKJ9	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	47	162.04325621949178	162.14029923561066	0.68	50	0	0.92	0.1	structure_based_hypothesis
+A0ABN3FPU5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	18	151.95758071109077	145.38376699267414	0.2	50	0	0.96	0.3	structure_based_hypothesis
+A0ABN3GT27	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	44	161.82623927658796	160.8384877012033	0.8	50	0	0.04	0.0	structure_based_hypothesis
+A0ABN3GUQ2	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	11	152.85306116708924	96.87330074325689	0.14	50	0	0.08	0.0	structure_based_hypothesis
+A0ABN3HR75	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	3		132.5592844560044	0.04	50	0	0.74	0.1	structure_based_hypothesis
+A0ABN3MKT5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	28	140.9686894541774	140.7569161762685	0.14	50	0	0.82	0.66	structure_based_hypothesis
+A0ABN3NMF4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	40	154.30421307569932	153.24079370059837	0.5	50	0	0.98	0.08	structure_based_hypothesis
+A0ABN3QSQ1	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	35	152.12439621236808	149.4971653266019	0.44	50	0	0.62	0.14	structure_based_hypothesis
+A0ABN3RA99	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	41	148.97500481400613	147.42793819425137	0.46	50	0	1.0	0.54	structure_based_hypothesis
+A0ABN3U4Y3	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	9	146.14152867897005	128.7370717036583	0.1	50	0	0.88	0.28	structure_based_hypothesis
+A0ABN3V3C9	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	2		102.62779601779526	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0ABN3VF50	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	33	151.93846983039023	149.31259204984954	0.46	50	0	0.06	0.0	structure_based_hypothesis
+A0ABN4IDW9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		144.65061801503285	0.0	50	0	0.18	0.0	structure_based_hypothesis
+A0ABN6D3W7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	23	137.7234770922675	137.1165971099785	0.0	50	0	0.06	0.02	structure_based_hypothesis
+A0ABN6D8E7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	17	132.23315233208822	121.35502508966216	0.06	50	0	0.22	0.1	structure_based_hypothesis
+A0ABN6DMC6	rxn05123	Gamma-glutamylputrescine synthetase	2	0		156.3069605677285	0.0	50	0	0.52	0.12	structure_based_hypothesis
+A0ABN7HZ73	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	4		62.62280697709791	0.02	50	0	0.56	0.06	structure_based_hypothesis
+A0ABN7L2C6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.6043726371042	0.0	50	0	0.04	0.0	structure_based_hypothesis
+A0ABN7TT27	rxn46045	Fumarate--(S)-2,3-diaminopropanoate ligase	1	1		118.80596938676132	0.0	50	0	0.58	0.02	structure_based_hypothesis
+A0ABN8ECI9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	33	123.26333731936167	122.42357727689722	0.0	50	0	0.58	0.38	structure_based_hypothesis
+A0ABN8G2K6	rxn47618	L-2,3-diaminopropanoate--citrate ligase	1	1		76.49546856665839	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABN8GJE2	rxn46045	Fumarate--(S)-2,3-diaminopropanoate ligase	1	0		103.83170378159976	0.0	50	0	0.54	0.06	structure_based_hypothesis
+A0ABP3ERR5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	47	145.27464420723032	145.32341741661065	0.5	50	0	0.52	0.1	structure_based_hypothesis
+A0ABP3IRW9	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	35	155.88205923309124	153.65099042866498	0.6	50	0	0.84	0.24	structure_based_hypothesis
+A0ABP3MPK3	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	26	140.17648303808295	137.09510514088	0.02	50	0	0.24	0.14	structure_based_hypothesis
+A0ABP3S223	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	40	151.893187783776	151.08036915174137	0.52	50	0	1.0	0.54	structure_based_hypothesis
+A0ABP4KHP6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	23	151.357686787502	144.70987223410845	0.2	50	0	0.32	0.0	structure_based_hypothesis
+A0ABP4SHE8	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	29	161.6644023493507	158.42028005828976	0.52	50	0	0.38	0.12	structure_based_hypothesis
+A0ABP4YEE5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	41	153.82521520537853	151.85047375544207	0.56	50	0	0.76	0.2	structure_based_hypothesis
+A0ABP5FWU6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	50	162.7549232568837	163.0078640500302	0.86	50	0	1.0	0.0	structure_based_hypothesis
+A0ABP5IDU3	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	42	155.60860917444268	154.02055554664094	0.46	50	0	0.94	0.16	structure_based_hypothesis
+A0ABP5LSF1	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	43	156.7564592034536	154.875348047585	0.6	50	0	0.66	0.18	structure_based_hypothesis
+A0ABP5TVG3	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	32	144.1845936530758	145.49182494743965	0.22	50	0	0.22	0.14	structure_based_hypothesis
+A0ABP5VML4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	14	151.72342848799855	146.75922006884176	0.22	50	0	0.54	0.22	structure_based_hypothesis
+A0ABP5WRV6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	40	148.62260069040943	146.6716409441731	0.44	50	0	0.36	0.14	structure_based_hypothesis
+A0ABP5YW34	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	50	158.04130204355457	158.06404155966842	0.86	50	0	1.0	0.3	structure_based_hypothesis
+A0ABP6CQC4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	43	157.82046221080907	156.9163942847619	0.8	50	0	1.0	0.04	structure_based_hypothesis
+A0ABP6HEJ5	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	22	145.3935832094268	141.5050369229958	0.22	50	0	0.92	0.62	structure_based_hypothesis
+A0ABP6M3M2	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	2		144.42726027382247	0.04	50	0	0.94	0.32	structure_based_hypothesis
+A0ABP6NJ24	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	49	157.0846963791727	157.19218270138362	0.68	50	0	0.96	0.5	structure_based_hypothesis
+A0ABP6S4L6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	40	154.74681512848636	154.30313648115344	0.4	50	0	0.74	0.28	structure_based_hypothesis
+A0ABP6SMJ6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	18	160.75021833408317	154.27939566962115	0.3	50	0	0.98	0.0	structure_based_hypothesis
+A0ABP6VLL6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	37	148.15809357730168	148.03473456530858	0.34	50	0	0.36	0.04	structure_based_hypothesis
+A0ABP6ZVZ9	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	7	155.8590202812479	147.22556330820336	0.12	50	0	0.98	0.26	structure_based_hypothesis
+A0ABP7A1G9	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	50	144.11109134696738	144.44407457232973	0.36	50	0	0.02	0.0	structure_based_hypothesis
+A0ABP7C0T6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	39	156.3948471445135	156.5692387199825	0.44	50	0	0.68	0.12	structure_based_hypothesis
+A0ABP7JJL0	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	49	153.27130072300633	153.2187485521825	0.66	50	0	1.0	0.28	structure_based_hypothesis
+A0ABP7NQJ2	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	27	151.60866892437795	149.87271501840615	0.3	50	0	1.0	0.26	structure_based_hypothesis
+A0ABP7R122	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	35	152.4693500369256	149.38930656712424	0.38	50	0	0.9	0.58	structure_based_hypothesis
+A0ABP7T421	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	46	145.89120380401945	146.46684459232546	0.22	50	0	1.0	0.16	structure_based_hypothesis
+A0ABP7V3H6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	36	159.4571330333417	158.1226397430012	0.56	50	0	1.0	0.68	structure_based_hypothesis
+A0ABP8CSY2	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	24	148.43341660632862	145.29000620943287	0.18	50	0	0.26	0.16	structure_based_hypothesis
+A0ABP8G559	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	24	163.1311186316912	152.97014934615072	0.4	50	0	0.96	0.14	structure_based_hypothesis
+A0ABP8WA21	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	50	154.49811762411466	154.6522644638701	0.68	50	0	0.64	0.34	structure_based_hypothesis
+A0ABP9E580	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	47	160.69476835437516	160.03810877341786	0.62	50	0	0.82	0.06	structure_based_hypothesis
+A0ABP9EZE3	rxn47618	L-2,3-diaminopropanoate--citrate ligase SbnE	1	5	129.8134971967485	122.72728229155432	0.0	50	0	0.12	0.1	structure_based_hypothesis
+A0ABP9HXW2	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	49	159.7759702552376	159.27373047026938	0.76	50	0	0.34	0.08	structure_based_hypothesis
+A0ABP9I7D6	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	30	138.11493539435645	134.1867751222783	0.14	50	0	0.68	0.4	structure_based_hypothesis
+A0ABP9KLP7	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	39	149.32760323851923	148.10437754888724	0.26	50	0	0.96	0.16	structure_based_hypothesis
+A0ABP9QZD4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	16	162.54462785714935	156.61490768175466	0.3	50	0	0.76	0.64	structure_based_hypothesis
+A0ABP9S5Q4	rxn05123	Gamma-glutamylpolyamine synthetase GlnA3	2	30	161.91914670091697	159.26609701219343	0.56	50	0	1.0	0.24	structure_based_hypothesis
+A0ABP9WL28	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	13	130.1876843695511	137.57370324522554	0.02	50	0	0.54	0.0	structure_based_hypothesis
+A0ABP9WQ90	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	25	136.23272211522723	134.4692585814277	0.12	50	0	0.52	0.1	structure_based_hypothesis
+A0ABQ1G0G7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	6	144.63501896589273	148.24535595209497	0.04	50	0	0.42	0.22	structure_based_hypothesis
+A0ABQ1IC51	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		150.106528591491	0.02	50	0	0.82	0.24	structure_based_hypothesis
+A0ABQ1PVJ1	rxn21038	Petrobactin biosynthesis protein AsbA	1	33	119.05309637735749	119.41961821944771	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABQ6PDN8	rxn21038	Petrobactin biosynthesis protein AsbA	1	36	142.91272019681182	141.25548194013322	0.18	50	0	0.16	0.14	structure_based_hypothesis
+A0ABR4WRU5	rxn05123	Gamma-glutamylputrescine synthetase	2	0		137.48863082813364	0.0	50	0	0.24	0.08	structure_based_hypothesis
+A0ABR6AXK0	rxn09897	L-amino acid ligase	2	50	151.54026499132982	151.61829490376354	0.58	50	0	0.06	0.04	structure_based_hypothesis
+A0ABR7S6N6	rxn05123	Gamma-glutamylputrescine synthetase	2	0		151.8622540897813	0.0	50	0	0.74	0.0	structure_based_hypothesis
+A0ABS4JEW8	rxn09897	L-amino acid ligase	2	1		148.72745318832233	0.02	50	0	0.54	0.06	structure_based_hypothesis
+A0ABS4P483	rxn05123	Gamma-glutamylputrescine synthase	2	0		152.1396420346177	0.0	50	0	0.4	0.14	structure_based_hypothesis
+A0ABT3DT74	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		140.75393148053163	0.0	50	0	0.78	0.24	structure_based_hypothesis
+A0ABT3DT88	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		145.78313361875465	0.0	50	0	0.76	0.12	structure_based_hypothesis
+A0ABU1EWT7	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	1		126.24071240865035	0.02	50	0	0.0	0.0	structure_based_hypothesis
+A0ABU1EXH8	rxn45007	Staphyloferrin B biosynthesis protein SbnF	1	2		91.02420179345341	0.0	50	0	0.08	0.0	structure_based_hypothesis
+A0ABU6P834	rxn21038	Petrobactin biosynthesis protein AsbA	1	16	113.63715964360154	116.04037853084145	0.02	50	0	0.06	0.02	structure_based_hypothesis
+A0ABV2SDL7	rxn05123	Gamma-glutamylputrescine synthase	2	0		158.44595804011672	0.0	50	0	0.9	0.04	structure_based_hypothesis
+A0ABV4RQN4	rxn21038	Petrobactin biosynthesis protein AsbA	1	22	108.70675175993331	110.82004266532023	0.0	50	0	0.1	0.06	structure_based_hypothesis
+A0ABX6CH20	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		159.18825054311708	0.0	50	0	0.24	0.0	structure_based_hypothesis
+A0ABY1W768	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		113.11394656298488	0.0	50	0	0.2	0.04	structure_based_hypothesis
+A0ABY3PCZ3	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	0		135.5897483456245	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABY3PD00	rxn45007	Staphyloferrin B biosynthesis protein SbnF	1	4		125.53975292238147	0.06	50	0	0.02	0.0	structure_based_hypothesis
+A0ABY3ZI09	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.32639146322012	0.0	50	0	0.84	0.0	structure_based_hypothesis
+A0ABY3ZKI5	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	15	142.65470968836195	137.21502193840655	0.12	50	0	0.62	0.38	structure_based_hypothesis
+A0ABY3ZMC6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		154.75450609960612	0.0	50	0	0.18	0.0	structure_based_hypothesis
+A0ABY5MM12	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		154.12296024866112	0.0	50	0	0.36	0.22	structure_based_hypothesis
+A0ABY5MMX4	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		66.81739437674857	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ABY9XIW6	rxn46045	Fumarate--(S)-2,3-diaminopropanoate ligase	1	0		108.88045837847778	0.0	50	0	0.02	0.02	structure_based_hypothesis
+A0ABZ2BP08	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	19	152.29019675837574	148.7761622115603	0.26	50	0	0.1	0.06	structure_based_hypothesis
+A0ABZ2BPE6	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	15	150.15619979546963	143.74190486822366	0.16	50	0	0.44	0.02	structure_based_hypothesis
+A0ACD5FJ00	rxn42395	Staphyloferrin B biosynthesis protein SbnC	1	0		106.17308233834575	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ACD5FRB5	rxn45007	Staphyloferrin B biosynthesis protein SbnF	1	2		146.93916514581818	0.0	50	0	0.0	0.0	structure_based_hypothesis
+A0ACD7V949	rxn05123	Gamma-glutamylputrescine synthetase	2	0		158.19428961755665	0.0	50	0	0.6	0.18	structure_based_hypothesis
+A0ACE3JHK4	rxn05123	Glutamate-putrescine ligase	2	0		146.06353229905392	0.0	50	0	0.12	0.04	structure_based_hypothesis
+A0ACH1R4Z9	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		150.84866762111648	0.0	50	0	0.8	0.5	structure_based_hypothesis
+A0ACH1R7X3	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		149.13666549438446	0.0	50	0	0.04	0.0	structure_based_hypothesis
+A0ACH1RCV7	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		144.44297267398372	0.0	50	0	0.04	0.0	structure_based_hypothesis
+A0ACH1RHJ1	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		142.02038724809992	0.0	50	0	0.48	0.08	structure_based_hypothesis
+A0ACN3NSZ7	rxn05123	Gamma-glutamylputrescine synthetase	2	16	147.37671974881744	143.89301119166183	0.1	50	0	0.22	0.14	structure_based_hypothesis
+A5FVY0	rxn05123	Glutamate--putrescine ligase	2	8	135.3588137244194	137.81156512022977	0.02	50	0	0.34	0.04	structure_based_hypothesis
+A6U681	rxn05123	Glutamate--putrescine ligase	2	1		154.97814611203012	0.02	50	0	0.76	0.62	structure_based_hypothesis
+A6W8I4	rxn05123	Glutamate--putrescine ligase	2	2		133.75533424193694	0.0	50	0	0.02	0.0	structure_based_hypothesis
+A6X5Y7	rxn05123	Glutamate--putrescine ligase	2	1		153.06249483939655	0.02	50	0	0.24	0.18	structure_based_hypothesis
+A7HSN4	rxn05123	Glutamate--putrescine ligase	2	11	150.55321491369276	148.45320684978688	0.1	50	0	0.86	0.08	structure_based_hypothesis
+A7IGP0	rxn05123	Glutamate--putrescine ligase	2	1		133.90972670215828	0.0	50	0	0.16	0.0	structure_based_hypothesis
+A8FS48	rxn05123	Glutamate--putrescine ligase	2	0		132.26374966642695	0.0	50	0	0.08	0.06	structure_based_hypothesis
+A8H135	rxn05123	Glutamate--putrescine ligase	2	0		132.17439330139933	0.0	50	0	0.08	0.06	structure_based_hypothesis
+B0RRU0	rxn05123	Glutamate-putrescine ligase	2	1		140.97826087949474	0.0	50	0	0.62	0.06	structure_based_hypothesis
+B0TVD1	rxn05123	Glutamate--putrescine ligase	2	0		136.82342394483726	0.0	50	0	0.32	0.26	structure_based_hypothesis
+B1KHB5	rxn05123	Glutamate--putrescine ligase	2	0		142.75271835752494	0.0	50	0	0.08	0.08	structure_based_hypothesis
+B1XYY7	rxn05123	Glutamate--putrescine ligase	2	9	137.79328911493636	136.9295869789117	0.04	50	0	0.46	0.02	structure_based_hypothesis
+B2T4A2	rxn05123	Glutamate--putrescine ligase	2	3		110.14594725187374	0.06	50	0	0.52	0.04	structure_based_hypothesis
+B5UAT8	rxn09897	L-arginine-specific L-amino acid ligase	2	6	156.3891763619266	140.13396385431474	0.12	50	0	0.4	0.0	structure_based_hypothesis
+B6IMX3	rxn05123	Gamma-glutamylputrescine synthetase	2	0		146.97126846481714	0.0	50	0	0.38	0.0	structure_based_hypothesis
+B9Z0Z7	rxn05123	Glutamate--putrescine ligase	2	24	135.83113689047798	138.36456374483487	0.04	50	0	0.24	0.14	structure_based_hypothesis
+B9Z280	rxn05123	Glutamate--putrescine ligase	2	30	140.10094596560566	141.1448291989401	0.14	50	0	0.76	0.04	structure_based_hypothesis
+B9Z5A3	rxn05123	Glutamate--putrescine ligase	2	25	143.98295626330915	143.38117481568548	0.18	50	0	0.04	0.0	structure_based_hypothesis
+B9Z5S9	rxn05123	Glutamate--putrescine ligase	2	19	125.55773710132809	128.57777143619728	0.0	50	0	0.12	0.04	structure_based_hypothesis
+C7QD08	rxn05123	Glutamate--putrescine ligase	2	13	112.68816820509187	97.0966125541959	0.0	50	0	0.0	0.0	structure_based_hypothesis
+C8S107	rxn05123	Glutamate--putrescine ligase	2	0		125.08067645629959	0.0	50	0	0.84	0.04	structure_based_hypothesis
+C8S109	rxn05123	Glutamate--putrescine ligase	2	0		155.46757064294448	0.0	50	0	0.16	0.02	structure_based_hypothesis
+C9QEZ4	rxn05123	Gamma-glutamyl-putrescine synthetase	2	1		147.61724670103368	0.02	50	0	0.56	0.12	structure_based_hypothesis
+C9QIP2	rxn05123	Gamma-glutamyl-putrescine synthetase	2	0		146.49239042684673	0.0	50	0	0.22	0.08	structure_based_hypothesis
+C9Y2I2	rxn05123	Gamma-glutamylputrescine synthetase	2	0		121.68634705237297	0.0	50	0	0.2	0.04	structure_based_hypothesis
+D0KXK1	rxn05123	Glutamate--putrescine ligase	2	4		140.91882310471797	0.02	50	0	0.32	0.14	structure_based_hypothesis
+D0LJE9	rxn05123	Glutamate--putrescine ligase	2	5	132.81283040177388	115.25638166296754	0.02	50	0	0.0	0.0	structure_based_hypothesis
+D2TK08	rxn05123	Gamma-glutamylputrescine synthetase	2	1		155.5319918682038	0.0	50	0	0.02	0.0	structure_based_hypothesis
+D3F7T6	rxn05123	Glutamate--putrescine ligase	2	8	148.51464183599862	144.12471507876685	0.08	50	0	0.0	0.0	structure_based_hypothesis
+D7A6A9	rxn05123	Glutamate--putrescine ligase	2	0		100.38701874992279	0.0	50	0	0.4	0.04	structure_based_hypothesis
+D7DK12	rxn05123	Glutamate--putrescine ligase	2	7	132.476126707851	136.28630642063428	0.02	50	0	0.3	0.14	structure_based_hypothesis
+D7DQ41	rxn05123	Glutamate--putrescine ligase	2	1		144.0659248653277	0.0	50	0	0.22	0.04	structure_based_hypothesis
+D7DQ76	rxn05123	Glutamate--putrescine ligase	2	4		148.6471699053385	0.0	50	0	0.28	0.14	structure_based_hypothesis
+D8JXA0	rxn05123	Glutamate--putrescine ligase	2	0		129.5942836044288	0.0	50	0	0.58	0.46	structure_based_hypothesis
+E1SVJ9	rxn05123	Glutamate--putrescine ligase	2	0		123.09675303224196	0.0	50	0	0.74	0.4	structure_based_hypothesis
+E1SVK0	rxn05123	L-glutamine synthetase	2	5	138.2136818545853	117.90559541565045	0.0	50	0	0.26	0.1	structure_based_hypothesis
+E1V911	rxn05123	Glutamate--putrescine ligase	2	0		71.25195595042436	0.0	50	0	0.5	0.3	structure_based_hypothesis
+E2JA32	rxn46045	Fumarate--(S)-2,3-diaminopropanoate ligase	1	1		107.15365753933273	0.0	50	0	0.0	0.0	structure_based_hypothesis
+E3G155	rxn05123	Glutamate--putrescine ligase	2	5	149.66519511965205	153.56487355453217	0.06	50	0	0.72	0.24	structure_based_hypothesis
+E6WUC7	rxn05123	Glutamate--putrescine ligase	2	0		140.40650450177606	0.0	50	0	0.5	0.08	structure_based_hypothesis
+E6WUC9	rxn05123	Glutamate--putrescine ligase	2	5	141.52119159353933	140.76607446291322	0.04	50	0	0.68	0.22	structure_based_hypothesis
+E8RLS9	rxn05123	Glutamate--putrescine ligase	2	0		145.3664289007372	0.0	50	0	0.2	0.0	structure_based_hypothesis
+E8RRL0	rxn05123	Glutamate--putrescine ligase	2	0		151.62736106780878	0.0	50	0	0.88	0.22	structure_based_hypothesis
+F0J4B5	rxn05123	Gamma-glutamylputrescine synthetase	2	0		138.86276415026657	0.0	50	0	0.4	0.06	structure_based_hypothesis
+F2JWX8	rxn05123	Glutamate--putrescine ligase	2	0		134.75205560729432	0.0	50	0	0.14	0.06	structure_based_hypothesis
+F2JXL2	rxn05123	Glutamate--putrescine ligase	2	0		141.89628866649835	0.0	50	0	0.2	0.04	structure_based_hypothesis
+F4QU38	rxn05123	Gamma-glutamylputrescine synthetase	2	0		144.25002315218683	0.0	50	0	0.88	0.16	structure_based_hypothesis
+F6AB97	rxn05123	Glutamate--putrescine ligase	2	1		152.13784158330498	0.02	50	0	0.06	0.0	structure_based_hypothesis
+F6ACY3	rxn05123	Glutamate--putrescine ligase	2	11	149.61176479693222	154.18103535737222	0.16	50	0	0.64	0.16	structure_based_hypothesis
+F6AED5	rxn05123	Glutamate--putrescine ligase	2	1		150.71396240331535	0.0	50	0	0.76	0.38	structure_based_hypothesis
+F6AFB9	rxn05123	Glutamate--putrescine ligase	2	0		147.7798287360851	0.0	50	0	0.86	0.02	structure_based_hypothesis
+F6AG08	rxn05123	Glutamate--putrescine ligase	2	0		150.7660275775851	0.0	50	0	0.74	0.06	structure_based_hypothesis
+F6AG09	rxn05123	Glutamate--putrescine ligase	2	0		155.23667529050687	0.0	50	0	0.44	0.2	structure_based_hypothesis
+F7ZAK0	rxn05123	Gamma-glutamylputrescine synthetase	2	22	136.29138587105336	133.98137053762295	0.12	50	0	0.54	0.42	structure_based_hypothesis
+F7ZAK2	rxn05123	Gamma-glutamylputrescine synthetase	2	10	145.37480298072595	126.56976830326441	0.06	50	0	0.44	0.0	structure_based_hypothesis
+G7ZEI5	rxn05123	Gamma-Glu-putrescine synthase	2	0		133.2560741379398	0.0	50	0	0.32	0.02	structure_based_hypothesis
+H6NMA1	rxn21038	Petrobactin biosynthesis protein AsbA	1	24	127.30376633774122	128.32740769432732	0.0	50	0	0.24	0.02	structure_based_hypothesis
+H6SKG7	rxn05123	Gamma-glutamylputrescine synthetase	2	0		140.87584979208572	0.0	50	0	0.18	0.12	structure_based_hypothesis
+I0HSH7	rxn05123	Glutamate--putrescine ligase PuuA	2	15	144.12526146749414	145.00112750562207	0.1	50	0	0.34	0.02	structure_based_hypothesis
+I3R584	rxn05123	Gamma-glutamylputrescine synthetase	2	2		143.79670526815678	0.02	50	0	0.4	0.02	structure_based_hypothesis
+M5EJI9	rxn05123	Glutamate--putrescine ligase	2	0		147.49953548955526	0.0	50	0	0.44	0.3	structure_based_hypothesis
+M5EX69	rxn05123	Glutamate--putrescine ligase	2	7	158.8731037641877	150.7218150360299	0.1	50	0	0.42	0.16	structure_based_hypothesis
+M9R4Y1	rxn05123	Putative gamma-glutamylputrescine synthetase	2	0		139.66969083507732	0.0	50	0	0.4	0.06	structure_based_hypothesis
+M9RBS7	rxn05123	Putative gamma-glutamylputrescine synthetase	2	32	122.2085345722077	117.97376279974893	0.02	50	0	0.56	0.3	structure_based_hypothesis
+P39641	rxn09897	Alanine--anticapsin ligase	2	48	160.80602889310228	161.05092287381768	0.9	50	0	0.02	0.0	structure_based_hypothesis
+P78061	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	1		158.49189405405266	0.0	50	0	0.72	0.26	structure_based_hypothesis
+Q2FW70	rxn42510	D-ornithine--citrate ligase	1	4		150.68551509226816	0.06	50	0	0.0	0.0	structure_based_hypothesis
+Q2FWC5	rxn09897	L-aspartate--L-methionine ligase	2	2		138.4688887406165	0.02	50	0	0.04	0.0	structure_based_hypothesis
+Q2G1M8	rxn45007	2-[(L-alanin-3-ylcarbamoyl)methyl]-3-(2-aminoethylcarbamoyl)-2-hydroxypropanoate synthase	1	7	157.74143485084477	137.94109716006045	0.12	50	0	0.04	0.0	structure_based_hypothesis
+Q2G1M9	rxn47618	L-2,3-diaminopropanoate--citrate ligase	1	13	142.94034609656083	142.8285573620403	0.08	50	0	0.02	0.02	structure_based_hypothesis
+Q2G1N1	rxn42395	Staphyloferrin B synthase	1	4		135.63526215919416	0.04	50	0	0.0	0.0	structure_based_hypothesis
+Q88C84	rxn05123	Glutamate-putrescine ligase	2	0		146.6288890441695	0.0	50	0	0.56	0.08	structure_based_hypothesis
+Q88KW1	rxn05123	Glutamate-putrescine ligase	2	0		131.40210099005446	0.0	50	0	0.14	0.02	structure_based_hypothesis
+Q8EHF4	rxn05123	Gamma-glutamyl-putrescine synthase PuuA	2	0		147.88216628778406	0.0	50	0	0.6	0.18	structure_based_hypothesis
+Q8KWS8	rxn09897	Alanine--anticapsin ligase	2	49	151.23711887873282	151.05153232452554	0.56	50	0	0.04	0.0	structure_based_hypothesis
+Q8KWT3	rxn09897	Alanine--anticapsin ligase	2	50	155.07442729469594	155.03562557142203	0.8	50	0	0.08	0.0	structure_based_hypothesis
+Q92MV2	rxn05123	Gamma-glutamylputrescine synthetase	2	0		141.2966024928297	0.0	50	0	0.0	0.0	structure_based_hypothesis
+Q9KZC7	target_substrate_query	Gamma-glutamylpolyamine synthetase GlnA3	2	49	160.37606823650543	160.13149072266805	0.82	50	0	0.26	0.12	structure_based_hypothesis
+Q9RDS6	target_substrate_query	Gamma-glutamylpolyamine synthetase GlnA2	2	0		61.550162480280406	0.0	50	0	0.98	0.0	structure_based_hypothesis
+Q9WY79	rxn22343	UDP-N-acetylmuramoyl-L-alanyl-D-glutamate--LD-lysine ligase	2	0		149.3239732557396	0.0	50	0	0.0	0.0	structure_based_hypothesis
+S6ANU0	rxn05123	Gamma-glutamylputrescine synthetase	2	0		156.33665087675644	0.0	50	0	0.7	0.5	structure_based_hypothesis
+S6AQ74	rxn05123	Gamma-glutamylputrescine synthetase	2	2		149.2003400941027	0.02	50	0	0.76	0.1	structure_based_hypothesis
+S6BAZ0	rxn05123	Gamma-glutamylputrescine synthetase	2	0		153.45942545558498	0.0	50	0	0.06	0.02	structure_based_hypothesis
+S6BK97	rxn05123	Gamma-glutamylputrescine synthetase	2	0		131.91927806890433	0.0	50	0	0.0	0.0	structure_based_hypothesis
+U2ZIR9	rxn05123	Gamma-glutamylputrescine synthetase	2	3		146.3018824134596	0.04	50	0	0.62	0.34	structure_based_hypothesis
+U2ZNY2	rxn05123	Gamma-glutamylputrescine synthetase	2	0		148.9205886786382	0.0	50	0	0.12	0.04	structure_based_hypothesis
+U3BAD5	rxn05123	Gamma-glutamylputrescine synthetase	2	1		122.33112556892188	0.0	50	0	0.08	0.0	structure_based_hypothesis
+U3BC25	rxn05123	Gamma-glutamylputrescine synthetase	2	17	160.72295851216685	158.80145368832203	0.3	50	0	0.6	0.26	structure_based_hypothesis
+U3BGV4	rxn05123	Gamma-glutamylputrescine synthetase	2	1		143.3808685290962	0.02	50	0	0.46	0.12	structure_based_hypothesis
+U6SUS5	rxn21038	Petrobactin biosynthesis protein AsbA	1	21	132.0327209533233	131.17720546042065	0.0	50	0	0.06	0.0	structure_based_hypothesis
+W0HWM9	rxn05123	Gamma-glutamylputrescine synthetase	2	0		135.79265523577558	0.0	50	0	0.62	0.12	structure_based_hypothesis
+W0L4H7	rxn05123	Gamma-glutamylputrescine synthetase	2	11	138.25474160411483	148.20119031786678	0.06	50	0	0.52	0.22	structure_based_hypothesis
+W0LEW4	rxn05123	Gamma-glutamylputrescine synthetase	2	1		99.69255211694063	0.02	50	0	0.88	0.3	structure_based_hypothesis
+W4HJ41	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	23	135.84548918425256	132.45599143733384	0.08	50	0	0.78	0.52	structure_based_hypothesis
+W9UQ50	rxn05123	Gamma-glutamylputrescine synthetase PuuA	2	0		147.67215167135856	0.0	50	0	0.5	0.04	structure_based_hypothesis
