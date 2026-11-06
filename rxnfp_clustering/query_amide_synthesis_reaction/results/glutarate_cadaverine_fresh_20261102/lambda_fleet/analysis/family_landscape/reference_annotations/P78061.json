@@ -1,0 +1,1493 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P78061",
+  "secondaryAccessions": [
+    "P78287"
+  ],
+  "uniProtkbId": "PUUA_ECOLI",
+  "entryAudit": {
+    "firstPublicDate": "1998-07-15",
+    "lastAnnotationUpdateDate": "2026-11-04",
+    "lastSequenceUpdateDate": "2001-07-11",
+    "entryVersion": 167,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Escherichia coli (strain K12)",
+    "taxonId": 83333,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "18495664"
+          }
+        ],
+        "value": "Gamma-glutamylputrescine synthetase PuuA"
+      },
+      "shortNames": [
+        {
+          "value": "Gamma-Glu-Put synthetase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "6.3.1.11"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Glutamate--putrescine ligase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "18495664"
+          }
+        ],
+        "value": "puuA"
+      },
+      "synonyms": [
+        {
+          "value": "ycjK"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "b1297"
+        },
+        {
+          "value": "JW5201"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15590624"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Involved in the breakdown of putrescine. Catalyzes the ATP-dependent gamma-glutamylation of putrescine, producing gamma-L-glutamylputrescine. Absolutely essential to utilize putrescine as both nitrogen and carbon sources and to decrease the toxicity of putrescine, which can lead to inhibition of cell growth and protein synthesis. In vitro is also able to use several diamines, and spermidine and spermine, instead of putrescine, but with a much lower activity, and cannot catalyze the gamma-glutamylation of ornithine or GABA (PubMed:18495664)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "putrescine + L-glutamate + ATP = gamma-L-glutamylputrescine + ADP + phosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:13633"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58731"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:326268"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456216"
+          }
+        ],
+        "ecNumber": "6.3.1.11",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "18495664"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:13634"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        },
+        {
+          "name": "Mn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29035"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ],
+            "value": "Requires Mg(2+), that can be substituted by Mn(2+)."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "maximumVelocities": [
+          {
+            "velocity": 6.71,
+            "unit": "umol/min/mg",
+            "enzyme": "enzyme with putrescine as substrate (at pH 8 and at 37 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ]
+          }
+        ],
+        "michaelisConstants": [
+          {
+            "constant": 2.07,
+            "unit": "mM",
+            "substrate": "glutamate (at pH 8 and at 37 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ]
+          },
+          {
+            "constant": 2.25,
+            "unit": "mM",
+            "substrate": "ATP (at pH 8 and at 37 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ]
+          },
+          {
+            "constant": 44.6,
+            "unit": "mM",
+            "substrate": "putrescine (at pH 8 and at 37 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ]
+          }
+        ]
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "18495664"
+              }
+            ],
+            "value": "Optimum pH is 9."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Amine and polyamine degradation; putrescine degradation; 4-aminobutanoate from putrescine: step 1/4"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Dodecamer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14527658"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Induced by putrescine and repressed by PuuR. Transiently induced by cold shock"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "18495664"
+            }
+          ],
+          "value": "Cells lacking this gene cannot grow on putrescine as the sole source of carbon or nitrogen"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the glutamine synthetase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 472,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Gamma-glutamylputrescine synthetase PuuA",
+      "featureId": "PRO_0000153280"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 35,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 129,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "GS beta-grasp",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU01330"
+        }
+      ]
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 136,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 472,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "GS catalytic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU01331"
+        }
+      ]
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 282,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 282,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Activity is impaired to 9% of wild-type.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "18495664"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "N"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 357,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 357,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Activity is impaired to 3% of wild-type.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "18495664"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "Q"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0067",
+      "category": "Ligand",
+      "name": "ATP-binding"
+    },
+    {
+      "id": "KW-0436",
+      "category": "Molecular function",
+      "name": "Ligase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0464",
+      "category": "Ligand",
+      "name": "Manganese"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9097039",
+        "citationType": "journal article",
+        "authors": [
+          "Aiba H.",
+          "Baba T.",
+          "Fujita K.",
+          "Hayashi K.",
+          "Inada T.",
+          "Isono K.",
+          "Itoh T.",
+          "Kasai H.",
+          "Kashimoto K.",
+          "Kimura S.",
+          "Kitakawa M.",
+          "Kitagawa M.",
+          "Makino K.",
+          "Miki T.",
+          "Mizobuchi K.",
+          "Mori H.",
+          "Mori T.",
+          "Motomura K.",
+          "Nakade S.",
+          "Nakamura Y.",
+          "Nashimoto H.",
+          "Nishio Y.",
+          "Oshima T.",
+          "Saito N.",
+          "Sampei G.",
+          "Seki Y.",
+          "Sivasundaram S.",
+          "Tagami H.",
+          "Takeda J.",
+          "Takemoto K.",
+          "Takeuchi Y.",
+          "Wada C.",
+          "Yamamoto Y.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9097039"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/3.6.363"
+          }
+        ],
+        "title": "A 570-kb DNA sequence of the Escherichia coli K-12 genome corresponding to the 28.0-40.1 min region on the linkage map.",
+        "publicationDate": "1996",
+        "journal": "DNA Res.",
+        "firstPage": "363",
+        "lastPage": "377",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "9278503",
+        "citationType": "journal article",
+        "authors": [
+          "Blattner F.R.",
+          "Plunkett G. III",
+          "Bloch C.A.",
+          "Perna N.T.",
+          "Burland V.",
+          "Riley M.",
+          "Collado-Vides J.",
+          "Glasner J.D.",
+          "Rode C.K.",
+          "Mayhew G.F.",
+          "Gregor J.",
+          "Davis N.W.",
+          "Kirkpatrick H.A.",
+          "Goeden M.A.",
+          "Rose D.J.",
+          "Mau B.",
+          "Shao Y."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9278503"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.277.5331.1453"
+          }
+        ],
+        "title": "The complete genome sequence of Escherichia coli K-12.",
+        "publicationDate": "1997",
+        "journal": "Science",
+        "firstPage": "1453",
+        "lastPage": "1462",
+        "volume": "277"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "16738553",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi K.",
+          "Morooka N.",
+          "Yamamoto Y.",
+          "Fujita K.",
+          "Isono K.",
+          "Choi S.",
+          "Ohtsubo E.",
+          "Baba T.",
+          "Wanner B.L.",
+          "Mori H.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16738553"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/msb4100049"
+          }
+        ],
+        "title": "Highly accurate genome sequences of Escherichia coli K-12 strains MG1655 and W3110.",
+        "publicationDate": "2006",
+        "journal": "Mol. Syst. Biol.",
+        "firstPage": "E1",
+        "lastPage": "E5",
+        "volume": "2"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]",
+        "SEQUENCE REVISION"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "14527658",
+        "citationType": "journal article",
+        "authors": [
+          "Polissi A.",
+          "De Laurentis W.",
+          "Zangrossi S.",
+          "Briani F.",
+          "Longhi V.",
+          "Pesole G.",
+          "Deho G."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14527658"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0923-2508(03)00167-0"
+          }
+        ],
+        "title": "Changes in Escherichia coli transcriptome during acclimatization at low temperature.",
+        "publicationDate": "2003",
+        "journal": "Res. Microbiol.",
+        "firstPage": "573",
+        "lastPage": "580",
+        "volume": "154"
+      },
+      "referencePositions": [
+        "INDUCTION BY COLD SHOCK"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "15590624",
+        "citationType": "journal article",
+        "authors": [
+          "Kurihara S.",
+          "Oda S.",
+          "Kato K.",
+          "Kim H.G.",
+          "Koyanagi T.",
+          "Kumagai H.",
+          "Suzuki H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15590624"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m411114200"
+          }
+        ],
+        "title": "A novel putrescine utilization pathway involves gamma-glutamylated intermediates of Escherichia coli K-12.",
+        "publicationDate": "2005",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "4602",
+        "lastPage": "4608",
+        "volume": "280"
+      },
+      "referencePositions": [
+        "FUNCTION AS A GAMMA-GLUTAMYLPUTRESCINE SYNTHETASE",
+        "NOMENCLATURE"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "18495664",
+        "citationType": "journal article",
+        "authors": [
+          "Kurihara S.",
+          "Oda S.",
+          "Tsuboi Y.",
+          "Kim H.G.",
+          "Oshida M.",
+          "Kumagai H.",
+          "Suzuki H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18495664"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m800133200"
+          }
+        ],
+        "title": "gamma-Glutamylputrescine synthetase in the putrescine utilization pathway of Escherichia coli K-12.",
+        "publicationDate": "2008",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "19981",
+        "lastPage": "19990",
+        "volume": "283"
+      },
+      "referencePositions": [
+        "FUNCTION IN PUTRESCINE DEGRADATION",
+        "CATALYTIC ACTIVITY",
+        "COFACTOR",
+        "MUTAGENESIS OF HIS-282 AND ARG-357",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "SUBSTRATE SPECIFICITY",
+        "INDUCTION",
+        "SUBUNIT",
+        "PATHWAY",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "U00096",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC74379.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP009048",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA14857.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "D64878",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "D64878"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_415813.4",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000913.3"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_001296746.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_CP009789.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "4260944",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "22"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "166"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "511145.b1297",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "jPOST",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "511145-b1297",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAC74379",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC74379"
+        },
+        {
+          "key": "GeneId",
+          "value": "b1297"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "946202",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecj:JW5201",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "eco:b1297",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|511145.12.peg.1352",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EchoBASE",
+      "id": "EB3667",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0174",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_017290_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "AADDCIY",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9789509at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "EcoCyc:G6644-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:G6644-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00188",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00880"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000625",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "P78061",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0034024",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamate-putrescine ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "18495664"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004356",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamine synthetase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:1901704",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:L-glutamine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006598",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:polyamine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009447",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:putrescine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "18495664"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.10.20.70:FF:000008",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gamma-glutamylputrescine synthetase PuuA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.590.10:FF:000008",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gamma-glutamylputrescine synthetase PuuA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.10.20.70",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.590.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase/guanido kinase, catalytic domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008147",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synt_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036651",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synt_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014746",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth/guanido_kin_cat_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008146",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth_cat_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027303",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth_gly_rich_site"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43785",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GAMMA-GLUTAMYLPUTRESCINE SYNTHETASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43785:SF12",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TYPE-1 GLUTAMINE SYNTHETASE 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00120",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln-synt_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM01230",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln-synt_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF54368",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55931",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase/guanido kinase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00181",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GLNA_ATP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51986",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GS_BETA_GRASP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51987",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GS_CATALYTIC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "METNIVEVENFVQQSEERRGSAFTQEVKRYLERYPNTQYVDVLLTDLNGCFRGKRIPVSSLKKLEKGCYFPASVFAMDILGNVVEEAGLGQEMGEPDRTCVPVLGSLTPSAADPEFIGQMLLTMVDEDGAPFDVEPRNVLNRLWQQLRQRGLFPVVAVELEFYLLDRQRDAEGYLQPPCAPGTDDRNTQSQVYSVDNLNHFADVLNDIDELAQLQLIPADGAVAEASPGQFEINLYHTDNVLEACDDALALKRLVRLMAEKHKMHATFMAKPYEEHAGSGMHIHISMQNNRGENVLSDAEGEDSPLLKKMLAGMIDLMPSSMALLAPNVNSYRRFQPGMYVPTQASWGHNNRTVALRIPCGDRHNHRVEYRVAGADANPYLVMAAIFAGILHGLDNELPLQEEVEGNGLEQEGLPFPIRQSDALGEFIENDHLRRYLGERFCHVYHACKNDELLQFERLITETEIEWMLKNA",
+    "length": 472,
+    "molWeight": 53177,
+    "crc64": "9D2224C5A9FCC0A3",
+    "md5": "2260FF998867594FF6B17496C0063A0C"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1,
+      "SUBUNIT": 1,
+      "INDUCTION": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 2,
+      "Mutagenesis": 2
+    },
+    "uniParcId": "UPI000013A6DC"
+  }
+}

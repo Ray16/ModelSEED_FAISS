@@ -1,0 +1,1080 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "A0A0F7RJ52",
+  "secondaryAccessions": [
+    "E9QVX2",
+    "E9QVX3",
+    "Q6HZY6",
+    "Q6KTW5",
+    "Q81RQ9"
+  ],
+  "uniProtkbId": "ASBA_BACAN",
+  "entryAudit": {
+    "firstPublicDate": "2020-08-12",
+    "lastAnnotationUpdateDate": "2026-11-04",
+    "lastSequenceUpdateDate": "2017-12-20",
+    "entryVersion": 37,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Bacillus anthracis",
+    "taxonId": 1392,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Bacillaceae",
+      "Bacillus",
+      "Bacillus cereus group"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Spermidine-citrate ligase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17579415"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19259597"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "22408253"
+            }
+          ],
+          "value": "6.3.2.-"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Petrobactin biosynthesis protein AsbA"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "14756782"
+          }
+        ],
+        "value": "asbA"
+      },
+      "orderedLocusNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "EMBL",
+              "id": "AAT31100.1"
+            }
+          ],
+          "value": "GBAA_1981"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14756782"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "16875672"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17189355"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17579415"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19259597"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "22408253"
+            }
+          ],
+          "value": "Involved in the biosynthesis of petrobactin, a catecholate siderophore that functions in both iron acquisition and virulence (PubMed:16875672, PubMed:17189355, PubMed:22408253). Catalyzes the ATP-dependent condensation of citric acid and spermidine to form N(8)-citryl-spermidine (PubMed:17579415, PubMed:19259597, PubMed:22408253). It can also catalyze the condensation of several di- and triamine analogs of spermidine with citric acid and the condensation of the citric acid analog tricarballylic acid with spermidine (PubMed:19259597). Required for growth in iron-depleted medium and for full virulence in a mouse model of infection (PubMed:14756782)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "spermidine + citrate + ATP = N(8)-citryl-spermidine + AMP + diphosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:63808"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16947"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:33019"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57834"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:149586"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456215"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "17579415"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "19259597"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "22408253"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 5.65,
+            "unit": "mM",
+            "substrate": "citric acid",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "22408253"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "22408253"
+                }
+              ],
+              "value": "kcat is 0.89 sec(-1)."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17189355"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "22408253"
+            }
+          ],
+          "value": "Siderophore biosynthesis; petrobactin biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14756782"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "16875672"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17189355"
+            }
+          ],
+          "value": "Deletion of the gene leads to a decrease in siderophore production during iron-depleted growth and attenuates growth (PubMed:14756782). The deletion mutant cannot produce petrobactin on iron-depleted medium (PubMed:16875672, PubMed:17189355). Mutant produces the petrobactin precursor 3,4-dihydroxybenzoyl (3,4-DHB) and bacillibactin (PubMed:16875672). The deletion mutant is severely attenuated for growth in macrophages and virulence in mice (PubMed:14756782). In vitro analysis show that mutants grow to a very limited extent as vegetative cells in iron-depleted medium but are not able to outgrow from spores under the same culture conditions (PubMed:17189355)"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19259597"
+            }
+          ],
+          "value": "The ability of the enzyme to catalyze condensation of citric acid with several di- and triamine analogs of spermidine suggests that it may be a versatile biocatalyst for the preparation of highly enantiomerically-enriched citrate derivatives via a novel type of desymmetrization process"
+        }
+      ],
+      "commentType": "BIOTECHNOLOGY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the IucA/IucC family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 602,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Spermidine-citrate ligase",
+      "featureId": "PRO_0000450623"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 286,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 288,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q81RQ8"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 300,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 300,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q81RQ8"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 312,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 312,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q81RQ8"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0067",
+      "category": "Ligand",
+      "name": "ATP-binding"
+    },
+    {
+      "id": "KW-0436",
+      "category": "Molecular function",
+      "name": "Ligase"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "18952800",
+        "citationType": "journal article",
+        "authors": [
+          "Ravel J.",
+          "Jiang L.",
+          "Stanley S.T.",
+          "Wilson M.R.",
+          "Decker R.S.",
+          "Read T.D.",
+          "Worsham P.",
+          "Keim P.S.",
+          "Salzberg S.L.",
+          "Fraser-Liggett C.M.",
+          "Rasko D.A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18952800"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.01347-08"
+          }
+        ],
+        "title": "The complete genome sequence of Bacillus anthracis Ames 'Ancestor'.",
+        "publicationDate": "2009",
+        "journal": "J. Bacteriol.",
+        "firstPage": "445",
+        "lastPage": "446",
+        "volume": "191"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "Ames ancestor",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "14756782",
+        "citationType": "journal article",
+        "authors": [
+          "Cendrowski S.",
+          "MacArthur W.",
+          "Hanna P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14756782"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1046/j.1365-2958.2003.03861.x"
+          }
+        ],
+        "title": "Bacillus anthracis requires siderophore biosynthesis for growth in macrophages and mouse virulence.",
+        "publicationDate": "2004",
+        "journal": "Mol. Microbiol.",
+        "firstPage": "407",
+        "lastPage": "417",
+        "volume": "51"
+      },
+      "referencePositions": [
+        "FUNCTION IN VIRULENCE",
+        "DISRUPTION PHENOTYPE",
+        "GENE NAME"
+      ],
+      "referenceComments": [
+        {
+          "value": "Sterne",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "16875672",
+        "citationType": "journal article",
+        "authors": [
+          "Wilson M.K.",
+          "Abergel R.J.",
+          "Raymond K.N.",
+          "Arceneaux J.E.",
+          "Byers B.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16875672"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/j.bbrc.2006.07.055"
+          }
+        ],
+        "title": "Siderophores of Bacillus anthracis, Bacillus cereus, and Bacillus thuringiensis.",
+        "publicationDate": "2006",
+        "journal": "Biochem. Biophys. Res. Commun.",
+        "firstPage": "320",
+        "lastPage": "325",
+        "volume": "348"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "Sterne",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "17189355",
+        "citationType": "journal article",
+        "authors": [
+          "Lee J.Y.",
+          "Janes B.K.",
+          "Passalacqua K.D.",
+          "Pfleger B.F.",
+          "Bergman N.H.",
+          "Liu H.",
+          "Haakansson K.",
+          "Somu R.V.",
+          "Aldrich C.C.",
+          "Cendrowski S.",
+          "Hanna P.C.",
+          "Sherman D.H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17189355"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.01526-06"
+          }
+        ],
+        "title": "Biosynthetic analysis of the petrobactin siderophore pathway from Bacillus anthracis.",
+        "publicationDate": "2007",
+        "journal": "J. Bacteriol.",
+        "firstPage": "1698",
+        "lastPage": "1710",
+        "volume": "189"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "PATHWAY",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "Sterne",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "17579415",
+        "citationType": "journal article",
+        "authors": [
+          "Oves-Costales D.",
+          "Kadi N.",
+          "Fogg M.J.",
+          "Song L.",
+          "Wilson K.S.",
+          "Challis G.L."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17579415"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/ja072391o"
+          }
+        ],
+        "title": "Enzymatic logic of anthrax stealth siderophore biosynthesis: AsbA catalyzes ATP-dependent condensation of citric acid and spermidine.",
+        "publicationDate": "2007",
+        "journal": "J. Am. Chem. Soc.",
+        "firstPage": "8416",
+        "lastPage": "8417",
+        "volume": "129"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY"
+      ],
+      "referenceComments": [
+        {
+          "value": "Ames",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "19259597",
+        "citationType": "journal article",
+        "authors": [
+          "Oves-Costales D.",
+          "Song L.",
+          "Challis G.L."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19259597"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1039/b823147h"
+          }
+        ],
+        "title": "Enantioselective desymmetrisation of citric acid catalysed by the substrate-tolerant petrobactin biosynthetic enzyme AsbA.",
+        "publicationDate": "2009",
+        "journal": "Chem. Commun. (Camb.)",
+        "firstPage": "1389",
+        "lastPage": "1391",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOTECHNOLOGY"
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "22408253",
+        "citationType": "journal article",
+        "authors": [
+          "Nusca T.D.",
+          "Kim Y.",
+          "Maltseva N.",
+          "Lee J.Y.",
+          "Eschenfeldt W.",
+          "Stols L.",
+          "Schofield M.M.",
+          "Scaglione J.B.",
+          "Dixon S.D.",
+          "Oves-Costales D.",
+          "Challis G.L.",
+          "Hanna P.C.",
+          "Pfleger B.F.",
+          "Joachimiak A.",
+          "Sherman D.H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22408253"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m112.359349"
+          }
+        ],
+        "title": "Functional and structural analysis of the siderophore synthetase AsbB through reconstitution of the petrobactin biosynthetic pathway from Bacillus anthracis.",
+        "publicationDate": "2012",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "16058",
+        "lastPage": "16072",
+        "volume": "287"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "PATHWAY"
+      ],
+      "referenceComments": [
+        {
+          "value": "Sterne",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "27425635",
+        "citationType": "journal article",
+        "authors": [
+          "Hagan A.K.",
+          "Carlson P.E. Jr.",
+          "Hanna P.C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27425635"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/mmi.13465"
+          }
+        ],
+        "title": "Flying under the radar: The non-canonical biochemistry and molecular biology of petrobactin from Bacillus anthracis.",
+        "publicationDate": "2016",
+        "journal": "Mol. Microbiol.",
+        "firstPage": "196",
+        "lastPage": "206",
+        "volume": "102"
+      },
+      "referencePositions": [
+        "REVIEW"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE017334",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAT31100.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000679659.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_AP014833.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "A0A0F7RJ52",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "A0A0F7RJ52",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DNASU",
+      "id": "1085941",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "45021903",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "bar:GBAA_1981",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|1392.230.peg.1941",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_018283_0_0_9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "AADCPWM",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "2989563at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA01005",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000594",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016881",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:acid-amino acid ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019290",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:siderophore biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.510.40:FF:000002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IucA/IucC family siderophore biosynthesis protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.510.40",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR007310",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aerobactin_biosyn_IucA/IucC_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR022770",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IucA/IucC-like_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LucA/IucC-like"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR34384",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "L-2,3-DIAMINOPROPANOATE--CITRATE LIGASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR34384:SF5",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "L-2,3-DIAMINOPROPANOATE--CITRATE LIGASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF06276",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FhuF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF04183",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IucA_IucC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MKHAKQIAEHATIQSFLNCYLRETGSGEWITEDKRIEDIFYHLFQRDTCSTYLCCRLSAQNITLYGEVIYKSPTDRHLFGEQFYYQMGDSNSVMKADYVTVITFLIKEMSINYGEGTNPAELMLRVIRSCQNIEEFTKERKEDTSALYGFHTSFIEAEQSLLFGHLTHPTPKSRQGILEWKSAMYSPELKGECQLHYFRAHKSIVNEKSLLLDSTTVILKEELRNDEMVSKEFISKYCNEDEYSLLPIHPLQAEWLLHQPYVQDWIEQGVLEYIGPTGKCYMATSSLRTLYHPDAKYMLKFSFPVKVTNSMRINKLKELESGLEGKAMLNTAIGEVLEKFPGFDFICDPAFITLNYGTQESGFEVIIRENPFYSEHADDATLIAGLVQDAIPGERTRLSNIIHRLADLESRSCEEVSLEWFRRYMNISLKPMVWMYLQYGVALEAHQQNSVVQLKDGYPVKYYFRDNQGFYFCNSMKEMLNNELAGIGERTGNLYDDYIVDERFRYYLIFNHMFGLINGFGTAGLIREEILLTELRTVLESFLPYNREPSTFLRELLEEDKLACKANLLTRFFDVDELSNPLEQAIYVQVQNPLVREVAVRS",
+    "length": 602,
+    "molWeight": 69937,
+    "crc64": "C0E7182A16AE9A78",
+    "md5": "4CB98872EBD1D0D3147FCBE4C08AA6FD"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "BIOTECHNOLOGY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 3
+    },
+    "uniParcId": "UPI0000166BE4"
+  }
+}

@@ -1,0 +1,2230 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q9RDS6",
+  "uniProtkbId": "GLNA2_STRCO",
+  "entryAudit": {
+    "firstPublicDate": "2022-12-14",
+    "lastAnnotationUpdateDate": "2026-11-04",
+    "lastSequenceUpdateDate": "2000-05-01",
+    "entryVersion": 133,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)",
+    "taxonId": 100226,
+    "evidences": [
+      {
+        "evidenceCode": "ECO:0000312",
+        "source": "Proteomes",
+        "id": "UP000001973"
+      }
+    ],
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Actinomycetota",
+      "Actinomycetes",
+      "Kitasatosporales",
+      "Streptomycetaceae",
+      "Streptomyces",
+      "Streptomyces albidoflavus group"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ],
+        "value": "Gamma-glutamylpolyamine synthetase GlnA2"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "6.3.1.-"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "16932908"
+          },
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "28487688"
+          },
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ],
+        "value": "glnA2"
+      },
+      "orderedLocusNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "16932908"
+            },
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "28487688"
+            },
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "35409114"
+            },
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "EMBL",
+              "id": "CAB66175.1"
+            }
+          ],
+          "value": "SCO2241"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "16932908"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Involved in the catabolism of polyamines. Catalyzes the ATP-dependent gamma-glutamylation of polyamines. Substrates include putrescine, cadaverine, spermidine and spermine, with a preference for short-chain polyamine putrescine (PubMed:35409114). No complementation of the L-glutamine auxotrophy of an E.coli glnA mutant (PubMed:16932908). Together with GlnA3, enables survival of S.coelicolor under exposure to high local environmental polyamine concentrations, which is toxic to the cells (PubMed:35409114)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "putrescine + L-glutamate + ATP = gamma-L-glutamylputrescine + ADP + phosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:13633"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58731"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:326268"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456216"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:13634"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "spermine + L-glutamate + ATP = gamma-L-glutamylspermine + ADP + phosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:73895"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:45725"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:193052"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456216"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:73896"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "spermidine + L-glutamate + ATP = gamma-L-glutamylspermidine + ADP + phosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:73891"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57834"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:193051"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456216"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:73892"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "cadaverine + L-glutamate + ATP = gamma-L-glutamylcadaverine + ADP + phosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:73899"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58384"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:193053"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456216"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "35409114"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:73900"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P12425"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P12425"
+              }
+            ],
+            "value": "Binds 2 Mg(2+) ions per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "No effect on activity with glutamine synthetase (GS) inhibitor methionine sulfoximine (MSO)"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 0.55,
+            "unit": "mM",
+            "substrate": "putrescine",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "35409114"
+              }
+            ]
+          },
+          {
+            "constant": 1.06,
+            "unit": "mM",
+            "substrate": "glutamate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "35409114"
+              }
+            ]
+          },
+          {
+            "constant": 0.13,
+            "unit": "mM",
+            "substrate": "ATP",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "35409114"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Amine and polyamine degradation; putrescine degradation"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Amine and polyamine degradation; spermidine degradation"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Amine and polyamine degradation; spermine degradation"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Expression is induced by exogenous putrescine, cadaverine and spermidine, but not with glutamine. Expression is also induced under starvation conditions with concomitant low glucose and ammonium levels, but not by high ammonium or glutamine level. Transcriptionally regulated by acetylated GlnR"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "28487688"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "Normal growth on defined Evans agar supplemented with ammonium chloride, sodium nitrate, monosodium L-glutamate, L-glutamine, 200 mM putrescine, 50 mM cadaverine, 25 mM spermidine or 25 mM spermine as a sole nitrogen source (PubMed:28487688). No growth in complex LB medium supplemented with a mixture of 25 mM putrescine, 25 mM cadaverine, 25 mM spermidine and 25 mM spermine, inhibited growth with high concentrations of spermidine or spermine (100 mM) in the medium, but survival of the cells with only putrescine or cadaverine supplementation of the medium, although strongly delayed growth with cadaverine. Able to grow under starvation conditions on defined Evans agar supplemented with glutamate, glutamine, ammonium, nitrate or urea, decreased growth and no sporulation with putrescine, spermidine or spermine and no growth with cadaverine as a sole N-source in this medium. Intracellular accumulation of cadaverine, but not of putrescine or spermidine (PubMed:35409114)"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "This protein has some activity with cysteine and hence may be useful in biotechnical applications as gamma-glutamylation of cysteine strongly increases its solubility in water, which is critical for its usage in medications"
+        }
+      ],
+      "commentType": "BIOTECHNOLOGY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU01330"
+            },
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "PROSITE-ProRule",
+              "id": "PRU01331"
+            },
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "RuleBase",
+              "id": "RU000384"
+            }
+          ],
+          "value": "Belongs to the glutamine synthetase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 453,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Gamma-glutamylpolyamine synthetase GlnA2",
+      "featureId": "PRO_0000456962"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 15,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 100,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "GS beta-grasp",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU01330"
+        }
+      ]
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 107,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 453,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "GS catalytic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU01331"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 130,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 130,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 132,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 132,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 182,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 182,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WN39"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 187,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 187,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 194,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 194,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 239,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 239,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29985"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "L-glutamate",
+        "id": "ChEBI:CHEBI:29985"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 243,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 243,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 245,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 247,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P0A1P6"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 296,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 296,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29985"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P0A1P6"
+        }
+      ],
+      "ligand": {
+        "name": "L-glutamate",
+        "id": "ChEBI:CHEBI:29985"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 310,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 310,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29985"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P0A1P6"
+        }
+      ],
+      "ligand": {
+        "name": "L-glutamate",
+        "id": "ChEBI:CHEBI:29985"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 322,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 322,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WN39"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 322,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 322,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29985"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WN39"
+        }
+      ],
+      "ligand": {
+        "name": "L-glutamate",
+        "id": "ChEBI:CHEBI:29985"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 327,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 327,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WN39"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 342,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 342,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P12425"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 344,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 344,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29985"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WN39"
+        }
+      ],
+      "ligand": {
+        "name": "L-glutamate",
+        "id": "ChEBI:CHEBI:29985"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0067",
+      "category": "Ligand",
+      "name": "ATP-binding"
+    },
+    {
+      "id": "KW-0436",
+      "category": "Molecular function",
+      "name": "Ligase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12000953",
+        "citationType": "journal article",
+        "authors": [
+          "Bentley S.D.",
+          "Chater K.F.",
+          "Cerdeno-Tarraga A.-M.",
+          "Challis G.L.",
+          "Thomson N.R.",
+          "James K.D.",
+          "Harris D.E.",
+          "Quail M.A.",
+          "Kieser H.",
+          "Harper D.",
+          "Bateman A.",
+          "Brown S.",
+          "Chandra G.",
+          "Chen C.W.",
+          "Collins M.",
+          "Cronin A.",
+          "Fraser A.",
+          "Goble A.",
+          "Hidalgo J.",
+          "Hornsby T.",
+          "Howarth S.",
+          "Huang C.-H.",
+          "Kieser T.",
+          "Larke L.",
+          "Murphy L.D.",
+          "Oliver K.",
+          "O'Neil S.",
+          "Rabbinowitsch E.",
+          "Rajandream M.A.",
+          "Rutherford K.M.",
+          "Rutter S.",
+          "Seeger K.",
+          "Saunders D.",
+          "Sharp S.",
+          "Squares R.",
+          "Squares S.",
+          "Taylor K.",
+          "Warren T.",
+          "Wietzorrek A.",
+          "Woodward J.R.",
+          "Barrell B.G.",
+          "Parkhill J.",
+          "Hopwood D.A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12000953"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/417141a"
+          }
+        ],
+        "title": "Complete genome sequence of the model actinomycete Streptomyces coelicolor A3(2).",
+        "publicationDate": "2002",
+        "journal": "Nature",
+        "firstPage": "141",
+        "lastPage": "147",
+        "volume": "417"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "Proteomes",
+              "id": "UP000001973"
+            }
+          ],
+          "value": "ATCC BAA-471 / A3(2) / M145",
+          "type": "STRAIN"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000312",
+          "source": "EMBL",
+          "id": "CAB66175.1"
+        },
+        {
+          "evidenceCode": "ECO:0000312",
+          "source": "Proteomes",
+          "id": "UP000001973"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "16932908",
+        "citationType": "journal article",
+        "authors": [
+          "Rexer H.U.",
+          "Schaeberle T.",
+          "Wohlleben W.",
+          "Engels A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16932908"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s00203-006-0159-8"
+          }
+        ],
+        "title": "Investigation of the functional properties and regulation of three glutamine synthetase-like genes in Streptomyces coelicolor A3(2).",
+        "publicationDate": "2006",
+        "journal": "Arch. Microbiol.",
+        "firstPage": "447",
+        "lastPage": "458",
+        "volume": "186"
+      },
+      "referencePositions": [
+        "FUNCTION"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "16932908"
+            }
+          ],
+          "value": "ATCC BAA-471 / A3(2) / M145",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "28487688",
+        "citationType": "journal article",
+        "authors": [
+          "Krysenko S.",
+          "Okoniewski N.",
+          "Kulik A.",
+          "Matthews A.",
+          "Grimpo J.",
+          "Wohlleben W.",
+          "Bera A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "28487688"
+          },
+          {
+            "database": "DOI",
+            "id": "10.3389/fmicb.2017.00726"
+          }
+        ],
+        "title": "Gamma-Glutamylpolyamine Synthetase GlnA3 Is Involved in the First Step of Polyamine Degradation Pathway in Streptomyces coelicolor M145.",
+        "publicationDate": "2017",
+        "journal": "Front. Microbiol.",
+        "firstPage": "726",
+        "lastPage": "726",
+        "volume": "8"
+      },
+      "referencePositions": [
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "28487688"
+            }
+          ],
+          "value": "ATCC BAA-471 / A3(2) / M145",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "35409114",
+        "citationType": "journal article",
+        "authors": [
+          "Krysenko S.",
+          "Okoniewski N.",
+          "Nentwich M.",
+          "Matthews A.",
+          "Baeuerle M.",
+          "Zinser A.",
+          "Busche T.",
+          "Kulik A.",
+          "Gursch S.",
+          "Kemeny A.",
+          "Bera A.",
+          "Wohlleben W."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "35409114"
+          },
+          {
+            "database": "DOI",
+            "id": "10.3390/ijms23073752"
+          }
+        ],
+        "title": "A Second Gamma-Glutamylpolyamine Synthetase, GlnA2, Is Involved in Polyamine Catabolism in Streptomyces coelicolor.",
+        "publicationDate": "2022",
+        "journal": "Int. J. Mol. Sci.",
+        "firstPage": "0",
+        "lastPage": "0",
+        "volume": "23"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "SUBSTRATE SPECIFICITY",
+        "ACTIVITY REGULATION",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "PATHWAY",
+        "INDUCTION",
+        "DISRUPTION PHENOTYPE",
+        "BIOTECHNOLOGY",
+        "3D-STRUCTURE MODELING"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "35409114"
+            }
+          ],
+          "value": "ATCC BAA-471 / A3(2) / M145",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AL939111",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB66175.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_003976572.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003888.3"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "279"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "100226.gene:17759838",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "100226-gene:17759838",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "91386768",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sco:SCO2241",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|100226.15.peg.2279",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0174",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_017290_1_3_11",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "AADADYH",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9807095at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00188",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00211",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00250",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001973",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "Q9RDS6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016880",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:acid-ammonia (or amide) ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005524",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ATP binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016595",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamate binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004357",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamate-cysteine ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0034024",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamate-putrescine ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004356",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glutamine synthetase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:1904584",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:cellular response to polyamine macromolecule"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006536",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:glutamate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:1901704",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:L-glutamine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006598",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:polyamine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009447",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:putrescine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042594",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:response to starvation"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEP:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000270",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009636",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:response to toxic substance"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046203",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:spermidine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046208",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:spermine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "35409114"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.590.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.10.20.70:FF:000002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase I"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.10.20.70",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.590.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase/guanido kinase, catalytic domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008147",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synt_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036651",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synt_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014746",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth/guanido_kin_cat_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008146",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth_cat_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027303",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth_gly_rich_site"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR004809",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln_synth_I"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00653",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GlnA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43785:SF11",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GAMMA-GLUTAMYLPOLYAMINE SYNTHETASE GLNA2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43785",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GAMMA-GLUTAMYLPUTRESCINE SYNTHETASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00120",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln-synt_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03951",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln-synt_N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM01230",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gln-synt_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF54368",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55931",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glutamine synthetase/guanido kinase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00181",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GLNA_ATP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51986",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GS_BETA_GRASP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51987",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GS_CATALYTIC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MDKQQEFVIRTLEERDIRFVRLWFTDVLGFLKSVAVAPAELEQAFDEGIGFDGSAIEGFARVYESDMIAKPDPSTFQVLPWRAEAPGTARMFCDILMPDGSPSFADPRYVLKRALARTSDLGFTFYTHPEIEFFLLKDKPVDGSVPTPADNSGYFDHTPQNIGMDFRRQAITMLESMGISVEFSHHEGAPGQQEIDLRYADALSTADNVMTFRLVMKQVALEQGLQATFMPKPFSEYPGSGMHTHLSLFEGDRNAFYESGAEYQLSKVGRSFIAGLLRHAAEISAVTNQWVNSYKRIWGGTERTAGAGGEAPSYICWGHNNRSALVRVPMYKPGKTGSARVEVRSIDSGANPYLTYAVLLAAGLKGIEEGYELPPGAEDDVWALSDAERRALGIEPLPQNLGEALALMERSDLVAETLGEHVFDFFLRNKRQEWEEYRSQVTAFELRKSLPVL",
+    "length": 453,
+    "molWeight": 50553,
+    "crc64": "4A7A0590218EBED3",
+    "md5": "478FAB1C6091B34C7B5399D06C6FBB3E"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 4,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 3,
+      "INDUCTION": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "BIOTECHNOLOGY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 2,
+      "Binding site": 15
+    },
+    "uniParcId": "UPI00000DB765"
+  }
+}

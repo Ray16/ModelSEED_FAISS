@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-11-06T03:46:09.132905+00:00",
+  "source_sha256": "c43c0a85053b65cb7790e62b9e46a9bd19614045c183f9bff9339aaa2033fc88",
+  "input_hashes": {
+    "lambda_fleet/analysis/two_step/all_candidates_two_step.tsv": "cc70aed745566b436829bf1a25b113353cdd27fd236dd0d3e72b1c67685f6a74",
+    "mapping/fold_candidates.tsv": "a23205424e379f81a5a6a369bf50d8f395c67639d921aa9d4cf11e14e26142f9",
+    "mapping/candidate_pool.tsv": "0c8c4a7a289b3cd160987ca0b69978bdf155b1d56aaaf443a092f5b22b621226",
+    "lambda_fleet/analysis/family_landscape/reference_annotations/summary.json": "f691de6114d39821806a0e93c2c31136937efc61186512e28270376b959fd9b4"
+  },
+  "generator_sha256": "82c95d47f141f86e69f3a097f82ab553a911ef6cf500f816ccc62b2e42531f37",
+  "candidates": 570,
+  "enzyme_groups": 13,
+  "broad_families": 5,
+  "outputs": {
+    "all_candidates_family_ranked.tsv": "de68dccfd2630b8770d2f4289ba6a6771dc6fbd23aa970c24e2518da7fbc397b",
+    "enzyme_group_ranking.tsv": "e6278a38c840d84d829bebad30963884656a8f2ea6aa90282022fd5dbbfc47ba",
+    "broad_family_ranking.tsv": "c55c01466210aaf85eeb74109b483d7ff7c82dafb6f8ca6bf10e055872396eca",
+    "reference_seed_ranking.tsv": "55f0981e9c0c321db2b20118c3068036a27f92faaa93d978ee7988736b88640f",
+    "family_definitions.json": "3b713101ddfc87c37833a0d3e9654aa3f595b16889a73c2649cec72cf773f2e6",
+    "enzyme_landscape.png": "d797ce05a7863d1e7b78d40a69b832c301a232fe703ab1e9e188f06ecaaf1301",
+    "enzyme_landscape.svg": "428cb483f6e7daa732732e9669f1794cc444bf489607531d5e6508997ff4bb10",
+    "enzyme_landscape.pdf": "44f311abe6377344278971fc21c82584ca3d46498e7d6dc7a7e3349e2f3ad8f8",
+    "broad_family_landscape.png": "b3069dcd5a3a4291699fdac82b594594a5b676de8f2fa730816a39fd19a9f5b2",
+    "broad_family_landscape.svg": "ab59c3cb19e5cc0ce66b15f3c2a33f9f88512f2abdc6dec24eb1c7fea537770b",
+    "broad_family_landscape.pdf": "7aec74be9f5bd9234d25ebea08a417ae088f8f99cee039a04de2ba73d42cbb02",
+    "members_51eb49ec07.tsv": "6a2ebfa95570a40a1ae1d18614823d20e0c97056c07f9b1487809e10c3abca9c",
+    "members_346c6055b0.tsv": "03de1575a187f96e40d9aeef87b25fbafacb2cf92914f39b8d30959137eaafdf",
+    "members_b7dd4e251f.tsv": "0b0c7a707575645e3ec309f4b1f67cdbe4ff98ecbbcd3afd00fa9a4b9a5e2be1",
+    "members_0867fcaf47.tsv": "7c4e6b10a2740066bde52273fdb9e183396b2986210b844c7febc2b6b07b5e0c",
+    "members_61c3ce4cb8.tsv": "93b9630c287c873d5cffde9bef9d1835dac14dd5efc210452d219ec6e2c9745b",
+    "members_f40fd5570b.tsv": "38054b324427d068e41d73c746305d4b55a0275d87aa146cda20ebe6737bca2f",
+    "members_f8039f5ca3.tsv": "5a284ecaf8923fb29d37aaeac8a389e8b0e5e45d0ad36872571fc6007ec43ba9",
+    "members_6f46031352.tsv": "a0dfb68b56bb494f32b6f371a9640b292f12855261c075c79fca9bed40667735",
+    "members_4c9cf4bb9e.tsv": "c478a3121ba913bd4efda7fb390abbdfca21bd3d353da0968256ccdcb8d00b3c",
+    "members_5b6c679785.tsv": "717428fa170f7e9d3d8340d2239113c67373041acb469acba8059c50f98d7798",
+    "members_e02fabf17f.tsv": "81aaa59dc93108ab28459021035bf70a66e035a175f47c76dc40c89a2e8da359",
+    "members_883223ed4f.tsv": "bee804155cc4e87a97c9e40566881459fa05aa3cb0a04897c8b2e4e36bb70669",
+    "members_9df647f546.tsv": "a1bca89f3b8ae68b290ee8141600177b4192c5bc2a72d5e2a5364c8909344d8a",
+    "report.html": "147005143b77c111beb2967d04b710a825cf9a2af72923b70b17c86664cf0d60"
+  }
+}

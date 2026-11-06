@@ -1,0 +1,272 @@
+{
+  "retrieved_utc": "2026-11-06T03:42:48.247766+00:00",
+  "references": [
+    {
+      "accession": "A0A0F7RJ52",
+      "similarity": [
+        "Belongs to the IucA/IucC family"
+      ],
+      "pfam": [
+        {
+          "id": "PF06276",
+          "EntryName": "FhuF",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF04183",
+          "EntryName": "IucA_IucC",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/A0A0F7RJ52/entry"
+    },
+    {
+      "accession": "B5UAT8",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF13535",
+          "EntryName": "ATP-grasp_4",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/B5UAT8/entry"
+    },
+    {
+      "accession": "E2JA32",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF27279",
+          "EntryName": "DdaG_C",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/E2JA32/entry"
+    },
+    {
+      "accession": "I3R584",
+      "similarity": [
+        "Belongs to the glutamine synthetase family"
+      ],
+      "pfam": [
+        {
+          "id": "PF00120",
+          "EntryName": "Gln-synt_C",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF16952",
+          "EntryName": "Gln-synt_N_2",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/I3R584/entry"
+    },
+    {
+      "accession": "P39641",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF13535",
+          "EntryName": "ATP-grasp_4",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/P39641/entry"
+    },
+    {
+      "accession": "P78061",
+      "similarity": [
+        "Belongs to the glutamine synthetase family"
+      ],
+      "pfam": [
+        {
+          "id": "PF00120",
+          "EntryName": "Gln-synt_C",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/P78061/entry"
+    },
+    {
+      "accession": "Q2FW70",
+      "similarity": [
+        "Belongs to the IucA/IucC family"
+      ],
+      "pfam": [
+        {
+          "id": "PF06276",
+          "EntryName": "FhuF",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF04183",
+          "EntryName": "IucA_IucC",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q2FW70/entry"
+    },
+    {
+      "accession": "Q2FWC5",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF30763",
+          "EntryName": "ATP-grasp_LDMS",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF29932",
+          "EntryName": "LdmS_C",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF27267",
+          "EntryName": "LdmS_N",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q2FWC5/entry"
+    },
+    {
+      "accession": "Q2G1M8",
+      "similarity": [
+        "Belongs to the IucA/IucC family"
+      ],
+      "pfam": [
+        {
+          "id": "PF06276",
+          "EntryName": "FhuF",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF04183",
+          "EntryName": "IucA_IucC",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q2G1M8/entry"
+    },
+    {
+      "accession": "Q2G1M9",
+      "similarity": [
+        "Belongs to the IucA/IucC family"
+      ],
+      "pfam": [
+        {
+          "id": "PF06276",
+          "EntryName": "FhuF",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF04183",
+          "EntryName": "IucA_IucC",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q2G1M9/entry"
+    },
+    {
+      "accession": "Q2G1N1",
+      "similarity": [
+        "Belongs to the IucA/IucC family"
+      ],
+      "pfam": [
+        {
+          "id": "PF06276",
+          "EntryName": "FhuF",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF04183",
+          "EntryName": "IucA_IucC",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q2G1N1/entry"
+    },
+    {
+      "accession": "Q8KWS8",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF13535",
+          "EntryName": "ATP-grasp_4",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q8KWS8/entry"
+    },
+    {
+      "accession": "Q8KWT3",
+      "similarity": [],
+      "pfam": [
+        {
+          "id": "PF13535",
+          "EntryName": "ATP-grasp_4",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q8KWT3/entry"
+    },
+    {
+      "accession": "Q9KZC7",
+      "similarity": [
+        "Belongs to the glutamine synthetase family"
+      ],
+      "pfam": [
+        {
+          "id": "PF00120",
+          "EntryName": "Gln-synt_C",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q9KZC7/entry"
+    },
+    {
+      "accession": "Q9RDS6",
+      "similarity": [
+        "Belongs to the glutamine synthetase family"
+      ],
+      "pfam": [
+        {
+          "id": "PF00120",
+          "EntryName": "Gln-synt_C",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF03951",
+          "EntryName": "Gln-synt_N",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q9RDS6/entry"
+    },
+    {
+      "accession": "Q9WY79",
+      "similarity": [
+        "Belongs to the MurCDEF family. MurE subfamily"
+      ],
+      "pfam": [
+        {
+          "id": "PF01225",
+          "EntryName": "Mur_ligase",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF02875",
+          "EntryName": "Mur_ligase_C",
+          "MatchStatus": "1"
+        },
+        {
+          "id": "PF08245",
+          "EntryName": "Mur_ligase_M",
+          "MatchStatus": "1"
+        }
+      ],
+      "url": "https://www.uniprot.org/uniprotkb/Q9WY79/entry"
+    }
+  ]
+}

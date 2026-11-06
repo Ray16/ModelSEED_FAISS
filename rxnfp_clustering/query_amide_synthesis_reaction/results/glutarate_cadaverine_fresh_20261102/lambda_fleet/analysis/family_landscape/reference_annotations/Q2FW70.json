@@ -1,0 +1,621 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q2FW70",
+  "uniProtkbId": "SFNAD_STAA8",
+  "entryAudit": {
+    "firstPublicDate": "2021-09-29",
+    "lastAnnotationUpdateDate": "2026-11-04",
+    "lastSequenceUpdateDate": "2006-03-21",
+    "entryVersion": 94,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Staphylococcus aureus (strain NCTC 8325 / PS 47)",
+    "taxonId": 93061,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Staphylococcaceae",
+      "Staphylococcus"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "D-ornithine--citrate ligase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19138128"
+            }
+          ],
+          "value": "6.3.2.58"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "19138128"
+          }
+        ],
+        "value": "sfnaD"
+      },
+      "orderedLocusNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "EMBL",
+              "id": "ABD31458.1"
+            }
+          ],
+          "value": "SAOUHSC_02436"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19138128"
+            }
+          ],
+          "value": "Involved in the biosynthesis of the siderophore staphyloferrin A. Catalyzes the ATP-dependent condensation of D-ornithine and citrate to form a citryl-D-ornithine intermediate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "D-ornithine + citrate + ATP = N(5)-[(S)-citryl]-D-ornithine + AMP + diphosphate + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:59136"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16947"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:33019"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57668"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:142972"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456215"
+          }
+        ],
+        "ecNumber": "6.3.2.58",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "19138128"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:59137"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19138128"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19138128"
+            }
+          ],
+          "value": "Siderophore biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the IucA/IucC family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 658,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "D-ornithine--citrate ligase",
+      "featureId": "PRO_0000453635"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0067",
+      "category": "Ligand",
+      "name": "ATP-binding"
+    },
+    {
+      "id": "KW-0436",
+      "category": "Molecular function",
+      "name": "Ligase"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-PBLN1PSAU04V",
+        "citationType": "book",
+        "authors": [
+          "Gillaspy A.F.",
+          "Worrell V.",
+          "Orvis J.",
+          "Roe B.A.",
+          "Dyer D.W.",
+          "Iandolo J.J."
+        ],
+        "title": "The Staphylococcus aureus NCTC 8325 genome.",
+        "publicationDate": "2006",
+        "bookName": "Gram positive pathogens, 2nd edition",
+        "editors": [
+          "Fischetti V.",
+          "Novick R.",
+          "Ferretti J.",
+          "Portnoy D.",
+          "Rood J."
+        ],
+        "firstPage": "381",
+        "lastPage": "412",
+        "publisher": "ASM Press",
+        "address": "Washington D.C."
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "NCTC 8325 / PS 47",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "19138128",
+        "citationType": "journal article",
+        "authors": [
+          "Cotton J.L.",
+          "Tao J.",
+          "Balibar C.J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19138128"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi801844c"
+          }
+        ],
+        "title": "Identification and characterization of the Staphylococcus aureus gene cluster coding for staphyloferrin A.",
+        "publicationDate": "2009",
+        "journal": "Biochemistry",
+        "firstPage": "1025",
+        "lastPage": "1035",
+        "volume": "48"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "PATHWAY"
+      ],
+      "referenceComments": [
+        {
+          "value": "RN4220",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP000253",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABD31458.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_001052567.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_007795.1"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "YP_500905.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_007795.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q2FW70",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q2FW70",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "93061.SAOUHSC_02436",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "93061-SAOUHSC_02436",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "3919001",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sao:SAOUHSC_02436",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|93061.5.peg.2197",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG4264",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_018524_3_1_9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "ACWTRIR",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "495728at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-20492",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000008816",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016881",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:acid-amino acid ligase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019290",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:siderophore biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.510.40",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR007310",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aerobactin_biosyn_IucA/IucC_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR022770",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IucA/IucC-like_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LucA/IucC-like"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR34384",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "L-2,3-DIAMINOPROPANOATE--CITRATE LIGASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR34384:SF6",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "STAPHYLOFERRIN B SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF06276",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FhuF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF04183",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IucA_IucC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MNLNLIFKEQTLKFNKEEQETYLFLQQHNSDWANIFKEMILQGRDKVTQRLVTSMHRENLVKARTQSKKILSRDLIMLDISTTHILEIQFPQAKQTLYAPITGEHAFDRIDVEGPFYIKDDITNTITRVHHPNEILECILIEAPDLKNAASDQFQQDLINSATNMTFAISYQALSMQHDSAPLFNIIENSEDSYLRSEQAVIEGHPLHPGAKLRKGLNALQTFLYSSEFNQPIKLKIVLIHSKLSRTMSLSKDYDTTVHQLFPDLIKQLENEFTPKFNFNDYHIMIVHPWQLDDVLHSDYQAEVDKELIIEAKHTLDYYAGLSFRTLVPKYPAMSPHIKLSTNVHITGEIRTLSEQTTHNGPLMTRILNDILEKDVIFKSYASTIIDEVAGIHFYNEQDEADYQTERSEQLGTLFRKNIYQMIPQEVTPLIPSSLVATYPFNNESPIVTLIKRYQSAASLSDFESSAKSWVETYSKALLGLVIPLVTKYGIALEAHLQNAIATFRKDGLLDTMYIRDFEGLRIDKAQLNEMVYSTSHFHEKSRILTDSKTSVFNKAFYSTVQNHLGELILTISKASNDSNLERHMWYIVRDVLDNIFDQLVLSTHKSNQVNENRINEIKDTMFAPFIDYKCVTTMRLEDEAHHYTYIKVNNPLYRENN",
+    "length": 658,
+    "molWeight": 76087,
+    "crc64": "B3442E03671368E6",
+    "md5": "B00F3C99825BC21DB25E43A091A1D1C9"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI0000054BE6"
+  }
+}

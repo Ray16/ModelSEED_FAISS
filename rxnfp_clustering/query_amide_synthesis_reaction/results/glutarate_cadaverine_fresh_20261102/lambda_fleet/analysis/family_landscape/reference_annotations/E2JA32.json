@@ -1,0 +1,529 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "E2JA32",
+  "uniProtkbId": "DDAG_ENTAG",
+  "entryAudit": {
+    "firstPublicDate": "2015-12-09",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2010-11-30",
+    "entryVersion": 32,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Enterobacter agglomerans",
+    "commonName": "Erwinia herbicola",
+    "synonyms": [
+      "Pantoea agglomerans"
+    ],
+    "taxonId": 549,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Erwiniaceae",
+      "Pantoea",
+      "Pantoea agglomerans group"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Fumarate--(S)-2,3-diaminopropanoate ligase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19807062"
+            }
+          ],
+          "value": "6.3.2.46"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "19807062"
+            }
+          ],
+          "value": "ATP-dependent fumaroyl-DAP ligase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "19807062"
+          }
+        ],
+        "value": "ddaG"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19807062"
+            }
+          ],
+          "value": "Involved in dapdiamide antibiotics biosynthesis. Ligates fumarate and 2,3-diaminopropionate (DAP) to form N-beta-fumaroyl-DAP. Can also form N-succinoyl-DAP from succinate and DAP, with lower efficiency"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(S)-2,3-diaminopropanoate + fumarate + ATP = N(3)-fumaroyl-(S)-2,3-diaminopropanoate + AMP + diphosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:44340"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29806"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30616"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:33019"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57721"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:84330"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:456215"
+          }
+        ],
+        "ecNumber": "6.3.2.46",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "19807062"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 0.55,
+            "unit": "mM",
+            "substrate": "fumarate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "19807062"
+              }
+            ]
+          },
+          {
+            "constant": 20.0,
+            "unit": "mM",
+            "substrate": "succinate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "19807062"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "19807062"
+                }
+              ],
+              "value": "kcat is 11.6 sec(-1) with fumarate as substrate. kcat is 3.8 sec(-1) with succinate as substrate."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19807062"
+            }
+          ],
+          "value": "Antibiotic biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 396,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Fumarate--(S)-2,3-diaminopropanoate ligase",
+      "featureId": "PRO_0000434793"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0045",
+      "category": "Biological process",
+      "name": "Antibiotic biosynthesis"
+    },
+    {
+      "id": "KW-0436",
+      "category": "Molecular function",
+      "name": "Ligase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "20945916",
+        "citationType": "journal article",
+        "authors": [
+          "Hollenhorst M.A.",
+          "Bumpus S.B.",
+          "Matthews M.L.",
+          "Bollinger J.M. Jr.",
+          "Kelleher N.L.",
+          "Walsh C.T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20945916"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/ja1072367"
+          }
+        ],
+        "title": "The nonribosomal peptide synthetase enzyme DdaD tethers N(beta)-fumaramoyl-l-2,3-diaminopropionate for Fe(II)/alpha-ketoglutarate-dependent epoxidation by DdaC during dapdiamide antibiotic biosynthesis.",
+        "publicationDate": "2010",
+        "journal": "J. Am. Chem. Soc.",
+        "firstPage": "15773",
+        "lastPage": "15781",
+        "volume": "132"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "CU0119",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "19807062",
+        "citationType": "journal article",
+        "authors": [
+          "Hollenhorst M.A.",
+          "Clardy J.",
+          "Walsh C.T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19807062"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi9013165"
+          }
+        ],
+        "title": "The ATP-dependent amide ligases DdaG and DdaF assemble the fumaramoyl-dipeptide scaffold of the dapdiamide antibiotics.",
+        "publicationDate": "2009",
+        "journal": "Biochemistry",
+        "firstPage": "10467",
+        "lastPage": "10472",
+        "volume": "48"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "PATHWAY"
+      ],
+      "referenceComments": [
+        {
+          "value": "CU0119",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "HQ130277",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ADN39487.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "E2JA32",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "E2JA32",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ag:ADN39487",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-19475",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "6.3.2.46",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "2084"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.12780",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "N-terminal domain of ligase-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR042099",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ANL_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR053158",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CapK_Type1_Caps_Biosynth"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR048223",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DdaG"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR060135",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DdaG_C"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF041596",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "fum_diaprop_lig_DdaG"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR36932",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CAPSULAR POLYSACCHARIDE BIOSYNTHESIS PROTEIN"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR36932:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CAPSULAR POLYSACCHARIDE BIOSYNTHESIS PROTEIN"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF27279",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DdaG_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56801",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyl-CoA synthetase-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MNKGENMNLEMWVQNISATFPWYAQLLRDKQADLSRLESLPLITEELLTQHYYHAENSFPGEHHSYLTSGTTSGKRKRIFYSDNDQRIYLQQRMDIIRDFCGEGHTRACADLGTGHAAATAGEIFQAMGCDVELIDFTRPIEQHIEVLNRFKPDIFFTMPMILDSLIATGKLDFQPKRIILLGDVASLNWQNKVADYFHIQPAQVLDLFGSIEIGSIAFYNHAQKRYQFDSYVRPEVVPVQSLYPGAKYGGDGGILLLTSFAREYFPAVRFVTNDLIEGFAQENVGGRTVYTYQRCLGRFAGEFKHGEKINLSDISDALANNLPYHKYDLADHEGGLVIRIAAKSIPTEVIEAIKHDLLARNPDIAQMISSGLVGDIRIQCVDAQEITGNVSKRRY",
+    "length": 396,
+    "molWeight": 44753,
+    "crc64": "F39AB59FCE643F5A",
+    "md5": "17775F9F1D6302049A6171FBD812BE44"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI0001E432CB"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-06T03:39:17.420824+00:00",
+  "source_sha256": "c43c0a85053b65cb7790e62b9e46a9bd19614045c183f9bff9339aaa2033fc88",
+  "original_group_sha256": "bd7e46f30b2cc3980f630e79cec5deb33f221154ba861c0f5ff7d4fee8dba6ff",
+  "generator_sha256": "623811bbe966ad8597804d1df03b8a5a17e534ef7f0c753ef1d1bb6ecc98740d",
+  "candidates": 570,
+  "displayed_candidates": 30,
+  "ordering": "min(step1_near_attack_fraction, step2_near_attack_fraction) descending; ties step1, step2 descending then accession",
+  "top_family_counts": {
+    "Gamma-glutamylpolyamine synthetase GlnA3": 25,
+    "Gamma-glutamylputrescine synthetase PuuA": 4,
+    "Gamma-glutamylputrescine synthetase": 1
+  },
+  "outputs": {
+    "two_step_side_by_side.png": "b469221d5f733daf229b3f5264bb924f3f0e27b62ea3e9eb36d2d4d8748baf4f",
+    "two_step_side_by_side.svg": "b53d2443992801ece7b4a57c9b7e8796bb4e4caa197951b46d78d80a7ffc69e7",
+    "two_step_side_by_side.pdf": "c18b29a8ee11a172e8165517909cd5034bf11dbd91a81f1de16ac5193cdd924f",
+    "original_upper_left_both_steps.png": "c22c1c7eadd7a5757a83513088bcacb610d5983821ffe783af3703edf7a7d380",
+    "original_upper_left_both_steps.svg": "b836f6eacf37aff106b90c06fba74663ee146c8d71b91e2a4ecb51f2c0cd61b7",
+    "original_upper_left_both_steps.pdf": "dc262fde5cc6cd8ebd4c5e596a495701a5cc5eeaffb6b9651c9b0386054ffa6b",
+    "all_candidates_two_step.tsv": "cc70aed745566b436829bf1a25b113353cdd27fd236dd0d3e72b1c67685f6a74",
+    "top_candidates_two_step.tsv": "3d15618be5ebbd6e5a14be3878de285b6c8652de1769a4fe241e7462dacdb650",
+    "original_upper_left_both_steps.tsv": "349a63f5c278de43ea6e753e21238d9b593e6abdf5721b3e4d0bf1db04e672d4",
+    "report.html": "837e29380532b4f21aa051c9db6bc383022dcad07e95e53f2997e540576123e8"
+  }
+}

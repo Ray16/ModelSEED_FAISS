@@ -89,13 +89,20 @@ def render(root):
     write_json(root/'target_modeling_chemistry.json',chemistry)
     esc=lambda x:html.escape(str(x))
     primary=''
-    primary_root='lambda_fleet/analysis/upper_left'
-    if (root/primary_root/'upper_left_side_by_side.svg').exists():
-        primary=(f'<h2>Main visualization: weighted angle and harmonic distance</h2>'
-            f'<a href="{primary_root}/report.html"><img src="{primary_root}/upper_left_side_by_side.svg" '
-            'style="max-width:1100px" alt="Upper-left candidates with aligned angle and distance panels"></a>'
+    primary_root='lambda_fleet/analysis/family_landscape'
+    primary_name='enzyme_landscape'
+    if not (root/primary_root/(primary_name+'.svg')).exists():
+        primary_root='lambda_fleet/analysis/two_step'
+        primary_name='two_step_side_by_side'
+    if not (root/primary_root/(primary_name+'.svg')).exists():
+        primary_root='lambda_fleet/analysis/upper_left'
+        primary_name='upper_left_side_by_side'
+    if (root/primary_root/(primary_name+'.svg')).exists():
+        primary=(f'<h2>Main visualization: integrated reaction geometry</h2>'
+            f'<a href="{primary_root}/report.html"><img src="{primary_root}/{primary_name}.svg" '
+            'style="max-width:1800px" alt="Candidate reaction geometry with aligned labeled panels"></a>'
             f'<p><a href="{primary_root}/report.html">Labeled candidates and metrics</a> · '
-            f'<a href="{primary_root}/upper_left_side_by_side.pdf">Main figure PDF</a> · '
+            f'<a href="{primary_root}/{primary_name}.pdf">Main figure PDF</a> · '
             '<a href="lambda_fleet/analysis/visualizations/report.html">Complete cohort and step 2 results</a></p>')
     text=f'''<!doctype html><html><head><meta charset="utf-8"><title>{esc(config['title'])}</title>
 <style>body{{font:15px/1.6 system-ui;max-width:1450px;margin:30px auto;padding:0 24px;color:#183348}}h1,h2{{line-height:1.25}}table{{border-collapse:collapse;width:100%;font-size:13px}}th,td{{padding:8px;border-bottom:1px solid #dce5e9;text-align:left}}th{{background:#eef4f6}}a{{color:#00687a}}img{{max-width:100%}}.status{{padding:16px;background:#edf5f6;border-left:4px solid #007f86}}.metric{{font-size:22px;font-weight:650}}</style></head><body>

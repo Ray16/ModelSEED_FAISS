@@ -1,0 +1,14 @@
+group	n	best_accession	best_min_fraction	median_min_fraction	q25_min_fraction	q75_min_fraction	best_step1_fraction	best_step2_fraction	both_steps_nonzero	reference_accessions	broad_family	best_geometry_rank
+glnA3	57	A0ABP7V3H6	0.56	0.14	0.08	0.24	0.56	0.68	52	Q9KZC7	Glutamine synthetase-like	1
+puuA	429	U3BC25	0.26	0.0	0.0	0.02	0.3	0.26	142	P78061	Glutamine synthetase-like	2
+asbA	21	A0ABQ6PDN8	0.14	0.0	0.0	0.02	0.18	0.14	7	A0A0F7RJ52	IucA/IucC	3
+glnA2	9	A0ACN3NSZ7	0.1	0.0	0.0	0.02	0.1	0.14	4	I3R584;Q9RDS6	Glutamine synthetase-like	4
+bacD	9	A0A1H3G5V3	0.08	0.0	0.0	0.02	0.3	0.08	4	P39641;Q8KWS8;Q8KWT3	ATP-grasp	5
+sbnE	11	A0A8D5ZLL1	0.02	0.02	0.0	0.02	0.28	0.02	7	Q2G1M9	IucA/IucC	6
+sbnC	9	A0A9X4QYX5	0.02	0.0	0.0	0.0	0.04	0.02	1	Q2G1N1	IucA/IucC	6
+L-aspartate--L-methionine ligase	1	Q2FWC5	0.0	0.0	0.0	0.0	0.02	0.0	0	Q2FWC5	ATP-grasp	8
+ddaG	6	A0ABN8GJE2	0.0	0.0	0.0	0.0	0.0	0.06	0	E2JA32	DdaG-like	8
+murE	6	A0A518C8G2	0.0	0.0	0.0	0.0	0.02	0.0	0	Q9WY79	MurCDEF	8
+rizA	1	B5UAT8	0.0	0.0	0.0	0.0	0.12	0.0	0	B5UAT8	ATP-grasp	8
+sbnF	10	A0ABM9C099	0.0	0.0	0.0	0.0	0.36	0.0	0	Q2G1M8	IucA/IucC	8
+sfnaD	1	Q2FW70	0.0	0.0	0.0	0.0	0.06	0.0	0	Q2FW70	IucA/IucC	8

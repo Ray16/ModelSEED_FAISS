@@ -138,17 +138,29 @@ def render(root, out):
                      'step1_near_attack_fraction', 'step2_plot_weighted_angle_deg', 'step2_plot_harmonic_distance_A',
                      'step2_near_attack_fraction', 'step2_valid_poses']].sort_values(['reaction', 'accession'])
     primary = ''
-    upper = root / 'analysis/upper_left'
-    if (upper / 'upper_left_side_by_side.svg').exists():
+    upper = root / 'analysis/family_landscape'
+    primary_name = 'enzyme_landscape'
+    if not (upper / (primary_name+'.svg')).exists():
+        upper = root / 'analysis/two_step'
+        primary_name = 'two_step_side_by_side'
+    if not (upper / (primary_name+'.svg')).exists():
+        upper = root / 'analysis/upper_left'
+        primary_name = 'upper_left_side_by_side'
+    if (upper / (primary_name+'.svg')).exists():
         selected = json.loads((upper / 'provenance.json').read_text())
         if selected['source_sha256'] != digest(out / 'candidate_plot_data.tsv'):
             raise ValueError('Primary figure belongs to a different candidate table')
         relative = html.escape(Path(os.path.relpath(upper, out)).as_posix())
-        primary = (f'<h2>Main visualization: {selected["candidates"]} upper-left candidates</h2>'
-                   f'<a href="{relative}/report.html"><img src="{relative}/upper_left_side_by_side.svg" '
-                   'style="width:100%;max-width:1100px" alt="Weighted angle and harmonic distance side by side, with enzyme accessions"></a>'
+        if primary_name == 'enzyme_landscape':
+            primary_title = f'{selected["enzyme_groups"]} enzyme groups across {selected["broad_families"]} families'
+        else:
+            label = ('combined two-step shortlist' if primary_name == 'two_step_side_by_side' else 'upper-left candidates')
+            primary_title = f'{selected.get("displayed_candidates", selected["candidates"])} {label}'
+        primary = (f'<h2>Main visualization: {primary_title}</h2>'
+                   f'<a href="{relative}/report.html"><img src="{relative}/{primary_name}.svg" '
+                   'style="width:100%;max-width:1800px" alt="Aligned reaction geometry panels, with enzyme accessions"></a>'
                    f'<p><a href="{relative}/report.html">Candidate identities and metrics</a> · '
-                   f'<a href="{relative}/upper_left_side_by_side.pdf">Download main figure (PDF)</a></p>')
+                   f'<a href="{relative}/{primary_name}.pdf">Download main figure (PDF)</a></p>')
     page = ('<!doctype html><meta charset="utf-8"><title>Completed cofold geometry</title>'
             '<style>body{font:15px/1.5 system-ui;margin:30px;color:#183348}table{border-collapse:collapse;font-size:12px}'
             'td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}input{padding:10px;width:420px}</style>'
