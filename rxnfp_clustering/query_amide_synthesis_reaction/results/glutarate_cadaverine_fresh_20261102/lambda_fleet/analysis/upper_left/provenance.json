@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-11-06T01:02:48.010316+00:00",
+  "source": "/nfs/lambda_stor_01/homes/rzhu/ModelSEED_FAISS/rxnfp_clustering/query_amide_synthesis_reaction/results/glutarate_cadaverine_fresh_20261102/lambda_fleet/analysis/visualizations/candidate_plot_data.tsv",
+  "source_sha256": "c43c0a85053b65cb7790e62b9e46a9bd19614045c183f9bff9339aaa2033fc88",
+  "generator_sha256": "854f8d30acddecda53b35310d88e5fff8bd74a4c9b1b9687f7dc1076cb5de17c",
+  "criteria": {
+    "step1_weighted_angle_deg_greater_than": 150,
+    "step1_harmonic_distance_A_less_than": 4
+  },
+  "candidates": 30,
+  "family_counts": {
+    "Gamma-glutamylpolyamine synthetase GlnA3": 25,
+    "Alanine--anticapsin ligase": 3,
+    "Staphyloferrin B biosynthesis protein SbnC": 1,
+    "L-amino acid ligase": 1
+  },
+  "outputs": {
+    "upper_left_candidates.tsv": "bd7e46f30b2cc3980f630e79cec5deb33f221154ba861c0f5ff7d4fee8dba6ff",
+    "upper_left_side_by_side.png": "7e41a02e8ad9b63339a955efca2df9fcd663bdb7d75b85b4636d9088b8e1df32",
+    "upper_left_side_by_side.pdf": "1d17d885afe4b35e7c2698ad57d3e51257895ee9b44760f7f0844d97b0299d19",
+    "upper_left_side_by_side.svg": "987b5eaf0ec56f85c161e49c04cc316f51c4f8756157a5a5120ea3085fe5ae4e",
+    "report.html": "0fe1cf1233d3440f03c818d7d0450282ccb14b016da31cc7308e0fff403a225b"
+  }
+}

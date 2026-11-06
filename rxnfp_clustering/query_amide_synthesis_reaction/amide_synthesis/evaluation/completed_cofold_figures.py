@@ -4,6 +4,7 @@ from datetime import datetime, timezone
 import hashlib
 import html
 import json
+import os
 from pathlib import Path
 
 import matplotlib
@@ -136,12 +137,25 @@ def render(root, out):
     display = table[['accession', 'reaction', 'family', 'step1_weighted_angle_deg', 'step1_plot_harmonic_distance_A',
                      'step1_near_attack_fraction', 'step2_plot_weighted_angle_deg', 'step2_plot_harmonic_distance_A',
                      'step2_near_attack_fraction', 'step2_valid_poses']].sort_values(['reaction', 'accession'])
+    primary = ''
+    upper = root / 'analysis/upper_left'
+    if (upper / 'upper_left_side_by_side.svg').exists():
+        selected = json.loads((upper / 'provenance.json').read_text())
+        if selected['source_sha256'] != digest(out / 'candidate_plot_data.tsv'):
+            raise ValueError('Primary figure belongs to a different candidate table')
+        relative = html.escape(Path(os.path.relpath(upper, out)).as_posix())
+        primary = (f'<h2>Main visualization: {selected["candidates"]} upper-left candidates</h2>'
+                   f'<a href="{relative}/report.html"><img src="{relative}/upper_left_side_by_side.svg" '
+                   'style="width:100%;max-width:1100px" alt="Weighted angle and harmonic distance side by side, with enzyme accessions"></a>'
+                   f'<p><a href="{relative}/report.html">Candidate identities and metrics</a> · '
+                   f'<a href="{relative}/upper_left_side_by_side.pdf">Download main figure (PDF)</a></p>')
     page = ('<!doctype html><meta charset="utf-8"><title>Completed cofold geometry</title>'
             '<style>body{font:15px/1.5 system-ui;margin:30px;color:#183348}table{border-collapse:collapse;font-size:12px}'
             'td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}input{padding:10px;width:420px}</style>'
             f'<h1>{html.escape(title)}: completed cofold results</h1>'
             f'<p><b>{len(table)} candidates · {len(poses):,} structures · both stages complete.</b></p>'
-            f'<p>At least one near-attack pose: step 1, {first}; step 2, {second}; both stages, {both}. '
+            + primary + '<h2>Full cohort: both stages</h2>'
+            + f'<p>At least one near-attack pose: step 1, {first}; step 2, {second}; both stages, {both}. '
             'These counts include candidates with only one qualifying pose; they are not activity-hit counts.</p>'
             '<p>Hover over a point for its accession and metrics. Click a reaction in the legend to hide it; double-click to isolate it.</p>'
             + interactive.to_html(full_html=False, include_plotlyjs=True)
