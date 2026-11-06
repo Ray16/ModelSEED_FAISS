@@ -1,0 +1,20 @@
+{
+  "recorded_utc": "2026-11-06T14:53:31.087720+00:00",
+  "substrates": [
+    "glutarate",
+    "cadaverine"
+  ],
+  "evidence": [
+    {
+      "enzyme_group": "ddaG",
+      "activity": "positive",
+      "yield_description": "low",
+      "quantitative_yield": null,
+      "accession": null,
+      "construct_match": "pending",
+      "source": "User report in this conversation on 2026-11-06",
+      "source_statement": "Experimentally DdaG is active on glutarate and cadaverine, although yield is low.",
+      "qualification": "Group-level report; no individual modeled sequence is yet linked to the experiment. Model geometry does not override the reported activity."
+    }
+  ]
+}

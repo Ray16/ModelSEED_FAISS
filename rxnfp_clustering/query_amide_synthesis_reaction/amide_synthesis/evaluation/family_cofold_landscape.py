@@ -51,7 +51,7 @@ def summarize(data, key):
     return result
 
 
-def draw(summary, members, key, out, title):
+def draw(summary, members, key, out, title, experimental_evidence=()):
     height = max(6.2, len(summary)*.4+2.9)
     fig, axes = plt.subplots(1, 5, figsize=(18, height), sharey=True,
                              gridspec_kw={'width_ratios':[.75, 1.3, 1, 1, 1.1], 'wspace':.22})
@@ -98,11 +98,17 @@ def draw(summary, members, key, out, title):
         ax.spines[['top','right','left']].set_visible(False)
         ax.tick_params(axis='y',length=0)
     axes[4].spines['bottom'].set_visible(False)
-    labels=['\n'.join(textwrap.wrap(name,26)) for name in summary.group]
+    reported_groups={record['enzyme_group'].casefold() for record in experimental_evidence}
+    reported_rows=set(members.loc[members.enzyme_group.str.casefold().isin(reported_groups),key])
+    labels=['\n'.join(textwrap.wrap(name,26))+(' †' if name in reported_rows else '') for name in summary.group]
     axes[0].set_yticks(range(len(summary)),labels)
     for label, name in zip(axes[0].get_yticklabels(), summary.broad_family):label.set_color(colors[name])
     fig.suptitle(title,fontsize=16,weight='bold',y=.97)
     fig.text(.5,.915,'Ranges span modeled homologs. Both step diamonds mark the same enzyme, selected using the minimum of its two pose fractions.',ha='center',fontsize=10)
+    if reported_rows:
+        note='; '.join(f'{record["enzyme_group"]}: {record["activity"]} activity, {record.get("yield_description","unspecified")} yield; construct match {record.get("construct_match","pending")}'
+                      for record in experimental_evidence)
+        fig.text(.5,.87,'† User-reported experiment — '+note,ha='center',fontsize=10,color='#9b4b00')
     fig.legend(handles=[Line2D([0],[0],marker='o',linestyle='',color=color,label=name) for name,color in colors.items()],
                loc='lower center',bbox_to_anchor=(.5,.10),ncol=len(colors),frameon=False,fontsize=9)
     fig.legend(handles=[Line2D([0],[0],color='#657782',linewidth=1.3,marker='|',label='Min–max across homologs'),
@@ -112,7 +118,7 @@ def draw(summary, members, key, out, title):
                loc='lower center',bbox_to_anchor=(.5,.065),ncol=4,frameon=False,fontsize=9)
     fig.text(.5,.02,'Ranges show variation across homologs, not confidence intervals. Diamonds and their percentages refer to the named two-step-selected representative.\n'
              'Structural ranking is not a calibrated activity prediction. Family labels are transferred from reference UniProt/Pfam annotations; strict orthology is unverified.',ha='center',fontsize=9)
-    fig.subplots_adjust(left=.18,right=.99,top=.82,bottom=.21)
+    fig.subplots_adjust(left=.18,right=.99,top=.77 if reported_rows else .82,bottom=.21)
     for extension in ['png','svg','pdf']:fig.savefig(out.with_suffix('.'+extension),dpi=220,facecolor='white')
     plt.close(fig)
 
@@ -124,6 +130,8 @@ def render(campaign, out):
     pool_path=campaign/'mapping/candidate_pool.tsv'
     annotation_path=out/'reference_annotations/summary.json'
     annotation=json.loads(annotation_path.read_text())
+    experimental_path=out/'experimental_context.json'
+    experimental=json.loads(experimental_path.read_text()) if experimental_path.exists() else {'evidence':[]}
     annotations={r['accession']:r for r in annotation['references']}
     mapping=pd.read_csv(mapping_path,sep='\t').fillna('')
     pool=pd.read_csv(pool_path,sep='\t').fillna('').drop_duplicates('accession').set_index('accession')
@@ -159,8 +167,8 @@ def render(campaign, out):
     seeds.to_csv(out/'reference_seed_ranking.tsv',sep='\t',index=False)
     (out/'family_definitions.json').write_text(json.dumps(DOMAIN_FAMILIES,indent=2)+'\n')
     plt.rcParams.update({'font.size':10,'pdf.fonttype':42,'svg.fonttype':'none'})
-    draw(grouped,data,'enzyme_group',out/'enzyme_landscape','Glutarate + cadaverine: enzyme landscape across both reaction steps')
-    draw(families,data,'broad_family',out/'broad_family_landscape','Glutarate + cadaverine: broad protein families and sampling coverage')
+    draw(grouped,data,'enzyme_group',out/'enzyme_landscape','Glutarate + cadaverine: enzyme landscape across both reaction steps',experimental['evidence'])
+    draw(families,data,'broad_family',out/'broad_family_landscape','Glutarate + cadaverine: broad protein families and sampling coverage',experimental['evidence'])
     member_columns=['rank_within_enzyme','rank_within_family','accession','reference_seed','family',
                     'step1_plot_weighted_angle_deg','step1_plot_harmonic_distance_A','step1_near_attack_fraction',
                     'step2_plot_weighted_angle_deg','step2_plot_harmonic_distance_A','step2_near_attack_fraction','two_step_min_fraction']
@@ -187,12 +195,23 @@ def render(campaign, out):
     refs=''.join(f'<li><a href="{html.escape(r["url"])}">{r["accession"]}</a>: '
                  +html.escape('; '.join(r['similarity']) or ', '.join(v['EntryName'] for v in r['pfam']))+'</li>'
                  for r in annotation['references'])
+    experimental_note=''
+    if experimental['evidence']:
+        experimental_note=('<aside style="padding:16px;background:#fff3df;border-left:4px solid #b87500">'
+            '<b>Experimental activity and modeled geometry disagree.</b><ul>'
+            +''.join('<li><b>'+html.escape(record['enzyme_group'])+'</b>: user-reported '+html.escape(record['activity'])
+                     +' activity on the campaign substrate pair; yield '+html.escape(record.get('yield_description','unspecified'))
+                     +'. Construct/accession match: '+html.escape(record.get('construct_match','pending'))+'. '
+                     +html.escape(record.get('qualification',''))+'</li>' for record in experimental['evidence'])
+            +'</ul><p>The geometric scores are retained as model diagnostics. A zero pose fraction does not establish inactivity. '
+            'Reported activity and final yield are separate experimental outcomes; the pose-fraction heuristic has not been calibrated against them.</p>'
+            '<a href="experimental_context.json">Experimental annotation and provenance</a></aside>')
     page=('<!doctype html><meta charset="utf-8"><title>Family landscape: two-step cofolds</title>'
           '<style>body{font:15px/1.5 system-ui;margin:30px;color:#183348}img{width:100%;max-width:1800px}table{border-collapse:collapse;font-size:12px}'
           'td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}summary{cursor:pointer;padding:12px;background:#edf3f6;margin:5px 0}details{overflow:auto}</style>'
           '<h1>Glutarate + cadaverine: the full modeled enzyme landscape</h1>'
           f'<p><b>{len(data)} modeled sequences · {len(enzymes)} reference/gene-defined enzyme groups · {len(families)} broad domain families · both steps complete.</b></p>'
-          '<p>The landscape is displayed by protein family and enzyme group so a large homolog pool cannot occupy all visible shortlist rows. '
+          +experimental_note+'<p>The landscape is displayed by protein family and enzyme group so a large homolog pool cannot occupy all visible shortlist rows. '
           'Within each group, sequences are ordered by min(step 1 near-attack fraction, step 2 near-attack fraction), with step 1 fraction, step 2 fraction and accession as tie breakers. '
           'Family/group summary ranks use the best minimum fraction; identical values share a rank. This is structural prioritization, not a calibrated activity prediction. '
           'Best-of-group values favor deeply sampled groups; medians, full distributions and counts are shown alongside them.</p>'
@@ -219,7 +238,7 @@ def render(campaign, out):
     (out/'report.html').write_text(page)
     source_provenance=json.loads((root/'analysis/two_step/provenance.json').read_text())
     receipt=dict(created_utc=datetime.now(timezone.utc).isoformat(),source_sha256=source_provenance['source_sha256'],
-                 input_hashes={str(p.relative_to(campaign)):digest(p) for p in [source,mapping_path,pool_path,annotation_path]},
+                 input_hashes={str(p.relative_to(campaign)):digest(p) for p in [source,mapping_path,pool_path,annotation_path]+([experimental_path] if experimental_path.exists() else [])},
                  generator_sha256=digest(Path(__file__)),candidates=len(data),enzyme_groups=len(enzymes),broad_families=len(families),
                  outputs={p.name:digest(p) for p in out.iterdir() if p.is_file() and p.name!='provenance.json'})
     (out/'provenance.json').write_text(json.dumps(receipt,indent=2)+'\n')
