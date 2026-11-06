@@ -29,7 +29,7 @@ def summarize(data, key):
     rows = []
     for name, group in data.groupby(key):
         best = group.sort_values('two_step_geometry_rank').iloc[0]
-        rows.append(dict(group=name, n=len(group), best_accession=best.accession,
+        row = dict(group=name, n=len(group), best_accession=best.accession,
                          best_min_fraction=best.two_step_min_fraction,
                          median_min_fraction=group.two_step_min_fraction.median(),
                          q25_min_fraction=group.two_step_min_fraction.quantile(.25),
@@ -38,7 +38,13 @@ def summarize(data, key):
                          best_step2_fraction=best.step2_near_attack_fraction,
                          both_steps_nonzero=int(group.two_step_min_fraction.gt(0).sum()),
                          reference_accessions=';'.join(sorted(group.reference_seed.unique())),
-                         broad_family=best.broad_family))
+                         broad_family=best.broad_family)
+        for stage in (1, 2):
+            values = group[f'step{stage}_near_attack_fraction']
+            for label, value in [('min', values.min()), ('q25', values.quantile(.25)),
+                                 ('median', values.median()), ('q75', values.quantile(.75)), ('max', values.max())]:
+                row[f'step{stage}_{label}_fraction'] = value
+        rows.append(row)
     result = pd.DataFrame(rows).sort_values(['best_min_fraction', 'median_min_fraction', 'group'],
                                            ascending=[False, False, True]).reset_index(drop=True)
     result['best_geometry_rank'] = result.best_min_fraction.rank(method='min', ascending=False).astype(int)
@@ -63,8 +69,18 @@ def draw(summary, members, key, out, title):
         axes[1].scatter(entry['median_min_fraction'],row,marker='|',s=180,color='#222222',zorder=3)
         axes[1].scatter(entry['best_min_fraction'],row,marker='D',s=38,color=color,edgecolors='white',linewidths=.5,zorder=4)
         for ax, field in [(axes[2],'best_step1_fraction'),(axes[3],'best_step2_fraction')]:
-            ax.barh(row,entry[field],height=.45,color=color,alpha=.8)
-            ax.annotate(f'{entry[field]:.0%}',(entry[field],row),xytext=(5,0),textcoords='offset points',va='center',fontsize=10)
+            stage = 1 if field == 'best_step1_fraction' else 2
+            values = group[f'step{stage}_near_attack_fraction']
+            low, high = entry[f'step{stage}_min_fraction'], entry[f'step{stage}_max_fraction']
+            q25, q75 = entry[f'step{stage}_q25_fraction'], entry[f'step{stage}_q75_fraction']
+            median = entry[f'step{stage}_median_fraction']
+            ax.scatter(values, row+rng.uniform(-.12,.12,len(group)), s=14, color=color, alpha=.25, linewidths=0, zorder=1)
+            ax.hlines(row, low, high, color='#657782', linewidth=1.3, zorder=2)
+            ax.vlines([low, high], row-.09, row+.09, color='#657782', linewidth=1.1, zorder=2)
+            ax.hlines(row, q25, q75, color=color, linewidth=6, alpha=.65, zorder=3)
+            ax.scatter(median, row, marker='|', s=150, color='#222222', zorder=4)
+            ax.scatter(entry[field], row, marker='D', s=48, color=color, edgecolors='white', linewidths=.6, zorder=5)
+            ax.text(1.045,row,f'{entry[field]:.0%}',va='center',fontsize=10)
         axes[4].text(.02,row,f'{entry["best_accession"]}   ({entry["best_min_fraction"]:.0%})',va='center',fontsize=10)
     axes[0].set(xscale='log',xlim=(.8,max(10,summary.n.max()*2.2)),xlabel='Modeled sequences (log)')
     for ax in axes[1:4]:
@@ -75,7 +91,7 @@ def draw(summary, members, key, out, title):
     axes[2].set_xlabel('Step 1 near-attack fraction')
     axes[3].set_xlabel('Step 2 near-attack fraction')
     axes[4].set_xlim(0,1);axes[4].set_xticks([])
-    titles=['Coverage','All homologs\nline: median; diamond: best','Best representative\nStep 1','Same representative\nStep 2','Representative\n(minimum fraction)']
+    titles=['Coverage','All homologs\nminimum of both steps','Step 1 range\ndiamond: chosen rep.','Step 2 range\ndiamond: same rep.','Chosen representative\n(minimum fraction)']
     for ax,label in zip(axes,titles):
         ax.set_title(label,fontsize=11,weight='bold',pad=13)
         ax.set_ylim(len(summary)-.5,-.5)
@@ -86,12 +102,17 @@ def draw(summary, members, key, out, title):
     axes[0].set_yticks(range(len(summary)),labels)
     for label, name in zip(axes[0].get_yticklabels(), summary.broad_family):label.set_color(colors[name])
     fig.suptitle(title,fontsize=16,weight='bold',y=.97)
-    fig.text(.5,.915,'Both stages are evaluated together. Large groups expose more candidates to selection; coverage and full distributions are shown.',ha='center',fontsize=10)
+    fig.text(.5,.915,'Ranges span modeled homologs. Both step diamonds mark the same enzyme, selected using the minimum of its two pose fractions.',ha='center',fontsize=10)
     fig.legend(handles=[Line2D([0],[0],marker='o',linestyle='',color=color,label=name) for name,color in colors.items()],
-               loc='lower center',bbox_to_anchor=(.5,.075),ncol=len(colors),frameon=False,fontsize=9)
-    fig.text(.5,.025,'Structural heuristic: min(step 1 near-attack fraction, step 2 near-attack fraction). Best representatives maximize this value; tied scores are not distinct activity ranks.\n'
-             'Family labels come from reference-enzyme UniProt/Pfam annotations transferred through the saved homolog mapping. This is not a phylogenetic orthology analysis.',ha='center',fontsize=9)
-    fig.subplots_adjust(left=.18,right=.99,top=.82,bottom=.17)
+               loc='lower center',bbox_to_anchor=(.5,.10),ncol=len(colors),frameon=False,fontsize=9)
+    fig.legend(handles=[Line2D([0],[0],color='#657782',linewidth=1.3,marker='|',label='Min–max across homologs'),
+                        Line2D([0],[0],color='#657782',linewidth=6,label='25th–75th percentile'),
+                        Line2D([0],[0],color='#222222',linestyle='',marker='|',markersize=12,label='Median'),
+                        Line2D([0],[0],color='#657782',linestyle='',marker='D',label='Chosen representative (number at right)')],
+               loc='lower center',bbox_to_anchor=(.5,.065),ncol=4,frameon=False,fontsize=9)
+    fig.text(.5,.02,'Ranges show variation across homologs, not confidence intervals. Diamonds and their percentages refer to the named two-step-selected representative.\n'
+             'Structural ranking is not a calibrated activity prediction. Family labels are transferred from reference UniProt/Pfam annotations; strict orthology is unverified.',ha='center',fontsize=9)
+    fig.subplots_adjust(left=.18,right=.99,top=.82,bottom=.21)
     for extension in ['png','svg','pdf']:fig.savefig(out.with_suffix('.'+extension),dpi=220,facecolor='white')
     plt.close(fig)
 
@@ -144,6 +165,14 @@ def render(campaign, out):
                     'step1_plot_weighted_angle_deg','step1_plot_harmonic_distance_A','step1_near_attack_fraction',
                     'step2_plot_weighted_angle_deg','step2_plot_harmonic_distance_A','step2_near_attack_fraction','two_step_min_fraction']
     table=lambda frame:frame.to_html(index=False,escape=True,float_format=lambda value:f'{value:.3f}')
+    def range_table(frame):
+        display = frame[['group','n','best_accession']].rename(columns={'group':'Group','n':'Modeled','best_accession':'Chosen representative'})
+        for stage in (1,2):
+            display[f'Step {stage} min–max'] = frame.apply(lambda row:f'{row[f"step{stage}_min_fraction"]:.0%}–{row[f"step{stage}_max_fraction"]:.0%}',axis=1)
+            display[f'Step {stage} median'] = frame[f'step{stage}_median_fraction'].map(lambda value:f'{value:.0%}')
+            display[f'Step {stage} chosen rep.'] = frame[f'best_step{stage}_fraction'].map(lambda value:f'{value:.0%}')
+        display['Best minimum fraction'] = frame.best_min_fraction.map(lambda value:f'{value:.0%}')
+        return '<div style="overflow:auto">'+table(display)+'</div>'
     sections=[]
     for family in families.group:
         section=f'<h2>{html.escape(family)}</h2>'
@@ -167,11 +196,15 @@ def render(campaign, out):
           'Within each group, sequences are ordered by min(step 1 near-attack fraction, step 2 near-attack fraction), with step 1 fraction, step 2 fraction and accession as tie breakers. '
           'Family/group summary ranks use the best minimum fraction; identical values share a rank. This is structural prioritization, not a calibrated activity prediction. '
           'Best-of-group values favor deeply sampled groups; medians, full distributions and counts are shown alongside them.</p>'
+          '<p>For each step, whiskers show the minimum–maximum across modeled homologs, thick segments the 25th–75th percentiles, '
+          'black ticks the medians, and diamonds the chosen representative. Both step diamonds refer to the same enzyme, selected jointly using both stages. '
+          'The range endpoints may come from different homologs; they are not confidence intervals or the range of individual pose angles/distances. '
+          'Singleton groups have identical minimum, median and maximum.</p>'
           '<img src="enzyme_landscape.svg" alt="Enzyme groups, coverage, all-homolog score distributions and representative results for both steps">'
           '<p><a href="enzyme_landscape.pdf">Main landscape PDF</a> · <a href="enzyme_landscape.png">PNG</a> · '
           '<a href="enzyme_group_ranking.tsv">Enzyme-group summary</a> · <a href="all_candidates_family_ranked.tsv">All ranked members</a></p>'
-          '<h2>Broad protein families</h2><img src="broad_family_landscape.svg" alt="Five broad families and unequal retrieval coverage">'+table(families)
-          +'<h2>Enzyme groups, collapsed across homologs</h2>'+table(enzymes.drop(columns='family_order'))
+          '<h2>Broad protein families</h2><img src="broad_family_landscape.svg" alt="Five broad families and unequal retrieval coverage">'+range_table(families)
+          +'<h2>Enzyme groups, collapsed across homologs</h2>'+range_table(enzymes)
           +'<p>Grouping uses each retained sequence’s saved reference_accession, or its own accession for direct references. '
           'Primary reference gene names join seed lineages into enzyme groups; groups without a named gene retain their reference enzyme name. '
           'Reference Pfam domains define the broader families. These are auditable homolog/annotation groups; strict orthology has not been established phylogenetically. '

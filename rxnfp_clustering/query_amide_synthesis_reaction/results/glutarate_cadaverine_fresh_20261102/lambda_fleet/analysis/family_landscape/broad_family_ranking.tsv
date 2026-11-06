@@ -1,6 +1,6 @@
-group	n	best_accession	best_min_fraction	median_min_fraction	q25_min_fraction	q75_min_fraction	best_step1_fraction	best_step2_fraction	both_steps_nonzero	reference_accessions	broad_family	best_geometry_rank	share_of_cohort
-Glutamine synthetase-like	495	A0ABP7V3H6	0.56	0.0	0.0	0.04	0.56	0.68	198	I3R584;P78061;Q9KZC7;Q9RDS6	Glutamine synthetase-like	1	0.868421052631579
-IucA/IucC	52	A0ABQ6PDN8	0.14	0.0	0.0	0.02	0.18	0.14	15	A0A0F7RJ52;Q2FW70;Q2G1M8;Q2G1M9;Q2G1N1	IucA/IucC	2	0.0912280701754386
-ATP-grasp	11	A0A1H3G5V3	0.08	0.0	0.0	0.02	0.3	0.08	4	B5UAT8;P39641;Q2FWC5;Q8KWS8;Q8KWT3	ATP-grasp	3	0.01929824561403509
-DdaG-like	6	A0ABN8GJE2	0.0	0.0	0.0	0.0	0.0	0.06	0	E2JA32	DdaG-like	4	0.010526315789473684
-MurCDEF	6	A0A518C8G2	0.0	0.0	0.0	0.0	0.02	0.0	0	Q9WY79	MurCDEF	4	0.010526315789473684
+group	n	best_accession	best_min_fraction	median_min_fraction	q25_min_fraction	q75_min_fraction	best_step1_fraction	best_step2_fraction	both_steps_nonzero	reference_accessions	broad_family	step1_min_fraction	step1_q25_fraction	step1_median_fraction	step1_q75_fraction	step1_max_fraction	step2_min_fraction	step2_q25_fraction	step2_median_fraction	step2_q75_fraction	step2_max_fraction	best_geometry_rank	share_of_cohort
+Glutamine synthetase-like	495	A0ABP7V3H6	0.56	0.0	0.0	0.04	0.56	0.68	198	I3R584;P78061;Q9KZC7;Q9RDS6	Glutamine synthetase-like	0.0	0.0	0.0	0.06	0.86	0.0	0.02	0.1	0.24	0.84	1	0.868421052631579
+IucA/IucC	52	A0ABQ6PDN8	0.14	0.0	0.0	0.02	0.18	0.14	15	A0A0F7RJ52;Q2FW70;Q2G1M8;Q2G1M9;Q2G1N1	IucA/IucC	0.0	0.0	0.02	0.06	0.8	0.0	0.0	0.0	0.02	0.14	2	0.0912280701754386
+ATP-grasp	11	A0A1H3G5V3	0.08	0.0	0.0	0.02	0.3	0.08	4	B5UAT8;P39641;Q2FWC5;Q8KWS8;Q8KWT3	ATP-grasp	0.02	0.08	0.3	0.5700000000000001	0.9	0.0	0.0	0.0	0.03	0.08	3	0.01929824561403509
+DdaG-like	6	A0ABN8GJE2	0.0	0.0	0.0	0.0	0.0	0.06	0	E2JA32	DdaG-like	0.0	0.0	0.0	0.0	0.0	0.0	0.0	0.01	0.02	0.06	4	0.010526315789473684
+MurCDEF	6	A0A518C8G2	0.0	0.0	0.0	0.0	0.02	0.0	0	Q9WY79	MurCDEF	0.0	0.0	0.0	0.015	0.02	0.0	0.0	0.0	0.0	0.02	4	0.010526315789473684

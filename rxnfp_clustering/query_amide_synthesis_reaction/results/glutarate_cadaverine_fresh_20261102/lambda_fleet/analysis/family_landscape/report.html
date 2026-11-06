@@ -1,20 +1,16 @@
-<!doctype html><meta charset="utf-8"><title>Family landscape: two-step cofolds</title><style>body{font:15px/1.5 system-ui;margin:30px;color:#183348}img{width:100%;max-width:1800px}table{border-collapse:collapse;font-size:12px}td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}summary{cursor:pointer;padding:12px;background:#edf3f6;margin:5px 0}details{overflow:auto}</style><h1>Glutarate + cadaverine: the full modeled enzyme landscape</h1><p><b>570 modeled sequences · 13 reference/gene-defined enzyme groups · 5 broad domain families · both steps complete.</b></p><p>The landscape is displayed by protein family and enzyme group so a large homolog pool cannot occupy all visible shortlist rows. Within each group, sequences are ordered by min(step 1 near-attack fraction, step 2 near-attack fraction), with step 1 fraction, step 2 fraction and accession as tie breakers. Family/group summary ranks use the best minimum fraction; identical values share a rank. This is structural prioritization, not a calibrated activity prediction. Best-of-group values favor deeply sampled groups; medians, full distributions and counts are shown alongside them.</p><img src="enzyme_landscape.svg" alt="Enzyme groups, coverage, all-homolog score distributions and representative results for both steps"><p><a href="enzyme_landscape.pdf">Main landscape PDF</a> · <a href="enzyme_landscape.png">PNG</a> · <a href="enzyme_group_ranking.tsv">Enzyme-group summary</a> · <a href="all_candidates_family_ranked.tsv">All ranked members</a></p><h2>Broad protein families</h2><img src="broad_family_landscape.svg" alt="Five broad families and unequal retrieval coverage"><table border="1" class="dataframe">
+<!doctype html><meta charset="utf-8"><title>Family landscape: two-step cofolds</title><style>body{font:15px/1.5 system-ui;margin:30px;color:#183348}img{width:100%;max-width:1800px}table{border-collapse:collapse;font-size:12px}td,th{padding:7px;border-bottom:1px solid #ddd;text-align:left}summary{cursor:pointer;padding:12px;background:#edf3f6;margin:5px 0}details{overflow:auto}</style><h1>Glutarate + cadaverine: the full modeled enzyme landscape</h1><p><b>570 modeled sequences · 13 reference/gene-defined enzyme groups · 5 broad domain families · both steps complete.</b></p><p>The landscape is displayed by protein family and enzyme group so a large homolog pool cannot occupy all visible shortlist rows. Within each group, sequences are ordered by min(step 1 near-attack fraction, step 2 near-attack fraction), with step 1 fraction, step 2 fraction and accession as tie breakers. Family/group summary ranks use the best minimum fraction; identical values share a rank. This is structural prioritization, not a calibrated activity prediction. Best-of-group values favor deeply sampled groups; medians, full distributions and counts are shown alongside them.</p><p>For each step, whiskers show the minimum–maximum across modeled homologs, thick segments the 25th–75th percentiles, black ticks the medians, and diamonds the chosen representative. Both step diamonds refer to the same enzyme, selected jointly using both stages. The range endpoints may come from different homologs; they are not confidence intervals or the range of individual pose angles/distances. Singleton groups have identical minimum, median and maximum.</p><img src="enzyme_landscape.svg" alt="Enzyme groups, coverage, all-homolog score distributions and representative results for both steps"><p><a href="enzyme_landscape.pdf">Main landscape PDF</a> · <a href="enzyme_landscape.png">PNG</a> · <a href="enzyme_group_ranking.tsv">Enzyme-group summary</a> · <a href="all_candidates_family_ranked.tsv">All ranked members</a></p><h2>Broad protein families</h2><img src="broad_family_landscape.svg" alt="Five broad families and unequal retrieval coverage"><div style="overflow:auto"><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>group</th>
-      <th>n</th>
-      <th>best_accession</th>
-      <th>best_min_fraction</th>
-      <th>median_min_fraction</th>
-      <th>q25_min_fraction</th>
-      <th>q75_min_fraction</th>
-      <th>best_step1_fraction</th>
-      <th>best_step2_fraction</th>
-      <th>both_steps_nonzero</th>
-      <th>reference_accessions</th>
-      <th>broad_family</th>
-      <th>best_geometry_rank</th>
-      <th>share_of_cohort</th>
+      <th>Group</th>
+      <th>Modeled</th>
+      <th>Chosen representative</th>
+      <th>Step 1 min–max</th>
+      <th>Step 1 median</th>
+      <th>Step 1 chosen rep.</th>
+      <th>Step 2 min–max</th>
+      <th>Step 2 median</th>
+      <th>Step 2 chosen rep.</th>
+      <th>Best minimum fraction</th>
     </tr>
   </thead>
   <tbody>
@@ -22,99 +18,76 @@
       <td>Glutamine synthetase-like</td>
       <td>495</td>
       <td>A0ABP7V3H6</td>
-      <td>0.560</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.040</td>
-      <td>0.560</td>
-      <td>0.680</td>
-      <td>198</td>
-      <td>I3R584;P78061;Q9KZC7;Q9RDS6</td>
-      <td>Glutamine synthetase-like</td>
-      <td>1</td>
-      <td>0.868</td>
+      <td>0%–86%</td>
+      <td>0%</td>
+      <td>56%</td>
+      <td>0%–84%</td>
+      <td>10%</td>
+      <td>68%</td>
+      <td>56%</td>
     </tr>
     <tr>
       <td>IucA/IucC</td>
       <td>52</td>
       <td>A0ABQ6PDN8</td>
-      <td>0.140</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.180</td>
-      <td>0.140</td>
-      <td>15</td>
-      <td>A0A0F7RJ52;Q2FW70;Q2G1M8;Q2G1M9;Q2G1N1</td>
-      <td>IucA/IucC</td>
-      <td>2</td>
-      <td>0.091</td>
+      <td>0%–80%</td>
+      <td>2%</td>
+      <td>18%</td>
+      <td>0%–14%</td>
+      <td>0%</td>
+      <td>14%</td>
+      <td>14%</td>
     </tr>
     <tr>
       <td>ATP-grasp</td>
       <td>11</td>
       <td>A0A1H3G5V3</td>
-      <td>0.080</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.300</td>
-      <td>0.080</td>
-      <td>4</td>
-      <td>B5UAT8;P39641;Q2FWC5;Q8KWS8;Q8KWT3</td>
-      <td>ATP-grasp</td>
-      <td>3</td>
-      <td>0.019</td>
+      <td>2%–90%</td>
+      <td>30%</td>
+      <td>30%</td>
+      <td>0%–8%</td>
+      <td>0%</td>
+      <td>8%</td>
+      <td>8%</td>
     </tr>
     <tr>
       <td>DdaG-like</td>
       <td>6</td>
       <td>A0ABN8GJE2</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.060</td>
-      <td>0</td>
-      <td>E2JA32</td>
-      <td>DdaG-like</td>
-      <td>4</td>
-      <td>0.011</td>
+      <td>0%–0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%–6%</td>
+      <td>1%</td>
+      <td>6%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>MurCDEF</td>
       <td>6</td>
       <td>A0A518C8G2</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>Q9WY79</td>
-      <td>MurCDEF</td>
-      <td>4</td>
-      <td>0.011</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>2%</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
   </tbody>
-</table><h2>Enzyme groups, collapsed across homologs</h2><table border="1" class="dataframe">
+</table></div><h2>Enzyme groups, collapsed across homologs</h2><div style="overflow:auto"><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>group</th>
-      <th>n</th>
-      <th>best_accession</th>
-      <th>best_min_fraction</th>
-      <th>median_min_fraction</th>
-      <th>q25_min_fraction</th>
-      <th>q75_min_fraction</th>
-      <th>best_step1_fraction</th>
-      <th>best_step2_fraction</th>
-      <th>both_steps_nonzero</th>
-      <th>reference_accessions</th>
-      <th>broad_family</th>
-      <th>best_geometry_rank</th>
+      <th>Group</th>
+      <th>Modeled</th>
+      <th>Chosen representative</th>
+      <th>Step 1 min–max</th>
+      <th>Step 1 median</th>
+      <th>Step 1 chosen rep.</th>
+      <th>Step 2 min–max</th>
+      <th>Step 2 median</th>
+      <th>Step 2 chosen rep.</th>
+      <th>Best minimum fraction</th>
     </tr>
   </thead>
   <tbody>
@@ -122,199 +95,160 @@
       <td>glnA3</td>
       <td>57</td>
       <td>A0ABP7V3H6</td>
-      <td>0.560</td>
-      <td>0.140</td>
-      <td>0.080</td>
-      <td>0.240</td>
-      <td>0.560</td>
-      <td>0.680</td>
-      <td>52</td>
-      <td>Q9KZC7</td>
-      <td>Glutamine synthetase-like</td>
-      <td>1</td>
+      <td>2%–86%</td>
+      <td>44%</td>
+      <td>56%</td>
+      <td>0%–72%</td>
+      <td>16%</td>
+      <td>68%</td>
+      <td>56%</td>
     </tr>
     <tr>
       <td>puuA</td>
       <td>429</td>
       <td>U3BC25</td>
-      <td>0.260</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.300</td>
-      <td>0.260</td>
-      <td>142</td>
-      <td>P78061</td>
-      <td>Glutamine synthetase-like</td>
-      <td>2</td>
+      <td>0%–46%</td>
+      <td>0%</td>
+      <td>30%</td>
+      <td>0%–76%</td>
+      <td>8%</td>
+      <td>26%</td>
+      <td>26%</td>
     </tr>
     <tr>
       <td>asbA</td>
       <td>21</td>
       <td>A0ABQ6PDN8</td>
-      <td>0.140</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.180</td>
-      <td>0.140</td>
-      <td>7</td>
-      <td>A0A0F7RJ52</td>
-      <td>IucA/IucC</td>
-      <td>3</td>
+      <td>0%–18%</td>
+      <td>2%</td>
+      <td>18%</td>
+      <td>0%–14%</td>
+      <td>2%</td>
+      <td>14%</td>
+      <td>14%</td>
     </tr>
     <tr>
       <td>glnA2</td>
       <td>9</td>
       <td>A0ACN3NSZ7</td>
-      <td>0.100</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.100</td>
-      <td>0.140</td>
-      <td>4</td>
-      <td>I3R584;Q9RDS6</td>
-      <td>Glutamine synthetase-like</td>
-      <td>4</td>
+      <td>0%–10%</td>
+      <td>0%</td>
+      <td>10%</td>
+      <td>0%–84%</td>
+      <td>14%</td>
+      <td>14%</td>
+      <td>10%</td>
     </tr>
     <tr>
       <td>bacD</td>
       <td>9</td>
       <td>A0A1H3G5V3</td>
-      <td>0.080</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.300</td>
-      <td>0.080</td>
-      <td>4</td>
-      <td>P39641;Q8KWS8;Q8KWT3</td>
-      <td>ATP-grasp</td>
-      <td>5</td>
+      <td>2%–90%</td>
+      <td>40%</td>
+      <td>30%</td>
+      <td>0%–8%</td>
+      <td>0%</td>
+      <td>8%</td>
+      <td>8%</td>
     </tr>
     <tr>
       <td>sbnE</td>
       <td>11</td>
       <td>A0A8D5ZLL1</td>
-      <td>0.020</td>
-      <td>0.020</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.280</td>
-      <td>0.020</td>
-      <td>7</td>
-      <td>Q2G1M9</td>
-      <td>IucA/IucC</td>
-      <td>6</td>
+      <td>0%–28%</td>
+      <td>2%</td>
+      <td>28%</td>
+      <td>0%–10%</td>
+      <td>2%</td>
+      <td>2%</td>
+      <td>2%</td>
     </tr>
     <tr>
       <td>sbnC</td>
       <td>9</td>
       <td>A0A9X4QYX5</td>
-      <td>0.020</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.040</td>
-      <td>0.020</td>
-      <td>1</td>
-      <td>Q2G1N1</td>
-      <td>IucA/IucC</td>
-      <td>6</td>
+      <td>0%–80%</td>
+      <td>4%</td>
+      <td>4%</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>2%</td>
+      <td>2%</td>
     </tr>
     <tr>
       <td>L-aspartate--L-methionine ligase</td>
       <td>1</td>
       <td>Q2FWC5</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>Q2FWC5</td>
-      <td>ATP-grasp</td>
-      <td>8</td>
+      <td>2%–2%</td>
+      <td>2%</td>
+      <td>2%</td>
+      <td>0%–0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>ddaG</td>
       <td>6</td>
       <td>A0ABN8GJE2</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.060</td>
-      <td>0</td>
-      <td>E2JA32</td>
-      <td>DdaG-like</td>
-      <td>8</td>
+      <td>0%–0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%–6%</td>
+      <td>1%</td>
+      <td>6%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>murE</td>
       <td>6</td>
       <td>A0A518C8G2</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.020</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>Q9WY79</td>
-      <td>MurCDEF</td>
-      <td>8</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>2%</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>rizA</td>
       <td>1</td>
       <td>B5UAT8</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.120</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>B5UAT8</td>
-      <td>ATP-grasp</td>
-      <td>8</td>
+      <td>12%–12%</td>
+      <td>12%</td>
+      <td>12%</td>
+      <td>0%–0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>sbnF</td>
       <td>10</td>
       <td>A0ABM9C099</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.360</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>Q2G1M8</td>
-      <td>IucA/IucC</td>
-      <td>8</td>
+      <td>0%–36%</td>
+      <td>1%</td>
+      <td>36%</td>
+      <td>0%–2%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
     <tr>
       <td>sfnaD</td>
       <td>1</td>
       <td>Q2FW70</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.060</td>
-      <td>0.000</td>
-      <td>0</td>
-      <td>Q2FW70</td>
-      <td>IucA/IucC</td>
-      <td>8</td>
+      <td>6%–6%</td>
+      <td>6%</td>
+      <td>6%</td>
+      <td>0%–0%</td>
+      <td>0%</td>
+      <td>0%</td>
+      <td>0%</td>
     </tr>
   </tbody>
-</table><p>Grouping uses each retained sequence’s saved reference_accession, or its own accession for direct references. Primary reference gene names join seed lineages into enzyme groups; groups without a named gene retain their reference enzyme name. Reference Pfam domains define the broader families. These are auditable homolog/annotation groups; strict orthology has not been established phylogenetically. GlnA2 includes both I3R584- and Q9RDS6-linked lineages (nine sequences); the explicitly named Q9RDS6 is only one of them.</p><h2>Reference seed lineages</h2><table border="1" class="dataframe">
+</table></div><p>Grouping uses each retained sequence’s saved reference_accession, or its own accession for direct references. Primary reference gene names join seed lineages into enzyme groups; groups without a named gene retain their reference enzyme name. Reference Pfam domains define the broader families. These are auditable homolog/annotation groups; strict orthology has not been established phylogenetically. GlnA2 includes both I3R584- and Q9RDS6-linked lineages (nine sequences); the explicitly named Q9RDS6 is only one of them.</p><h2>Reference seed lineages</h2><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th>group</th>
@@ -329,6 +263,16 @@
       <th>both_steps_nonzero</th>
       <th>reference_accessions</th>
       <th>broad_family</th>
+      <th>step1_min_fraction</th>
+      <th>step1_q25_fraction</th>
+      <th>step1_median_fraction</th>
+      <th>step1_q75_fraction</th>
+      <th>step1_max_fraction</th>
+      <th>step2_min_fraction</th>
+      <th>step2_q25_fraction</th>
+      <th>step2_median_fraction</th>
+      <th>step2_q75_fraction</th>
+      <th>step2_max_fraction</th>
       <th>best_geometry_rank</th>
     </tr>
   </thead>
@@ -346,6 +290,16 @@
       <td>52</td>
       <td>Q9KZC7</td>
       <td>Glutamine synthetase-like</td>
+      <td>0.020</td>
+      <td>0.220</td>
+      <td>0.440</td>
+      <td>0.560</td>
+      <td>0.860</td>
+      <td>0.000</td>
+      <td>0.100</td>
+      <td>0.160</td>
+      <td>0.300</td>
+      <td>0.720</td>
       <td>1</td>
     </tr>
     <tr>
@@ -361,6 +315,16 @@
       <td>142</td>
       <td>P78061</td>
       <td>Glutamine synthetase-like</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.460</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.080</td>
+      <td>0.220</td>
+      <td>0.760</td>
       <td>2</td>
     </tr>
     <tr>
@@ -376,6 +340,16 @@
       <td>7</td>
       <td>A0A0F7RJ52</td>
       <td>IucA/IucC</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.180</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.040</td>
+      <td>0.140</td>
       <td>3</td>
     </tr>
     <tr>
@@ -391,6 +365,16 @@
       <td>4</td>
       <td>I3R584</td>
       <td>Glutamine synthetase-like</td>
+      <td>0.000</td>
+      <td>0.005</td>
+      <td>0.020</td>
+      <td>0.050</td>
+      <td>0.100</td>
+      <td>0.020</td>
+      <td>0.155</td>
+      <td>0.230</td>
+      <td>0.485</td>
+      <td>0.840</td>
       <td>4</td>
     </tr>
     <tr>
@@ -406,6 +390,16 @@
       <td>3</td>
       <td>P39641</td>
       <td>ATP-grasp</td>
+      <td>0.020</td>
+      <td>0.105</td>
+      <td>0.350</td>
+      <td>0.535</td>
+      <td>0.900</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.055</td>
+      <td>0.080</td>
       <td>5</td>
     </tr>
     <tr>
@@ -421,6 +415,16 @@
       <td>7</td>
       <td>Q2G1M9</td>
       <td>IucA/IucC</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.070</td>
+      <td>0.280</td>
+      <td>0.000</td>
+      <td>0.010</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.100</td>
       <td>6</td>
     </tr>
     <tr>
@@ -436,6 +440,16 @@
       <td>1</td>
       <td>Q8KWT3</td>
       <td>ATP-grasp</td>
+      <td>0.200</td>
+      <td>0.350</td>
+      <td>0.500</td>
+      <td>0.650</td>
+      <td>0.800</td>
+      <td>0.000</td>
+      <td>0.005</td>
+      <td>0.010</td>
+      <td>0.015</td>
+      <td>0.020</td>
       <td>6</td>
     </tr>
     <tr>
@@ -451,6 +465,16 @@
       <td>1</td>
       <td>Q2G1N1</td>
       <td>IucA/IucC</td>
+      <td>0.000</td>
+      <td>0.020</td>
+      <td>0.040</td>
+      <td>0.080</td>
+      <td>0.800</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
       <td>6</td>
     </tr>
     <tr>
@@ -466,6 +490,16 @@
       <td>0</td>
       <td>B5UAT8</td>
       <td>ATP-grasp</td>
+      <td>0.120</td>
+      <td>0.120</td>
+      <td>0.120</td>
+      <td>0.120</td>
+      <td>0.120</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>9</td>
     </tr>
     <tr>
@@ -481,6 +515,16 @@
       <td>0</td>
       <td>E2JA32</td>
       <td>DdaG-like</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.010</td>
+      <td>0.020</td>
+      <td>0.060</td>
       <td>9</td>
     </tr>
     <tr>
@@ -496,6 +540,16 @@
       <td>0</td>
       <td>Q2FW70</td>
       <td>IucA/IucC</td>
+      <td>0.060</td>
+      <td>0.060</td>
+      <td>0.060</td>
+      <td>0.060</td>
+      <td>0.060</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>9</td>
     </tr>
     <tr>
@@ -511,6 +565,16 @@
       <td>0</td>
       <td>Q2FWC5</td>
       <td>ATP-grasp</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.020</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>9</td>
     </tr>
     <tr>
@@ -526,6 +590,16 @@
       <td>0</td>
       <td>Q2G1M8</td>
       <td>IucA/IucC</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.010</td>
+      <td>0.050</td>
+      <td>0.360</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
       <td>9</td>
     </tr>
     <tr>
@@ -541,6 +615,16 @@
       <td>0</td>
       <td>Q8KWS8</td>
       <td>ATP-grasp</td>
+      <td>0.560</td>
+      <td>0.560</td>
+      <td>0.560</td>
+      <td>0.560</td>
+      <td>0.560</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>9</td>
     </tr>
     <tr>
@@ -556,6 +640,16 @@
       <td>0</td>
       <td>Q9RDS6</td>
       <td>Glutamine synthetase-like</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
       <td>9</td>
     </tr>
     <tr>
@@ -571,6 +665,16 @@
       <td>0</td>
       <td>Q9WY79</td>
       <td>MurCDEF</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.015</td>
+      <td>0.020</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.020</td>
       <td>9</td>
     </tr>
   </tbody>
