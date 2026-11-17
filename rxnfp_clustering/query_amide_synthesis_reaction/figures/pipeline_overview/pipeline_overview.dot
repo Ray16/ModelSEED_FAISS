@@ -1,0 +1,14 @@
+// Render with: dot -Tpng pipeline_overview.dot -o pipeline_overview.png
+// Mermaid counterpart: pipeline_overview.mmd
+ digraph pipeline {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.3", ranksep="0.30", dpi=120];
+ node [shape=box, style="rounded,filled", fillcolor="#eff6ff", color="#93b5d7", penwidth=1.3, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.14", width=5.8];
+ edge [color="#64748b", penwidth=1.5, arrowsize=0.75];
+ target [label="1. Define the target reaction\nGlutarate + cadaverine; balanced queries"];
+ retrieval [label="2. Retrieve similar reactions\nTop 100 of 480 screen-eligible amidations"];
+ chemistry [label="3. Apply chemical selection\n69 eligible → 64 distinct → 10 selected"];
+ mapping [label="4. Map reactions to enzyme candidates\nRhea / UniProt evidence; retain mapping gaps"];
+ sequences [label="5. Reduce sequence redundancy\n95% clustering + reference / quality filters\n570 unique sequences for modeling"];
+ models [label="6. Model and inspect poses\nAcid activation and amine attack\nStructural hypotheses for experimental testing", fillcolor="#eaf5ef", color="#91bba3"];
+ target -> retrieval -> chemistry -> mapping -> sequences -> models;
+ }

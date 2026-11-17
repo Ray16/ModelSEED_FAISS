@@ -1,0 +1,8 @@
+flowchart TD
+    accTitle: Target Reaction to Enzyme Panel
+    accDescr: Define queries, retrieve similar reactions, select ten by chemistry, map enzyme candidates, reduce sequence redundancy, and model poses for testing.
+    target["1. Define the target reaction<br/>Glutarate + cadaverine; balanced queries"] --> retrieval["2. Retrieve similar reactions<br/>Top 100 of 480 screen-eligible amidations"]
+    retrieval --> chemistry["3. Apply chemical selection<br/>69 eligible → 64 distinct → 10 selected"]
+    chemistry --> mapping["4. Map reactions to enzyme candidates<br/>Rhea / UniProt evidence; retain mapping gaps"]
+    mapping --> sequences["5. Reduce sequence redundancy<br/>95% clustering + reference / quality filters<br/>570 unique sequences for modeling"]
+    sequences --> models["6. Model and inspect poses<br/>Acid activation and amine attack<br/>Structural hypotheses for experimental testing"]

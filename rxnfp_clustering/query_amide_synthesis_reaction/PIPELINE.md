@@ -6,16 +6,9 @@
 
 **Scope.** This document describes the saved `glutarate_cadaverine_fresh_20261102` campaign. Target-specific queries, screening, selection, mapping searches and MSAs were generated independently of previous substrate campaigns. Reference database inputs, software and model weights are shared methods. Counts below refer to this snapshot; they do not describe the current live databases or certify that all prediction jobs have finished.
 
-```mermaid
-flowchart TD
-    accTitle: Target Reaction to Enzyme Panel
-    accDescr: Build queries, retrieve similar reactions by fingerprint, select ten by explicit chemistry, map reactions to enzymes, cluster sequences, and model structures.
-    target["① Target reaction<br/>glutarate + cadaverine<br/>+ balanced queries"] --> retrieval["② Fingerprint search:<br/>top 100 of 480 eligible amidations"]
-    retrieval --> chemistry["③ Chemical selection:<br/>10 of 64 distinct transformations"]
-    chemistry --> mapping["④ Map reactions → enzymes<br/>(Rhea / UniProt evidence)"]
-    mapping --> sequences["⑤ Deduplicate + cluster sequences;<br/>pick reference proteins"]
-    sequences --> models["⑥ Cofold / inspect models;<br/>check active-site geometry"]
-```
+![Pipeline overview: define target queries; retrieve 100 of 480 eligible amidations; select ten reactions by chemistry; map enzyme candidates; reduce sequence redundancy to a 570-sequence modeling cohort; model poses for experimental testing.](figures/pipeline_overview/pipeline_overview.png)
+
+[Vector image](figures/pipeline_overview/pipeline_overview.svg) · [Editable Mermaid source](figures/pipeline_overview/pipeline_overview.mmd) · [Graphviz rendering source](figures/pipeline_overview/pipeline_overview.dot)
 
 ---
 
