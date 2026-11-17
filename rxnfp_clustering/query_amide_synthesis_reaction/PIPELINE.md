@@ -6,9 +6,32 @@
 
 **Scope.** This document describes the saved `glutarate_cadaverine_fresh_20261102` campaign. Target-specific queries, screening, selection, mapping searches and MSAs were generated independently of previous substrate campaigns. Reference database inputs, software and model weights are shared methods. Counts below refer to this snapshot; they do not describe the current live databases or certify that all prediction jobs have finished.
 
-![Pipeline overview: define target queries; retrieve 100 of 480 eligible amidations; select ten reactions by chemistry; map enzyme candidates; reduce sequence redundancy to a 570-sequence modeling cohort; model poses for experimental testing.](figures/pipeline_overview/pipeline_overview.png)
-
-[Vector image](figures/pipeline_overview/pipeline_overview.svg) · [Editable Mermaid source](figures/pipeline_overview/pipeline_overview.mmd) · [Graphviz rendering source](figures/pipeline_overview/pipeline_overview.dot)
+```text
+1. Define the target reaction
+   Glutarate + cadaverine; balanced queries
+                    |
+                    v
+2. Retrieve similar reactions
+   Top 100 of 480 screen-eligible amidations
+                    |
+                    v
+3. Apply chemical selection
+   69 eligible -> 64 distinct -> 10 selected
+                    |
+                    v
+4. Map reactions to enzyme candidates
+   Rhea / UniProt evidence; retain mapping gaps
+                    |
+                    v
+5. Reduce sequence redundancy
+   95% clustering + reference / quality filters
+   570 unique sequences for modeling
+                    |
+                    v
+6. Model and inspect poses
+   Acid activation and amine attack
+   Structural hypotheses for experimental testing
+```
 
 ---
 
